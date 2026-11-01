@@ -186,8 +186,13 @@ def historical_source(root, name, expected):
     current = (root / name).read_bytes()
     from p9_cpc_historical import project_sha
     from p9_acipc_historical import peel_sha
-    present = peel_sha(root,name,hashlib.sha256(current).hexdigest())
-    if project_sha(root,name,present) != row["current_sha256"]:
+    try:
+        present = peel_sha(root,name,hashlib.sha256(current).hexdigest())
+        projected = project_sha(root,name,present)
+    except ValueError:
+        # A rejected later document/source epoch supplies no historical match.
+        return None
+    if projected != row["current_sha256"]:
         return None
     # A later, exact source epoch can move even this adapter's current subject.
     # The checked projection above authenticates that original subject too.

@@ -50,7 +50,8 @@ def checked_epoch(root):
     rows={r['path']:r for r in v['sources']}
     need(len(rows)==len(v['sources']) and set(rows)==PATHS,'earlier C-family metadata paths')
     checked_preimages(root,rows)
-    for path,row in rows.items():_bound_file(root,path,row['after_sha256'])
+    from .spark_earlier_sc3_metadata import bound_metadata_files as successor_files
+    successor_files(root,{path:row['after_sha256'] for path,row in rows.items()})
     validation=load_json_object(root/(INV+'evidence/spark-completion/applicability/ARG2bSC3Validation.json'))
     need(validation['record_digest']==record_digest(validation,'record_digest')=='749a8c6f250542d47ae240cd3ac9e0312becce93a96ab3ecab27b4c8a3bd3e2a','accepted A_RG2b validation digest')
     for ref in validation['sources']:

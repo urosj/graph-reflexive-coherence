@@ -1,6 +1,102 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: earlier C-family closure demonstrated; review next — 2026-11-01
+## Current continuation: full spark proposal and integrated manuscript — 2026-11-01
+
+The user explicitly requests formal adoption before editorial consolidation.
+[SC-3 endpoint authority](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionEarlierSC3Authority.md)
+now adopts **C_OS/C_CI/C_PC/C_CI_PC current 374→376, reset 375→377**, and
+**A_OS current 375→377, reset 372→374**, all at uniform duration 32.
+These full-state invariant domains require zero later supporting evolution.
+Current inherits the same event's one child; reset and certificate succession
+earn zero additional gain. Ten conditional claims and seven contracts are
+propagated through authority → proposal/paper → specification.
+
+The shorter witnesses are the primary accepted endpoints. Initial longer
+results remain available for specific provenance, proof history or checks.
+Original execution lengths and historical research flags are preserved.
+C-family short archives stop at their windows; A_OS still authenticates its
+original full archives and has no newly claimed short execution files.
+
+Use `/api/spark-completion/applicability/earlier-accepted`, the first spark
+panel, notebook `spark-completion-earlier-accepted`, or the
+[accepted endpoint guide](./investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/SparkCompletionEarlierAccepted.md).
+The five other accepted families retain their existing contracts. Native
+P9-9.1a, aggregate P9-10.5/10.6, hierarchy and G4 remain separate.
+The specs/README.md provenance mismatch is repaired as recorded below.
+A_OS below 100 stays paused.
+
+The [consolidated draft entry point](./investigations/grc9v4-constitutive-design/drafts/README.md)
+now leads to a self-contained proposal and the full GRC-v4 manuscript successor.
+The proposal states the classifier, completion theorem, exact A/C reads and
+all five realization maps, source graph and rational inputs, event transfers,
+anisotropic and continuous-domain proofs, and shorter accepted results.
+`drafts/2026-11-GRC-V4.md` contains the complete substrate manuscript,
+with spark §15, technical Appendix H and integrated abstract, contributions,
+claims, conclusion and Appendix A.7. It is no longer an insertion guide.
+The prior `2026-09-GRC-V4.md` and family documents remain unchanged historical
+sources. Large rational certificate operands remain computational companions.
+All ten preferred results are accepted bounded scientific witnesses; longer
+initial runs are historical references for specific questions.
+
+Manuscript continuity is owned by the stable
+[drafts entry point](./investigations/grc9v4-constitutive-design/drafts/README.md#manuscript-succession):
+`2026-09-GRC-V4.md` is the frozen predecessor and `2026-11-GRC-V4.md` is the
+current adopted manuscript for future editorial work. The successor
+records the predecessor's exact commit and SHA-256. The separate proposal stays
+in `drafts/spark-completion/Proposal.md`; that folder has no duplicate full
+paper. The user's acceptance and commit request on 2026-11-01 adopts the
+corrected manuscript and consolidated proposal; historical contracts retain
+their existing bound editions.
+
+The [section-to-claim/debt correspondence](./investigations/grc9v4-constitutive-design/drafts/spark-completion/Traceability.md)
+maps Appendix H and the proposal to the accepted family claims, specification
+chains and remaining obligations. Side-tool browser publication links and the
+notebook reading cell expose the four current adopted editorial documents through a
+restricted source route; scientific authority projections remain unchanged.
+
+The supplied manuscript review's F1–F4 corrections are applied in both the
+proposal and Appendix H: the C_CI_PC radius, constant selected sector, OS
+admission/certificate norm distinction and stationary A_OS predictor argument.
+RG2b now states its deviation bound, finite residual chain, proposal domains
+and local inverse footprint self-map. Spatial and represented-map wording is
+also corrected. The [review correction map](./investigations/grc9v4-constitutive-design/drafts/spark-completion/Traceability.md#manuscript-review-corrections--2026-11-01)
+records the locations and focused FLINT verification. This round changes no
+accepted trajectories, numerical tolerances, scientific authority or debt
+dispositions. The corrected editorial edition is now adopted.
+
+The repository boundary audit now passes, including the unchanged accepted
+release, all ten exact profiles and verified handoff integrity. An
+[exact document successor](./phase-9-grcv4/verification/p9_spark_document_epoch.py)
+reconciles five registry/planning documents with their basin-era Git subjects;
+the current checklist and three repaired readers use the finite SC-3 metadata
+binding. All 392 retained context bindings reconcile. Seven targeted regression
+tests and six basin authority/surface tests pass, including rejection of
+unrelated edits after cached historical reads. The earlier authority's audit
+failure note records its adoption-time state; this repair changes maintenance
+status without rewriting that authority, its manifests or numerical evidence.
+
+The completed spark-research checklist is consolidated under
+[P9-10.4](./Phase-9-GRCV4-ImplementationChecklist.md#p9-104-capability-publication-and-spark-completion).
+Stale review/next-family checkboxes and detached appendices are removed; the
+investigation checklist links to this canonical section. Native and aggregate
+obligations remain with P9-9.1a and P9-10.5/10.6 respectively.
+
+**Current decision: accepted; commit requested.** Formal endpoint adoption,
+corrected manuscript adoption, publication integration and boundary repair are
+complete. Native P9-9.1a and aggregate P9-10.5/10.6 remain separately scoped
+future work; this checkpoint does not authorize starting them.
+
+```sh
+.venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+.venv/bin/python implementation/phase-9-grcv4/verification/test_p9_spark_document_epoch.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_publication_corrections.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_earlier_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_earlier_sc3.py
+```
+
+Earlier sections preserve historical dispositions, including pending flags.
+
+## Historical research checkpoint: earlier C-family closure — 2026-11-01
 
 The user requests revisiting C_OS through A_OS toward roughly 400 beats.
 [Four new direct witnesses](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCEarlierClosure.md)

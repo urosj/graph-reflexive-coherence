@@ -4898,3 +4898,33 @@ PATHS.update({
     'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_earlier_c.py',
     'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_earlier_c_metadata.py',
 })
+
+# Formal adoption of five earlier scientific endpoints; native scope unchanged.
+PATHS.update({
+    'implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionEarlierSC3Authority.md',
+    'implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-earlier/Authority.json',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/2026-11-GRC-V4.md',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/2026-11-GRC9V4-Spark-Completion-Earlier.md',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-earlier-proposal.md',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/README.md',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/spark-completion/Proposal.md',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/spark-completion/Traceability.md',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/EarlierSC3ClaimDebtLedger.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/EarlierSC3Sources.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/EarlierSC3Validation.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/EarlierScientificAcceptance.json',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_earlier_sc3.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_publication_corrections.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_earlier_sc3.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/SparkCompletionEarlierAccepted.md',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/SparkCompletionOverview.md',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-earlier-accepted.js',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_earlier_accepted.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_earlier_sc3_metadata.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_publication.py',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkEarlierReconciliation.json',
+    'implementation/phase-9-grcv4/verification/p9_spark_document_epoch.py',
+    'implementation/phase-9-grcv4/verification/test_p9_spark_document_epoch.py',
+    'specs/grc-9-v4-spark-completion-earlier-source-manifest.json',
+    'specs/grc-9-v4-spark-completion-earlier.md',
+})

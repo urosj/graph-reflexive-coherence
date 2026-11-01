@@ -10,6 +10,8 @@ from pathlib import Path
 import subprocess
 import sys
 
+from p9_spark_document_epoch import previous_bytes as spark_predecessor_bytes
+
 ROOT = Path(__file__).resolve().parents[3]
 INV = "implementation/investigations/grc9v4-constitutive-design/"
 SIDE = INV + "tools/exploratory-side-tool/"
@@ -50,7 +52,7 @@ def checked_manifest(root=ROOT):
         path = root / row["path"]
         if (
             not path.resolve().is_relative_to(root.resolve())
-            or sha(path.read_bytes()) != row["sha256"]
+            or sha(spark_predecessor_bytes(root, row["path"])) != row["sha256"]
         ):
             raise ValueError("basin propagation source drift: " + row["path"])
     return value
@@ -60,10 +62,10 @@ def predecessor_document_bytes(root, name):
     """Only the exact bound insertion may differ; no generic path exemption."""
     root = Path(root)
     if name not in DOCUMENTS:
-        return (root / name).read_bytes()
+        return spark_predecessor_bytes(root, name)
     value = checked_manifest(root)
     row = next(r for r in value["document_successors"] if r["path"] == name)
-    current = (root / name).read_bytes()
+    current = spark_predecessor_bytes(root, name)
     start, end = row["start"].encode(), row["end"].encode()
     if current.count(start) != 1 or current.count(end) != 1:
         raise ValueError("basin document insertion is not unique: " + name)

@@ -4,6 +4,7 @@ import json,lzma
 from .basin import _bound_file
 from .canonical import digest,load_json_object,record_digest,file_sha256
 from .spark_earlier_c_metadata import checked_epoch,need
+from .spark_earlier_sc3_metadata import reviewed_source_bytes
 BASE='implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/'
 REPORT=BASE+'CEarlierResearch.json'
 REPORT_DIGEST='38b6966aad65350055c3452b1d20094fc0701f44564bd0f758ea210563bd2373'
@@ -17,7 +18,7 @@ def spark_earlier_c_status(root,side):
          not r['native_completion'] and not r['G4_accepted'] and r['additional_event_gain']==0,'earlier witness scope')
     need(r['families']==FAMILIES and r['ordinary_duration']=='32' and r['window_elapsed']=='64', 'family or duration changed')
     need(len({x['path']for x in r['sources']})==len(r['sources']),'duplicate source')
-    for ref in r['sources']:_bound_file(root,ref['path'],ref['sha256'])
+    for ref in r['sources']:reviewed_source_bytes(root,ref['path'],ref['sha256'])
     proofs=load_json_object(root/(BASE+'CEarlierProofs.json'))
     need(proofs['record_digest']==record_digest(proofs,'record_digest')==r['proofs_digest'],'whole-domain proof identity')
     for family in FAMILIES:
@@ -48,4 +49,4 @@ def spark_earlier_c_source(root,side,path):
     value=spark_earlier_c_status(root,side)
     ref=next((r for r in value['source_refs']if r['path']==path),None)
     if ref is None:raise KeyError('not an indexed earlier-closure source')
-    return _bound_file(Path(root),path,ref['sha256']).read_bytes(),ref
+    return reviewed_source_bytes(root,path,ref['sha256']),ref

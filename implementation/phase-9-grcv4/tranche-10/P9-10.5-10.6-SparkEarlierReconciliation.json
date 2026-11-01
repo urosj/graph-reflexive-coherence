@@ -1,0 +1,47 @@
+{
+  "schema": "grc9v4-spark-earlier-reconciliation-v1",
+  "authority": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-earlier/Authority.json",
+    "sha256": "efe76e7b2774d2333550c5333fda79f279005c593690317318e8f8bd58440393"
+  },
+  "ledger": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/EarlierSC3ClaimDebtLedger.json",
+    "sha256": "0c948881e4ef86408560e2bc9627d0a894dc12327faf831822ad96db96cb3896"
+  },
+  "manifest": {
+    "path": "specs/grc-9-v4-spark-completion-earlier-source-manifest.json",
+    "sha256": "31f7a2900e5eae401d71bb495755d9df7cc2de39e85cb6c84d652414486a9dfb"
+  },
+  "scope": {
+    "scientific_families": [
+      "C_OS",
+      "C_CI",
+      "C_PC",
+      "C_CI_PC",
+      "A_OS",
+      "A_CI",
+      "A_PC",
+      "A_CI_PC",
+      "C_RG2b",
+      "A_RG2b"
+    ],
+    "adopted_earlier_endpoints": [
+      "C_OS",
+      "C_CI",
+      "C_PC",
+      "C_CI_PC",
+      "A_OS"
+    ],
+    "SC1_reopened": false,
+    "native_completed_spark_support": false,
+    "hierarchy_support": false,
+    "G4_accepted": false,
+    "aggregate_debts_closed": [],
+    "native_support_added": [],
+    "additional_event_gain": 0
+  },
+  "contribution": "Five shorter endpoints formally adopted; no new births or aggregate/native closure.",
+  "historical_initial_results_preserved": true,
+  "known_audit_failure": "basin propagation source drift: specs/README.md",
+  "record_digest": "a04f729ce86be476a2c70279776e58db577be94eb87b9be85ad4d7569630abb4"
+}

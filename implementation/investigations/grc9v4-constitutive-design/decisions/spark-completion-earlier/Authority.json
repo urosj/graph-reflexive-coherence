@@ -1,0 +1,891 @@
+{
+  "schema": "grc9v4-spark-earlier-authority-v1",
+  "record_id": "SC-EARLY-SC3-AUTHORITY-v1",
+  "status": "accepted_bounded_scientific",
+  "accepted_on": "2026-11-01",
+  "predecessor": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-rg2b/Authority.json",
+    "sha256": "5d08255987c001cd7d5152ac78954b69b513c10a041c95ca614f24383defcfbd"
+  },
+  "acceptance": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/EarlierScientificAcceptance.json",
+    "sha256": "cbaad4a36a76a0d5cb6db0cc0a7a51df7a7ccc849a4b05ab68631f6063766e54"
+  },
+  "design": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionEarlierSC3Authority.md",
+    "sha256": "3eae4e7d38f2b8b0e16c66a31f1d89ee738c6048dc99056ef8641044d2ab696c"
+  },
+  "claims": [
+    {
+      "claim_id": "SC-EARLY-COS-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "family": "C_OS",
+      "statement": "The declared full 14-dimensional C_OS domain strictly self-maps and contracts with uniform complete basins.",
+      "limits": [
+        "Same declared laws, sources, events, allocations, history policies, SC-1 classifier, tolerances and uniform duration 32; no arbitrary-graph or all-parameter result.",
+        "Full physical ordinary-map contraction and strict self-mapping, not merely an inner root, frozen history or center spectrum.",
+        "Current inherits one child for the same event; reset/replay and this certificate successor earn zero additional live gain.",
+        "No earliest-entry or globally optimal certificate claim. A_OS below-100 investigation remains paused.",
+        "Accepted analytic derivatives and retained evidence are reused. No independent external review is claimed; C_OS has two same-implementation short-prefix replays, and the other four have no new trajectory replay.",
+        "Original full archives, execution counts, research flags and projections remain historical evidence. Mathematical closure needs no later physical evolution; A_OS verification still authenticates its original full archives.",
+        "Native P9-9.1a numerics/lifecycle, hierarchy, aggregate P9-10.5/10.6 and G4 remain open. The existing specs/README.md audit drift remains unwaived."
+      ]
+    },
+    {
+      "claim_id": "SC-EARLY-COS-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "family": "C_OS",
+      "statement": "The same-event C_OS current entry/completion is 374/376; reset is 375/377 at duration 32, with no supporting tail or additional gain.",
+      "limits": [
+        "Same declared laws, sources, events, allocations, history policies, SC-1 classifier, tolerances and uniform duration 32; no arbitrary-graph or all-parameter result.",
+        "Full physical ordinary-map contraction and strict self-mapping, not merely an inner root, frozen history or center spectrum.",
+        "Current inherits one child for the same event; reset/replay and this certificate successor earn zero additional live gain.",
+        "No earliest-entry or globally optimal certificate claim. A_OS below-100 investigation remains paused.",
+        "Accepted analytic derivatives and retained evidence are reused. No independent external review is claimed; C_OS has two same-implementation short-prefix replays, and the other four have no new trajectory replay.",
+        "Original full archives, execution counts, research flags and projections remain historical evidence. Mathematical closure needs no later physical evolution; A_OS verification still authenticates its original full archives.",
+        "Native P9-9.1a numerics/lifecycle, hierarchy, aggregate P9-10.5/10.6 and G4 remain open. The existing specs/README.md audit drift remains unwaived."
+      ]
+    },
+    {
+      "claim_id": "SC-EARLY-CCI-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "family": "C_CI",
+      "statement": "The declared full 14-dimensional C_CI domain strictly self-maps and contracts with uniform complete basins.",
+      "limits": [
+        "Same declared laws, sources, events, allocations, history policies, SC-1 classifier, tolerances and uniform duration 32; no arbitrary-graph or all-parameter result.",
+        "Full physical ordinary-map contraction and strict self-mapping, not merely an inner root, frozen history or center spectrum.",
+        "Current inherits one child for the same event; reset/replay and this certificate successor earn zero additional live gain.",
+        "No earliest-entry or globally optimal certificate claim. A_OS below-100 investigation remains paused.",
+        "Accepted analytic derivatives and retained evidence are reused. No independent external review is claimed; C_OS has two same-implementation short-prefix replays, and the other four have no new trajectory replay.",
+        "Original full archives, execution counts, research flags and projections remain historical evidence. Mathematical closure needs no later physical evolution; A_OS verification still authenticates its original full archives.",
+        "Native P9-9.1a numerics/lifecycle, hierarchy, aggregate P9-10.5/10.6 and G4 remain open. The existing specs/README.md audit drift remains unwaived."
+      ]
+    },
+    {
+      "claim_id": "SC-EARLY-CCI-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "family": "C_CI",
+      "statement": "The same-event C_CI current entry/completion is 374/376; reset is 375/377 at duration 32, with no supporting tail or additional gain.",
+      "limits": [
+        "Same declared laws, sources, events, allocations, history policies, SC-1 classifier, tolerances and uniform duration 32; no arbitrary-graph or all-parameter result.",
+        "Full physical ordinary-map contraction and strict self-mapping, not merely an inner root, frozen history or center spectrum.",
+        "Current inherits one child for the same event; reset/replay and this certificate successor earn zero additional live gain.",
+        "No earliest-entry or globally optimal certificate claim. A_OS below-100 investigation remains paused.",
+        "Accepted analytic derivatives and retained evidence are reused. No independent external review is claimed; C_OS has two same-implementation short-prefix replays, and the other four have no new trajectory replay.",
+        "Original full archives, execution counts, research flags and projections remain historical evidence. Mathematical closure needs no later physical evolution; A_OS verification still authenticates its original full archives.",
+        "Native P9-9.1a numerics/lifecycle, hierarchy, aggregate P9-10.5/10.6 and G4 remain open. The existing specs/README.md audit drift remains unwaived."
+      ]
+    },
+    {
+      "claim_id": "SC-EARLY-CPC-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "family": "C_PC",
+      "statement": "The declared full 60-dimensional C_PC domain strictly self-maps and contracts with uniform complete basins.",
+      "limits": [
+        "Same declared laws, sources, events, allocations, history policies, SC-1 classifier, tolerances and uniform duration 32; no arbitrary-graph or all-parameter result.",
+        "Full physical ordinary-map contraction and strict self-mapping, not merely an inner root, frozen history or center spectrum.",
+        "Current inherits one child for the same event; reset/replay and this certificate successor earn zero additional live gain.",
+        "No earliest-entry or globally optimal certificate claim. A_OS below-100 investigation remains paused.",
+        "Accepted analytic derivatives and retained evidence are reused. No independent external review is claimed; C_OS has two same-implementation short-prefix replays, and the other four have no new trajectory replay.",
+        "Original full archives, execution counts, research flags and projections remain historical evidence. Mathematical closure needs no later physical evolution; A_OS verification still authenticates its original full archives.",
+        "Native P9-9.1a numerics/lifecycle, hierarchy, aggregate P9-10.5/10.6 and G4 remain open. The existing specs/README.md audit drift remains unwaived."
+      ]
+    },
+    {
+      "claim_id": "SC-EARLY-CPC-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "family": "C_PC",
+      "statement": "The same-event C_PC current entry/completion is 374/376; reset is 375/377 at duration 32, with no supporting tail or additional gain.",
+      "limits": [
+        "Same declared laws, sources, events, allocations, history policies, SC-1 classifier, tolerances and uniform duration 32; no arbitrary-graph or all-parameter result.",
+        "Full physical ordinary-map contraction and strict self-mapping, not merely an inner root, frozen history or center spectrum.",
+        "Current inherits one child for the same event; reset/replay and this certificate successor earn zero additional live gain.",
+        "No earliest-entry or globally optimal certificate claim. A_OS below-100 investigation remains paused.",
+        "Accepted analytic derivatives and retained evidence are reused. No independent external review is claimed; C_OS has two same-implementation short-prefix replays, and the other four have no new trajectory replay.",
+        "Original full archives, execution counts, research flags and projections remain historical evidence. Mathematical closure needs no later physical evolution; A_OS verification still authenticates its original full archives.",
+        "Native P9-9.1a numerics/lifecycle, hierarchy, aggregate P9-10.5/10.6 and G4 remain open. The existing specs/README.md audit drift remains unwaived."
+      ]
+    },
+    {
+      "claim_id": "SC-EARLY-CCIPC-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "family": "C_CI_PC",
+      "statement": "The declared full 60-dimensional C_CI_PC domain strictly self-maps and contracts with uniform complete basins.",
+      "limits": [
+        "Same declared laws, sources, events, allocations, history policies, SC-1 classifier, tolerances and uniform duration 32; no arbitrary-graph or all-parameter result.",
+        "Full physical ordinary-map contraction and strict self-mapping, not merely an inner root, frozen history or center spectrum.",
+        "Current inherits one child for the same event; reset/replay and this certificate successor earn zero additional live gain.",
+        "No earliest-entry or globally optimal certificate claim. A_OS below-100 investigation remains paused.",
+        "Accepted analytic derivatives and retained evidence are reused. No independent external review is claimed; C_OS has two same-implementation short-prefix replays, and the other four have no new trajectory replay.",
+        "Original full archives, execution counts, research flags and projections remain historical evidence. Mathematical closure needs no later physical evolution; A_OS verification still authenticates its original full archives.",
+        "Native P9-9.1a numerics/lifecycle, hierarchy, aggregate P9-10.5/10.6 and G4 remain open. The existing specs/README.md audit drift remains unwaived."
+      ]
+    },
+    {
+      "claim_id": "SC-EARLY-CCIPC-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "family": "C_CI_PC",
+      "statement": "The same-event C_CI_PC current entry/completion is 374/376; reset is 375/377 at duration 32, with no supporting tail or additional gain.",
+      "limits": [
+        "Same declared laws, sources, events, allocations, history policies, SC-1 classifier, tolerances and uniform duration 32; no arbitrary-graph or all-parameter result.",
+        "Full physical ordinary-map contraction and strict self-mapping, not merely an inner root, frozen history or center spectrum.",
+        "Current inherits one child for the same event; reset/replay and this certificate successor earn zero additional live gain.",
+        "No earliest-entry or globally optimal certificate claim. A_OS below-100 investigation remains paused.",
+        "Accepted analytic derivatives and retained evidence are reused. No independent external review is claimed; C_OS has two same-implementation short-prefix replays, and the other four have no new trajectory replay.",
+        "Original full archives, execution counts, research flags and projections remain historical evidence. Mathematical closure needs no later physical evolution; A_OS verification still authenticates its original full archives.",
+        "Native P9-9.1a numerics/lifecycle, hierarchy, aggregate P9-10.5/10.6 and G4 remain open. The existing specs/README.md audit drift remains unwaived."
+      ]
+    },
+    {
+      "claim_id": "SC-EARLY-AOS-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "family": "A_OS",
+      "statement": "The declared full 30-dimensional A_OS domain strictly self-maps and contracts with uniform complete basins.",
+      "limits": [
+        "Same declared laws, sources, events, allocations, history policies, SC-1 classifier, tolerances and uniform duration 32; no arbitrary-graph or all-parameter result.",
+        "Full physical ordinary-map contraction and strict self-mapping, not merely an inner root, frozen history or center spectrum.",
+        "Current inherits one child for the same event; reset/replay and this certificate successor earn zero additional live gain.",
+        "No earliest-entry or globally optimal certificate claim. A_OS below-100 investigation remains paused.",
+        "Accepted analytic derivatives and retained evidence are reused. No independent external review is claimed; C_OS has two same-implementation short-prefix replays, and the other four have no new trajectory replay.",
+        "Original full archives, execution counts, research flags and projections remain historical evidence. Mathematical closure needs no later physical evolution; A_OS verification still authenticates its original full archives.",
+        "Native P9-9.1a numerics/lifecycle, hierarchy, aggregate P9-10.5/10.6 and G4 remain open. The existing specs/README.md audit drift remains unwaived."
+      ]
+    },
+    {
+      "claim_id": "SC-EARLY-AOS-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "family": "A_OS",
+      "statement": "The same-event A_OS current entry/completion is 375/377; reset is 372/374 at duration 32, with no supporting tail or additional gain.",
+      "limits": [
+        "Same declared laws, sources, events, allocations, history policies, SC-1 classifier, tolerances and uniform duration 32; no arbitrary-graph or all-parameter result.",
+        "Full physical ordinary-map contraction and strict self-mapping, not merely an inner root, frozen history or center spectrum.",
+        "Current inherits one child for the same event; reset/replay and this certificate successor earn zero additional live gain.",
+        "No earliest-entry or globally optimal certificate claim. A_OS below-100 investigation remains paused.",
+        "Accepted analytic derivatives and retained evidence are reused. No independent external review is claimed; C_OS has two same-implementation short-prefix replays, and the other four have no new trajectory replay.",
+        "Original full archives, execution counts, research flags and projections remain historical evidence. Mathematical closure needs no later physical evolution; A_OS verification still authenticates its original full archives.",
+        "Native P9-9.1a numerics/lifecycle, hierarchy, aggregate P9-10.5/10.6 and G4 remain open. The existing specs/README.md audit drift remains unwaived."
+      ]
+    }
+  ],
+  "contracts": [
+    {
+      "equation_contract_id": "SC-EARLY-EC-FULL-STATE-RETURN",
+      "design_section": "## SC-EARLY-EC-FULL-STATE-RETURN",
+      "normative_equation_or_contract": "The existing SC-1 geometric classifier, full parent-footprint correspondence,\nquartic law and v2 completion schema are unchanged. Adopt a full-dimensional\nrelative domain K for each actual ordinary map F on exact charge 21. It must\ncontain all independent resource, conductance and signed carrier directions\npresent in that family. Uniform pairwise contraction q<1, strict self-mapping\nand uniform complete basin predicates imply exact future persistence and\nattraction after entry. A two-positive-beat window records completion; it is\nnot the stability proof. The entire domain is certified in both chiral charts.\n\nFor C_OS/C_CI use the exact rational resource parallelotope\nK_C={C0+S a: ||a||inf<=1}, U S=I14. C_PC/C_CI_PC use its product with the\nfull symmetric-star carrier ball ||Z||F<=10^-8, including all 46 signed\ncarrier directions. For A_OS use the exact rational parallelotope in\n(C,log W), U S=I30, with all sixteen conductance directions active.\nThe bound q+||U(F(x0)-x0)||inf<1 applies to a unit parallelotope; persistent\nfamilies use the corresponding scaled maximum product norm and full blocks.\nWhole-domain analytic/implicit derivatives and exact correlated edge support\nprove the bounds. Both H consumers, selected CI roots and actual history\nwriters remain included. The C_OS correlated split bound is below 2.687e-21\nat the unchanged 1e-11 tolerance. Domain verification takes no later\ntrajectory as input. These are separately verified maps, not a transfer of\ntrajectory entry between families."
+    },
+    {
+      "equation_contract_id": "SC-EARLY-COS-EC-ENDPOINT",
+      "design_section": "## SC-EARLY-COS-EC-ENDPOINT",
+      "accepted_claim_ids": [
+        "SC-EARLY-COS-CL-C-FULL-TRAP",
+        "SC-EARLY-COS-CL-C-COMPLETION"
+      ],
+      "normative_equation_or_contract": "Adopt C_OS's full-state domain and same-event earlier completion as\nbounded conditional mathematics. The physical state is C with fourteen charge-tangent directions.\nThe separately enclosed full-map contraction is q<0.995426167.\nThe complete spatial basins remain p:{p,private} and\nsatellite/2:{n2,n8,satellite/2} on both chiral charts.\n\nCurrent entry is 374; its positive two-beat window ends at\n376, elapsed target time 12032, with inherited local gain one.\nReset entry is 375; its window ends at 377, elapsed target time\n12064, with zero live gain. Uniform ordinary duration is 32.\nZero later supporting trajectory steps and zero additional event gain are\nrequired. These are sufficient witness endpoints, not earliest possible times.\nThe initial current endpoint 902 remains a historical accepted result;\nits source/event and execution record are not overwritten."
+    },
+    {
+      "equation_contract_id": "SC-EARLY-CCI-EC-ENDPOINT",
+      "design_section": "## SC-EARLY-CCI-EC-ENDPOINT",
+      "accepted_claim_ids": [
+        "SC-EARLY-CCI-CL-C-FULL-TRAP",
+        "SC-EARLY-CCI-CL-C-COMPLETION"
+      ],
+      "normative_equation_or_contract": "Adopt C_CI's full-state domain and same-event earlier completion as\nbounded conditional mathematics. The physical state is C with fourteen charge-tangent directions.\nThe separately enclosed full-map contraction is q<0.995426412.\nThe complete spatial basins remain p:{p,private} and\nsatellite/2:{n2,n8,satellite/2} on both chiral charts.\n\nCurrent entry is 374; its positive two-beat window ends at\n376, elapsed target time 12032, with inherited local gain one.\nReset entry is 375; its window ends at 377, elapsed target time\n12064, with zero live gain. Uniform ordinary duration is 32.\nZero later supporting trajectory steps and zero additional event gain are\nrequired. These are sufficient witness endpoints, not earliest possible times.\nThe initial current endpoint 851 remains a historical accepted result;\nits source/event and execution record are not overwritten."
+    },
+    {
+      "equation_contract_id": "SC-EARLY-CPC-EC-ENDPOINT",
+      "design_section": "## SC-EARLY-CPC-EC-ENDPOINT",
+      "accepted_claim_ids": [
+        "SC-EARLY-CPC-CL-C-FULL-TRAP",
+        "SC-EARLY-CPC-CL-C-COMPLETION"
+      ],
+      "normative_equation_or_contract": "Adopt C_PC's full-state domain and same-event earlier completion as\nbounded conditional mathematics. The physical state is C,Z with fourteen charge-tangent and all 46 signed symmetric-star carrier directions.\nThe separately enclosed full-map contraction is q<0.995650793.\nThe complete spatial basins remain p:{p,private} and\nsatellite/2:{n2,n8,satellite/2} on both chiral charts.\n\nCurrent entry is 374; its positive two-beat window ends at\n376, elapsed target time 12032, with inherited local gain one.\nReset entry is 375; its window ends at 377, elapsed target time\n12064, with zero live gain. Uniform ordinary duration is 32.\nZero later supporting trajectory steps and zero additional event gain are\nrequired. These are sufficient witness endpoints, not earliest possible times.\nThe initial current endpoint 851 remains a historical accepted result;\nits source/event and execution record are not overwritten."
+    },
+    {
+      "equation_contract_id": "SC-EARLY-CCIPC-EC-ENDPOINT",
+      "design_section": "## SC-EARLY-CCIPC-EC-ENDPOINT",
+      "accepted_claim_ids": [
+        "SC-EARLY-CCIPC-CL-C-FULL-TRAP",
+        "SC-EARLY-CCIPC-CL-C-COMPLETION"
+      ],
+      "normative_equation_or_contract": "Adopt C_CI_PC's full-state domain and same-event earlier completion as\nbounded conditional mathematics. The physical state is C,Z with fourteen charge-tangent and all 46 signed symmetric-star carrier directions.\nThe separately enclosed full-map contraction is q<0.995651123.\nThe complete spatial basins remain p:{p,private} and\nsatellite/2:{n2,n8,satellite/2} on both chiral charts.\n\nCurrent entry is 374; its positive two-beat window ends at\n376, elapsed target time 12032, with inherited local gain one.\nReset entry is 375; its window ends at 377, elapsed target time\n12064, with zero live gain. Uniform ordinary duration is 32.\nZero later supporting trajectory steps and zero additional event gain are\nrequired. These are sufficient witness endpoints, not earliest possible times.\nThe initial current endpoint 851 remains a historical accepted result;\nits source/event and execution record are not overwritten."
+    },
+    {
+      "equation_contract_id": "SC-EARLY-AOS-EC-ENDPOINT",
+      "design_section": "## SC-EARLY-AOS-EC-ENDPOINT",
+      "accepted_claim_ids": [
+        "SC-EARLY-AOS-CL-C-FULL-TRAP",
+        "SC-EARLY-AOS-CL-C-COMPLETION"
+      ],
+      "normative_equation_or_contract": "Adopt A_OS's full-state domain and same-event earlier completion as\nbounded conditional mathematics. The physical state is C,W_A with fourteen charge-tangent and all sixteen independent conductance directions.\nThe separately enclosed full-map contraction is q<0.995934130.\nThe complete spatial basins remain p:{p,private} and\nsatellite/2:{n2,n8,satellite/2} on both chiral charts.\n\nCurrent entry is 375; its positive two-beat window ends at\n377, elapsed target time 12064, with inherited local gain one.\nReset entry is 372; its window ends at 374, elapsed target time\n11968, with zero live gain. Uniform ordinary duration is 32.\nZero later supporting trajectory steps and zero additional event gain are\nrequired. These are sufficient witness endpoints, not earliest possible times.\nThe initial current endpoint 1041 remains a historical accepted result;\nits source/event and execution record are not overwritten."
+    },
+    {
+      "equation_contract_id": "SC-EARLY-EC-PROVENANCE-LIFECYCLE",
+      "design_section": "## SC-EARLY-EC-PROVENANCE-LIFECYCLE",
+      "normative_equation_or_contract": "The following endpoints replace the initial longer witnesses as the primary\naccepted endpoint contracts for these same declared events. Initial claims,\nsource/event identities, archives and generators remain valid historical\nreferences; they may be consulted for particular provenance or checks.\nNo historical execution is relabelled as a shorter execution.\n\nThe four C-family selected archives end at current 376/reset 377. C_OS has\nfresh short executions; the other three are authenticated coordinate-for-\ncoordinate prefixes of original executions ending at 851/819. A_OS uses\ncertified membership at current 375..377/reset 372..374 in its retained\n1041/1024 archives. Its adoption does not claim new short execution files.\nNone of the five invariant-domain proofs requires subsequent physical\nevolution after the selected window. Archived later states are provenance,\nnot a tail required to establish mathematical closure.\n\nEvery window uses positive ordinary duration 32, two beats and elapsed time\n64. Report target elapsed time separately from the source beat. Current\ninherits one local child; reset/replay receive no live gain, and this same-\nevent certificate successor creates zero additional gain. Representation,\ncontext, graph, profile, reset or rebase changes invalidate a live window.\nAt-most-once occurrence accounting and atomic publication remain mandatory.\n\nNative P9-9.1a must separately certify the represented full physical map,\nexact charge, complete predicates, all history directions and error smaller\nthan the selected image margin; it must bind these adopted endpoints and\nthe unchanged source/event/history identities and invalidation rules.\nNo native execution support, hierarchy, aggregate P9-10.5/10.6 closure or\nG4 acceptance is added. The known specs/README.md audit drift is unwaived."
+    }
+  ],
+  "endpoints": [
+    {
+      "family": "C_OS",
+      "code": "COS",
+      "full_dimension": 14,
+      "ordinary_duration": 32,
+      "current_entry": 374,
+      "current_completion": 376,
+      "reset_entry": 375,
+      "reset_completion": 377,
+      "current_elapsed_target_time": 12032,
+      "reset_elapsed_target_time": 12064,
+      "window_beats": 2,
+      "window_elapsed": 64,
+      "initial_current_completion": 902,
+      "initial_reset_completion": null,
+      "contraction_upper": "0.995426167",
+      "supporting_trajectory_steps_after_completion": 0,
+      "inherited_current_gain": 1,
+      "reset_live_gain": 0,
+      "additional_event_gain": 0,
+      "status": "accepted_bounded_scientific",
+      "earliest_completion_claimed": false,
+      "original_execution_counts_preserved": true,
+      "evidence_mode": "fresh_short_execution",
+      "predecessor_authority": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion/Authority.json",
+        "sha256": "92e619df2e3c0d49b967f88dd6bbb8580b2f40909e334997c4ae1cdacfb94ea7"
+      },
+      "research": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierResearch.json",
+        "sha256": "3672b1cc7b48a4f44c8aa82092285289f29e8254ac12f6da9c149a3c7ad2423a"
+      },
+      "claim_ids": [
+        "SC-EARLY-COS-CL-C-FULL-TRAP",
+        "SC-EARLY-COS-CL-C-COMPLETION"
+      ],
+      "endpoint_contract_id": "SC-EARLY-COS-EC-ENDPOINT",
+      "predecessor_endpoint_claim_ids": [
+        "SC2-CL-C-EXACT-SPARK-COMPLETION"
+      ]
+    },
+    {
+      "family": "C_CI",
+      "code": "CCI",
+      "full_dimension": 14,
+      "ordinary_duration": 32,
+      "current_entry": 374,
+      "current_completion": 376,
+      "reset_entry": 375,
+      "reset_completion": 377,
+      "current_elapsed_target_time": 12032,
+      "reset_elapsed_target_time": 12064,
+      "window_beats": 2,
+      "window_elapsed": 64,
+      "initial_current_completion": 851,
+      "initial_reset_completion": 819,
+      "contraction_upper": "0.995426412",
+      "supporting_trajectory_steps_after_completion": 0,
+      "inherited_current_gain": 1,
+      "reset_live_gain": 0,
+      "additional_event_gain": 0,
+      "status": "accepted_bounded_scientific",
+      "earliest_completion_claimed": false,
+      "original_execution_counts_preserved": true,
+      "evidence_mode": "authenticated_short_prefix",
+      "predecessor_authority": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-applicability/Authority.json",
+        "sha256": "34a27ca0fa45454a2edf697d49807cd4c0ab9fc5fbf4627a24cafdae2e07b346"
+      },
+      "research": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierResearch.json",
+        "sha256": "3672b1cc7b48a4f44c8aa82092285289f29e8254ac12f6da9c149a3c7ad2423a"
+      },
+      "claim_ids": [
+        "SC-EARLY-CCI-CL-C-FULL-TRAP",
+        "SC-EARLY-CCI-CL-C-COMPLETION"
+      ],
+      "endpoint_contract_id": "SC-EARLY-CCI-EC-ENDPOINT",
+      "predecessor_endpoint_claim_ids": [
+        "SC-CCI-CL-C-COMPLETION"
+      ]
+    },
+    {
+      "family": "C_PC",
+      "code": "CPC",
+      "full_dimension": 60,
+      "ordinary_duration": 32,
+      "current_entry": 374,
+      "current_completion": 376,
+      "reset_entry": 375,
+      "reset_completion": 377,
+      "current_elapsed_target_time": 12032,
+      "reset_elapsed_target_time": 12064,
+      "window_beats": 2,
+      "window_elapsed": 64,
+      "initial_current_completion": 851,
+      "initial_reset_completion": 819,
+      "contraction_upper": "0.995650793",
+      "supporting_trajectory_steps_after_completion": 0,
+      "inherited_current_gain": 1,
+      "reset_live_gain": 0,
+      "additional_event_gain": 0,
+      "status": "accepted_bounded_scientific",
+      "earliest_completion_claimed": false,
+      "original_execution_counts_preserved": true,
+      "evidence_mode": "authenticated_short_prefix",
+      "predecessor_authority": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-pc/Authority.json",
+        "sha256": "f97da5215998fc1c0f43c5f85f0216cf880ae3dce48b7edb09b8678dda2c3a13"
+      },
+      "research": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierResearch.json",
+        "sha256": "3672b1cc7b48a4f44c8aa82092285289f29e8254ac12f6da9c149a3c7ad2423a"
+      },
+      "claim_ids": [
+        "SC-EARLY-CPC-CL-C-FULL-TRAP",
+        "SC-EARLY-CPC-CL-C-COMPLETION"
+      ],
+      "endpoint_contract_id": "SC-EARLY-CPC-EC-ENDPOINT",
+      "predecessor_endpoint_claim_ids": [
+        "SC-CPC-CL-C-COMPLETION"
+      ]
+    },
+    {
+      "family": "C_CI_PC",
+      "code": "CCIPC",
+      "full_dimension": 60,
+      "ordinary_duration": 32,
+      "current_entry": 374,
+      "current_completion": 376,
+      "reset_entry": 375,
+      "reset_completion": 377,
+      "current_elapsed_target_time": 12032,
+      "reset_elapsed_target_time": 12064,
+      "window_beats": 2,
+      "window_elapsed": 64,
+      "initial_current_completion": 851,
+      "initial_reset_completion": 819,
+      "contraction_upper": "0.995651123",
+      "supporting_trajectory_steps_after_completion": 0,
+      "inherited_current_gain": 1,
+      "reset_live_gain": 0,
+      "additional_event_gain": 0,
+      "status": "accepted_bounded_scientific",
+      "earliest_completion_claimed": false,
+      "original_execution_counts_preserved": true,
+      "evidence_mode": "authenticated_short_prefix",
+      "predecessor_authority": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-ci-pc/Authority.json",
+        "sha256": "6abd05d2787d0896b594bb99ed8f39639bf00add36bfd1b6b329176f1acaa8be"
+      },
+      "research": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierResearch.json",
+        "sha256": "3672b1cc7b48a4f44c8aa82092285289f29e8254ac12f6da9c149a3c7ad2423a"
+      },
+      "claim_ids": [
+        "SC-EARLY-CCIPC-CL-C-FULL-TRAP",
+        "SC-EARLY-CCIPC-CL-C-COMPLETION"
+      ],
+      "endpoint_contract_id": "SC-EARLY-CCIPC-EC-ENDPOINT",
+      "predecessor_endpoint_claim_ids": [
+        "SC-CCIPC-CL-C-COMPLETION"
+      ]
+    },
+    {
+      "family": "A_OS",
+      "code": "AOS",
+      "full_dimension": 30,
+      "ordinary_duration": 32,
+      "current_entry": 375,
+      "current_completion": 377,
+      "reset_entry": 372,
+      "reset_completion": 374,
+      "current_elapsed_target_time": 12064,
+      "reset_elapsed_target_time": 11968,
+      "window_beats": 2,
+      "window_elapsed": 64,
+      "initial_current_completion": 1041,
+      "initial_reset_completion": 1024,
+      "contraction_upper": "0.995934130",
+      "supporting_trajectory_steps_after_completion": 0,
+      "inherited_current_gain": 1,
+      "reset_live_gain": 0,
+      "additional_event_gain": 0,
+      "status": "accepted_bounded_scientific",
+      "earliest_completion_claimed": false,
+      "original_execution_counts_preserved": true,
+      "evidence_mode": "retained_full_archive_membership",
+      "predecessor_authority": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-os/Authority.json",
+        "sha256": "59247cf5394dfe1733881b60791bcd6ed2e6df1a12070cc430cb1a6966671743"
+      },
+      "research": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSEarlierResearch.json",
+        "sha256": "b69f656f899046f3880fb4f65d137d1b5ff12f8c8bbacc4e5d406d53ac0ec57f"
+      },
+      "claim_ids": [
+        "SC-EARLY-AOS-CL-C-FULL-TRAP",
+        "SC-EARLY-AOS-CL-C-COMPLETION"
+      ],
+      "endpoint_contract_id": "SC-EARLY-AOS-EC-ENDPOINT",
+      "predecessor_endpoint_claim_ids": [
+        "SC-AOS-CL-C-COMPLETION"
+      ]
+    }
+  ],
+  "family_dispositions": [
+    {
+      "family": "C_OS",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "SC-1–SC-3 exact source-to-completion witness",
+      "native_completion_support": false,
+      "primary_endpoint": {
+        "family": "C_OS",
+        "code": "COS",
+        "full_dimension": 14,
+        "ordinary_duration": 32,
+        "current_entry": 374,
+        "current_completion": 376,
+        "reset_entry": 375,
+        "reset_completion": 377,
+        "current_elapsed_target_time": 12032,
+        "reset_elapsed_target_time": 12064,
+        "window_beats": 2,
+        "window_elapsed": 64,
+        "initial_current_completion": 902,
+        "initial_reset_completion": null,
+        "contraction_upper": "0.995426167",
+        "supporting_trajectory_steps_after_completion": 0,
+        "inherited_current_gain": 1,
+        "reset_live_gain": 0,
+        "additional_event_gain": 0,
+        "status": "accepted_bounded_scientific",
+        "earliest_completion_claimed": false,
+        "original_execution_counts_preserved": true,
+        "evidence_mode": "fresh_short_execution",
+        "predecessor_authority": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion/Authority.json",
+          "sha256": "92e619df2e3c0d49b967f88dd6bbb8580b2f40909e334997c4ae1cdacfb94ea7"
+        },
+        "research": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierResearch.json",
+          "sha256": "3672b1cc7b48a4f44c8aa82092285289f29e8254ac12f6da9c149a3c7ad2423a"
+        },
+        "claim_ids": [
+          "SC-EARLY-COS-CL-C-FULL-TRAP",
+          "SC-EARLY-COS-CL-C-COMPLETION"
+        ],
+        "endpoint_contract_id": "SC-EARLY-COS-EC-ENDPOINT",
+        "predecessor_endpoint_claim_ids": [
+          "SC2-CL-C-EXACT-SPARK-COMPLETION"
+        ]
+      }
+    },
+    {
+      "family": "C_CI",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded joint-root/full-map/source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false,
+      "primary_endpoint": {
+        "family": "C_CI",
+        "code": "CCI",
+        "full_dimension": 14,
+        "ordinary_duration": 32,
+        "current_entry": 374,
+        "current_completion": 376,
+        "reset_entry": 375,
+        "reset_completion": 377,
+        "current_elapsed_target_time": 12032,
+        "reset_elapsed_target_time": 12064,
+        "window_beats": 2,
+        "window_elapsed": 64,
+        "initial_current_completion": 851,
+        "initial_reset_completion": 819,
+        "contraction_upper": "0.995426412",
+        "supporting_trajectory_steps_after_completion": 0,
+        "inherited_current_gain": 1,
+        "reset_live_gain": 0,
+        "additional_event_gain": 0,
+        "status": "accepted_bounded_scientific",
+        "earliest_completion_claimed": false,
+        "original_execution_counts_preserved": true,
+        "evidence_mode": "authenticated_short_prefix",
+        "predecessor_authority": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-applicability/Authority.json",
+          "sha256": "34a27ca0fa45454a2edf697d49807cd4c0ab9fc5fbf4627a24cafdae2e07b346"
+        },
+        "research": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierResearch.json",
+          "sha256": "3672b1cc7b48a4f44c8aa82092285289f29e8254ac12f6da9c149a3c7ad2423a"
+        },
+        "claim_ids": [
+          "SC-EARLY-CCI-CL-C-FULL-TRAP",
+          "SC-EARLY-CCI-CL-C-COMPLETION"
+        ],
+        "endpoint_contract_id": "SC-EARLY-CCI-EC-ENDPOINT",
+        "predecessor_endpoint_claim_ids": [
+          "SC-CCI-CL-C-COMPLETION"
+        ]
+      }
+    },
+    {
+      "family": "C_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded full C/Z domain, trap and actual source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false,
+      "primary_endpoint": {
+        "family": "C_PC",
+        "code": "CPC",
+        "full_dimension": 60,
+        "ordinary_duration": 32,
+        "current_entry": 374,
+        "current_completion": 376,
+        "reset_entry": 375,
+        "reset_completion": 377,
+        "current_elapsed_target_time": 12032,
+        "reset_elapsed_target_time": 12064,
+        "window_beats": 2,
+        "window_elapsed": 64,
+        "initial_current_completion": 851,
+        "initial_reset_completion": 819,
+        "contraction_upper": "0.995650793",
+        "supporting_trajectory_steps_after_completion": 0,
+        "inherited_current_gain": 1,
+        "reset_live_gain": 0,
+        "additional_event_gain": 0,
+        "status": "accepted_bounded_scientific",
+        "earliest_completion_claimed": false,
+        "original_execution_counts_preserved": true,
+        "evidence_mode": "authenticated_short_prefix",
+        "predecessor_authority": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-pc/Authority.json",
+          "sha256": "f97da5215998fc1c0f43c5f85f0216cf880ae3dce48b7edb09b8678dda2c3a13"
+        },
+        "research": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierResearch.json",
+          "sha256": "3672b1cc7b48a4f44c8aa82092285289f29e8254ac12f6da9c149a3c7ad2423a"
+        },
+        "claim_ids": [
+          "SC-EARLY-CPC-CL-C-FULL-TRAP",
+          "SC-EARLY-CPC-CL-C-COMPLETION"
+        ],
+        "endpoint_contract_id": "SC-EARLY-CPC-EC-ENDPOINT",
+        "predecessor_endpoint_claim_ids": [
+          "SC-CPC-CL-C-COMPLETION"
+        ]
+      }
+    },
+    {
+      "family": "C_CI_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded selected composite root, full C/Z return and same-source completion chain accepted; native implementation pending",
+      "native_completion_support": false,
+      "primary_endpoint": {
+        "family": "C_CI_PC",
+        "code": "CCIPC",
+        "full_dimension": 60,
+        "ordinary_duration": 32,
+        "current_entry": 374,
+        "current_completion": 376,
+        "reset_entry": 375,
+        "reset_completion": 377,
+        "current_elapsed_target_time": 12032,
+        "reset_elapsed_target_time": 12064,
+        "window_beats": 2,
+        "window_elapsed": 64,
+        "initial_current_completion": 851,
+        "initial_reset_completion": 819,
+        "contraction_upper": "0.995651123",
+        "supporting_trajectory_steps_after_completion": 0,
+        "inherited_current_gain": 1,
+        "reset_live_gain": 0,
+        "additional_event_gain": 0,
+        "status": "accepted_bounded_scientific",
+        "earliest_completion_claimed": false,
+        "original_execution_counts_preserved": true,
+        "evidence_mode": "authenticated_short_prefix",
+        "predecessor_authority": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-ci-pc/Authority.json",
+          "sha256": "6abd05d2787d0896b594bb99ed8f39639bf00add36bfd1b6b329176f1acaa8be"
+        },
+        "research": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierResearch.json",
+          "sha256": "3672b1cc7b48a4f44c8aa82092285289f29e8254ac12f6da9c149a3c7ad2423a"
+        },
+        "claim_ids": [
+          "SC-EARLY-CCIPC-CL-C-FULL-TRAP",
+          "SC-EARLY-CCIPC-CL-C-COMPLETION"
+        ],
+        "endpoint_contract_id": "SC-EARLY-CCIPC-EC-ENDPOINT",
+        "predecessor_endpoint_claim_ids": [
+          "SC-CCIPC-CL-C-COMPLETION"
+        ]
+      }
+    },
+    {
+      "family": "A_OS",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded staged A_OS domain, self-consistent writer/full C/W return and actual completion chain accepted; native implementation pending",
+      "native_completion_support": false,
+      "primary_endpoint": {
+        "family": "A_OS",
+        "code": "AOS",
+        "full_dimension": 30,
+        "ordinary_duration": 32,
+        "current_entry": 375,
+        "current_completion": 377,
+        "reset_entry": 372,
+        "reset_completion": 374,
+        "current_elapsed_target_time": 12064,
+        "reset_elapsed_target_time": 11968,
+        "window_beats": 2,
+        "window_elapsed": 64,
+        "initial_current_completion": 1041,
+        "initial_reset_completion": 1024,
+        "contraction_upper": "0.995934130",
+        "supporting_trajectory_steps_after_completion": 0,
+        "inherited_current_gain": 1,
+        "reset_live_gain": 0,
+        "additional_event_gain": 0,
+        "status": "accepted_bounded_scientific",
+        "earliest_completion_claimed": false,
+        "original_execution_counts_preserved": true,
+        "evidence_mode": "retained_full_archive_membership",
+        "predecessor_authority": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-os/Authority.json",
+          "sha256": "59247cf5394dfe1733881b60791bcd6ed2e6df1a12070cc430cb1a6966671743"
+        },
+        "research": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSEarlierResearch.json",
+          "sha256": "b69f656f899046f3880fb4f65d137d1b5ff12f8c8bbacc4e5d406d53ac0ec57f"
+        },
+        "claim_ids": [
+          "SC-EARLY-AOS-CL-C-FULL-TRAP",
+          "SC-EARLY-AOS-CL-C-COMPLETION"
+        ],
+        "endpoint_contract_id": "SC-EARLY-AOS-EC-ENDPOINT",
+        "predecessor_endpoint_claim_ids": [
+          "SC-AOS-CL-C-COMPLETION"
+        ]
+      }
+    },
+    {
+      "family": "A_CI",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded selected A_CI root, implicit full C/W return, self-consistent writer and actual completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded incoming-carrier domain, full C/W/Z return, independent writers and actual two-history completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded selected composite root, full implicit C/W/Z return, same-source geometry/carrier coupling and independent writers and actual two-history completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_RG2b",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded quartic Lipschitz section, full 14-dimensional direct invariant domain and actual source-to-392 completion without a supporting tail accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_RG2b",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded joint Lipschitz section with writer, full 30-dimensional direct C/W domain and actual source-to-302 completion without a supporting tail accepted; native implementation pending",
+      "native_completion_support": false
+    }
+  ],
+  "scope": {
+    "scientific_families": [
+      "C_OS",
+      "C_CI",
+      "C_PC",
+      "C_CI_PC",
+      "A_OS",
+      "A_CI",
+      "A_PC",
+      "A_CI_PC",
+      "C_RG2b",
+      "A_RG2b"
+    ],
+    "adopted_earlier_endpoints": [
+      "C_OS",
+      "C_CI",
+      "C_PC",
+      "C_CI_PC",
+      "A_OS"
+    ],
+    "SC1_reopened": false,
+    "native_completed_spark_support": false,
+    "hierarchy_support": false,
+    "G4_accepted": false,
+    "aggregate_debts_closed": [],
+    "native_support_added": [],
+    "additional_event_gain": 0
+  },
+  "verification_obligations": [
+    {
+      "obligation_id": "SC-EARLY-COS-VO-NATIVE-NUMERICS",
+      "status": "pending",
+      "destination": "P9-9.1a",
+      "family": "C_OS",
+      "contract_ids": [
+        "SC-EARLY-EC-FULL-STATE-RETURN",
+        "SC-EARLY-COS-EC-ENDPOINT",
+        "SC-EARLY-EC-PROVENANCE-LIFECYCLE"
+      ]
+    },
+    {
+      "obligation_id": "SC-EARLY-COS-VO-NATIVE-LIFECYCLE",
+      "status": "pending",
+      "destination": "P9-9.1a",
+      "family": "C_OS",
+      "contract_ids": [
+        "SC-EARLY-EC-FULL-STATE-RETURN",
+        "SC-EARLY-COS-EC-ENDPOINT",
+        "SC-EARLY-EC-PROVENANCE-LIFECYCLE"
+      ]
+    },
+    {
+      "obligation_id": "SC-EARLY-CCI-VO-NATIVE-NUMERICS",
+      "status": "pending",
+      "destination": "P9-9.1a",
+      "family": "C_CI",
+      "contract_ids": [
+        "SC-EARLY-EC-FULL-STATE-RETURN",
+        "SC-EARLY-CCI-EC-ENDPOINT",
+        "SC-EARLY-EC-PROVENANCE-LIFECYCLE"
+      ]
+    },
+    {
+      "obligation_id": "SC-EARLY-CCI-VO-NATIVE-LIFECYCLE",
+      "status": "pending",
+      "destination": "P9-9.1a",
+      "family": "C_CI",
+      "contract_ids": [
+        "SC-EARLY-EC-FULL-STATE-RETURN",
+        "SC-EARLY-CCI-EC-ENDPOINT",
+        "SC-EARLY-EC-PROVENANCE-LIFECYCLE"
+      ]
+    },
+    {
+      "obligation_id": "SC-EARLY-CPC-VO-NATIVE-NUMERICS",
+      "status": "pending",
+      "destination": "P9-9.1a",
+      "family": "C_PC",
+      "contract_ids": [
+        "SC-EARLY-EC-FULL-STATE-RETURN",
+        "SC-EARLY-CPC-EC-ENDPOINT",
+        "SC-EARLY-EC-PROVENANCE-LIFECYCLE"
+      ]
+    },
+    {
+      "obligation_id": "SC-EARLY-CPC-VO-NATIVE-LIFECYCLE",
+      "status": "pending",
+      "destination": "P9-9.1a",
+      "family": "C_PC",
+      "contract_ids": [
+        "SC-EARLY-EC-FULL-STATE-RETURN",
+        "SC-EARLY-CPC-EC-ENDPOINT",
+        "SC-EARLY-EC-PROVENANCE-LIFECYCLE"
+      ]
+    },
+    {
+      "obligation_id": "SC-EARLY-CCIPC-VO-NATIVE-NUMERICS",
+      "status": "pending",
+      "destination": "P9-9.1a",
+      "family": "C_CI_PC",
+      "contract_ids": [
+        "SC-EARLY-EC-FULL-STATE-RETURN",
+        "SC-EARLY-CCIPC-EC-ENDPOINT",
+        "SC-EARLY-EC-PROVENANCE-LIFECYCLE"
+      ]
+    },
+    {
+      "obligation_id": "SC-EARLY-CCIPC-VO-NATIVE-LIFECYCLE",
+      "status": "pending",
+      "destination": "P9-9.1a",
+      "family": "C_CI_PC",
+      "contract_ids": [
+        "SC-EARLY-EC-FULL-STATE-RETURN",
+        "SC-EARLY-CCIPC-EC-ENDPOINT",
+        "SC-EARLY-EC-PROVENANCE-LIFECYCLE"
+      ]
+    },
+    {
+      "obligation_id": "SC-EARLY-AOS-VO-NATIVE-NUMERICS",
+      "status": "pending",
+      "destination": "P9-9.1a",
+      "family": "A_OS",
+      "contract_ids": [
+        "SC-EARLY-EC-FULL-STATE-RETURN",
+        "SC-EARLY-AOS-EC-ENDPOINT",
+        "SC-EARLY-EC-PROVENANCE-LIFECYCLE"
+      ]
+    },
+    {
+      "obligation_id": "SC-EARLY-AOS-VO-NATIVE-LIFECYCLE",
+      "status": "pending",
+      "destination": "P9-9.1a",
+      "family": "A_OS",
+      "contract_ids": [
+        "SC-EARLY-EC-FULL-STATE-RETURN",
+        "SC-EARLY-AOS-EC-ENDPOINT",
+        "SC-EARLY-EC-PROVENANCE-LIFECYCLE"
+      ]
+    }
+  ],
+  "record_digest": "4e515019d17fc6a8699e2a02496017b46b0a7ba73e6369185104da473a6a23c6"
+}

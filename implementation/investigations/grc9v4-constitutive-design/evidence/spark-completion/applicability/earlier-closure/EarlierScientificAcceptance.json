@@ -1,0 +1,267 @@
+{
+  "schema": "spark-completion-earlier-scientific-acceptance-v1",
+  "date": "2026-11-01",
+  "status": "accepted_bounded_scientific",
+  "authorization": {
+    "kind": "explicit_user_instruction",
+    "text": "let's first \"formal adoption in their contracts\" ...."
+  },
+  "reviewed_commit": "4d247e7bbcfd0c8251b5b40b6971ef904e0c2e76",
+  "subjects": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierResearch.json",
+      "sha256": "3672b1cc7b48a4f44c8aa82092285289f29e8254ac12f6da9c149a3c7ad2423a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierProofs.json",
+      "sha256": "f6866257b8ded80d19454013a075ce013b4b48ab60d58b5d52900f43cc1d6dfd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierDomain.json",
+      "sha256": "998cf00702a0a772ff978c1cc13ba444fc8e722bab2284b15487eb1b8feb2abd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierValidation.json",
+      "sha256": "98c303b87724f8db1e9672cac7a00a068649cbd9ce3c70adac78e60eedc45ea2"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSEarlierResearch.json",
+      "sha256": "b69f656f899046f3880fb4f65d137d1b5ff12f8c8bbacc4e5d406d53ac0ec57f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSAnisotropicDomain.json",
+      "sha256": "525e9056bdb2e13d6c4302b63e23de194fd3a7e66259c1e8e91bca4a1e58486b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSEarlierChecks.json.xz",
+      "sha256": "821d9d62c0fe063c2c8f7502ae9ba8a1b06c919dc02a690fe5b2e383178c5204"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSEarlierValidation.json",
+      "sha256": "4b240dc3dc05706ecff00da2d48a81aa826b3d936fc2fb63af504ebfa8e01b46"
+    }
+  ],
+  "endpoints": [
+    {
+      "family": "C_OS",
+      "code": "COS",
+      "full_dimension": 14,
+      "ordinary_duration": 32,
+      "current_entry": 374,
+      "current_completion": 376,
+      "reset_entry": 375,
+      "reset_completion": 377,
+      "current_elapsed_target_time": 12032,
+      "reset_elapsed_target_time": 12064,
+      "window_beats": 2,
+      "window_elapsed": 64,
+      "initial_current_completion": 902,
+      "initial_reset_completion": null,
+      "contraction_upper": "0.995426167",
+      "supporting_trajectory_steps_after_completion": 0,
+      "inherited_current_gain": 1,
+      "reset_live_gain": 0,
+      "additional_event_gain": 0,
+      "status": "accepted_bounded_scientific",
+      "earliest_completion_claimed": false,
+      "original_execution_counts_preserved": true,
+      "evidence_mode": "fresh_short_execution",
+      "predecessor_authority": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion/Authority.json",
+        "sha256": "92e619df2e3c0d49b967f88dd6bbb8580b2f40909e334997c4ae1cdacfb94ea7"
+      },
+      "research": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierResearch.json",
+        "sha256": "3672b1cc7b48a4f44c8aa82092285289f29e8254ac12f6da9c149a3c7ad2423a"
+      },
+      "claim_ids": [
+        "SC-EARLY-COS-CL-C-FULL-TRAP",
+        "SC-EARLY-COS-CL-C-COMPLETION"
+      ],
+      "endpoint_contract_id": "SC-EARLY-COS-EC-ENDPOINT",
+      "predecessor_endpoint_claim_ids": [
+        "SC2-CL-C-EXACT-SPARK-COMPLETION"
+      ]
+    },
+    {
+      "family": "C_CI",
+      "code": "CCI",
+      "full_dimension": 14,
+      "ordinary_duration": 32,
+      "current_entry": 374,
+      "current_completion": 376,
+      "reset_entry": 375,
+      "reset_completion": 377,
+      "current_elapsed_target_time": 12032,
+      "reset_elapsed_target_time": 12064,
+      "window_beats": 2,
+      "window_elapsed": 64,
+      "initial_current_completion": 851,
+      "initial_reset_completion": 819,
+      "contraction_upper": "0.995426412",
+      "supporting_trajectory_steps_after_completion": 0,
+      "inherited_current_gain": 1,
+      "reset_live_gain": 0,
+      "additional_event_gain": 0,
+      "status": "accepted_bounded_scientific",
+      "earliest_completion_claimed": false,
+      "original_execution_counts_preserved": true,
+      "evidence_mode": "authenticated_short_prefix",
+      "predecessor_authority": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-applicability/Authority.json",
+        "sha256": "34a27ca0fa45454a2edf697d49807cd4c0ab9fc5fbf4627a24cafdae2e07b346"
+      },
+      "research": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierResearch.json",
+        "sha256": "3672b1cc7b48a4f44c8aa82092285289f29e8254ac12f6da9c149a3c7ad2423a"
+      },
+      "claim_ids": [
+        "SC-EARLY-CCI-CL-C-FULL-TRAP",
+        "SC-EARLY-CCI-CL-C-COMPLETION"
+      ],
+      "endpoint_contract_id": "SC-EARLY-CCI-EC-ENDPOINT",
+      "predecessor_endpoint_claim_ids": [
+        "SC-CCI-CL-C-COMPLETION"
+      ]
+    },
+    {
+      "family": "C_PC",
+      "code": "CPC",
+      "full_dimension": 60,
+      "ordinary_duration": 32,
+      "current_entry": 374,
+      "current_completion": 376,
+      "reset_entry": 375,
+      "reset_completion": 377,
+      "current_elapsed_target_time": 12032,
+      "reset_elapsed_target_time": 12064,
+      "window_beats": 2,
+      "window_elapsed": 64,
+      "initial_current_completion": 851,
+      "initial_reset_completion": 819,
+      "contraction_upper": "0.995650793",
+      "supporting_trajectory_steps_after_completion": 0,
+      "inherited_current_gain": 1,
+      "reset_live_gain": 0,
+      "additional_event_gain": 0,
+      "status": "accepted_bounded_scientific",
+      "earliest_completion_claimed": false,
+      "original_execution_counts_preserved": true,
+      "evidence_mode": "authenticated_short_prefix",
+      "predecessor_authority": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-pc/Authority.json",
+        "sha256": "f97da5215998fc1c0f43c5f85f0216cf880ae3dce48b7edb09b8678dda2c3a13"
+      },
+      "research": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierResearch.json",
+        "sha256": "3672b1cc7b48a4f44c8aa82092285289f29e8254ac12f6da9c149a3c7ad2423a"
+      },
+      "claim_ids": [
+        "SC-EARLY-CPC-CL-C-FULL-TRAP",
+        "SC-EARLY-CPC-CL-C-COMPLETION"
+      ],
+      "endpoint_contract_id": "SC-EARLY-CPC-EC-ENDPOINT",
+      "predecessor_endpoint_claim_ids": [
+        "SC-CPC-CL-C-COMPLETION"
+      ]
+    },
+    {
+      "family": "C_CI_PC",
+      "code": "CCIPC",
+      "full_dimension": 60,
+      "ordinary_duration": 32,
+      "current_entry": 374,
+      "current_completion": 376,
+      "reset_entry": 375,
+      "reset_completion": 377,
+      "current_elapsed_target_time": 12032,
+      "reset_elapsed_target_time": 12064,
+      "window_beats": 2,
+      "window_elapsed": 64,
+      "initial_current_completion": 851,
+      "initial_reset_completion": 819,
+      "contraction_upper": "0.995651123",
+      "supporting_trajectory_steps_after_completion": 0,
+      "inherited_current_gain": 1,
+      "reset_live_gain": 0,
+      "additional_event_gain": 0,
+      "status": "accepted_bounded_scientific",
+      "earliest_completion_claimed": false,
+      "original_execution_counts_preserved": true,
+      "evidence_mode": "authenticated_short_prefix",
+      "predecessor_authority": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-ci-pc/Authority.json",
+        "sha256": "6abd05d2787d0896b594bb99ed8f39639bf00add36bfd1b6b329176f1acaa8be"
+      },
+      "research": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierResearch.json",
+        "sha256": "3672b1cc7b48a4f44c8aa82092285289f29e8254ac12f6da9c149a3c7ad2423a"
+      },
+      "claim_ids": [
+        "SC-EARLY-CCIPC-CL-C-FULL-TRAP",
+        "SC-EARLY-CCIPC-CL-C-COMPLETION"
+      ],
+      "endpoint_contract_id": "SC-EARLY-CCIPC-EC-ENDPOINT",
+      "predecessor_endpoint_claim_ids": [
+        "SC-CCIPC-CL-C-COMPLETION"
+      ]
+    },
+    {
+      "family": "A_OS",
+      "code": "AOS",
+      "full_dimension": 30,
+      "ordinary_duration": 32,
+      "current_entry": 375,
+      "current_completion": 377,
+      "reset_entry": 372,
+      "reset_completion": 374,
+      "current_elapsed_target_time": 12064,
+      "reset_elapsed_target_time": 11968,
+      "window_beats": 2,
+      "window_elapsed": 64,
+      "initial_current_completion": 1041,
+      "initial_reset_completion": 1024,
+      "contraction_upper": "0.995934130",
+      "supporting_trajectory_steps_after_completion": 0,
+      "inherited_current_gain": 1,
+      "reset_live_gain": 0,
+      "additional_event_gain": 0,
+      "status": "accepted_bounded_scientific",
+      "earliest_completion_claimed": false,
+      "original_execution_counts_preserved": true,
+      "evidence_mode": "retained_full_archive_membership",
+      "predecessor_authority": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-os/Authority.json",
+        "sha256": "59247cf5394dfe1733881b60791bcd6ed2e6df1a12070cc430cb1a6966671743"
+      },
+      "research": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSEarlierResearch.json",
+        "sha256": "b69f656f899046f3880fb4f65d137d1b5ff12f8c8bbacc4e5d406d53ac0ec57f"
+      },
+      "claim_ids": [
+        "SC-EARLY-AOS-CL-C-FULL-TRAP",
+        "SC-EARLY-AOS-CL-C-COMPLETION"
+      ],
+      "endpoint_contract_id": "SC-EARLY-AOS-EC-ENDPOINT",
+      "predecessor_endpoint_claim_ids": [
+        "SC-AOS-CL-C-COMPLETION"
+      ]
+    }
+  ],
+  "review_limits": [
+    "Same declared laws, sources, events, allocations, history policies, SC-1 classifier, tolerances and uniform duration 32; no arbitrary-graph or all-parameter result.",
+    "Full physical ordinary-map contraction and strict self-mapping, not merely an inner root, frozen history or center spectrum.",
+    "Current inherits one child for the same event; reset/replay and this certificate successor earn zero additional live gain.",
+    "No earliest-entry or globally optimal certificate claim. A_OS below-100 investigation remains paused.",
+    "Accepted analytic derivatives and retained evidence are reused. No independent external review is claimed; C_OS has two same-implementation short-prefix replays, and the other four have no new trajectory replay.",
+    "Original full archives, execution counts, research flags and projections remain historical evidence. Mathematical closure needs no later physical evolution; A_OS verification still authenticates its original full archives.",
+    "Native P9-9.1a numerics/lifecycle, hierarchy, aggregate P9-10.5/10.6 and G4 remain open. The existing specs/README.md audit drift remains unwaived."
+  ],
+  "independent_external_review": false,
+  "original_execution_flags_preserved": true,
+  "acceptance_runs_new_trajectories": false,
+  "additional_event_gain": 0,
+  "native_support_added": [],
+  "G4_accepted": false,
+  "record_digest": "d13607fd88e9d27397ef8269f11e8324787f3d65ffd8ad4155750e5b6e0bb47a"
+}

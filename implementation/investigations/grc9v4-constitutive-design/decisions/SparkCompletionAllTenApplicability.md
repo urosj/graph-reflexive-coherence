@@ -1,5 +1,19 @@
 # Spark completion — all-ten applicability investigation
 
+## Adopted shorter endpoints — 2026-11-01
+
+[Five-family SC-3 endpoint successor](./SparkCompletionEarlierSC3Authority.md)
+adopts C_OS/C_CI/C_PC/C_CI_PC current 376/reset 377 and A_OS current 377/reset
+374 at unchanged duration 32. Full-state direct domains require no later
+supporting evolution. These are the primary endpoint contracts; longer
+initial results remain historical references, with original execution counts.
+Native/aggregate support and same-event gain are unchanged. The
+[self-contained proposal and integrated manuscript](../drafts/README.md) use
+these adopted shorter results as primary. The [section-to-claim/debt mapping](../drafts/spark-completion/Traceability.md)
+connects Appendix H to the accepted contracts and remaining native obligations.
+Manuscript review remains pending. A_OS below 100 stays paused.
+
+
 2026-10-31. User-directed continuation after accepted SC-3 (`765dc6ae`).
 The [C_OS authority](./SparkCompletionSC3Authority.md), selected SC-1 criterion
 and accepted constructive result remain closed. Native implementation is separate.
@@ -109,7 +123,7 @@ discovery records and generators remain; retired full payloads remain absent.
 The pre-existing specs/README.md source drift stays documented and unwaived.
 
 
-## Earlier closure successor: C_OS through A_OS (2026-11-01)
+## Historical earlier-closure research checkpoint: C_OS through A_OS (2026-11-01)
 
 [New C-family research](./SparkCompletionCEarlierClosure.md) reaches current
 374→376 and reset 375→377 for C_OS, C_CI, C_PC and C_CI_PC at unchanged
