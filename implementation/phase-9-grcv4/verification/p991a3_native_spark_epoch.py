@@ -44,17 +44,19 @@ def seal(value):
 
 
 def manifest(root):
+    from p991a4_native_spark_epoch import previous_bytes as preflight_previous
     root = Path(root).resolve()
     return seal(dict(schema="p991a3-native-spark-source-epoch-v1", predecessor=REVISION,
-        checker_sha256=sha((root/SELF).read_bytes()),
-        sources={name: dict(before_sha256=sha(original(root, name)), after_sha256=sha((root/name).read_bytes()))
+        checker_sha256=sha(preflight_previous(root, SELF)),
+        sources={name: dict(before_sha256=sha(original(root, name)), after_sha256=sha(preflight_previous(root, name)))
                  for name in sorted(CHANGED)}, old_execution_relabelled=False, acceptance_inferred=False))
 
 
 def previous_bytes(root, name):
+    from p991a4_native_spark_epoch import previous_bytes as preflight_previous
     root = Path(root).resolve()
     if name not in CHANGED:
-        return (root/name).read_bytes()
+        return preflight_previous(root, name)
     if json.loads((root/PATH).read_bytes()) != manifest(root):
         raise ValueError("unbound native spark source successor")
     return original(root, name)

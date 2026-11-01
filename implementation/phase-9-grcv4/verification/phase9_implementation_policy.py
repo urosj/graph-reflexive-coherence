@@ -5005,3 +5005,16 @@ PATHS = PATHS | frozenset({
     'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_lifecycle.py',
     'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-native-lifecycle.js',
 })
+
+# P9-9.1a.4: measured preflight and its finite metadata succession; no runtime extension.
+PATHS = PATHS | frozenset({
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.4-Review.md',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.4-Preflight.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.4-Samples.json.xz',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.4-SourceEpoch.json',
+    'implementation/phase-9-grcv4/verification/p991a4_native_spark_epoch.py',
+    'implementation/phase-9-grcv4/verification/p991a4_native_spark_preflight.py',
+    'implementation/phase-9-grcv4/verification/test_p991a4_native_spark_preflight.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_preflight.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-native-preflight.js',
+})

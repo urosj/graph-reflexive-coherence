@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 Implementation Plan
 
-## Current continuation: native spark certificates and lifecycle — 2026-11-01
+## Current continuation: native C_OS runtime preflight complete — 2026-11-01
 
 Branch: `impl/grc9v4-native-spark-completion`, opened from `main` at
 `5227704449a062586df804ca5da0cc2853906425`, the no-ff merge of the accepted
@@ -13,8 +13,11 @@ accepted for commit as `32376cd4`;
 its [review](./phase-9-grcv4/tranche-9/P9-9.1a.2-Review.md) and
 [bounded checks](./phase-9-grcv4/tranche-9/P9-9.1a.2-Verification.json) retain that scope.
 P9-9.1a.3 has [certificate/lifecycle implementation and controls](./phase-9-grcv4/tranche-9/P9-9.1a.3-Review.md),
-pending review. Next is P9-9.1a.4, measured runtime preflight. No full native
-trajectory or completion is claimed. Minimal atomic new-child registration
+accepted and committed as `59c35997`.
+[P9-9.1a.4](./phase-9-grcv4/tranche-9/P9-9.1a.4-Review.md) measured 40 changing-state
+steps per role in 81.7 seconds: combined central estimate 13.6 minutes, conservative
+allowance 24.8 minutes, campaign cap 30 minutes. Cache/precision and publication
+checks are retained. Next is P9-9.1a.5; no full native trajectory or completion is claimed. Minimal atomic new-child registration
 belongs to completion; broader hierarchy remains deferred. Historical milestones below retain their original
 scope; the selected native programme does not reopen their accepted results.
 

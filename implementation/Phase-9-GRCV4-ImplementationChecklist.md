@@ -4100,23 +4100,30 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     registration atomically once per occurrence; broader hierarchy stays deferred.
   [Review](./phase-9-grcv4/tranche-9/P9-9.1a.3-Review.md) and
   [retained checks](./phase-9-grcv4/tranche-9/P9-9.1a.3-Verification.json): implemented,
-  verified, pending review. Actual source/event; synthetic positive-window controls.
+  verified, accepted and committed as `59c35997`. Actual source/event; synthetic positive-window controls.
   [Bounded pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.3-PressureReview.md):
   independent stage/current/flat/charge checks, literal chiral events, certificate
   and atomicity controls; repeated typed delivery is rejected before preparation.
   Accounting is shared within one process; disconnected-process uniqueness and
   exact-to-legacy conversion remain unclaimed. No full native trajectory run.
-- [ ] P9-9.1a.4: Complete and report the C_OS runtime estimate before any long run.
-  - [ ] Time bounded initialization, source/event and one changing-state step;
+- [x] P9-9.1a.4: Complete and report the C_OS runtime estimate before any long run.
+  - [x] Time bounded initialization, source/event and one changing-state step;
     extend toward 20–40 steps only if measured cost fits the short declared cap.
-  - [ ] Confirm active FLINT/policy/precision, real applicable cache hits and
+  - [x] Confirm active FLINT/policy/precision, real applicable cache hits and
     changed-operand invalidation; record cold/warm conditions, threads and memory.
-  - [ ] Separate setup/event, evolution/readmission, certification and publication
+  - [x] Separate setup/event, evolution/readmission, certification and publication
     costs. Estimate both roles on the same graph/profile with variability and
     overhead; record the campaign budget and stop/re-estimate conditions.
-  - [ ] Optimize or revise the bounded campaign before execution if the estimate
+  - [x] Optimize or revise the bounded campaign before execution if the estimate
     exceeds its budget. Do not substitute unrelated large-fixture timings or
     repeated identical-state reads. Repeat preflight for each materially new scope.
+  [Review](./phase-9-grcv4/tranche-9/P9-9.1a.4-Review.md) and
+  [measurements](./phase-9-grcv4/tranche-9/P9-9.1a.4-Preflight.json): completed,
+  pending review. Forty changing-state steps per role; 81.7-second preflight
+  within 180-second cap. Combined central/upper estimates 13.6/24.8 minutes
+  within a 30-minute campaign cap, including oracle/evidence/checkpoint costs.
+  FLINT, actual cache reuse/invalidation and exact charge checked; no runtime
+  optimization needed for this budget. Side-tool API/browser/notebook updated.
 - [ ] P9-9.1a.5: Execute and review the public C_OS source → event → completion
   path after .2–.4, with independent numerical checks and lifecycle fault controls.
   - [ ] Verify actual entry/window against current 374→376 and reset 375→377,

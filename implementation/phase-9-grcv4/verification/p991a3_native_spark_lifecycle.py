@@ -73,6 +73,7 @@ def seal(value):
 
 
 def run():
+    from p991a4_native_spark_epoch import previous_bytes as preflight_previous
     import flint
     from test_cos_native_spark_pressure import COSNativePressureTests
 
@@ -185,7 +186,7 @@ def run():
             "accounting_scope": "process_shared_publication_v1",
             "cross_process_global_uniqueness": False,
             "source_bindings": [
-                {"path": p, "sha256": sha256((ROOT / p).read_bytes()).hexdigest()}
+                {"path": p, "sha256": sha256(preflight_previous(ROOT, p)).hexdigest()}
                 for p in sorted(paths)
             ],
             "next_leaf": "P9-9.1a.4",

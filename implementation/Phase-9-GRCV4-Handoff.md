@@ -1,13 +1,14 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: C_OS native certificate/lifecycle integration — 2026-11-01
+## Current continuation: C_OS runtime preflight complete — 2026-11-01
 
 The accepted research branch was merged into `main` with `--no-ff` at
 `5227704449a062586df804ca5da0cc2853906425` (research tip `77c71ea4`). The new
 branch is `impl/grc9v4-native-spark-completion`. Planning is committed as
 `77a777ce`; the contract mapping was accepted for commit as `f2d776d7`.
 P9-9.1a.2 was accepted for commit as `32376cd4`. P9-9.1a.3 now implements
-the exactly bound certificates and atomic public lifecycle, pending review. Its explicit exact-resource
+the exactly bound certificates and atomic public lifecycle, accepted and committed as
+`59c35997`. Its explicit exact-resource
 and FLINT C_OS numerical kernel passed bounded source/allocation/ordinary-step
 checks. No public completion campaign has been started.
 
@@ -23,8 +24,12 @@ The [bounded pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.3-PressureReview
 adds independent equations, both literal chiral events, charge-normal membership,
 and atomic failure controls. It also closes duplicate typed-step delivery: a
 successful operation ID in branch ancestry cannot advance the window twice.
-Next is **P9-9.1a.4**, measured runtime preflight before the first public
-source-to-completion campaign. Shared occurrence accounting is process-local;
+The [P9-9.1a.4 preflight](./phase-9-grcv4/tranche-9/P9-9.1a.4-Review.md) is
+complete, pending review: 40 changing-state steps per role on the actual 15-node
+target, 81.7 seconds total, combined campaign estimate 13.6 minutes and upper
+allowance 24.8 minutes against a 30-minute cap. Caches, exact charge, selected
+step reuse and side-tool publication are checked. Next is **P9-9.1a.5**, the first
+public source-to-completion campaign; it has not started. Shared occurrence accounting is process-local;
 disconnected-process uniqueness and exact-to-legacy conversion are not claimed. See the
 [work programme](./Phase-9-GRCV4-ImplementationPlan.md#p9-91a-native-spark-completion-work-programme)
 and [unchecked execution leaves](./Phase-9-GRCV4-ImplementationChecklist.md#p9-91a-native-spark-completion).

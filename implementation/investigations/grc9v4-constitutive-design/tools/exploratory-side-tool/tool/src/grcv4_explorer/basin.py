@@ -58,17 +58,22 @@ class _HistoricalSource:
 
 
 def native_predecessor(root, path, expected):
-    """Authenticate only a named native .3 successor and its exact Git preimage."""
+    """Authenticate finite native successors and their exact Git preimages."""
     import hashlib
     import sys
     root = Path(root).resolve()
     sys.path.insert(0, str(root / "implementation/phase-9-grcv4/verification"))
     from p991a3_native_spark_epoch import CHANGED, previous_bytes
-    if path not in CHANGED:
+    from p991a4_native_spark_epoch import CHANGED as PREFLIGHT, previous_bytes as preflight_previous
+    if path not in CHANGED | PREFLIGHT:
         return None
     _require(file_sha256(root/path) == hashlib.sha256((root/path).read_bytes()).hexdigest(),
              "inconsistent native source digest")
     try:
+        if path in PREFLIGHT:
+            raw = preflight_previous(root, path)
+            if hashlib.sha256(raw).hexdigest() == expected:
+                return raw
         raw = previous_bytes(root, path)
     except ValueError as error:
         raise SourceAdmissionError(str(error)) from error
