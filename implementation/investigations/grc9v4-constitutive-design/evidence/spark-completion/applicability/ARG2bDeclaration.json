@@ -1,0 +1,78 @@
+{
+  "schema": "spark-completion-arg2b-declaration-v1",
+  "family": "A_RG2b",
+  "parameters": {
+    "eta": "1/1024",
+    "duration": "16",
+    "kappa_c": "1/64",
+    "kappa_Ah": "1/64",
+    "chi": "1/2",
+    "zeta": "1/2",
+    "kappa_H": "1/2",
+    "alpha": "1/32768",
+    "beta": "1/32768",
+    "gamma": "1/32768",
+    "W_floor": "1/2",
+    "tau_A": "32",
+    "site": "(C-2)^3-(C-2)"
+  },
+  "prepared_source": {
+    "current": {
+      "n1": "312030498512773/140737488355328",
+      "n2": "2181203221471/1099511627776",
+      "n3": "272543626341847/140737488355328",
+      "n4": "431143038829943/281474976710656",
+      "n5": "421172125067949/281474976710656",
+      "n6": "99153395767635/70368744177664",
+      "n7": "417692862902909/281474976710656",
+      "n8": "420217044578393/281474976710656",
+      "n9": "421172125067949/281474976710656",
+      "p": "820315002687263/281474976710656",
+      "v": "73993890237863/35184372088832",
+      "private": "131580666205055/140737488355328"
+    },
+    "reset": {
+      "v": "2161/1000",
+      "p": "2937/1000",
+      "n1": "4540541/2048000",
+      "n2": "8114051/4096000",
+      "n3": "7917443/4096000",
+      "n5": "554/375",
+      "n9": "554/375",
+      "private": "933/1000",
+      "n4": "457/300",
+      "n6": "4201/3000",
+      "n7": "2213/1500",
+      "n8": "4453/3000"
+    }
+  },
+  "source_W": {
+    "current": "4097/4096",
+    "reset": "8191/8192"
+  },
+  "allocation_shares": [
+    "5/2048",
+    "1021/1024",
+    "1/2048"
+  ],
+  "domain_digest": "3ec5fc889813183a74d08258d8d9c913931156d5adde44d03554a81490d35b46",
+  "exact_charge": "21",
+  "entry": 300,
+  "completion": 302,
+  "horizon": 302,
+  "ordinary_duration": "16",
+  "window_beats": 2,
+  "window_elapsed": "32",
+  "physical_A_coefficients_changed": false,
+  "source_preparation_fresh": true,
+  "uniform_duration_32_certified": false,
+  "accepted_authority": false,
+  "native_support_added": false,
+  "future_trajectory_required": false,
+  "supporting_trajectory_steps_after_completion": 0,
+  "entry_parameters": {
+    "current": "9997/10000",
+    "reset": "1"
+  },
+  "record_digest": "a2a6d031cee16617a67042d26dc131f8e7bd3c3f67032007c8079426f7a13cfb"
+}

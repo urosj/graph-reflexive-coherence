@@ -5,13 +5,16 @@ The [C_OS authority](./SparkCompletionSC3Authority.md), selected SC-1 criterion
 and accepted constructive result remain closed. Native implementation is separate.
 [Current research ledger](../evidence/spark-completion/applicability/CRG2bClaimDebtLedger.json).
 
-[C_RG2b SC-3 is now accepted](./SparkCompletionCRG2bSC3Authority.md), following
-C_OS, C_CI, C_PC, C_CI_PC, A_OS, A_CI, A_PC and A_CI_PC. Its unique Lipschitz
-section and full 14-dimensional direct domain certify entry 390→completion 392
-without subsequent supporting trajectory. Duration 8 and elapsed time 3136 remain
-explicit. Current earns one local child; reset earns zero live gain. Nine
-families are accepted; A_RG2b is next. The A_OS below 100 investigation stays
-paused. Native completion, hierarchy and aggregate G4 remain separate.
+[A_RG2b is now demonstrated at bounded research scope](./SparkCompletionARG2bApplicability.md).
+Both roles have entry 300→completion 302, uniform duration 16, elapsed time
+4832, a full 30-dimensional direct C/W domain and zero subsequent supporting
+trajectory. The invariant section includes the conductance writer; no D Gamma
+is assumed. Current earns one local child and reset earns zero live gain.
+Scientific review/adjudication is next. Nine families remain accepted:
+C_OS, C_CI, C_PC, C_CI_PC, A_OS, A_CI, A_PC, A_CI_PC and C_RG2b.
+The [current research disposition](../evidence/spark-completion/applicability/ARG2bClaimDebtLedger.json)
+keeps A_RG2b pending. No all-ten acceptance follows yet. A_OS below 100 remains
+paused; native completion, hierarchy and aggregate G4 remain separate.
 
 ## Deliverable and finite order
 

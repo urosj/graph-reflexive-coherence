@@ -4750,3 +4750,20 @@ Nine spark-completion families are accepted. See `SparkCompletionCRG2bSC3Authori
 and `CRG2bClaimDebtLedger.json`. Earlier research entries are historical; acceptance
 selects the direct continuous domain and does not restore retired long payloads.
 The broader specs/README.md audit drift remains unwaived. A_OS below 100 stays paused.
+
+## A_RG2b direct spark completion — research pending review (2026-11-01)
+
+- [x] Prove a fresh quartic completion-relative section on full C/W, including
+  the writer, both H consumers and all 30 independent physical directions.
+- [x] Certify the actual source/event/history transfer, current and reset
+  300→302 windows, and a direct continuous trapping domain with zero later support.
+- [x] Verify caches/reuse before full runs; retain six focused science checks,
+  both fresh prefix replays, one-hour caps and compressed evidence for 604 states.
+- [x] Update read-only API/browser/notebook inspection and the finite metadata
+  successor, preserving the nine accepted scientific families and older views.
+- [ ] Scientific review/adjudication and, if accepted, authority → proposal/paper
+  → specification propagation. A_RG2b is demonstrated, not yet accepted.
+- [ ] Native P9-9.1a, aggregate P9-10.5/10.6, hierarchy and G4 remain forward.
+  Existing basin-source audit debt is unwaived; A_OS below 100 remains paused.
+
+Evidence: [A_RG2b direct completion](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionARG2bApplicability.md).

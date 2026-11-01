@@ -1,5 +1,60 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: A_RG2b direct completion demonstrated; review next — 2026-11-01
+
+The final family now has a [bounded A_RG2b research result](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionARG2bApplicability.md)
+on `investigation/grc9v4-spark-completion`, after accepted C_RG2b `d37589b8`.
+Both roles have **entry 300 → completion 302**, **last executed step 302**,
+and **zero subsequent supporting steps**. Uniform ordinary duration is **16**;
+elapsed target time is **4832** and the two-beat window lasts **32**. Current
+earns one local child; reset and read-only replay earn no live gain.
+
+Fresh vertex-specific completion charts prove the full C/64-log-W base inverse
+and its unique Lipschitz RG section, including the conductance writer. A common
+degree-40 rational curve plus radius 1/4096 covers all **30 independent physical
+directions: 14 resource and 16 conductance**. Both H consumers, the complete
+writer and section differences enter q<0.998534. The strict domain image margin
+exceeds 2.6939e-7. Exact Bernstein ranges and fourth-order interval Taylor bounds
+certify every parameter on 67 cells; no D Gamma or subsequent trajectory is used.
+Uniform duration 32 remains uncertified; no universal obstruction is claimed.
+
+A fresh source preparation passes the actual source beat, parent/event trigger
+and lawful shares 5/2048, 1021/1024, 1/2048. Old-edge W is copied, three new
+internal edges start at one, and both source histories are archived. Target H
+is rebuilt, not transported. Current and reset enter the common curve at
+parameters 9997/10000 and 1 respectively. All recurrence and section errors
+remain enclosed in exact-charge full-state tubes.
+
+Both eight-step optimization preflights passed before full runs. Immutable
+FLINT graph/domain caches, certified section reuse, early proposal stops and
+multi-RHS partials are active. Each selected prefix took about one minute; both
+full fresh replays passed. One-hour limits remain explicit. The **604 selected
+states** are XZ-compressed from **40,812,993 to 5,289,508 bytes**. Compact discovery
+records preserve earlier attempts and exact changed generators without their
+superseded full trajectories. Six focused science tests passed; side-tool checks
+and scoped source validation are retained in `ARG2bValidation.json`.
+
+Use `/api/spark-completion/applicability/a-rg2b/research`, the A_RG2b panel,
+notebook cell `spark-completion-a-rg2b-research`, or `spark_arg2b_research_status`.
+Inspection performs no numerical run. Accepted C_RG2b and older projections
+remain fixed through finite metadata succession. Scientific review is pending:
+**nine accepted families, A_RG2b demonstrated and awaiting adjudication**.
+
+**Next: scientific review/adjudication, then acceptance and authority →
+proposal/paper → specification propagation if accepted.** No acceptance,
+commit, merge or push was performed for A_RG2b. Native P9-9.1a, aggregate
+P9-10.5/10.6, hierarchy and G4 remain separate. The pre-existing `specs/README.md`
+basin-source audit failure is unwaived. A_OS below 100 remains paused.
+
+```sh
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_rg2b.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_rg2b.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_rg2b_research.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_rg2b_surfaces.py
+```
+
+Earlier entries below preserve historical scopes and flags.
+
 ## Current continuation: C_RG2b SC-3 accepted; A_RG2b next — 2026-11-01
 
 The user accepts the direct C_RG2b result and requests commit. Research

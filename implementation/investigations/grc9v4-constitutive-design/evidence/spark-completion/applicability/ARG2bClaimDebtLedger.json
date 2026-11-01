@@ -1,0 +1,35 @@
+{
+  "schema": "spark-completion-arg2b-research-ledger-v1",
+  "accepted_baseline": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bClaimDebtLedger.json",
+    "record_digest": "b34c43a969b5a9c2d186d685e5cfb6d66c403eb42a7014f25fc9434a884377c8"
+  },
+  "accepted_scientific_families": [
+    "C_OS",
+    "C_CI",
+    "C_PC",
+    "C_CI_PC",
+    "A_OS",
+    "A_CI",
+    "A_PC",
+    "A_CI_PC",
+    "C_RG2b"
+  ],
+  "demonstrated_pending_review": [
+    "A_RG2b"
+  ],
+  "remaining_uninvestigated_families": [],
+  "debts": [
+    {
+      "debt_id": "SC-APP-DEBT-A_RG2b",
+      "status": "open_pending_scientific_adjudication",
+      "evidence": "ARG2bChecks.json"
+    }
+  ],
+  "aggregate_closed": false,
+  "native_completion": false,
+  "hierarchy_accepted": false,
+  "G4_accepted": false,
+  "A_OS_below_100": "paused_by_user",
+  "record_digest": "091df79aefe7d0772ab82b0eab69bab6837ba76243a29875c4534b2885402be0"
+}
