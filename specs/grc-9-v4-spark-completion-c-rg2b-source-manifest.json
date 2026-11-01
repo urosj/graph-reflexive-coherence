@@ -1,0 +1,48 @@
+{
+  "schema": "grc9v4-spark-applicability-source-manifest-v1",
+  "authority_record_digest": "768b51a1ea5cd1c89dbdba0f22a2b18e165709a854d1165d99891f02e2d08c5e",
+  "predecessor_manifest": {
+    "path": "specs/grc-9-v4-spark-completion-a-ci-pc-source-manifest.json",
+    "sha256": "8373b943745d02b3534ba08d6534a0bc519ea6d43d37bbd7a78c450d8c668bab"
+  },
+  "contract_ids": [
+    "SC-CRG2B-EC-DOMAIN",
+    "SC-CRG2B-EC-FULL-STATE-RETURN",
+    "SC-CRG2B-EC-COMPLETION"
+  ],
+  "chain": [
+    {
+      "stage": "authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-c-rg2b/Authority.json",
+      "sha256": "b3a1fa52d138da5341d88893bc4c788965f5d75ac0a611bfaf9d994f680d2743"
+    },
+    {
+      "stage": "decision",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCRG2bSC3Authority.md",
+      "sha256": "fa7a28663a157f33c54e6afabbfa7c5640540c3ca6c86103d48057ebe097e4e4"
+    },
+    {
+      "stage": "proposal",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-CRG2b-proposal.md",
+      "sha256": "4899efb3a94343aa8182b1a7edae0f2f876a4faf6123d093fc3436b9ba9e5b10"
+    },
+    {
+      "stage": "paper",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-11-GRC9V4-Spark-Completion-CRG2b.md",
+      "sha256": "ac99c1d328b357b0cfd289367f75561393cb14276a2a7ee59ecbc669a09cbfcf"
+    },
+    {
+      "stage": "specification",
+      "path": "specs/grc-9-v4-spark-completion-c-rg2b.md",
+      "sha256": "d415e28f6d11220b738e5f98960938fcf1f12c90aedbf2479b25358327535533"
+    },
+    {
+      "stage": "inherited_schema",
+      "path": "specs/grc-9-v4-spark-completion-schema.json",
+      "sha256": "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52"
+    }
+  ],
+  "native_support_added": [],
+  "native_implementation_destination": "P9-9.1a",
+  "record_digest": "1783e681728ec928dd5d12880a8918553a4acb136f14658a128fcb097bd7182c"
+}

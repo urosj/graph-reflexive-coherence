@@ -4676,7 +4676,7 @@ See `SparkCompletionAOSApplicability.md`, `AOSResearchProgress.json` and `AOSVal
 - [x] Current 375→377 and reset 372→374; optimization preflight, compressed evidence and side-tool inspection.
 - [x] Explicit user acceptance and bound authority → proposal/paper → specification propagation;
   three conditional claims resolve SC-APP-DEBT-A_CI_PC, with two native obligations forward.
-- [ ] C_RG2b next after accepted A_CI_PC; native P9-9.1a, hierarchy and G4 remain forward.
+- [x] C_RG2b direct bounded scientific completion accepted below; native P9-9.1a, hierarchy and G4 remain forward.
 
 ## C_RG2b completion applicability — bounded research, review pending (2026-11-01)
 
@@ -4734,3 +4734,19 @@ historical. Only 784 selected states are retained in XZ; the superseded 2089-ste
 payloads are removed with hashes, summaries and unchanged generators preserved
 in `CRG2bFasterRunHistory.json`. Scientific acceptance remains pending; eight
 families are accepted and A_RG2b remains afterward.
+
+
+## C_RG2b direct SC-3 acceptance (2026-11-01)
+
+- [x] Explicit user acceptance of entry 390→completion 392, with no subsequent
+  supporting trajectory, at unchanged duration 8 and full 14-dimensional scope.
+- [x] Three conditional claims and bound authority → proposal/paper → specification
+  resolve SC-APP-DEBT-C_RG2b; original SC-1 and execution flags remain unchanged.
+- [x] Accepted API/browser/notebook view and exact historical source succession.
+- [x] Compressed prefixes, previous run summaries and unchanged generators preserved.
+- [ ] A_RG2b is next; native P9-9.1a, hierarchy, aggregate P9-10.5/10.6 and G4 remain forward.
+
+Nine spark-completion families are accepted. See `SparkCompletionCRG2bSC3Authority.md`
+and `CRG2bClaimDebtLedger.json`. Earlier research entries are historical; acceptance
+selects the direct continuous domain and does not restore retired long payloads.
+The broader specs/README.md audit drift remains unwaived. A_OS below 100 stays paused.

@@ -4792,3 +4792,26 @@ PATHS.update({
     INV+'evidence/spark-completion/applicability/CRG2bDirectChecks.json',
     INV+'evidence/spark-completion/applicability/CRG2bFasterRunHistory.json',
 })
+
+# Accepted C_RG2b SC-3 authority and scoped propagation; native support unchanged.
+PATHS.update({
+    'implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCRG2bSC3Authority.md',
+    'implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-c-rg2b/Authority.json',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-CRG2b-proposal.md',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/2026-11-GRC9V4-Spark-Completion-CRG2b.md',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bScientificAcceptance.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bClaimDebtLedger.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bSC3Sources.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bSC3Validation.json',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_c_rg2b_sc3.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_rg2b_sc3.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/records/SC3SparkCRG2bAdmission.json',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/SparkCompletionCRG2bAcceptance.md',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_crg2b.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_crg2b_sc3_metadata.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-crg2b.js',
+    'specs/grc-9-v4-spark-completion-c-rg2b.md',
+    'specs/grc-9-v4-spark-completion-c-rg2b-source-manifest.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCRG2bReconciliation.md',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCRG2bReconciliation.json',
+})

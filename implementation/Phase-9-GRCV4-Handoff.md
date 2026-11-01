@@ -1,6 +1,54 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: C_RG2b direct closure, no supporting tail — 2026-11-01
+## Current continuation: C_RG2b SC-3 accepted; A_RG2b next — 2026-11-01
+
+The user accepts the direct C_RG2b result and requests commit. Research
+checkpoint `54a8cdb3` preserves the original proof, compressed prefixes,
+validation and historical records. The [adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCRG2bSC3Authority.md)
+accepts three bounded conditional claims and resolves `SC-APP-DEBT-C_RG2b`.
+Authority → proposal/paper → specification is bound under the unchanged SC-1
+contract and v2 completion schema. Native numerics and lifecycle remain forward
+at P9-9.1a; aggregate P9-10.5/10.6, hierarchy and G4 remain open.
+
+Both roles have **entry 390 → completion 392**, with **last executed step 392
+and zero subsequent supporting steps**, at duration 8 and elapsed time 3136.
+The degree 40 exact polynomial curve and radius 1/4096 cover all 14 independent
+resource directions. The strict self-map margin exceeds 6.21038e-7 and the
+common contraction is below 0.997397. Both physical geometry consumers and the
+local Lipschitz-section difference bound are included; no derivative of Gamma
+is assumed. Current earns one local child; reset/replay earn zero live gain.
+The selected trajectory is unchanged. Duration 32 remains uncertified.
+
+All 784 selected states remain XZ-compressed to 2,622,836 bytes. Superseded
+long payloads remain absent, with summaries, hashes and exact generators kept.
+Acceptance performs no new numerical campaign; the reviewed record already
+contains thirteen fresh tests and two full same-implementation prefix replays.
+No independent external review is claimed.
+
+Use `/api/spark-completion/applicability/c-rg2b`, the accepted C_RG2b panel,
+notebook cell `spark-completion-c-rg2b-accepted`, or
+`load_spark_crg2b_forensic_context`. The original research endpoint preserves
+its exact projection and historical pending flags. The [current ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bClaimDebtLedger.json)
+has **nine accepted scientific families; A_RG2b is the remaining family**.
+Existing accepted views stay fixed. The pre-existing `specs/README.md`
+basin-source audit failure remains documented and unwaived.
+
+**Next is A_RG2b completion applicability.** Prove its own completion-relative
+section with the conductance writer, full C/W difference bounds, actual
+source/event history transfer and a positive completion window. Reuse the
+curved-domain method when useful, with fresh physical bounds. Prioritize
+informative cases, check optimizations before long runs, use FLINT/Arb,
+retain one-hour large-graph caps and compress evidence. Continue this branch;
+no A_RG2b spark-completion campaign has started. A_OS below 100 remains paused.
+
+```sh
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_c_rg2b_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_rg2b_sc3.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
+## Historical research: C_RG2b direct closure, no supporting tail — 2026-11-01
 
 The [direct C_RG2b certificate](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCRG2bDirect.md)
 proves **entry 390 → completion 392**, for both current and reset, with **no

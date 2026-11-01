@@ -1,0 +1,286 @@
+{
+  "schema_version": "grc9v4_spark_applicability_authority_v1",
+  "record_id": "GRC9V4-SC3-SPARK-C-RG2B-v1",
+  "status": "accepted_bounded_scientific_design",
+  "accepted_on": "2026-11-01",
+  "predecessor": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-ci-pc/Authority.json",
+    "sha256": "af6c3f2c31afb71c036707f79ea70d0115bbba8a067e5cd222779baf656b6696",
+    "record_digest": "4c7ef4266fe8b0ba30db47fc3ce3758e9bde333dcfdab5c9763fece7437bf103"
+  },
+  "acceptance": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bScientificAcceptance.json",
+    "sha256": "ed28303e5d48be73039357f21b29617fb4ca8b6e79133bf5252d3696caced2cb",
+    "record_digest": "41ff7948dab4d8fa5e1e5704bc23097f6756c48342181316d20198fc5056ad6f"
+  },
+  "design_path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCRG2bSC3Authority.md",
+  "design_sha256": "fa7a28663a157f33c54e6afabbfa7c5640540c3ca6c86103d48057ebe097e4e4",
+  "policy_id": "grc9v4-certified-geometric-child-basins-v1",
+  "claims": [
+    {
+      "claim_id": "SC-CRG2B-CL-C-DOMAIN",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The declared quartic C_RG2b source and target admit the frozen argument completion, unique bounded Lipschitz invariant section and certified physical evaluation, without a derivative of Gamma.",
+      "limits": [
+        "One declared bounded C_RG2b quartic/profile/source/allocation and frozen completion; no generic all-C_RG2b or arbitrary-graph theorem.",
+        "The full 14-dimensional continuous domain covers every parameter and every tangent direction. No future trajectory after 392 is required; floating collocation only proposed exact rational coefficients.",
+        "The unique section is Lipschitz. No derivative or C1 regularity of Gamma is assumed; both physical H consumers and the section difference correction are included."
+      ]
+    },
+    {
+      "claim_id": "SC-CRG2B-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "A degree 40 exact polynomial curve plus a positive-radius full 14-dimensional charge-tangent ball is a strict self-map with one common contraction, uniform edge directions and complete basins; no subsequent trajectory is required.",
+      "limits": [
+        "exact charge-21 and radius 1/4096",
+        "all continuous parameters and all fourteen tangent directions",
+        "both H consumers and local section differences; no C1 Gamma premise",
+        "no represented native-map promotion"
+      ]
+    },
+    {
+      "claim_id": "SC-CRG2B-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The actual committed source/event/resource transfer reaches entry 390 and completion 392 for both roles at duration 8, with last execution 392 and no tail; current earns one local child and reset earns zero live gain.",
+      "limits": [
+        "One declared bounded C_RG2b quartic/profile/source/allocation and frozen completion; no generic all-C_RG2b or arbitrary-graph theorem.",
+        "The full 14-dimensional continuous domain covers every parameter and every tangent direction. No future trajectory after 392 is required; floating collocation only proposed exact rational coefficients.",
+        "The unique section is Lipschitz. No derivative or C1 regularity of Gamma is assumed; both physical H consumers and the section difference correction are included.",
+        "Duration is 8 and elapsed target time to completion is 3136. Uniform duration 32 remains uncertified; the retained inverse obstruction is scoped to the original auxiliary completion, not every completion or the charge-21 slice.",
+        "Thirteen fresh scientific/surface tests and two complete same-implementation prefix replays passed. No independent external reviewer is claimed.",
+        "Superseded baseline and finite-union full payloads are absent. Their original hashes, summaries, recorded checks and generators are historical; acceptance does not claim a fresh check of absent data.",
+        "Reset and read-only replay earn zero live gain. Native completion, hierarchy and G4 remain separate.",
+        "SC-1 and all eight earlier accepted families are unchanged. The A_OS below 100 investigation remains paused.",
+        "The broader repository audit retains pre-existing source drift at specs/README.md.",
+        "sufficient witness times, not earliest-completion or duration 32 feasibility claims"
+      ]
+    }
+  ],
+  "debts": [
+    {
+      "debt_id": "SC-APP-DEBT-C_RG2b",
+      "status": "resolved_bounded_scientific",
+      "scope": "One declared C_RG2b exact-equation construction and its full physical state domain",
+      "transformation": "Research applicability, repository review, user acceptance and scoped propagation resolved; native capability remains a separate forward obligation.",
+      "resolved_scope": "bounded quartic Lipschitz-section completion, direct full 14-dimensional invariant domain without a supporting tail, actual source/event/resource transfer and positive window, user acceptance and scoped propagation",
+      "successor_claim_ids": [
+        "SC-CRG2B-CL-C-DOMAIN",
+        "SC-CRG2B-CL-C-FULL-TRAP",
+        "SC-CRG2B-CL-C-COMPLETION"
+      ],
+      "verification_obligation_ids": [
+        "SC-CRG2B-VO-NATIVE-NUMERICS",
+        "SC-CRG2B-VO-NATIVE-LIFECYCLE"
+      ],
+      "contributes_to_debt_ids": [
+        "SC-DEBT-ORGANIZATION",
+        "SC-DEBT-STABILITY",
+        "SC-DEBT-NONEMPTY-DOMAIN",
+        "SC-DEBT-TEMPORAL-LIFECYCLE"
+      ],
+      "remaining_work": [
+        "Explicit quartic/profile, duration 8 and frozen completion identity; certified unique Lipschitz section with both physical geometry consumers, local inverse/value/difference bounds and finite-chain/reuse errors; full represented 14-dimensional charge-tangent map error inside the direct polynomial-domain image margin, exact charge and certified spatial predicates. No C1 Gamma assumption, frozen-H substitution, sampled-parameter test or later-trajectory dependency may replace the proved full-map contract.",
+        "Actual committed source beat/read and separately declared reset; lawful exact resource shares and rebuilt target section with no geometry-history transport; entry 390 and positive two-beat window ending 392 at duration 8, elapsed time and invalidation, actual occurrence identity, at-most-once gain, atomic publication with rollback, and replay/import/reset conformance. Reset/replay earn zero live gain."
+      ],
+      "origin_ledger": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bClaimDebtLedger.json"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "SC-CRG2B-O-COMPLETION",
+      "object_role": "Bounded C_RG2b scientific completion applicability",
+      "accepted_claim_ids": [
+        "SC-CRG2B-CL-C-DOMAIN",
+        "SC-CRG2B-CL-C-FULL-TRAP",
+        "SC-CRG2B-CL-C-COMPLETION"
+      ]
+    }
+  ],
+  "contracts": [
+    {
+      "equation_contract_id": "SC-CRG2B-EC-DOMAIN",
+      "parent_object_ids": [
+        "SC-CRG2B-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-CRG2B-CL-C-DOMAIN"
+      ],
+      "design_section": "## SC-CRG2B-EC-DOMAIN",
+      "normative_equation_or_contract": "`SC-CRG2B-CL-C-DOMAIN` is accepted as conditional mathematics for the declared quartic source/target completion, unique Lipschitz section and certified physical evaluation. No section derivative, global resource-box invariance or arbitrary-graph theorem is admitted.\n\nUse eta=1/1024, duration=8, kappa_Phi=1/64, kappa_M=0 and the existing quartic\nsite law (C\u22122)^3\u2212(C\u22122). With B the outward-tail incidence and D=B^T B,\nM=3I/4+HD, phi=BHB^T C/64\u2212site(C), j0=\u2212eta B^T phi,\ny=M^-1 j0, J=j0+y/4, f=\u22128BJ, flat=H^-1 y/2 and\nG=I+O_ij flat_i flat_j/8. Both geometry consumers are included.\n\nThe auxiliary completion is Fhat(X,H)=X+f(PX,H), Ghat(X,H)=G(PX,H).\nP retracts the argument coordinatewise to the declared closed box. It does\nnot clip the physical trajectory. The source argument box is [1/2,7/2],\nK_minus=[7/8,25/8], K=[9/16,55/16]. The target argument box is\n[\u22121/16,65/16], K_minus=[\u22121/32,129/32], K=[\u22123/64,259/64]. U is the\nopen argument box; both nested inclusions are strict. The source displacement\nbound and target separable cubic image calculation, with the uniform H\nperturbation added, certify F(K_minus) inside K. These are agreement charts,\nnot claims that every resource box is forward invariant. The signed target\nchart accommodates the zero event core.\n\nGeometry uses the symmetric star-supported matrix space with induced infinity\nnorm, radius rho=1/1024 about I. Sections have Lipschitz constant at most\nL=1/256 on all auxiliary X. Neumann bounds certify both inverses; the graph\nspectral lower bound times (1\u2212rho) exceeds 1/64, with kappa_M=0. Global\nquartic bounds A_X,A_H,G_X,G_H are derived anew in the implementation.\nLet e=A_X+A_H L and v=1/(1\u2212e). Exact rational checks establish e<1,\nV<rho, L_image=(G_X+G_H L)v<=L and\nq=G_H+(G_X+G_H L)v A_H<1. Thus each completed base map is globally\ninvertible, and graph transform T gamma=Ghat\u2218(id,gamma)\u2218F_gamma^-1\nis a contraction in the sup norm on the closed bounded Lipschitz class.\nIts unique fixed point Gamma satisfies Gamma(F(C,Gamma(C)))=G(C,Gamma(C))\non the physical agreement domain. This is a C0/Lipschitz argument: there is\nno assumed classical derivative of Gamma, no section spectrum and no reuse\nof the native zero-site inverse bounds.\n\nSixteen transform levels start from the identity section. Proposal chains\nhave X0=C and H16=I. Each inverse uses Newton on fixed H, with operators\nreused within that inverse; this derivative concerns a fixed-H polynomial,\nnot Gamma. At most eight simultaneous geometry sweeps run at 256 bits.\nAn early-stop test only reduces proposal work. Every returned chain is\nchecked afresh at 512 bits, including retraction, symmetry, support, both\nboundary conditions and both residuals. With residual maxima rX,rH,\nE <= (rH+L rX)/(1\u2212q)+q^16 V.\nIndeed, comparing level i with its exact finite iterate gives\nerror_(i\u22121)<=rH+L_image rX+q error_i, and terminal error is zero.\nThe geometric tail then reaches the invariant section. A midpoint never\nstands in for the physical section or exact trajectory.\n\nImmutable graph algebra uses FLINT rational matrices. Only identity-H\noperators have a reusable precision-keyed numerical cache. Other fixed-H\noperators are local to a proposal inverse. A selected read is reused only\non the identical center. No section, state or trajectory result is cached.\n\nLet A0=B(I+(3I/4+D)^-1/4)B^T and Pmetric=(A0+11^T/n)^-1 restricted to\nthe exact charge-21 tangent. Its eigenvalue bounds are 1/trace<=lambda(A0)\n<=amax, where trace=tr(Pmetric)\u22121. Tubes enclose the physical state by\n||C\u2212center||_P<=r. Dyadic centers have exactly charge 21; all projection and\nrounding defects enter r. A coordinate box has width sqrt(amax) r.\nThe recurrence is r_next>=q_return r+sqrt(trace)||F(center,Gamma(center))\n\u2212center_next||_2, rounded upward. Finite section and arithmetic errors enter\nthe second term. Event allocation transports the radius with the explicit\nlinear operator norm, including conversion error. Rational reset input is\nenclosed before its dyadic conversion and is not advanced at the source.\n\nFor q_return, the fixed-I derivative I\u2212eta*duration*A0*(diag(site')\u2212BB^T/64)\nis self-adjoint in this metric. Eigenvalue bounds on the entire coordinate\nbox give its norm. Fixed-H perturbations include the change in the current\ninverse and BHB^T, and the separate H difference term uses only the proved\nsection Lipschitz bound. A smaller local section bound comes from the whole\ninverse footprint R=v*(sqrt(amax)r+||f(center,Gamma(center))||_infinity).\nUniform local G_X,G_H on that footprint give\nL_local<=min(L,(G_X_local+G_H_local L)v). This controls differences between\nany two query points; it does not differentiate Gamma. Conversion between\nEuclidean and P norms uses sqrt(amax*trace)."
+    },
+    {
+      "equation_contract_id": "SC-CRG2B-EC-FULL-STATE-RETURN",
+      "parent_object_ids": [
+        "SC-CRG2B-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-CRG2B-CL-C-FULL-TRAP"
+      ],
+      "design_section": "## SC-CRG2B-EC-FULL-STATE-RETURN",
+      "normative_equation_or_contract": "`SC-CRG2B-CL-C-FULL-TRAP` is accepted for the direct continuous domain on the exact charge-21 hyperplane, with every one of its fourteen independent physical directions, a common pairwise contraction and strict self-map.\n\n### Domain and direct self-map\n\nOn the charge-21 hyperplane, write\n\n- `B` for incidence, `D=B\u1d40B`, `L=BB\u1d40`, `M\u2080=(3I/4+D)\u207b\u00b9`;\n- `A=B(I+M\u2080/4)B\u1d40`, `P=(A+11\u1d40/n)\u207b\u00b9`;\n- `F\u2080(C)=C+h A[L C/64\u2212((C\u22122)\u00b3\u2212(C\u22122))]`, `h=1/128`.\n\nThe declared exact rational polynomial `p(s)` has degree 40 in the Chebyshev\nbasis `T_k(2s\u22121)`. Its coefficients sum to 21 for degree zero and zero otherwise.\nThe domain is\n\n`K={p(s)+v: 0\u2264s\u22641, 1\u1d40v=0, v\u1d40Pv\u2264R\u00b2}`, with `R=1/4096`.\n\nThis is a compact continuum of full 14-dimensional balls. It is not a finite\nlist of subsequent executed states. Floating collocation proposed the curve\nusing only the stationary reference proposal and the current endpoint at 390.\nNo future trajectory was used as collocation data. The exact coefficients are\nfixed inputs; SciPy and floating proposals are outside the trusted checker.\n\nSet `\u03c1=999/1000`. Exact Chebyshev multiplication and composition give every\ncoefficient of the degree-120 residual\n\n`r(s)=F\u2080(p(s))\u2212p(\u03c1s)`.\n\nSince `|T_k|\u22641`, `sup ||r(s)||_P \u2264 \u03a3_k sqrt(r_k\u1d40 P r_k)`.\nThe checker obtains approximately `3.35685e\u221213`. This bound covers all real\nparameters in `[0,1]`, not a numerical sampling grid. The reference origin is\nnot assumed to be an exact fixed point; its residual is included.\n\nThe complete physical map is `F(C)=F_H(C,\u0393(C))`. The estimates below give a\ncommon pairwise contraction `q\u22480.99739692045` on the convex hull of K, and\n`sup_s ||F(p(s))\u2212F\u2080(p(s))||_P \u2264 1.44791e\u22128`. Consequently,\n\n`||F(p(s)+v)\u2212p(\u03c1s)||_P \u2264 qR + \u03b4 < R`,\n\nwhere `\u03b4` includes both the exact polynomial residual and the physical geometry\ncorrection. The strict margin is greater than `6.21038e\u22127`. Since `\u03c1s\u2208[0,1]`,\nevery image lies in the relative interior of K. The common contraction applies\nto every pair in K, even if they belong to different constituent balls. Thus the\noriginal SC-1 contract and Banach argument apply without any later trajectory.\n\n### Local geometry bound without differentiating \u0393\n\nThe original global graph-transform proof and its unique section are retained.\nIn particular its global Lipschitz constant is `1/256` and its global value\nradius is approximately `0.0001851984`. The sharper bounds below concern that\nsame section; they do not define a new completion.\n\nLet `c=p(0)`. The convex hull of K is within the cube `||C\u2212c||\u221e<7/50`.\nFor every query in this cube, certify its inverse in the larger cube\n`||X\u2212c||\u221e\u22641/5`. Both cubes lie inside physical argument agreement, so the\nargument retraction is inactive there.\n\nFor the fixed section, the inverse iteration is\n`X \u21a6 Y\u2212f(X,\u0393(X))`. The checker bounds its Lipschitz constant by\n\n`a = ||h A D_loc||\u221e + physical-H perturbation + A_H,global Lip(\u0393)`,\n\nwhere `D_loc=L/64\u2212diag(3(X\u22122)\u00b2\u22121)` on the inverse cube. It proves both `a<1`\nand `7/50+||f(c,\u0393(c))||\u221e+a/5<1/5`. Hence this iteration has a unique inverse\nin that cube, with Lipschitz constant at most `1/(1\u2212a)\u22481.310375721`.\nUniqueness of the original global inverse identifies this local inverse with\nthe frozen completion inverse. No assumption about a future orbit enters.\n\nFor completeness, the implemented local current bounds use exact cached\nmatrices `M\u2080B\u1d40` and `M\u2080D`, retaining their cancellations. Put `V=V_global`,\n`\u03b5=||M\u2080||\u221e V ||D||\u221e`, and let `R_x=1/5`, `z=sup||B\u1d40X||\u221e` on that cube.\nWriting `y=(3I/4+HD)\u207b\u00b9j\u2080`, with `j\u2080=\u2212\u03b7B\u1d40\u03a6_H`, gives\n\n`Y \u2264 (||y(c,I)||\u221e + Y_X,0 R_x + \u03b7||M\u2080D||\u221e V z/64)/(1\u2212\u03b5)`,\n\n`Y_X \u2264 (Y_X,0 + 2\u03b7||M\u2080D||\u221e V/64)/(1\u2212\u03b5)`,\n\nwhere `Y_X,0=||\u2212\u03b7M\u2080B\u1d40D_loc||\u221e`. These follow directly from\n`(I+M\u2080(H\u2212I)D)y=M\u2080j\u2080`; they are not scalar approximations to its inverse.\nFor the H partial bound use\n\n`||Dy||\u221e \u2264 min(||D||\u221eY, ||H\u207b\u00b9||\u221e (||j\u2080||\u221e+3Y/4))`,\n\n`Y_H \u2264 ||(3I/4+HD)\u207b\u00b9||\u221e (\u03b7||D||\u221e z/64+||Dy||\u221e)`.\n\nFor `flat=H\u207b\u00b9y/2`, bound its value and both partials, then the symmetric-star\nouter-product geometry `G=I+star(flat flat\u1d40)/8`. With `s_star` the maximum\noverlap-row sum divided by eight,\n\n`G_X \u2264 2 s_star flat_bound flat_X`,\n`G_H \u2264 2 s_star flat_bound flat_H`.\n\nThe section invariance equation, composed with the proved inverse, yields\n\n`Lip(\u0393)_local \u2264 (G_X+G_H Lip(\u0393)_global)/(1\u2212a) \u2248 1.31248e\u22126`,\n\n`||\u0393\u2212I||\u221e,local \u2264 s_star flat_bound\u00b2 \u2248 9.95611e\u22128`.\n\nOnly partial derivatives of the smooth two-input physical maps are used.\n\u0393 remains merely Lipschitz; no derivative or C1 regularity of \u0393 is assumed.\n\n### Full physical contraction and geometry correction\n\nOn the hull box, exact rational LDL checks prove the charge-tangent Rayleigh\ninequalities\n\n`(1/3)P < diag(3(C\u22122)\u00b2\u22121)\u2212L/64 < 64P`.\n\nThe fixed-identity derivative is self-adjoint in the P metric, so its norm is\nat most `max(|1\u2212h/3|,|1\u221264h|)`. The checker adds the fixed-H perturbation and\nthe H partial slope times the local section Lipschitz bound. The latter is a\ndifference estimate, not a chain rule for \u0393. Both physical H consumers\u2014the\npotential `BHB\u1d40C/64` and the current inverse `(3I/4+HD)\u207b\u00b9`\u2014are included.\nConversions use `||v||\u2082\u2264sqrt(||A||\u221e)||v||_P` and\n`||w||_P\u2264sqrt(trace(P|1\u22a5))||w||\u2082` for tangent vectors.\n\nThe same H slope, integrated on the segment from I to \u0393(C), gives the absolute\nphysical geometry correction used in the functional residual. All matrices on\nthis segment remain in the proved symmetric geometry ball.\n\n### Uniform spatial predicates and entry\n\nThe checker converts the exact curve to Bernstein form and subdivides into\n64 closed parameter intervals. For every linear functional `w\u1d40C`, Bernstein\ncoefficient extrema bound `w\u1d40p(s)`, and the exact tangent support function is\n`R sqrt(w\u1d40Aw)` because `APA=A` and `A1=0`. This preserves coordinate\ncorrelations; a coordinate box alone would lose some small edge inequalities.\n\nThese bounds certify every fixed-row seed predicate, resource/contrast\nbarrier, edge direction, destination set and complete basin roster, for both\nchiral charts and every state in K. The minimum edge margin is greater than\n`6.68989e\u22125`. The two qualified basins remain `p:{p,private}` and\n`satellite/2:{n2,n8,satellite/2}`. All 14 independent resource directions have\npositive radius, and all resources remain positive within physical agreement.\n\nFresh current and reset prefixes enclose the full physical trajectories using\nArb at 512 bits. Exact charge, section-tail/rounding errors and strict tube\ntransfers are retained. Section reuse follows the invariant-section equation,\nincluding center-shift error, with fresh rebuilds at 1,390,392. Explicit tube\nmembership is checked at 390,391,392 against parameters `1,\u03c1,\u03c1\u00b2`.\nThe reset endpoint distance is about `0.000213746`, strictly below `1/4096`.\nReset and read-only replays earn zero live gain."
+    },
+    {
+      "equation_contract_id": "SC-CRG2B-EC-COMPLETION",
+      "parent_object_ids": [
+        "SC-CRG2B-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-CRG2B-CL-C-COMPLETION"
+      ],
+      "design_section": "## SC-CRG2B-EC-COMPLETION",
+      "normative_equation_or_contract": "`SC-CRG2B-CL-C-COMPLETION` is accepted for the declared actual source/event/resource transfer, physical approach and positive window. Current earns one local child; reset and read-only replay earn zero live gain.\n\nThe exact prestates and allocation are fixed in `CRG2bDirectDeclaration.json`.\nThey equal the selected faster construction: shares 5/2048,1021/1024,1/2048,\nzero target core, copied exterior and exact total charge 21. An actual positive\nsource beat supplies the committed current state; a fresh section/read verifies\nthe complete parent, saturation and strict trigger. The reset prestate is\nindependently declared and not advanced at the source. The target section is\nrebuilt on the new graph; geometry is derived and is never transported as history.\nAllocation alone earns no new child.\n\nBoth fresh physical prefixes enter the direct domain at 390 and finish the\npositive two-beat window at 392. Ordinary duration is 8, window elapsed time 16,\nand elapsed target time 3136. These are sufficient witness times, not an\noptimality or earliest-completion theorem. Every physical center, propagated\nerror tube and section enclosure through 392 matches the earlier selected\nprefix. The domain and both roles require zero subsequent supporting steps.\n\nCertified section reuse follows Gamma(F(C,Gamma(C)))=G(C,Gamma(C)), with the\ncomplete generated-geometry enclosure error and Lipschitz center-shift error.\nThe stored proposal is dyadic 256-bit; physical certification is 512-bit Arb.\nEvery inherited finite-section, allocation, quantization and roundoff error\nis propagated in an exact-charge P-metric tube. Fresh rebuilds at 1,390,392\ncheck consistency. Explicit tube membership at parameters 1,rho,rho\u00b2 verifies\n390,391,392, with uniform complete basins in both chiral charts. No midpoint\nstands for the exact physical trajectory or section.\n\nBoth complete 392-step prefixes were freshly replayed with the same\nimplementation. Six direct scientific tests exercise exact polynomial\nidentities, all fourteen directions, whole-domain/order/inverse failures and\ntail isolation; seven surface tests preserve prior accepted/research views.\nThe exact domain checker accepts no trajectory input. No independent external\nreview is asserted. Immutable graph algebra, precision-keyed identity\noperators and invariant-section reuse remain active. The one-hour cap is\nretained; the selected prefixes took about 11 seconds each.\n\nOnly 784 selected states are retained in full, XZ compressed from 32,765,080 to\n2,622,836 bytes. Superseded baseline and finite-union runs retain their original\nhashes, parameters, check records, summaries and exact generators. Their full\npayloads are absent and not rechecked. The accepted certificate has no dependency\non the former 2089-step supporting trajectories. Duration 32 remains uncertified;\nno short steps are relabelled as long beats and eta is unchanged."
+    }
+  ],
+  "verification_obligations": [
+    {
+      "obligation_id": "SC-CRG2B-VO-NATIVE-NUMERICS",
+      "status": "pending_forward",
+      "destination": "P9-9.1a",
+      "obligation": "Explicit quartic/profile, duration 8 and frozen completion identity; certified unique Lipschitz section with both physical geometry consumers, local inverse/value/difference bounds and finite-chain/reuse errors; full represented 14-dimensional charge-tangent map error inside the direct polynomial-domain image margin, exact charge and certified spatial predicates. No C1 Gamma assumption, frozen-H substitution, sampled-parameter test or later-trajectory dependency may replace the proved full-map contract."
+    },
+    {
+      "obligation_id": "SC-CRG2B-VO-NATIVE-LIFECYCLE",
+      "status": "pending_forward",
+      "destination": "P9-9.1a",
+      "obligation": "Actual committed source beat/read and separately declared reset; lawful exact resource shares and rebuilt target section with no geometry-history transport; entry 390 and positive two-beat window ending 392 at duration 8, elapsed time and invalidation, actual occurrence identity, at-most-once gain, atomic publication with rollback, and replay/import/reset conformance. Reset/replay earn zero live gain."
+    }
+  ],
+  "source_contract_ids": [
+    "SC-EC-GEOMETRIC-IDENTITY",
+    "SC-EC-FULL-STATE-RETURN",
+    "SC-EC-QUARTIC-SITE",
+    "SC-EC-WINDOW-LIFECYCLE",
+    "D10.2-EC-PARENT-REAL-RG2B",
+    "D10.2-EC-RG-INVARIANCE",
+    "D10.2-EC-RG-LIPSCHITZ-CONTRACTION",
+    "D10.2-EC-RG-DETERMINISM",
+    "D10.2-EC-RG-CLAIM-CEILING"
+  ],
+  "family_dispositions": [
+    {
+      "family": "C_OS",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "SC-1\u2013SC-3 exact source-to-completion witness",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded joint-root/full-map/source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded full C/Z domain, trap and actual source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded selected composite root, full C/Z return and same-source completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_OS",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded staged A_OS domain, self-consistent writer/full C/W return and actual completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded selected A_CI root, implicit full C/W return, self-consistent writer and actual completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded incoming-carrier domain, full C/W/Z return, independent writers and actual two-history completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded selected composite root, full implicit C/W/Z return, same-source geometry/carrier coupling and independent writers and actual two-history completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_RG2b",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded quartic Lipschitz section, full 14-dimensional direct invariant domain and actual source-to-392 completion without a supporting tail accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_RG2b",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "RG section with writer/history perturbations",
+      "native_completion_support": false
+    }
+  ],
+  "scope": {
+    "SC3_closed_for": [
+      "C_RG2b"
+    ],
+    "scientific_families": [
+      "C_OS",
+      "C_CI",
+      "C_PC",
+      "C_CI_PC",
+      "A_OS",
+      "A_CI",
+      "A_PC",
+      "A_CI_PC",
+      "C_RG2b"
+    ],
+    "SC1_reopened": false,
+    "native_completed_spark_support": false,
+    "hierarchy_support": false,
+    "G4_accepted": false,
+    "aggregate_debts_closed": [],
+    "native_support_added": []
+  },
+  "record_digest": "768b51a1ea5cd1c89dbdba0f22a2b18e165709a854d1165d99891f02e2d08c5e"
+}
