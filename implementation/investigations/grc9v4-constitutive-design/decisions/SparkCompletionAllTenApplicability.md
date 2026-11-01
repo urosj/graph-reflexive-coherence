@@ -3,16 +3,14 @@
 2026-10-31. User-directed continuation after accepted SC-3 (`765dc6ae`).
 The [C_OS authority](./SparkCompletionSC3Authority.md), selected SC-1 criterion
 and accepted constructive result remain closed. Native implementation is separate.
-[Current research ledger](../evidence/spark-completion/applicability/ACIClaimDebtLedger.json).
+[Current research ledger](../evidence/spark-completion/applicability/APCClaimDebtLedger.json).
 
-[A_CI SC-3 is now accepted](./SparkCompletionACISC3Authority.md), following
-C_OS, C_CI, C_PC, C_CI_PC and A_OS. Its fresh selected joint root, full implicit
-C/W return and actual source/event/transfer/completion chain are propagated.
+[A_PC SC-3 is now accepted](./SparkCompletionAPCSC3Authority.md), following
+C_OS, C_CI, C_PC, C_CI_PC, A_OS and A_CI. Its full 76-dimensional C/W/Z return,
+independent writers and actual two-history completion chain are propagated.
 Current 375→377 earns one local child; reset 372→374 earns zero live gain.
-Six families are accepted. [A_PC research](./SparkCompletionAPCApplicability.md)
-now demonstrates the full 76-dimensional C/W/Z return and fresh completion
-chain, pending adjudication. The earlier A_OS domain retains its
-separate review status and the below-100 investigation remains paused.
+Seven families are accepted; A_CI_PC is next. The earlier A_OS domain retains
+its separate review status and the below-100 investigation remains paused.
 Native completion/hierarchy and aggregate G4 remain separate.
 
 ## Deliverable and finite order
@@ -90,17 +88,13 @@ Their necessity for organization is a different question and is not required.
 [Derivation and execution disposition](./SparkCompletionCCIApplicability.md).
 No native production code or generic all-ten completion grant is part of this work.
 
-## Current action: A_PC scientific review
+## Current next family: A_CI_PC
 
-The full 76-dimensional C/W/Z product trap, incoming-carrier geometry,
-separate writers and actual source/event/two-history transfer chain are
-proved on one declared bounded subject. Current 375→377 earns one local
-child; reset 372→374 earns zero live gain. Scientific adjudication and
-propagation remain pending; six earlier families stay accepted.
-
-A_CI_PC is the next family after review. It must combine the selected joint
-root with both history channels and the full C/W/Z return; neither a prior
-derivative nor a matching entry time supplies that proof. Check caching
-before long runs, prioritize informative cases, retain FLINT/Arb, one-hour
-large-graph caps and compressed evidence. No A_CI_PC campaign has started.
-The below-100 A_OS investigation remains paused.
+Combine the selected joint current/geometry root with incoming carrier history,
+both writers and a full C/W/Z return. Establish an actual source/event/two-
+history transfer/approach/window chain for the composite realization. A prior
+center or domain is only a candidate; its derivative and trajectory are not
+inherited. Check caching before long runs, prioritize informative large cases,
+retain FLINT/Arb, one-hour large-graph caps and compressed evidence. Continue
+this branch; no A_CI_PC campaign has started. The below-100 A_OS investigation
+remains paused.

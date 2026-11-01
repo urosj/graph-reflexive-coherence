@@ -1,0 +1,285 @@
+{
+  "schema_version": "grc9v4_spark_applicability_authority_v1",
+  "record_id": "GRC9V4-SC3-SPARK-A-PC-v1",
+  "status": "accepted_bounded_scientific_design",
+  "accepted_on": "2026-11-01",
+  "predecessor": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-ci/Authority.json",
+    "sha256": "c4b30af576c4120cc007f7cc45bcfa7135ec1a1d27b7264debf3cb35d3a8298b",
+    "record_digest": "5aaae4914e7351a53efa3dfbeb50f616fec58de4055b72edbc13c4309a2989fc"
+  },
+  "acceptance": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/APCScientificAcceptance.json",
+    "sha256": "57fbf2f29dfe645df125e895cefa598ac6ebcbd37dc22af8ecc2f3ceaf6da184",
+    "record_digest": "a4d88a7886fcff737e2d60463535e99a1cd9e919987214b3623827a6847ed46a"
+  },
+  "design_path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionAPCSC3Authority.md",
+  "design_sha256": "6f8f3ce1814ffff4000e10b7474ca0f4e0674f49bede683f7ca23e1a9e292d18",
+  "policy_id": "grc9v4-certified-geometric-child-basins-v1",
+  "claims": [
+    {
+      "claim_id": "SC-APC-CL-C-DOMAIN",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The declared A_PC source/target graphs admit the bounded incoming-carrier read and independent writers, with positive W/H and physical closure, inactive floor and a preserved signed carrier ball; W invariance is conditional on the next resource box.",
+      "limits": [
+        "declared positive quartic parameters and graphs",
+        "symmetric signed star-supported carrier ball and conditional C/W box",
+        "no global resource-box invariance or arbitrary-graph theorem"
+      ]
+    },
+    {
+      "claim_id": "SC-APC-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The full 76-dimensional charge-relative C/W/Z map strictly contracts the declared product domain, including all 16 conductance and 46 carrier directions; its fixed point has Z=0 and self-consistent W=G(C,W,0).",
+      "limits": [
+        "exact charge-21 local product domain",
+        "full coupled C/logW/symmetric-star-Z derivative; no frozen history or lower-dimensional substitute",
+        "no represented native map certificate"
+      ]
+    },
+    {
+      "claim_id": "SC-APC-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "A fresh A_PC source beat and committed C/W/Z event read, literal D11 resource transfer, preserved old-edge W and whole-carrier archive/reset reach current entry 375 and completion 377; independent reset 372/374 earns no live gain.",
+      "limits": [
+        "One declared bounded A_PC graph/profile/allocation; no generic all-A_PC completion claim.",
+        "The A_OS C/W shape is a candidate only. The full C/W/Z derivative, source/event reads and both interval trajectories are fresh A_PC evidence.",
+        "The declared signed carrier ball and conditional C/W box are bounded domains, not a global resource-invariance theorem.",
+        "Independent equations and derivative controls are included; no independent external reviewer or duplicate long trajectory replay is claimed.",
+        "Reset and read-only replay earn zero live gain. Native completion, hierarchy and G4 remain separate.",
+        "SC-1 is unchanged; the below-100 A_OS investigation remains paused.",
+        "The earlier A_OS domain retains its separate scientific status; this acceptance does not revise earlier authority.",
+        "The broader repository audit retains pre-existing source drift at specs/README.md.",
+        "sufficient witness times, not an earliest-completion theorem"
+      ]
+    }
+  ],
+  "debts": [
+    {
+      "debt_id": "SC-APP-DEBT-A_PC",
+      "status": "resolved_bounded_scientific",
+      "scope": "One declared A_PC exact-equation construction and its full physical state domain",
+      "transformation": "Research applicability, repository review, user acceptance and scoped propagation resolved; native capability remains a separate forward obligation.",
+      "resolved_scope": "uniform conditional read/writer domain, self-consistent stationary W/Z and full 76-dimensional return, actual source/event/independent W and Z lineage, positive window, user acceptance and scoped propagation",
+      "successor_claim_ids": [
+        "SC-APC-CL-C-DOMAIN",
+        "SC-APC-CL-C-FULL-TRAP",
+        "SC-APC-CL-C-COMPLETION"
+      ],
+      "verification_obligation_ids": [
+        "SC-APC-VO-NATIVE-NUMERICS",
+        "SC-APC-VO-NATIVE-LIFECYCLE"
+      ],
+      "contributes_to_debt_ids": [
+        "SC-DEBT-ORGANIZATION",
+        "SC-DEBT-STABILITY",
+        "SC-DEBT-NONEMPTY-DOMAIN",
+        "SC-DEBT-TEMPORAL-LIFECYCLE"
+      ],
+      "remaining_work": [
+        "Explicit quartic/profile identity; incoming signed star-supported carrier geometry, incoming-W fixed rows, one selected read for continuity and both independent writers; final-C/incoming-W conductance update and same-read carrier source; positive W/H, closure, floor and carrier envelope domains; full represented 76-dimensional C/W/Z-map error within the strict image margin; exact represented charge and certified spatial predicates. Read residuals or overlap consistency alone are insufficient.",
+        "Actual current/reset histories; exact old-edge W preservation and three new-edge seeds; whole source carrier archives and canonical whole-target zero reset with explicit carrier_history_loss; separate dispositions for the two history channels; lawful resource shares, committed positive windows and elapsed time, invalidation, actual occurrence identity, at-most-once gain, atomic publication with rollback and replay/import/reset conformance."
+      ],
+      "origin_ledger": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/APCClaimDebtLedger.json"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "SC-APC-O-COMPLETION",
+      "object_role": "Bounded A_PC scientific completion applicability",
+      "accepted_claim_ids": [
+        "SC-APC-CL-C-DOMAIN",
+        "SC-APC-CL-C-FULL-TRAP",
+        "SC-APC-CL-C-COMPLETION"
+      ]
+    }
+  ],
+  "contracts": [
+    {
+      "equation_contract_id": "SC-APC-EC-DOMAIN",
+      "parent_object_ids": [
+        "SC-APC-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-APC-CL-C-DOMAIN"
+      ],
+      "design_section": "## SC-APC-EC-DOMAIN",
+      "normative_equation_or_contract": "`SC-APC-CL-C-DOMAIN` is accepted as conditional mathematics on the declared source/target graphs, signed carrier ball and conditional resource/conductance box. No global resource invariance or arbitrary-graph theorem is admitted.\n\nUse the same positive A parameters as the preceding construction:\neta=1/1024, h=tau_A=tau_PC=32, kappa_c=kappa_Ah=1/64,\nchi=zeta=kappa_H=1/2, alpha=beta=gamma=1/32768, W_floor=1/2,\nand site(C)=(C\u22122)^3\u2212(C\u22122). All 16 conductances and all 46 independent\nsymmetric, star-supported carrier coordinates remain physical variables.\nTheir signs are unrestricted within the declared carrier ball.\n\nLet B be oriented incidence, O=|B|^T|B|, and L=log W. Incoming Z alone\nselects the physical geometry. Incoming W supplies the weighted fixed-row\nmeans D. The single selected read is\n\n```\nH = I + Z/2\nPhi = B diag(W) B^T C/64 \u2212 site(C) + B(H\u2212I)B^T C/64\nj0 = \u2212diag(W) B^T Phi/1024\nG_e(C,W,j) = max(1/2, exp(\u2212(C_u+C_v+||D_u\u2212D_v||\u00b2+j_e\u00b2)/65536))\nq_e = (W_e\u2212G_e(C,W,j0))/(W_e+G_e(C,W,j0))\nJ_e = j0_e/(1\u2212q_e/4)\nf = H^(-1)(q*J/2)\nS_ij = O_ij f_i f_j/4.\n```\n\nContinuity and the two separate writers consume that same read:\n\n```\nC+ = C \u2212 32 B J\nL+ = exp(\u22121) L + (1\u2212exp(\u22121)) log G(C+,W,J)\nZ+ = exp(\u22121) Z + (1\u2212exp(\u22121)) S.\n```\n\nThe W writer uses final C+, incoming W and selected J. The Z writer uses\nS from the selected incoming-state read. Newly written W and Z are consumed\nonly by the next ordinary read. There is no CI root iteration or OS predictor\nsubstitution. A read cannot be reused for a different C/L/Z object. These are\ninvestigation equations; existing native machinery is not promoted by this work.\n\nOn each concrete graph assume 0\u2264C\u22644, .99\u2264W\u22641.01 and ||Z||_F\u2264R=1/64,\nwith symmetric star support. Then 1\u2212R/2\u2264lambda(H)\u22641+R/2, so H is positive\ndefinite even for signed carriers. Put ell=||B^T B||_infinity, m=number of\nedges, h0=mR/2, hmin=1\u2212R/2, wl=.99, wh=1.01. Exact rational bounds are\n\n```\nj = wh (12 + 4 ell wh/64 + 4 ell h0/64)/1024\ng = 1 \u2212 (8+192+j\u00b2)/65536\na = max(wh\u2212g,1\u2212wl)/(wl+g),       den = 1\u2212a/4\nJmax = j/den\nF2 = m (a Jmax/(2 hmin))\u00b2\n||S||_F \u2264 F2/2 < R.\n```\n\nThe weighted row differences contribute at most 192 and exp(\u2212z)\u22651\u2212z\nprovides the strictly floor-inactive lower bound g>1/2. The source estimate\nuses O_ij/4\u22641/2 and ||f f^T||_F=||f||_2\u00b2. The exact convex carrier update\ntherefore preserves the signed Frobenius ball. Conditional on C+ remaining\nin [0,4], the W writer has drive at least 1\u2212(8+192+Jmax\u00b2)/65536>.99 and\nat most one, preserving its log interval. No global resource-box invariance\nis claimed. Actual trajectory states and the certified trap verify that premise.\n\nWeighted selector separation is checked with the conservative factor\n.99*(127/128) on both concrete graphs. The trap uses the sharper carrier\nradius stated below. Positive carrier geometry and its selector separation\nare additional checks beyond the weighted spatial basin predicates."
+    },
+    {
+      "equation_contract_id": "SC-APC-EC-FULL-STATE-RETURN",
+      "parent_object_ids": [
+        "SC-APC-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-APC-CL-C-FULL-TRAP"
+      ],
+      "design_section": "## SC-APC-EC-FULL-STATE-RETURN",
+      "normative_equation_or_contract": "`SC-APC-CL-C-FULL-TRAP` is accepted as conditional mathematics for the full 76-dimensional, exact charge-21 C/W/Z product return, including all conductance and symmetric-star carrier directions and both independent writers.\n\nBorrow only the exact rational C/W center, basis and positive axis radii\nfrom `earlier-closure/AOSAnisotropicDomain.json`. Authenticate the old producer\nand operands. Write the full charge-relative C/W domain as\nx=x0+Sx u, ||u||_infinity\u22641, U Sx=I30. Here x=(C,L), sum C=21.\nExtend it by the independently signed carrier ball\n\n```\nK = { x=x0+Sx u, ||u||_infinity\u22641, ||Z||_F\u2264rho }, rho=1/2^30.\n||delta(x,Z)|| = max(||U delta x||_infinity, ||delta Z||_F/rho).\n```\n\nThe domain includes 14 resource, 16 conductance and 46 carrier directions.\nCarrier columns use the Frobenius-orthonormal symmetric star basis:\ndiagonal entries one and paired off-diagonal entries 1/sqrt(2). An outer\ncoordinate box includes K; the derivative is enclosed on that whole box.\nThe inverse derivative is computed by one multiple-right-hand-side solve:\n\n```\ndf = H^(-1)((diag(q) dJ + diag(J) dq)/2 \u2212 dH f).\n```\n\nBoth uses of H in the physical read, W-dependent row means, continuity,\nfinal-C W writer and same-read Z source are differentiated. With the full\nJacobian blocks transformed into u and Frobenius carrier coordinates, use\n\n```\na = ||U Txx Sx||_infinity\nb = rho * max_i ||(U TxZ)_i||_2\nc = sqrt(30) * ||TZx Sx||_F / rho\nd = exp(\u22121) + ||TZZ \u2212 exp(\u22121) I46||_F\nq = max(a+b,c+d) < 1.\n```\n\nFLINT/Arb at 512 bits proves q<0.995942 and strict unit image margin\n>0.004058. The exact rational center defect is enclosed separately. The\nfirst product-domain candidate passes; no trajectory-guided domain search\nor tolerance change is used. Source-bound records retain exact outward bounds.\n\nEvery edge order is proved by exact support over the actual anisotropic\nC/W domain. Weighted row boxes prove seeds, anchors and barriers. Both chiral\ncharts give the complete basins p:{p,private} and\nsatellite/2:{n2,n8,satellite/2}. Identical ordered incidence, weighted row\nassignments and carrier bases justify sharing evolution across the charts;\nboth predicate charts are checked separately.\n\nAt the full-map fixed point, BJ=0 and J=\u2212D B^T Phi for positive diagonal D.\nThe quadratic identity Phi^T B D B^T Phi=0 gives J=0, hence f=S=0. Stationary\ncarrier decay forces Z=0 and H=I; the other writer forces W=G(C,W,0).\nThis establishes the stationary conductance writer and carrier together.\nNeither history channel is frozen in the neighborhood proof."
+    },
+    {
+      "equation_contract_id": "SC-APC-EC-COMPLETION",
+      "parent_object_ids": [
+        "SC-APC-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-APC-CL-C-COMPLETION"
+      ],
+      "design_section": "## SC-APC-EC-COMPLETION",
+      "normative_equation_or_contract": "`SC-APC-CL-C-COMPLETION` is accepted as conditional mathematics for the declared actual source/event/two-history transfer/approach/window chain. Current, reset and read-only replay remain distinct; reset and replay earn no live gain.\n\nSC2 exact resource prestates initialize a fresh A_PC source beat. Current W\nstarts at 4097/4096 and current Z has diagonal 1/65536. Independent reset W\nstarts at 8191/8192 and reset Z has diagonal \u22121/131072. Reset is not advanced.\nA fresh read of committed current C/W/Z supplies the event subject. Complete\nparent qualification, saturation, and both strict trigger margins are checked.\n\nThe declared D11 resource shares are 1/128,63/64,1/128, with zero core and\ncopied exterior. Each old edge keeps its own W; exactly three new internal\nedges start at W=1. Both complete nonzero source carriers are archived with\ntheir digests, and each complete target carrier is canonically zeroed. The\ncarrier channel explicitly records `carrier_history_loss`; the conductance\nchannel records preservation. There is no untyped resizing or erased loss.\n\nAllocation alone gives no new qualified child. Fresh outward interval\ntrajectories give current entry **375**, window end **377**, local gain **one**;\nreset entry **372**, window end **374**, local gain **zero**. Both runs take\nabout **33 seconds**, versus about 101 seconds for A_CI. Matching beat numbers\nare independently obtained, not borrowed A_CI or A_OS execution evidence.\nThe positive window is two beats and elapsed time 64. These are sufficient\nwitness times, not earliest-completion claims.\n\nThe declaration fixes 8192-bit trajectories, 512-bit trapping arithmetic,\na 1024-beat horizon and one-hour wall caps for each role. No midpoint evolves\nthe physical state, automatic fallback or precision escalation is used.\nExact graph/domain caches, weighted-row reuse, one selected poststate read\nper beat, batched derivative solves and chiral identity pass an eight-step\npreflight before either full run. Each beat performs one W update and one\nZ update. No pilot or earlier-family trajectory supplies campaign states.\n\nAll 751 states retain outward 112-bit C/logW/Z inspection enclosures; the\nfull-precision intervals remain recurrence operands. Raw execution records\nare 11,059,258 bytes, losslessly XZ compressed to 1,070,264 bytes. The checker\nrebuilds source/transfer and the full product trap, recomputes all coordinates,\ncomplete basins and entries, checks every transition and whole selected-read\ncheckpoint, and rejects 21 altered-evidence controls. Saved overlap is\nconsistency evidence; source-bound outward recurrence supplies enclosure\nprovenance. There is no independent duplicate long trajectory or external\nreviewer claim. Five equation tests include a separate 110-digit implementation\nand every one of the 76 physical derivative directions."
+    }
+  ],
+  "verification_obligations": [
+    {
+      "obligation_id": "SC-APC-VO-NATIVE-NUMERICS",
+      "status": "pending_forward",
+      "destination": "P9-9.1a",
+      "obligation": "Explicit quartic/profile identity; incoming signed star-supported carrier geometry, incoming-W fixed rows, one selected read for continuity and both independent writers; final-C/incoming-W conductance update and same-read carrier source; positive W/H, closure, floor and carrier envelope domains; full represented 76-dimensional C/W/Z-map error within the strict image margin; exact represented charge and certified spatial predicates. Read residuals or overlap consistency alone are insufficient."
+    },
+    {
+      "obligation_id": "SC-APC-VO-NATIVE-LIFECYCLE",
+      "status": "pending_forward",
+      "destination": "P9-9.1a",
+      "obligation": "Actual current/reset histories; exact old-edge W preservation and three new-edge seeds; whole source carrier archives and canonical whole-target zero reset with explicit carrier_history_loss; separate dispositions for the two history channels; lawful resource shares, committed positive windows and elapsed time, invalidation, actual occurrence identity, at-most-once gain, atomic publication with rollback and replay/import/reset conformance."
+    }
+  ],
+  "source_contract_ids": [
+    "SC-EC-GEOMETRIC-IDENTITY",
+    "SC-EC-FULL-STATE-RETURN",
+    "SC-EC-QUARTIC-SITE",
+    "SC-EC-WINDOW-LIFECYCLE",
+    "D10.2-EC-PARENT-REAL-PC",
+    "D10.2-EC-PARENT-A-GW-FUNCTIONAL",
+    "D10.2-EC-PARENT-A-WHAT",
+    "D10.2-EC-PARENT-A-READ-CLOSURE",
+    "D10.2-EC-PARENT-A-WRITER-TARGET",
+    "D10.2-EC-PARENT-A-RETAINED-WRITER",
+    "D10.2-EC-PC-ZOH-WRITER",
+    "D10.2-EC-PC-RELEASE"
+  ],
+  "family_dispositions": [
+    {
+      "family": "C_OS",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "SC-1\u2013SC-3 exact source-to-completion witness",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded joint-root/full-map/source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded full C/Z domain, trap and actual source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded selected composite root, full C/Z return and same-source completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_OS",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded staged A_OS domain, self-consistent writer/full C/W return and actual completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded selected A_CI root, implicit full C/W return, self-consistent writer and actual completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded incoming-carrier domain, full C/W/Z return, independent writers and actual two-history completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "joint current/geometry/history/carrier map",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_RG2b",
+      "physical_state": [
+        "C"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "nonlinear completion-relative section and full-map Lipschitz bounds",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_RG2b",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "RG section with writer/history perturbations",
+      "native_completion_support": false
+    }
+  ],
+  "scope": {
+    "SC3_closed_for": [
+      "A_PC"
+    ],
+    "scientific_families": [
+      "C_OS",
+      "C_CI",
+      "C_PC",
+      "C_CI_PC",
+      "A_OS",
+      "A_CI",
+      "A_PC"
+    ],
+    "SC1_reopened": false,
+    "native_completed_spark_support": false,
+    "hierarchy_support": false,
+    "G4_accepted": false,
+    "aggregate_debts_closed": [],
+    "native_support_added": []
+  },
+  "record_digest": "7a9467c53ec21173d567bf0f3f2ab92140c604319625d54f50442b72a14b6672"
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "grc9v4-spark-applicability-source-manifest-v1",
+  "authority_record_digest": "7a9467c53ec21173d567bf0f3f2ab92140c604319625d54f50442b72a14b6672",
+  "predecessor_manifest": {
+    "path": "specs/grc-9-v4-spark-completion-a-ci-source-manifest.json",
+    "sha256": "6090ea668b75a069f2767425eba9289c3df34b2570bb4640f8be92c38fd34ab2"
+  },
+  "contract_ids": [
+    "SC-APC-EC-DOMAIN",
+    "SC-APC-EC-FULL-STATE-RETURN",
+    "SC-APC-EC-COMPLETION"
+  ],
+  "chain": [
+    {
+      "stage": "authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-pc/Authority.json",
+      "sha256": "451c509622aea9649c3dc977e2bc4bb48187c2bccfecdfbecc20905387e829fe"
+    },
+    {
+      "stage": "decision",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionAPCSC3Authority.md",
+      "sha256": "6f8f3ce1814ffff4000e10b7474ca0f4e0674f49bede683f7ca23e1a9e292d18"
+    },
+    {
+      "stage": "proposal",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-APC-proposal.md",
+      "sha256": "50514cc7646defc680eb7306f43faa5b2e20c091d2900388c96d6532140796e0"
+    },
+    {
+      "stage": "paper",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-11-GRC9V4-Spark-Completion-APC.md",
+      "sha256": "944fde537240e15b9cd6ef46b8ba4192939d12a6cd7997bd423fb314f8466b44"
+    },
+    {
+      "stage": "specification",
+      "path": "specs/grc-9-v4-spark-completion-a-pc.md",
+      "sha256": "b626b6a0e57b04f63204ccb067956eb3165b20677681a0091c7e8a3700aa0590"
+    },
+    {
+      "stage": "inherited_schema",
+      "path": "specs/grc-9-v4-spark-completion-schema.json",
+      "sha256": "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52"
+    }
+  ],
+  "native_support_added": [],
+  "native_implementation_destination": "P9-9.1a",
+  "record_digest": "e7deae5cc09e6ccc3458e91545e3424c7271e9422ff5a7d4b3269802cdb621af"
+}

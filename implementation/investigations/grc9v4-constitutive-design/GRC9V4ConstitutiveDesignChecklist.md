@@ -4035,7 +4035,7 @@ Native implementation and accepted scientific promotion remain separate.
     Native numerical/lifecycle obligations remain forward at P9-9.1a.
 - [x] A_OS — self-consistent stationary W, all thirty C/W directions and actual completion lineage accepted in `SparkCompletionAOSSC3Authority.md`.
 - [x] A_CI — fresh selected joint root, full implicit C/W return and actual completion lineage accepted in `SparkCompletionACISC3Authority.md`.
-- [ ] A_PC — both independent histories and their own transfer policies.
+- [x] A_PC — full 76-dimensional C/W/Z return, separate writers and two-history completion lineage accepted in `SparkCompletionAPCSC3Authority.md`.
 - [ ] A_CI_PC — complete joint root/current/W/Z map.
 - [ ] C_RG2b — nonlinear completion-relative section and full-map difference bounds.
 - [ ] A_RG2b — section, stationary writer and C/W stability.
@@ -4079,5 +4079,6 @@ See `SparkCompletionAOSApplicability.md`, `AOSResearchProgress.json` and `AOSVal
 - [x] Full 76-dimensional C/W/Z product trap including all 46 signed carrier directions.
 - [x] Fresh source/event reads, exact old-edge W lineage and whole-carrier archive/reset with explicit loss.
 - [x] Current 375→377 and reset 372→374; optimization preflight, compressed interval evidence and side-tool inspection.
-- [ ] Scientific A_PC adjudication and subsequent authority → proposal/paper → specification propagation.
-- [ ] A_CI_PC next after A_PC review; native P9-9.1a, hierarchy and G4 remain forward.
+- [x] Explicit user acceptance and bound authority → proposal/paper → specification propagation;
+  three conditional claims resolve SC-APP-DEBT-A_PC, with two native obligations forward.
+- [ ] A_CI_PC next after accepted A_PC; native P9-9.1a, hierarchy and G4 remain forward.

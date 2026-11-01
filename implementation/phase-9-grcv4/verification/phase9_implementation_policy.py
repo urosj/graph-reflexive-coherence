@@ -4671,3 +4671,26 @@ PATHS.update({
     INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_apc_research.py',
     INV+'tools/exploratory-side-tool/tool/phase9-web/spark-apc-research.js',
 })
+
+# User-accepted A_PC completion SC-3; native and aggregate obligations stay forward.
+PATHS.update({
+    'implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionAPCSC3Authority.md',
+    'implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-pc/Authority.json',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-APC-proposal.md',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/2026-11-GRC9V4-Spark-Completion-APC.md',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/APCScientificAcceptance.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/APCClaimDebtLedger.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/APCSC3Sources.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/APCSC3Validation.json',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_pc_sc3.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_pc_sc3.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/records/SC3SparkAPCAdmission.json',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/SparkCompletionAPCAcceptance.md',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_apc.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_apc_sc3_metadata.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-apc.js',
+    'specs/grc-9-v4-spark-completion-a-pc.md',
+    'specs/grc-9-v4-spark-completion-a-pc-source-manifest.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkAPCReconciliation.md',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkAPCReconciliation.json',
+})
