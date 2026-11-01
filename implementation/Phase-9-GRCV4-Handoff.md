@@ -1,6 +1,34 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: full spark proposal and integrated manuscript — 2026-11-01
+## Current continuation: native spark-completion planning — 2026-11-01
+
+The accepted research branch was merged into `main` with `--no-ff` at
+`5227704449a062586df804ca5da0cc2853906425` (research tip `77c71ea4`). The new
+branch is `impl/grc9v4-native-spark-completion`. This checkpoint updates the
+plan/checklist before actual implementation; no native code, benchmark or
+completion campaign has been started.
+
+Next is **P9-9.1a.1**, the exact contract-to-implementation map, followed by
+the C_OS quartic/numerical bridge, certificate and lifecycle integration,
+runtime preflight and first public source-to-completion review. See the
+[work programme](./Phase-9-GRCV4-ImplementationPlan.md#p9-91a-native-spark-completion-work-programme)
+and [unchecked execution leaves](./Phase-9-GRCV4-ImplementationChecklist.md#p9-91a-native-spark-completion).
+The subsequent family order is C_CI, C_PC, C_CI_PC, A_OS, A_CI, A_PC,
+A_CI_PC, C_RG2b, A_RG2b. Each includes side-tool API/browser/notebook work.
+Hierarchy remains deferred; accepted mandatory Tranches 8–9 are unchanged.
+Targeted regressions/publication and debt/support closeout remain in Tranche 10.
+
+**No long run without a same-subject native runtime estimate.** Start with
+bounded setup/event and a single changing-state step, extending the sample only
+within its measured short budget. Confirm FLINT and applicable caching, report
+the full-run estimate and re-estimate if costs change. The accepted roughly
+400 completion beats describe a 15-vertex/16-edge target, not graph size or a
+general runtime guarantee. C_OS current 374→376/reset 375→377 at duration 32 are
+scientific regression targets; native membership, numerical charge/error
+requirements and the positive window must actually pass. No supporting tail
+is required; larger graphs are not part of the initial programme.
+
+## Historical accepted checkpoint: full spark proposal and integrated manuscript — 2026-11-01
 
 The user explicitly requests formal adoption before editorial consolidation.
 [SC-3 endpoint authority](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionEarlierSC3Authority.md)

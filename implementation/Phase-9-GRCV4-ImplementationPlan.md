@@ -1,5 +1,23 @@
 # Phase 9 GRCV4 Implementation Plan
 
+## Current continuation: native spark-completion planning — 2026-11-01
+
+Branch: `impl/grc9v4-native-spark-completion`, opened from `main` at
+`5227704449a062586df804ca5da0cc2853906425`, the no-ff merge of the accepted
+spark research. This checkpoint updates planning only; native implementation,
+benchmarks and completion runs have not started. The next work is
+[P9-9.1a.1](#p9-91a-native-spark-completion-work-programme), beginning with C_OS.
+Hierarchy remains deferred. Historical milestones below retain their original
+scope; the selected native programme does not reopen their accepted results.
+
+The accepted [proposal](./investigations/grc9v4-constitutive-design/drafts/spark-completion/Proposal.md),
+[full manuscript §15/Appendix H](./investigations/grc9v4-constitutive-design/drafts/2026-11-GRC-V4.md)
+and [authority/obligation map](./investigations/grc9v4-constitutive-design/drafts/spark-completion/Traceability.md)
+provide the scientific basis. Use the adopted shorter endpoints as primary
+references; longer initial runs remain provenance or specific-check resources.
+No new witness-discovery campaign is selected. **No long numerical run without
+a prior estimate from the same native graph/profile/role and active policy.**
+
 ## Tranches 8 and 9 — all ten declared family scopes accepted and closed (2026-10-30)
 
 The [all-ten closeout](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json)
@@ -20,8 +38,10 @@ A_RG2b acceptance `7083b989`; no numerical campaign is repeated.
 | C_RG2b | [Acceptance](./phase-9-grcv4/tranche-9/P9-CRG2b-Acceptance.json) |
 | A_RG2b | [Acceptance](./phase-9-grcv4/tranche-9/P9-ARG2b-Acceptance.json) |
 
-Optional P9-9.1a completion/hierarchy is explicitly deferred and unselected;
-it was never a mandatory closure prerequisite. Earlier execution and family
+At this 2026-10-30 closeout, optional P9-9.1a completion/hierarchy was deferred
+and unselected; it was never a mandatory closure prerequisite. The 2026-11-01
+programme below selects completion planning while hierarchy stays deferred.
+Earlier execution and family
 acceptance records retain their historical `aggregate_closed=false`; this
 successor records the aggregate decision without rewriting them.
 
@@ -96,7 +116,7 @@ both-role migration/return observations once and reusing receipts/charges for
 Fixed-H and joint-section error bounds remain separate, with no C1 upgrade.
 All ten individual scoped decisions, their bounded P9-10.3 input
 reconciliation/regressions and P9-10.4 publication are now accepted.
-## Current continuation: C_CI scientific applicability closed — 2026-10-31
+## Historical continuation: C_CI scientific applicability closed — 2026-10-31
 
 The [C_CI SC-3 adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCISC3Authority.md)
 accepts the bounded joint-root/full-map/source-to-completion construction and
@@ -4547,10 +4567,127 @@ owners, not a new execution gate or permission to broaden an accepted scope.
 
 **Closed for all ten declared family scopes, 2026-10-30.** All forty source
 compatibility cells, mandatory lifecycle, crossings, public API, conflict
-rejection and support reconciliation are accepted. Optional P9-9.1a remains
-unselected/deferred and does not block closure. The
+rejection and support reconciliation are accepted. Optional P9-9.1a was
+unselected at that closeout; its new completion programme follows below and
+does not invalidate the accepted mandatory scope. The
 [aggregate acceptance](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json)
 binds the original first-group milestones below and all six later decisions.
+
+#### P9-9.1a native spark-completion work programme
+
+**Selected for planning, not implemented or accepted.** Completion and hierarchy
+have distinct dispositions: this programme implements bounded native geometric
+child stabilization and `completed_spark`; hierarchy remains deferred. Reuse the
+accepted ten-family dynamics, P9-9.1b transaction owner and P9-9.4 public API.
+The optional quartic law needs a native constitutive binding; a detector alone
+cannot supply the accepted dynamics. Existing zero-site identities and semantics
+remain intact. Each new exact profile/capability needs its own admission and
+evidence; old G2/G3 or family acceptance does not automatically cover it.
+
+| Work owner | Planned change and completion evidence |
+| --- | --- |
+| Tranche 8 | Accepted dependency. Add only affected event-transfer, target-admission, role, history and numerical checks for the new binding; record the exact coverage in the P9-9.1a family review. Do not reopen all mechanics or rerun the old large campaigns. |
+| Tranche 9 | P9-9.1a owns native completion, using the existing lifecycle/API. A scoped P9-9.6 supplement reviews the newly selected exact profiles and capability. |
+| Tranche 10 | P9-10.3-NATIVE-SPARK and P9-10.4-NATIVE-SPARK own affected regressions and publication. P9-10.5/10.6 retain debt reconciliation, reviewed support, handoff and G4; no automatic aggregate closure. |
+
+Each leaf below receives its own contract/module map, changed paths, bounded
+commands, retained evidence and review disposition under the existing recording
+rules. This is an engineering handoff, not another scientific-definition gate.
+
+1. **P9-9.1a.1 — exact implementation contract.** Map the accepted family specs,
+   scientific/native obligations and certificate operands to the optional quartic
+   evaluator, realization staging, configuration/profile identity, numerical
+   policy, geometric-child classifier, certificate format and lifecycle owner.
+   Declare the exact source/target, current/reset and supported-domain scope.
+   Reuse existing contracts and identify only the necessary explicit successors;
+   do not rebind frozen zero-site configurations or historical evidence.
+2. **P9-9.1a.2 — C_OS dynamics and numerical bridge.** Implement the selected
+   quartic through the actual source/event/ordinary native maps. Prefer the
+   existing FLINT/Arb machinery with an explicit policy. Establish a uniform
+   full-step error bound on the certificate domain, in its own norm, strictly
+   below its image margin; account for geometry, current/continuity and all
+   representation conversions. Preserve the same exact-charge space and certify
+   diagnostic agreement. A small solve residual or binary64 charge-tolerance
+   check is insufficient. Resolve representation/policy gaps explicitly; do not
+   silently repair charge, widen tolerances or assume either binary64 adequacy
+   or an 8192-bit production requirement. Native source-to-entry error control
+   is separate from the invariant-domain argument after entry.
+3. **P9-9.1a.3 — certificates, geometric children and atomic lifecycle.** Consume
+   immutable prevalidated certificates bound to the exact graph, profile,
+   parameters, context/reference, charge, duration, full C/W/Z domain and role.
+   Check actual membership and complete spatial predicates. Keep this classifier
+   separate from represented-current `basin_identity`. Outside certificate scope
+   means not certified by that certificate, not impossible. Do not steer the
+   dynamics, replace history or import a research state to earn entry. Bind the
+   actual parent/event/lineage; only committed positive ordinary steps advance
+   the window. Inspection, zero-duration calls, failures and replay add no time
+   or gain. Invalidate on reset/rebase and relevant graph/profile/context/reference
+   or branch changes unless an explicit successor re-admits the candidate.
+   Publish completion and at-most-once occurrence gain atomically through the
+   public owner. Pressure wrong/stale bindings, omitted coordinates, interrupted
+   windows, late failure, reset, save/load/duplicate, replay and certificate succession.
+4. **P9-9.1a.4 — C_OS measured runtime preflight.** Start with bounded setup,
+   source/event and single changing-state step measurements. Extend to a short
+   20–40-step sample only when the measured cost fits the declared short wall
+   budget; the preflight must not itself become an unestimated long run. Confirm
+   active FLINT, selected precision/policy and actual applicable cache hits and
+   invalidation on changed operands. Separate initialization, event, ordinary
+   evolution/readmission, completion checks and evidence/publication costs;
+   record memory, cold/warm conditions and thread settings. Estimate the full
+   current and reset trajectories from these same-subject measurements, with
+   variability and non-step overhead, and report the estimate before execution.
+   If projected cost exceeds the declared budget, optimize or revise the bounded
+   campaign first. Stop/re-estimate if later root/section or step cost invalidates
+   the projection. Repeat this preflight for materially different families,
+   graphs or policies; cached identical-state reads alone are not a step benchmark.
+5. **P9-9.1a.5 — first public C_OS source-to-completion acceptance.** After the
+   numerical/lifecycle checks and runtime estimate, execute the actual native
+   source beat, lawful event, target evolution, admitted entry and positive
+   two-beat window. Use an independent numerical oracle and lifecycle fault
+   controls. Target the accepted current 374→376 and reset 375→377 at duration
+   32, verifying actual membership rather than a hardcoded beat count. Diagnose
+   any endpoint shift; neither post-entry invariance nor a timeout proves timely
+   entry. Current earns one child for the event; reset/replay/certificate
+   replacement earns no additional gain. No later supporting trajectory is
+   required by these certificates. Record scoped native support only after review.
+6. **P9-9.1a.6 — family extensions.** Apply the same numerical, runtime-preflight,
+   public-lifecycle and review requirements independently in the order below.
+   A retains every W direction; PC/CI+PC retain every Z direction and correct
+   writers; CI uses the joint root and RG2b its full section obligations. Each
+   family publishes its side-tool API/browser/notebook view alongside its result,
+   distinguishing research acceptance from native execution/support. Reuse exact
+   retained evidence where sufficient; no family inherits another's conformance.
+7. **P9-9.1a.7 — scoped support reconciliation.** Reconcile all selected family
+   results, unexecuted/excluded scopes and affected Tranche 8/9 integration under
+   P9-9.6. Supply P9-10.3/10.4 supplements and P9-10.5/10.6 with exact evidence
+   and native-obligation dispositions. Completion can be accepted per family;
+   hierarchy and unresolved scientific claims keep separate dispositions.
+
+| Family leaf | Current entry → completion | Reset entry → window end | Duration | Native status |
+| --- | --- | --- | ---: | --- |
+| P9-9.1a.5 — C_OS | 374→376 | 375→377 | 32 | Not started |
+| P9-9.1a.6-C_CI | 374→376 | 375→377 | 32 | Not started |
+| P9-9.1a.6-C_PC | 374→376 | 375→377 | 32 | Not started |
+| P9-9.1a.6-C_CI_PC | 374→376 | 375→377 | 32 | Not started |
+| P9-9.1a.6-A_OS | 375→377 | 372→374 | 32 | Not started |
+| P9-9.1a.6-A_CI | 375→377 | 372→374 | 32 | Not started |
+| P9-9.1a.6-A_PC | 375→377 | 372→374 | 32 | Not started |
+| P9-9.1a.6-A_CI_PC | 375→377 | 372→374 | 32 | Not started |
+| P9-9.1a.6-C_RG2b | 390→392 | 390→392 | 8 | Not started |
+| P9-9.1a.6-A_RG2b | 300→302 | 300→302 | 16 | Not started |
+
+These are accepted scientific regression targets for a 12-vertex/13-edge source
+and 15-vertex/16-edge target, not native results or universal stopping bounds.
+Beat count, beat duration, graph size and wall-clock cost are distinct. The
+roughly 400 beats are not 400 nodes; timings from older large fixtures must not
+be used to estimate this witness. Larger graphs require their own applicability,
+prioritized obligations and measurements. General certificate discovery and
+larger-graph campaigns are outside the initial programme. Retain compressed
+selected evidence, generators and useful run history; avoid redundant tails.
+
+The dependency order is .1 → .2 → .3 → .4 → .5 → .6 → .7, with short numerical
+and lifecycle controls during development. Planning does not execute any leaf.
+The dated implementation milestones below describe the earlier mandatory scope.
 
 **P9-9.1b is bounded-accepted** (2026-10-27): one enabled specialization lifecycle owner for ordinary
 step, expansion, reset/rebase and mixed-journal snapshot replay. Preserve the
@@ -4694,6 +4831,20 @@ but different complete identities and no corresponding disabled-cell execution.
 The API/browser/notebook expose these three limits alongside the passing evidence.
 
 ### Tranche 10. Conformance, evidence, and handoff
+
+**Native completion follow-through (planned 2026-11-01).** Existing accepted
+10.1–10.4 records retain their scope. P9-10.3-NATIVE-SPARK adds only regressions
+affected by the P9-9.1a binding, numerical representation, lifecycle and public
+API; reuse unaffected evidence and preserve old zero-site/release identities.
+P9-10.4-NATIVE-SPARK publishes exact native support and source-to-completion
+examples, including side-tool execution/inspection, lineage, certificate
+applicability, entry/window and once-only gain. Update the side-tool alongside
+each family and reconcile those publications here without duplicate numerical
+runs. Keep research acceptance and native support distinguishable. P9-10.5
+reconciles the per-family native numerics/lifecycle and adopted earlier-endpoint
+obligations; P9-10.6 records reviewed support, residual debts, hierarchy deferral
+and any separately justified G4 decision. Neither family completion nor this
+planning checkpoint automatically closes the aggregate rows.
 
 **P9-10.3 bounded-accepted (2026-10-31).** User acceptance of implementation
 `93920eab` is recorded in the separate
