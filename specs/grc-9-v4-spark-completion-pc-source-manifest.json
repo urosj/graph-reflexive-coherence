@@ -1,0 +1,48 @@
+{
+  "schema": "grc9v4-spark-applicability-source-manifest-v1",
+  "authority_record_digest": "72e5e0d7d745e5100581e38ee1f35698ab813a3d69d76073b7d5d0c9511d9339",
+  "predecessor_manifest": {
+    "path": "specs/grc-9-v4-spark-completion-applicability-source-manifest.json",
+    "sha256": "984ebac4903725484ba7894ed216f49380b78368ba0f65f813245d28044cb825"
+  },
+  "contract_ids": [
+    "SC-CPC-EC-DOMAIN",
+    "SC-CPC-EC-FULL-STATE-RETURN",
+    "SC-CPC-EC-COMPLETION"
+  ],
+  "chain": [
+    {
+      "stage": "authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-pc/Authority.json",
+      "sha256": "f97da5215998fc1c0f43c5f85f0216cf880ae3dce48b7edb09b8678dda2c3a13"
+    },
+    {
+      "stage": "decision",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCPCSC3Authority.md",
+      "sha256": "4c264f2249da79d34963c762136018b6aa92b639f7154880e8da8a8b77cc54de"
+    },
+    {
+      "stage": "proposal",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-CPC-proposal.md",
+      "sha256": "e5cff71f67e0dbfefd027c3fd7d1e7b96cb45f21ddab20f2f03f2f677db28e76"
+    },
+    {
+      "stage": "paper",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-10-GRC9V4-Spark-Completion-CPC.md",
+      "sha256": "96d65205910c98468c27cc624fd85ba77670602f42c083f16972f95357979c01"
+    },
+    {
+      "stage": "specification",
+      "path": "specs/grc-9-v4-spark-completion-pc.md",
+      "sha256": "fb981ca7c803526a4b2d818488c2fce10f556d1cffcf9d04d0c2547e301bb5ad"
+    },
+    {
+      "stage": "inherited_schema",
+      "path": "specs/grc-9-v4-spark-completion-schema.json",
+      "sha256": "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52"
+    }
+  ],
+  "native_support_added": [],
+  "native_implementation_destination": "P9-9.1a",
+  "record_digest": "e57ec5fa3ce054fb550484709d9b092d5545a0048e4f7f8c5c566ed74fb18989"
+}

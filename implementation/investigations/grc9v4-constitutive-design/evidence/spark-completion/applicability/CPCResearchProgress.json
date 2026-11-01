@@ -1,0 +1,606 @@
+{
+  "schema": "spark-completion-cpc-research-progress-v1",
+  "date": "2026-10-31",
+  "family": "C_PC",
+  "status": "demonstrated_bounded_pending_review",
+  "accepted_authority": false,
+  "native_support_added": [],
+  "G4_accepted": false,
+  "predecessor_projection_digest": "1e1bb8d4cefa5e10eb3e323332aad8fbd3d0e93bbf8eafc18eb1bfc8228034a3",
+  "full_physical_state": [
+    "C",
+    "Z_4"
+  ],
+  "full_dimension": 60,
+  "resource_dimension": 14,
+  "carrier_dimension": 46,
+  "nonzero_carrier_directions_included": true,
+  "proposed_claims": [
+    {
+      "claim_id": "SC-CPC-CL-C-DOMAIN",
+      "claim_class": "conditional_mathematical",
+      "status": "proposed_bounded_research"
+    },
+    {
+      "claim_id": "SC-CPC-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "proposed_bounded_research"
+    },
+    {
+      "claim_id": "SC-CPC-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "proposed_bounded_research"
+    }
+  ],
+  "debt": {
+    "debt_id": "SC-APP-DEBT-C_PC",
+    "status": "open_pending_scientific_adjudication",
+    "demonstrated": [
+      "uniform_signed_carrier_domain",
+      "full_C_Z_trap",
+      "actual_source_and_fresh_event_read",
+      "whole_carrier_archive_and_target_reset",
+      "independent_current_reset_approach",
+      "positive_completion_window",
+      "repository_scientific_pressure"
+    ],
+    "remaining": [
+      "scientific_review_and_explicit_adjudication",
+      "authority_proposal_paper_specification_propagation"
+    ],
+    "forward_native_destination": "P9-9.1a"
+  },
+  "decisions": {
+    "current": {
+      "role": "current",
+      "scientific_completion": true,
+      "reset_probe_earns_live_gain": false,
+      "local_gain": 1,
+      "first_certified_entry": 849,
+      "first_spatial_gain": 100,
+      "target_completion_step": 851,
+      "window_beats": 2,
+      "window_elapsed": "64",
+      "stable_descendants": {
+        "-1": {
+          "p": [
+            "p",
+            "private"
+          ],
+          "sc2-positive-module/satellite/2": [
+            "n2",
+            "n8",
+            "sc2-positive-module/satellite/2"
+          ]
+        },
+        "1": {
+          "p": [
+            "p",
+            "private"
+          ],
+          "sc2-positive-module/satellite/2": [
+            "n2",
+            "n8",
+            "sc2-positive-module/satellite/2"
+          ]
+        }
+      },
+      "full_state": [
+        "C",
+        "Z_4"
+      ],
+      "native_completion": false,
+      "accepted_authority": false
+    },
+    "reset": {
+      "role": "reset",
+      "scientific_completion": false,
+      "reset_probe_earns_live_gain": false,
+      "local_gain": 0,
+      "first_certified_entry": 817,
+      "first_spatial_gain": 117,
+      "target_completion_step": 819,
+      "window_beats": 2,
+      "window_elapsed": "64",
+      "stable_descendants": {
+        "-1": {
+          "p": [
+            "p",
+            "private"
+          ],
+          "sc2-positive-module/satellite/2": [
+            "n2",
+            "n8",
+            "sc2-positive-module/satellite/2"
+          ]
+        },
+        "1": {
+          "p": [
+            "p",
+            "private"
+          ],
+          "sc2-positive-module/satellite/2": [
+            "n2",
+            "n8",
+            "sc2-positive-module/satellite/2"
+          ]
+        }
+      },
+      "full_state": [
+        "C",
+        "Z_4"
+      ],
+      "native_completion": false,
+      "accepted_authority": false
+    }
+  },
+  "proof": {
+    "center": {
+      "n1": "1638604852258481342541199697895457404909485497863/1461501637330902918203684832716283019655932542976",
+      "n2": "819533849334895020215270627277791681020305537581/730750818665451459101842416358141509827966271488",
+      "n3": "838030986685910261980928139827510623045663526663/730750818665451459101842416358141509827966271488",
+      "n4": "838030986685910261980928139827510623045663526663/730750818665451459101842416358141509827966271488",
+      "n5": "401183469583000028515276072889857017235900207581/365375409332725729550921208179070754913983135744",
+      "n6": "838030986685910261980928139827510623045663526663/730750818665451459101842416358141509827966271488",
+      "n7": "838030986685910261980928139827510623045663526663/730750818665451459101842416358141509827966271488",
+      "n8": "819533849334895020215270627277791681020305537581/730750818665451459101842416358141509827966271488",
+      "n9": "1638604852258481342541199697895457404909485497863/1461501637330902918203684832716283019655932542976",
+      "p": "1149468783673544230391311669728957826151310151995/365375409332725729550921208179070754913983135744",
+      "private": "819533849686355952867458984917126724770970252801/730750818665451459101842416358141509827966271488",
+      "sc2-positive-module/core": "1638131239266837578896377788205561815711927456073/1461501637330902918203684832716283019655932542976",
+      "sc2-positive-module/satellite/1": "419282280472039289276611858515029661138384303275/365375409332725729550921208179070754913983135744",
+      "sc2-positive-module/satellite/2": "2298937596581547793007966433442232483299649108477/730750818665451459101842416358141509827966271488",
+      "sc2-positive-module/satellite/3": "1677129121888157157106447434060118644553537213109/1461501637330902918203684832716283019655932542976"
+    },
+    "carrier_center": "zero",
+    "resource_radius": "1/1048576",
+    "coordinate_radius": "833968019839561741/302231454903657293676544",
+    "carrier_radius": "1/1073741824",
+    "weight": 1024,
+    "norm": "max(||delta_C||_P, weight*||delta_Z||_F)",
+    "metric": "P=(A0+11^T/n)^-1 on exact charge-21 tangent space",
+    "A_max": "860128/102741",
+    "inverse_trace": "617291/52140",
+    "reference_contraction": "10518828626985212229513405350844996792756899130047932442117667772719441862470020682730441781748169947463/10548204587125236045373642752184871955001744618480484360107034089073486693974859086113794316857327484928",
+    "resource_dimension": 14,
+    "carrier_dimension": 46,
+    "full_dimension": 60,
+    "independent_carrier_pairs": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        0,
+        12
+      ],
+      [
+        0,
+        13
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        10
+      ],
+      [
+        1,
+        14
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        12
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        11
+      ],
+      [
+        3,
+        12
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        12
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        5,
+        11
+      ],
+      [
+        5,
+        15
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        6,
+        13
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        7,
+        14
+      ],
+      [
+        8,
+        8
+      ],
+      [
+        8,
+        11
+      ],
+      [
+        8,
+        15
+      ],
+      [
+        9,
+        9
+      ],
+      [
+        9,
+        13
+      ],
+      [
+        10,
+        10
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        11,
+        11
+      ],
+      [
+        11,
+        15
+      ],
+      [
+        12,
+        12
+      ],
+      [
+        13,
+        13
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        13,
+        15
+      ],
+      [
+        14,
+        14
+      ],
+      [
+        14,
+        15
+      ],
+      [
+        15,
+        15
+      ]
+    ],
+    "derivative_blocks": {
+      "CC": [
+        "339362178384410364715620160878485627269/340282366920938463463374607431768211456",
+        "169681089192205182357810080439242813635/170141183460469231731687303715884105728"
+      ],
+      "CZ": [
+        "1349507643039474021886604823367108863/21267647932558653966460912964485513216",
+        "21592122288631584350185677173873741809/340282366920938463463374607431768211456"
+      ],
+      "ZC": [
+        "2480916686323961115134893549/21267647932558653966460912964485513216",
+        "39694666981183377842158296785/340282366920938463463374607431768211456"
+      ],
+      "ZZ": [
+        "125182886983636874545794866780067079587/340282366920938463463374607431768211456",
+        "31295721745909218636448716695016769897/85070591730234615865843651857942052864"
+      ]
+    },
+    "weighted_resource_row": [
+      "339383264441332856497212139078850738345/340282366920938463463374607431768211456",
+      "169691632220666428248606069539425369173/170141183460469231731687303715884105728"
+    ],
+    "weighted_carrier_row": [
+      "125182927630975863277573777150162987403/340282366920938463463374607431768211456",
+      "31295731907743965819393444287540746851/85070591730234615865843651857942052864"
+    ],
+    "full_contraction": [
+      "339383264441332856497212139078850738345/340282366920938463463374607431768211456",
+      "169691632220666428248606069539425369173/170141183460469231731687303715884105728"
+    ],
+    "center_defect": [
+      "0",
+      "1/340282366920938463463374607431768211456"
+    ],
+    "strict_image_margin": [
+      "857450942617041555559604981343/340282366920938463463374607431768211456",
+      "26795341956782548611237655667/10633823966279326983230456482242756608"
+    ],
+    "reference_submap_margin": [
+      "877560173538302181009718468935/340282366920938463463374607431768211456",
+      "109695021692287772626214808617/42535295865117307932921825928971026432"
+    ],
+    "complete_basins": {
+      "-1": {
+        "p": [
+          "p",
+          "private"
+        ],
+        "sc2-positive-module/satellite/2": [
+          "n2",
+          "n8",
+          "sc2-positive-module/satellite/2"
+        ]
+      },
+      "1": {
+        "p": [
+          "p",
+          "private"
+        ],
+        "sc2-positive-module/satellite/2": [
+          "n2",
+          "n8",
+          "sc2-positive-module/satellite/2"
+        ]
+      }
+    },
+    "full_physical_state": [
+      "C",
+      "Z_4"
+    ],
+    "nonzero_carrier_directions_included": true,
+    "stationary_carrier_argument": "At the unique exact reference equilibrium inside the trap, B^T Phi=0 implies J=f=S=0 and Z=0.",
+    "domain": {
+      "resource_box": [
+        "0",
+        "4"
+      ],
+      "carrier_radius": "1/64",
+      "carrier_norm": "symmetric_star_frobenius",
+      "signed_carriers": true,
+      "H_eigenvalue_lower": [
+        "127/128",
+        "127/128"
+      ],
+      "H_eigenvalue_upper": [
+        "129/128",
+        "129/128"
+      ],
+      "current_inverse_norm_upper": [
+        "457268385486627924516061853682676007823/340282366920938463463374607431768211456",
+        "28579274092914245282253865855167250489/21267647932558653966460912964485513216"
+      ],
+      "source_norm_upper": [
+        "184268177429435734585109429549624627/340282366920938463463374607431768211456",
+        "46067044357358933646277357387406157/85070591730234615865843651857942052864"
+      ],
+      "flat_norm_upper": [
+        "5599250466084538443855701341995312309/170141183460469231731687303715884105728",
+        "11198500932169076887711402683990624619/340282366920938463463374607431768211456"
+      ],
+      "selector": {
+        "diameter": 4,
+        "nonconstant_eigenvalue_lower": "1/28",
+        "cutoff": "1/64"
+      },
+      "invariant_carrier_ball": true,
+      "resource_box_invariance_claimed": false
+    },
+    "native_conformance": false
+  },
+  "verification": {
+    "scientific_test_methods": 8,
+    "rejected_controls": [
+      "reset_earns_gain",
+      "short_window",
+      "zero_elapsed",
+      "C_only_state",
+      "missing_parent",
+      "native_promotion",
+      "unearned_acceptance",
+      "event_zeroing_called_release",
+      "lost_source_archive",
+      "partial_target_reset",
+      "nonzero_carrier_outside_trap",
+      "wrong_consumed_geometry",
+      "wrong_carrier_writer",
+      "reset_advanced",
+      "missing_carrier_directions",
+      "changed_transfer_resource"
+    ],
+    "retained_states": 1670,
+    "chiral_classifications": 3340,
+    "resource_and_carrier_transition_checks": 1670
+  },
+  "compression": {
+    "expanded_bytes": 20816415,
+    "compressed_bytes": 2434380
+  },
+  "review_limits": [
+    "Conditional exact-equation research on the declared quartic, parameters, source, target and event policy.",
+    "Saved/fresh read and recurrence overlap checks consistency only; proof calculations use fresh certified enclosures.",
+    "No independent second-reviewer adjudication or independent long-campaign replay is claimed.",
+    "Native completion, hierarchy, aggregate P9-10.5/10.6 and G4 remain open."
+  ],
+  "next": "Scientific review and C_PC adjudication; C_CI_PC follows in research order.",
+  "sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCPCApplicability.md",
+      "sha256": "9e306bc5ade40b9eff4de268ce20e404d9f2bbfacfbf2136444baa58fa57563b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-applicability/Authority.json",
+      "sha256": "34a27ca0fa45454a2edf697d49807cd4c0ab9fc5fbf4627a24cafdae2e07b346"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion/Authority.json",
+      "sha256": "92e619df2e3c0d49b967f88dd6bbb8580b2f40909e334997c4ae1cdacfb94ea7"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2PositiveCandidate.json.xz",
+      "sha256": "10a8c6d4cb6b5b633be4947e4fb90745fc257fbe1eb30713e924802deb7a2fb1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2SourceBeat.json.xz",
+      "sha256": "faf266f447c0a1893b2ee7730dfdea481914fd15f53460e848d07ebd2c5b0675"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPC-current.json.xz",
+      "sha256": "7a81eaf7fff1b71b71d40c61fa9e26dffd55845291738038511bdc8ff2185933"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPC-reset.json.xz",
+      "sha256": "95f9ff7de0c9df974331adc86ca79ab8b4b68b41b8d26b5d494bb47702264882"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPCChecks.json",
+      "sha256": "4ede218fb8a1f27983832271025097b3b6d1ab07dd2db02d33407848bdd118f8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPCDeclaration.json",
+      "sha256": "a14a3c7157b08addfba17dd97b933a3b520774617c4c9006cd4a1975dc129560"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPCPreflight.json",
+      "sha256": "f0a939a89b35a3195b1dfc0fa6536dbb86dc378e1d162d9264b9b6006970f274"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/review/CPCScientificReview.md",
+      "sha256": "53acf3e4d3b9db67f90f711cf2ed7d86fb163037c2e745e97af3214c88320aa1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_basins.py",
+      "sha256": "6da2628f6f04bd112dbdd6eedfb9dc38661d7cc8f0a7532d211ba30e21769fd5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci_campaign.py",
+      "sha256": "732c5968a4a0f9a7e4350a9144b9c16740785cf197b34e84fc8eeb38e78987b4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_continuation.py",
+      "sha256": "b26c6bd0f050ab710b663e025cc3f039ed81c68ac8f834d8c60a2b2bdaad3709"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_os_reference.py",
+      "sha256": "0fab09c6bfcc098c537e39c223380a1d70af2de2eef5156a2d1307fef81069ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_pc.py",
+      "sha256": "af04da3c975ff835f8e01482f166f772f4f98f718346d2f9fd569f8a3b2197d3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_pc_campaign.py",
+      "sha256": "f60f0a62b967cd45d06eee555464dc834bb5c448e17cee58ca3bd08142c9a626"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_positive.py",
+      "sha256": "15069ffca9b22a666ff67cd0b28ea740f9ed69f40de72154498d3e84eca4c64b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_applicability_pc.py",
+      "sha256": "e6a8b0ff2212e601ff51aa5d391c16e3bd2c67c10298ba80cbab093f70f8592b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_pc_reconciliation.py",
+      "sha256": "e442318a44beb21edd42131c4bdc0773f5cf8a839543102f526e76d1538263ca"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_pc.py",
+      "sha256": "7cce04cf8ec095847c2fee7cb56b46227df07baed9a162799540dabb50ae3de5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_pc_pressure.py",
+      "sha256": "ca4727a3f10ce2eabba39581d2cb9717a7dcb086de7767e667131d026ffa5704"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    },
+    {
+      "path": "specs/grc-v4-topology-event-spec.md",
+      "sha256": "d94c6081981489d05f9261ccefbf5574aa5273f1ca35eac4e4d8c6bc4d214bcd"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_expansion.py",
+      "sha256": "05d754313f1d529a8829f255d1101acfbb7267f465e55974d061fa6713fb5767"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "6dd6a8637c8d03f164b993fa801e5b65ee5c8f05425a33498b14fd92c0dd3a4c"
+    }
+  ],
+  "record_digest": "b5b40d094741535afce3666c9a3b3d09b293aea412deb459d9a8c55d0f4b5e50"
+}

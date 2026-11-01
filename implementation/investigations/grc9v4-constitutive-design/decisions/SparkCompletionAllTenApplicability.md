@@ -1,13 +1,34 @@
 # Spark completion — all-ten applicability investigation
 
+## Adopted shorter endpoints — 2026-11-01
+
+[Five-family SC-3 endpoint successor](./SparkCompletionEarlierSC3Authority.md)
+adopts C_OS/C_CI/C_PC/C_CI_PC current 376/reset 377 and A_OS current 377/reset
+374 at unchanged duration 32. Full-state direct domains require no later
+supporting evolution. These are the primary endpoint contracts; longer
+initial results remain historical references, with original execution counts.
+Native/aggregate support and same-event gain are unchanged. The
+[self-contained proposal and integrated manuscript](../drafts/README.md) use
+these adopted shorter results as primary. The [section-to-claim/debt mapping](../drafts/spark-completion/Traceability.md)
+connects Appendix H to the accepted contracts and remaining native obligations.
+Manuscript review remains pending. A_OS below 100 stays paused.
+
+
 2026-10-31. User-directed continuation after accepted SC-3 (`765dc6ae`).
 The [C_OS authority](./SparkCompletionSC3Authority.md), selected SC-1 criterion
 and accepted constructive result remain closed. Native implementation is separate.
-[Current research ledger](../evidence/spark-completion/applicability/ClaimDebtLedger.json).
+[Current research ledger](../evidence/spark-completion/applicability/ARG2bSC3ClaimDebtLedger.json).
 
-[C_CI SC-3 is now complete](./SparkCompletionCCISC3Authority.md): bounded
-scientific applicability is adjudicated and propagated. C_PC is the next family;
-the native implementation boundary is unchanged.
+[A_RG2b SC-3 is now accepted](./SparkCompletionARG2bSC3Authority.md), following
+C_OS, C_CI, C_PC, C_CI_PC, A_OS, A_CI, A_PC, A_CI_PC and C_RG2b. Its joint
+Lipschitz section and full 30-dimensional direct C/W domain certify entry
+300→completion 302 without later supporting steps. Uniform duration 16 and
+elapsed time 4832 remain explicit. Current earns one local child; reset earns
+zero live gain. **All ten bounded scientific constructions are accepted.**
+No family remains uninvestigated in this sequence. Native implementation,
+hierarchy, aggregate P9-10.5/10.6 and G4 remain separate. A_OS below 100 stays
+paused. The original [research disposition](../evidence/spark-completion/applicability/ARG2bClaimDebtLedger.json)
+is retained unchanged as a historical checkpoint.
 
 ## Deliverable and finite order
 
@@ -62,7 +83,7 @@ Old zero-site inverse/section bounds do not automatically apply to a quartic law
 Suppressing these defining mechanisms would change the system being certified.
 Their necessity for organization is a different question and is not required.
 
-## C_CI first: bounded completion-feasibility chain
+## Retained C_CI work sequence: bounded completion-feasibility chain
 
 1. Derive the actual joint root and prove a uniform root-selection domain on
    the concrete source/target graphs. Establish a full-CI physical-map trap;
@@ -83,3 +104,37 @@ Their necessity for organization is a different question and is not required.
 
 [Derivation and execution disposition](./SparkCompletionCCIApplicability.md).
 No native production code or generic all-ten completion grant is part of this work.
+
+## Family sequence complete; native and aggregate work forward
+
+All ten families have their own bounded scientific acceptance. A_RG2b includes
+the joint Lipschitz section and conductance writer, full C/W difference bounds,
+actual source/event/history transfer and a positive completion window. Its
+604 retained states stop at 302 for both roles, without later supporting steps.
+The accepted ledger and side-tool bind the authority/proposal/paper/specification
+chain while preserving every earlier accepted and historical research view.
+
+Next work is native P9-9.1a numerics/lifecycle and aggregate P9-10.5/10.6
+reconciliation under the individual contracts. No generic arbitrary-graph or
+all-parameter theorem, native promotion, hierarchy or G4 acceptance is implied.
+Retain informative-case priority, optimization preflights, FLINT/Arb, one-hour
+large-graph caps and compressed evidence for future numerical work. Compact
+discovery records and generators remain; retired full payloads remain absent.
+The pre-existing specs/README.md source drift stays documented and unwaived.
+
+
+## Historical earlier-closure research checkpoint: C_OS through A_OS (2026-11-01)
+
+[New C-family research](./SparkCompletionCEarlierClosure.md) reaches current
+374→376 and reset 375→377 for C_OS, C_CI, C_PC and C_CI_PC at unchanged
+duration 32. All four direct domains require no later supporting trajectory;
+the persistent cases include all 60 physical directions. A_OS already has its
+committed 375→377 anisotropic witness. All five current witnesses meet the
+requested roughly-400 target. Native and aggregate scopes stay separate.
+
+The stronger C-family endpoints need review/adjudication before replacing
+accepted endpoint claims. Historical long executions keep their original
+counts; selected prefixes retain only the required steps. All ten accepted
+family constructions, existing source identities and A_OS's paused below-100
+investigation remain unchanged. The side-tool comparison exposes both baselines
+and earlier research endpoints without relabelling original executions.

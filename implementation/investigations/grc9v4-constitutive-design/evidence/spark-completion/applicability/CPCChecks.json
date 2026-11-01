@@ -1,0 +1,160 @@
+{
+  "schema": "spark-completion-cpc-reconciliation-checks-v1",
+  "status": "passed_bounded_research",
+  "histories": {
+    "current": {
+      "decision": {
+        "role": "current",
+        "scientific_completion": true,
+        "reset_probe_earns_live_gain": false,
+        "local_gain": 1,
+        "first_certified_entry": 849,
+        "first_spatial_gain": 100,
+        "target_completion_step": 851,
+        "window_beats": 2,
+        "window_elapsed": "64",
+        "stable_descendants": {
+          "-1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          },
+          "1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          }
+        },
+        "full_state": [
+          "C",
+          "Z_4"
+        ],
+        "native_completion": false,
+        "accepted_authority": false
+      },
+      "retained_states": 851,
+      "fresh_full_trap": true,
+      "transition_checks": 851,
+      "saved_read_and_transition_comparison": "overlap consistency only; original enclosure provenance is the certified campaign",
+      "trajectory_rerun": false
+    },
+    "reset": {
+      "decision": {
+        "role": "reset",
+        "scientific_completion": false,
+        "reset_probe_earns_live_gain": false,
+        "local_gain": 0,
+        "first_certified_entry": 817,
+        "first_spatial_gain": 117,
+        "target_completion_step": 819,
+        "window_beats": 2,
+        "window_elapsed": "64",
+        "stable_descendants": {
+          "-1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          },
+          "1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          }
+        },
+        "full_state": [
+          "C",
+          "Z_4"
+        ],
+        "native_completion": false,
+        "accepted_authority": false
+      },
+      "retained_states": 819,
+      "fresh_full_trap": true,
+      "transition_checks": 819,
+      "saved_read_and_transition_comparison": "overlap consistency only; original enclosure provenance is the certified campaign",
+      "trajectory_rerun": false
+    }
+  },
+  "first_completion": {
+    "research_event_id": "4e1b3c18956c4b0767bc355556454aed1af1f5af57ed8fdd4fe8d795f13f781c",
+    "new_gain": 1,
+    "new_child": "sc2-positive-module/satellite/2",
+    "target_step": 851,
+    "native_receipt": false
+  },
+  "replay": {
+    "research_event_id": "4e1b3c18956c4b0767bc355556454aed1af1f5af57ed8fdd4fe8d795f13f781c",
+    "new_gain": 0,
+    "new_child": "sc2-positive-module/satellite/2",
+    "target_step": 851,
+    "native_receipt": false
+  },
+  "rejected_controls": [
+    "reset_earns_gain",
+    "short_window",
+    "zero_elapsed",
+    "C_only_state",
+    "missing_parent",
+    "native_promotion",
+    "unearned_acceptance",
+    "event_zeroing_called_release",
+    "lost_source_archive",
+    "partial_target_reset",
+    "nonzero_carrier_outside_trap",
+    "wrong_consumed_geometry",
+    "wrong_carrier_writer",
+    "reset_advanced",
+    "missing_carrier_directions",
+    "changed_transfer_resource"
+  ],
+  "retained_state_count": 1670,
+  "independent_long_replay": false,
+  "retained_comparisons": "overlap_consistency_only",
+  "proof_source": "fresh full C/Z derivative and center certificate",
+  "accepted_authority": false,
+  "native_support_added": [],
+  "G4_accepted": false,
+  "sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPC-current.json.xz",
+      "sha256": "7a81eaf7fff1b71b71d40c61fa9e26dffd55845291738038511bdc8ff2185933"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPC-reset.json.xz",
+      "sha256": "95f9ff7de0c9df974331adc86ca79ab8b4b68b41b8d26b5d494bb47702264882"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_pc_reconciliation.py",
+      "sha256": "e442318a44beb21edd42131c4bdc0773f5cf8a839543102f526e76d1538263ca"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_pc.py",
+      "sha256": "7cce04cf8ec095847c2fee7cb56b46227df07baed9a162799540dabb50ae3de5"
+    }
+  ],
+  "record_digest": "bbd990782d2ce498ef65f3e9720591cf7ad2550aa0cda958243d550c7901c92f"
+}

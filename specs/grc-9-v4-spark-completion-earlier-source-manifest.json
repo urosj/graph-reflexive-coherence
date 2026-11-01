@@ -1,0 +1,52 @@
+{
+  "schema": "grc9v4-spark-earlier-source-manifest-v1",
+  "authority_record_digest": "4e515019d17fc6a8699e2a02496017b46b0a7ba73e6369185104da473a6a23c6",
+  "predecessor_manifest": {
+    "path": "specs/grc-9-v4-spark-completion-a-rg2b-source-manifest.json",
+    "sha256": "3016c04c515d1b563f893a2fc37fea7f0c5297aebf050bc4ba9eacdaa1a3492e"
+  },
+  "contract_ids": [
+    "SC-EARLY-EC-FULL-STATE-RETURN",
+    "SC-EARLY-COS-EC-ENDPOINT",
+    "SC-EARLY-CCI-EC-ENDPOINT",
+    "SC-EARLY-CPC-EC-ENDPOINT",
+    "SC-EARLY-CCIPC-EC-ENDPOINT",
+    "SC-EARLY-AOS-EC-ENDPOINT",
+    "SC-EARLY-EC-PROVENANCE-LIFECYCLE"
+  ],
+  "chain": [
+    {
+      "stage": "authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-earlier/Authority.json",
+      "sha256": "efe76e7b2774d2333550c5333fda79f279005c593690317318e8f8bd58440393"
+    },
+    {
+      "stage": "decision",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionEarlierSC3Authority.md",
+      "sha256": "3eae4e7d38f2b8b0e16c66a31f1d89ee738c6048dc99056ef8641044d2ab696c"
+    },
+    {
+      "stage": "proposal",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-earlier-proposal.md",
+      "sha256": "4a9904a16c8a9d84aabf1a109643fc4063cc8a7d7629bb0b4a0cd2195d9ae119"
+    },
+    {
+      "stage": "paper",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-11-GRC9V4-Spark-Completion-Earlier.md",
+      "sha256": "93ac17fcd7f50fd310d13c7eabac44f54819df443c28eb1c8da94bcc9cbfd08a"
+    },
+    {
+      "stage": "specification",
+      "path": "specs/grc-9-v4-spark-completion-earlier.md",
+      "sha256": "605d43e957bb7f056959d266fb3aaad0ffe2d6110c699e3c66a5cdbef18f6cc0"
+    },
+    {
+      "stage": "inherited_schema",
+      "path": "specs/grc-9-v4-spark-completion-schema.json",
+      "sha256": "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52"
+    }
+  ],
+  "native_support_added": [],
+  "native_implementation_destination": "P9-9.1a",
+  "record_digest": "87d3f62e11127a61fef7923ef4e87f52753c95e97c3b9518a4b1ccf7726baf82"
+}

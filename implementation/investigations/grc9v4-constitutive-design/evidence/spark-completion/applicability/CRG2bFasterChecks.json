@@ -1,0 +1,99 @@
+{
+  "schema": "spark-completion-crg2b-faster-checks-v1",
+  "status": "passed",
+  "declaration_digest": "c506311de72e15c5759805ea77fb53150f2fe9b0369ae5862ba10da89e4453a0",
+  "certificate_digest": "a63a7212a039dde31e385cd1fdf0913415d6f008a81819c61aca2632d704231c",
+  "replay": {
+    "status": "passed",
+    "complete_fresh_trajectory_replays": 2,
+    "checked_union_components": 3401,
+    "retained_states": 4178,
+    "entry": 390,
+    "completion": 392,
+    "duration": "8",
+    "contraction": [
+      "5188417712758175443348725067648747/5192296858534827628530496329220096",
+      "1297104428189543860837181266912187/1298074214633706907132624082305024"
+    ],
+    "accepted_authority": false,
+    "elapsed_seconds": 113.14775349700358
+  },
+  "tests": 4,
+  "test_output": "test_finite_union_rejects_boundary_and_omitted_directions (__main__.FasterTests.test_finite_union_rejects_boundary_and_omitted_directions) ... ok\ntest_full_direction_finite_difference_bound (__main__.FasterTests.test_full_direction_finite_difference_bound) ... ok\ntest_reuse_center_shift_and_independent_reconstruction (__main__.FasterTests.test_reuse_center_shift_and_independent_reconstruction) ... ok\ntest_reuse_encloses_both_signs_of_all_tangent_directions (__main__.FasterTests.test_reuse_encloses_both_signs_of_all_tangent_directions) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 88.005s\n\nOK\n",
+  "preflight": {
+    "record_digest": "ecef654bf7e615bcde48e36756dbcd4bcc9aff26d5f9058b8c250ed9e1d40227",
+    "steps": 8,
+    "elapsed_seconds": 2.5313372380041983,
+    "section_reuse": {
+      "initial_section_fresh": true,
+      "each_transfer_from_invariance": true,
+      "center_shifts_enclosed": true,
+      "physical_state": [
+        "C"
+      ],
+      "geometry_history_transported_at_event": false,
+      "geometry_is_independent_physical_state": false,
+      "fresh_rebuild_count": 1,
+      "forward_reuse_steps": 8
+    }
+  },
+  "controls": [
+    "center shift included in derived-section error",
+    "changed reuse subject rejected",
+    "both signs of all 14 physical directions",
+    "zero-radius trajectory tube rejected",
+    "changed edge order rejected",
+    "changed basin roster rejected",
+    "insufficient component image margin rejected"
+  ],
+  "execution_digests": {
+    "current": "78dd4db7399cb62a4a9bc0bfde69f4b07d1d807a98f72792645208e42ae3f074",
+    "reset": "1dc3ec0282e685951b0a63a1f532d68c2ecc9358246a522da17a43a3053ec50f"
+  },
+  "complete_fresh_replays_are_same_implementation": true,
+  "independent_external_review_claimed": false,
+  "accepted_authority": false,
+  "sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCRG2bFaster.md",
+      "sha256": "0b542eb8d282cc6ff70c9b04318d1ca0c637f516098d19f5ce0519096689c669"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_c_rg2b_faster.py",
+      "sha256": "00baed397e3a644d10bc1cb30e00e66c29310b9dceb34fd41d55acce01dc99c9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_c_rg2b_faster.py",
+      "sha256": "9df920c752bd861336fec02dded867e4319ecdf0552218e2a333f65d947900ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_rg2b_faster.py",
+      "sha256": "47d69b9e6a0ec83c7daad2cecf68603f65c320146f11bc754c263929a5422729"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bFasterDeclaration.json",
+      "sha256": "d4fd210d1edb52444bf9569538641b82ecc4313f82defa5b386a1514513aee73"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bFasterPreflight.json.xz",
+      "sha256": "598bf59cec742e0046add0afd2133ba03c902dc314e0177b408d173f4c33d2c4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bFaster-current.json.xz",
+      "sha256": "43ddbd160327c86e5d27848406bf2a88b532dd181dba76235deb04ed546c27ab"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bFaster-reset.json.xz",
+      "sha256": "4a64308d47ae1dddb28af4ce4db6ffb0ddc5e89fb7cc970a2a0fae5c5952be85"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bFasterCertificate.json",
+      "sha256": "737e4cc02d953280cdbb6a7dbfa47478dd5aeb80e3cd817f6e01898f292778dc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bFasterSearch.json.xz",
+      "sha256": "173c5336cac0a85e19010ec1bfaf9a4849b6fdde29dfd91ec4917054c8680d55"
+    }
+  ],
+  "record_digest": "8e3829a7e7d4a900d1a78a1f54317924bb0222b94a95b4dcf8b50e7d06412954"
+}

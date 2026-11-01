@@ -1,5 +1,988 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: full spark proposal and integrated manuscript — 2026-11-01
+
+The user explicitly requests formal adoption before editorial consolidation.
+[SC-3 endpoint authority](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionEarlierSC3Authority.md)
+now adopts **C_OS/C_CI/C_PC/C_CI_PC current 374→376, reset 375→377**, and
+**A_OS current 375→377, reset 372→374**, all at uniform duration 32.
+These full-state invariant domains require zero later supporting evolution.
+Current inherits the same event's one child; reset and certificate succession
+earn zero additional gain. Ten conditional claims and seven contracts are
+propagated through authority → proposal/paper → specification.
+
+The shorter witnesses are the primary accepted endpoints. Initial longer
+results remain available for specific provenance, proof history or checks.
+Original execution lengths and historical research flags are preserved.
+C-family short archives stop at their windows; A_OS still authenticates its
+original full archives and has no newly claimed short execution files.
+
+Use `/api/spark-completion/applicability/earlier-accepted`, the first spark
+panel, notebook `spark-completion-earlier-accepted`, or the
+[accepted endpoint guide](./investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/SparkCompletionEarlierAccepted.md).
+The five other accepted families retain their existing contracts. Native
+P9-9.1a, aggregate P9-10.5/10.6, hierarchy and G4 remain separate.
+The specs/README.md provenance mismatch is repaired as recorded below.
+A_OS below 100 stays paused.
+
+The [consolidated draft entry point](./investigations/grc9v4-constitutive-design/drafts/README.md)
+now leads to a self-contained proposal and the full GRC-v4 manuscript successor.
+The proposal states the classifier, completion theorem, exact A/C reads and
+all five realization maps, source graph and rational inputs, event transfers,
+anisotropic and continuous-domain proofs, and shorter accepted results.
+`drafts/2026-11-GRC-V4.md` contains the complete substrate manuscript,
+with spark §15, technical Appendix H and integrated abstract, contributions,
+claims, conclusion and Appendix A.7. It is no longer an insertion guide.
+The prior `2026-09-GRC-V4.md` and family documents remain unchanged historical
+sources. Large rational certificate operands remain computational companions.
+All ten preferred results are accepted bounded scientific witnesses; longer
+initial runs are historical references for specific questions.
+
+Manuscript continuity is owned by the stable
+[drafts entry point](./investigations/grc9v4-constitutive-design/drafts/README.md#manuscript-succession):
+`2026-09-GRC-V4.md` is the frozen predecessor and `2026-11-GRC-V4.md` is the
+current adopted manuscript for future editorial work. The successor
+records the predecessor's exact commit and SHA-256. The separate proposal stays
+in `drafts/spark-completion/Proposal.md`; that folder has no duplicate full
+paper. The user's acceptance and commit request on 2026-11-01 adopts the
+corrected manuscript and consolidated proposal; historical contracts retain
+their existing bound editions.
+
+The [section-to-claim/debt correspondence](./investigations/grc9v4-constitutive-design/drafts/spark-completion/Traceability.md)
+maps Appendix H and the proposal to the accepted family claims, specification
+chains and remaining obligations. Side-tool browser publication links and the
+notebook reading cell expose the four current adopted editorial documents through a
+restricted source route; scientific authority projections remain unchanged.
+
+The supplied manuscript review's F1–F4 corrections are applied in both the
+proposal and Appendix H: the C_CI_PC radius, constant selected sector, OS
+admission/certificate norm distinction and stationary A_OS predictor argument.
+RG2b now states its deviation bound, finite residual chain, proposal domains
+and local inverse footprint self-map. Spatial and represented-map wording is
+also corrected. The [review correction map](./investigations/grc9v4-constitutive-design/drafts/spark-completion/Traceability.md#manuscript-review-corrections--2026-11-01)
+records the locations and focused FLINT verification. This round changes no
+accepted trajectories, numerical tolerances, scientific authority or debt
+dispositions. The corrected editorial edition is now adopted.
+
+The repository boundary audit now passes, including the unchanged accepted
+release, all ten exact profiles and verified handoff integrity. An
+[exact document successor](./phase-9-grcv4/verification/p9_spark_document_epoch.py)
+reconciles five registry/planning documents with their basin-era Git subjects;
+the current checklist and three repaired readers use the finite SC-3 metadata
+binding. All 392 retained context bindings reconcile. Seven targeted regression
+tests and six basin authority/surface tests pass, including rejection of
+unrelated edits after cached historical reads. The earlier authority's audit
+failure note records its adoption-time state; this repair changes maintenance
+status without rewriting that authority, its manifests or numerical evidence.
+
+The completed spark-research checklist is consolidated under
+[P9-10.4](./Phase-9-GRCV4-ImplementationChecklist.md#p9-104-capability-publication-and-spark-completion).
+Stale review/next-family checkboxes and detached appendices are removed; the
+investigation checklist links to this canonical section. Native and aggregate
+obligations remain with P9-9.1a and P9-10.5/10.6 respectively.
+
+**Current decision: accepted; commit requested.** Formal endpoint adoption,
+corrected manuscript adoption, publication integration and boundary repair are
+complete. Native P9-9.1a and aggregate P9-10.5/10.6 remain separately scoped
+future work; this checkpoint does not authorize starting them.
+
+```sh
+.venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+.venv/bin/python implementation/phase-9-grcv4/verification/test_p9_spark_document_epoch.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_publication_corrections.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_earlier_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_earlier_sc3.py
+```
+
+Earlier sections preserve historical dispositions, including pending flags.
+
+## Historical research checkpoint: earlier C-family closure — 2026-11-01
+
+The user requests revisiting C_OS through A_OS toward roughly 400 beats.
+[Four new direct witnesses](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCEarlierClosure.md)
+now give **374→376 for current and 375→377 for reset** in C_OS, C_CI, C_PC and
+C_CI_PC, at **unchanged duration 32**. C_OS improves from 902 (58.31% fewer
+beats); the other three improve from 851 (55.82%). The existing committed A_OS
+anisotropic witness already gives **375→377**, reset 372→374. Its below-100
+investigation stays paused. All five current witnesses therefore meet the target.
+
+One exact rational resource parallelotope is certified separately for all four
+maps. PC and CI+PC include every signed star carrier direction: 14 resource plus
+46 carrier coordinates, full dimension 60. Contraction is below 0.995652, with
+strict dimensionless self-map margin above 0.0043488775, full basin predicates
+and exact correlated edge support on both charts. C_OS uses a sharper correlated
+predictor/corrector split estimate below 2.687e-21 at the original 1e-11 tolerance.
+The proof takes no trajectory input and requires **zero supporting steps after
+the positive two-beat window**. Same-event certificates earn no additional gain.
+
+Six prefixes are extracted coordinate-for-coordinate from authenticated accepted
+C_CI/C_PC/C_CI_PC intervals. Two fresh C_OS prefixes use exact cached fixed-I
+algebra, eight-step preflights and unchanged 8192-bit physical arithmetic; their
+old archive lacked full states near 400. New selected C_OS executions stop at
+376/377. For extracted prefixes, historical execution counts 851/819 remain
+explicitly distinct from the new last-required/last-retained steps 376/377.
+The 3012 selected states are XZ-compressed from 21,072,866 to 3,076,356 bytes.
+Compact discovery records and exact generators remain; unselected discovery
+trajectories are absent. Earlier accepted full archives are unchanged.
+
+Use `/api/spark-completion/applicability/earlier-c`, the earlier-closure comparison
+panel, notebook `spark-completion-earlier-c`, or `spark_earlier_c_status`.
+Inspection checks stored sources without numerical campaigns. The ten accepted
+scientific families, their projections and original flags stay fixed through a
+finite metadata successor. These four stronger endpoint claims are **pending
+review/adjudication**, not automatic accepted-authority or native promotion.
+
+**Next: review these earlier witnesses and their source/side-tool checks; if
+accepted, propagate the stronger endpoint contracts.** Native P9-9.1a,
+aggregate P9-10.5/10.6, hierarchy and G4 remain separate. The pre-existing
+`specs/README.md` audit drift remains documented and unwaived. This investigation
+has not been committed, merged or pushed.
+
+```sh
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_c_earlier.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_earlier.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_earlier_surfaces.py
+```
+
+Earlier entries below preserve historical scopes and flags.
+
+## Historical accepted baseline: A_RG2b SC-3 accepted; all ten bounded families complete — 2026-11-01
+
+The user accepts A_RG2b and requests commit. Research checkpoint `68e0cdf2`
+preserves the original proof, compressed prefixes, validation and compact
+history. The [adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionARG2bSC3Authority.md)
+accepts three bounded conditional claims and resolves `SC-APP-DEBT-A_RG2b`.
+Authority → proposal/paper → specification is bound under unchanged SC-1 and
+the v2 completion schema. **All ten families now have accepted bounded
+scientific constructions.** No family remains in this applicability sequence.
+
+Both roles have **entry 300 → completion 302**, **last executed step 302**
+and **zero later supporting steps**, at uniform ordinary duration **16** and
+elapsed target time **4832**. The degree-40 rational curved domain with radius
+1/4096 covers **30 independent directions: 14 resource and 16 conductance**.
+Both H consumers, the full writer and joint Lipschitz section differences give
+q<0.998534 and image margin >2.6939e-7. Fourth-order interval Taylor and exact
+Bernstein bounds certify every continuous parameter. No derivative of Gamma
+is assumed. Current earns one local child; reset/replay earn zero live gain.
+Duration 32 remains uncertified; no universal impossibility is claimed.
+
+The source/event chain preserves old-edge W, initializes three new edges at
+one, archives both source histories and rebuilds the target section. Immutable
+FLINT graph/domain caches and certified section reuse were verified in two
+eight-step preflights. The reviewed record includes thirteen scientific/surface
+tests and two full same-implementation prefix replays. No independent external
+review is claimed. Acceptance performs no new numerical campaign.
+
+All **604 selected states** remain XZ-compressed to **5,289,508 bytes** from
+40,812,993. Superseded full trajectories remain absent; compact history, hashes
+and exact generators are preserved. Use `/api/spark-completion/applicability/a-rg2b`,
+the accepted A_RG2b browser panel, notebook cell `spark-completion-a-rg2b-accepted`,
+or `load_spark_arg2b_forensic_context`. The original research endpoint preserves
+its projection and historical pending flags. The [accepted ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ARG2bSC3ClaimDebtLedger.json)
+succeeds the unchanged research ledger. Earlier accepted views remain fixed.
+
+**Next work is separate native P9-9.1a numerics/lifecycle and aggregate
+P9-10.5/10.6 reconciliation**, under each family's admitted contracts. The
+family research sequence is complete; no native completion, aggregate closure,
+hierarchy or G4 acceptance follows automatically. The pre-existing
+`specs/README.md` basin-source audit failure remains documented and unwaived.
+A_OS below 100 stays paused. No merge or push is part of this acceptance.
+
+```sh
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_rg2b_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_rg2b_sc3.py
+```
+
+Earlier entries below preserve historical scopes and flags.
+
+## Historical research: A_RG2b direct completion demonstrated; review next — 2026-11-01
+
+The final family now has a [bounded A_RG2b research result](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionARG2bApplicability.md)
+on `investigation/grc9v4-spark-completion`, after accepted C_RG2b `d37589b8`.
+Both roles have **entry 300 → completion 302**, **last executed step 302**,
+and **zero subsequent supporting steps**. Uniform ordinary duration is **16**;
+elapsed target time is **4832** and the two-beat window lasts **32**. Current
+earns one local child; reset and read-only replay earn no live gain.
+
+Fresh vertex-specific completion charts prove the full C/64-log-W base inverse
+and its unique Lipschitz RG section, including the conductance writer. A common
+degree-40 rational curve plus radius 1/4096 covers all **30 independent physical
+directions: 14 resource and 16 conductance**. Both H consumers, the complete
+writer and section differences enter q<0.998534. The strict domain image margin
+exceeds 2.6939e-7. Exact Bernstein ranges and fourth-order interval Taylor bounds
+certify every parameter on 67 cells; no D Gamma or subsequent trajectory is used.
+Uniform duration 32 remains uncertified; no universal obstruction is claimed.
+
+A fresh source preparation passes the actual source beat, parent/event trigger
+and lawful shares 5/2048, 1021/1024, 1/2048. Old-edge W is copied, three new
+internal edges start at one, and both source histories are archived. Target H
+is rebuilt, not transported. Current and reset enter the common curve at
+parameters 9997/10000 and 1 respectively. All recurrence and section errors
+remain enclosed in exact-charge full-state tubes.
+
+Both eight-step optimization preflights passed before full runs. Immutable
+FLINT graph/domain caches, certified section reuse, early proposal stops and
+multi-RHS partials are active. Each selected prefix took about one minute; both
+full fresh replays passed. One-hour limits remain explicit. The **604 selected
+states** are XZ-compressed from **40,812,993 to 5,289,508 bytes**. Compact discovery
+records preserve earlier attempts and exact changed generators without their
+superseded full trajectories. Six focused science tests passed; side-tool checks
+and scoped source validation are retained in `ARG2bValidation.json`.
+
+Use `/api/spark-completion/applicability/a-rg2b/research`, the A_RG2b panel,
+notebook cell `spark-completion-a-rg2b-research`, or `spark_arg2b_research_status`.
+Inspection performs no numerical run. Accepted C_RG2b and older projections
+remain fixed through finite metadata succession. Scientific review is pending:
+**nine accepted families, A_RG2b demonstrated and awaiting adjudication**.
+
+**Next: scientific review/adjudication, then acceptance and authority →
+proposal/paper → specification propagation if accepted.** No acceptance,
+commit, merge or push was performed for A_RG2b. Native P9-9.1a, aggregate
+P9-10.5/10.6, hierarchy and G4 remain separate. The pre-existing `specs/README.md`
+basin-source audit failure is unwaived. A_OS below 100 remains paused.
+
+```sh
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_rg2b.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_rg2b.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_rg2b_research.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_rg2b_surfaces.py
+```
+
+Earlier entries below preserve historical scopes and flags.
+
+## Current continuation: C_RG2b SC-3 accepted; A_RG2b next — 2026-11-01
+
+The user accepts the direct C_RG2b result and requests commit. Research
+checkpoint `54a8cdb3` preserves the original proof, compressed prefixes,
+validation and historical records. The [adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCRG2bSC3Authority.md)
+accepts three bounded conditional claims and resolves `SC-APP-DEBT-C_RG2b`.
+Authority → proposal/paper → specification is bound under the unchanged SC-1
+contract and v2 completion schema. Native numerics and lifecycle remain forward
+at P9-9.1a; aggregate P9-10.5/10.6, hierarchy and G4 remain open.
+
+Both roles have **entry 390 → completion 392**, with **last executed step 392
+and zero subsequent supporting steps**, at duration 8 and elapsed time 3136.
+The degree 40 exact polynomial curve and radius 1/4096 cover all 14 independent
+resource directions. The strict self-map margin exceeds 6.21038e-7 and the
+common contraction is below 0.997397. Both physical geometry consumers and the
+local Lipschitz-section difference bound are included; no derivative of Gamma
+is assumed. Current earns one local child; reset/replay earn zero live gain.
+The selected trajectory is unchanged. Duration 32 remains uncertified.
+
+All 784 selected states remain XZ-compressed to 2,622,836 bytes. Superseded
+long payloads remain absent, with summaries, hashes and exact generators kept.
+Acceptance performs no new numerical campaign; the reviewed record already
+contains thirteen fresh tests and two full same-implementation prefix replays.
+No independent external review is claimed.
+
+Use `/api/spark-completion/applicability/c-rg2b`, the accepted C_RG2b panel,
+notebook cell `spark-completion-c-rg2b-accepted`, or
+`load_spark_crg2b_forensic_context`. The original research endpoint preserves
+its exact projection and historical pending flags. The [current ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bClaimDebtLedger.json)
+has **nine accepted scientific families; A_RG2b is the remaining family**.
+Existing accepted views stay fixed. The pre-existing `specs/README.md`
+basin-source audit failure remains documented and unwaived.
+
+**Next is A_RG2b completion applicability.** Prove its own completion-relative
+section with the conductance writer, full C/W difference bounds, actual
+source/event history transfer and a positive completion window. Reuse the
+curved-domain method when useful, with fresh physical bounds. Prioritize
+informative cases, check optimizations before long runs, use FLINT/Arb,
+retain one-hour large-graph caps and compress evidence. Continue this branch;
+no A_RG2b spark-completion campaign has started. A_OS below 100 remains paused.
+
+```sh
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_c_rg2b_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_rg2b_sc3.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
+## Historical research: C_RG2b direct closure, no supporting tail — 2026-11-01
+
+The [direct C_RG2b certificate](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCRG2bDirect.md)
+proves **entry 390 → completion 392**, for both current and reset, with **no
+trajectory after 392**. Both fresh executions and both full replays stop at 392.
+Duration remains **8**, elapsed ordinary time **3136**, and all physical
+coefficients, source preparation, allocation and invariant-section completion
+match the preceding faster construction. Current earns one local child; reset
+and read-only replay earn zero live gain. Uniform duration 32 remains uncertified.
+
+A degree 40 exact polynomial curve plus a full **14-dimensional** charge-tangent
+ball of radius **1/4096** defines the domain. Exact FLINT polynomial algebra,
+Bernstein ranges, a sharper local section/inverse estimate and full physical
+difference bounds prove a common contraction **q < 0.997397** and strict
+self-map margin **>6.21038e-7**. All edge directions and complete basins hold
+uniformly. The original SC-1 contract is unchanged; no derivative of Γ is assumed.
+The domain checker accepts no trajectory input. Details, formulas and commands
+are in the linked decision note and `CRG2bDirectChecks.json`.
+
+Only the two compressed **392-step prefixes (784 states total)** are retained
+in full. The superseded 2089-step supporting payloads (**11,502,036 bytes**) are
+removed; their run summaries, original hashes, recorded checks and unchanged
+generators remain in `CRG2bFasterRunHistory.json`. The older baseline history
+remains in `CRG2bRunHistory.json`. Historical records do not claim fresh checks
+of absent payloads. The compressed discovery bundle remains for reproduction.
+
+The API/browser/notebook expose `report.direct` as selected, with explicit
+completion, last executed step and zero subsequent support. `report.faster`
+and the original baseline remain historical comparisons. Inspection never
+launches numerical runs. All selected run evidence is XZ compressed.
+
+**Next: scientific review/adjudication. No acceptance, commit, merge or push
+has been performed.** Eight spark-completion families remain accepted;
+C_RG2b debt is open and **A_RG2b remains afterward**. Existing accepted proofs
+remain valid; this construction does not force their reimplementation. Native
+P9-9.1a, hierarchy and G4 remain separate. The existing `specs/README.md`
+basin-source repository audit failure is unwaived. A_OS below 100 remains paused.
+
+```sh
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_c_rg2b_direct.py --replay
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_rg2b_direct.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_rg2b_surfaces.py
+```
+
+Earlier entries below preserve their historical scopes; their superseded full
+payloads are not part of the selected direct proof.
+
+## Historical continuation: C_RG2b baseline demonstrated; faster construction selected — 2026-11-01
+
+Continue on `investigation/grc9v4-spark-completion` after accepted A_CI_PC
+(`abb9e1ce`). The [C_RG2b investigation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCRG2bApplicability.md)
+justifies a fresh quartic completion-relative section on the source and target
+graphs. The full physical return covers all **14 independent resource directions**
+using Lipschitz differences, with no assumed derivative of the RG section.
+The auxiliary argument retraction, nested agreement charts, global inverses,
+finite-chain error and local return contraction are explicit. Native zero-site
+bounds and earlier-family trajectories are not inherited.
+
+The new declaration uses ordinary duration **8** and a trapping radius **1/8192**.
+Current **2174 → 2176** earns one local child;
+reset **2072 → 2074** earns zero live gain. Target elapsed
+time from expansion is **17408** for current and **16592** for reset. Each
+positive two-beat window lasts **16**. The actual source beat and fresh event
+trigger, lawful allocation and independently reconstructed target section are
+retained; geometry history is not transported. Exact-charge metric tubes
+propagate every rounding, allocation and finite-section error. Checkpoint reads
+enclose the whole physical tube, not just its proposed center.
+
+Six focused tests and an eight-step optimization preflight passed before both
+campaigns. FLINT/Arb runs use 512-bit certification, 256-bit proposals,
+8192-beat horizons and one-hour caps. Immutable exact graph caches, precision-
+keyed identity operators, per-inverse reuse and certified early stops are active.
+All **4250 states** remain XZ compressed from **33.65 MB to 4.78 MB**.
+Two further tests check both signs of all fourteen directions at 90% of the
+trap radius and establish a duration-32 uniform-inverse obstruction for this
+auxiliary completion, without a universal or charge-21 impossibility claim. Retained checks cover every transition and 25 altered-evidence controls.
+They establish consistency with the source-bound outward producer; no independent
+external review or duplicate long trajectory proof is claimed.
+
+Use `/api/spark-completion/applicability/c-rg2b/research`, the C_RG2b panel,
+notebook cell `spark-completion-c-rg2b-research`, or
+`grcv4_explorer.spark_crg2b_research.spark_crg2b_research_status`.
+Inspection authenticates retained sources without numerical work. Accepted
+A_CI_PC and historical projections stay fixed through a finite metadata successor.
+
+**Next: investigate uniform duration 32 and closure below 400 beats.** The
+user explicitly withholds acceptance of this first positive result. Keep all
+physical coefficients fixed while testing better completions, lawful
+preparations/allocations and anisotropic trapping domains. Review/adjudication
+and authority → proposal/paper → specification follow a selected result. Eight families remain accepted and
+`SC-APP-DEBT-C_RG2b` remains open. **A_RG2b is the remaining realization**.
+Native completion at P9-9.1a, hierarchy and G4 stay forward. The broader audit's
+pre-existing `specs/README.md` basin-source drift remains unwaived. The below-100
+A_OS goal stays paused; its earlier-domain result retains separate review status.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_c_rg2b_research.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_rg2b.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_rg2b_surfaces.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
+## Current continuation: A_CI_PC SC-3 accepted; C_RG2b next — 2026-11-01
+
+The user accepts the bounded A_CI_PC result and requests commit. Research
+checkpoint `8faa7497` preserves the original equations, full implicit
+proof, compressed runs, preflight and validation. The
+[A_CI_PC adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionACIPCSC3Authority.md)
+accepts three conditional claims and resolves `SC-APP-DEBT-A_CI_PC`.
+Authority → proposal/paper → specification is bound, reusing SC-1 and the
+v2 completion schema. Two native obligations remain forward at P9-9.1a;
+hierarchy, aggregate P9-10.5/10.6 and G4 remain open.
+
+The **76-dimensional implicit C/W/Z return** includes all 14 resource,
+16 conductance and 46 carrier directions. The selected joint root includes
+incoming Z, and its same source enters immediate geometry and the separate
+carrier writer. Current **375 → 377** earns one local child; reset **372 → 374**
+earns zero live gain. Actual source/event roots, preserved old-edge W and three
+internal seeds, complete carrier archives and whole-target zero reset with
+explicit loss are retained. Runs took 120.43 and 118.82 seconds after the
+optimization preflight; all 751 states remain XZ compressed from 11.20 MB to
+1.08 MB. Acceptance reruns no numerical campaign and claims no independent
+external reviewer or duplicate long replay.
+
+Use `/api/spark-completion/applicability/a-ci-pc`, the accepted A_CI_PC panel,
+notebook cell `spark-completion-a-ci-pc-accepted`, or
+`load_spark_acipc_forensic_context`. The original research endpoint retains
+its historical pending flags and exact projection; changed helper downloads
+serve exact reviewed Git bytes. All earlier accepted scopes stay fixed.
+The [current ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACIPCClaimDebtLedger.json)
+has **eight accepted scientific families and two open families**. The broader
+audit's pre-existing basin source drift at `specs/README.md` remains unwaived.
+
+**Next is C_RG2b completion applicability**: justify its completion-relative
+section and full ordinary-map bounds for the quartic law. Existing Lipschitz
+sections do not automatically provide derivatives or the needed new inverse
+bounds. Retain informative-case priority, optimization preflights, FLINT/Arb,
+one-hour large-graph caps and compressed evidence. Continue this branch;
+no RG2b completion campaign has started. The below-100 A_OS goal stays paused
+and its earlier-domain result keeps its separate review status.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_ci_pc_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci_pc_sc3.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
+## Current continuation: A_CI_PC completion demonstrated; review next — 2026-11-01
+
+Continue on `investigation/grc9v4-spark-completion` after accepted A_PC
+(`65382c48`). The [A_CI_PC investigation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionACIPCApplicability.md)
+proves a fresh **76-dimensional implicit C/W/Z return**, including 14 resource,
+16 conductance and all 46 carrier directions. The selected root includes
+incoming Z, and its same source feeds immediate geometry and the separate
+carrier writer. The W writer uses final C and incoming W. The earlier C/W
+shape is a candidate only; derivatives and both trajectories are fresh.
+
+The first product-domain candidate contracts with q≈0.9959414661 and strict
+image margin≈0.0040585339. Six equation tests cover an independent 110-digit
+Picard implementation, every physical axis and all flat-root axes. An eight-
+step preflight verified caches, staged proposals and one-root/two-writer cadence
+before the full campaigns. Current **375 → 377** earns one local child;
+reset **372 → 374** earns zero live gain. Runs took 120.43 and
+118.82 seconds with 8192-bit FLINT/Arb, 1024-beat horizons and one-hour caps.
+
+The actual source beat, fresh event root, exact old-edge W preservation and
+three internal seeds are retained. Both complete carriers are archived and
+whole-target Z is zeroed with explicit history loss. All 751 states and
+root/read checkpoints are XZ compressed from 11.20 MB to 1.08 MB.
+Retained checks cover every transition and 27 altered-evidence controls.
+Overlap checks establish consistency; the bound outward producer supplies
+trajectory enclosure provenance. No duplicate long replay is claimed.
+
+Use `/api/spark-completion/applicability/a-ci-pc/research`, the A_CI_PC panel
+or notebook cell `spark-completion-a-ci-pc-research`. Inspection authenticates
+sources without rerunning numerics. Accepted A_PC and historical projections
+remain fixed through a finite metadata successor.
+
+**Next: scientific review/adjudication of A_CI_PC**, followed by authority →
+proposal/paper → specification if accepted. Seven families remain accepted;
+`SC-APP-DEBT-A_CI_PC` remains open. **C_RG2b follows review**. Native completion,
+hierarchy and G4 remain forward; the known broader audit failure at
+`specs/README.md` remains unwaived. The below-100 A_OS goal stays paused and
+its earlier-domain result keeps its separate review status.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_ci_pc_research.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci_pc.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci_pc_surfaces.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
+## Current continuation: A_PC SC-3 accepted; A_CI_PC next — 2026-11-01
+
+The user accepts the bounded A_PC result and requests commit. Research
+checkpoint `15ffe0e5` preserves the equations, full product proof,
+compressed runs, preflight, retained checks and original pending-review view.
+The [A_PC adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionAPCSC3Authority.md)
+accepts three conditional claims and resolves `SC-APP-DEBT-A_PC`. Authority
+→ proposal/paper → specification is bound, reusing SC-1 and the v2 completion
+schema. Two native obligations remain forward at P9-9.1a; hierarchy,
+aggregate P9-10.5/10.6 and G4 remain open.
+
+The **76-dimensional C/W/Z product trap** includes all 14 resource, 16
+conductance and 46 carrier directions. Incoming carrier geometry selects one
+read for continuity and both independent history writers. Current **375 → 377**
+earns one local child; reset **372 → 374** earns zero live gain. Actual source/
+event reads, exact old-edge W preservation and three internal seeds, whole
+source-carrier archives and whole-target zero resets with explicit loss are
+retained. The first domain candidate passed before trajectory work. The two
+fresh runs took about 33 seconds each; all 751 states remain XZ compressed
+from 11.06 MB to 1.07 MB. Acceptance reruns no numerical campaign and claims
+no duplicate long replay or independent external reviewer.
+
+Use `/api/spark-completion/applicability/a-pc`, the accepted A_PC browser panel,
+notebook cell `spark-completion-a-pc-accepted`, or
+`load_spark_apc_forensic_context`. The historical research endpoint retains its
+pending flags and exact projection; its changed metadata-helper download
+serves exact reviewed Git bytes. All earlier accepted scopes remain fixed.
+The [current ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/APCClaimDebtLedger.json)
+has **seven accepted scientific families and three open families**. The broader
+audit's pre-existing basin source drift at `specs/README.md` remains unwaived.
+
+**Next is A_CI_PC completion applicability**: combine a selected joint root
+with incoming carrier geometry, both history writers, full C/W/Z return and
+actual source/event/two-history transfer/approach/window chain. Candidate
+geometry can guide a fresh proof; prior derivatives and entry times cannot
+establish the composite result. Check caching before long runs, prioritize
+informative large cases, retain FLINT/Arb, explicit one-hour large-graph caps
+and compressed evidence. Continue this branch; no A_CI_PC campaign has started.
+The below-100 A_OS goal remains paused; its earlier-domain result keeps its
+separate review status.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_pc_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_pc_sc3.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
+## Current continuation: A_PC completion demonstrated; review next — 2026-11-01
+
+Continue on `investigation/grc9v4-spark-completion` after accepted A_CI
+(`79b66374`). The [A_PC investigation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionAPCApplicability.md)
+now proves a full **76-dimensional C/W/Z return**: 14 resource, 16 conductance
+and 46 independent symmetric-star carrier directions. The earlier A_OS C/W
+shape is only a candidate; the coupled derivative and all source/current/reset
+execution evidence are fresh A_PC work. The below-100 A_OS investigation
+remains paused and the earlier A_OS domain keeps its separate review status.
+
+Incoming Z selects geometry. One selected read feeds continuity, the final-C/
+incoming-W conductance writer and the separate carrier writer. The declared
+product domain has carrier radius 1/2^30, contraction below 0.995942 and strict
+unit image margin above 0.004058. The first candidate passed before trajectory
+runs. Fixed-row/graph/domain caching, exact-state read reuse and batched
+carrier derivatives passed an eight-step preflight before the full campaigns.
+
+Current **375 → 377** earns one local child; independent reset **372 → 374**
+earns zero live gain. Both campaigns took about **33 seconds** with 8192-bit
+FLINT/Arb intervals, fixed 1024-beat horizons and one-hour caps. Matching earlier
+beat numbers are independently obtained. The actual source beat and fresh
+event read use nonzero W and Z histories. D11 shares are 1/128,63/64,1/128;
+every old-edge W is preserved and three new internal edges start at one.
+Both complete source carriers are archived and complete target Z is reset
+with explicit carrier loss. The two history dispositions remain separate.
+
+All 751 states and selected-read checkpoints are losslessly XZ compressed
+from 11.06 MB to 1.07 MB. Every saved transition is checked; 21 altered-evidence
+controls reject. Five equation tests include an independent 110-digit model
+and all 76 physical derivative directions. Overlap checks are consistency
+evidence; the bound outward producer supplies trajectory enclosure provenance.
+No duplicate long replay or independent external reviewer is claimed.
+
+Use `/api/spark-completion/applicability/a-pc/research`, the A_PC panel or
+notebook cell `spark-completion-a-pc-research`. Inspection checks retained
+sources without rerunning numerics. Accepted A_CI and historical views retain
+their exact projections through a finite metadata successor.
+
+**Next: scientific review/adjudication of A_PC**, then authority → proposal/
+paper → specification if accepted. Six families remain accepted and
+`SC-APP-DEBT-A_PC` remains open pending adjudication. **A_CI_PC is the next
+family afterward**; no campaign for it has started. Native P9-9.1a, hierarchy
+and G4 remain forward. The pre-existing broader audit failure at
+`specs/README.md` remains documented and unwaived.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_pc_research.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_pc.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_pc_surfaces.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
+## Current continuation: A_CI SC-3 accepted; A_PC next — 2026-10-31
+
+The user accepts the bounded A_CI result and requests commit. Research
+checkpoint `0ef5971a` preserves the derivation, interval runs, checks and
+original pending-review projection. The [A_CI adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionACISC3Authority.md)
+accepts three conditional scientific claims and resolves `SC-APP-DEBT-A_CI`.
+Authority → proposal/paper → specification is bound, reusing SC-1 and the
+v2 completion schema. Two native obligations remain forward at P9-9.1a;
+hierarchy, aggregate P9-10.5/10.6 and G4 remain open.
+
+The fresh selected joint root and implicit **30-dimensional C/W return**
+certify current **375 → 377**, with one local child, and independent reset
+**372 → 374**, with zero live gain. The A_OS anisotropic shape was a candidate;
+its derivative and trajectories were not substituted. The actual source beat,
+fresh event root, old-edge W lineage and declared 1/128,63/64,1/128 allocation
+are retained. Equations, tolerances and two-beat window are unchanged. No
+numerical campaign is rerun for acceptance; 751 states remain XZ compressed
+from 5.9 MB to 0.76 MB. No independent long replay or external review is claimed.
+
+Use `/api/spark-completion/applicability/a-ci`, the accepted A_CI browser panel,
+notebook cell `spark-completion-a-ci-accepted`, or
+`load_spark_aci_forensic_context`. The original research endpoint retains its
+pending flags and exact projection; its changed metadata-helper download
+serves the exact reviewed Git bytes. Predecessor accepted views and the earlier
+A_OS domain view retain their identities. The [current ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACIClaimDebtLedger.json)
+has **six accepted scientific families and four open families**. The broader
+audit's pre-existing basin source drift at `specs/README.md` remains unwaived.
+
+**Next is A_PC completion applicability**: include both independent history
+channels, the stationary conductance writer, lawful carrier perturbations,
+the full C/W/Z return and actual source/event/transfer/approach/window chain.
+Reuse candidate geometry only under proved hypotheses. Check caching and
+optimization before long runs, prioritize informative large cases, retain
+FLINT/Arb and explicit one-hour large-graph caps, and compress large evidence.
+Continue this branch; no A_PC campaign has started. The below-100 A_OS goal
+remains paused; its earlier-domain result has its separate review status.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_ci_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci_sc3.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
+## Current continuation: A_CI completion demonstrated; review next — 2026-10-31
+
+The user requested the next family on the existing branch. The below-100
+A_OS investigation remains paused; its verified 64% reduction is committed
+at `8d1a0e12`. The earlier-domain result retains its separate review status.
+
+The [A_CI investigation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionACIApplicability.md)
+now proves the selected joint current/geometry root, self-consistent stationary
+conductance writer and full **30-dimensional C/W return**. The A_OS rational
+anisotropic shape is reused only as a candidate; the implicit derivative,
+source beat, fresh event root and both interval trajectories are new A_CI work.
+Current **375 → 377** earns one local child. Independent reset **372 → 374**
+earns zero live gain. SC-1, equations, tolerances and the two-beat window are
+unchanged; no below-100 certificate variant is introduced.
+
+The declared allocation is 1/128,63/64,1/128, with preserved old-edge W and
+three new internal edges seeded at one. Graph/root-domain caches, fixed-row
+reuse, multi-right-hand-side derivatives, staged root proposals and exact-state
+root reuse passed preflight before the roughly 101-second campaigns. Full
+8192-bit intervals drive evolution; only root proposals use midpoints.
+All 751 retained states and root checkpoints are compressed from 5.9 MB to
+0.76 MB. One-hour caps and a 1024-beat horizon remain explicit.
+
+Use `/api/spark-completion/applicability/a-ci/research`, the A_CI browser panel
+or notebook cell `spark-completion-a-ci-research`. The source-bound view does
+not rerun numerics. Earlier accepted, historical research and anisotropic
+A_OS projections remain fixed through a finite metadata successor.
+
+**Next: scientific review/adjudication of A_CI**, then authority → proposal/paper
+→ specification if accepted. Five families remain accepted, and
+`SC-APP-DEBT-A_CI` remains open pending adjudication. A_PC is the next family
+afterward. Native P9-9.1a, hierarchy and aggregate G4 remain forward. The
+pre-existing broader audit failure at `specs/README.md` remains unwaived.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_ci_research.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci_surfaces.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
+## Current continuation: earlier A_OS closure demonstrated; review next — 2026-10-31
+
+The user prioritizes investigating an anisotropic domain for substantially
+earlier closure. On the existing branch, a full 30-dimensional rational
+parallelotope certifies **current 375 → 377** and **reset 372 → 374**, versus
+accepted 1039 → 1041 and 1022 → 1024. This is about 64% fewer beats with the
+same event, retained interval trajectories, timestep, equations, allocation,
+tolerances and two-beat window. No additional event gain is created.
+
+The [earlier-closure investigation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionAOSEarlierClosure.md)
+records the FLINT/Arb full-map proof, exact rational domain and comparisons.
+Current's last edge reversal is 364 → 365; entry 375 is ten beats later.
+Pre-reversal fixed-order trapping is obstructed, but optimality is not proved.
+The enlarged-ball comparison reproduces entries 627/613. All 2065 retained
+states are rechecked; no physical trajectory was rerun. Large checks are XZ
+compressed. The original analytic Jacobian is reused, with all-axis secant
+pressure tests; no independent derivation or trajectory replay is claimed.
+
+Use `/api/spark-completion/applicability/a-os/earlier`, its browser panel or
+notebook cell `spark-completion-a-os-earlier`. Accepted and historical views
+retain their identities through a finite metadata successor. Earlier endpoints
+are **pending review**, not an accepted authority replacement. Review this
+certificate next; A_CI remains the next family afterward and has not started.
+Native completion, hierarchy and G4 remain forward. The pre-existing broad
+audit failure at `specs/README.md` remains documented and unwaived.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_os_earlier.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os_earlier.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os_earlier_surfaces.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
+## Current continuation: A_OS SC-3 accepted; A_CI next — 2026-10-31
+
+The user accepts the bounded A_OS result and requests commit. Research
+checkpoint `27fa4cb2` preserves the original proof, compressed runs,
+discovery and review. The [A_OS adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionAOSSC3Authority.md)
+accepts three conditional claims and resolves `SC-APP-DEBT-A_OS` for scientific
+research. Authority → proposal/paper → specification is bound; SC-1 and the
+v2 completion schema are reused. Native numerical and lifecycle obligations
+remain forward at P9-9.1a; hierarchy, aggregate P9-10.5/10.6 and G4 stay open.
+
+The full trap has 14 resource and all 16 conductance directions, with a
+self-consistent stationary writer. Current 1039 → 1041 completes one child;
+reset 1022 → 1024 earns no live gain. The inherited allocation did not enter
+the child trap. Acceptance covers the separately declared 1/128,63/64,1/128
+allocation with unchanged equations and tolerances, preserved old-edge W and
+three new edges seeded at one. The failed attempt and exploratory discovery
+remain disclosed. No trajectory is rerun for acceptance; the 15.3 MB original
+execution evidence remains compressed to 2.0 MB.
+
+Use `/api/spark-completion/applicability/a-os`, the accepted A_OS panel,
+notebook cell `spark-completion-a-os-accepted`, or
+`load_spark_aos_forensic_context`. The historical research endpoint retains
+its original pending flags and exact projection; its metadata-helper download
+serves the reviewed Git bytes through a finite successor. Earlier accepted
+projections remain fixed. The [current family ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSClaimDebtLedger.json)
+has five accepted scientific families and five open families. No separate
+independent-review artifact or long replay is claimed. The broader repository
+audit's pre-existing basin source drift remains documented and unwaived.
+
+**Next is A_CI completion applicability**: establish the selected joint root
+with incoming-W fixed rows, self-consistent stationary W, the full coupled
+C/W return and actual source/event/W-lineage/approach/window chain. The A_OS
+fixed-point geometry may suggest a candidate, but neither its OS derivative
+nor its entry times establish the A_CI ordinary-map result. Continue this
+branch; no A_CI campaign has started.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_os_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os_sc3.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
+## Current continuation: A_OS completion demonstrated; scientific review next — 2026-10-31
+
+On the existing `investigation/grc9v4-spark-completion` branch, the
+[A_OS investigation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionAOSApplicability.md)
+now certifies a self-consistent stationary conductance writer and a full
+30-dimensional C/W return (14 resource and all 16 conductance directions).
+Current 1039 → 1041 completes one child; independent reset
+1022 → 1024 earns zero live gain. The positive window is two beats.
+
+The inherited C-family allocation failed to enter this child trap. The
+[disclosed discovery](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSDiscovery.json.xz)
+led to the separately declared lawful shares 1/128,63/64,1/128. Fresh interval
+campaigns then proved the full chain; equations, SC-1 thresholds and tolerances
+are unchanged. Every old-edge W is preserved and three new edges start at one.
+This is a bounded construction, not an all-allocation result.
+
+Optimized FLINT runs took 59.1/58.5 seconds under
+one-hour caps. Graph and fixed-row caches, identical-subject read reuse and
+predictor identity-solve removal are checked before the runs. Full evidence is
+compressed; the side-tool API `/api/spark-completion/applicability/a-os/research`,
+browser panel and notebook cell `spark-completion-a-os-research` inspect the
+same source-bound result without rerunning trajectories. The finite metadata
+successor preserves accepted C_OS/C_CI/C_PC/C_CI_PC projections.
+
+**Next: scientific review/adjudication of A_OS**, then authority → proposal/paper
+→ specification if accepted. `SC-APP-DEBT-A_OS` stays open pending that step.
+A_CI has not started. Native P9-9.1a, hierarchy, aggregate P9-10.5/10.6 and G4
+remain separate. The broad repository audit's pre-existing basin source drift
+at `specs/README.md` remains documented and unwaived.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_os_research.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os_surfaces.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
+## Current continuation: C_CI_PC SC-3 accepted; A_OS next — 2026-10-31
+
+The user reports a positive review and requests acceptance and commit.
+Research checkpoint `d3c71d64` preserves the original runs, source bindings,
+reporting correction and review. The
+[C_CI_PC adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIPCSC3Authority.md)
+accepts three bounded conditional claims and resolves `SC-APP-DEBT-C_CI_PC`
+for scientific research. Authority → proposal/paper → specification is bound;
+SC-1 and the v2 completion schema are reused. Native numerical and lifecycle
+obligations remain pending at P9-9.1a; completion/hierarchy and G4 are separate.
+
+The selected root supplies both immediate geometry and the persistent writer,
+retaining stationary gain two. The full trap includes all 14 resource and
+46 carrier directions. Current 849 → 851 completes one child; independent
+reset 817 → 819 earns no live gain. The 21.1 MB evidence remains compressed
+to 2.44 MB. Acceptance reruns no trajectory and preserves the corrected
+outward-residual diagnostic and original producer bytes. User-reported positive
+review is recorded without inventing a separate review artifact or long replay.
+The broader repository audit's pre-existing source drift remains documented.
+
+Use `/api/spark-completion/applicability/ci-pc`, the accepted C_CI_PC panel,
+notebook cell `spark-completion-ci-pc-accepted`, or
+`load_spark_cipc_forensic_context`. Older views retain their projections;
+the historical research-helper source is served from the exact reviewed Git
+bytes through an explicit metadata successor. The
+[current family ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCClaimDebtLedger.json)
+has C_OS, C_CI, C_PC and C_CI_PC accepted scientifically and six families open.
+[Research reconciliation](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIPCReconciliation.md)
+does not close aggregate P9-10.5/10.6.
+
+**Next is A_OS completion applicability**: establish the self-consistent
+stationary W writer and full C/W return, with the actual source/event/lineage/
+approach/window chain. A frozen-W or C-only trap is insufficient. Reuse prior
+mathematics only under its hypotheses. Continue the existing branch; no A_OS
+campaign has started here.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_ci_pc_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_ci_pc_sc3.py
+```
+
+Earlier continuation entries below retain their historical scopes and flags.
+
+## Current continuation: C_CI_PC completion demonstrated; review next — 2026-10-31
+
+On `investigation/grc9v4-spark-completion`, the
+[C_CI_PC investigation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIPCApplicability.md)
+now supplies a bounded full C/Z construction. Current enters at
+849 and completes at 851;
+independent reset 817 → 819
+earns zero live gain. Both histories use new selected roots, one common source
+for immediate geometry and the persistent writer, and all sixty physical
+state directions. The stationary composite gain-two identity is preserved.
+
+The declared signed-carrier domain is 1/128. The full physical contraction is
+below 0.997358 with positive image margin. Exact source prestates receive a new
+composite ordinary beat and fresh event read; both source histories are archived
+before lawful whole-target zeroing. The two prioritized runs took about
+446/424 seconds,
+within one-hour role caps. Preflight verified active FLINT caches, batched
+solves, identical-subject read reuse and faster root proposals. Final residual
+certificates and physical states remain fixed at 8192 bits.
+
+[Compressed evidence](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCResearchProgress.json)
+retains all 1,670 C/Z states, both chart classifications,
+full read checkpoints and nineteen rejecting subject/completion controls.
+The [repository scientific review](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/review/CCIPCScientificReview.md)
+states the overlap-consistency limits; no independent second reviewer or long
+replay is claimed. The prior repository audit drift remains separate and
+unwaived in the [validation](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCValidation.json).
+
+**Next: explicit C_CI_PC scientific review/adjudication**, then authority →
+proposal/paper → specification. `SC-APP-DEBT-C_CI_PC` remains open pending
+that step. Accepted C_OS/C_CI/C_PC authorities, original executions and validation
+records are unchanged. The finite metadata successor binds current handoff/UI
+updates to exact accepted commit `87d2f474`; accepted predecessor projections
+are preserved. Native P9-9.1a, hierarchy and aggregate P9-10.5/10.6/G4 remain
+separate. A_OS follows after adjudication; it has not started here.
+
+Use `/api/spark-completion/applicability/ci-pc/research`, its browser panel,
+indexed sources or notebook cell `spark-completion-ci-pc-research`. This lean
+restart check verifies retained status without running any trajectory:
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_ci_pc_research.py --check
+```
+
+Earlier continuation entries below retain their historical scopes and flags.
+
+## Current continuation: C_PC SC-3 accepted; C_CI_PC next — 2026-10-31
+
+The user accepted the bounded C_PC work with “acceopt and commit”. Research
+checkpoint `5d5d9960` retains the original runs and review. The
+[C_PC adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCPCSC3Authority.md)
+accepts three conditional claims, resolves `SC-APP-DEBT-C_PC` for research,
+and propagates authority → proposal/paper → specification. The existing v2
+completion schema is reused. Native numerical and lifecycle obligations
+remain pending in P9-9.1a; no native completion/hierarchy or G4 grant is added.
+
+The actual full C/Z construction covers 14 resource and 46 carrier directions,
+including nonzero signed perturbations. Current enters at 849 and completes
+at 851; independent reset 817 → 819 earns no live gain. Both source carrier
+archives and lawful whole-target zeroing are bound to the actual event.
+The retained 20.8 MB of evidence remains compressed to 2.4 MB; no campaign
+is rerun for acceptance. Repository-review and overlap-consistency limits
+remain explicit; no independent second reviewer or independent long replay
+is claimed. The broader repository audit's pre-existing source drift remains
+recorded separately in the original validation, without being waived.
+
+Use `/api/spark-completion/applicability/pc`, the accepted C_PC browser panel,
+notebook cell `spark-completion-pc-accepted`, or
+`load_spark_pc_forensic_context`. Older loaders preserve their historical
+accepted or pre-acceptance graphs. The
+[current family ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPCClaimDebtLedger.json)
+has C_OS, C_CI and C_PC accepted scientifically and seven families open.
+The [research reconciliation](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCPCReconciliation.md)
+does not close aggregate P9-10.5/10.6.
+
+**Next is C_CI_PC completion applicability**: prove its selected joint root,
+full C/Z return and actual source-to-window chain. The same selected source
+must supply immediate geometry and the persistent writer; the composite
+gain-two identity must not be silently reduced to CI or PC. Reuse exact
+mathematics only under its hypotheses. Continue branch
+`investigation/grc9v4-spark-completion`; no new-family campaign has started.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_pc_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_pc_sc3.py
+```
+
+These are retained authority/propagation/surface checks. Earlier continuation
+entries below retain their historical scopes and flags.
+
+## Current continuation: C_PC completion demonstrated; review next — 2026-10-31
+
+Branch `investigation/grc9v4-spark-completion` starts from merged `97470d96`.
+The [C_PC investigation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCPCApplicability.md)
+now supplies a bounded positive source-to-completion construction. Current
+enters the full C/Z trap at 849 and completes at 851; independently executed
+reset enters at 817 and ends at 819 with no live gain. Both new runs finished
+in about 71/68 seconds at fixed 8192-bit Arb, after a verified optimization
+preflight. They do not reuse C_OS/C_CI trajectories.
+
+The new trap includes fourteen resource and forty-six independent carrier
+directions, signed nonzero carrier perturbations, actual old-carrier reads
+and exponential writes. Its contraction is below 0.997358. Source current
+and reset carry explicitly declared nonzero histories; the actual event
+archives both and zeroes the entire target carrier under the lawful P→P rule.
+The two execution archives are compressed from 20.8 MB to 2.4 MB.
+
+Eight scientific test methods and sixteen false-completion/subject controls
+pass. The checker verifies all 1,670 saved C/Z states, 3,340 chiral
+classifications and resource/carrier recurrence links. Saved/fresh overlap
+is consistency only; the full trap uses fresh interval calculations. The
+[repository scientific review](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/review/CPCScientificReview.md)
+does not claim an independent second reviewer or independent long replay.
+
+**Next: scientific review and explicit C_PC claim/debt adjudication**, then
+authority → proposal/paper → specification. The applicability debt remains
+open pending that step. C_CI_PC follows in the research order. Accepted
+C_OS/C_CI authorities and their original ledger are unchanged; native
+P9-9.1a completion, hierarchy and aggregate P9-10.5/10.6/G4 remain separate.
+
+Inspect the [current research progress](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPCResearchProgress.json)
+through `/api/spark-completion/applicability/research`, its browser panel,
+indexed sources, or notebook cell `spark-completion-research`. The older
+applicability endpoint continues to display the accepted C_CI checkpoint.
+This lean restart check verifies retained bindings and scope without
+repeating a trajectory:
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_pc_research.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_pc_surfaces.py
+```
+
+For fresh mathematical and all-state consistency checks, use the commands
+in the investigation. Do not repeat the long campaign merely to inspect
+status. Earlier continuation entries below describe their historical scopes.
+
+Validation: 23 focused scientific/surface/predecessor tests pass, and changed
+files satisfy the 1 MB compression rule. The broader Phase 9 boundary audit
+is blocked by pre-existing basin propagation source drift in `specs/README.md`
+and the investigation plan/checklist/decision ledger. The mismatch also exists
+at base commit `97470d96`; this work does not rewrite those accepted historical
+bindings. See [CPCValidation.json](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPCValidation.json)
+for the exact baseline comparison. The maintenance roster is refreshed, but
+no full repository-boundary PASS is claimed.
+
 ## Current continuation: C_CI SC-3 complete; C_PC next — 2026-10-31
 
 The [C_CI adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCISC3Authority.md)

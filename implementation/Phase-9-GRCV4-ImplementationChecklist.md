@@ -4458,6 +4458,9 @@ acceptances remain unchanged; each row below records its own bounded evidence.
   - [x] Bounded user acceptance on 2026-10-31 over implementation `93920eab`;
     [decision](./phase-9-grcv4/tranche-10/P9-10.3-Acceptance.json). Capability
     publication, debt reconciliation and G4 remain P9-10.4–10.6.
+
+#### P9-10.4: Capability publication and spark completion
+
 - [x] P9-10.4: Publish progressive capability/API/lifecycle examples for all ten
   families, with new runtime evidence linked to the frozen fixture catalog.
   Use the public class implemented in P9-9.4b and reviewed in P9-9.6;
@@ -4479,85 +4482,91 @@ acceptances remain unchanged; each row below records its own bounded evidence.
     [decision](./phase-9-grcv4/tranche-10/P9-10.4-Acceptance.json). G4 remains separate.
   [Guide](../examples/grc9v4/README.md),
   [publication](./phase-9-grcv4/tranche-10/P9-10.4-Examples.json).
-- Spark-completion scientific successor before the final Tranche 10 scope decision:
-  [opening and ledger](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionDefinitionAndFeasibility.md).
-  - [x] Open a separate research branch after accepting/merging the examples;
-    retain exact forensic support boundaries and record provisional claims/debts.
-  - [x] Complete the initial exact seed-threshold/row-occupancy screen and reuse
-    the accepted positive-seed control; no trajectory rerun or completion claim.
-  - [x] SC-1: Select the bounded scientific child object, parent comparison,
-    temporal correspondence and precise stability statement with its conditional
-    mathematical argument; no native completion capability is inferred.
-    - [x] Prepare the [SC-1 candidate](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC1Contract.md):
-      explicit geometric attraction domains, same-classifier parent/gain,
-      full-state stability/completion theorem and lifecycle/numerical conditions.
-    - [x] Check the definition with 15 exact geometric result groups, retaining
-      the 25 finite-observation controls separately; no actual V4 feasibility claim.
-    - [x] Apply independent scientific pressure: conditional mathematics passes;
-      exact/represented seed, exact-charge lift, local-gain and capacity corrections
-      are regression checked. Record the bounded zero-site equilibrium exclusion.
-    - [x] [Adjudicate the geometric identity branch and conditional A.7 bridge](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC1Adjudication.md)
-      under the user's scientific selection; organization-definition scope is
-      resolved, while applicability, propagation and native obligations remain.
-  - [x] SC-2: Establish a nonempty source/event/continuation domain and controls;
-    identify per-family W/Z/root/section obligations before wider support.
-    - [x] Inspect the 112 retained four-family role declarations and establish
-      the scoped tree exclusion, plus A's positive-denominator extension.
-    - [x] Trace existing mechanisms: changing K4_base alone does not force
-      geometry; the existing site-potential channel admits a proposed homogeneous
-      nonlinear research law with conditional nonconstant C_OS equilibria and
-      local full-step attraction. No native evaluator or completion is admitted.
-    - [x] Apply SC-2's conditional mathematical PASS: retain 120 stable
-      branches/no-basin control, reported solver-box escape and mechanism
-      attribution. Recheck local predecessor/provenance without claiming the
-      independent reviewer executed unavailable dependencies.
-    - [x] Complete [exact source/parent/D11/charge preflight](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC2EventCompatibility.md):
-      two independent source roles, both chiral targets and target-specific
-      stationary bounds. No actual event/admission/evolution is inferred.
-    - [x] Check [SC-2 finite continuation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC2Continuation.md):
-      strict-split exclusion for original reads; one explicit companion passes
-      128 enclosed steps per role, with no organizing gain in either chiral chart.
-      Exact-equation evidence does not admit the native nonlinear binding.
-    - [x] Validate [the constructive positive candidate](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC2PositiveCandidate.md):
-      both D11 allocations, enclosed target evolution and entry into a quantitative
-      full-OS trap at steps 900/867, with complete basin/descent rosters on both charts.
-      Positive exact-equation research does not select the binding or grant native support.
-    - [x] Establish [the exact ordinary source beat/fresh event capture](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC2SourceBeat.md):
-      current advances, reset stays unchanged, actual D11 current transfer reaches
-      the trap at 900 and the unchanged reset subject reuses its 867 certificate.
-    - [x] User accepts the bounded completed research chain and its declared
-      scientific binding on 2026-10-31; SC-3 authority/propagation follows.
-      [Acceptance](./investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2Acceptance.json).
-      - [x] Apply the independent positive-target mathematical PASS and close
-        the retained-check gap: both chart keys, full checkpoint basin dictionaries
-        and entry metric from saved coordinates; rehashed regression controls.
-        Source-chain adjudication remains separate; no new trajectory campaign.
-    - [x] Execute [bounded research spark completion](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC2CompleteWitness.md):
-      current steps 901/902 preserve the complete certified basins; one new stable
-      child, local gain one, replay gain zero; ten false-completion controls reject.
-      Reuse the long approach and unchanged reset. No native support is inferred.
-  - [x] SC-3: Consolidate SC-1 selection and reviewed SC-2 feasibility; admit
-    the authority/schema successor, then authority → proposal/paper → spec.
-    Only then return to P9-9.1a implementation, or record scoped deferral.
-    - [x] Propagate represented charge/row/error and lifecycle requirements through
-      authority → paper → spec before native completion. Preserve the zero-site exclusion.
-  - [x] User selects all-ten completion-applicability research after SC-3,
-    before native completion: [programme and family obligations](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionAllTenApplicability.md).
-    Preserve accepted C_OS; C_CI starts the remaining nine. Individual research
-    tasks and dispositions live in the investigation checklist/ledger.
-    - [x] [C_CI scientific SC-3 and research reconciliation](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIReconciliation.md):
-      three conditional claims, resolved bounded applicability debt, additive
-      propagation and both native obligations routed forward. C_PC is next.
+  - [x] **Spark-completion scientific successor — all ten bounded constructions closed.**
+    The [programme and source map](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionAllTenApplicability.md)
+    and [current endpoint ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/EarlierSC3ClaimDebtLedger.json)
+    record the completed scientific work. The initial P9-10.4 example publication
+    above retains its original native scope; this successor adds bounded scientific
+    results and their publication, not native completed-spark support.
+    - [x] SC-1: select the qualified geometric child domains, actual parent
+      footprint/local gain and conditional full-state stability theorem;
+      [adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC1Adjudication.md).
+    - [x] SC-2/SC-3: establish the actual source/event/transfer/positive-evolution
+      chain and completion window, retain negative controls, and propagate the
+      accepted scientific law and schema through authority → proposal/paper →
+      specification; [initial authority](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC3Authority.md).
+    - [x] C_OS: full fourteen-dimensional C return; adopted current 374→376,
+      reset 375→377 at duration 32.
+    - [x] C_CI: selected joint root and implicit full-C return; adopted current
+      374→376, reset 375→377 at duration 32.
+    - [x] C_PC: complete sixty-dimensional C/Z return and actual carrier writer;
+      adopted current 374→376, reset 375→377 at duration 32.
+    - [x] C_CI_PC: same-source joint root/immediate geometry/carrier writer and
+      full sixty-dimensional return; adopted current 374→376, reset 375→377
+      at duration 32.
+    - [x] A_OS: self-consistent conductance writer and full thirty-dimensional
+      C/W return; adopted current 375→377, reset 372→374 at duration 32.
+    - [x] Formally adopt the five earlier endpoints above, including the direct
+      invariant domains, unchanged tolerances, two positive window beats and
+      zero later supporting evolution; [endpoint authority](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionEarlierSC3Authority.md).
+      Longer initial results retain their actual execution counts and provenance.
+    - [x] A_CI: selected joint root, full thirty-dimensional implicit C/W return,
+      source/event/W lineage and current 375→377/reset 372→374 at duration 32;
+      [SC-3 acceptance](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionACISC3Authority.md).
+    - [x] A_PC: full seventy-six-dimensional C/W/Z return, separate writers and
+      history dispositions; current 375→377/reset 372→374 at duration 32;
+      [SC-3 acceptance](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionAPCSC3Authority.md).
+    - [x] A_CI_PC: selected composite root, full implicit C/W/Z return and both
+      history channels; current 375→377/reset 372→374 at duration 32;
+      [SC-3 acceptance](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionACIPCSC3Authority.md).
+    - [x] C_RG2b: investigate duration 32, retaining its uncertified disposition;
+      accept the direct fourteen-dimensional Lipschitz-section domain and both
+      roles at 390→392, duration 8, with no later supporting evolution;
+      [SC-3 acceptance](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCRG2bSC3Authority.md).
+      Initial long and finite-union runs remain compact historical records;
+      retired supporting payloads are not restored.
+    - [x] A_RG2b: joint C/W Lipschitz section, full writer and thirty-dimensional
+      direct domain; both roles at 300→302, duration 16, without later support;
+      [SC-3 acceptance](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionARG2bSC3Authority.md).
+      Duration 32 remains uncertified.
+    - [x] Reconcile all ten accepted scientific dispositions, preserve source
+      and event identities, and retain zero additional gain for same-event
+      certificate successors, reset and replay. No family remains to investigate
+      in this bounded applicability sequence.
+    - [x] Check FLINT/Arb optimization preflights, retain compressed selected
+      evidence and exact generators, and preserve historical research projections.
+      A_OS authenticates its existing full archives; no new short execution
+      archive is claimed for it.
+    - [x] Publish the accepted shorter endpoints through the side-tool API,
+      browser and notebook; [inspection guide](./investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/SparkCompletionOverview.md).
+    - [x] Prepare the [self-contained proposal and full integrated GRC-v4 paper](./investigations/grc9v4-constitutive-design/drafts/README.md),
+      including the definitions, exact maps and source/event inputs, proofs,
+      spark §15 and technical Appendix H. Shorter accepted results are primary;
+      initial longer proofs remain historical references. The complete manuscript
+      and consolidated proposal are adopted after the supplied review corrections
+      and the user's 2026-11-01 acceptance/commit request. This editorial
+      adoption grants no new scientific or native scope.
+
+  Native numerics/lifecycle and hierarchy execution remain with the deferred
+  P9-9.1a scope. Aggregate debt reconciliation and G4 remain with P9-10.5/10.6
+  below. The A_OS below-100 investigation stays paused. The specs/README.md
+  provenance mismatch is repaired through exact document succession; the
+  current boundary audit passes. Native obligations remain separate from
+  completed family research and this maintenance repair.
+
+#### P9-10.5–10.6: Aggregate reconciliation and closeout
+
 - [ ] P9-10.5: Reconcile inherited scientific debts without upgrading source
   claims from test coverage alone, including the four named completion debts.
-  - [x] Reconcile the spark-completion scientific/design portions and five
-    debt dispositions in the [research successor](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkResearchReconciliation.md);
+  - [x] Reconcile the bounded scientific/design results for all ten families
+    and the five adopted earlier endpoints in the
+    [current research successor](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkEarlierReconciliation.json);
     native P9-9.1a obligations remain attached. Other inherited debt review is separate.
 - [ ] P9-10.6: Record reviewed support, pending profiles, residual debt,
   closeout, handoff, explicit completion support/defer scope and P9-G4 acceptance.
-  - [x] Record scientific completion demonstrated for bounded C_OS; native
-    completion, hierarchy and G4 pending. SC-1–SC-3 research reconciliation is
-    complete; native implementation follows separately.
+  - [x] Record accepted bounded scientific completion for all ten families
+    with the adopted shorter endpoints; native completion, hierarchy and G4
+    remain separate. Research reconciliation does not close this aggregate row.
 
 ## Planning review disposition
 

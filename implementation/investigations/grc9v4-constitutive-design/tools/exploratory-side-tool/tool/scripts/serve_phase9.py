@@ -19,6 +19,26 @@ from grcv4_explorer.a_initializer import initializer_authority  # noqa: E402
 from grcv4_explorer.basin import basin_authority, basin_source  # noqa: E402
 from grcv4_explorer.spark_completion import spark_completion_authority, spark_completion_source
 from grcv4_explorer.spark_applicability import spark_applicability_authority, spark_applicability_source
+from grcv4_explorer.spark_research import spark_research_status, spark_research_source
+from grcv4_explorer.spark_cipc_research import spark_cipc_research_status, spark_cipc_research_source
+from grcv4_explorer.spark_cipc import spark_cipc_authority, spark_cipc_source
+from grcv4_explorer.spark_aci import spark_aci_authority, spark_aci_source
+from grcv4_explorer.spark_apc import spark_apc_authority, spark_apc_source
+from grcv4_explorer.spark_acipc import spark_acipc_authority, spark_acipc_source
+from grcv4_explorer.spark_crg2b import spark_crg2b_authority, spark_crg2b_source
+from grcv4_explorer.spark_arg2b import spark_arg2b_authority, spark_arg2b_source
+from grcv4_explorer.spark_earlier_accepted import spark_earlier_authority, spark_earlier_source
+from grcv4_explorer.spark_publication import spark_publication_source
+from grcv4_explorer.spark_earlier_c import spark_earlier_c_status, spark_earlier_c_source
+from grcv4_explorer.spark_arg2b_research import spark_arg2b_research_status, spark_arg2b_research_source
+from grcv4_explorer.spark_crg2b_research import spark_crg2b_research_status, spark_crg2b_research_source
+from grcv4_explorer.spark_acipc_research import spark_acipc_research_status, spark_acipc_research_source
+from grcv4_explorer.spark_apc_research import spark_apc_research_status, spark_apc_research_source
+from grcv4_explorer.spark_aci_research import spark_aci_research_status, spark_aci_research_source
+from grcv4_explorer.spark_aos import spark_aos_authority, spark_aos_source
+from grcv4_explorer.spark_aos_earlier import spark_aos_earlier_status, spark_aos_earlier_source
+from grcv4_explorer.spark_aos_research import spark_aos_research_status, spark_aos_research_source
+from grcv4_explorer.spark_pc import spark_pc_authority, spark_pc_source
 from grcv4_explorer.basin_native import basin_native_status, basin_native_source
 from grcv4_explorer.target_compatibility import target_compatibility_status, target_compatibility_source
 from grcv4_explorer.tranche10_support import tranche10_support_status, tranche10_support_source
@@ -129,13 +149,73 @@ class Handler(BaseHTTPRequestHandler):
             self.wfile.write(content)
             return
         if request.path in {"/api/spark-completion", "/api/spark-completion/source",
-                            "/api/spark-completion/applicability", "/api/spark-completion/applicability/source"}:
+                            "/api/spark-completion/publication/source",
+                            "/api/spark-completion/applicability", "/api/spark-completion/applicability/source",
+                            "/api/spark-completion/applicability/research", "/api/spark-completion/applicability/research/source",
+                            "/api/spark-completion/applicability/ci-pc", "/api/spark-completion/applicability/ci-pc/source",
+                            "/api/spark-completion/applicability/ci-pc/research", "/api/spark-completion/applicability/ci-pc/research/source",
+                            "/api/spark-completion/applicability/a-ci", "/api/spark-completion/applicability/a-ci/source",
+                            "/api/spark-completion/applicability/a-pc", "/api/spark-completion/applicability/a-pc/source",
+                            "/api/spark-completion/applicability/a-ci-pc", "/api/spark-completion/applicability/a-ci-pc/source",
+                            "/api/spark-completion/applicability/c-rg2b", "/api/spark-completion/applicability/c-rg2b/source",
+                            "/api/spark-completion/applicability/a-rg2b", "/api/spark-completion/applicability/a-rg2b/source",
+                            "/api/spark-completion/applicability/earlier-accepted", "/api/spark-completion/applicability/earlier-accepted/source",
+                            "/api/spark-completion/applicability/earlier-c", "/api/spark-completion/applicability/earlier-c/source",
+                            "/api/spark-completion/applicability/a-rg2b/research", "/api/spark-completion/applicability/a-rg2b/research/source",
+                            "/api/spark-completion/applicability/c-rg2b/research", "/api/spark-completion/applicability/c-rg2b/research/source",
+                            "/api/spark-completion/applicability/a-ci-pc/research", "/api/spark-completion/applicability/a-ci-pc/research/source",
+                            "/api/spark-completion/applicability/a-pc/research", "/api/spark-completion/applicability/a-pc/research/source",
+                            "/api/spark-completion/applicability/a-ci/research", "/api/spark-completion/applicability/a-ci/research/source",
+                            "/api/spark-completion/applicability/a-os", "/api/spark-completion/applicability/a-os/source",
+                            "/api/spark-completion/applicability/a-os/earlier", "/api/spark-completion/applicability/a-os/earlier/source",
+                            "/api/spark-completion/applicability/a-os/research", "/api/spark-completion/applicability/a-os/research/source",
+                            "/api/spark-completion/applicability/pc", "/api/spark-completion/applicability/pc/source"}:
             try:
                 query = parse_qs(request.query, strict_parsing=True)
                 root = repository_root()
                 applicability = request.path.startswith("/api/spark-completion/applicability")
                 authority_reader = spark_applicability_authority if applicability else spark_completion_authority
                 source_reader = spark_applicability_source if applicability else spark_completion_source
+                if request.path == "/api/spark-completion/publication/source":
+                    source_reader = spark_publication_source
+                if request.path in {"/api/spark-completion/applicability/earlier-accepted", "/api/spark-completion/applicability/earlier-accepted/source"}:
+                    authority_reader, source_reader = spark_earlier_authority, spark_earlier_source
+                if request.path.startswith("/api/spark-completion/applicability/research"):
+                    authority_reader, source_reader = spark_research_status, spark_research_source
+                if request.path.startswith("/api/spark-completion/applicability/pc"):
+                    authority_reader, source_reader = spark_pc_authority, spark_pc_source
+                if request.path in {"/api/spark-completion/applicability/ci-pc", "/api/spark-completion/applicability/ci-pc/source"}:
+                    authority_reader, source_reader = spark_cipc_authority, spark_cipc_source
+                if request.path.startswith("/api/spark-completion/applicability/ci-pc/research"):
+                    authority_reader, source_reader = spark_cipc_research_status, spark_cipc_research_source
+                if request.path in {"/api/spark-completion/applicability/a-os", "/api/spark-completion/applicability/a-os/source"}:
+                    authority_reader, source_reader = spark_aos_authority, spark_aos_source
+                if request.path.startswith("/api/spark-completion/applicability/a-os/research"):
+                    authority_reader, source_reader = spark_aos_research_status, spark_aos_research_source
+                if request.path.startswith("/api/spark-completion/applicability/a-os/earlier"):
+                    authority_reader, source_reader = spark_aos_earlier_status, spark_aos_earlier_source
+                if request.path in {"/api/spark-completion/applicability/a-ci", "/api/spark-completion/applicability/a-ci/source"}:
+                    authority_reader, source_reader = spark_aci_authority, spark_aci_source
+                if request.path.startswith("/api/spark-completion/applicability/a-ci/research"):
+                    authority_reader, source_reader = spark_aci_research_status, spark_aci_research_source
+                if request.path in {"/api/spark-completion/applicability/a-pc", "/api/spark-completion/applicability/a-pc/source"}:
+                    authority_reader, source_reader = spark_apc_authority, spark_apc_source
+                if request.path.startswith("/api/spark-completion/applicability/a-pc/research"):
+                    authority_reader, source_reader = spark_apc_research_status, spark_apc_research_source
+                if request.path in {"/api/spark-completion/applicability/a-ci-pc", "/api/spark-completion/applicability/a-ci-pc/source"}:
+                    authority_reader, source_reader = spark_acipc_authority, spark_acipc_source
+                if request.path.startswith("/api/spark-completion/applicability/a-ci-pc/research"):
+                    authority_reader, source_reader = spark_acipc_research_status, spark_acipc_research_source
+                if request.path in {"/api/spark-completion/applicability/c-rg2b", "/api/spark-completion/applicability/c-rg2b/source"}:
+                    authority_reader, source_reader = spark_crg2b_authority, spark_crg2b_source
+                if request.path.startswith("/api/spark-completion/applicability/c-rg2b/research"):
+                    authority_reader, source_reader = spark_crg2b_research_status, spark_crg2b_research_source
+                if request.path in {"/api/spark-completion/applicability/a-rg2b", "/api/spark-completion/applicability/a-rg2b/source"}:
+                    authority_reader, source_reader = spark_arg2b_authority, spark_arg2b_source
+                if request.path in {"/api/spark-completion/applicability/earlier-c", "/api/spark-completion/applicability/earlier-c/source"}:
+                    authority_reader, source_reader = spark_earlier_c_status, spark_earlier_c_source
+                if request.path.startswith("/api/spark-completion/applicability/a-rg2b/research"):
+                    authority_reader, source_reader = spark_arg2b_research_status, spark_arg2b_research_source
                 if not request.path.endswith("/source"):
                     if query:
                         raise KeyError("spark-completion authority has fixed scope")
@@ -306,7 +386,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/spark-completion.js", "/spark-applicability.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-examples.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/spark-completion.js", "/spark-applicability.js", "/spark-research.js", "/spark-pc.js", "/spark-cipc.js", "/spark-cipc-research.js", "/spark-aos-research.js", "/spark-aos.js", "/spark-aos-earlier.js", "/spark-aci-research.js", "/spark-apc-research.js", "/spark-acipc-research.js", "/spark-crg2b-research.js", "/spark-earlier-accepted.js", "/spark-earlier-c.js", "/spark-arg2b-research.js", "/spark-arg2b.js", "/spark-crg2b.js", "/spark-acipc.js", "/spark-apc.js", "/spark-aci.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-examples.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -328,6 +408,25 @@ class Handler(BaseHTTPRequestHandler):
                     "basin.js": "text/javascript",
                     "spark-completion.js": "text/javascript",
                     "spark-applicability.js": "text/javascript",
+                    "spark-research.js": "text/javascript",
+                    "spark-pc.js": "text/javascript",
+                    "spark-cipc.js": "text/javascript",
+                    "spark-cipc-research.js": "text/javascript",
+                    "spark-aos-research.js": "text/javascript",
+                    "spark-aos.js": "text/javascript",
+                    "spark-aos-earlier.js": "text/javascript",
+                    "spark-aci-research.js": "text/javascript",
+                    "spark-apc-research.js": "text/javascript",
+                    "spark-acipc-research.js": "text/javascript",
+                    "spark-crg2b-research.js": "text/javascript",
+                    "spark-earlier-accepted.js": "text/javascript",
+                    "spark-earlier-c.js": "text/javascript",
+                    "spark-arg2b-research.js": "text/javascript",
+                    "spark-arg2b.js": "text/javascript",
+                    "spark-crg2b.js": "text/javascript",
+                    "spark-acipc.js": "text/javascript",
+                    "spark-apc.js": "text/javascript",
+                    "spark-aci.js": "text/javascript",
                     "target-compatibility.js": "text/javascript",
                     "tranche10-support.js": "text/javascript",
                     "tranche10-regressions.js": "text/javascript",

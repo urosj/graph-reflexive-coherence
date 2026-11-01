@@ -1,0 +1,92 @@
+{
+  "schema": "spark-completion-arg2b-run-history-v1",
+  "family": "A_RG2b",
+  "selected_declaration": "a2a6d031cee16617a67042d26dc131f8e7bd3c3f67032007c8079426f7a13cfb",
+  "generator_bundle_digest": "939fad42d63adb591e47d382c2a396cdd4f19d2b7c62da3ac236e7af0fed3c2e",
+  "full_superseded_trajectories_retained": false,
+  "attempts": [
+    {
+      "stage": "fixed_I_float_screen",
+      "duration": 8,
+      "prior_source_preparation": "CRG2bDirectDeclaration.json",
+      "last_wrong_edge_order": {
+        "current": 439,
+        "reset": 438
+      },
+      "certified_RG_execution": false
+    },
+    {
+      "stage": "fixed_I_float_screen",
+      "duration": 16,
+      "prior_source_preparation": "CRG2bDirectDeclaration.json",
+      "last_wrong_edge_order": {
+        "current": 213,
+        "reset": 223
+      },
+      "certified_RG_execution": false
+    },
+    {
+      "stage": "fixed_I_float_screen",
+      "duration": 24,
+      "prior_source_preparation": "CRG2bDirectDeclaration.json",
+      "last_wrong_edge_order": {
+        "current": 140,
+        "reset": 158
+      },
+      "certified_RG_execution": false
+    },
+    {
+      "stage": "duration_32_screen",
+      "status": "not_certified",
+      "reason": "available inverse estimate fails; a prior-preparation reset pilot approaches a different basin pattern",
+      "universal_impossibility_claimed": false
+    },
+    {
+      "stage": "duration_16_prior_source",
+      "status": "rejected",
+      "reason": "actual source event trigger failed; fresh source preparation was required"
+    },
+    {
+      "stage": "entry_250_curve",
+      "status": "not_certified_for_both_roles",
+      "reason": "reset lower spectral inequality failed"
+    },
+    {
+      "stage": "entry_300_preliminary",
+      "status": "unselected",
+      "current": "membership at parameter 1 failed",
+      "reset": "302-step direct prefix passed",
+      "reset_record_digest": "1b6950101bab71c422580ea3464377383c536977c7b6b802938095e711dd1b41",
+      "reset_sha256": "6494dcf9df1726ab1845c53800d55dfc87fbc32b31dd9ad9e4284c47497d2961",
+      "full_payload_retained_in_repository": false,
+      "producer_sources": [
+        {
+          "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_rg2b_campaign.py",
+          "sha256": "62041a127d3d5264b9b1d7aa7fc671918746b47df02c7efbd0754075783c1f2a"
+        },
+        {
+          "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_rg2b.py",
+          "sha256": "32297685e2138cfc424ce521e95c81efa1888bc0963bf7ae2839411ee11fb92b"
+        },
+        {
+          "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ARG2bDeclaration.json",
+          "sha256": "63f32c39335a28c8a189519e7d47ffa82f88743268adce75ca4b10fedd9c0821"
+        }
+      ]
+    },
+    {
+      "stage": "selected",
+      "status": "fresh_direct_prefixes_passed",
+      "entry": 300,
+      "completion": 302,
+      "entry_parameters": {
+        "current": "9997/10000",
+        "reset": "1"
+      },
+      "supporting_steps_after_completion": 0
+    }
+  ],
+  "floating_screen_is_not_section_or_completion_evidence": true,
+  "review_pending": true,
+  "record_digest": "c17755ab1bc0e1c09a43295ffbbcda37d336a9313782caf8c051dccd03de27aa"
+}

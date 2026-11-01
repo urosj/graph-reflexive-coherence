@@ -1,0 +1,117 @@
+{
+  "schema": "spark-completion-cpc-preflight-v1",
+  "status": "passed",
+  "declared_precision": 8192,
+  "roles": {
+    "current": {
+      "steps": 12,
+      "elapsed_seconds": 1.5895866689970717,
+      "optimization": {
+        "exact_graph_cache_key": "full canonical graph",
+        "constant_cache_hits": 2,
+        "constant_cache_misses": 3,
+        "target_poststate_reads": 12,
+        "target_carrier_writes": 12,
+        "identical_full_state_read_reuse": true,
+        "batched_derivative_rhs": true,
+        "chiral_incidence_verified": true,
+        "trajectory_results_cached": false
+      },
+      "actual_source_digest": "cc26a801dead21ea9f74070c9eeecaa4c8451495e0e4e27205496938c7e0e112",
+      "final_full_state_digest": "43af96e2e2f01248e680527bd5af034bf99f8d1e70b4fa3b32afdf601124d7b9"
+    },
+    "reset": {
+      "steps": 12,
+      "elapsed_seconds": 1.618574461012031,
+      "optimization": {
+        "exact_graph_cache_key": "full canonical graph",
+        "constant_cache_hits": 7,
+        "constant_cache_misses": 3,
+        "target_poststate_reads": 12,
+        "target_carrier_writes": 12,
+        "identical_full_state_read_reuse": true,
+        "batched_derivative_rhs": true,
+        "chiral_incidence_verified": true,
+        "trajectory_results_cached": false
+      },
+      "actual_source_digest": "cc26a801dead21ea9f74070c9eeecaa4c8451495e0e4e27205496938c7e0e112",
+      "final_full_state_digest": "32c402b961c5bf758eb15ca1f8cad62e9c676f1897cfc0961b2e3ed5661a42d4"
+    }
+  },
+  "sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_pc.py",
+      "sha256": "af04da3c975ff835f8e01482f166f772f4f98f718346d2f9fd569f8a3b2197d3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_pc_campaign.py",
+      "sha256": "f60f0a62b967cd45d06eee555464dc834bb5c448e17cee58ca3bd08142c9a626"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_os_reference.py",
+      "sha256": "0fab09c6bfcc098c537e39c223380a1d70af2de2eef5156a2d1307fef81069ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_positive.py",
+      "sha256": "15069ffca9b22a666ff67cd0b28ea740f9ed69f40de72154498d3e84eca4c64b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci_campaign.py",
+      "sha256": "732c5968a4a0f9a7e4350a9144b9c16740785cf197b34e84fc8eeb38e78987b4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_continuation.py",
+      "sha256": "b26c6bd0f050ab710b663e025cc3f039ed81c68ac8f834d8c60a2b2bdaad3709"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_basins.py",
+      "sha256": "6da2628f6f04bd112dbdd6eedfb9dc38661d7cc8f0a7532d211ba30e21769fd5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2SourceBeat.json.xz",
+      "sha256": "faf266f447c0a1893b2ee7730dfdea481914fd15f53460e848d07ebd2c5b0675"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2PositiveCandidate.json.xz",
+      "sha256": "10a8c6d4cb6b5b633be4947e4fb90745fc257fbe1eb30713e924802deb7a2fb1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion/Authority.json",
+      "sha256": "92e619df2e3c0d49b967f88dd6bbb8580b2f40909e334997c4ae1cdacfb94ea7"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-applicability/Authority.json",
+      "sha256": "34a27ca0fa45454a2edf697d49807cd4c0ab9fc5fbf4627a24cafdae2e07b346"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPCDeclaration.json",
+      "sha256": "a14a3c7157b08addfba17dd97b933a3b520774617c4c9006cd4a1975dc129560"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_applicability_pc.py",
+      "sha256": "e6a8b0ff2212e601ff51aa5d391c16e3bd2c67c10298ba80cbab093f70f8592b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_pc.py",
+      "sha256": "7cce04cf8ec095847c2fee7cb56b46227df07baed9a162799540dabb50ae3de5"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    },
+    {
+      "path": "specs/grc-v4-topology-event-spec.md",
+      "sha256": "d94c6081981489d05f9261ccefbf5574aa5273f1ca35eac4e4d8c6bc4d214bcd"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_expansion.py",
+      "sha256": "05d754313f1d529a8829f255d1101acfbb7267f465e55974d061fa6713fb5767"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "6dd6a8637c8d03f164b993fa801e5b65ee5c8f05425a33498b14fd92c0dd3a4c"
+    }
+  ],
+  "long_campaign_started": false,
+  "record_digest": "1103bda41bbb496ccadb0c7a96a500f9eb2f40c79f1848cb00070ce995579c6c"
+}

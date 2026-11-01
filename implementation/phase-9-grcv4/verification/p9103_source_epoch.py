@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 import subprocess
 
+import p9_spark_document_epoch as latest
+
 BASELINE = '98033204'
 BASE = 'implementation/phase-9-grcv4/'
 PATH = BASE + 'tranche-10/P9-10.3-TestSourceEpoch.json'
@@ -46,13 +48,13 @@ def test_scope(root):
 def manifest(root):
     test_scope(root)
     return seal(dict(schema='p9103-test-source-epoch-v1',predecessor=BASELINE,
-        checker_sha256=sha((root/SELF).read_bytes()),
+        checker_sha256=sha(latest.previous_bytes(root,SELF)),
         sources={n:dict(before_sha256=sha(original(root,n)),after_sha256=sha((root/n).read_bytes())) for n in sorted(CHANGED)},
         production_changed=False,accepted_execution_rewritten=False))
 
 
 def previous_bytes(root,name):
-    root=Path(root).resolve();raw=(root/name).read_bytes()
+    root=Path(root).resolve();raw=latest.previous_bytes(root,name)
     if name not in CHANGED:return raw
     value=json.loads((root/PATH).read_bytes())
     if value!=manifest(root):raise ValueError('unbound regression test/source successor')
@@ -60,8 +62,9 @@ def previous_bytes(root,name):
 
 
 def peel_sha(root,name,present):
+    present=latest.peel_sha(root,name,present)
     previous=previous_bytes(root,name)
-    return sha(previous) if present==sha((root/name).read_bytes()) else present
+    return sha(previous) if present==sha(latest.previous_bytes(root,name)) else present
 
 
 def read_source(root,ref):

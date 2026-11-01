@@ -1,0 +1,136 @@
+{
+  "schema": "spark-completion-crg2b-faster-run-history-v1",
+  "family": "C_RG2b",
+  "status": "superseded_finite_union_summary",
+  "accepted_authority": false,
+  "numerical_payloads_retained": false,
+  "historical_payloads_rechecked_by_inspection": false,
+  "runs": {
+    "current": {
+      "evidence_status": "historical_summary_only",
+      "former_path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bFaster-current.json.xz",
+      "former_sha256": "43ddbd160327c86e5d27848406bf2a88b532dd181dba76235deb04ed546c27ab",
+      "execution_record_digest": "78dd4db7399cb62a4a9bc0bfde69f4b07d1d807a98f72792645208e42ae3f074",
+      "former_compressed_bytes": 5750848,
+      "former_uncompressed_bytes": 79426563,
+      "observed_states": 2089,
+      "elapsed_seconds": 35.07953667201218,
+      "entry": 390,
+      "completion": 392,
+      "last_supporting_step": 2089,
+      "first_spatial_gain": 376,
+      "local_gain": 1,
+      "section_reuse": {
+        "initial_section_fresh": true,
+        "each_transfer_from_invariance": true,
+        "center_shifts_enclosed": true,
+        "physical_state": [
+          "C"
+        ],
+        "geometry_history_transported_at_event": false,
+        "geometry_is_independent_physical_state": false,
+        "fresh_rebuild_count": 8,
+        "forward_reuse_steps": 2089
+      },
+      "arithmetic": {
+        "precision_bits": 512,
+        "proposal_bits": 256,
+        "section_depth": 16,
+        "radius_bits": 160,
+        "horizon": 4096,
+        "time_limit_seconds": 3600,
+        "automatic_fallback": false
+      }
+    },
+    "reset": {
+      "evidence_status": "historical_summary_only",
+      "former_path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bFaster-reset.json.xz",
+      "former_sha256": "4a64308d47ae1dddb28af4ce4db6ffb0ddc5e89fb7cc970a2a0fae5c5952be85",
+      "execution_record_digest": "1dc3ec0282e685951b0a63a1f532d68c2ecc9358246a522da17a43a3053ec50f",
+      "former_compressed_bytes": 5751188,
+      "former_uncompressed_bytes": 79425364,
+      "observed_states": 2089,
+      "elapsed_seconds": 35.23688738999772,
+      "entry": 390,
+      "completion": 392,
+      "last_supporting_step": 2089,
+      "first_spatial_gain": 376,
+      "local_gain": 0,
+      "section_reuse": {
+        "initial_section_fresh": true,
+        "each_transfer_from_invariance": true,
+        "center_shifts_enclosed": true,
+        "physical_state": [
+          "C"
+        ],
+        "geometry_history_transported_at_event": false,
+        "geometry_is_independent_physical_state": false,
+        "fresh_rebuild_count": 8,
+        "forward_reuse_steps": 2089
+      },
+      "arithmetic": {
+        "precision_bits": 512,
+        "proposal_bits": 256,
+        "section_depth": 16,
+        "radius_bits": 160,
+        "horizon": 4096,
+        "time_limit_seconds": 3600,
+        "automatic_fallback": false
+      }
+    }
+  },
+  "removed_bytes": 11502036,
+  "certificate_digest": "a63a7212a039dde31e385cd1fdf0913415d6f008a81819c61aca2632d704231c",
+  "checks_digest": "8e3829a7e7d4a900d1a78a1f54317924bb0222b94a95b4dcf8b50e7d06412954",
+  "recorded_same_implementation_replay": {
+    "status": "passed",
+    "complete_fresh_trajectory_replays": 2,
+    "checked_union_components": 3401,
+    "retained_states": 4178,
+    "entry": 390,
+    "completion": 392,
+    "duration": "8",
+    "contraction": [
+      "5188417712758175443348725067648747/5192296858534827628530496329220096",
+      "1297104428189543860837181266912187/1298074214633706907132624082305024"
+    ],
+    "accepted_authority": false,
+    "elapsed_seconds": 113.14775349700358
+  },
+  "generator_sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bFasterDeclaration.json",
+      "sha256": "d4fd210d1edb52444bf9569538641b82ecc4313f82defa5b386a1514513aee73"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_c_rg2b.py",
+      "sha256": "0d99b77e0b3b23b711270195aebffedc4212fe639236e719bf8bc9fa08d5b283"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_c_rg2b_campaign.py",
+      "sha256": "06481302ae68ffc75ad42588a917c50e3f8b2d6fa0223a62a3960deadd8c4d96"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_c_rg2b_faster.py",
+      "sha256": "00baed397e3a644d10bc1cb30e00e66c29310b9dceb34fd41d55acce01dc99c9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_c_rg2b_faster.py",
+      "sha256": "9df920c752bd861336fec02dded867e4319ecdf0552218e2a333f65d947900ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_rg2b_faster.py",
+      "sha256": "47d69b9e6a0ec83c7daad2cecf68603f65c320146f11bc754c263929a5422729"
+    }
+  ],
+  "reproduction_script": "from pathlib import Path\nimport sys,json,lzma,hashlib\nr=Path.cwd();inv=r/'implementation/investigations/grc9v4-constitutive-design';sys.path[:0]=[str(r/'src'),str(inv/'research'),str(inv/'evidence/spark-completion/review/constructive-candidate')]\nfrom spark_completion_c_rg2b_faster import *\nmode=sys.argv[1]\nif mode=='declare':\n c=json.load(open('/tmp/crg8-refine2-search.json'))['best'][1];source,_,targets=fixture()\n with ctx.workprec(PRECISION):\n  m=CRG2bReference(source);target=m.vector(c['source'])\n  with ctx.workprec(PROPOSAL_BITS):x,_=m.inverse_proposal(target,m.I,target)\n  pre=exact_vector(m,m.quantize(x));reset={n:F(v)for n,v in c['source'].items()};reset['n1']+=F(1,16384);reset['n2']-=F(1,32768);reset['n3']-=F(1,32768)\n  d=seal(dict(schema='spark-completion-crg2b-faster-declaration-v1',family='C_RG2b',parameters=PARAMETERS,source_goal=c['source'],prepared_source=dict(current=pre,reset={n:str(v)for n,v in reset.items()}),allocation_shares=c['shares'],exact_charge='21',component_radius=str(COMPONENT_RADIUS),domain_kind='finite_union_of_full_metric_balls_plus_stationary_ball',section_reuse_proposal_bits=PROPOSAL_BITS,entry=ENTRY,window_beats=WINDOW,horizon=HORIZON,time_limit_seconds=TIME_LIMIT,selection='exploratory fixed-identity numerical screening; not a certified RG trajectory',ordinary_duration='8',uniform_duration_32_certified=False,earlier_research_immutable=True,accepted_authority=False,native_support_added=False))\n  (r/DECLARATION).write_text(json.dumps(d,indent=2)+'\\n');print(d['record_digest'])\nelif mode=='preflight':\n d=load(DECLARATION);out=campaign('current',d,steps=8,complete=False);path=BASE+'CRG2bFasterPreflight.json';v=seal(dict(schema='spark-completion-crg2b-faster-preflight-v1',declaration_digest=d['record_digest'],checks=out));(r/path).write_text(json.dumps(v,indent=2,default=str)+'\\n');print(json.dumps(dict(elapsed=out['elapsed_seconds'],reuse=out['section_reuse'])))\nelif mode in ('current','reset'):\n d=load(DECLARATION);out=campaign(mode,d);sources=[DECLARATION,'implementation/investigations/grc9v4-constitutive-design/research/spark_completion_c_rg2b_faster.py','implementation/investigations/grc9v4-constitutive-design/research/spark_completion_c_rg2b.py','implementation/investigations/grc9v4-constitutive-design/research/spark_completion_c_rg2b_campaign.py'];v=seal(dict(schema='spark-completion-crg2b-faster-execution-v1',declaration_digest=d['record_digest'],sources=[dict(path=p,sha256=hashlib.sha256((r/p).read_bytes()).hexdigest())for p in sources],checks=out));raw=(json.dumps(v,indent=2,default=str)+'\\n').encode();compressed=lzma.compress(raw,preset=9);(r/(BASE+'CRG2bFaster-'+mode+'.json.xz')).write_bytes(compressed);print(json.dumps(dict(role=mode,terminal=out['terminal_entry'],seconds=out['elapsed_seconds'],raw_bytes=len(raw),compressed_bytes=len(compressed))))\nelif mode=='certificate':\n runs={role:load(BASE+'CRG2bFaster-'+role+'.json.xz')['checks']for role in ('current','reset')};v=seal(union_certificate(runs));(r/(BASE+'CRG2bFasterCertificate.json')).write_text(json.dumps(v,indent=2,default=str)+'\\n');print(json.dumps(v,indent=2,default=str))\n",
+  "reproduction_commands": [
+    "Materialize reproduction_script as /tmp/replay_crg_faster.py; run from repository root.",
+    ".venv/bin/python /tmp/replay_crg_faster.py current",
+    ".venv/bin/python /tmp/replay_crg_faster.py reset",
+    ".venv/bin/python /tmp/replay_crg_faster.py certificate",
+    ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_c_rg2b_faster.py --replay"
+  ],
+  "retention_reason": "The direct polynomial-domain proof closes the same 390-to-392 window without subsequent trajectory data. Preserve historical run records and generators; retain only the selected direct prefixes in full.",
+  "record_digest": "c603799a329426131a88c00a8ec50f2b17a3c10c917322f52eb46513c0352bb1"
+}

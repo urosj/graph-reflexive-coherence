@@ -1,0 +1,280 @@
+{
+  "schema_version": "grc9v4_spark_applicability_authority_v1",
+  "record_id": "GRC9V4-SC3-SPARK-A-OS-v1",
+  "status": "accepted_bounded_scientific_design",
+  "accepted_on": "2026-10-31",
+  "predecessor": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-ci-pc/Authority.json",
+    "sha256": "6abd05d2787d0896b594bb99ed8f39639bf00add36bfd1b6b329176f1acaa8be",
+    "record_digest": "65ab36c9cdf482708f440f10498da93de1d31c1f061b229c6fa087c1f3b40561"
+  },
+  "acceptance": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSScientificAcceptance.json",
+    "sha256": "4364ced9c337f1b092b747f15d7c257b5c7cc5eff2732de91d6910e1944ba4af",
+    "record_digest": "dd7b8a9adcbf366cb4bc7f28879217ca659579874458444f2a69557477ea9c56"
+  },
+  "design_path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionAOSSC3Authority.md",
+  "design_sha256": "4433f6349f8a8d66d00071b1ec871ea31244aa0f08e49e636a48b797509e15a1",
+  "policy_id": "grc9v4-certified-geometric-child-basins-v1",
+  "claims": [
+    {
+      "claim_id": "SC-AOS-CL-C-DOMAIN",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The declared A_OS source, trajectory and trapping subjects satisfy positive conductance, H and physical-closure domains, floor inactivity, fixed-row incoming-W reads and the final-C logarithmic writer.",
+      "limits": [
+        "declared quartic/parameters/graphs and explicitly checked subjects",
+        "positive nonzero feedback/geometry/writer coefficients",
+        "not global resource/conductance-box invariance or all-graph applicability"
+      ]
+    },
+    {
+      "claim_id": "SC-AOS-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The full thirty-dimensional charge-relative C/W map contracts the declared weighted ball, including all sixteen independent conductance directions; fixed-point stationarity forces the self-consistent W=G(C,W,0) writer.",
+      "limits": [
+        "exact charge-21 local trap",
+        "full C/logW metric; no frozen-W or C-only slice",
+        "no represented native map certificate"
+      ]
+    },
+    {
+      "claim_id": "SC-AOS-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "An actual A_OS source beat and fresh committed-W event read, literal D11 resource transfer and old-edge W preservation reach current entry1039/completion1041; independent reset1022/1024 earns no live gain.",
+      "limits": [
+        "One declared graph/profile/allocation; no uniform all-A_OS or all-allocation claim.",
+        "The inherited allocation failed; the successful lawful redistribution was declared after exploratory discovery.",
+        "Every conductance direction is included; stationary W is self-consistent, not frozen.",
+        "Saved interval overlap is consistency evidence; the bound outward campaign supplies trajectory provenance.",
+        "No independent external reviewer, native completion, hierarchy or G4 acceptance is claimed.",
+        "The broad repository audit retains pre-existing basin source drift at specs/README.md.",
+        "sufficient witness times, not earliest completion",
+        "inherited 1/64,31/32,1/64 allocation failed; only the declared 1/128,63/64,1/128 construction is accepted"
+      ]
+    }
+  ],
+  "debts": [
+    {
+      "debt_id": "SC-APP-DEBT-A_OS",
+      "status": "resolved_bounded_scientific",
+      "scope": "One declared A_OS exact-equation construction and its full physical state domain",
+      "transformation": "Research applicability, repository review, user acceptance and scoped propagation resolved; native capability remains a separate forward obligation.",
+      "resolved_scope": "staged A_OS read/writer domain, self-consistent stationary writer, full thirty-dimensional C/W trap, actual source/event/W lineage, positive completion window, user acceptance and propagation",
+      "successor_claim_ids": [
+        "SC-AOS-CL-C-DOMAIN",
+        "SC-AOS-CL-C-FULL-TRAP",
+        "SC-AOS-CL-C-COMPLETION"
+      ],
+      "verification_obligation_ids": [
+        "SC-AOS-VO-NATIVE-NUMERICS",
+        "SC-AOS-VO-NATIVE-LIFECYCLE"
+      ],
+      "contributes_to_debt_ids": [
+        "SC-DEBT-ORGANIZATION",
+        "SC-DEBT-STABILITY",
+        "SC-DEBT-NONEMPTY-DOMAIN",
+        "SC-DEBT-TEMPORAL-LIFECYCLE"
+      ],
+      "remaining_work": [
+        "Explicit quartic/profile identity; incoming-W fixed rows in both reads and final-C writer; selected corrector current; positive W, H, closure and floor domains; full represented C/W-map error within the strict image margin; exact represented charge and certified weighted predicates. Solver tolerances or overlap consistency alone are insufficient.",
+        "Actual current/reset histories, old-edge W preservation and three new-edge seeds, lawful resource shares, committed positive windows and elapsed time, invalidation, actual event occurrence identity, at-most-once gain, atomic publication with rollback and replay/import/reset conformance."
+      ],
+      "origin_ledger": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSClaimDebtLedger.json"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "SC-AOS-O-COMPLETION",
+      "object_role": "Bounded A_OS scientific completion applicability",
+      "accepted_claim_ids": [
+        "SC-AOS-CL-C-DOMAIN",
+        "SC-AOS-CL-C-FULL-TRAP",
+        "SC-AOS-CL-C-COMPLETION"
+      ]
+    }
+  ],
+  "contracts": [
+    {
+      "equation_contract_id": "SC-AOS-EC-DOMAIN",
+      "parent_object_ids": [
+        "SC-AOS-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-AOS-CL-C-DOMAIN"
+      ],
+      "design_section": "## SC-AOS-EC-DOMAIN",
+      "normative_equation_or_contract": "`SC-AOS-CL-C-DOMAIN` is accepted as conditional mathematics for the declared source, trajectory and trapping subjects. No global resource/conductance-box invariance or arbitrary-graph domain theorem is admitted.\n\nAll pairings and reference H are unit. The site derivative is\n(C-2)^3-(C-2). eta=1/1024, h=tau_A=32, kappa_c=kappa_Ah=1/64,\nchi=zeta=kappa_H=1/2, alpha=beta=gamma=1/32768 and W_floor=1/2.\nEach parameter that defines A_OS feedback, geometry and the writer is positive.\nFor incoming C,W, fixed-row descriptors are exact weighted row means in the\nGRC9 port chart. With Phi=kappa_c B diag(W) B^T C-site(C)+\nkappa_Ah B(H-I)B^T C, j0=-eta diag(W) B^T Phi, the fresh read uses\nG=max(1/2,exp(-(C_u+C_v+||D_u-D_v||\u00b2+j0_e\u00b2)/65536)),\nq=(W-G)/(W+G), J=j0/(1-q/4), and f=H^-1(qJ/2).\nThe predictor uses I; H=I+diag(f) O diag(f)/8, where O=|B|^T|B|.\nThe corrector recomputes Phi and G at that H on the same C,W.\nThe OS split bound is strictly below the unchanged 10^-11 tolerance.\n\nContinuity uses the corrector: C+=C-32 B J. The final writer recomputes the\nfixed rows at C+ with **incoming W**, and uses that same selected J:\nlog W+=exp(-1)log W+(1-exp(-1))log G(C+,W,J).\nThe newly written W never feeds the same beat. The next full read is fresh;\nit is reused only on the identical C/logW subject, enforced by the local API.\nThe floor is proved strictly inactive, closure denominators exceed 3/4, and\nO is positive semidefinite, so the generated H is positive definite."
+    },
+    {
+      "equation_contract_id": "SC-AOS-EC-FULL-STATE-RETURN",
+      "parent_object_ids": [
+        "SC-AOS-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-AOS-CL-C-FULL-TRAP"
+      ],
+      "design_section": "## SC-AOS-EC-FULL-STATE-RETURN",
+      "normative_equation_or_contract": "`SC-AOS-CL-C-FULL-TRAP` is accepted as conditional mathematics for the exact charge-21 local C/W return, including every independent W direction.\n\nA joint Newton proposal solves site(C)-B diag(W) B^T C/64=lambda, charge=21,\nand log W=log G(C,W,0). Its midpoint iterations only propose an exact rational\ncenter; the center is not treated as a fixed point. The full interval derivative\nand strict image margin certify a Banach ball around it, including every\nindependent resource and conductance direction.\n\nLet W0 be the declared dyadic reference weights, A0=B diag(W0) B^T,\nP=(A0+11^T/15)^-1 on the charge tangent. The full norm is\nmax(sqrt(deltaC^T P deltaC),64||delta logW||_2), with radius 2^-20.\nThe reference resource derivative is I-A0 D0/32, with\nD0=diag(3(C0-2)^2-1)-A0/64. Positive curvature bounds and inverse trace\nbound its spectrum in the P metric. The actual derivative is obtained by\nanalytic differentiation through both reads, generated geometry, fixed-row\nratios, final C and the writer. All four operator blocks are bounded, including\nboth C/W cross blocks; their row sums give q < **0.998669**. The exact center\ndefect is below the strict image slack. The local dimension is **14+16=30**.\nThe rectangular evaluation enclosure is only an outer bound of this full ball.\n\nAt a fixed point BJ=0. The physical closure gives J=-D B^T Phi with strictly\npositive diagonal D, hence Phi^T B D B^T Phi=0 and J=0. Therefore f=0, H=I,\nand the writer identity forces W=G(C,W,0). This proves a self-consistent\nstationary writer rather than assuming frozen W. The logarithm is a smooth\ncoordinate chart on positive W, so no independent W direction is lost.\n\nThe complete weighted basin roster over the entire ball, in both port charts,\nis p:[p,private] and satellite/2:[n2,n8,satellite/2]. All seed flags, strict\nedge orders and anchor barriers are certified. The two charts have identical\nordered incidence **and fixed-row assignments**, which justifies sharing the\nphysical evolution; chart predicates remain explicitly checked. W stays in\n(0.99,1.01), and the graph diameter bound multiplied by 0.99 separates the\nnonconstant weighted Laplacian from the 1/64 selector cutoff."
+    },
+    {
+      "equation_contract_id": "SC-AOS-EC-COMPLETION",
+      "parent_object_ids": [
+        "SC-AOS-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-AOS-CL-C-COMPLETION"
+      ],
+      "design_section": "## SC-AOS-EC-COMPLETION",
+      "normative_equation_or_contract": "`SC-AOS-CL-C-COMPLETION` is accepted as conditional mathematics for the following declared source, event, lineage, approach and positive-window construction.\n\nThe original C-family resource prestates and literal D11 graph are reusable\ninputs, not A-family trajectory evidence. A fresh ordinary A_OS source beat\nwrites C and W; a fresh committed-state read supplies the event. Its complete\nqualified parent is p, containing every source node. Saturation, weighted fixed\nrows and both strict trigger margins are checked on that actual poststate.\nThe independent reset state is read without advancing it. Charge is exactly 21\nby incidence and rational allocation, never midpoint normalization.\n\nThe inherited allocation (1/64,31/32,1/64) did not enter the child trap in either\n1536-beat attempt. A diagnostic found the second high-resource site at the\nexterior node n2, which is not the required new module anchor. This is a failed\nconstruction, not an impossibility theorem. Two explicit 450-step midpoint\nprobes tested (1/128,63/64,1/128) and (1/256,127/128,1/256). Both suggested the\nchild organization. The smaller redistribution was selected and frozen before\nfresh interval campaigns. AOSDiscovery.json.xz retains original producer\nsnapshots, initial declaration/preflight and logs, explicitly as discovery only.\nThis was not a preregistered search. No probe state feeds the certified runs.\n\nThe actual target allocation is **1/128,63/64,1/128**, with zero core and copied\nexterior. Every old edge preserves its own incoming conductance through literal\nedge lineage; exactly three new internal edges are seeded at W=1. Current\nsource W starts at 4097/4096; reset W starts independently at 8191/8192.\nAllocation alone has only the old qualified basin and earns no gain.\n\nCurrent **1039 \u2192 1041** completes one new child; independent reset\n**1022 \u2192 1024** earns zero live gain. Each positive window spans two\nbeats (elapsed 64), after full-state entry. Runs took 59.1/\n58.5 seconds under fixed one-hour caps and a 1536-beat horizon.\nAll 2065 C/logW states, both chart\nrosters and full read checkpoints are retained. 15,314,456 raw bytes compress\nto 1,964,396 bytes. Fixed 8192-bit FLINT/Arb states evolve from exact inputs;\n112-bit outward views are used only for storage and inspection. The trap uses\n512 bits. No tolerance widening, midpoint evolution or automatic fallback is\nused in the certified campaigns.\n\nThe retained checker independently rebuilds the source, transfer and trap,\nrecomputes complete weighted predicates and distances, and checks every saved\ntransition and read for overlap. Such overlap is consistency evidence, not an\nindependent second proof of a saved trajectory; the bound producer's outward\nrecurrence supplies enclosure provenance. Sixteen altered subject/accounting\ncontrols reject. Independent 110-digit equation checks, finite-segment controls\nfor all thirty tangent directions and writer/OS stage controls support review.\nNo independent external reviewer is claimed.\n\nThis is one declared finite construction and a full local state neighborhood,\nnot all A_OS graphs, parameters, allocations or source preparations. Mechanism\nseparation demonstrates the implemented law, not that each mechanism is\nnecessary for this particular organization. The failed inherited allocation\nremains disclosed. Represented/native conservation and lifecycle once-only\naccounting remain forward obligations; read-only replay earns no new gain."
+    }
+  ],
+  "verification_obligations": [
+    {
+      "obligation_id": "SC-AOS-VO-NATIVE-NUMERICS",
+      "status": "pending_forward",
+      "destination": "P9-9.1a",
+      "obligation": "Explicit quartic/profile identity; incoming-W fixed rows in both reads and final-C writer; selected corrector current; positive W, H, closure and floor domains; full represented C/W-map error within the strict image margin; exact represented charge and certified weighted predicates. Solver tolerances or overlap consistency alone are insufficient."
+    },
+    {
+      "obligation_id": "SC-AOS-VO-NATIVE-LIFECYCLE",
+      "status": "pending_forward",
+      "destination": "P9-9.1a",
+      "obligation": "Actual current/reset histories, old-edge W preservation and three new-edge seeds, lawful resource shares, committed positive windows and elapsed time, invalidation, actual event occurrence identity, at-most-once gain, atomic publication with rollback and replay/import/reset conformance."
+    }
+  ],
+  "source_contract_ids": [
+    "SC-EC-GEOMETRIC-IDENTITY",
+    "SC-EC-FULL-STATE-RETURN",
+    "SC-EC-QUARTIC-SITE",
+    "SC-EC-WINDOW-LIFECYCLE",
+    "D10.2-EC-PARENT-REAL-OS",
+    "D10.2-EC-PARENT-A-GW-FUNCTIONAL",
+    "D10.2-EC-PARENT-A-WHAT",
+    "D10.2-EC-PARENT-A-READ-CLOSURE",
+    "D10.2-EC-PARENT-A-WRITER-TARGET",
+    "D10.2-EC-PARENT-A-RETAINED-WRITER"
+  ],
+  "family_dispositions": [
+    {
+      "family": "C_OS",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "SC-1\u2013SC-3 exact source-to-completion witness",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded joint-root/full-map/source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded full C/Z domain, trap and actual source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded selected composite root, full C/Z return and same-source completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_OS",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded staged A_OS domain, self-consistent writer/full C/W return and actual completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "joint root plus A history",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "both history channels and event dispositions",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "joint current/geometry/history/carrier map",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_RG2b",
+      "physical_state": [
+        "C"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "nonlinear completion-relative section and full-map Lipschitz bounds",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_RG2b",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "RG section with writer/history perturbations",
+      "native_completion_support": false
+    }
+  ],
+  "scope": {
+    "SC3_closed_for": [
+      "A_OS"
+    ],
+    "scientific_families": [
+      "C_OS",
+      "C_CI",
+      "C_PC",
+      "C_CI_PC",
+      "A_OS"
+    ],
+    "SC1_reopened": false,
+    "native_completed_spark_support": false,
+    "hierarchy_support": false,
+    "G4_accepted": false,
+    "aggregate_debts_closed": [],
+    "native_support_added": []
+  },
+  "record_digest": "b19afc7b764a59dc2ef2bec9aee565f96b94e850b2733e44fc31cb9d034d795d"
+}

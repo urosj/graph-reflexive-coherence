@@ -3975,40 +3975,22 @@ now admits the scientific/design successor; native completion/hierarchy stays pe
   the explicit SC-3 side-tool loader, HTTP/browser and notebook; pressure drift
   and scope changes without a repeated numerical campaign.
 
-## All-ten spark-completion applicability — 2026-10-31
+## All-ten spark-completion applicability — closed scientific sequence
 
-[Programme](./decisions/SparkCompletionAllTenApplicability.md) ·
-[Current research ledger](./evidence/spark-completion/applicability/ClaimDebtLedger.json).
-Native implementation and accepted scientific promotion remain separate.
+The canonical completed checklist is now under
+[P9-10.4: Capability publication and spark completion](../../Phase-9-GRCV4-ImplementationChecklist.md#p9-104-capability-publication-and-spark-completion).
+It records all ten accepted family constructions, formal adoption of the five
+earlier endpoints, retained evidence, side-tool publication and preparation of
+the self-contained proposal and full integrated GRC-v4 paper. The duplicated research-stage checkboxes
+and obsolete “next family” reminders have been removed from this checklist.
 
-- [x] Preserve accepted SC-1 definition and bounded C_OS completion; identify
-  exact shared premises and family-specific C/W/Z, joint-root and RG obligations.
-- [x] Map all ten applicability dispositions and register the nine family debts.
-- [x] C_CI — [joint-root and full-map derivation](./decisions/SparkCompletionCCIApplicability.md).
-  - [x] Exact uniform selected-root domain on the actual source/target graphs.
-  - [x] Fresh implicit full physical-map contraction and strict self-map on the
-    shared metric ball; complete diagnostic domains on both chiral charts.
-  - [x] Actual CI source beat, fresh whole event root and literal D11 transfer.
-  - [x] Independent current/reset CI approach, certified entry and positive window:
-    current 849 → 851, reset 817 → 819; only current earns one live gain.
-  - [x] Independent Picard/literal-current and finite-segment derivative pressure;
-    reject OS substitution and separate inner-root from physical contraction.
-  - [x] Fresh complete f/H/J checkpoint checks, source/transfer verification and
-    eight false-completion/root controls; replay earns no duplicate gain.
-  - [x] [Independent bounded review PASS](./evidence/spark-completion/applicability/review/CCIIndependentReview.md):
-    preserve its verification limits and identify saved-root overlap as consistency,
-    not independent certification of the saved enclosure.
-  - [x] [Adjudicate scoped CI claims/debt](./decisions/SparkCompletionCCISC3Authority.md),
-    then propagate authority/proposal/paper/spec with pinned sources and inherited v2 schema.
-  - [x] Expose the three conditional claims, research debt and both forward native
-    obligations through the successor forensic API, browser and notebook; preserve C_OS.
-- [ ] C_PC — all C/Z directions, actual carrier read/write and event disposition.
-- [ ] C_CI_PC — coupled root, C/Z return and same-source immediate/carrier writer.
-- [ ] A_OS — stationary W writer and full C/W return plus event lineage.
-- [ ] A_CI — selected joint root and all C/W directions.
-- [ ] A_PC — both independent histories and their own transfer policies.
-- [ ] A_CI_PC — complete joint root/current/W/Z map.
-- [ ] C_RG2b — nonlinear completion-relative section and full-map difference bounds.
-- [ ] A_RG2b — section, stationary writer and C/W stability.
-- [ ] Reconcile ten explicit applicability dispositions; advertise completion
-  only for positively proved and accepted subjects. No automatic native/G4 grant.
+[Current endpoint ledger](./evidence/spark-completion/applicability/earlier-closure/EarlierSC3ClaimDebtLedger.json) ·
+[Endpoint adoption](./decisions/SparkCompletionEarlierSC3Authority.md) ·
+[Consolidated reading entry point](./drafts/README.md).
+
+The scientific work is complete for these bounded subjects. Native completion
+numerics/lifecycle and hierarchy execution remain with the deferred P9-9.1a
+scope; aggregate reconciliation and G4 remain P9-10.5/10.6. Those obligations
+are not duplicated here or marked complete. A_OS below 100 stays paused.
+The existing specs/README.md audit debt is unwaived. Historical derivations,
+accepted authorities, original run counts and retained evidence remain intact.

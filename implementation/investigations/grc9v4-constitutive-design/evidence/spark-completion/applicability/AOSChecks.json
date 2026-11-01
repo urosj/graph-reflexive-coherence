@@ -1,0 +1,193 @@
+{
+  "schema": "spark-completion-aos-retained-checks-v1",
+  "sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os.py",
+      "sha256": "2b5e8c403909d3acba3c5776c529d38dad433ba2c89e6d76adfc3bc079e2cf25"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os_campaign.py",
+      "sha256": "ca5e9a2fe378c61754cdc3a18e0ab68ba39e33ee0f38555c7ff6e8237997e5a3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_positive.py",
+      "sha256": "15069ffca9b22a666ff67cd0b28ea740f9ed69f40de72154498d3e84eca4c64b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci_campaign.py",
+      "sha256": "732c5968a4a0f9a7e4350a9144b9c16740785cf197b34e84fc8eeb38e78987b4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_continuation.py",
+      "sha256": "b26c6bd0f050ab710b663e025cc3f039ed81c68ac8f834d8c60a2b2bdaad3709"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_basins.py",
+      "sha256": "6da2628f6f04bd112dbdd6eedfb9dc38661d7cc8f0a7532d211ba30e21769fd5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_os_reference.py",
+      "sha256": "0fab09c6bfcc098c537e39c223380a1d70af2de2eef5156a2d1307fef81069ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_applicability_a_os.py",
+      "sha256": "fab3dac67806bc1b7d7c49a88eeac5402cedbe017b636d98396dbd8126c54efc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os.py",
+      "sha256": "13bdc1fa1fbd371d0889959ab6c4ab9e51e0f48934f38b3f4d708dbb4c6dd91a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSDeclaration.json",
+      "sha256": "2b741766b56aa93ad04661f7c9cce5b3147e9c3ba1928be22efdb44dce7d18f3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2SourceBeat.json.xz",
+      "sha256": "faf266f447c0a1893b2ee7730dfdea481914fd15f53460e848d07ebd2c5b0675"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/review/constructive-candidate/positive_candidate.py",
+      "sha256": "efa6eba9f08ad8cfec73d2e3fcd8b071374631c6ebdfc5e3610c3c0585a5502d"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_expansion.py",
+      "sha256": "05d754313f1d529a8829f255d1101acfbb7267f465e55974d061fa6713fb5767"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "6dd6a8637c8d03f164b993fa801e5b65ee5c8f05425a33498b14fd92c0dd3a4c"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    },
+    {
+      "path": "specs/grc-v4-topology-event-spec.md",
+      "sha256": "d94c6081981489d05f9261ccefbf5574aa5273f1ca35eac4e4d8c6bc4d214bcd"
+    }
+  ],
+  "checks": {
+    "current": {
+      "status": "passed",
+      "decision": {
+        "role": "current",
+        "scientific_completion": true,
+        "local_gain": 1,
+        "reset_probe_earns_live_gain": false,
+        "first_spatial_gain": 92,
+        "first_certified_entry": 1039,
+        "target_completion_step": 1041,
+        "window_beats": 2,
+        "window_elapsed": "64",
+        "full_state": [
+          "C",
+          "W_A"
+        ],
+        "stable_descendants": {
+          "-1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          },
+          "1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          }
+        },
+        "native_completion": false,
+        "accepted_authority": false
+      },
+      "retained_states": 1041,
+      "transition_checks": 1041,
+      "fresh_full_state_trap": true,
+      "trajectory_rerun": false,
+      "consistency_only": "Saved transition/read overlap does not independently certify the original trajectory; the bound campaign supplies enclosure provenance."
+    },
+    "reset": {
+      "status": "passed",
+      "decision": {
+        "role": "reset",
+        "scientific_completion": false,
+        "local_gain": 0,
+        "reset_probe_earns_live_gain": false,
+        "first_spatial_gain": 101,
+        "first_certified_entry": 1022,
+        "target_completion_step": 1024,
+        "window_beats": 2,
+        "window_elapsed": "64",
+        "full_state": [
+          "C",
+          "W_A"
+        ],
+        "stable_descendants": {
+          "-1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          },
+          "1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          }
+        },
+        "native_completion": false,
+        "accepted_authority": false
+      },
+      "retained_states": 1024,
+      "transition_checks": 1024,
+      "fresh_full_state_trap": true,
+      "trajectory_rerun": false,
+      "consistency_only": "Saved transition/read overlap does not independently certify the original trajectory; the bound campaign supplies enclosure provenance."
+    }
+  },
+  "rejected_controls": [
+    "missing_W_direction",
+    "frozen_stationary_writer",
+    "altered_stationary_center",
+    "C_only_full_state",
+    "event_only_completion",
+    "reset_mints_gain",
+    "missing_positive_window",
+    "rewritten_old_W",
+    "source_beat_omitted",
+    "reset_advanced",
+    "stale_trigger",
+    "missing_saved_W",
+    "frozen_saved_W",
+    "altered_complete_basin",
+    "wrong_read_current",
+    "unverified_cache_claim"
+  ],
+  "replay": {
+    "new_gain": 0,
+    "mutation": false
+  },
+  "trajectory_reruns": 0,
+  "record_digest": "f677f6fd98a326fada235f80b0b8da44c43329d4a205dc4870992574440cc18c"
+}

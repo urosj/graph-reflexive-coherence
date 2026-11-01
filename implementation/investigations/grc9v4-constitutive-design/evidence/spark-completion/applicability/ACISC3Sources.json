@@ -1,0 +1,59 @@
+{
+  "schema": "spark-completion-aci-acceptance-metadata-v1",
+  "reviewed_commit": "0ef5971a40132c8344ab04f215e5b5bf5b91b1dc",
+  "native_runtime_changed": false,
+  "execution_relabelled": false,
+  "sources": [
+    {
+      "path": "implementation/Phase-9-GRCV4-Handoff.md",
+      "before_sha256": "fc2b48d128387b51eaa068fb3250d38d1de853ee2fcb5767ac3db791b0a7a776",
+      "after_sha256": "10ac9f36aef8bc74cb5925ccfa0ca626567ea6a4f656607ea7e8bf02b29d020f"
+    },
+    {
+      "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
+      "before_sha256": "0ad237441e90caa0958e1e015759f008894be4f32f3007985e7047345451f783",
+      "after_sha256": "d6ec18b785c4b7161daa6bfdca021d9e068457d41229bbbcf712b7033c35a984"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/GRC9V4ConstitutiveDesignChecklist.md",
+      "before_sha256": "99a96c680c470cc978f4a6332a85c9fb507ab77ee725cb019b44811a29e3431d",
+      "after_sha256": "d2385d564d2781fde9eb3f75a74445d1e7374ec6045706367f2d6c6cf5d4464a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionAllTenApplicability.md",
+      "before_sha256": "d719b35af4f655cb3427acf35884f6e119d5780a324929fd27a27d7fd0fe319d",
+      "after_sha256": "92be3f19eb5d6f75259588d4d5dd52504982091216dd5f6bcc434f9b2feb9d32"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/notebooks/phase9_verification.ipynb",
+      "before_sha256": "edc3f8fb3a10bb9b2dbb9b4506de9372fd94057c4fe3dedd7a784decbca6bd38",
+      "after_sha256": "f145fc7e53b7158b2073e5702648a1191d4f8fe71710574004d4dc12e95d3ab1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/index.html",
+      "before_sha256": "9b291b9ef7cc57babcca74e5989556d05dc401e677a01bee7ce63edff47f73cb",
+      "after_sha256": "386fb2e7c5acf5fd893a88185a9c78c940baed3497d0b3f0581b6a1bd2d2c3d8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/serve_phase9.py",
+      "before_sha256": "1e2ed1f8c072cde49f8eae2952c568f39b4f2af6019f4989ea9d00b719fe57ca",
+      "after_sha256": "0568b04e2682e741e33864d2177f55da21921b9ba7567720e54402d83a28c6cb"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aci_metadata.py",
+      "before_sha256": "721c759066cd8c5bce46d5aa5b15392b128b7aa3cfe1afaa46ef9b2123b98b67",
+      "after_sha256": "297a8b1618e3946480f6d873ab4e8a38d57c4f685bf7a11767ad10210c1a5d7f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aci_research.py",
+      "before_sha256": "a5f2b7282e2757387a272857f109f5c7d419d31b7be56d053e1108b913f113be",
+      "after_sha256": "27b5a42600fbe06673e376eecf2c1638bf3d36793c0e28bc7dfb1c96d8033a57"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
+      "before_sha256": "cc894973fd525452b1f1d31fe66d98b56d707c57f887f968c69b3f4c25e0e914",
+      "after_sha256": "daf1aefcd1c1b53b105ca671c559bfe806bdf14f8ea4d0eefafcf73f79c6c7e7"
+    }
+  ],
+  "record_digest": "019eb46016d5d2e39797213a1a9301e4360afbe788443dbe41a31d82b4bece36"
+}

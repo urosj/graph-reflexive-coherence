@@ -1,0 +1,910 @@
+{
+  "G4_accepted": false,
+  "accepted_authority": false,
+  "accepted_baseline": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-os/Authority.json",
+    "projection_digest": "5006a5e76811aed03c41c32088cb5775068f6247dfaf3a4640c10e3d93704afb",
+    "record_digest": "b19afc7b764a59dc2ef2bec9aee565f96b94e850b2733e44fc31cb9d034d795d"
+  },
+  "accepted_scientific_families": [
+    "C_OS",
+    "C_CI",
+    "C_PC",
+    "C_CI_PC",
+    "A_OS"
+  ],
+  "checks_record_digest": "2db80543a0d6a5228691d2e61dcc3a2af3cf06950a53211797de5b2093723fa6",
+  "conductance_dimension": 16,
+  "date": "2026-10-31",
+  "debt": {
+    "debt_id": "SC-APP-DEBT-A_CI",
+    "forward_native_destination": "P9-9.1a",
+    "remaining_work": [
+      "scientific review and adjudication",
+      "authority to proposal/paper to specification if accepted",
+      "native error, conservation and lifecycle obligations"
+    ],
+    "status": "open_pending_scientific_adjudication"
+  },
+  "decisions": {
+    "current": {
+      "accepted_authority": false,
+      "first_certified_entry": 375,
+      "first_spatial_gain": 92,
+      "full_state": [
+        "C",
+        "W_A"
+      ],
+      "local_gain": 1,
+      "native_completion": false,
+      "reset_probe_earns_live_gain": false,
+      "role": "current",
+      "scientific_completion": true,
+      "stable_descendants": {
+        "-1": {
+          "p": [
+            "p",
+            "private"
+          ],
+          "sc2-positive-module/satellite/2": [
+            "n2",
+            "n8",
+            "sc2-positive-module/satellite/2"
+          ]
+        },
+        "1": {
+          "p": [
+            "p",
+            "private"
+          ],
+          "sc2-positive-module/satellite/2": [
+            "n2",
+            "n8",
+            "sc2-positive-module/satellite/2"
+          ]
+        }
+      },
+      "target_completion_step": 377,
+      "window_beats": 2,
+      "window_elapsed": "64"
+    },
+    "reset": {
+      "accepted_authority": false,
+      "first_certified_entry": 372,
+      "first_spatial_gain": 101,
+      "full_state": [
+        "C",
+        "W_A"
+      ],
+      "local_gain": 0,
+      "native_completion": false,
+      "reset_probe_earns_live_gain": false,
+      "role": "reset",
+      "scientific_completion": false,
+      "stable_descendants": {
+        "-1": {
+          "p": [
+            "p",
+            "private"
+          ],
+          "sc2-positive-module/satellite/2": [
+            "n2",
+            "n8",
+            "sc2-positive-module/satellite/2"
+          ]
+        },
+        "1": {
+          "p": [
+            "p",
+            "private"
+          ],
+          "sc2-positive-module/satellite/2": [
+            "n2",
+            "n8",
+            "sc2-positive-module/satellite/2"
+          ]
+        }
+      },
+      "target_completion_step": 374,
+      "window_beats": 2,
+      "window_elapsed": "64"
+    }
+  },
+  "execution_digests": {
+    "current": "cdc4e994c4131bcdf6ea1b21df7d78728d3bb402a609c16f6f250f023cacbc85",
+    "reset": "6c0e68745a6a1489302abb481b2c3d1a7953c21d49114ae931e25dfd3df2439d"
+  },
+  "family": "A_CI",
+  "full_dimension": 30,
+  "full_state": [
+    "C",
+    "W_A"
+  ],
+  "native_completion": false,
+  "next_family_after_review": "A_PC",
+  "preflight_record_digest": "2466be4af79bf0edbff7809ef305582a60fdc17d97111cd6434c639e431eb2d9",
+  "proof": {
+    "OS_derivative_reused": false,
+    "OS_trajectory_reused": false,
+    "accepted_authority": false,
+    "all_conductance_directions_included": true,
+    "center": {
+      "n1": "1638616087250629070047097505297713366339876941493/1461501637330902918203684832716283019655932542976",
+      "n2": "409769637612816831431095376469133399864201088177/365375409332725729550921208179070754913983135744",
+      "n3": "1676056219960104561837317112455499647018823481585/1461501637330902918203684832716283019655932542976",
+      "n4": "209507027495033014466280394204584238575345603505/182687704666362864775460604089535377456991567872",
+      "n5": "802385985537450772156072583547850303518905756485/730750818665451459101842416358141509827966271488",
+      "n6": "1676056219960104561837317112455499647018823481585/1461501637330902918203684832716283019655932542976",
+      "n7": "209507027495033014466280394204584238575345603505/182687704666362864775460604089535377456991567872",
+      "n8": "409769637612816831431095376469133399864201088177/365375409332725729550921208179070754913983135744",
+      "n9": "1638616087240792392924480950359379012503017161557/1461501637330902918203684832716283019655932542976",
+      "p": "574730080119084256346258364640707966912107512169/182687704666362864775460604089535377456991567872",
+      "private": "409769644744608779592635440706432175501917396537/365375409332725729550921208179070754913983135744",
+      "sc2-positive-module/core": "1638142733740690009606534658141487996479069611951/1461501637330902918203684832716283019655932542976",
+      "sc2-positive-module/satellite/1": "1677122755066535824131159147094978265198505749209/1461501637330902918203684832716283019655932542976",
+      "sc2-positive-module/satellite/2": "574730099227897284558687922039163185460834850453/182687704666362864775460604089535377456991567872",
+      "sc2-positive-module/satellite/3": "838561377538926494530984229425285967034154306763/730750818665451459101842416358141509827966271488"
+    },
+    "center_defect": [
+      "0",
+      "1/5192296858534827628530496329220096"
+    ],
+    "complete_basins": {
+      "-1": {
+        "p": [
+          "p",
+          "private"
+        ],
+        "sc2-positive-module/satellite/2": [
+          "n2",
+          "n8",
+          "sc2-positive-module/satellite/2"
+        ]
+      },
+      "1": {
+        "p": [
+          "p",
+          "private"
+        ],
+        "sc2-positive-module/satellite/2": [
+          "n2",
+          "n8",
+          "sc2-positive-module/satellite/2"
+        ]
+      }
+    },
+    "conductance_dimension": 16,
+    "contraction": [
+      "157812062128491250140302378127/158456325028528675187087900672",
+      "157812062128491250140302378127/158456325028528675187087900672"
+    ],
+    "domain_record_digest": "4073ef23706a5fefc456eacf2b94daef509a84f0b5b810f13308cfc33cbb2cf0",
+    "domain_root_error": [
+      "270892519/590295810358705651712",
+      "270892519/590295810358705651712"
+    ],
+    "geometry": {
+      "-1": {
+        "W_bounds": [
+          "2250367025256811/2251799813685248",
+          "9006884695083545/9007199254740992"
+        ],
+        "complete_basins": {
+          "p": [
+            "p",
+            "private"
+          ],
+          "sc2-positive-module/satellite/2": [
+            "n2",
+            "n8",
+            "sc2-positive-module/satellite/2"
+          ]
+        },
+        "edges": [
+          {
+            "edge_id": "positive-0",
+            "half_width": [
+              "1741163908776920642117665271625/2596148429267413814265248164610048",
+              "3482327817553841284235330543251/5192296858534827628530496329220096"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "133320837657045093295814376413097/5192296858534827628530496329220096",
+              "66660418828522546647907188206549/2596148429267413814265248164610048"
+            ]
+          },
+          {
+            "edge_id": "positive-1",
+            "half_width": [
+              "3913574715157667567140519440263/5192296858534827628530496329220096",
+              "489196839394708445892564930033/649037107316853453566312041152512"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "1313465189953835891713072004687791/649037107316853453566312041152512",
+              "10507721519630687133704576037502329/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "positive-10",
+            "half_width": [
+              "1988072782055792449594611573157/5192296858534827628530496329220096",
+              "994036391027896224797305786579/2596148429267413814265248164610048"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "2657881983070481857819539403465665/1298074214633706907132624082305024",
+              "10631527932281927431278157613862661/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "positive-11",
+            "half_width": [
+              "3241949551297959538664741626131/5192296858534827628530496329220096",
+              "810487387824489884666185406533/1298074214633706907132624082305024"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "328438612533225365088281237336955/162259276829213363391578010288128",
+              "10510035601063211682824999594782561/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "positive-12",
+            "half_width": [
+              "26819995852970427624811400407/162259276829213363391578010288128",
+              "858239867295053683993964813025/5192296858534827628530496329220096"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "5255388105012279532722224587003253/2596148429267413814265248164610048",
+              "10510776210024559065444449174006507/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "positive-2",
+            "half_width": [
+              "3731276821080438659619370684015/5192296858534827628530496329220096",
+              "233204801317527416226210667751/324518553658426726783156020576256"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "57817080665501657335069461977/5192296858534827628530496329220096",
+              "28908540332750828667534730989/2596148429267413814265248164610048"
+            ]
+          },
+          {
+            "edge_id": "positive-3",
+            "half_width": [
+              "466409426770131511042087559545/649037107316853453566312041152512",
+              "3731275414161052088336700476361/5192296858534827628530496329220096"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "28909223405696137892978077333/2596148429267413814265248164610048",
+              "57818446811392275785956154667/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "positive-4",
+            "half_width": [
+              "837482406574854022016738851477/5192296858534827628530496329220096",
+              "418741203287427011008369425739/2596148429267413814265248164610048"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "5316339532881269908738951607883501/2596148429267413814265248164610048",
+              "10632679065762539817477903215767003/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "positive-5",
+            "half_width": [
+              "3731276806190706190063192762231/5192296858534827628530496329220096",
+              "466409600773838273757899095279/649037107316853453566312041152512"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "57817095555234126891247383761/5192296858534827628530496329220096",
+              "28908547777617063445623691881/2596148429267413814265248164610048"
+            ]
+          },
+          {
+            "edge_id": "positive-6",
+            "half_width": [
+              "3731275427482849007127461332967/5192296858534827628530496329220096",
+              "466409428435356125890932666621/649037107316853453566312041152512"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "57818433489595356995195298059/5192296858534827628530496329220096",
+              "14454608372398839248798824515/1298074214633706907132624082305024"
+            ]
+          },
+          {
+            "edge_id": "positive-7",
+            "half_width": [
+              "1956787446349062148704228117567/2596148429267413814265248164610048",
+              "3913574892698124297408456235135/5192296858534827628530496329220096"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "5253860759726573338487154050353729/2596148429267413814265248164610048",
+              "10507721519453146676974308100707459/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "positive-8",
+            "half_width": [
+              "3482330968189008541475329106841/5192296858534827628530496329220096",
+              "1741165484094504270737664553421/2596148429267413814265248164610048"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "133320834581563470060965731435239/5192296858534827628530496329220096",
+              "16665104322695433757620716429405/649037107316853453566312041152512"
+            ]
+          },
+          {
+            "edge_id": "positive-9",
+            "half_width": [
+              "1620978662825857080049110666233/2596148429267413814265248164610048",
+              "3241957325651714160098221332467/5192296858534827628530496329220096"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "10510035593253911030836102328019141/5192296858534827628530496329220096",
+              "5255017796626955515418051164009571/2596148429267413814265248164610048"
+            ]
+          },
+          {
+            "edge_id": "sc2-positive-module/internal/1",
+            "half_width": [
+              "1572511629006318709174483879191/1298074214633706907132624082305024",
+              "6290046516025274836697935516765/5192296858534827628530496329220096"
+            ],
+            "orientation": -1,
+            "strict_margin": [
+              "66097404224121194320814033887343/2596148429267413814265248164610048",
+              "132194808448242388641628067774687/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "sc2-positive-module/internal/2",
+            "half_width": [
+              "709959771991930501394578198481/2596148429267413814265248164610048",
+              "1419919543983861002789156396963/5192296858534827628530496329220096"
+            ],
+            "orientation": -1,
+            "strict_margin": [
+              "10513539863630379060663855418472409/5192296858534827628530496329220096",
+              "5256769931815189530331927709236205/2596148429267413814265248164610048"
+            ]
+          },
+          {
+            "edge_id": "sc2-positive-module/internal/3",
+            "half_width": [
+              "6290045500416138180033193996267/5192296858534827628530496329220096",
+              "1572511375104034545008298499067/1298074214633706907132624082305024"
+            ],
+            "orientation": -1,
+            "strict_margin": [
+              "66097404752029085976610187911915/2596148429267413814265248164610048",
+              "132194809504058171953220375823831/5192296858534827628530496329220096"
+            ]
+          }
+        ],
+        "minimum_order_margin": [
+          "57817080665501657335069461977/5192296858534827628530496329220096",
+          "57817080665501657335069461977/5192296858534827628530496329220096"
+        ],
+        "minimum_resource": [
+          "5699047386870248044937636562742609/5192296858534827628530496329220096",
+          "2849523693435124022468818281371305/2596148429267413814265248164610048"
+        ],
+        "seeds": [
+          "p",
+          "sc2-positive-module/satellite/2"
+        ],
+        "weighted_selector_lower": "99/2800"
+      },
+      "1": {
+        "W_bounds": [
+          "2250367025256811/2251799813685248",
+          "9006884695083545/9007199254740992"
+        ],
+        "complete_basins": {
+          "p": [
+            "p",
+            "private"
+          ],
+          "sc2-positive-module/satellite/2": [
+            "n2",
+            "n8",
+            "sc2-positive-module/satellite/2"
+          ]
+        },
+        "edges": [
+          {
+            "edge_id": "positive-0",
+            "half_width": [
+              "1741163908776920642117665271625/2596148429267413814265248164610048",
+              "3482327817553841284235330543251/5192296858534827628530496329220096"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "133320837657045093295814376413097/5192296858534827628530496329220096",
+              "66660418828522546647907188206549/2596148429267413814265248164610048"
+            ]
+          },
+          {
+            "edge_id": "positive-1",
+            "half_width": [
+              "3913574715157667567140519440263/5192296858534827628530496329220096",
+              "489196839394708445892564930033/649037107316853453566312041152512"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "1313465189953835891713072004687791/649037107316853453566312041152512",
+              "10507721519630687133704576037502329/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "positive-10",
+            "half_width": [
+              "1988072782055792449594611573157/5192296858534827628530496329220096",
+              "994036391027896224797305786579/2596148429267413814265248164610048"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "2657881983070481857819539403465665/1298074214633706907132624082305024",
+              "10631527932281927431278157613862661/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "positive-11",
+            "half_width": [
+              "3241949551297959538664741626131/5192296858534827628530496329220096",
+              "810487387824489884666185406533/1298074214633706907132624082305024"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "328438612533225365088281237336955/162259276829213363391578010288128",
+              "10510035601063211682824999594782561/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "positive-12",
+            "half_width": [
+              "26819995852970427624811400407/162259276829213363391578010288128",
+              "858239867295053683993964813025/5192296858534827628530496329220096"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "5255388105012279532722224587003253/2596148429267413814265248164610048",
+              "10510776210024559065444449174006507/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "positive-2",
+            "half_width": [
+              "3731276821080438659619370684015/5192296858534827628530496329220096",
+              "233204801317527416226210667751/324518553658426726783156020576256"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "57817080665501657335069461977/5192296858534827628530496329220096",
+              "28908540332750828667534730989/2596148429267413814265248164610048"
+            ]
+          },
+          {
+            "edge_id": "positive-3",
+            "half_width": [
+              "466409426770131511042087559545/649037107316853453566312041152512",
+              "3731275414161052088336700476361/5192296858534827628530496329220096"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "28909223405696137892978077333/2596148429267413814265248164610048",
+              "57818446811392275785956154667/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "positive-4",
+            "half_width": [
+              "837482406574854022016738851477/5192296858534827628530496329220096",
+              "418741203287427011008369425739/2596148429267413814265248164610048"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "5316339532881269908738951607883501/2596148429267413814265248164610048",
+              "10632679065762539817477903215767003/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "positive-5",
+            "half_width": [
+              "3731276806190706190063192762231/5192296858534827628530496329220096",
+              "466409600773838273757899095279/649037107316853453566312041152512"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "57817095555234126891247383761/5192296858534827628530496329220096",
+              "28908547777617063445623691881/2596148429267413814265248164610048"
+            ]
+          },
+          {
+            "edge_id": "positive-6",
+            "half_width": [
+              "3731275427482849007127461332967/5192296858534827628530496329220096",
+              "466409428435356125890932666621/649037107316853453566312041152512"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "57818433489595356995195298059/5192296858534827628530496329220096",
+              "14454608372398839248798824515/1298074214633706907132624082305024"
+            ]
+          },
+          {
+            "edge_id": "positive-7",
+            "half_width": [
+              "1956787446349062148704228117567/2596148429267413814265248164610048",
+              "3913574892698124297408456235135/5192296858534827628530496329220096"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "5253860759726573338487154050353729/2596148429267413814265248164610048",
+              "10507721519453146676974308100707459/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "positive-8",
+            "half_width": [
+              "3482330968189008541475329106841/5192296858534827628530496329220096",
+              "1741165484094504270737664553421/2596148429267413814265248164610048"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "133320834581563470060965731435239/5192296858534827628530496329220096",
+              "16665104322695433757620716429405/649037107316853453566312041152512"
+            ]
+          },
+          {
+            "edge_id": "positive-9",
+            "half_width": [
+              "1620978662825857080049110666233/2596148429267413814265248164610048",
+              "3241957325651714160098221332467/5192296858534827628530496329220096"
+            ],
+            "orientation": 1,
+            "strict_margin": [
+              "10510035593253911030836102328019141/5192296858534827628530496329220096",
+              "5255017796626955515418051164009571/2596148429267413814265248164610048"
+            ]
+          },
+          {
+            "edge_id": "sc2-positive-module/internal/1",
+            "half_width": [
+              "1572511629006318709174483879191/1298074214633706907132624082305024",
+              "6290046516025274836697935516765/5192296858534827628530496329220096"
+            ],
+            "orientation": -1,
+            "strict_margin": [
+              "66097404224121194320814033887343/2596148429267413814265248164610048",
+              "132194808448242388641628067774687/5192296858534827628530496329220096"
+            ]
+          },
+          {
+            "edge_id": "sc2-positive-module/internal/2",
+            "half_width": [
+              "709959771991930501394578198481/2596148429267413814265248164610048",
+              "1419919543983861002789156396963/5192296858534827628530496329220096"
+            ],
+            "orientation": -1,
+            "strict_margin": [
+              "10513539863630379060663855418472409/5192296858534827628530496329220096",
+              "5256769931815189530331927709236205/2596148429267413814265248164610048"
+            ]
+          },
+          {
+            "edge_id": "sc2-positive-module/internal/3",
+            "half_width": [
+              "6290045500416138180033193996267/5192296858534827628530496329220096",
+              "1572511375104034545008298499067/1298074214633706907132624082305024"
+            ],
+            "orientation": -1,
+            "strict_margin": [
+              "66097404752029085976610187911915/2596148429267413814265248164610048",
+              "132194809504058171953220375823831/5192296858534827628530496329220096"
+            ]
+          }
+        ],
+        "minimum_order_margin": [
+          "57817080665501657335069461977/5192296858534827628530496329220096",
+          "57817080665501657335069461977/5192296858534827628530496329220096"
+        ],
+        "minimum_resource": [
+          "5699047386870248044937636562742609/5192296858534827628530496329220096",
+          "2849523693435124022468818281371305/2596148429267413814265248164610048"
+        ],
+        "seeds": [
+          "p",
+          "sc2-positive-module/satellite/2"
+        ],
+        "weighted_selector_lower": "99/2800"
+      }
+    },
+    "implicit_geometry_derivative": true,
+    "logW_center": [
+      "-142149840349459410868290954070026644563830139/1461501637330902918203684832716283019655932542976",
+      "-644652962134226229607994727163320492483551017/1461501637330902918203684832716283019655932542976",
+      "-465035074749549965039074346266076483573757161/730750818665451459101842416358141509827966271488",
+      "-81287547975640303079553573128236876306798755/182687704666362864775460604089535377456991567872",
+      "-645750042459096099935082540419519409899059521/1461501637330902918203684832716283019655932542976",
+      "-25590590854166413123570864515165944303213667/730750818665451459101842416358141509827966271488",
+      "-51182020781703813257467427067753428925704223/1461501637330902918203684832716283019655932542976",
+      "-115991248273167590584442246502822234286234825/182687704666362864775460604089535377456991567872",
+      "-25590590854166413123570864515165944303213667/730750818665451459101842416358141509827966271488",
+      "-51182020781703813257467427067753428925704223/1461501637330902918203684832716283019655932542976",
+      "-644652962134226229607994727163320492483551017/1461501637330902918203684832716283019655932542976",
+      "-8882471628638290445888631368711060667499845/91343852333181432387730302044767688728495783936",
+      "-650300383802725888744396981660120621303654753/1461501637330902918203684832716283019655932542976",
+      "-142189386796340727370039670467128939286514929/1461501637330902918203684832716283019655932542976",
+      "-325345741761187077044693909633146764050848527/730750818665451459101842416358141509827966271488",
+      "-142189386797263815006034268238843358984997255/1461501637330902918203684832716283019655932542976"
+    ],
+    "metric": "||diag(r)^-1 T^-1 R (deltaC,delta logW)||_infinity",
+    "native_completion": false,
+    "proof_precision_bits": 512,
+    "radius": "1",
+    "relative_dimension": 30,
+    "resource_dimension": 14,
+    "root_domain": {
+      "C": [
+        "0",
+        "4"
+      ],
+      "H_deviation": "7/8192",
+      "H_inverse": "8192/8185",
+      "W": [
+        "99/100",
+        "101/100"
+      ],
+      "baseline_H_lipschitz": "707/1638400",
+      "baseline_current": "4117846861/335544320000",
+      "causal_flat_radius": "1/32",
+      "closure_denominator_lower": "58548056078928797885642233395/58644361070317151342753786716",
+      "contraction": "65718168874710727136013001287122968123314328996779600273775564/28705977544281922852189849244192177060670606429544764130786838203125",
+      "current_baseline_lipschitz": "686702668535957145769161571708480318585839521146645316164/685574974124278272694456257844724426576663440576730645205",
+      "drive_lower": "7356179614390305395752446679/7378697629483820646400000000",
+      "edge_laplacian_norm": "7",
+      "flat_H_lipschitz": "1201703659423281867629952023535962845683462015941112690720467456/28705977544281922852189849244192177060670606429544764130786838203125",
+      "image_bound": "396569206487163315325307969713975381/9814340382843539675012744813323776000000",
+      "overlap_row_sum": "7/8",
+      "q_absolute": "96304991388353457111553321/14661090267579287835688446679",
+      "q_baseline_lipschitz": "41188991839410360373332180281775483781120000000000/214947567834108113788542336096247351383855658759826129041",
+      "schema": "spark-completion-aci-root-domain-v1",
+      "selected_current": "60372124537189020482805153931086024619/4911366916081507453738815241951641600000",
+      "uniqueness": "one root in the declared flat ball; no global root uniqueness claim"
+    },
+    "schema": "spark-completion-aci-full-return-v1",
+    "stationary_writer_self_consistent": true,
+    "strict_image_margin": [
+      "21111206708426343933068002754559/5192296858534827628530496329220096",
+      "644262900037425046785522545/158456325028528675187087900672"
+    ]
+  },
+  "record_digest": "706f60b3852e0913694724ccc08acb4c5e5d63cc5805d9482f530f337792fbd5",
+  "resource_dimension": 14,
+  "review_limits": [
+    "This is one bounded A_CI construction; scientific adjudication and acceptance propagation remain pending.",
+    "The A_OS rational domain is a candidate only. The implicit derivative, source beat, event root and both interval trajectories are fresh A_CI evidence.",
+    "Root uniqueness is proved within the declared flat ball, not globally.",
+    "Independent equations and derivative controls are included; no independent external reviewer or duplicate long trajectory replay is claimed.",
+    "Reset and read-only replay earn zero live gain. Native completion, hierarchy and G4 remain separate.",
+    "The below-100 A_OS investigation is paused; SC-1 has not been weakened."
+  ],
+  "schema": "spark-completion-aci-research-v1",
+  "source_root_domain": {
+    "C": [
+      "0",
+      "4"
+    ],
+    "H_deviation": "11/8192",
+    "H_inverse": "8192/8181",
+    "W": [
+      "99/100",
+      "101/100"
+    ],
+    "baseline_H_lipschitz": "1111/1638400",
+    "baseline_current": "4201595253/335544320000",
+    "causal_flat_radius": "1/32",
+    "closure_denominator_lower": "58548056075445098388719329955/58644361067530191745215463964",
+    "contraction": "3949362675760816849254244119517193291980662161017359196/1055534639913292174827178560529806935052241477826463995440625",
+    "current_baseline_lipschitz": "16748845572660460609177712290191498428154777972775337764/16721340830309579007163224721264268278055310539825172205",
+    "drive_lower": "7356179613693565496367865991/7378697629483820646400000000",
+    "edge_laplacian_norm": "11",
+    "flat_H_lipschitz": "45956220227034959700413022481654612852138614237292907008/1055534639913292174827178560529806935052241477826463995440625",
+    "image_bound": "1206348432521907747922739974737/29245468010368673536609070182400000",
+    "overlap_row_sum": "11/8",
+    "q_absolute": "96304992085093356496134009/14661090266882547936303865991",
+    "q_baseline_lipschitz": "42026689779885505184553242778798926069760000000000/214947567813678180673224886257511299914447623692486412081",
+    "schema": "spark-completion-aci-root-domain-v1",
+    "selected_current": "1502438226076541866285835846666676603/119789436970470086805950751467110400000",
+    "uniqueness": "one root in the declared flat ball; no global root uniqueness claim"
+  },
+  "sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionACIApplicability.md",
+      "sha256": "79d22ac4f9c3bb2759e149f7a3e3cd0816c107ea5800fdd17df27d3027e7fcdd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-os/Authority.json",
+      "sha256": "59247cf5394dfe1733881b60791bcd6ed2e6df1a12070cc430cb1a6966671743"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2SourceBeat.json.xz",
+      "sha256": "faf266f447c0a1893b2ee7730dfdea481914fd15f53460e848d07ebd2c5b0675"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACI-current.json.xz",
+      "sha256": "99d44417d1f5aa2d5ffe9673252b658eaeb00068f15611a282f62ecf1d87378f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACI-reset.json.xz",
+      "sha256": "b9b3cdfd92e8433f44f5debdef80a0b96234b44a48ca2bee840110356c13adad"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACIChecks.json",
+      "sha256": "caba8da149b949f5b763417c8064b51323ae2d7af40a258a8866e6efb3efe360"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACIDeclaration.json",
+      "sha256": "9991b585aa996b2cce9562c31984f553017939395538173300ed8c37c86b678e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACIMetadataSources.json",
+      "sha256": "1b320bc6ff94b054d9824a052d076cd132e0f8183ffaaed67dcce5455e81e693"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACIPreflight.json",
+      "sha256": "1dfcd0ea50d525b17391d83cb8000093f0cf91f59b0175d0fc9e196032cd1b21"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOS-current.json.xz",
+      "sha256": "9cfca86819ba9a57ba6a4b753650440de1d54a6fab60130791e2391a40689e5b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOS-reset.json.xz",
+      "sha256": "b28422d359227765dd2b5198ca06746f07eaea14d30ab9eb5c24225fae93df78"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSScientificAcceptance.json",
+      "sha256": "4364ced9c337f1b092b747f15d7c257b5c7cc5eff2732de91d6910e1944ba4af"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSAnisotropicDomain.json",
+      "sha256": "525e9056bdb2e13d6c4302b63e23de194fd3a7e66259c1e8e91bca4a1e58486b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/review/constructive-candidate/positive_candidate.py",
+      "sha256": "efa6eba9f08ad8cfec73d2e3fcd8b071374631c6ebdfc5e3610c3c0585a5502d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_ci.py",
+      "sha256": "0bebbac41f7ebc234b4ae937cae8fea00122bc916d6610dfc8f2ec35000dddad"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_ci_campaign.py",
+      "sha256": "951c2b00afa3e25a9eb10e1e4a83ce0e8ae1a9753ba35bdf250152c414bb0c4c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os.py",
+      "sha256": "2b5e8c403909d3acba3c5776c529d38dad433ba2c89e6d76adfc3bc079e2cf25"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os_campaign.py",
+      "sha256": "ca5e9a2fe378c61754cdc3a18e0ab68ba39e33ee0f38555c7ff6e8237997e5a3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os_earlier.py",
+      "sha256": "91f0e1b5c64c6489f4d61686fed62d0f16c64002da84dc1117e6633c0055c7d2"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_basins.py",
+      "sha256": "6da2628f6f04bd112dbdd6eedfb9dc38661d7cc8f0a7532d211ba30e21769fd5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci_campaign.py",
+      "sha256": "732c5968a4a0f9a7e4350a9144b9c16740785cf197b34e84fc8eeb38e78987b4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_continuation.py",
+      "sha256": "b26c6bd0f050ab710b663e025cc3f039ed81c68ac8f834d8c60a2b2bdaad3709"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_os_reference.py",
+      "sha256": "0fab09c6bfcc098c537e39c223380a1d70af2de2eef5156a2d1307fef81069ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_positive.py",
+      "sha256": "15069ffca9b22a666ff67cd0b28ea740f9ed69f40de72154498d3e84eca4c64b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_ci_research.py",
+      "sha256": "63352ba09c156bcfcf19192f7ca4dc2aab8af77808b4f5ea1771a1531f282b30"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_applicability_a_ci.py",
+      "sha256": "ad9ffe6ecf3982d054dc2e65eff2659e5b81517020cf5d44e9bed542f55d2d3d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci.py",
+      "sha256": "9ba4ddf2ba138e7e60c9479ce9f07884ba9f7b4dfa5fe863b2b0228cfa2b8349"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci_surfaces.py",
+      "sha256": "e3fd7ea2f6d310ece14eb817b97570dd32fdb0ef4b1965af1addc7a8fa96c141"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/SparkCompletionACIResearch.md",
+      "sha256": "2bff851afec24acc39f1c04dcedff0af3706f063ccb74de1819885d28dc28bf6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aci_metadata.py",
+      "sha256": "721c759066cd8c5bce46d5aa5b15392b128b7aa3cfe1afaa46ef9b2123b98b67"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    },
+    {
+      "path": "specs/grc-v4-topology-event-spec.md",
+      "sha256": "d94c6081981489d05f9261ccefbf5574aa5273f1ca35eac4e4d8c6bc4d214bcd"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_expansion.py",
+      "sha256": "05d754313f1d529a8829f255d1101acfbb7267f465e55974d061fa6713fb5767"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "6dd6a8637c8d03f164b993fa801e5b65ee5c8f05425a33498b14fd92c0dd3a4c"
+    }
+  ],
+  "status": "demonstrated_bounded_pending_review",
+  "storage": {
+    "compressed_bytes": 760524,
+    "format": "XZ",
+    "raw_bytes": 5916381
+  },
+  "verification": {
+    "elapsed_seconds": {
+      "current": 101.06138169998303,
+      "reset": 101.54352002200903
+    },
+    "fresh_aci_source_and_both_trajectories": true,
+    "preflight_passed": true,
+    "rejected_controls": [
+      "missing_W_direction",
+      "OS_derivative_substitution",
+      "missing_implicit_feedback",
+      "frozen_stationary_writer",
+      "C_only_state",
+      "event_only_completion",
+      "reset_mints_gain",
+      "missing_positive_window",
+      "rewritten_old_W",
+      "source_beat_omitted",
+      "reset_advanced",
+      "stale_event_trigger",
+      "missing_saved_W",
+      "frozen_saved_W",
+      "altered_roster",
+      "forged_scalar_entry",
+      "wrong_joint_current",
+      "unverified_cache_claim"
+    ],
+    "retained_states": 751,
+    "root_and_ordinary_contraction_are_distinct": true,
+    "trajectory_reruns": 0
+  }
+}

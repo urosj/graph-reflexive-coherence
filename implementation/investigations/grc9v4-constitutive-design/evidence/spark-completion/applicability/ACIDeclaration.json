@@ -1,0 +1,59 @@
+{
+  "schema": "spark-completion-aci-declaration-v1",
+  "family": "A_CI",
+  "parameters": {
+    "eta": "1/1024",
+    "duration": "32",
+    "kappa_c": "1/64",
+    "kappa_Ah": "1/64",
+    "chi": "1/2",
+    "zeta": "1/2",
+    "kappa_H": "1/2",
+    "alpha": "1/32768",
+    "beta": "1/32768",
+    "gamma": "1/32768",
+    "W_floor": "1/2",
+    "tau_A": "32",
+    "site": "(C-2)^3-(C-2)"
+  },
+  "full_state": [
+    "C",
+    "W_A"
+  ],
+  "precision_bits": 8192,
+  "trapping_precision_bits": 512,
+  "maximum_target_steps": 1024,
+  "time_limit_seconds_per_role": 3600,
+  "window_beats": 2,
+  "window_elapsed": "64",
+  "source_W": {
+    "current": "4097/4096",
+    "reset": "8191/8192",
+    "new_internal": "1"
+  },
+  "roles": [
+    "current",
+    "reset"
+  ],
+  "source": "actual A_CI beat from exact SC2 resource prestate, fresh committed C/W joint event root",
+  "transfer": "literal D11 charts; preserve every old-edge W; seed three internal edges at W=1",
+  "stationary_requirement": "selected joint root, incoming-W rows, final-C writer, all C/W directions",
+  "allocation_shares": [
+    "1/128",
+    "63/64",
+    "1/128"
+  ],
+  "automatic_fallback": false,
+  "accepted_authority": false,
+  "native_support_added": [],
+  "borrowed_domain": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSAnisotropicDomain.json",
+    "sha256": "525e9056bdb2e13d6c4302b63e23de194fd3a7e66259c1e8e91bca4a1e58486b",
+    "record_digest": "4073ef23706a5fefc456eacf2b94daef509a84f0b5b810f13308cfc33cbb2cf0"
+  },
+  "domain_reuse": "exact candidate shape and center only; fresh full implicit A_CI proof and source/current/reset trajectories required",
+  "root_proposal_policy": "128 then powers of two through fixed full precision, at most 12 Newton iterations each; midpoint proposals only",
+  "discovery": "A_OS suggested allocation and domain; A_CI proof checked before pilot and full campaigns. No A_CI trajectory search.",
+  "preregistered_search": false,
+  "record_digest": "2656acb191947414d4db3723a46f970f0e37b7885579664cfd9959f3789d7f79"
+}

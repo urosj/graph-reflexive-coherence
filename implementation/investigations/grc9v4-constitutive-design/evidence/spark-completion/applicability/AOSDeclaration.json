@@ -1,0 +1,52 @@
+{
+  "schema": "spark-completion-aos-declaration-v1",
+  "family": "A_OS",
+  "parameters": {
+    "eta": "1/1024",
+    "duration": "32",
+    "kappa_c": "1/64",
+    "kappa_Ah": "1/64",
+    "chi": "1/2",
+    "zeta": "1/2",
+    "kappa_H": "1/2",
+    "alpha": "1/32768",
+    "beta": "1/32768",
+    "gamma": "1/32768",
+    "W_floor": "1/2",
+    "tau_A": "32",
+    "site": "(C-2)^3-(C-2)"
+  },
+  "full_state": [
+    "C",
+    "W_A"
+  ],
+  "precision_bits": 8192,
+  "trapping_precision_bits": 512,
+  "maximum_target_steps": 1536,
+  "time_limit_seconds_per_role": 3600,
+  "window_beats": 2,
+  "window_elapsed": "64",
+  "source_W": {
+    "current": "4097/4096",
+    "reset": "8191/8192",
+    "new_internal": "1"
+  },
+  "roles": [
+    "current",
+    "reset"
+  ],
+  "source": "actual A_OS beat from exact SC2 resource prestate, fresh committed C/W event read",
+  "transfer": "literal D11 charts; preserve every old-edge W; seed each new internal edge W=1",
+  "stationary_requirement": "self-consistent incoming-W descriptor and final-C writer; all independent C/W directions",
+  "automatic_fallback": false,
+  "native_support_added": [],
+  "accepted_authority": false,
+  "allocation_shares": [
+    "1/128",
+    "63/64",
+    "1/128"
+  ],
+  "discovery_record": "AOSDiscovery.json.xz",
+  "preregistered_search": false,
+  "record_digest": "390bdd4bd9f8ba9a8f18ae7592f4d4e9b7fe899e35b93973d4114982e883da8e"
+}

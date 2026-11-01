@@ -1,0 +1,48 @@
+{
+  "schema": "grc9v4-spark-applicability-source-manifest-v1",
+  "authority_record_digest": "65ab36c9cdf482708f440f10498da93de1d31c1f061b229c6fa087c1f3b40561",
+  "predecessor_manifest": {
+    "path": "specs/grc-9-v4-spark-completion-pc-source-manifest.json",
+    "sha256": "550587a6d77250f5a26e9531cf0f15d43864424099302cb9337455bd57ab5c40"
+  },
+  "contract_ids": [
+    "SC-CCIPC-EC-DOMAIN",
+    "SC-CCIPC-EC-FULL-STATE-RETURN",
+    "SC-CCIPC-EC-COMPLETION"
+  ],
+  "chain": [
+    {
+      "stage": "authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-ci-pc/Authority.json",
+      "sha256": "6abd05d2787d0896b594bb99ed8f39639bf00add36bfd1b6b329176f1acaa8be"
+    },
+    {
+      "stage": "decision",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIPCSC3Authority.md",
+      "sha256": "dfd895639c14a7795542f881b47a196169bdbd71ab308169211cf106633b8192"
+    },
+    {
+      "stage": "proposal",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-CCIPC-proposal.md",
+      "sha256": "9f4356483e664e7a4f77ef1e8639b67acf4744712da17362d08050f7577ecb44"
+    },
+    {
+      "stage": "paper",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-10-GRC9V4-Spark-Completion-CCIPC.md",
+      "sha256": "60f5a0bcffc662a31f0aa4bf75a5a87c79f23d6a7d6beae3434173a5a6a630c7"
+    },
+    {
+      "stage": "specification",
+      "path": "specs/grc-9-v4-spark-completion-ci-pc.md",
+      "sha256": "6ab7252ad4e070f3866cb38c68d18a53b4469350d4e1928e4126be60ee6ba07a"
+    },
+    {
+      "stage": "inherited_schema",
+      "path": "specs/grc-9-v4-spark-completion-schema.json",
+      "sha256": "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52"
+    }
+  ],
+  "native_support_added": [],
+  "native_implementation_destination": "P9-9.1a",
+  "record_digest": "ee3c53f75af1c824403d6fdeaf5cb83ace62e5128729ca94fde4b74902debb80"
+}

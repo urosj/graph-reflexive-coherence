@@ -1,0 +1,420 @@
+{
+  "accepted_authority": false,
+  "accepted_projection_digest": "5006a5e76811aed03c41c32088cb5775068f6247dfaf3a4640c10e3d93704afb",
+  "campaigns": {
+    "current": {
+      "decision": {
+        "accepted_authority": false,
+        "first_certified_entry": 375,
+        "first_spatial_gain": 92,
+        "full_state": [
+          "C",
+          "W_A"
+        ],
+        "local_gain": 1,
+        "native_completion": false,
+        "reset_probe_earns_live_gain": false,
+        "role": "current",
+        "scientific_completion": true,
+        "stable_descendants": {
+          "-1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          },
+          "1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          }
+        },
+        "target_completion_step": 377,
+        "window_beats": 2,
+        "window_elapsed": "64"
+      },
+      "elapsed_seconds": 101.06138169998303,
+      "optimization": {
+        "chiral_incidence_and_row_identity": true,
+        "graph_cache_hits": 7,
+        "graph_cache_misses": 3,
+        "identical_full_state_root_reuse": true,
+        "multi_RHS_geometry_derivative_solve": true,
+        "root_domain_cache_hits": 4,
+        "root_domain_cache_misses": 3,
+        "staged_root_proposals": true,
+        "target_joint_roots": 377,
+        "target_proposal_iterations": 5304,
+        "target_writer_calls": 377,
+        "trajectory_results_cached": false,
+        "weighted_rows_reused_within_root_proposal": true
+      },
+      "record_digest": "cdc4e994c4131bcdf6ea1b21df7d78728d3bb402a609c16f6f250f023cacbc85"
+    },
+    "reset": {
+      "decision": {
+        "accepted_authority": false,
+        "first_certified_entry": 372,
+        "first_spatial_gain": 101,
+        "full_state": [
+          "C",
+          "W_A"
+        ],
+        "local_gain": 0,
+        "native_completion": false,
+        "reset_probe_earns_live_gain": false,
+        "role": "reset",
+        "scientific_completion": false,
+        "stable_descendants": {
+          "-1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          },
+          "1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          }
+        },
+        "target_completion_step": 374,
+        "window_beats": 2,
+        "window_elapsed": "64"
+      },
+      "elapsed_seconds": 101.54352002200903,
+      "optimization": {
+        "chiral_incidence_and_row_identity": true,
+        "graph_cache_hits": 7,
+        "graph_cache_misses": 3,
+        "identical_full_state_root_reuse": true,
+        "multi_RHS_geometry_derivative_solve": true,
+        "root_domain_cache_hits": 4,
+        "root_domain_cache_misses": 3,
+        "staged_root_proposals": true,
+        "target_joint_roots": 374,
+        "target_proposal_iterations": 5263,
+        "target_writer_calls": 374,
+        "trajectory_results_cached": false,
+        "weighted_rows_reused_within_root_proposal": true
+      },
+      "record_digest": "6c0e68745a6a1489302abb481b2c3d1a7953c21d49114ae931e25dfd3df2439d"
+    }
+  },
+  "date": "2026-10-31",
+  "derivative_controls": {
+    "flat_root_coordinates": 16,
+    "full_physical_directions": 30,
+    "independent_equation_precision_digits": 110
+  },
+  "development_corrections": [
+    "The partial-derivative test handles structurally zero derivatives by requiring the rounded zero secant to contain zero; physical equations and tolerances were unchanged.",
+    "HTTP checks found missing static JavaScript routes. Both the new A_CI script and the earlier A_OS comparison script are now explicitly served and checked.",
+    "Finite Git preimages are read in one batch per metadata check. Every current file is still hashed afresh; no stale validation cache is introduced."
+  ],
+  "earlier_AOS_projection_digest": "7b2ebfe5b2f8bcad90c0fc3d69aa5d4e86dad3c5ec165301938f4d617ccf116a",
+  "historical_research_projection_digest": "a96cfbe550a3dd59f8d8797b0cdf068914274403561f37aae68fab6354ae8f0f",
+  "maintenance": {
+    "binding_count": 3199,
+    "check": "separate finite roster and content hashes; broader audit not waived"
+  },
+  "native_steps": 0,
+  "preflight": {
+    "elapsed_seconds": 6.389786654995987,
+    "optimization": {
+      "chiral_incidence_and_row_identity": true,
+      "graph_cache_hits": 7,
+      "graph_cache_misses": 3,
+      "identical_full_state_root_reuse": true,
+      "multi_RHS_geometry_derivative_solve": true,
+      "root_domain_cache_hits": 4,
+      "root_domain_cache_misses": 3,
+      "staged_root_proposals": true,
+      "target_joint_roots": 8,
+      "target_proposal_iterations": 120,
+      "target_writer_calls": 8,
+      "trajectory_results_cached": false,
+      "weighted_rows_reused_within_root_proposal": true
+    },
+    "pilot_steps": 8,
+    "record_digest": "2466be4af79bf0edbff7809ef305582a60fdc17d97111cd6434c639e431eb2d9"
+  },
+  "record_digest": "b24f3624ba4cce81f4773807f3d796c462d411fab11f720b7c3a3e222c4a3508",
+  "repository_audit": {
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only",
+    "error": "basin propagation source drift: specs/README.md",
+    "exit_code": 1,
+    "output": "Traceback (most recent call last):\n  File \"/home/uros/Documents/RC-github/graph-reflexive-coherence/implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 170, in <module>\n    main()\n  File \"/home/uros/Documents/RC-github/graph-reflexive-coherence/implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 154, in main\n    result = verify(policy.ROOT, args.boundary_only)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/uros/Documents/RC-github/graph-reflexive-coherence/implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 75, in verify\n    boundary, tree = policy.current_boundary(root)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/uros/Documents/RC-github/graph-reflexive-coherence/implementation/phase-9-grcv4/verification/phase9_implementation_policy.py\", line 3810, in current_boundary\n    check_binding_reconciliation(root)\n  File \"/home/uros/Documents/RC-github/graph-reflexive-coherence/implementation/phase-9-grcv4/verification/phase9_implementation_policy.py\", line 2165, in check_binding_reconciliation\n    data = predecessor_document_bytes(root, name)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/uros/Documents/RC-github/graph-reflexive-coherence/implementation/phase-9-grcv4/verification/verify_p9101a_propagation.py\", line 64, in predecessor_document_bytes\n    value = checked_manifest(root)\n            ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/uros/Documents/RC-github/graph-reflexive-coherence/implementation/phase-9-grcv4/verification/verify_p9101a_propagation.py\", line 55, in checked_manifest\n    raise ValueError(\"basin propagation source drift: \" + row[\"path\"])\nValueError: basin propagation source drift: specs/README.md\n",
+    "status": "preexisting_failure"
+  },
+  "retained_checks": {
+    "record_digest": "2db80543a0d6a5228691d2e61dcc3a2af3cf06950a53211797de5b2093723fa6",
+    "rejected_controls": [
+      "missing_W_direction",
+      "OS_derivative_substitution",
+      "missing_implicit_feedback",
+      "frozen_stationary_writer",
+      "C_only_state",
+      "event_only_completion",
+      "reset_mints_gain",
+      "missing_positive_window",
+      "rewritten_old_W",
+      "source_beat_omitted",
+      "reset_advanced",
+      "stale_event_trigger",
+      "missing_saved_W",
+      "frozen_saved_W",
+      "altered_roster",
+      "forged_scalar_entry",
+      "wrong_joint_current",
+      "unverified_cache_claim"
+    ],
+    "states": 751,
+    "trajectory_enclosure_provenance": "source-bound outward producer; transition/root overlaps are consistency checks, not an independent second trajectory proof",
+    "transition_checks": 751
+  },
+  "reviewed_subjects": {
+    "accepted_A_OS": {
+      "current_unchanged": [
+        "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionAOSApplicability.md",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2SourceBeat.json.xz",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOS-current.json.xz",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOS-reset.json.xz",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSChecks.json",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSDeclaration.json",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSDiscovery.json.xz",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSMetadataSources.json",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSPreflight.json",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSResearchProgress.json",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSValidation.json",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/review/AOSScientificReview.md",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/review/constructive-candidate/positive_candidate.py",
+        "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os.py",
+        "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os_campaign.py",
+        "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_basins.py",
+        "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci_campaign.py",
+        "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_continuation.py",
+        "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_os_reference.py",
+        "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_positive.py",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_os_research.py",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_applicability_a_os.py",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os.py",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os_surfaces.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/SparkCompletionAOSResearch.md",
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_cipc_sc3_metadata.py",
+        "specs/grc-v4-spec.md",
+        "specs/grc-v4-topology-event-spec.md",
+        "src/pygrc/models/grc_9_v4_expansion.py",
+        "src/pygrc/models/grc_9_v4_topology.py"
+      ],
+      "historical_reviewed_git_bytes": [
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aos_metadata.py"
+      ],
+      "total": 31
+    },
+    "earlier_A_OS": {
+      "current_unchanged": [
+        "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionAOSEarlierClosure.md",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC1Contract.md",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-os/Authority.json",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOS-current.json.xz",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOS-reset.json.xz",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSDeclaration.json",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSScientificAcceptance.json",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSAnisotropicDomain.json",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSDomainDiscovery.json",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSEarlierChecks.json.xz",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSEarlierMetadataSources.json",
+        "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/UserEarlierClosureProposal.txt",
+        "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os.py",
+        "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os_campaign.py",
+        "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os_earlier.py",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_os_earlier.py",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os_earlier.py",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os_earlier_surfaces.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/SparkCompletionAOSEarlierClosure.md"
+      ],
+      "historical_reviewed_git_bytes": [
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aos_earlier_metadata.py"
+      ],
+      "total": 20
+    }
+  },
+  "schema": "spark-completion-aci-validation-v1",
+  "sources": [
+    {
+      "path": "implementation/Phase-9-GRCV4-Handoff.md",
+      "sha256": "fc2b48d128387b51eaa068fb3250d38d1de853ee2fcb5767ac3db791b0a7a776"
+    },
+    {
+      "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
+      "sha256": "0ad237441e90caa0958e1e015759f008894be4f32f3007985e7047345451f783"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/GRC9V4ConstitutiveDesignChecklist.md",
+      "sha256": "99a96c680c470cc978f4a6332a85c9fb507ab77ee725cb019b44811a29e3431d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionACIApplicability.md",
+      "sha256": "79d22ac4f9c3bb2759e149f7a3e3cd0816c107ea5800fdd17df27d3027e7fcdd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionAllTenApplicability.md",
+      "sha256": "d719b35af4f655cb3427acf35884f6e119d5780a324929fd27a27d7fd0fe319d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACI-current.json.xz",
+      "sha256": "99d44417d1f5aa2d5ffe9673252b658eaeb00068f15611a282f62ecf1d87378f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACI-reset.json.xz",
+      "sha256": "b9b3cdfd92e8433f44f5debdef80a0b96234b44a48ca2bee840110356c13adad"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACIChecks.json",
+      "sha256": "caba8da149b949f5b763417c8064b51323ae2d7af40a258a8866e6efb3efe360"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACIDeclaration.json",
+      "sha256": "9991b585aa996b2cce9562c31984f553017939395538173300ed8c37c86b678e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACIMetadataSources.json",
+      "sha256": "1b320bc6ff94b054d9824a052d076cd132e0f8183ffaaed67dcce5455e81e693"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACIPreflight.json",
+      "sha256": "1dfcd0ea50d525b17391d83cb8000093f0cf91f59b0175d0fc9e196032cd1b21"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACIResearchProgress.json",
+      "sha256": "8b3f83cc3cca0480cb4e1620c41fb9a302e94e9e841e3b0a3fe0e83ac79471ae"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_ci.py",
+      "sha256": "0bebbac41f7ebc234b4ae937cae8fea00122bc916d6610dfc8f2ec35000dddad"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_ci_campaign.py",
+      "sha256": "951c2b00afa3e25a9eb10e1e4a83ce0e8ae1a9753ba35bdf250152c414bb0c4c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_ci_research.py",
+      "sha256": "63352ba09c156bcfcf19192f7ca4dc2aab8af77808b4f5ea1771a1531f282b30"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_applicability_a_ci.py",
+      "sha256": "ad9ffe6ecf3982d054dc2e65eff2659e5b81517020cf5d44e9bed542f55d2d3d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci.py",
+      "sha256": "9ba4ddf2ba138e7e60c9479ce9f07884ba9f7b4dfa5fe863b2b0228cfa2b8349"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci_surfaces.py",
+      "sha256": "e3fd7ea2f6d310ece14eb817b97570dd32fdb0ef4b1965af1addc7a8fa96c141"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/SparkCompletionACIResearch.md",
+      "sha256": "2bff851afec24acc39f1c04dcedff0af3706f063ccb74de1819885d28dc28bf6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/notebooks/phase9_verification.ipynb",
+      "sha256": "edc3f8fb3a10bb9b2dbb9b4506de9372fd94057c4fe3dedd7a784decbca6bd38"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/index.html",
+      "sha256": "9b291b9ef7cc57babcca74e5989556d05dc401e677a01bee7ce63edff47f73cb"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-aci-research.js",
+      "sha256": "f78cca011d07316649dd0c00833b761526f5fa9e0ec03e768141816beec963dc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/serve_phase9.py",
+      "sha256": "1e2ed1f8c072cde49f8eae2952c568f39b4f2af6019f4989ea9d00b719fe57ca"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aci_metadata.py",
+      "sha256": "721c759066cd8c5bce46d5aa5b15392b128b7aa3cfe1afaa46ef9b2123b98b67"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aci_research.py",
+      "sha256": "a5f2b7282e2757387a272857f109f5c7d419d31b7be56d053e1108b913f113be"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aos_earlier.py",
+      "sha256": "6360ced3a940fe86e080b0b2084112a56a12dcc6aa8e1e981c37ea861eae7d6d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aos_earlier_metadata.py",
+      "sha256": "ce98653d03a9f086338c44c248fdbe1157b7f63ea1e1942b7d811dd4dc2d643a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
+      "sha256": "cc894973fd525452b1f1d31fe66d98b56d707c57f887f968c69b3f4c25e0e914"
+    }
+  ],
+  "status": "passed_focused_checks_with_preexisting_repository_audit_failure",
+  "storage": {
+    "files": [
+      {
+        "compressed_bytes": 381844,
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACI-current.json.xz",
+        "raw_bytes": 2969855
+      },
+      {
+        "compressed_bytes": 378680,
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACI-reset.json.xz",
+        "raw_bytes": 2946526
+      }
+    ],
+    "new_raw_files_over_one_MB": 0
+  },
+  "test_groups": [
+    {
+      "command": ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci.py",
+      "errors": 0,
+      "failures": 0,
+      "name": "independent_equations_and_implicit_derivatives",
+      "output": "test_all_implicit_charge_and_history_directions (__main__.ACITests.test_all_implicit_charge_and_history_directions) ... ok\ntest_flat_partials_both_geometry_consumers (__main__.ACITests.test_flat_partials_both_geometry_consumers) ... ok\ntest_independent_joint_root_and_writer_equations (__main__.ACITests.test_independent_joint_root_and_writer_equations) ... ok\ntest_stage_lineage_subject_and_cache_controls (__main__.ACITests.test_stage_lineage_subject_and_cache_controls) ... ok\ntest_uniform_root_domain_and_fresh_full_state_trap (__main__.ACITests.test_uniform_root_domain_and_fresh_full_state_trap) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 3.539s\n\nOK\n",
+      "seconds": 3.539,
+      "skips": 0,
+      "tests": 5
+    },
+    {
+      "command": ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci_surfaces.py",
+      "errors": 0,
+      "failures": 0,
+      "name": "inspection_and_historical_provenance",
+      "output": "test_bound_proof_decisions_and_retained_checks (__main__.ACIResearchSurfaces.test_bound_proof_decisions_and_retained_checks) ... ok\ntest_browser_scope_failed_and_stale_refresh (__main__.ACIResearchSurfaces.test_browser_scope_failed_and_stale_refresh) ... ok\ntest_http_indexed_download_and_failed_refresh (__main__.ACIResearchSurfaces.test_http_indexed_download_and_failed_refresh) ... ok\ntest_metadata_preimage_and_path_controls (__main__.ACIResearchSurfaces.test_metadata_preimage_and_path_controls) ... ok\ntest_notebook_clears_stale_result (__main__.ACIResearchSurfaces.test_notebook_clears_stale_result) ... ok\ntest_preserved_accepted_and_both_aos_research_views (__main__.ACIResearchSurfaces.test_preserved_accepted_and_both_aos_research_views) ... ok\ntest_rehashed_scope_source_and_root_changes_reject (__main__.ACIResearchSurfaces.test_rehashed_scope_source_and_root_changes_reject) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 72.193s\n\nOK\n",
+      "seconds": 72.193,
+      "skips": 0,
+      "tests": 7
+    }
+  ],
+  "tests": 12,
+  "trajectory_reruns": 0
+}
