@@ -1,5 +1,51 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: A_CI_PC SC-3 accepted; C_RG2b next — 2026-11-01
+
+The user accepts the bounded A_CI_PC result and requests commit. Research
+checkpoint `8faa7497` preserves the original equations, full implicit
+proof, compressed runs, preflight and validation. The
+[A_CI_PC adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionACIPCSC3Authority.md)
+accepts three conditional claims and resolves `SC-APP-DEBT-A_CI_PC`.
+Authority → proposal/paper → specification is bound, reusing SC-1 and the
+v2 completion schema. Two native obligations remain forward at P9-9.1a;
+hierarchy, aggregate P9-10.5/10.6 and G4 remain open.
+
+The **76-dimensional implicit C/W/Z return** includes all 14 resource,
+16 conductance and 46 carrier directions. The selected joint root includes
+incoming Z, and its same source enters immediate geometry and the separate
+carrier writer. Current **375 → 377** earns one local child; reset **372 → 374**
+earns zero live gain. Actual source/event roots, preserved old-edge W and three
+internal seeds, complete carrier archives and whole-target zero reset with
+explicit loss are retained. Runs took 120.43 and 118.82 seconds after the
+optimization preflight; all 751 states remain XZ compressed from 11.20 MB to
+1.08 MB. Acceptance reruns no numerical campaign and claims no independent
+external reviewer or duplicate long replay.
+
+Use `/api/spark-completion/applicability/a-ci-pc`, the accepted A_CI_PC panel,
+notebook cell `spark-completion-a-ci-pc-accepted`, or
+`load_spark_acipc_forensic_context`. The original research endpoint retains
+its historical pending flags and exact projection; changed helper downloads
+serve exact reviewed Git bytes. All earlier accepted scopes stay fixed.
+The [current ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACIPCClaimDebtLedger.json)
+has **eight accepted scientific families and two open families**. The broader
+audit's pre-existing basin source drift at `specs/README.md` remains unwaived.
+
+**Next is C_RG2b completion applicability**: justify its completion-relative
+section and full ordinary-map bounds for the quartic law. Existing Lipschitz
+sections do not automatically provide derivatives or the needed new inverse
+bounds. Retain informative-case priority, optimization preflights, FLINT/Arb,
+one-hour large-graph caps and compressed evidence. Continue this branch;
+no RG2b completion campaign has started. The below-100 A_OS goal stays paused
+and its earlier-domain result keeps its separate review status.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_ci_pc_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci_pc_sc3.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
 ## Current continuation: A_CI_PC completion demonstrated; review next — 2026-11-01
 
 Continue on `investigation/grc9v4-spark-completion` after accepted A_PC

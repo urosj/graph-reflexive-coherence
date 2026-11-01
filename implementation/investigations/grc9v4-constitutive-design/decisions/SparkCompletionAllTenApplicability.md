@@ -3,17 +3,15 @@
 2026-10-31. User-directed continuation after accepted SC-3 (`765dc6ae`).
 The [C_OS authority](./SparkCompletionSC3Authority.md), selected SC-1 criterion
 and accepted constructive result remain closed. Native implementation is separate.
-[Current research ledger](../evidence/spark-completion/applicability/APCClaimDebtLedger.json).
+[Current research ledger](../evidence/spark-completion/applicability/ACIPCClaimDebtLedger.json).
 
-[A_PC SC-3 is now accepted](./SparkCompletionAPCSC3Authority.md), following
-C_OS, C_CI, C_PC, C_CI_PC, A_OS and A_CI. Its full 76-dimensional C/W/Z return,
-independent writers and actual two-history completion chain are propagated.
-Current 375→377 earns one local child; reset 372→374 earns zero live gain.
-Seven families are accepted. [A_CI_PC research](./SparkCompletionACIPCApplicability.md)
-now demonstrates the full implicit C/W/Z completion chain, pending review.
-The earlier A_OS domain retains
-its separate review status and the below-100 investigation remains paused.
-Native completion/hierarchy and aggregate G4 remain separate.
+[A_CI_PC SC-3 is now accepted](./SparkCompletionACIPCSC3Authority.md), following
+C_OS, C_CI, C_PC, C_CI_PC, A_OS, A_CI and A_PC. Its selected composite root,
+full 76-dimensional implicit C/W/Z return and same-source two-history completion
+chain are propagated. Current 375→377 earns one local child; reset 372→374
+earns zero live gain. Eight families are accepted; C_RG2b is next. The earlier
+A_OS domain retains its separate review status and the below-100 goal stays
+paused. Native completion/hierarchy and aggregate G4 remain separate.
 
 ## Deliverable and finite order
 
@@ -90,18 +88,13 @@ Their necessity for organization is a different question and is not required.
 [Derivation and execution disposition](./SparkCompletionCCIApplicability.md).
 No native production code or generic all-ten completion grant is part of this work.
 
-## Current action: A_CI_PC scientific review
+## Current next family: C_RG2b
 
-A fresh selected composite root and full 76-dimensional implicit C/W/Z trap
-include both history channels. The same source feeds immediate geometry and
-the held carrier writer. Actual source/event, W lineage and carrier loss/reset
-are retained. Current 375→377 earns one local child; reset
-372→374 earns zero live gain. Adjudication and propagation remain
-pending; seven earlier scientific families stay accepted.
-
-C_RG2b is next after review. Its completion-relative section needs valid full-
-map bounds; existing Lipschitz sections are not automatically differentiable,
-and the old zero-site section does not justify the quartic-law construction.
-Retain informative-case priority, preflight optimizations, FLINT/Arb, explicit
-one-hour large-graph caps and compressed evidence. No RG2b campaign has started.
-The below-100 A_OS investigation remains paused.
+Justify the completion-relative section and full ordinary-map bounds for the
+quartic law, followed by an actual source/event/transfer/approach/window chain.
+A Lipschitz section is not automatically differentiable; old zero-site inverse
+bounds do not establish the new construction. Candidate domains can guide the
+proof, but earlier derivatives and trajectories are not inherited. Retain
+informative-case priority, optimization preflights, FLINT/Arb, explicit one-hour
+large-graph caps and compressed evidence. Continue this branch; no RG2b
+completion campaign has started. The below-100 A_OS goal remains paused.

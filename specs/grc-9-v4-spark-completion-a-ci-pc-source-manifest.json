@@ -1,0 +1,48 @@
+{
+  "schema": "grc9v4-spark-applicability-source-manifest-v1",
+  "authority_record_digest": "4c7ef4266fe8b0ba30db47fc3ce3758e9bde333dcfdab5c9763fece7437bf103",
+  "predecessor_manifest": {
+    "path": "specs/grc-9-v4-spark-completion-a-pc-source-manifest.json",
+    "sha256": "f38682b6c7db992c16b9f2cef8359a525dceeee8573ea540ccb7809b3cd83ca7"
+  },
+  "contract_ids": [
+    "SC-ACIPC-EC-DOMAIN",
+    "SC-ACIPC-EC-FULL-STATE-RETURN",
+    "SC-ACIPC-EC-COMPLETION"
+  ],
+  "chain": [
+    {
+      "stage": "authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-ci-pc/Authority.json",
+      "sha256": "af6c3f2c31afb71c036707f79ea70d0115bbba8a067e5cd222779baf656b6696"
+    },
+    {
+      "stage": "decision",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionACIPCSC3Authority.md",
+      "sha256": "21a751ded03499bff3a8eb25d9b69e7e2942b8e401f514f37c80b2069fd1a262"
+    },
+    {
+      "stage": "proposal",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-ACIPC-proposal.md",
+      "sha256": "6e6f5e58053a7b0f307045ab60219ba2e232b6dcbe6172e171478f43f9a9bfee"
+    },
+    {
+      "stage": "paper",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-11-GRC9V4-Spark-Completion-ACIPC.md",
+      "sha256": "36f119f8c66f310eeb6a243c64161dc9c1c750dce1b502a88f99388d6cfa53f1"
+    },
+    {
+      "stage": "specification",
+      "path": "specs/grc-9-v4-spark-completion-a-ci-pc.md",
+      "sha256": "f4b1c7eeff1d453bcafc799877b1407691b19d78bd9a08656f60695f69242daa"
+    },
+    {
+      "stage": "inherited_schema",
+      "path": "specs/grc-9-v4-spark-completion-schema.json",
+      "sha256": "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52"
+    }
+  ],
+  "native_support_added": [],
+  "native_implementation_destination": "P9-9.1a",
+  "record_digest": "6f8d90b027c75f64cb17467c5da36d097b2a18d51a1472c767bd097ae138efa8"
+}

@@ -4666,7 +4666,7 @@ See `SparkCompletionAOSApplicability.md`, `AOSResearchProgress.json` and `AOSVal
 - [x] Current 375→377 and reset 372→374; optimization preflight, compressed interval evidence and side-tool inspection.
 - [x] Explicit user acceptance and bound authority → proposal/paper → specification propagation;
   three conditional claims resolve SC-APP-DEBT-A_PC, with two native obligations forward.
-- [ ] A_CI_PC next after accepted A_PC; native P9-9.1a, hierarchy and G4 remain forward.
+- [x] A_CI_PC bounded scientific completion accepted below; native P9-9.1a, hierarchy and G4 remain forward.
 
 ### A_CI_PC spark-completion applicability — 2026-11-01
 
@@ -4674,5 +4674,6 @@ See `SparkCompletionAOSApplicability.md`, `AOSResearchProgress.json` and `AOSVal
 - [x] Fresh implicit return over all 76 C/W/Z directions; independent equations and all physical/root derivative axes.
 - [x] Fresh source/event and separate W preservation/carrier archive-reset histories.
 - [x] Current 375→377 and reset 372→374; optimization preflight, compressed evidence and side-tool inspection.
-- [ ] Scientific A_CI_PC adjudication and authority → proposal/paper → specification propagation.
-- [ ] C_RG2b next after review; native P9-9.1a, hierarchy and G4 remain forward.
+- [x] Explicit user acceptance and bound authority → proposal/paper → specification propagation;
+  three conditional claims resolve SC-APP-DEBT-A_CI_PC, with two native obligations forward.
+- [ ] C_RG2b next after accepted A_CI_PC; native P9-9.1a, hierarchy and G4 remain forward.
