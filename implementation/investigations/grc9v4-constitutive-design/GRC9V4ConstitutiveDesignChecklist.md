@@ -4072,3 +4072,12 @@ See `SparkCompletionAOSApplicability.md`, `AOSResearchProgress.json` and `AOSVal
 - [x] Explicit user acceptance and bound authority → proposal/paper → specification propagation;
   three conditional claims resolve SC-APP-DEBT-A_CI, with two native obligations forward.
 - [ ] A_PC next after accepted A_CI; native P9-9.1a, hierarchy and G4 remain forward.
+
+### A_PC spark-completion applicability — 2026-11-01
+
+- [x] Incoming-carrier geometry and separate conductance/carrier writers.
+- [x] Full 76-dimensional C/W/Z product trap including all 46 signed carrier directions.
+- [x] Fresh source/event reads, exact old-edge W lineage and whole-carrier archive/reset with explicit loss.
+- [x] Current 375→377 and reset 372→374; optimization preflight, compressed interval evidence and side-tool inspection.
+- [ ] Scientific A_PC adjudication and subsequent authority → proposal/paper → specification propagation.
+- [ ] A_CI_PC next after A_PC review; native P9-9.1a, hierarchy and G4 remain forward.

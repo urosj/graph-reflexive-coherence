@@ -4648,3 +4648,26 @@ PATHS.update({
     'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkACIReconciliation.md',
     'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkACIReconciliation.json',
 })
+
+# A_PC incoming-carrier geometry and full C/W/Z completion research; review pending.
+PATHS.update({
+    INV+'decisions/SparkCompletionAPCApplicability.md',
+    INV+'research/spark_completion_a_pc.py',
+    INV+'research/spark_completion_a_pc_campaign.py',
+    INV+'scripts/check_spark_completion_applicability_a_pc.py',
+    INV+'scripts/test_spark_completion_a_pc.py',
+    INV+'scripts/check_spark_completion_a_pc_research.py',
+    INV+'scripts/test_spark_completion_a_pc_surfaces.py',
+    INV+'evidence/spark-completion/applicability/APCDeclaration.json',
+    INV+'evidence/spark-completion/applicability/APCPreflight.json',
+    INV+'evidence/spark-completion/applicability/APC-current.json.xz',
+    INV+'evidence/spark-completion/applicability/APC-reset.json.xz',
+    INV+'evidence/spark-completion/applicability/APCChecks.json',
+    INV+'evidence/spark-completion/applicability/APCResearchProgress.json',
+    INV+'evidence/spark-completion/applicability/APCMetadataSources.json',
+    INV+'evidence/spark-completion/applicability/APCValidation.json',
+    INV+'tools/exploratory-side-tool/docs/SparkCompletionAPCResearch.md',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_apc_metadata.py',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_apc_research.py',
+    INV+'tools/exploratory-side-tool/tool/phase9-web/spark-apc-research.js',
+})

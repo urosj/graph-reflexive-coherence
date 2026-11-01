@@ -1,0 +1,66 @@
+{
+  "schema": "spark-completion-apc-declaration-v1",
+  "family": "A_PC",
+  "parameters": {
+    "eta": "1/1024",
+    "duration": "32",
+    "kappa_c": "1/64",
+    "kappa_Ah": "1/64",
+    "chi": "1/2",
+    "zeta": "1/2",
+    "kappa_H": "1/2",
+    "alpha": "1/32768",
+    "beta": "1/32768",
+    "gamma": "1/32768",
+    "W_floor": "1/2",
+    "tau_A": "32",
+    "site": "(C-2)^3-(C-2)",
+    "tau_PC": "32"
+  },
+  "full_state": [
+    "C",
+    "W_A",
+    "Z_4"
+  ],
+  "precision_bits": 8192,
+  "trapping_precision_bits": 512,
+  "maximum_target_steps": 1024,
+  "time_limit_seconds_per_role": 3600,
+  "window_beats": 2,
+  "window_elapsed": "64",
+  "source_W": {
+    "current": "4097/4096",
+    "reset": "8191/8192",
+    "new_internal": "1"
+  },
+  "roles": [
+    "current",
+    "reset"
+  ],
+  "source": "actual A_PC beat from exact SC2 resource prestate, fresh committed C/W/Z event read",
+  "transfer": "literal D11 charts; preserve every old-edge W; seed three internal W at one; archive both nonzero source carriers and reset whole target Z to zero with carrier_history_loss",
+  "stationary_requirement": "incoming-Z geometry, incoming-W rows, final-C W writer and distinct same-read Z writer; all C/W/Z directions",
+  "allocation_shares": [
+    "1/128",
+    "63/64",
+    "1/128"
+  ],
+  "automatic_fallback": false,
+  "accepted_authority": false,
+  "native_support_added": [],
+  "borrowed_domain": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSAnisotropicDomain.json",
+    "sha256": "525e9056bdb2e13d6c4302b63e23de194fd3a7e66259c1e8e91bca4a1e58486b",
+    "record_digest": "4073ef23706a5fefc456eacf2b94daef509a84f0b5b810f13308cfc33cbb2cf0"
+  },
+  "domain_reuse": "candidate C/W shape and center only; extend by all signed symmetric-star carrier directions and prove fresh full A_PC map; no inherited derivatives or trajectories",
+  "discovery": "The first product-domain candidate with carrier radius 1/2^30 passed before pilot or trajectory runs. No A_PC trajectory search.",
+  "preregistered_search": false,
+  "source_Z": {
+    "current_diagonal": "1/65536",
+    "reset_diagonal": "-1/131072",
+    "target": "whole_zero"
+  },
+  "trap_carrier_radius": "1/1073741824",
+  "record_digest": "a4d360ccdcf51447c69f4037e8a05eb0f181a42ef69b806b2531d72987d4bcd6"
+}

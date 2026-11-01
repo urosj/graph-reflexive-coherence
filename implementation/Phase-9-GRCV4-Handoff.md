@@ -1,5 +1,58 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: A_PC completion demonstrated; review next — 2026-11-01
+
+Continue on `investigation/grc9v4-spark-completion` after accepted A_CI
+(`79b66374`). The [A_PC investigation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionAPCApplicability.md)
+now proves a full **76-dimensional C/W/Z return**: 14 resource, 16 conductance
+and 46 independent symmetric-star carrier directions. The earlier A_OS C/W
+shape is only a candidate; the coupled derivative and all source/current/reset
+execution evidence are fresh A_PC work. The below-100 A_OS investigation
+remains paused and the earlier A_OS domain keeps its separate review status.
+
+Incoming Z selects geometry. One selected read feeds continuity, the final-C/
+incoming-W conductance writer and the separate carrier writer. The declared
+product domain has carrier radius 1/2^30, contraction below 0.995942 and strict
+unit image margin above 0.004058. The first candidate passed before trajectory
+runs. Fixed-row/graph/domain caching, exact-state read reuse and batched
+carrier derivatives passed an eight-step preflight before the full campaigns.
+
+Current **375 → 377** earns one local child; independent reset **372 → 374**
+earns zero live gain. Both campaigns took about **33 seconds** with 8192-bit
+FLINT/Arb intervals, fixed 1024-beat horizons and one-hour caps. Matching earlier
+beat numbers are independently obtained. The actual source beat and fresh
+event read use nonzero W and Z histories. D11 shares are 1/128,63/64,1/128;
+every old-edge W is preserved and three new internal edges start at one.
+Both complete source carriers are archived and complete target Z is reset
+with explicit carrier loss. The two history dispositions remain separate.
+
+All 751 states and selected-read checkpoints are losslessly XZ compressed
+from 11.06 MB to 1.07 MB. Every saved transition is checked; 21 altered-evidence
+controls reject. Five equation tests include an independent 110-digit model
+and all 76 physical derivative directions. Overlap checks are consistency
+evidence; the bound outward producer supplies trajectory enclosure provenance.
+No duplicate long replay or independent external reviewer is claimed.
+
+Use `/api/spark-completion/applicability/a-pc/research`, the A_PC panel or
+notebook cell `spark-completion-a-pc-research`. Inspection checks retained
+sources without rerunning numerics. Accepted A_CI and historical views retain
+their exact projections through a finite metadata successor.
+
+**Next: scientific review/adjudication of A_PC**, then authority → proposal/
+paper → specification if accepted. Six families remain accepted and
+`SC-APP-DEBT-A_PC` remains open pending adjudication. **A_CI_PC is the next
+family afterward**; no campaign for it has started. Native P9-9.1a, hierarchy
+and G4 remain forward. The pre-existing broader audit failure at
+`specs/README.md` remains documented and unwaived.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_pc_research.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_pc.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_pc_surfaces.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
 ## Current continuation: A_CI SC-3 accepted; A_PC next — 2026-10-31
 
 The user accepts the bounded A_CI result and requests commit. Research

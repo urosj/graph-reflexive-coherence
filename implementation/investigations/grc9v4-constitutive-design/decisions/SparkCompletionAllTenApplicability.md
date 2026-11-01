@@ -9,7 +9,9 @@ and accepted constructive result remain closed. Native implementation is separat
 C_OS, C_CI, C_PC, C_CI_PC and A_OS. Its fresh selected joint root, full implicit
 C/W return and actual source/event/transfer/completion chain are propagated.
 Current 375→377 earns one local child; reset 372→374 earns zero live gain.
-Six families are accepted; A_PC is next. The earlier A_OS domain retains its
+Six families are accepted. [A_PC research](./SparkCompletionAPCApplicability.md)
+now demonstrates the full 76-dimensional C/W/Z return and fresh completion
+chain, pending adjudication. The earlier A_OS domain retains its
 separate review status and the below-100 investigation remains paused.
 Native completion/hierarchy and aggregate G4 remain separate.
 
@@ -88,12 +90,17 @@ Their necessity for organization is a different question and is not required.
 [Derivation and execution disposition](./SparkCompletionCCIApplicability.md).
 No native production code or generic all-ten completion grant is part of this work.
 
-## Current next family: A_PC
+## Current action: A_PC scientific review
 
-Establish both independent history channels, the stationary conductance writer,
-lawful carrier perturbations, full C/W/Z return and actual source/event/transfer/
-approach/window chain. A prior fixed point or domain shape supplies a candidate,
-not the new derivative or trajectory. Check caching before long runs, prioritize
-informative large cases, retain FLINT/Arb, one-hour large-graph caps and compressed
-evidence. Continue this branch; no A_PC campaign has started. The below-100
-A_OS investigation remains paused.
+The full 76-dimensional C/W/Z product trap, incoming-carrier geometry,
+separate writers and actual source/event/two-history transfer chain are
+proved on one declared bounded subject. Current 375→377 earns one local
+child; reset 372→374 earns zero live gain. Scientific adjudication and
+propagation remain pending; six earlier families stay accepted.
+
+A_CI_PC is the next family after review. It must combine the selected joint
+root with both history channels and the full C/W/Z return; neither a prior
+derivative nor a matching entry time supplies that proof. Check caching
+before long runs, prioritize informative cases, retain FLINT/Arb, one-hour
+large-graph caps and compressed evidence. No A_CI_PC campaign has started.
+The below-100 A_OS investigation remains paused.

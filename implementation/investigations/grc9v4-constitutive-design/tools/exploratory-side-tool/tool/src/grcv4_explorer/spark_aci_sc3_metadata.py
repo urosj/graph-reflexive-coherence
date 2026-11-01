@@ -55,7 +55,8 @@ def checked_acceptance_epoch(root):
     rows={r['path']:r for r in value['sources']}
     need(len(rows)==len(value['sources']) and set(rows)==PATHS,'acceptance metadata paths')
     checked_preimages(root,rows)
-    for path,row in rows.items():_bound_file(root,path,row['after_sha256'])
+    from .spark_apc_metadata import bound_metadata_files as successor_files
+    successor_files(root,{p:r['after_sha256'] for p,r in rows.items()})
     validation=load_json_object(root/(INV+'evidence/spark-completion/applicability/ACIValidation.json'))
     need(validation['record_digest']==record_digest(validation,'record_digest'),'original research validation digest')
     for ref in validation['sources']:
@@ -64,7 +65,8 @@ def checked_acceptance_epoch(root):
             row=rows.get(ref['path'])
             need(row is not None and row['before_sha256']==ref['sha256'],
                  'unbound original validation successor')
-            # Every declared acceptance postimage was checked above.
+            # Every declared acceptance postimage, or its finite A_PC research
+            # successor, was authenticated above.
     return value
 
 
