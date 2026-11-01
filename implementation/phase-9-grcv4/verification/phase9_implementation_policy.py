@@ -4869,3 +4869,32 @@ PATHS.update({
     'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkARG2bReconciliation.md',
     'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkARG2bReconciliation.json',
 })
+
+# Earlier C-family scientific witnesses; accepted and native scopes unchanged.
+PATHS.update({
+    'implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCEarlierClosure.md',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CCI-current-prefix.json.xz',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CCI-reset-prefix.json.xz',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CCIPC-current-prefix.json.xz',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CCIPC-reset-prefix.json.xz',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierDiscovery.json.xz',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierDomain.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierMetadataSources.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierProofs.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierResearch.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierValidation.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/COS-current-prefix.json.xz',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/COS-reset-prefix.json.xz',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CPC-current-prefix.json.xz',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CPC-reset-prefix.json.xz',
+    'implementation/investigations/grc9v4-constitutive-design/research/spark_completion_c_earlier.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_c_earlier.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_c_earlier_research.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/propose_spark_completion_c_earlier.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_earlier.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_earlier_surfaces.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/SparkCompletionCEarlierClosure.md',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-earlier-c.js',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_earlier_c.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_earlier_c_metadata.py',
+})

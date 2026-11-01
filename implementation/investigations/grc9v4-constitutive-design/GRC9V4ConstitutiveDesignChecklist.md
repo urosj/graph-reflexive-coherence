@@ -4200,3 +4200,21 @@ Evidence: [A_RG2b direct completion](./decisions/SparkCompletionARG2bApplicabili
 See `SparkCompletionARG2bSC3Authority.md` and `ARG2bSC3ClaimDebtLedger.json`.
 Earlier research entries are historical. Duration 32 remains uncertified.
 The broader specs/README.md audit drift remains unwaived. A_OS below 100 stays paused.
+
+
+## Earlier C-family closure review (2026-11-01)
+
+- [x] Audit C_OS through A_OS baseline counts; identify the existing A_OS 377-beat witness.
+- [x] Certify all four C-family maps on an exact anisotropic resource domain;
+  include every carrier direction for full 60-dimensional PC/CI+PC state.
+- [x] Prove current 374→376 and reset 375→377 at unchanged duration 32,
+  with a strict direct self-map, complete basins and zero later supporting steps.
+- [x] Preserve old execution counts separately from the selected prefix lengths;
+  verify fixed-algebra caching before fresh C_OS prefixes and compress evidence.
+- [x] Update read-only API/browser/notebook comparison and finite metadata succession.
+- [ ] Review/adjudicate the stronger endpoints, then propagate if accepted.
+- [ ] Native P9-9.1a, aggregate P9-10.5/10.6, hierarchy and G4 remain forward.
+
+See `SparkCompletionCEarlierClosure.md` and `CEarlierResearch.json`. Earlier
+accepted authority and full archives are unchanged; these same-event witnesses
+earn no additional gain. A_OS below 100 stays paused; the old audit drift is unwaived.

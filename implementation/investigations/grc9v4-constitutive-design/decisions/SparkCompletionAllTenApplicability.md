@@ -107,3 +107,20 @@ Retain informative-case priority, optimization preflights, FLINT/Arb, one-hour
 large-graph caps and compressed evidence for future numerical work. Compact
 discovery records and generators remain; retired full payloads remain absent.
 The pre-existing specs/README.md source drift stays documented and unwaived.
+
+
+## Earlier closure successor: C_OS through A_OS (2026-11-01)
+
+[New C-family research](./SparkCompletionCEarlierClosure.md) reaches current
+374→376 and reset 375→377 for C_OS, C_CI, C_PC and C_CI_PC at unchanged
+duration 32. All four direct domains require no later supporting trajectory;
+the persistent cases include all 60 physical directions. A_OS already has its
+committed 375→377 anisotropic witness. All five current witnesses meet the
+requested roughly-400 target. Native and aggregate scopes stay separate.
+
+The stronger C-family endpoints need review/adjudication before replacing
+accepted endpoint claims. Historical long executions keep their original
+counts; selected prefixes retain only the required steps. All ten accepted
+family constructions, existing source identities and A_OS's paused below-100
+investigation remain unchanged. The side-tool comparison exposes both baselines
+and earlier research endpoints without relabelling original executions.

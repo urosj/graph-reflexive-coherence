@@ -1,6 +1,56 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: A_RG2b SC-3 accepted; all ten bounded families complete — 2026-11-01
+## Current continuation: earlier C-family closure demonstrated; review next — 2026-11-01
+
+The user requests revisiting C_OS through A_OS toward roughly 400 beats.
+[Four new direct witnesses](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCEarlierClosure.md)
+now give **374→376 for current and 375→377 for reset** in C_OS, C_CI, C_PC and
+C_CI_PC, at **unchanged duration 32**. C_OS improves from 902 (58.31% fewer
+beats); the other three improve from 851 (55.82%). The existing committed A_OS
+anisotropic witness already gives **375→377**, reset 372→374. Its below-100
+investigation stays paused. All five current witnesses therefore meet the target.
+
+One exact rational resource parallelotope is certified separately for all four
+maps. PC and CI+PC include every signed star carrier direction: 14 resource plus
+46 carrier coordinates, full dimension 60. Contraction is below 0.995652, with
+strict dimensionless self-map margin above 0.0043488775, full basin predicates
+and exact correlated edge support on both charts. C_OS uses a sharper correlated
+predictor/corrector split estimate below 2.687e-21 at the original 1e-11 tolerance.
+The proof takes no trajectory input and requires **zero supporting steps after
+the positive two-beat window**. Same-event certificates earn no additional gain.
+
+Six prefixes are extracted coordinate-for-coordinate from authenticated accepted
+C_CI/C_PC/C_CI_PC intervals. Two fresh C_OS prefixes use exact cached fixed-I
+algebra, eight-step preflights and unchanged 8192-bit physical arithmetic; their
+old archive lacked full states near 400. New selected C_OS executions stop at
+376/377. For extracted prefixes, historical execution counts 851/819 remain
+explicitly distinct from the new last-required/last-retained steps 376/377.
+The 3012 selected states are XZ-compressed from 21,072,866 to 3,076,356 bytes.
+Compact discovery records and exact generators remain; unselected discovery
+trajectories are absent. Earlier accepted full archives are unchanged.
+
+Use `/api/spark-completion/applicability/earlier-c`, the earlier-closure comparison
+panel, notebook `spark-completion-earlier-c`, or `spark_earlier_c_status`.
+Inspection checks stored sources without numerical campaigns. The ten accepted
+scientific families, their projections and original flags stay fixed through a
+finite metadata successor. These four stronger endpoint claims are **pending
+review/adjudication**, not automatic accepted-authority or native promotion.
+
+**Next: review these earlier witnesses and their source/side-tool checks; if
+accepted, propagate the stronger endpoint contracts.** Native P9-9.1a,
+aggregate P9-10.5/10.6, hierarchy and G4 remain separate. The pre-existing
+`specs/README.md` audit drift remains documented and unwaived. This investigation
+has not been committed, merged or pushed.
+
+```sh
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_c_earlier.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_earlier.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_earlier_surfaces.py
+```
+
+Earlier entries below preserve historical scopes and flags.
+
+## Historical accepted baseline: A_RG2b SC-3 accepted; all ten bounded families complete — 2026-11-01
 
 The user accepts A_RG2b and requests commit. Research checkpoint `68e0cdf2`
 preserves the original proof, compressed prefixes, validation and compact
