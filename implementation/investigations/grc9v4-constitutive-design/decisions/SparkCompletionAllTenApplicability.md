@@ -3,17 +3,15 @@
 2026-10-31. User-directed continuation after accepted SC-3 (`765dc6ae`).
 The [C_OS authority](./SparkCompletionSC3Authority.md), selected SC-1 criterion
 and accepted constructive result remain closed. Native implementation is separate.
-[Current research ledger](../evidence/spark-completion/applicability/AOSClaimDebtLedger.json).
+[Current research ledger](../evidence/spark-completion/applicability/ACIClaimDebtLedger.json).
 
-[A_OS SC-3 is now accepted](./SparkCompletionAOSSC3Authority.md), following
-C_OS, C_CI, C_PC and C_CI_PC. Its self-consistent stationary W, full C/W return
-and separately declared allocation/lineage/completion chain are propagated.
-The failed inherited allocation remains disclosed. The earlier A_OS domain
-is committed at `8d1a0e12`; the below-100 investigation is paused. The user
-requested [A_CI next](./SparkCompletionACIApplicability.md): its fresh joint-root
-and full C/W construction now gives current 375→377 and reset 372→374,
-pending review. Five families remain accepted. Native completion/hierarchy
-and aggregate G4 remain separate.
+[A_CI SC-3 is now accepted](./SparkCompletionACISC3Authority.md), following
+C_OS, C_CI, C_PC, C_CI_PC and A_OS. Its fresh selected joint root, full implicit
+C/W return and actual source/event/transfer/completion chain are propagated.
+Current 375→377 earns one local child; reset 372→374 earns zero live gain.
+Six families are accepted; A_PC is next. The earlier A_OS domain retains its
+separate review status and the below-100 investigation remains paused.
+Native completion/hierarchy and aggregate G4 remain separate.
 
 ## Deliverable and finite order
 
@@ -90,11 +88,12 @@ Their necessity for organization is a different question and is not required.
 [Derivation and execution disposition](./SparkCompletionCCIApplicability.md).
 No native production code or generic all-ten completion grant is part of this work.
 
-## Current action: A_CI scientific review
+## Current next family: A_PC
 
-The selected joint A current/geometry root, full implicit C/W return and actual
-source/event/W-lineage/approach/window chain are demonstrated on the declared
-bounded subject. Review/adjudicate A_CI next; its research debt remains open
-until acceptance and propagation. A_PC is the next family afterward. The
-A_OS geometry is a candidate only; no OS derivative or entry was substituted.
-The below-100 A_OS investigation remains paused.
+Establish both independent history channels, the stationary conductance writer,
+lawful carrier perturbations, full C/W/Z return and actual source/event/transfer/
+approach/window chain. A prior fixed point or domain shape supplies a candidate,
+not the new derivative or trajectory. Check caching before long runs, prioritize
+informative large cases, retain FLINT/Arb, one-hour large-graph caps and compressed
+evidence. Continue this branch; no A_PC campaign has started. The below-100
+A_OS investigation remains paused.

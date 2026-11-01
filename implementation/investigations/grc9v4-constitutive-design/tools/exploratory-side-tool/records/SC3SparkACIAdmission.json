@@ -1,0 +1,38 @@
+{
+  "schema": "grc9v4_spark_aci_admission_v1",
+  "source": {
+    "source_id": "GRC9V4-SC3-SPARK-A-CI-v1",
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-ci/Authority.json",
+    "file_sha256": "c4b30af576c4120cc007f7cc45bcfa7135ec1a1d27b7264debf3cb35d3a8298b"
+  },
+  "source_record_digest": "5aaae4914e7351a53efa3dfbeb50f616fec58de4055b72edbc13c4309a2989fc",
+  "acceptance": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACIScientificAcceptance.json",
+    "sha256": "d94bab7a22b86bcc7051a5d271295c2575275a5ef3609ec0ad9346d54950f453",
+    "record_digest": "914692433bb6c13044fc00177873a37bdc94cbf464f2924d87716b8f856f4f72"
+  },
+  "predecessor_authority_extension_digest": "659411547fc26c8fadbcbd8c3d4dc2226944017a80e2ec80304f180ef6cf60d8",
+  "historical_graph_digest": "f52ff273d26f374b40315e84c2c7bd46fb331966ab1aa0ecefabf48c84e2e501",
+  "source_bundle_digest": "03d0a718ba0c937d0873d582a746e3b81a9079274f18802534e09bdc1787a017",
+  "graph_digest": "be0e09773c6f7a1dceddcc697936381d35751e23db41b43e528eb0856a4f72d0",
+  "scope": {
+    "SC3_closed_for": [
+      "A_CI"
+    ],
+    "scientific_families": [
+      "C_OS",
+      "C_CI",
+      "C_PC",
+      "C_CI_PC",
+      "A_OS",
+      "A_CI"
+    ],
+    "SC1_reopened": false,
+    "native_completed_spark_support": false,
+    "hierarchy_support": false,
+    "G4_accepted": false,
+    "aggregate_debts_closed": [],
+    "native_support_added": []
+  },
+  "record_digest": "1cc6d3a34c333569f28566f062b41fc3f6a2e53bfa243be6908765e7be43f2fd"
+}

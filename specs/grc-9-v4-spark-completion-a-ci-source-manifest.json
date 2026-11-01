@@ -1,0 +1,48 @@
+{
+  "schema": "grc9v4-spark-applicability-source-manifest-v1",
+  "authority_record_digest": "5aaae4914e7351a53efa3dfbeb50f616fec58de4055b72edbc13c4309a2989fc",
+  "predecessor_manifest": {
+    "path": "specs/grc-9-v4-spark-completion-a-os-source-manifest.json",
+    "sha256": "105f9dda3463945db47374513f7e330d9093638e4b4184d411b82bb68cfcb65d"
+  },
+  "contract_ids": [
+    "SC-ACI-EC-DOMAIN",
+    "SC-ACI-EC-FULL-STATE-RETURN",
+    "SC-ACI-EC-COMPLETION"
+  ],
+  "chain": [
+    {
+      "stage": "authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-ci/Authority.json",
+      "sha256": "c4b30af576c4120cc007f7cc45bcfa7135ec1a1d27b7264debf3cb35d3a8298b"
+    },
+    {
+      "stage": "decision",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionACISC3Authority.md",
+      "sha256": "cf97ee895c6196fc23f4e0f969191c8df9fb59383f1a22b107ce384cfaf41eee"
+    },
+    {
+      "stage": "proposal",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-ACI-proposal.md",
+      "sha256": "bb9f2aefb51907b22d9382edbb7c228c032f3039b5839f60a3872fbc6d1d31a8"
+    },
+    {
+      "stage": "paper",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-10-GRC9V4-Spark-Completion-ACI.md",
+      "sha256": "3e265434f64a6667b0c1af21d596e8cfd22fc473227fb0bb47c52d3894a896da"
+    },
+    {
+      "stage": "specification",
+      "path": "specs/grc-9-v4-spark-completion-a-ci.md",
+      "sha256": "f7e80466c42471e130b50e3c51a73361f2d03af0157e6fd552af1f90f740be0f"
+    },
+    {
+      "stage": "inherited_schema",
+      "path": "specs/grc-9-v4-spark-completion-schema.json",
+      "sha256": "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52"
+    }
+  ],
+  "native_support_added": [],
+  "native_implementation_destination": "P9-9.1a",
+  "record_digest": "870501eb06cb47ad313a52f7f6528256292d2cfa10d6826f5db1288ab58f1e2e"
+}

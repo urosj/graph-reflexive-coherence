@@ -4625,3 +4625,26 @@ PATHS.update({
     INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aci_research.py',
     INV+'tools/exploratory-side-tool/tool/phase9-web/spark-aci-research.js',
 })
+
+# User-accepted A_CI completion SC-3; native and aggregate obligations stay forward.
+PATHS.update({
+    'implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionACISC3Authority.md',
+    'implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-ci/Authority.json',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-ACI-proposal.md',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/2026-10-GRC9V4-Spark-Completion-ACI.md',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACIScientificAcceptance.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACIClaimDebtLedger.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACISC3Sources.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ACISC3Validation.json',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_ci_sc3.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci_sc3.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/records/SC3SparkACIAdmission.json',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/SparkCompletionACIAcceptance.md',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aci.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aci_sc3_metadata.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-aci.js',
+    'specs/grc-9-v4-spark-completion-a-ci.md',
+    'specs/grc-9-v4-spark-completion-a-ci-source-manifest.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkACIReconciliation.md',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkACIReconciliation.json',
+})

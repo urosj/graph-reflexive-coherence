@@ -4654,5 +4654,6 @@ See `SparkCompletionAOSApplicability.md`, `AOSResearchProgress.json` and `AOSVal
 - [x] Self-consistent stationary writer and all thirty C/W directions in a strict anisotropic trap.
 - [x] Fresh actual source/event/W-lineage chain; current 375→377 and reset 372→374.
 - [x] Optimization preflight, compressed interval evidence and side-tool inspection.
-- [ ] Scientific A_CI adjudication and subsequent authority → proposal/paper → specification propagation.
-- [ ] A_PC next after A_CI review; native P9-9.1a, hierarchy and G4 remain forward.
+- [x] Explicit user acceptance and bound authority → proposal/paper → specification propagation;
+  three conditional claims resolve SC-APP-DEBT-A_CI, with two native obligations forward.
+- [ ] A_PC next after accepted A_CI; native P9-9.1a, hierarchy and G4 remain forward.
