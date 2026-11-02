@@ -4136,7 +4136,7 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     review; no additional physical supporting tail is required.
   [Review](./phase-9-grcv4/tranche-9/P9-9.1a.5-Review.md) and
   [campaign](./phase-9-grcv4/tranche-9/P9-9.1a.5-Campaign.json): executed and
-  independently verified, pending user review. Actual 374→376/375→377, 753 target
+  independently verified, accepted and committed as `1ec198b2`. Actual 374→376/375→377, 753 target
   steps, one current child and zero reset gain; no tail. 21.8 minutes under the
   30-minute cap. All-stage/charge/classifier/membership checks and actual checkpoint
   fault/restore/recount pressure pass. Compressed primary evidence and side-tool
@@ -4144,7 +4144,19 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
 - [ ] P9-9.1a.6: Extend and review each family independently after C_OS. Each leaf
   includes full-state numerics, same-subject runtime estimation, public lifecycle,
   affected mechanics/compatibility checks and side-tool API/browser/notebook.
-  - [ ] P9-9.1a.6-C_CI.
+  - [ ] P9-9.1a.6-C_CI: family endpoint and acceptance remain pending.
+    - [x] P9-9.1a.6-C_CI.1: map the CI/earlier-domain contracts and actual subject.
+    - [x] P9-9.1a.6-C_CI.2: exact FLINT state, Arb256 fresh joint roots, bounded
+      whole-map error; independent Arb768 and 256/512 controls pass.
+    - [x] P9-9.1a.6-C_CI.3: full implicit domain certificate and public lifecycle;
+      19 native tests pass, including both chiralities, rollback and replay.
+      The bounded CI pressure supplement adds 22 passing tests and retained full
+      root audits; 12 rehashed substitutions and all 14 directions are checked.
+    - [x] P9-9.1a.6-C_CI.4: 40+40 bounded steps, static-cache/fresh-root checks,
+      compressed evidence and side-tool API/browser/notebook. Estimate 8.9 minutes
+      centrally, 18.7 conservatively, 30-minute cap; implementation pending review.
+    - [ ] P9-9.1a.6-C_CI.5: actual source-to-entry/completion campaign, endpoint
+      pressure and user review. [Steps 1–4 review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCI-Review.md).
   - [ ] P9-9.1a.6-C_PC.
   - [ ] P9-9.1a.6-C_CI_PC.
   - [ ] P9-9.1a.6-A_OS.

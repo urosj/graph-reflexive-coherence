@@ -182,6 +182,8 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
 
     @property
     def numerical_policy(self):
+        if spark.enabled(self):
+            return self._published.reference.profile.NUMERICS
         return self._policy
 
     def parameters(self):
@@ -189,7 +191,7 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
         if spark.enabled(self):
             return dict(profile=p.reference.profile.params_resolved.to_dict(),
                 specialization=p.specialization.resolved.to_dict(), compatibility_branch=p.branch,
-                exact_backend="flint", numerical_policy=spark.NUMERICAL_POLICY, legacy_parameters=None)
+                exact_backend="flint", numerical_policy=p.reference.profile.NUMERICS, legacy_parameters=None)
         return dict(
             profile=p.reference.profile.params_resolved.to_payload(),
             specialization=p.specialization.resolved.to_dict(),

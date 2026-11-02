@@ -454,8 +454,11 @@ class GRC9V4(GRCV4):
 
     def support_status(self):
         if spark.enabled(self._operation):
-            return dict(disposition="native_C_OS_spark_lifecycle_pending_P9_9_1a_5",
-                execution_families=["C_OS"], complete_profile_ids=[self.active_profile_id],
+            family = self.configuration.reference.profile.FAMILY
+            disposition = ("native_C_OS_spark_lifecycle_pending_P9_9_1a_5" if family == "C_OS"
+                           else "native_C_CI_spark_preflight_pending_campaign")
+            return dict(disposition=disposition,
+                execution_families=[family], complete_profile_ids=[self.active_profile_id],
                 model_identities=[self.active_model_identity], compatibility_branch=self.compatibility_branch,
                 full_GRC9V4_conformance=False, optional_completion=False,
                 native_endpoint_verified=False, accounting_scope="process_shared_publication_v1",

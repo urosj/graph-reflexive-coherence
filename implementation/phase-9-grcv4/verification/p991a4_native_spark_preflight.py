@@ -695,6 +695,7 @@ def benchmark(max_steps=40):
 
 
 def check(root=ROOT):
+    from p991a6_cci_epoch import previous_bytes
     root = Path(root)
     value = json.loads((root / RECORD).read_bytes())
     need(
@@ -709,7 +710,7 @@ def check(root=ROOT):
     )
     for row in [*value["source_bindings"], value["evidence"]]:
         need(
-            sha256((root / row["path"]).read_bytes()).hexdigest() == row["sha256"],
+            sha256(previous_bytes(root, row["path"]) if row in value["source_bindings"] else (root / row["path"]).read_bytes()).hexdigest() == row["sha256"],
             "changed preflight subject: " + row["path"],
         )
     recomputed = estimate(

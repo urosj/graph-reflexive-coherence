@@ -1,0 +1,21 @@
+"""Closed dispatch for explicitly implemented native quartic families."""
+
+from .grc_v4_spark_state import QuarticCCIProfile, QuarticCOSProfile
+
+
+def quartic_profile(value):
+    family = value["identity_payload"]["profile_family_id"]
+    types = {"C_OS": QuarticCOSProfile, "C_CI": QuarticCCIProfile}
+    if family not in types:
+        raise ValueError("unimplemented native quartic family")
+    return types[family].from_payload(value)
+
+
+def quartic_kernel(graph, profile):
+    from .grc_v4_spark_cci import SparkCCIKernel
+    from .grc_v4_spark_cos import SparkCOSKernel
+
+    types = {QuarticCOSProfile: SparkCOSKernel, QuarticCCIProfile: SparkCCIKernel}
+    if type(profile) not in types:
+        raise TypeError("explicit supported quartic profile required")
+    return types[type(profile)](graph, profile)

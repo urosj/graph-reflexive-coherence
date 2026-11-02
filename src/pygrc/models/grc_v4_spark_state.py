@@ -10,6 +10,7 @@ from hashlib import sha256
 from functools import wraps
 import re
 from types import MappingProxyType
+from typing import ClassVar
 
 from .grc_v4_codec import canonical_json_bytes, decode_canonical_json, payload_identity
 from .grc_v4_geometry import GRCV4Graph
@@ -19,6 +20,7 @@ from .grc_v4_exact import ExactBackend, exact_backend, exact_number, integer_rat
 
 FLUX_BITS = 128
 NUMERICAL_POLICY = "spark_cos_exact_flint_flux128_v1"
+CI_NUMERICAL_POLICY = "spark_cci_arb256_certified_root_flux128_v1"
 CHARGE_POLICY = MappingProxyType({
     "schema_version": "grcv4-charge-policy-v2",
     "policy_id": "exact_rational_incidence_charge_v1",
@@ -93,14 +95,16 @@ class QuarticCOSProfile:
 The private baseline is a structural validator, not an executable substitute
 for the new law/charge policy. This type is deliberately not a GRCV4Profile.
 """
+    FAMILY: ClassVar[str] = "C_OS"
+    NUMERICS: ClassVar[str] = NUMERICAL_POLICY
     baseline: GRCV4Profile
     site: QuarticSite
 
     def __post_init__(self):
         if type(self.baseline) is not GRCV4Profile or type(self.site) is not QuarticSite:
             raise TypeError("typed baseline and explicit site required")
-        if self.baseline.identity_payload.profile_family_id != "C_OS":
-            raise ValueError("only C_OS is implemented by this successor")
+        if self.baseline.identity_payload.profile_family_id != self.FAMILY:
+            raise ValueError("profile family differs from its explicit quartic successor")
         if self.baseline.params_resolved.candidate.potential_evaluator_id != "quadratic_site_potential_zero_derivative_v1":
             raise ValueError("explicit zero-site predecessor required")
         # The optional SC-3 site names its resource/potential unit binding;
@@ -178,6 +182,14 @@ for the new law/charge policy. This type is deliberately not a GRCV4Profile.
         if canonical_json_bytes(result.to_payload()) != canonical_json_bytes(value):
             raise ValueError("quartic profile identity or content mismatch")
         return result
+
+
+@dataclass(frozen=True, slots=True, eq=False)
+class QuarticCCIProfile(QuarticCOSProfile):
+    """Explicit CI declaration; its joint root is selected by a separate kernel."""
+
+    FAMILY: ClassVar[str] = "C_CI"
+    NUMERICS: ClassVar[str] = CI_NUMERICAL_POLICY
 
 
 @dataclass(frozen=True, slots=True)

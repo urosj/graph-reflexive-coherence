@@ -1,0 +1,1139 @@
+{
+  "schema": "grc9v4-native-cci-pressure-v1",
+  "family": "C_CI",
+  "status": "verified_pending_review",
+  "tests_passed": 22,
+  "test_roster": [
+    "test_CI_specific_faults_roll_back_and_retry_final_window",
+    "test_OS_source_poststate_and_split_admission_do_not_substitute_CI",
+    "test_actual_frozen_input_two_roots_one_write_and_error_decomposition",
+    "test_atomic_failures_at_preparation_window_and_publication",
+    "test_charge_chart_faces_and_charge_normal_projection_trap",
+    "test_checkpoints_at_each_window_boundary_and_observer_noninterference",
+    "test_cold_load_root_failure_registers_no_partial_owner",
+    "test_duplicate_delivery_is_noop_in_ancestry_and_failed_request_retries",
+    "test_fixed_H_or_regenerated_H_alone_is_not_joint_root_authority",
+    "test_full_implicit_derivative_all_14_finite_segments",
+    "test_graph_same_sizes_profile_migration_and_no_proposal_history",
+    "test_independent_classifier_diamonds_unqualified_ties_singletons_thresholds",
+    "test_inside_domain_without_event_cannot_earn_gain",
+    "test_literal_both_chiral_events_and_role_transfer",
+    "test_native_execution_has_no_research_or_saved_trajectory_dependency",
+    "test_rehashed_certificate_semantic_corruption",
+    "test_rehashed_root_mutations_have_specific_mathematical_discriminators",
+    "test_residual_upper_endpoint_and_graph_specific_root_bounds",
+    "test_root_contraction_cannot_replace_physical_certificate",
+    "test_stagnation_nonfinite_and_iteration_limit_fail_without_progress",
+    "test_target_and_reset_only_reconstruction_are_atomic",
+    "test_uniform_root_is_not_a_child_or_event"
+  ],
+  "elapsed_seconds": 68.88293077101116,
+  "native_endpoint_verified": false,
+  "native_completion_support": false,
+  "full_trajectory_runs": 0,
+  "production_precision_bits": 256,
+  "oracle_precision_bits": 768,
+  "runtime_changed": false,
+  "preflight_record_digest": "04267e3d233d8abbc22b86e32d691caaa32d516750e47f65ced0ff369af5a46c",
+  "measurements": {
+    "CI_transaction_faults": [
+      {
+        "phase": "proposal",
+        "rollback": true,
+        "retry_gain": 1
+      },
+      {
+        "phase": "final_residual",
+        "rollback": true,
+        "retry_gain": 1
+      },
+      {
+        "phase": "poststate_root",
+        "rollback": true,
+        "retry_gain": 1
+      }
+    ],
+    "CI_OS_discriminator": {
+      "source_states_differ": true,
+      "OS_split_is_not_CI_certificate": true
+    },
+    "actual_target_steps": 4,
+    "finite_segments": [
+      {
+        "axis": 0,
+        "segment_half_length": "1/68719476736",
+        "contains_independent_secant": true
+      },
+      {
+        "axis": 1,
+        "segment_half_length": "1/68719476736",
+        "contains_independent_secant": true
+      },
+      {
+        "axis": 2,
+        "segment_half_length": "1/68719476736",
+        "contains_independent_secant": true
+      },
+      {
+        "axis": 3,
+        "segment_half_length": "1/68719476736",
+        "contains_independent_secant": true
+      },
+      {
+        "axis": 4,
+        "segment_half_length": "1/68719476736",
+        "contains_independent_secant": true
+      },
+      {
+        "axis": 5,
+        "segment_half_length": "1/68719476736",
+        "contains_independent_secant": true
+      },
+      {
+        "axis": 6,
+        "segment_half_length": "1/68719476736",
+        "contains_independent_secant": true
+      },
+      {
+        "axis": 7,
+        "segment_half_length": "1/68719476736",
+        "contains_independent_secant": true
+      },
+      {
+        "axis": 8,
+        "segment_half_length": "1/68719476736",
+        "contains_independent_secant": true
+      },
+      {
+        "axis": 9,
+        "segment_half_length": "1/68719476736",
+        "contains_independent_secant": true
+      },
+      {
+        "axis": 10,
+        "segment_half_length": "1/68719476736",
+        "contains_independent_secant": true
+      },
+      {
+        "axis": 11,
+        "segment_half_length": "1/68719476736",
+        "contains_independent_secant": true
+      },
+      {
+        "axis": 12,
+        "segment_half_length": "1/68719476736",
+        "contains_independent_secant": true
+      },
+      {
+        "axis": 13,
+        "segment_half_length": "1/68719476736",
+        "contains_independent_secant": true
+      }
+    ],
+    "same_size_graph_cache_controls": {
+      "source": {
+        "schema_version": "grc9v4-port-graph-v1",
+        "live_node_ids": [
+          "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/core",
+          "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/1",
+          "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/2",
+          "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/3",
+          "n1",
+          "n2",
+          "n3",
+          "n4",
+          "n5",
+          "n6",
+          "n7",
+          "n8",
+          "n9",
+          "p",
+          "private"
+        ],
+        "edges": [
+          {
+            "edge_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/internal/1",
+            "kind": "spine",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/core",
+              "port": 2
+            },
+            "head": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/1",
+              "port": 2
+            }
+          },
+          {
+            "edge_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/internal/2",
+            "kind": "spine",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/core",
+              "port": 6
+            },
+            "head": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/2",
+              "port": 6
+            }
+          },
+          {
+            "edge_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/internal/3",
+            "kind": "spine",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/core",
+              "port": 7
+            },
+            "head": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/3",
+              "port": 7
+            }
+          },
+          {
+            "edge_id": "positive-0",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/1",
+              "port": 1
+            },
+            "head": {
+              "node_id": "n1",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-1",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/2",
+              "port": 2
+            },
+            "head": {
+              "node_id": "n2",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-10",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "p",
+              "port": 4
+            },
+            "head": {
+              "node_id": "n5",
+              "port": 4
+            }
+          },
+          {
+            "edge_id": "positive-11",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "p",
+              "port": 7
+            },
+            "head": {
+              "node_id": "n9",
+              "port": 4
+            }
+          },
+          {
+            "edge_id": "positive-12",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "p",
+              "port": 2
+            },
+            "head": {
+              "node_id": "private",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-2",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/3",
+              "port": 3
+            },
+            "head": {
+              "node_id": "n3",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-3",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/1",
+              "port": 4
+            },
+            "head": {
+              "node_id": "n4",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-4",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/2",
+              "port": 5
+            },
+            "head": {
+              "node_id": "n5",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-5",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/3",
+              "port": 6
+            },
+            "head": {
+              "node_id": "n6",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-6",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/1",
+              "port": 7
+            },
+            "head": {
+              "node_id": "n7",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-7",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/2",
+              "port": 8
+            },
+            "head": {
+              "node_id": "n8",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-8",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/3",
+              "port": 9
+            },
+            "head": {
+              "node_id": "n9",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-9",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "p",
+              "port": 1
+            },
+            "head": {
+              "node_id": "n1",
+              "port": 4
+            }
+          }
+        ]
+      },
+      "orientation": {
+        "schema_version": "grc9v4-port-graph-v1",
+        "live_node_ids": [
+          "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/core",
+          "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/1",
+          "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/2",
+          "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/3",
+          "n1",
+          "n2",
+          "n3",
+          "n4",
+          "n5",
+          "n6",
+          "n7",
+          "n8",
+          "n9",
+          "p",
+          "private"
+        ],
+        "edges": [
+          {
+            "edge_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/internal/1",
+            "kind": "spine",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/1",
+              "port": 2
+            },
+            "head": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/core",
+              "port": 2
+            }
+          },
+          {
+            "edge_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/internal/2",
+            "kind": "spine",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/core",
+              "port": 6
+            },
+            "head": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/2",
+              "port": 6
+            }
+          },
+          {
+            "edge_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/internal/3",
+            "kind": "spine",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/core",
+              "port": 7
+            },
+            "head": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/3",
+              "port": 7
+            }
+          },
+          {
+            "edge_id": "positive-0",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/1",
+              "port": 1
+            },
+            "head": {
+              "node_id": "n1",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-1",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/2",
+              "port": 2
+            },
+            "head": {
+              "node_id": "n2",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-10",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "p",
+              "port": 4
+            },
+            "head": {
+              "node_id": "n5",
+              "port": 4
+            }
+          },
+          {
+            "edge_id": "positive-11",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "p",
+              "port": 7
+            },
+            "head": {
+              "node_id": "n9",
+              "port": 4
+            }
+          },
+          {
+            "edge_id": "positive-12",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "p",
+              "port": 2
+            },
+            "head": {
+              "node_id": "private",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-2",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/3",
+              "port": 3
+            },
+            "head": {
+              "node_id": "n3",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-3",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/1",
+              "port": 4
+            },
+            "head": {
+              "node_id": "n4",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-4",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/2",
+              "port": 5
+            },
+            "head": {
+              "node_id": "n5",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-5",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/3",
+              "port": 6
+            },
+            "head": {
+              "node_id": "n6",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-6",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/1",
+              "port": 7
+            },
+            "head": {
+              "node_id": "n7",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-7",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/2",
+              "port": 8
+            },
+            "head": {
+              "node_id": "n8",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-8",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/3",
+              "port": 9
+            },
+            "head": {
+              "node_id": "n9",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-9",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "p",
+              "port": 1
+            },
+            "head": {
+              "node_id": "n1",
+              "port": 4
+            }
+          }
+        ]
+      },
+      "changed_adjacency": {
+        "schema_version": "grc9v4-port-graph-v1",
+        "live_node_ids": [
+          "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/core",
+          "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/1",
+          "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/2",
+          "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/3",
+          "n1",
+          "n2",
+          "n3",
+          "n4",
+          "n5",
+          "n6",
+          "n7",
+          "n8",
+          "n9",
+          "p",
+          "private"
+        ],
+        "edges": [
+          {
+            "edge_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/internal/1",
+            "kind": "spine",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/core",
+              "port": 2
+            },
+            "head": {
+              "node_id": "n2",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/internal/2",
+            "kind": "spine",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/core",
+              "port": 6
+            },
+            "head": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/2",
+              "port": 6
+            }
+          },
+          {
+            "edge_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/internal/3",
+            "kind": "spine",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/core",
+              "port": 7
+            },
+            "head": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/3",
+              "port": 7
+            }
+          },
+          {
+            "edge_id": "positive-0",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/1",
+              "port": 1
+            },
+            "head": {
+              "node_id": "n1",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-1",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/2",
+              "port": 2
+            },
+            "head": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/1",
+              "port": 2
+            }
+          },
+          {
+            "edge_id": "positive-10",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "p",
+              "port": 4
+            },
+            "head": {
+              "node_id": "n5",
+              "port": 4
+            }
+          },
+          {
+            "edge_id": "positive-11",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "p",
+              "port": 7
+            },
+            "head": {
+              "node_id": "n9",
+              "port": 4
+            }
+          },
+          {
+            "edge_id": "positive-12",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "p",
+              "port": 2
+            },
+            "head": {
+              "node_id": "private",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-2",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/3",
+              "port": 3
+            },
+            "head": {
+              "node_id": "n3",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-3",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/1",
+              "port": 4
+            },
+            "head": {
+              "node_id": "n4",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-4",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/2",
+              "port": 5
+            },
+            "head": {
+              "node_id": "n5",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-5",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/3",
+              "port": 6
+            },
+            "head": {
+              "node_id": "n6",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-6",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/1",
+              "port": 7
+            },
+            "head": {
+              "node_id": "n7",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-7",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/2",
+              "port": 8
+            },
+            "head": {
+              "node_id": "n8",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-8",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "grc-event-sha256:831dfd1011e9d70bf453f73a83a3bf2c61e285de8891d476a5e9c8a7df4a4627/satellite/3",
+              "port": 9
+            },
+            "head": {
+              "node_id": "n9",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "positive-9",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "p",
+              "port": 1
+            },
+            "head": {
+              "node_id": "n1",
+              "port": 4
+            }
+          }
+        ]
+      },
+      "fresh_misses": true
+    },
+    "literal_chiralities": [
+      -1,
+      1
+    ],
+    "root_mutations": [
+      {
+        "mutation": "unchanged_J_final_H_diagonal",
+        "discriminator": "fresh selected-root containment: geometry",
+        "rehash": "fc1df33194cc222ab5330e6b18afce6d24d8930a5c9b09be65fc684b68a8f1a4"
+      },
+      {
+        "mutation": "unchanged_J_final_H_offdiagonal",
+        "discriminator": "fresh selected-root containment: geometry",
+        "rehash": "f4487c9ff8ed795ee0add9b2305041e556d1a20a86df69f0c5cd579eeed5b7f4"
+      },
+      {
+        "mutation": "sign_flipped_flat_same_H",
+        "discriminator": "proposal enclosure identity",
+        "rehash": "9fa43b9d78d0a1b155e4b0577fbad2ca4788c5dfea4bbbf8f98828033ccf4c17"
+      },
+      {
+        "mutation": "different_proposal_after_small_residual",
+        "discriminator": "independent proposal residual",
+        "rehash": "2c7cd03f7819da994e2b629127c60be052037c0af3c8681e1115d2bab7903b30"
+      },
+      {
+        "mutation": "fabricated_zero_residual",
+        "discriminator": "independent proposal residual",
+        "rehash": "2e84781a580e710ed10df52ce73a000a27e62705a388d6293087b624841538cc"
+      },
+      {
+        "mutation": "understated_root_error",
+        "discriminator": "residual-to-root error bound",
+        "rehash": "7a0a9d07dd39979f012768541f5259a3a0b5777ec945de3018d1bc18ebe87da0"
+      },
+      {
+        "mutation": "dropped_final_geometry_coordinate",
+        "discriminator": "complete root dimensions",
+        "rehash": "837defbdc4240b5879a34b5a907fa90f6d4e9e3f4080d8b31a784c819d1ebe30"
+      },
+      {
+        "mutation": "wrong_source_domain_on_target",
+        "discriminator": "graph-specific root-domain bounds",
+        "rehash": "90a1680102217936f4fb2d05114d4f3239c75fe1187852ce2074c7f35d775c6e"
+      },
+      {
+        "mutation": "mixed_reset_flat",
+        "discriminator": "proposal enclosure identity",
+        "rehash": "f8301e0eab14cd8e956579ed84a6590093ff2f2aac2bd2c118b8618981f787bb"
+      },
+      {
+        "mutation": "stale_poststate_root",
+        "discriminator": "independent proposal residual",
+        "rehash": "95a7a32b1823ca7857a43ed2200582822ae8b55517ad146de3c6c4261849d692"
+      },
+      {
+        "mutation": "overlap_without_containment",
+        "discriminator": "fresh selected-root containment: current",
+        "rehash": "c1a3fb42262099781e87637f98a2ee73c1ac560dcafdb3849d3fa8c29678b1d6"
+      },
+      {
+        "mutation": "cycle_current_same_continuity",
+        "discriminator": "fresh selected-root containment: current",
+        "rehash": "6b13975a6b8abc93a626455d302690929ff166f09a69fba323959010fdd1f796"
+      }
+    ],
+    "root_domains": {
+      "source": {
+        "flat_radius": "1/32",
+        "overlap_row_sum": "11/8",
+        "edge_laplacian_norm": "11",
+        "incidence_norm": "9",
+        "reference_inverse_norm": "17084/8601",
+        "hodge_deviation": "11/8192",
+        "hodge_inverse_norm": "8192/8181",
+        "current_inverse_norm": "34988032/17098057",
+        "current_baseline_bound": "1720441/134217728",
+        "y_bound": "7348003511/280134565888",
+        "image_bound": "7348003511/559516817268",
+        "geometry_to_flat_lipschitz": "6054758128540929587200/19566191800357031436489",
+        "contraction": "520330776671486136400/19566191800357031436489"
+      },
+      "target": {
+        "flat_radius": "1/32",
+        "overlap_row_sum": "7/8",
+        "edge_laplacian_norm": "7",
+        "incidence_norm": "4",
+        "reference_inverse_norm": "217022804/102638259",
+        "hodge_deviation": "7/8192",
+        "hodge_inverse_norm": "8192/8185",
+        "current_inverse_norm": "444462702592/207544625083",
+        "current_baseline_bound": "1638449/134217728",
+        "y_bound": "88895199047749/3400411137359872",
+        "image_bound": "88895199047749/6795011025217420",
+        "geometry_to_flat_lipschitz": "605046297246181477701233883136/2885760927051643326197391966025",
+        "contraction": "33088469380650549561786227984/2885760927051643326197391966025"
+      },
+      "homotopy_to_reference": "uniform bounds dominate t in [0,1]"
+    }
+  },
+  "scope": "bounded root/map/freshness/certificate/event/lifecycle pressure; synthetic windows are not source-to-entry executions",
+  "pending_campaign": {
+    "leaf": "P9-9.1a.6-C_CI.5",
+    "current": [
+      374,
+      376
+    ],
+    "reset": [
+      375,
+      377
+    ],
+    "expected_endpoints_verified": false,
+    "required": "actual source-to-entry/window states and checkpoint pressure at those actual boundaries"
+  },
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2SourceBeat.json.xz",
+      "sha256": "faf266f447c0a1893b2ee7730dfdea481914fd15f53460e848d07ebd2c5b0675"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierDomain.json",
+      "sha256": "998cf00702a0a772ff978c1cc13ba444fc8e722bab2284b15487eb1b8feb2abd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierProofs.json",
+      "sha256": "f6866257b8ded80d19454013a075ce013b4b48ab60d58b5d52900f43cc1d6dfd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/review/constructive-candidate/positive_candidate.py",
+      "sha256": "efa6eba9f08ad8cfec73d2e3fcd8b071374631c6ebdfc5e3610c3c0585a5502d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_basins.py",
+      "sha256": "6da2628f6f04bd112dbdd6eedfb9dc38661d7cc8f0a7532d211ba30e21769fd5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci.py",
+      "sha256": "3c403d943bb924fa4d392ea2dafc8b77a190f587c031903c0b9d78d3808bdc71"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_continuation.py",
+      "sha256": "b26c6bd0f050ab710b663e025cc3f039ed81c68ac8f834d8c60a2b2bdaad3709"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_os_reference.py",
+      "sha256": "0fab09c6bfcc098c537e39c223380a1d70af2de2eef5156a2d1307fef81069ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_positive.py",
+      "sha256": "15069ffca9b22a666ff67cd0b28ea740f9ed69f40de72154498d3e84eca4c64b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.3-Verification.json",
+      "sha256": "1c26c187eecbadb8389b6ae51eef8947d713f0bddcadf0c11d0443d52ba1d4c0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI-Contract.md",
+      "sha256": "ecb85039a275c9d161070c630b1d2938de02bf71d5bc64c7dd949041bc956bfe"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI-Preflight.json",
+      "sha256": "5fa74e7df066a7c425767be65245ef800b808dc0e1e0f995638c860b48bad27b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cci_native_spark_oracle.py",
+      "sha256": "08ae8d7af3d50868be92ceddfd21d8f71837a3728136bda0bdc06c682f2233de"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cci_native_spark_pressure_oracle.py",
+      "sha256": "4f6e3c2772d80d896905a19bcee1db931b8a91f08e635528fa11ff76d3f67e56"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cos_native_spark_oracle.py",
+      "sha256": "c39701e4ee348210a9df93d3315cb214bf92e57db30413f0a15aa4d734379c07"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a2_native_spark_numerics.py",
+      "sha256": "5ac8f8e203d4bfa6681dba80fa94c3c8e28c51664ae432a137fdbef3963ecace"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a4_native_spark_preflight.py",
+      "sha256": "eecbbc30bf29b1a6eb3f4633c42a22d46ece5464d7acbbf00ea4ba442ea0b43b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_cci_epoch.py",
+      "sha256": "599aa8c840407f8cde2516dd232a48f5fa608bee771b8f5a0b41cb38c836e389"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_cci_preflight.py",
+      "sha256": "4f03f4c3e1fedf871b84ff99fb615ac2657de149869641bad8fa93ab35d009e7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_cci_pressure.py",
+      "sha256": "60ba4148a9446bff4939660fb9aa5abd639a8e4450c77f6cda238d4068073566"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_cci_subjects.py",
+      "sha256": "f92fa73c1a470440d4ccade395311f2f9022769c2889f14b61f9e2b25775e432"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_cci_native_spark_pressure.py",
+      "sha256": "711b3b6d7514fe7648c7598d3fa3cc30e933bb4b7c7a384631b368a792ebbdea"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_cos_native_spark_pressure.py",
+      "sha256": "12ed76d05a6d4cea157c27fc4bebbed3fcd64537fdeb2440e496e1d4a37caf24"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-applicability-source-manifest.json",
+      "sha256": "984ebac4903725484ba7894ed216f49380b78368ba0f65f813245d28044cb825"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-ci.md",
+      "sha256": "9a9b249c9ecfc25eebd10f3edfe67a9f449334f4a6913ebe65372d9a5a2bcd56"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-earlier-source-manifest.json",
+      "sha256": "31f7a2900e5eae401d71bb495755d9df7cc2de39e85cb6c84d652414486a9dfb"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-earlier.md",
+      "sha256": "605d43e957bb7f056959d266fb3aaad0ffe2d6110c699e3c66a5cdbef18f6cc0"
+    },
+    {
+      "path": "specs/grc-v4-conformance-vectors.json",
+      "sha256": "9d9917511816f8d6ca97feca14de3ffca6b720504041f879bb1fa3e8e57b4e22"
+    },
+    {
+      "path": "specs/grc-v4-spark-native-ci-numerical-policy.md",
+      "sha256": "d7b5bf6125dbbb6706c058e3a56a97876e4b36247f84d28559502deaf6ac35fe"
+    },
+    {
+      "path": "specs/grc-v4-spark-native-numerical-policy.md",
+      "sha256": "d264908b3d51003ac75788462d104d90db178805cfe7d401d24006f236cb2950"
+    },
+    {
+      "path": "src/pygrc/models/_grc_v4_matrix.py",
+      "sha256": "b80df50ebc14392016ab2eccde933f5c32e4a643fe6dc5cf957fe3f46552071c"
+    },
+    {
+      "path": "src/pygrc/models/_grc_v4_matrix_flint.py",
+      "sha256": "7ff0e9ca6d7f42ad150b06c8d604f5b3b79de1943b1e8e6f5621386262af7121"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4.py",
+      "sha256": "929885c4ca50a6380b2a75d043499c10a0ed51594ceabeb6fe507c6901c455eb"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_api_lifecycle.py",
+      "sha256": "d17240d2d4dfef5a8901e6cc8372501251a2c0f859d9b2c3388131bde7cf64d5"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion.py",
+      "sha256": "b44a28d4de631ac36c28b85121e7ca7ddfb63635adbbfc9f4d317c009c13d187"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_certificate.py",
+      "sha256": "2c9e7286abdfefe4d9ff43acb5140f054ff99b29b9c9419d6150929fdd1456b5"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_codec.py",
+      "sha256": "6108200520b161038b22045eaf185dbf3d3ca9a9d76dbf9caed749e607494778"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_contracts.py",
+      "sha256": "a40ce45dc0cbab8312912899aa4ac5acc2b206ca6534a0ecb497ec687699fe3b"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_crossing.py",
+      "sha256": "260f4a1ef9fcf3cc6997c7f14275e8253cbc456a8426357659dab05a4bc2151b"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_expansion.py",
+      "sha256": "05d754313f1d529a8829f255d1101acfbb7267f465e55974d061fa6713fb5767"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_identity.py",
+      "sha256": "c84853e05ed53bc6ab73e30d2a2d83e358760ef85cdb52b38215649ae4bcf317"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
+      "sha256": "028f29fa01687cbf9f2524886c3872fa02999ed375d4d5394ab0dbd569607602"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_contracts.py",
+      "sha256": "1a40a6dc01d8c8b0fc08045c121d7b9dddce9e6b2ccb8edf64eb6f87a1c277b8"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_owner.py",
+      "sha256": "e4aa7d47fc52842abdb0b4d746386c59c565741d42daac55cc8313f70e3a7f3d"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "6dd6a8637c8d03f164b993fa801e5b65ee5c8f05425a33498b14fd92c0dd3a4c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-9-v4-spark-completion-schema.json",
+      "sha256": "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "46785802cfd7482b10204b228df6aab62da4be8f8e4f5705eda7284ba132c4a4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_exact.py",
+      "sha256": "d336c356d31d3ed0f1b160ff5a9be683b9aa56229b94a96053b95f70df202204"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "fbacf20af4fe754634bf88d22898028e8f1223c7e3189e925abf790a26ec8ed3"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_numerics.py",
+      "sha256": "55dc6e7e32361cbf507e6998c9b4e02c82f3507d3245a8a4517aa3aba30242f7"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "bdb8cca4e49a531d45b5f033609886c91024fcc469c52d7f7e8d9ae148a9c546"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark.py",
+      "sha256": "4c78742f58c0c30ca67607af0cb374f103a6169430174b6699e7406c8d872f72"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cci.py",
+      "sha256": "8e25e09507cfd056bc8a68e3e14715ab40dbb1db6e7514634fea04b0d801c07d"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cos.py",
+      "sha256": "0ff7642925f324b8041d5f4660ccea1627e4eb0bf15faf26799c5ca2b77901de"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_state.py",
+      "sha256": "9eea037aae6e03fe06be0aa53d1fa8fd8ccbcc2a60022291523f31b912fd0b70"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_spark_completion.py",
+      "sha256": "e117527ceae9ef3961f093049d998ac3f98fcfbb364d275fd626c6b2caa18dd4"
+    },
+    {
+      "path": "tests/models/test_grc_v4_candidate_c.py",
+      "sha256": "fd5e680e1947ce1ebfb76301780f38ceee1414586ba92009e3d407bfd30d6317"
+    },
+    {
+      "path": "tests/models/test_grc_v4_realizations.py",
+      "sha256": "2f204a264325796405adae4556fff5606d932748021c9464e4f8285d6d33285a"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_cci.py",
+      "sha256": "91600a914283de757db2fd7e8ba2f188d4fe2b8bf305128b6a98dc84f5a9ee44"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_numerics.py",
+      "sha256": "72adf797f212571d7bc697b1d09e81e0939b265db164969a3d53719bbeb613ad"
+    }
+  ],
+  "evidence": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI-PressureSamples.json.xz",
+    "sha256": "c36f6b03c4de8c6343e52fb5f75913a61f1a4144f1232d86830e67090f52d10c"
+  },
+  "record_digest": "ffd8933a4446d15efb7ba5aad2b00d17dc6a7e431b51acb30f8a71a97e76b71d"
+}

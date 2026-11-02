@@ -7,7 +7,7 @@ from hashlib import sha256
 from importlib.resources import files
 
 from .grc_v4_codec import canonical_json_bytes
-from .grc_v4_spark_state import NUMERICAL_POLICY, rational
+from .grc_v4_spark_state import CI_NUMERICAL_POLICY, NUMERICAL_POLICY, rational
 from .grc_v4_state import FrozenJSONMap
 
 SCHEMA_SHA256 = "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52"
@@ -53,9 +53,12 @@ class CompletionPolicy:
     minimum_beats: int = 2
     minimum_elapsed: str = "64"
     step_duration: str = "32"
+    numerical_policy_id: str = NUMERICAL_POLICY
 
     def __post_init__(self):
         validate(self.to_payload())
+        if self.numerical_policy_id not in (NUMERICAL_POLICY, CI_NUMERICAL_POLICY):
+            raise ValueError("unsupported native completion numerical policy")
         if type(self.landscape_sign) is not int or type(self.minimum_beats) is not int:
             raise ValueError("integer sign and window required")
         if (
@@ -91,7 +94,7 @@ class CompletionPolicy:
             "minimum_elapsed": self.minimum_elapsed,
             "step_duration": self.step_duration,
             "trap_policy_id": "full_physical_map_strict_contraction_v1",
-            "numerical_policy_id": NUMERICAL_POLICY,
+            "numerical_policy_id": self.numerical_policy_id,
         }
 
     @property

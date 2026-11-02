@@ -23,11 +23,9 @@ from .grc_9_v4_spark_contracts import (
 from .grc_v4_codec import canonical_json_bytes, payload_identity
 from .grc_v4_exact import ExactBackend
 from .grc_v4_geometry import GRCV4Graph
-from .grc_v4_spark_cos import SparkCOSKernel
+from .grc_v4_spark import quartic_kernel
 from .grc_v4_spark_state import (
-    NUMERICAL_POLICY,
     ExactResources,
-    QuarticCOSProfile,
     flint_operation,
     rational,
 )
@@ -79,7 +77,7 @@ def enabled(owner):
 
 
 def kernel(config):
-    return SparkCOSKernel(config.reference.graph, config.reference.profile)
+    return quartic_kernel(config.reference.graph, config.reference.profile)
 
 
 def admit(config):
@@ -97,7 +95,7 @@ def initialize(owner, config, *, origin=None, register=True):
     scope = AccountingScope(origin or uuid4().hex, config.to_payload())
     owner._spark_scope, owner._spark_branch = scope, uuid4().hex
     owner._lock = scope.lock
-    owner._backend, owner._policy = ExactBackend.FLINT, NUMERICAL_POLICY
+    owner._backend, owner._policy = ExactBackend.FLINT, config.reference.profile.NUMERICS
     owner._initial = config.to_payload()
     p = _Publication(
         "enabled_spark_v4",
@@ -301,7 +299,7 @@ def progress(owner, before, after, receipt, step):
             "norm_id": "full_charge_chart_infinity_v1",
             "q": proof["q"],
             "image_margin": proof["image_margin"],
-            "numerical_policy_id": NUMERICAL_POLICY,
+            "numerical_policy_id": config.reference.profile.NUMERICS,
             "full_step_error": proof["full_step_error"],
             "full_step_certificate": _put(objects, proof),
             "constraint_certificate": _put(
@@ -591,7 +589,7 @@ def expansion(owner, before, action):
             or h["target_initializer_id"] is not None
             or h["information_loss"] != "none"
         ):
-            raise ValueError("C_OS event has no independent history")
+            raise ValueError("quartic C event has no independent history")
     policy = GRC9ExpansionPolicy.from_payload(
         config.specialization.resolved["expansion"].to_dict()
     )
@@ -663,7 +661,7 @@ def expansion(owner, before, action):
     )
     identity["params_hash"] = payload_identity("resolved_params", p)
     reference = SparkReference(
-        graph, QuarticCOSProfile(resolve_profile(p, identity), old.site)
+        graph, type(old)(resolve_profile(p, identity), old.site)
     )
     target = replace(config, reference=reference, current=current, reset=reset)
     admit(target)
@@ -822,7 +820,7 @@ def restore(owner_type, value):
         owner = owner_type.__new__(owner_type)
         owner._spark_scope, owner._spark_branch = scope, uuid4().hex
         owner._lock, owner._initial = scope.lock, config.to_payload()
-        owner._backend, owner._policy = ExactBackend.FLINT, NUMERICAL_POLICY
+        owner._backend, owner._policy = ExactBackend.FLINT, config.reference.profile.NUMERICS
         scope.published = replace(
             root, branches=root.branches + ((owner._spark_branch, p),)
         )

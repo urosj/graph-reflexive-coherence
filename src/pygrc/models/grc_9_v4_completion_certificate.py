@@ -1,7 +1,6 @@
-"""Bounded native C_OS full-map certificate, recomputed from exact operands.
+"""Bounded native quartic C full-map certificate, recomputed from exact operands.
 
-Arb512 encloses the analytic derivative of every predictor, geometry and
-corrector term. Exact FLINT checks the full charge chart and all spatial
+Family-bound Arb arithmetic encloses every OS stage or full CI implicit derivative. Exact FLINT checks the full charge chart and all spatial
 predicates. No research module, trajectory, saved verdict or float is an oracle.
 """
 
@@ -14,10 +13,10 @@ from .grc_v4_certification import _ARB_CONTEXT_LOCK, CertificationInconclusive
 from .grc_v4_codec import canonical_json_bytes, decode_canonical_json
 from .grc_v4_exact import _flint_module, exact_number
 from .grc_v4_geometry import GRCV4Graph
-from .grc_v4_spark_cos import SparkCOSKernel, _matrix
+from .grc_v4_spark import quartic_kernel, quartic_profile
+from .grc_v4_spark_cos import _matrix
 from .grc_v4_spark_state import (
     ExactResources,
-    QuarticCOSProfile,
     flint_operation,
     rational,
 )
@@ -224,21 +223,33 @@ def _analytic(kernel, C):
 @flint_operation
 def _verify(raw):
     data = decode_canonical_json(raw)
-    if (
-        set(data) != {"schema_version", "binding", "center", "S", "U"}
-        or data["schema_version"] != "grc9v4-native-cos-trap-operands-v1"
+    if set(data) != {"schema_version", "binding", "center", "S", "U"} or data[
+        "schema_version"
+    ] not in (
+        "grc9v4-native-cos-trap-operands-v1",
+        "grc9v4-native-cci-trap-operands-v1",
     ):
         raise ValueError("closed full-domain operands required")
     b = data["binding"]
-    kernel = SparkCOSKernel(
+    kernel = quartic_kernel(
         GRCV4Graph.from_payload(b["graph"]),
-        QuarticCOSProfile.from_payload(b["profile"]),
+        quartic_profile(b["profile"]),
     )
     policy = CompletionPolicy.from_payload(b["policy"])
+    family = kernel.profile.FAMILY
+    expected_schema = (
+        "grc9v4-native-" + family.replace("_", "").lower() + "-trap-operands-v1"
+    )
+    if (
+        data["schema_version"] != expected_schema
+        or policy.numerical_policy_id != kernel.profile.NUMERICS
+    ):
+        raise ValueError("certificate family or numerical policy mismatch")
+    analytic = _analytic if family == "C_OS" else lambda k, C: k.analytic(C)
     if b != binding(kernel, policy, b["role"], b["charge"]):
         raise ValueError("certificate equation/reference/context binding mismatch")
     if policy.step_duration != "32":
-        raise ValueError("C_OS certificate requires duration 32")
+        raise ValueError("quartic C certificate requires duration 32")
     center = ExactResources(kernel.graph, tuple(data["center"]), b["charge"])
     S, U = _matrix(data["S"]), _matrix(data["U"])
     n = len(center.C)
@@ -251,7 +262,8 @@ def _verify(raw):
     ):
         raise ValueError("full-rank exact charge-tangent chart required")
     geometry = _geometry(kernel, policy, center, S)
-    with _ARB_CONTEXT_LOCK, f.ctx.workprec(512):
+    precision = getattr(kernel, "precision_bits", 512)
+    with _ARB_CONTEXT_LOCK, f.ctx.workprec(precision):
         c = f.arb_mat([[rational(x)] for x in center.C])
         box = f.arb_mat(
             [
@@ -259,9 +271,9 @@ def _verify(raw):
                 for i, x in enumerate(center.C)
             ]
         )
-        _, J, split, condition = _analytic(kernel, box)
+        _, J, split, condition = analytic(kernel, box)
         q = _norm(f.arb_mat(U) * J * f.arb_mat(S))
-        after, _, _, _ = _analytic(kernel, c)
+        after, _, _, _ = analytic(kernel, c)
         defect = _norm(f.arb_mat(U) * (after - c))
         margin = (1 - q - defect).lower()
         _need(q < 1 and margin > 0, "full-map strict invariant contraction unresolved")
@@ -273,11 +285,14 @@ def _verify(raw):
             "full_step_error": numeric["full_step_error"],
             "split_upper": _upper(split),
             "conditioning_upper": _upper(condition),
-            "precision_bits": 512,
+            "precision_bits": precision,
             "exact_charge_preserved": True,
             "geometry": geometry,
             "operands_digest": digest(data),
         }
+    if family == "C_CI":
+        result["root_derivative_upper"] = result.pop("split_upper")
+        result["root_domain"] = kernel.root_domain.to_dict()
     return FrozenJSONMap(result)
 
 
@@ -299,7 +314,9 @@ class CompletionCertificate:
         return cls(
             FrozenJSONMap(
                 {
-                    "schema_version": "grc9v4-native-cos-trap-operands-v1",
+                    "schema_version": "grc9v4-native-"
+                    + kernel.profile.FAMILY.replace("_", "").lower()
+                    + "-trap-operands-v1",
                     "binding": binding(kernel, policy, role, center.charge),
                     "center": list(center.C),
                     "S": S,

@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 Implementation Plan
 
-## Current continuation: native C_OS completion verified — 2026-11-01
+## Current continuation: C_CI native steps 1–4 — 2026-11-02
 
 Branch: `impl/grc9v4-native-spark-completion`, opened from `main` at
 `5227704449a062586df804ca5da0cc2853906425`, the no-ff merge of the accepted
@@ -21,8 +21,11 @@ checks are retained; .4 was accepted and committed as `699ecf04`.
 [P9-9.1a.5](./phase-9-grcv4/tranche-9/P9-9.1a.5-Review.md) verifies the public
 C_OS current 374→376 and reset 375→377 endpoints in 21.8 minutes, with
 every-step independent checks and real checkpoint pressure. Current earns one
-child, reset zero gain, without a supporting tail. Review is pending; next is
-P9-9.1a.6-C_CI with its own bounded preflight. Aggregate support remains deferred.
+child, reset zero gain, without a supporting tail. Accepted and committed as
+`1ec198b2`. C_CI steps 1–4 now pass, pending review: Arb256 joint roots, 19 native
+tests, 40 changing-state steps per role, 8.9/18.7-minute central/conservative
+400+400 estimate under the 30-minute cap. Next is P9-9.1a.6-C_CI.5; no C_CI
+full trajectory has run. Aggregate support remains deferred.
 Minimal atomic new-child registration
 belongs to completion; broader hierarchy remains deferred. Historical milestones below retain their original
 scope; the selected native programme does not reopen their accepted results.
@@ -4592,7 +4595,7 @@ binds the original first-group milestones below and all six later decisions.
 
 #### P9-9.1a native spark-completion work programme
 
-**Contract mapping complete; native completion unimplemented and unaccepted.** Completion and hierarchy
+**C_OS native completion accepted as `1ec198b2`; C_CI steps 1–4 verified, pending review.** Completion and hierarchy
 have distinct dispositions: this programme implements bounded native geometric
 child stabilization and `completed_spark`; hierarchy remains deferred. Reuse the
 accepted ten-family dynamics, P9-9.1b transaction owner and P9-9.4 public API.
@@ -4702,8 +4705,8 @@ rules. This is an engineering handoff, not another scientific-definition gate.
 
 | Family leaf | Current entry → completion | Reset entry → window end | Duration | Native status |
 | --- | --- | --- | ---: | --- |
-| P9-9.1a.5 — C_OS | 374→376 | 375→377 | 32 | Executed, verified; pending review |
-| P9-9.1a.6-C_CI | 374→376 | 375→377 | 32 | Not started |
+| P9-9.1a.5 — C_OS | 374→376 | 375→377 | 32 | Accepted, committed `1ec198b2` |
+| P9-9.1a.6-C_CI | 374→376 | 375→377 | 32 | Steps 1–4 verified, pending review; full endpoint unrun |
 | P9-9.1a.6-C_PC | 374→376 | 375→377 | 32 | Not started |
 | P9-9.1a.6-C_CI_PC | 374→376 | 375→377 | 32 | Not started |
 | P9-9.1a.6-A_OS | 375→377 | 372→374 | 32 | Not started |

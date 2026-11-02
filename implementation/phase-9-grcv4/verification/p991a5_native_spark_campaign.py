@@ -626,6 +626,7 @@ def campaign():
 
 
 def check(root=ROOT, numerical=False):
+    from p991a6_cci_epoch import previous_bytes
     root = Path(root)
     value = json.loads((root / RECORD).read_bytes())
     need(
@@ -634,7 +635,7 @@ def check(root=ROOT, numerical=False):
     )
     for ref in [*value["source_bindings"], *value["streams"]]:
         need(
-            sha256((root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
+            sha256(previous_bytes(root, ref["path"]) if ref in value["source_bindings"] else (root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
             "changed campaign source/evidence: " + ref["path"],
         )
     source = None

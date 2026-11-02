@@ -7,9 +7,8 @@ from .grc_9_v4_identity import model_identity
 from .grc_9_v4_lifecycle import GRC9V4Specialization
 from .grc_v4_codec import canonical_json_bytes
 from .grc_v4_geometry import GRCV4Graph
-from .grc_v4_spark_cos import SparkCOSKernel
+from .grc_v4_spark import quartic_kernel, quartic_profile
 from .grc_v4_spark_state import (
-    NUMERICAL_POLICY,
     ExactResources,
     QuarticCOSProfile,
     rational,
@@ -23,7 +22,7 @@ class SparkReference:
     profile: QuarticCOSProfile
 
     def __post_init__(self):
-        SparkCOSKernel(self.graph, self.profile)
+        quartic_kernel(self.graph, self.profile)
         # Explicit optional asset admission; .2 legacy spelling stays readable
         # only at its numerical boundary, never silently promoted to v3.
         validate(self.profile.site.to_payload())
@@ -43,7 +42,7 @@ class SparkReference:
     def from_payload(cls, value):
         result = cls(
             GRCV4Graph.from_payload(value["graph"]),
-            QuarticCOSProfile.from_payload(value["profile"]),
+            quartic_profile(value["profile"]),
         )
         if result.to_payload() != value:
             raise ValueError("closed supported exact reference required")
@@ -93,6 +92,9 @@ class GRC9V4SparkConfiguration:
         ):
             raise ValueError("completion landscape sign differs from specialization")
 
+        if self.policy is not None and self.policy.numerical_policy_id != self.reference.profile.NUMERICS:
+            raise ValueError("completion numerical policy differs from profile family")
+
     @property
     def policy(self):
         data = self.specialization.resolved["completion_policy"]
@@ -127,7 +129,7 @@ class GRC9V4SparkConfiguration:
             "time": self.time,
             "execution": {
                 "exact_backend": "flint",
-                "numerical_policy": NUMERICAL_POLICY,
+                "numerical_policy": self.reference.profile.NUMERICS,
             },
         }
 
