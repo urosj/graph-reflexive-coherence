@@ -32,11 +32,11 @@ def binding(kernel, policy, role, charge):
         "graph": kernel.graph.to_payload(),
         "profile": kernel.profile.to_payload(),
         "context": {"evaluator": "constant_zero_context_v1", "parameters": {}},
-        "reference": {"K_4": "zero", "H_ref": "identity", "W": "unit_reference_only_incoming_W_A_in_state" if kernel.profile.FAMILY in ("A_OS", "A_CI") else "unit"},
+        "reference": {"K_4": "zero", "H_ref": "identity", "W": "unit_reference_only_incoming_W_A_in_state" if kernel.profile.FAMILY in ("A_OS", "A_CI", "A_PC") else "unit"},
         "charge": charge,
         "duration": policy.step_duration,
         "role": role,
-        "state_channels": ["C", "W_A"] if kernel.profile.FAMILY in ("A_OS", "A_CI") else ["C", "Z_4"] if kernel.profile.FAMILY in ("C_PC", "C_CI_PC") else ["C"],
+        "state_channels": ["C", "W_A", "Z_4"] if kernel.profile.FAMILY == "A_PC" else ["C", "W_A"] if kernel.profile.FAMILY in ("A_OS", "A_CI") else ["C", "Z_4"] if kernel.profile.FAMILY in ("C_PC", "C_CI_PC") else ["C"],
         "policy": policy.to_payload(),
     }
 
@@ -224,6 +224,9 @@ def _analytic(kernel, C):
 @flint_operation
 def _verify(raw):
     data = decode_canonical_json(raw)
+    if data.get("schema_version") == "grc9v4-native-apc-trap-operands-v1":
+        from .grc_9_v4_completion_apc import verify
+        return verify(data)
     if data.get("schema_version") == "grc9v4-native-aci-trap-operands-v1":
         from .grc_9_v4_completion_aci import verify
         return verify(data)
@@ -318,6 +321,16 @@ class CompletionCertificate:
         object.__setattr__(self, "proof", proof)
 
     @classmethod
+    def create_apc(cls, kernel, policy, role, center, logW_center, S, U, charge="21"):
+        if kernel.profile.FAMILY != "A_PC":
+            raise ValueError("A_PC full C/logW/Z operands required")
+        m = len(kernel.graph.live_edge_ids)
+        return cls(FrozenJSONMap(dict(schema_version="grc9v4-native-apc-trap-operands-v1",
+            binding=binding(kernel,policy,role,charge),center=list(center),
+            logW_center=list(logW_center),S=S,U=U,carrier_center=[["0"]*m for _ in range(m)],
+            carrier_radius="1/1073741824",carrier_pairs=[list(p) for p in carrier_pairs(kernel.graph)])))
+
+    @classmethod
     def create_aos(cls, kernel, policy, role, center, logW_center, S, U, charge="21"):
         if kernel.profile.FAMILY != "A_OS":
             raise ValueError("A_OS full C/logW operands required")
@@ -361,6 +374,9 @@ class CompletionCertificate:
 
     @flint_operation
     def membership(self, state):
+        if self.operands["binding"]["profile"]["identity_payload"]["profile_family_id"] == "A_PC":
+            from .grc_9_v4_completion_apc import membership
+            return membership(self, state)
         if self.operands["binding"]["profile"]["identity_payload"]["profile_family_id"] == "A_CI":
             from .grc_9_v4_completion_aci import membership
             return membership(self,state)

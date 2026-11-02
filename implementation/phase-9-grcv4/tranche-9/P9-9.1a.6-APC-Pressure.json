@@ -1,0 +1,542 @@
+{
+  "schema": "grc9v4-native-apc-pressure-v1",
+  "family": "A_PC",
+  "status": "verified_pending_review",
+  "tests_passed": 22,
+  "test_roster": [
+    "test_all_76_directions_mixed_segments_and_nine_jacobian_blocks",
+    "test_detached_writer_order_and_conditional_independences",
+    "test_floor_and_carrier_boundaries_are_independent",
+    "test_four_cross_history_inputs_and_four_returned_consumers",
+    "test_frozen_public_two_writer_stages_and_complete_map",
+    "test_full_state_admission_and_last_off_diagonal_frobenius_weight",
+    "test_identical_current_different_inverse_flat_and_source_probe",
+    "test_identical_potential_different_mobility_probe",
+    "test_late_three_coordinate_failures_roll_back_and_retry_once",
+    "test_nonuniform_event_lineage_and_complete_carrier_loss_both_chiralities",
+    "test_observers_and_archives_do_not_alias_or_advance_either_history",
+    "test_rehashed_event_history_and_allocation_mutations",
+    "test_reset_only_and_event_archive_failures_are_atomic",
+    "test_signed_carrier_cancellation_encloses_without_projection",
+    "test_signed_reindexing_permutes_W_and_conjugates_Z",
+    "test_source_Z_effect_survives_event_in_transferred_C_W",
+    "test_tiny_authoritative_Z_is_not_recovered_from_H",
+    "test_tiny_contrast_does_not_hide_conductance_writer_activity",
+    "test_unequal_time_constants_only_at_configurable_primitives",
+    "test_uniform_resource_simultaneous_history_relaxation",
+    "test_wrong_writer_time_stages_reject_after_rehash",
+    "test_zero_carrier_event_two_beat_causality"
+  ],
+  "elapsed_seconds": 82.6113327240455,
+  "native_endpoint_verified": false,
+  "native_completion_support": false,
+  "full_trajectory_runs": 0,
+  "production_precision_bits": 256,
+  "oracle_precision_bits": 768,
+  "runtime_changed": false,
+  "baseline_tests": 29,
+  "prior_76_direction_certificate_checks_retained": true,
+  "sampling_cap_seconds": 300,
+  "fixed_H_oracle_arithmetic": "independent FLINT/Arb768 edge assembly; explicit polynomial multiplication on zero-crossing intervals",
+  "preflight_record_digest": "c8f7e558af8152ad77b48998234684f3eb5375255a364ebb17a0e8eb3fcb19a7",
+  "measurements": {
+    "mutations": [
+      "OS_source_geometry",
+      "W_baseline",
+      "W_new_W",
+      "W_old_C",
+      "arithmetic_W_interpolation",
+      "carrier_outside_ball",
+      "clip_signed_Z_after_cancellation",
+      "collapse_W_Z_to_effective_stiffness",
+      "drop_jacobian_C_from_C",
+      "drop_jacobian_C_from_Z",
+      "drop_jacobian_C_from_logW",
+      "drop_jacobian_Z_from_C",
+      "drop_jacobian_Z_from_Z",
+      "drop_jacobian_Z_from_logW",
+      "drop_jacobian_logW_from_C",
+      "drop_jacobian_logW_from_Z",
+      "drop_jacobian_logW_from_logW",
+      "equal_current_wrong_carrier_writer_source",
+      "equal_current_wrong_consumed_read_selected",
+      "equal_current_wrong_consumed_read_source",
+      "event_C_family_allocation",
+      "event_permute_W",
+      "event_reset_W",
+      "event_retain_Z",
+      "hidden_carrier_loss",
+      "instantaneous_PC",
+      "named_profile_changed_tau_A",
+      "named_profile_changed_tau_PC",
+      "negative_W",
+      "new_Z_in_consumed_geometry",
+      "omit_inverse_H_derivative",
+      "positive_W_outside_native_box",
+      "recover_Z_from_rounded_H",
+      "rehashed_false_carrier_archive",
+      "rehashed_false_conductance_archive",
+      "returned_both_old",
+      "returned_old_W",
+      "returned_old_Z",
+      "sign_W_like_carrier",
+      "skip_histories_on_zero_flow",
+      "smooth_floor_crossing",
+      "source_final_C",
+      "source_final_C_new_W",
+      "source_new_W"
+    ],
+    "derivatives": {
+      "independent_axes": 76,
+      "mixed_directions": 4,
+      "step_bits": [
+        36,
+        52,
+        80
+      ],
+      "segments": 240,
+      "all_nine_blocks_resolved": true,
+      "inverse_H_term_discriminated": true,
+      "center_checks_retained": true
+    },
+    "writer_independence": {
+      "detached_orders_equal": true,
+      "held_S_unchanged": true,
+      "new_Z_irrelevant_to_held_W": true,
+      "new_C_W_irrelevant_to_held_Z": true
+    },
+    "cross_history": {
+      "W_to_S": "2167940899593137165684265012603666308966379473732598315180242310328680193316618239/68351585149469122636640694597425667667286544715412888638305331450311031224980497600734786781970432",
+      "Z_to_J": "102788683594786934189985622178569068691199912534333828805636420255804467445759/3978585891278293137243057985174566720803649206378781739523711815145275976100267004264448",
+      "Z_to_W": "39061161894756991533889482836004495752582779/392318858461667547739736838950479151006397215279002157056",
+      "W_to_Z": "125851365124924691448615636620984911362031/6277101735386680763835789423207666416102355444464034512896",
+      "next_read_controls": 4
+    },
+    "two_writer_staging": {
+      "actual_target_steps": 4,
+      "fresh_reads": 2,
+      "physical_writers": 2,
+      "atomic_writes": 1,
+      "frozen_source": true
+    },
+    "membership": {
+      "last_off_diagonal": [
+        11,
+        14
+      ],
+      "inside_squared": "49/50",
+      "outside_squared": "9/8",
+      "same_roster": true,
+      "Z_required": true
+    },
+    "equal_current": {
+      "incident_edges": [
+        0,
+        1
+      ],
+      "exact_potential_equal": true,
+      "represented_C_W_equal": true,
+      "flat_separation": "1415779077889524738556617776838325906105760541081304650921854041710539747693607000257570671649360977069523352811132715903800282065244535646040708168745416395894266612213131922719171345916420659816085674825309214171208143325706959/1707011694817242694164442058424641996069058130512872489061441999811593532881313810309486643423117898430190057111918909554147533223454557460573019149396692491800360340355587726966548041193424390330615044130786970107312831497593974090537952608256",
+      "source_separation": "4849831382603869065661663793273295846343665240102825180569369395798307856907205455386324092225318434864279465903603759655512148950761189512198842415493462025041976960960455698086634981059724707896755666848456022859906255154102221/458222462695599379270700542938797415851547826754730440471063195236977024085646466549524548253194054006869752147503995521190349772113174027207120416665033273928205988927667393636268820183663660419920640131707923959614888857707801337845740593703588724736"
+    },
+    "equal_potential": {
+      "edge": 0,
+      "exact_potential_equal": true,
+      "baseline_difference": "-4549481797/115292150460684697600",
+      "current_separation": "1183578378312446605830973309966925536107164961687887662387757487221727584956423225236810708525665240816695615222488865093695345709190581794516103036244715282138673165687242508289121172332066905954716099741810933055180188788066144541/26672057731519417096319407162885031188579033289263632641585031247056148951270528286085728803486217162971719642373732961783555206616477460321453424209323320184380630318056058233852313143647256098915860064543546407926762992149905845164655509504"
+    },
+    "rollback": {
+      "ordinary_phases": 7,
+      "full_snapshot_equal": true,
+      "publication_identity_equal": true,
+      "retry_once_only": true
+    },
+    "event_history": {
+      "chiralities": 2,
+      "old_edges": 13,
+      "unit_seeded_edges": 3,
+      "whole_Z_reset": true,
+      "complete_actual_both_role_archives": true
+    },
+    "event_rollback": {
+      "phases": 3,
+      "whole_publication_unchanged": true,
+      "retries": 3
+    },
+    "cancellation": {
+      "edge": 0,
+      "positive_and_negative_results": true,
+      "clipping_rejected": true
+    },
+    "covariance": {
+      "permutation": [
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "signs": [
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "W_unsigned_permutation": true,
+      "Z_signed_conjugation": true,
+      "exact_outputs": true
+    },
+    "event_intervention": {
+      "explicit_target_Z_zero": true,
+      "earlier_Z_effects_survive_in_C_W": true
+    },
+    "tiny_Z": {
+      "exact_old_Z": "1/2037035976334486086268445688409378161051468393665936250636140449354381299763336706183397376",
+      "H_interval_contains_reference": true,
+      "writer_ideal_nonzero": true,
+      "represented_zero_allowed_by_192_bit_policy": true
+    },
+    "tiny_contrast": {
+      "current_lower": "526097665811892937589076719720798081004957227305860861013127522235827192433961197575902096697958580525655021019815713054432870371276174009084194614291416819216077268444581784954034509247857514046720875766334802300622972627175870559/12718228212127407596740439969484820932664410252219978638451114295509409404406799452822555925124271947370395489870897751704957583721388559494711601357137355892362895163562802426267773219894054460008554489394925312007314201426461145956352",
+      "source_upper": "804260747580083518156804631793108052067124335018136795166428348895446190777037728932707852443340628489236385762862026644332467993834878233438442557930964646636289738033653805476324747941052831057630714389177987815453043156399896973/11781361728633673532894774498354952494238773929196300355071513798753168641589311119865182769801300280680127783231251635087526446289021607771691249214388576215221396663491984443067742263787264024212477244347842938066577043117995647400274369612403653814737339068225047641453182709824206687753689912418253153056587776",
+      "W_writer_active": true
+    },
+    "unequal_tau": {
+      "scope": "existing configurable binary64 primitives with exact input interpretation; native binding unchanged",
+      "tau_A": 16,
+      "tau_PC": 64,
+      "held_target_composition": true,
+      "whole_map_semigroup_claimed": false
+    },
+    "relaxation": {
+      "beats": 3,
+      "exact_charge": "21",
+      "uniform_C": "7/5",
+      "flow_zero": true,
+      "both_histories_change": true
+    },
+    "two_beat_causality": {
+      "first_H_identity": true,
+      "first_source_nonzero": true,
+      "second_uses_written_W_Z": true
+    }
+  },
+  "operand_trace_retained": true,
+  "mutation_detectors": 44,
+  "scope": "bounded two-history staging, exact algebraic probes, 240 full-map finite segments, full C/logW/Z errors, two-channel event lineage/loss, signed covariance and three-coordinate rollback; no source-to-entry campaign",
+  "pending_campaign": {
+    "leaf": "P9-9.1a.6-A_PC.5",
+    "current": [
+      375,
+      377
+    ],
+    "reset": [
+      372,
+      374
+    ],
+    "expected_endpoints_verified": false,
+    "required": "actual source-to-entry/window states and checkpoint pressure at those actual boundaries"
+  },
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2SourceBeat.json.xz",
+      "sha256": "faf266f447c0a1893b2ee7730dfdea481914fd15f53460e848d07ebd2c5b0675"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOS-current.json.xz",
+      "sha256": "9cfca86819ba9a57ba6a4b753650440de1d54a6fab60130791e2391a40689e5b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSAnisotropicDomain.json",
+      "sha256": "525e9056bdb2e13d6c4302b63e23de194fd3a7e66259c1e8e91bca4a1e58486b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierDomain.json",
+      "sha256": "998cf00702a0a772ff978c1cc13ba444fc8e722bab2284b15487eb1b8feb2abd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierProofs.json",
+      "sha256": "f6866257b8ded80d19454013a075ce013b4b48ab60d58b5d52900f43cc1d6dfd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/review/constructive-candidate/positive_candidate.py",
+      "sha256": "efa6eba9f08ad8cfec73d2e3fcd8b071374631c6ebdfc5e3610c3c0585a5502d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os.py",
+      "sha256": "2b5e8c403909d3acba3c5776c529d38dad433ba2c89e6d76adfc3bc079e2cf25"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os_earlier.py",
+      "sha256": "91f0e1b5c64c6489f4d61686fed62d0f16c64002da84dc1117e6633c0055c7d2"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_basins.py",
+      "sha256": "6da2628f6f04bd112dbdd6eedfb9dc38661d7cc8f0a7532d211ba30e21769fd5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci.py",
+      "sha256": "3c403d943bb924fa4d392ea2dafc8b77a190f587c031903c0b9d78d3808bdc71"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_continuation.py",
+      "sha256": "b26c6bd0f050ab710b663e025cc3f039ed81c68ac8f834d8c60a2b2bdaad3709"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_os_reference.py",
+      "sha256": "0fab09c6bfcc098c537e39c223380a1d70af2de2eef5156a2d1307fef81069ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_pc.py",
+      "sha256": "af04da3c975ff835f8e01482f166f772f4f98f718346d2f9fd569f8a3b2197d3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_positive.py",
+      "sha256": "15069ffca9b22a666ff67cd0b28ea740f9ed69f40de72154498d3e84eca4c64b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-APC-Contract.md",
+      "sha256": "a8006bc16310b85444da82a96cf5b9660ab93d1e6995c8ab561a718c53180ebe"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-APC-Preflight.json.xz",
+      "sha256": "44a101efdcfd0aa8fec6f1f0bc3ca4c4f3e59cc0e713fed5cd2f6b77770b6ef4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/aos_native_spark_oracle.py",
+      "sha256": "b57d40390e0afc268168d6d7f3dd54965c75941a493b835b3161b3f48f8c4a18"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/apc_native_spark_audit.py",
+      "sha256": "e974e2ac34a54e2008bc6f8ce15598789161119d215a724a2eeea3628f1e2be9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/apc_native_spark_oracle.py",
+      "sha256": "d90935d7050536513e10752d6cbb874c441a3ff3891f14a913e58eb1ea1da0bf"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/apc_native_spark_pressure_oracle.py",
+      "sha256": "e12b04e22bc0b3c637a3304def97afe8494a207c7e3dba459f92d9f8344d7619"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cci_native_spark_pressure_oracle.py",
+      "sha256": "8077859df0110ba68eb827aaed127625d90a74dd175941d731c7c3a41165bb72"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cos_native_spark_oracle.py",
+      "sha256": "c39701e4ee348210a9df93d3315cb214bf92e57db30413f0a15aa4d734379c07"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cpc_native_spark_pressure_oracle.py",
+      "sha256": "c782646d336d29c16c3de531cb493d2ac3c58909ea19734585726d0ff6590139"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a2_native_spark_numerics.py",
+      "sha256": "5ac8f8e203d4bfa6681dba80fa94c3c8e28c51664ae432a137fdbef3963ecace"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a4_native_spark_preflight.py",
+      "sha256": "eecbbc30bf29b1a6eb3f4633c42a22d46ece5464d7acbbf00ea4ba442ea0b43b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_apc_preflight.py",
+      "sha256": "3eb0e71112fa0a16ce395e7fc329e92fcfbec87ff86804ba104f90ff3cf4ce74"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_apc_pressure.py",
+      "sha256": "bdcdf228b5094aa7895cfb96878bc3c754e6289099a94a60c77db756a1acb8c8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_apc_subjects.py",
+      "sha256": "08ac155adc1e5112956c106c9eef2330a2bd513248318afa996b7aaf8d6db33b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_apc_native_spark_pressure.py",
+      "sha256": "b373c808ee7ecd2e90fd8cfb1fc046fd329f0971a39a329460d68e082212c4f9"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-a-pc-source-manifest.json",
+      "sha256": "f38682b6c7db992c16b9f2cef8359a525dceeee8573ea540ccb7809b3cd83ca7"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-a-pc.md",
+      "sha256": "b626b6a0e57b04f63204ccb067956eb3165b20677681a0091c7e8a3700aa0590"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-applicability-source-manifest.json",
+      "sha256": "984ebac4903725484ba7894ed216f49380b78368ba0f65f813245d28044cb825"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-earlier-source-manifest.json",
+      "sha256": "31f7a2900e5eae401d71bb495755d9df7cc2de39e85cb6c84d652414486a9dfb"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-earlier.md",
+      "sha256": "605d43e957bb7f056959d266fb3aaad0ffe2d6110c699e3c66a5cdbef18f6cc0"
+    },
+    {
+      "path": "specs/grc-v4-spark-native-a-pc-numerical-policy.md",
+      "sha256": "505301db8242c2b8591df9f18c98299b62ed44c4a1abdd454fbfcdb154d99d46"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_sparks.py",
+      "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4.py",
+      "sha256": "9477132a4ebb5e47a94e77deb2d56a80c577b2b74531da512ba233a5720070d0"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion.py",
+      "sha256": "43856bbf9f56ff7dcda8a15be29f7d64e5c504678b17fb81116c9b726b1a4205"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_aci.py",
+      "sha256": "bcf5ae0b370b40052bd0b6ae2a6ef2101fba2ca68c583ad359261d17f1961dea"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_aos.py",
+      "sha256": "2612165d21efe0c0e94cfd9b3605895dfb655a76b17e972a277406e730e388e9"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_apc.py",
+      "sha256": "89e80a7770032898273b69803b4f78f90cc757cf62695d78c84de49816d1c564"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_certificate.py",
+      "sha256": "559ae95f7426d4ac0d5894623fed24433fde58d6190252b83f34ad9bf3620126"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_codec.py",
+      "sha256": "f06fa826740a5cd7a98e6b4b993daa350b07055c3b8892fe8326d0b4eecc1641"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_cpc.py",
+      "sha256": "5d7407fad0fcf7e6b3cfbab9aa8ae21692920d7525865a11366de4768301b255"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_apc_event.py",
+      "sha256": "4835e58fd99baf2708c65eb36ccca91e2d451ea0c6070b6b1a4fe073a87eb376"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_carrier_event.py",
+      "sha256": "b330b2b118b074bc9b13b335a542a2dd08d4420ad8e7b6dc3da81aac87a8fdad"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_conductance_event.py",
+      "sha256": "63d8f2eaa84d521a84b972a1f9e6373c4cb09719f836f1bf66830fd784c4bf92"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_contracts.py",
+      "sha256": "c275dcc945c1d840be83a9342238d73fede240e8a7355954eb80a281a6c1e723"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_owner.py",
+      "sha256": "21675115a7b211abe0ad9689e55ac9eb2be71db944c636607e973ab7af3dacbd"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "00b92688cb4bc82cf54ac462e6a8f5eb6f09e4386d4db1b2a6ac373758b98f19"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_pc.py",
+      "sha256": "c72cb21a7293bdefac925938d7b22506fdf51551b7f1ca3661240dc2c2938b89"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark.py",
+      "sha256": "8aeec9e53b8ded410d1dca8baf74014665deeca1db017481694ee82a632d3a2e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aci.py",
+      "sha256": "d3a3054b84ce12a9c5669b2c2ff1cf44be82cfcb910d1a0f5eff5fb2bb211a5b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aci_math.py",
+      "sha256": "b92b16e05def4e4b06a7ad871dbcc7221a04d688211e3a4eac9e5e86ef307e56"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_adaptive_carrier.py",
+      "sha256": "d8faabfaf475439cb15f9957261b9a7ffd97280d6894554b54b4ef08538805a8"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aos.py",
+      "sha256": "3e0b4183952e84c9e8460060a722ba69fd7126cf77a25da93760dba638b19be5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aos_math.py",
+      "sha256": "b5e2b24e769b35fa2fa828a91d519634dfcbf6906950f395c5a9ccc5ca830a1d"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_apc.py",
+      "sha256": "b20170f21509a03ac87dcc3b8de93c6dc6a0fd4c5a3b57eaeb336cf9932d01dd"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_apc_math.py",
+      "sha256": "e2b7c4ca88c7594ac72efe711af6c6a04ec91f52cf8ba014fdb52dc9ae9716dc"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_carrier.py",
+      "sha256": "62726f519d59cea703f373cfdfa41b0c6b5ddd02bc1a31c47955ead7e444ff7c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cci.py",
+      "sha256": "8e25e09507cfd056bc8a68e3e14715ab40dbb1db6e7514634fea04b0d801c07d"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_ccipc.py",
+      "sha256": "1f61d78988e0a0110c717bfa59f9d65f57f09da7e338b66ce6e094c661f230e1"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_conductance.py",
+      "sha256": "d367f15f54ab475b62ec65dfdc6ab0c1d95764f32884b094a1b68f700dd5a6ee"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cos.py",
+      "sha256": "0ff7642925f324b8041d5f4660ccea1627e4eb0bf15faf26799c5ca2b77901de"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cpc.py",
+      "sha256": "0bd1e8a24fbad058a5fdac406404359e8b396a20c9b227724a6f5bac7f3736bd"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_state.py",
+      "sha256": "db4c66539ab03a6bad9557c95adf056825697df210dc0b88193a9b805aa5a141"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_spark_completion.py",
+      "sha256": "e117527ceae9ef3961f093049d998ac3f98fcfbb364d275fd626c6b2caa18dd4"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_apc.py",
+      "sha256": "5e32ca6310a276da7ac4ee8bd9bf9ac6eec7e96d40b5ded7e5b0476388bf8906"
+    }
+  ],
+  "evidence": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-APC-PressureSamples.json.xz",
+    "sha256": "3b9ad3fe4e4e71fbf1f343ca3c692ed2c49acea688b5dfc0e3ddfb2fdec80149"
+  },
+  "record_digest": "181ec86433a23f12f58389d7d8852d48d9a0d47ff6c8a1d8c25ca45ee7d5ad7d"
+}

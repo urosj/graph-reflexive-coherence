@@ -1,5 +1,35 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: A_PC .1–.4 and pressure accepted — 2026-11-02
+
+After accepted A_CI .5 (`5b92524c`), A_PC now implements complete exact C/W/Z
+state, incoming-carrier geometry, two same-read writers and a full 76-dimensional
+product certificate. All 29 native tests pass; all 76 directions are independently
+checked at the center and a nonstationary state. Both source histories, W
+preservation, explicit complete target Z loss/reset and atomic lifecycle pass.
+The 256/512 comparison agrees exactly on represented states. Cached 40+40
+sampling takes 63.7 seconds at 262.8 MiB; retained evidence totals 1.39 MiB.
+All 151 predecessor numerical/lifecycle tests and eight publication checks pass.
+The preliminary .5 estimate is 21.1/39.8 minutes, including auditing and checkpoint
+allowances. Reprofile the complete checker before .5. Expected 375→377 current /
+372→374 reset remain unverified. Side-tool API/browser/notebook publish bounded
+preflight; historical A_CI/A_OS records remain unchanged. The user accepted
+.1–.4 and pressure for commit on 2026-11-02. The separately profiled .5 campaign
+remains unrun; aggregate native support is false. Original execution flags remain
+unchanged.
+[Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC-Review.md),
+[contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC-Contract.md).
+
+A_PC now also has a [bounded two-history pressure audit](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC-PressureReview.md):
+**22 tests, 44 mutation detectors and 240 finite segments** pass in 82.61 seconds.
+Both algebraic history probes, frozen-source writers, relaxation, unequal-tau
+primitive controls, signed covariance, actual W/Z event semantics and ten rollback
+phases pass. The pressure oracle handles zero-crossing polynomial intervals;
+runtime and original preflight remain unchanged. The side-tool publishes the
+482 KiB supplement. The user explicitly kept .5 outside this pass; reprofile
+its complete checker and checkpoints before execution. All 16 publication checks
+and the implementation boundary audit pass.
+
 ## Current continuation: A_CI .5 accepted; A_PC next — 2026-11-02
 
 A_CI .1–.4 and pressure were accepted and committed as `0d38edc4`.

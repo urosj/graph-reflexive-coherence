@@ -5268,3 +5268,37 @@ old numerical records and original A_OS evidence remain unchanged.
 [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI.5-Review.md).
 The user accepted .5 and requested commit on 2026-11-02. A_PC .1–.4 is next;
 aggregate support remains false. Original execution records stay unchanged.
+
+
+### A_PC native steps 1–4 — 2026-11-02
+
+The user selected A_PC after accepted A_CI .5 (`5b92524c`). Implement the
+[contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC-Contract.md) on this branch,
+with exact C/W/Z state, both writers, all 76 physical directions, separate
+event history dispositions, bounded independent checks and side-tool publication.
+Use fixed precision and active static caches; profile before .5. No full run here.
+
+A_PC .1–.4 is now implemented and accepted: complete C/W/Z transitions,
+two same-read writers, explicit event histories and the full 76-dimensional
+product proof. All 29 native tests pass, including independent center and
+nonstationary finite segments in every direction. Production Arb256 agrees
+with the 512-bit comparison. Cached 40+40 samples take 63.7 seconds at 262.8 MiB;
+compact evidence totals 1.39 MiB. The provisional 400+400 forecast is
+21.1/39.8 minutes; reprofile the complete checker before .5. Side-tool and
+finite source continuity are synchronized; original A_CI/A_OS evidence stays
+unchanged. No native endpoint or aggregate-support claim is added.
+[Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC-Review.md).
+
+A_PC bounded pressure now passes 22 tests and 44 mutation detectors in 82.61
+seconds, including 240 coupled finite segments, both algebraic history probes,
+frozen-source writers, signed event semantics and complete rollback. The new
+pressure oracle uses explicit multiplication for zero-crossing polynomial
+intervals; runtime and original preflight remain unchanged. The side-tool
+publishes the 482 KiB supplement. Per the user's explicit clarification, .5
+remains unrun; fresh complete-path profiling is required before that campaign.
+[Pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC-PressureReview.md).
+
+A_PC .1–.4 and bounded pressure were accepted for commit on 2026-11-02.
+Original execution records retain their historical pending-review flags; the
+user decision is recorded here and in the handoff/checklist. The .5 campaign
+remains unrun and separate, with fresh complete-path profiling required.

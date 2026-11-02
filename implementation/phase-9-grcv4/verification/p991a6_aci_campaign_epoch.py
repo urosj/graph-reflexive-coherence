@@ -39,7 +39,7 @@ def seal(value):
 
 
 def manifest(root):
-    successor = lambda root, name: (root / name).read_bytes()
+    from p991a6_apc_epoch import previous_bytes as successor
 
     root = Path(root).resolve()
     return seal(
@@ -61,7 +61,7 @@ def manifest(root):
 
 
 def previous_bytes(root, name):
-    successor = lambda root, name: (root / name).read_bytes()
+    from p991a6_apc_epoch import previous_bytes as successor
 
     root = Path(root).resolve()
     if name not in CHANGED:

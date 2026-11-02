@@ -4273,7 +4273,22 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     - [x] Review and accept A_CI .5 separately; the user requested commit on
       2026-11-02. Historical execution flags are unchanged; aggregate native
       support stays false.
-  - [ ] P9-9.1a.6-A_PC.
+  - [ ] P9-9.1a.6-A_PC: .1–.4 and pressure accepted after `5b92524c`; .5 open.
+    - [x] .1: Bind the full C/W/Z map and separate event history channels.
+    - [x] .2: Implement exact state, old-history read and two atomic writers.
+    - [x] .3: Verify all 76 directions, event lineage/loss and public lifecycle.
+    - [x] .4: Check caching, bounded costs/precision, compact evidence and side-tool.
+      29 native tests; 40+40 steps; 63.7 seconds / 262.8 MiB. Provisional .5
+      estimate 21.1/39.8 minutes; 1.39 MiB compact evidence.
+      [Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC-Review.md).
+    - [x] Bounded two-history pressure: 22 tests, 44 mutation detectors, 240 finite
+      segments; both algebraic probes, frozen-source writers, signed event
+      semantics and ten rollback phases. Runtime/preflight unchanged; 482 KiB
+      supplement and side-tool synchronized.
+      [Pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC-PressureReview.md).
+    - [x] Review and accept .1–.4 and bounded pressure; user requested commit
+      on 2026-11-02. Original execution flags remain unchanged.
+    - [ ] .5: Actual source-to-completion campaign after fresh profiling.
   - [ ] P9-9.1a.6-A_CI_PC.
   - [ ] P9-9.1a.6-C_RG2b.
   - [ ] P9-9.1a.6-A_RG2b.

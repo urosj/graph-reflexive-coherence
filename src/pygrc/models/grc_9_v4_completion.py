@@ -9,6 +9,7 @@ from dataclasses import dataclass
 from .grc_9_v4_completion_codec import CompletionPolicy, node
 from .grc_v4_spark_carrier import ExactCarrierState
 from .grc_v4_spark_conductance import ExactConductanceState
+from .grc_v4_spark_adaptive_carrier import ExactAdaptiveCarrierState
 from .grc_v4_spark_state import ExactResources, flint_operation
 
 
@@ -59,7 +60,7 @@ def terminal_roster(nodes, down, anchors):
 
 @flint_operation
 def classify(state: ExactResources, policy: CompletionPolicy):
-    if type(state) not in (ExactResources, ExactCarrierState, ExactConductanceState) or type(policy) is not CompletionPolicy:
+    if type(state) not in (ExactResources, ExactCarrierState, ExactConductanceState, ExactAdaptiveCarrierState) or type(policy) is not CompletionPolicy:
         raise TypeError("exact resources and explicit completion policy required")
     nodes = state.graph.live_node_ids
     down = {x: set() for x in nodes}
