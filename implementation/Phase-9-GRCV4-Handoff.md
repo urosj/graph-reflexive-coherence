@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: C_CI_PC steps 1–4 accepted; .5 authorized — 2026-11-02
+## Current continuation: C_CI_PC .5 accepted; A_OS steps 1–4 next — 2026-11-02
 
 The accepted research branch was merged into `main` with `--no-ff` at
 `5227704449a062586df804ca5da0cc2853906425` (research tip `77c71ea4`). The new
@@ -109,18 +109,35 @@ The provisional 400+400 estimate is **21.4 minutes centrally / 41.5
 conservatively**, including two extrapolated cold journal restores and the
 four-minute pressure/publication reserve. Thirty minutes remains a profiling
 target. The side-tool API/browser/notebook publishes only bounded verification.
-**P9-9.1a.6-C_CI_PC.5 remains unrun**; the actual 374→376 / 375→377 endpoints
-and aggregate native support remain unverified. The user accepted steps 1–4 and
-the audit supplement on 2026-11-02 and requested commit, followed by .5 with a
-one-hour allowance. Re-estimate complete audit/checkpoint costs before the run.
+Steps 1–4 and the pressure supplement were accepted and committed as
+`4061a53a`. The user authorized .5 with a one-hour profiling allowance.
 
 The [composite pressure supplement](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-PressureReview.md)
 adds 27 passing tests and 31 semantic corruption detectors in 67.21 seconds.
 Exact geometry cancellation, same-source writing, full C/Z uncertainty and mixed
 derivatives pass without changing the native kernel or preflight evidence.
 Fourteen combined publication checks cover the API/browser/notebook and retained
-numerics. Re-estimate the complete campaign audit and late-checkpoint costs before
-.5; the earlier 21.4/41.5-minute forecast describes the original preflight path.
+numerics. The completed .5 cost check supersedes the earlier 21.4/41.5-minute forecast,
+which describes the original preflight path.
+
+C_CI_PC .5 now verifies actual current **374→376** and reset **375→377**,
+duration 32, exact charge 21. All 753 target transitions pass the complete
+composite audit. Current creates one child; reset has no live event and zero gain.
+Both completed journals pass paired cold replay (377/378 ordinary steps).
+Execution and checkpoint validation took **41.3 minutes**
+against the one-hour profiling allowance, including the corrected shared-accounting
+restore sequence. Primary traces are unchanged; compressed evidence and the
+side-tool API/browser/notebook agree. Aggregate native support remains false.
+[Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC.5-Review.md).
+The compact evidence streams total **4.87 MiB** (67.4% smaller), preserving
+all 753 exact states and mathematical witnesses plus ten complete diagnostics.
+All compact transitions passed an independent audit; use
+`p991a6_ccipc_compact.py` for retained verification. These are evidence files,
+not contracts or inputs for further simulations.
+The user accepted .5 and its compact evidence for commit on 2026-11-02,
+excluding expanded full-run evidence. Historical execution flags stay unchanged.
+A_OS steps 1–4 are next.
+
 
 See the [C_CI_PC review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-Review.md).
 
@@ -152,7 +169,7 @@ its **P9-9.1a.6-C_PC.5** verifies both endpoints and was accepted for commit on 
 disconnected-process uniqueness and exact-to-legacy conversion are not claimed. See the
 [work programme](./Phase-9-GRCV4-ImplementationPlan.md#p9-91a-native-spark-completion-work-programme)
 and [unchecked execution leaves](./Phase-9-GRCV4-ImplementationChecklist.md#p9-91a-native-spark-completion).
-The remaining family order is C_CI_PC, A_OS, A_CI, A_PC,
+After C_CI_PC campaign acceptance, the remaining family order is A_OS, A_CI, A_PC,
 A_CI_PC, C_RG2b, A_RG2b. Each includes side-tool API/browser/notebook work.
 Minimal atomic new-child registration is required by completion; broader
 hierarchy remains deferred. Accepted mandatory Tranches 8–9 are unchanged.

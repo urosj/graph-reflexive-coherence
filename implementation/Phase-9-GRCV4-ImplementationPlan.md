@@ -4713,7 +4713,7 @@ rules. This is an engineering handoff, not another scientific-definition gate.
 | P9-9.1a.5 — C_OS | 374→376 | 375→377 | 32 | Accepted, committed `1ec198b2` |
 | P9-9.1a.6-C_CI | 374→376 | 375→377 | 32 | Accepted, campaign committed `88a1c6b1` |
 | P9-9.1a.6-C_PC | 374→376 | 375→377 | 32 | Steps 1–4 accepted `1210b2b9`; .5 accepted `31d1aba7` |
-| P9-9.1a.6-C_CI_PC | 374→376 | 375→377 | 32 | Steps 1–4 accepted; .5 authorized, unrun |
+| P9-9.1a.6-C_CI_PC | 374→376 | 375→377 | 32 | Steps 1–4 accepted; .5 verified, pending review |
 | P9-9.1a.6-A_OS | 375→377 | 372→374 | 32 | Not started |
 | P9-9.1a.6-A_CI | 375→377 | 372→374 | 32 | Not started |
 | P9-9.1a.6-A_PC | 375→377 | 372→374 | 32 | Not started |
@@ -5143,7 +5143,7 @@ The provisional 400+400 estimate is **21.4 minutes centrally / 41.5
 conservatively**, including two extrapolated cold journal restores and the
 four-minute pressure/publication reserve. Thirty minutes remains a profiling
 target. The side-tool API/browser/notebook publishes only bounded verification.
-**P9-9.1a.6-C_CI_PC.5 remains unrun**; the actual 374→376 / 375→377 endpoints
+**At the accepted steps 1–4 checkpoint, P9-9.1a.6-C_CI_PC.5 was unrun**; the actual 374→376 / 375→377 endpoints
 and aggregate native support remain unverified. Steps 1–4 and the audit were
 accepted for commit on 2026-11-02; .5 is authorized with a one-hour allowance.
 Re-estimate complete audit/checkpoint costs before execution.
@@ -5157,3 +5157,24 @@ numerics. Re-estimate the complete campaign audit and late-checkpoint costs befo
 .5; the earlier 21.4/41.5-minute forecast describes the original preflight path.
 
 [Review and reproduction](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-Review.md).
+
+### C_CI_PC native .5 execution — 2026-11-02
+
+Proceed after accepted `4061a53a` under the [one-hour campaign plan](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC.5-Plan.md).
+The fresh complete-path estimate is 30.1/46.8 minutes; static caches pass.
+Execution and actual endpoint checks are complete.
+
+C_CI_PC .5 now verifies actual current **374→376** and reset **375→377**,
+duration 32, exact charge 21. All 753 target transitions pass the complete
+composite audit. Current creates one child; reset has no live event and zero gain.
+Both completed journals pass paired cold replay (377/378 ordinary steps).
+Execution and checkpoint validation took **41.3 minutes**
+against the one-hour profiling allowance, including the corrected shared-accounting
+restore sequence. Primary traces are unchanged; compressed evidence and the
+side-tool API/browser/notebook agree. Aggregate native support remains false.
+[Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC.5-Review.md).
+The completed campaign now retains 4.87 MiB of compact mathematical evidence
+streams (67.4% reduction), independently verified for all 753 transitions.
+The user accepted .5 and its compact evidence for commit on 2026-11-02,
+excluding expanded full-run evidence. Historical execution flags stay unchanged.
+A_OS steps 1–4 are next.

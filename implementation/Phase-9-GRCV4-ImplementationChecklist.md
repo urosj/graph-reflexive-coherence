@@ -4200,8 +4200,17 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
       event history, atomic lifecycle and independent pressure controls.
     - [x] P9-9.1a.6-C_CI_PC.4: Check static caches, bounded changing-state
       timing/precision, source continuity and side-tool API/browser/notebook.
-    - [ ] P9-9.1a.6-C_CI_PC.5: Separately review estimates before the actual
-      source-to-completion campaign; no full trajectory in steps 1–4.
+    - [x] P9-9.1a.6-C_CI_PC.5: Run the actual current 374→376 / reset 375→377
+      campaign after the fresh complete-path estimate and cache checks; one-hour
+      profiling allowance. All 753 full-state transitions and paired cold journal
+      replays pass. Current gains once; reset gains zero. Actual active execution
+      and validation: 41.3 minutes. Compressed primary streams,
+      side-tool publication and 32 checks agree; aggregate native support stays false.
+      Compact exact-state/root-witness evidence: 4.87 MiB, 67.4% reduction;
+      all 753 transitions independently rechecked and ten full diagnostics retained.
+      [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC.5-Review.md).
+    - [x] Review and accept the C_CI_PC .5 campaign separately; user accepted
+      for commit on 2026-11-02 with expanded full-run evidence excluded.
     - [x] Add the supplied composite audit: 27 pressure tests and 31 semantic
       detectors; exact cancellation, same-source writer, full C/Z uncertainty,
       mixed derivatives, both events and atomic lifecycle. Original kernel and

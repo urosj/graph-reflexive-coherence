@@ -5154,3 +5154,27 @@ PATHS = PATHS | frozenset({
     PHASE + "tranche-9/P9-9.1a.6-CCIPC-PressureReview.md",
     SIDE + "tool/src/grcv4_explorer/spark_native_ccipc_pressure.py",
 })
+
+# Authorized C_CI_PC .5: same accepted native kernel, full composite campaign.
+PATHS = PATHS | frozenset({
+    *(HERE + name for name in (
+        "p991a6_ccipc_campaign.py", "p991a6_ccipc_campaign_verify.py",
+        "p991a6_ccipc_campaign_cost.py", "p991a6_ccipc_campaign_epoch.py",
+        "test_p991a6_ccipc_campaign.py", "test_p991a6_ccipc_campaign_surface.py",
+    )),
+    *(PHASE + "tranche-9/P9-9.1a.6-CCIPC.5-" + name for name in (
+        "Plan.md", "Review.md", "Cost.json", "Campaign.json.xz", "SourceEpoch.json",
+        "current.jsonl.xz", "reset.jsonl.xz", "checkpoints.jsonl.xz", "inputs.jsonl.xz",
+    )),
+    SIDE + "tool/phase9-web/spark-native-ccipc-campaign.js",
+    SIDE + "tool/src/grcv4_explorer/spark_native_ccipc_campaign.py",
+})
+
+PATHS = PATHS | frozenset({HERE + "p991a6_ccipc_campaign_finish.py", HERE + "test_p991a6_ccipc_campaign_finish.py"})
+
+# Compact mathematical evidence retains exact trajectories and root witnesses.
+PATHS = PATHS | frozenset({
+    HERE + "ccipc_compact_evidence.py", HERE + "p991a6_ccipc_compact.py",
+    HERE + "test_p991a6_ccipc_compact.py",
+    PHASE + "tranche-9/P9-9.1a.6-CCIPC.5-DiagnosticSamples.jsonl.xz",
+})
