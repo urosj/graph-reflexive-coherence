@@ -43,7 +43,7 @@ def checked_record(root):
     for row in [*value["source_bindings"], *value["streams"]]:
         p = root / row["path"]
         try:
-            previous_bytes = lambda root, name: (root / name).read_bytes()
+            from p991a6_acipc_epoch import previous_bytes
 
             raw = previous_bytes(root, row["path"])
         except ValueError as error:

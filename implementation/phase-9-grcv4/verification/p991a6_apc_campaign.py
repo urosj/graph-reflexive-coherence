@@ -658,7 +658,7 @@ def campaign():
 
 
 def check(root=ROOT, numerical=False):
-    previous_bytes = lambda root, name: (root / name).read_bytes()
+    from p991a6_acipc_epoch import previous_bytes
 
     root = Path(root)
     with lzma.open(root / RECORD, "rb") as stream:

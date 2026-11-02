@@ -18,6 +18,15 @@ class QuarticAPCProfile(QuarticAOSProfile):
     NUMERICS: ClassVar[str] = APC_NUMERICAL_POLICY
 
 
+ACIPC_NUMERICAL_POLICY = "spark_acipc_arb256_flux128_conductance192_carrier192_v1"
+
+
+@dataclass(frozen=True, slots=True, eq=False)
+class QuarticACIPCProfile(QuarticAOSProfile):
+    FAMILY: ClassVar[str] = "A_CI_PC"
+    NUMERICS: ClassVar[str] = ACIPC_NUMERICAL_POLICY
+
+
 @dataclass(frozen=True, slots=True)
 class ExactAdaptiveCarrierState(ExactConductanceState):
     Z_4: tuple[tuple[str, ...], ...]

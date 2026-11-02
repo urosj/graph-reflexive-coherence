@@ -242,7 +242,7 @@ def progress(owner, before, after, receipt, step):
             objects,
             {
                 "membership_norm": norm,
-                **({"membership_measure": "squared_max_C_logW_carrier_product_upper"} if config.reference.profile.FAMILY == "A_PC" else {}),
+                **({"membership_measure": "squared_max_C_logW_carrier_product_upper"} if config.reference.profile.FAMILY in ("A_PC", "A_CI_PC") else {}),
                 **({"membership_measure": "squared_max_product_norm"} if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else {}),
                 **({"membership_measure": "outward_C_logW_chart_infinity_upper"} if config.reference.profile.FAMILY in ("A_OS", "A_CI") else {}),
                 "actual": target.to_payload(),
@@ -298,8 +298,8 @@ def progress(owner, before, after, receipt, step):
                 objects,
                 {k: v for k, v in cert.operands.to_dict().items() if k in ("S", "U", "carrier_radius", "carrier_pairs", "carrier_center", "logW_center")},
             ),
-            "center": _put(objects, ({"C": list(cert.operands["center"]), "logW": list(cert.operands["logW_center"]), "Z_4": [list(r) for r in cert.operands["carrier_center"]]} if config.reference.profile.FAMILY == "A_PC" else {"C": list(cert.operands["center"]), "logW": list(cert.operands["logW_center"])} if config.reference.profile.FAMILY in ("A_OS", "A_CI") else {"C": list(cert.operands["center"]), "Z_4": cert.operands.to_dict()["carrier_center"]} if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else list(cert.operands["center"]))),
-            "norm_id": ("full_C_logW_chart_scaled_carrier_frobenius_v1" if config.reference.profile.FAMILY == "A_PC" else "full_C_logW_chart_infinity_v1" if config.reference.profile.FAMILY in ("A_OS", "A_CI") else "full_charge_chart_scaled_carrier_frobenius_v1" if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else "full_charge_chart_infinity_v1"),
+            "center": _put(objects, ({"C": list(cert.operands["center"]), "logW": list(cert.operands["logW_center"]), "Z_4": [list(r) for r in cert.operands["carrier_center"]]} if config.reference.profile.FAMILY in ("A_PC", "A_CI_PC") else {"C": list(cert.operands["center"]), "logW": list(cert.operands["logW_center"])} if config.reference.profile.FAMILY in ("A_OS", "A_CI") else {"C": list(cert.operands["center"]), "Z_4": cert.operands.to_dict()["carrier_center"]} if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else list(cert.operands["center"]))),
+            "norm_id": ("full_C_logW_chart_scaled_carrier_frobenius_v1" if config.reference.profile.FAMILY in ("A_PC", "A_CI_PC") else "full_C_logW_chart_infinity_v1" if config.reference.profile.FAMILY in ("A_OS", "A_CI") else "full_charge_chart_scaled_carrier_frobenius_v1" if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else "full_charge_chart_infinity_v1"),
             "q": proof["q"],
             "image_margin": proof["image_margin"],
             "numerical_policy_id": config.reference.profile.NUMERICS,
@@ -545,7 +545,7 @@ def prepare(owner, before, action):
 
 
 def profile_template(config):
-    if config.reference.profile.FAMILY in ("A_OS", "A_CI", "A_PC"):
+    if config.reference.profile.FAMILY in ("A_OS", "A_CI", "A_PC", "A_CI_PC"):
         return "grcv4-profile-template-sha256:" + digest(dict(
             schema_version="grc9v4-exact-" + config.reference.profile.FAMILY.replace("_", "").lower() + "-profile-template-v1",
             source_profile=config.reference.profile.complete_profile_id,
@@ -578,8 +578,8 @@ def expansion(owner, before, action):
         or request.target_specialization_id != config.specialization.specialization_id
     ):
         raise ValueError("target law/specialization mismatch")
-    aos = config.reference.profile.FAMILY in ("A_OS", "A_CI", "A_PC")
-    apc = config.reference.profile.FAMILY == "A_PC"
+    aos = config.reference.profile.FAMILY in ("A_OS", "A_CI", "A_PC", "A_CI_PC")
+    apc = config.reference.profile.FAMILY in ("A_PC", "A_CI_PC")
     expected_distribution = (1/128,63/64,1/128) if aos else (1/64,31/32,1/64)
     if request.target_effective_degree != 9 or request.resource_distribution != expected_distribution:
         raise ValueError("bounded exact accepted allocation required")

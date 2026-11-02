@@ -4717,7 +4717,7 @@ rules. This is an engineering handoff, not another scientific-definition gate.
 | P9-9.1a.6-A_OS | 375→377 | 372→374 | 32 | Native .5 accepted; committed `4587185f` |
 | P9-9.1a.6-A_CI | 375→377 | 372→374 | 32 | Native .5 accepted; committed `5b92524c` |
 | P9-9.1a.6-A_PC | 375→377 | 372→374 | 32 | Native .5 accepted 2026-11-02 |
-| P9-9.1a.6-A_CI_PC | 375→377 | 372→374 | 32 | Not started |
+| P9-9.1a.6-A_CI_PC | 375→377 | 372→374 | 32 | .1–.4 verified, review pending; .5 unrun |
 | P9-9.1a.6-C_RG2b | 390→392 | 390→392 | 8 | Not started |
 | P9-9.1a.6-A_RG2b | 300→302 | 300→302 | 16 | Not started |
 
@@ -5319,3 +5319,35 @@ evidence remain unchanged. The user accepted .5 and requested commit on
 2026-11-02; aggregate support stays false. Historical execution flags remain
 unchanged. All 33 tests and the implementation-boundary audit pass.
 [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC.5-Review.md).
+
+
+### A_CI_PC native steps 1–4 — 2026-11-02
+
+Following accepted A_PC .5 (`10277f05`), execute the [bounded contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC-Contract.md).
+Recompute the selected composite root and full implicit C/logW/Z derivative,
+both history writers and event dispositions. Verify exact arithmetic, all
+physical/root directions, bounded lifecycle, cache reuse and precision before
+profiling. Publish compact evidence and side-tool support. No .5 campaign here.
+
+A_CI_PC .1–.4 now passes 33 native and eight publication checks. Its complete
+implicit product proof closes at Arb256; all 76 physical directions at two states
+and 16 flat-root directions are checked independently. The 256/512 represented
+comparison agrees. Static caches are active; 40+40 samples/checkpoints take
+70.34 seconds at 274.3 MiB, with 1.52 MiB compressed evidence. The provisional
+.5 forecast is 22.3/45.8 minutes; reprofile the complete path before any campaign.
+Side-tool/source continuity is synchronized. The user accepted .1–.4 and pressure
+for commit on 2026-11-02. The separately authorized .5 is unrun; aggregate
+native support is false.
+[Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC-Review.md).
+
+The A_CI_PC bounded pressure supplement now passes 26 tests, 51 mutation
+controls and 240 independent finite segments (50.95 seconds). Manufactured
+reference-cancellation/equal-current roots, frozen-reference counterfeits, complete
+trial chains and two-history event/rollback checks are retained in 679.5 KiB.
+Common interval boxes reduce implicit derivative evaluations from 240 to three
+while covering every segment. Production and original preflight are unchanged.
+See [pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC-PressureReview.md).
+The user explicitly selected bounded pressure only for that pass, then accepted
+its result and authorized .5 after fresh profiling on 2026-11-02. Historical
+execution flags remain unchanged; all 17 publication checks and the boundary
+audit pass.

@@ -30,7 +30,9 @@ def checked_record(root):
     for row in [*value["source_bindings"], value["evidence"]]:
         p = root / row["path"]
         try:
-            raw = p.read_bytes()
+            from p991a6_acipc_epoch import previous_bytes
+
+            raw = previous_bytes(root, row["path"])
         except ValueError as error:
             raise SourceAdmissionError(str(error)) from error
         if (

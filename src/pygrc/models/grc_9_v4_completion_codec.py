@@ -8,7 +8,7 @@ from importlib.resources import files
 
 from .grc_v4_codec import canonical_json_bytes
 from .grc_v4_spark_state import CIPC_NUMERICAL_POLICY, CI_NUMERICAL_POLICY, PC_NUMERICAL_POLICY, NUMERICAL_POLICY, rational
-from .grc_v4_spark_adaptive_carrier import APC_NUMERICAL_POLICY
+from .grc_v4_spark_adaptive_carrier import APC_NUMERICAL_POLICY, ACIPC_NUMERICAL_POLICY
 from .grc_v4_spark_conductance import AOS_NUMERICAL_POLICY, ACI_NUMERICAL_POLICY
 from .grc_v4_state import FrozenJSONMap
 
@@ -59,7 +59,7 @@ class CompletionPolicy:
 
     def __post_init__(self):
         validate(self.to_payload())
-        if self.numerical_policy_id not in (NUMERICAL_POLICY, CI_NUMERICAL_POLICY, PC_NUMERICAL_POLICY, CIPC_NUMERICAL_POLICY, AOS_NUMERICAL_POLICY, ACI_NUMERICAL_POLICY, APC_NUMERICAL_POLICY):
+        if self.numerical_policy_id not in (NUMERICAL_POLICY, CI_NUMERICAL_POLICY, PC_NUMERICAL_POLICY, CIPC_NUMERICAL_POLICY, AOS_NUMERICAL_POLICY, ACI_NUMERICAL_POLICY, APC_NUMERICAL_POLICY, ACIPC_NUMERICAL_POLICY):
             raise ValueError("unsupported native completion numerical policy")
         if type(self.landscape_sign) is not int or type(self.minimum_beats) is not int:
             raise ValueError("integer sign and window required")

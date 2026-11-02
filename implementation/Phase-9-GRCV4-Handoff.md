@@ -1,5 +1,34 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: A_CI_PC .1–.4 accepted; .5 authorized — 2026-11-02
+
+After accepted A_PC .5 (`10277f05`), the composite native C/W/Z implementation
+now passes 33 tests: full selected-root ownership, both writers, all 76 physical
+directions at two states, 16 root directions, explicit event histories and
+atomic lifecycle. The fresh Arb256 implicit product certificate has q <=
+0.995941470544, margin >= 0.004058529456, and complete represented error below it.
+The 256/512 represented-state comparison agrees. Cached 40+40 samples and
+checkpoints take 70.34 seconds / 274.3 MiB; compressed evidence totals
+1.52 MiB. The provisional .5 forecast is 22.3/45.8 minutes, with fresh
+full-path profiling required. All 180 predecessor numerical/lifecycle tests and
+eight side-tool/publication checks pass. The
+finite source successor preserves accepted records and prior views. The user
+accepted .1–.4 and pressure for commit on 2026-11-02 and authorized .5 after
+fresh profiling. The campaign is unrun; aggregate native support remains false.
+[Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC-Review.md),
+[contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC-Contract.md).
+
+A_CI_PC also passes the requested [bounded composite pressure audit](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC-PressureReview.md):
+**26 tests, 51 mutation detectors and 240 finite segments** in **50.95 seconds**.
+Manufactured equal-current twins, frozen-reference counterfeits, complete root
+trial chains, both writers, target composite readmission and ten rollback phases
+pass. Three certified derivative boxes cover all finite segments. The retained
+supplement is 679.5 KiB. Runtime and original preflight are unchanged; side-tool
+publishes the separate pressure evidence. The user explicitly selected bounded
+pressure only for that pass, then accepted it and authorized .5 on 2026-11-02.
+All 17 combined preflight/pressure publication checks and the implementation-
+boundary audit pass. Historical execution flags remain unchanged.
+
 ## Current continuation: A_PC .5 accepted; A_CI_PC next — 2026-11-02
 
 Accepted .1–.4 and pressure are committed as `e37d968f`. The authorized
