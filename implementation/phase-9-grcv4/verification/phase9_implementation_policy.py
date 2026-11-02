@@ -5295,3 +5295,21 @@ PATHS.update({'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-Review.md', 
 
 # Bounded A_CI selected-root and full-history pressure; no endpoint grant.
 PATHS.update({'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-PressureSamples.json.xz', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-PressureReview.md', 'implementation/phase-9-grcv4/verification/aci_native_spark_audit.py', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-Pressure.json', 'implementation/phase-9-grcv4/verification/p991a6_aci_pressure.py', 'implementation/phase-9-grcv4/verification/test_aci_native_spark_pressure.py', 'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_aci_pressure.py', 'implementation/phase-9-grcv4/verification/test_p991a6_aci_pressure_surface.py'})
+
+
+# Authorized A_CI .5: unchanged native kernel, joint-root/W campaign and compact evidence.
+PATHS = PATHS | frozenset({
+    *(HERE + name for name in (
+        "p991a6_aci_campaign.py", "p991a6_aci_campaign_verify.py",
+        "p991a6_aci_campaign_cost.py", "p991a6_aci_campaign_epoch.py",
+        "test_p991a6_aci_campaign.py", "test_p991a6_aci_campaign_replay.py",
+        "test_p991a6_aci_campaign_surface.py",
+    )),
+    *(PHASE + "tranche-9/P9-9.1a.6-ACI.5-" + name for name in (
+        "Plan.md", "Review.md", "Cost.json", "Campaign.json.xz", "SourceEpoch.json",
+        "current.jsonl.xz", "reset.jsonl.xz", "checkpoints.jsonl.xz", "inputs.jsonl.xz",
+        "diagnostics.jsonl.xz",
+    )),
+    SIDE + "tool/phase9-web/spark-native-aci-campaign.js",
+    SIDE + "tool/src/grcv4_explorer/spark_native_aci_campaign.py",
+})

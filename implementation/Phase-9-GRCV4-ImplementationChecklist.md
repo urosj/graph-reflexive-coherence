@@ -4252,7 +4252,7 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     - [x] Review and accept A_OS .5 separately; user requested commit and
       retention of the original 5.27 MiB evidence on 2026-11-02. Aggregate
       native support stays false.
-  - [ ] P9-9.1a.6-A_CI: .1–.4 and pressure accepted; selected on 2026-11-02 after `4587185f`.
+  - [x] P9-9.1a.6-A_CI: .1–.5 and pressure accepted; selected on 2026-11-02 after `4587185f`.
     - [x] .1: Bind the joint-root A law, full C/W domain and actual histories.
     - [x] .2: Implement selected roots and exact represented continuity/writer.
     - [x] .3: Verify implicit full-state certificates, events and atomic lifecycle.
@@ -4263,13 +4263,16 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
       Native runtime and original preflight remain unchanged; side-tool synchronized.
     - [x] Review and accept .1–.4 and the pressure supplement; user requested
       commit on 2026-11-02, then authorized the separately profiled .5 campaign.
-    - [ ] .5: Actual source-to-completion campaign after fresh complete-path profiling.
-      28 native and eight publication tests pass. The 40+40 preflight takes
-      48.3 s; estimate 16.2/30.5 min, subject to fresh complete-path profiling.
-      Native expected 375→377 / 372→374 remain unverified. Compact evidence
-      is 0.79 MiB; historical A_OS campaign bytes are unchanged.
-      [Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-Review.md).
-      [Contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-Contract.md).
+    - [x] .5: Actual current 375→377 / reset 372→374 after fresh 24.7/38.9-minute
+      profiling and cache checks. All 751 full CI/C/logW transition audits,
+      actual-window rollback/retries and paired cold replays pass. Current gains
+      once; reset gains zero. **23.1 minutes**, **5.91 MiB** compact evidence,
+      ten full diagnostics; no tail. Runtime and old evidence remain unchanged.
+      Side-tool API/browser/notebook and source continuity are synchronized.
+      [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI.5-Review.md).
+    - [x] Review and accept A_CI .5 separately; the user requested commit on
+      2026-11-02. Historical execution flags are unchanged; aggregate native
+      support stays false.
   - [ ] P9-9.1a.6-A_PC.
   - [ ] P9-9.1a.6-A_CI_PC.
   - [ ] P9-9.1a.6-C_RG2b.

@@ -1,0 +1,18 @@
+{
+  "schema": "p991a6-aci-campaign-epoch-v1",
+  "predecessor": "0d38edc4",
+  "checker_sha256": "26728dd66ffaaa5ab62d8c044248ab4fe7639394b2635cce875f946b1c1bb751",
+  "sources": {
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_earlier_sc3_metadata.py": {
+      "before_sha256": "ed1ad6346e47f36c5fa26804db83f444d1fee0a561b69fc810f563d9a32708f8",
+      "after_sha256": "2a69963c01ba1ba91667a7958b3380a779b910725d8b395b4a04af19f85b96d5"
+    },
+    "implementation/phase-9-grcv4/verification/p991a6_aci_epoch.py": {
+      "before_sha256": "ff21c4cd790ac290f2d34fb4c1ffbda3d1ad9c315ea6b4f5460911d96be7c41b",
+      "after_sha256": "50c8688b7804b366190ce949a257946a6e1a338e450291f6613cf7ce6a6c8f34"
+    }
+  },
+  "runtime_changed": false,
+  "old_execution_relabelled": false,
+  "record_digest": "fb461aa904a2d4122fd2d4e5d96e0312a21cea171179341d1fccf2c6680873fa"
+}

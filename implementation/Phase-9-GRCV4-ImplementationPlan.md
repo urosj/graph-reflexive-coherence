@@ -5252,3 +5252,19 @@ A_CI .1–.4 and the pressure supplement were accepted for commit on 2026-11-02.
 The user then authorized .5 on the same branch. Profile the complete checking,
 encoding and checkpoint path before execution; use the unchanged accepted native
 kernel and preserve the original bounded records.
+
+
+### A_CI native .5 executed — 2026-11-02
+
+After accepted .1–.4/pressure commit `0d38edc4`, fresh full-path cache and cost
+checks forecast 24.7/38.9 minutes. The unchanged native kernel now verifies
+**375→377 current / 372→374 reset**, with all 751 full joint-root/C/logW audits,
+actual-window lifecycle controls and paired cold replays passing. Execution
+and checkpoint validation took **23.1 minutes**, **536.3 MiB** peak memory.
+Compact evidence totals **5.91 MiB**, with identical adjacent root witnesses
+referenced once and ten complete diagnostics retained. No supporting tail.
+The side-tool and continuity metadata expose the separate scoped campaign;
+old numerical records and original A_OS evidence remain unchanged.
+[Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI.5-Review.md).
+The user accepted .5 and requested commit on 2026-11-02. A_PC .1–.4 is next;
+aggregate support remains false. Original execution records stay unchanged.
