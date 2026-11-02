@@ -5082,3 +5082,47 @@ PATHS = PATHS | frozenset(['implementation/investigations/grc9v4-constitutive-de
 
 # Bounded C_PC full-history pressure supplement; no runtime change or .5 run.
 PATHS = PATHS | frozenset(['implementation/phase-9-grcv4/verification/cpc_native_spark_pressure_oracle.py', 'implementation/phase-9-grcv4/verification/test_cpc_native_spark_pressure.py', 'implementation/phase-9-grcv4/verification/p991a6_cpc_pressure.py', 'implementation/phase-9-grcv4/verification/test_p991a6_cpc_pressure_surface.py', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-PressureReview.md', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-Pressure.json', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-PressureSamples.json.xz', 'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_cpc_pressure.py'])
+
+# C_PC actual source-to-completion campaign; native runtime unchanged.
+PATHS = PATHS | frozenset(
+    [
+        'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-Plan.md',
+        'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-Review.md',
+        'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-Cost.json',
+        'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-SourceEpoch.json',
+        'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-Campaign.json.xz',
+        'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-current.jsonl.xz',
+        'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-reset.jsonl.xz',
+        'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-inputs.jsonl.xz',
+        'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-checkpoints.jsonl.xz',
+        'implementation/phase-9-grcv4/verification/p991a6_cpc_campaign.py',
+        'implementation/phase-9-grcv4/verification/p991a6_cpc_campaign_cost.py',
+        'implementation/phase-9-grcv4/verification/p991a6_cpc_campaign_verify.py',
+        'implementation/phase-9-grcv4/verification/p991a6_cpc_campaign_epoch.py',
+        'implementation/phase-9-grcv4/verification/test_p991a6_cpc_campaign.py',
+        'implementation/phase-9-grcv4/verification/test_p991a6_cpc_campaign_surface.py',
+        'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_cpc_campaign.py',
+        'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-native-cpc-campaign.js',
+    ]
+)
+
+# C_PC timing-stop recovery and user-authorized profiling semantics.
+PATHS = PATHS | frozenset(
+    [
+        'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-TimingStop.json.xz',
+        'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-reset-prefix.jsonl.xz',
+        'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-checkpoints-prefix.jsonl.xz',
+        'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-ResumeCost.json',
+        'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-ResumeSourceEpoch.json',
+        'implementation/phase-9-grcv4/verification/p991a6_cpc_campaign_resume.py',
+        'implementation/phase-9-grcv4/verification/p991a6_cpc_resume_cost.py',
+        'implementation/phase-9-grcv4/verification/p991a6_cpc_resume_epoch.py',
+        'implementation/phase-9-grcv4/verification/test_p991a6_cpc_resume.py',
+    ]
+)
+
+# Persistent repository-local publication after a retained packaging failure.
+PATHS = PATHS | frozenset(['implementation/phase-9-grcv4/verification/p991a6_cpc_campaign_complete.py', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-PublicationFailure.json.xz'])
+
+# Successful streams suffice; failed-prefix bulk is intentionally untracked.
+PATHS = (PATHS - frozenset(['implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-reset-prefix.jsonl.xz', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-checkpoints-prefix.jsonl.xz'])) | frozenset(['implementation/phase-9-grcv4/verification/p991a6_cpc_evidence_epoch.py', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-EvidenceEpoch.json'])

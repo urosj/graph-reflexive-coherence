@@ -31,13 +31,14 @@ export function nativeCPCLoader(output, status, fetcher=fetch, create=tag=>docum
       }
       add('p', `Combined estimate ${(value.estimate.central_seconds/60).toFixed(1)} minutes; upper allowance ${(value.estimate.upper_seconds/60).toFixed(1)} minutes against a ${value.estimate.campaign_cap_seconds/60}-minute cap. This is a planning envelope, not a confidence interval.`);
       add('p', `Measured peak memory ${value.memory.final_peak_mib.toFixed(1)} MiB. Static graph, carrier-domain, decay and certificate reuse verified. Each step has fresh C/Z reads and one same-read writer at 256 bits.`);
-      add('p', 'This bounded preflight contains no endpoint run. The 400-step budget is a planning horizon; source-to-entry completion remains unverified until .5.');
+      add('p', 'This bounded preflight contains no endpoint run. The 400-step budget is a planning horizon; its endpoint result is published separately in the C_PC campaign.');
       add('p', `${value.tests.count} native tests; full ${value.full_domain_dimension}-dimensional C/Z certificate, including all 46 signed carrier directions.`);
       add('p', `${value.pressure.tests_passed} bounded PC pressure tests; ${value.pressure.mutations} explicit mutation detectors; all ${value.pressure.finite_segment_directions} derivative directions checked. Source/target carrier spaces have 58/46 coordinates.`);
       const pressureLink=add('a', 'Retained C_PC pressure'); pressureLink.href=value.pressure.source_url; pressureLink.target='_blank'; pressureLink.rel='noopener';
       for (const condition of value.stop_conditions) add('p', condition);
       const link=add('a', 'Retained native preflight'); link.href=value.source_url; link.target='_blank'; link.rel='noopener';
-      status.textContent='Bounded native preflight verified; endpoint pending.';
+      const campaignLink=add('a', 'Native C_PC completion campaign'); campaignLink.href='/api/native-spark/c-pc/campaign';
+      status.textContent='Bounded native preflight verified; see separate campaign for endpoints.';
     } catch (error) {
       if (ticket !== sequence) return;
       output.replaceChildren(); status.textContent=String(error);

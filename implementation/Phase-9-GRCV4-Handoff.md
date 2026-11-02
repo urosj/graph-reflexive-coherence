@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: C_PC native steps 1–4 — 2026-11-02
+## Current continuation: C_PC accepted; C_CI_PC next — 2026-11-02
 
 The accepted research branch was merged into `main` with `--no-ff` at
 `5227704449a062586df804ca5da0cc2853906425` (research tip `77c71ea4`). The new
@@ -57,14 +57,49 @@ It checks all 58/46 carrier coordinates, all 60 finite-segment directions,
 independent exact fixed-H solves, Arb768 writing, both event archives and atomic
 lifecycle. Runtime and original preflight evidence are unchanged; the stronger
 campaign audit path still needs its own timing gate.
-Side-tool API/browser/notebook expose this bounded scope. Review is pending;
-**P9-9.1a.6-C_PC.5 has not run**, and 374→376/375→377 remain expectations.
-Next: review steps 1–4, then prepare the typed campaign capture/independent audit
-and confirm its same-subject cost before a separate .5 run. Retain the 400-step
-per-role stop, 1800-second combined cap and 1024-MiB memory limit; stop and
-re-estimate on slower observations or failed admission. No large-graph run or
-aggregate support follows. Historical C_OS/C_CI records and source epochs are
-unchanged; the finite C_PC successor authenticates their Git preimages.
+Steps 1–4 and pressure were accepted and committed as `1210b2b9`.
+The [actual C_PC campaign](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-Review.md)
+now verifies current **374→376** and reset **375→377** in **41.8 minutes**,
+of active execution against a 30-minute profiling target, at **816.8 MiB** peak memory.
+All 753 target steps pass independent full C/Z history, error, classifier and
+squared max-product membership audits. The actual source step and both event
+archives/target-zero histories pass independently. Current creates one child;
+reset has no live event and zero gain. There is no supporting tail.
+Six actual pending-window failures preserve the complete publication; all six
+retries after the primary claim reach the same C/Z endpoint with zero gain.
+Checkpoint restore, duplicate/zero/read, observer and replacement/reset controls
+also pass. The final typed full-oracle/compression timing gate took 39.7 seconds
+and forecast 16.4/22.6 minutes before the run. An early-prefix rolling cost
+guard stopped reset after 191 numerically verified beats; the current trace was
+already complete and remains unchanged. A fresh late-state estimate preceded
+public checkpoint recovery: 527 ordinary journal steps validate the checkpoints,
+42 target replays match retained records exactly, then reset 192–377 completes.
+These are explicit recovery/control costs, not a supporting tail. The first
+recovery's final move from `/tmp` failed across filesystems and temporary cleanup
+removed its new streams. Its code/log and 16.85 minutes are retained in the
+profiling total. Regeneration now uses persistent repository-local staging;
+same-device publication and failure preservation are tested. The current trace
+and original reset prefix remain unchanged. Wall time
+including the investigation pause was 65.9 minutes. The user clarified that
+**30 minutes is a profiling/efficiency target, not a stop that may prevent full
+results**; timing warnings now continue valid execution. Numerical admission
+and full-state integrity remain enforced. Native Arb256/FLINT runtime,
+tolerances and budgets are unchanged from `1210b2b9`.
+
+Duplicate failed-prefix bulk (3.77 MiB) is omitted at the user’s request.
+Its exact hashes reconstruct from successful traces; only useful timing/source
+provenance notes and generating code remain. No discarded file is needed.
+
+Lossless XZ streams and the compressed summary are published through the scoped
+side-tool API/browser/notebook. All **50 campaign/recovery/publication/continuity tests**
+pass (16 new campaign/recovery, 14 historical C_PC, 20 historical C_CI). The implementation
+boundary audit passes. Historical execution records and source epoch manifests
+remain byte-identical; the finite publication successor authenticates their Git
+preimages. Endpoint verification is true; the user accepted this campaign for
+commit on 2026-11-02. Historical execution flags remain unchanged. Aggregate
+native support remains false. Next is
+**P9-9.1a.6-C_CI_PC.1–4**, with its own numerical/lifecycle mapping, full-state
+pressure and measured bounded preflight before a separately gated .5 campaign.
 
 The [contract map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md)
 and [retained check](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json)
@@ -89,18 +124,22 @@ Actual checkpoint fault/restore/recount controls pass. Compressed primary eviden
 and side-tool API/browser/notebook views are retained. C_OS was accepted and committed
 as `1ec198b2`; its historical execution flags remain unchanged. Native aggregate
 support remains false. C_CI steps 1–4 were accepted as `bcf10782`; its campaign
-was accepted and committed as `88a1c6b1`. C_PC steps 1–4 now await review;
-its separately gated **P9-9.1a.6-C_PC.5** remains unrun. Shared occurrence accounting is process-local;
+was accepted and committed as `88a1c6b1`. C_PC steps 1–4 were accepted as `1210b2b9`;
+its **P9-9.1a.6-C_PC.5** verifies both endpoints and was accepted for commit on 2026-11-02. Shared occurrence accounting is process-local;
 disconnected-process uniqueness and exact-to-legacy conversion are not claimed. See the
 [work programme](./Phase-9-GRCV4-ImplementationPlan.md#p9-91a-native-spark-completion-work-programme)
 and [unchecked execution leaves](./Phase-9-GRCV4-ImplementationChecklist.md#p9-91a-native-spark-completion).
-The remaining family order is C_PC, C_CI_PC, A_OS, A_CI, A_PC,
+The remaining family order is C_CI_PC, A_OS, A_CI, A_PC,
 A_CI_PC, C_RG2b, A_RG2b. Each includes side-tool API/browser/notebook work.
 Minimal atomic new-child registration is required by completion; broader
 hierarchy remains deferred. Accepted mandatory Tranches 8–9 are unchanged.
 Targeted regressions/publication and debt/support closeout remain in Tranche 10.
 
-**No long run without a same-subject native runtime estimate.** Start with
+**No long run without a same-subject native runtime estimate.** Timing targets
+are profiling signals: report overruns and efficiency concerns while continuing
+mathematically admitted work to a full result; they are not automatic stops.
+Cold checkpoint validation and late publication costs need explicit estimates.
+ Start with
 bounded setup/event and a single changing-state step, extending the sample only
 within its measured short budget. Confirm FLINT and applicable caching, report
 the full-run estimate and re-estimate if costs change. The accepted roughly

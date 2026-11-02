@@ -51,16 +51,17 @@ def seal(value):
 
 
 def manifest(root):
+    from p991a6_cpc_campaign_epoch import previous_bytes as campaign_previous
     root = Path(root).resolve()
     return seal(
         {
             "schema": "p991a6-cpc-runtime-epoch-v1",
             "predecessor": REVISION,
-            "checker_sha256": sha((root / SELF).read_bytes()),
+            "checker_sha256": sha(campaign_previous(root, SELF)),
             "sources": {
                 name: {
                     "before_sha256": sha(original(root, name)),
-                    "after_sha256": sha((root / name).read_bytes()),
+                    "after_sha256": sha(campaign_previous(root, name)),
                 }
                 for name in sorted(CHANGED)
             },
@@ -71,9 +72,10 @@ def manifest(root):
 
 
 def previous_bytes(root, name):
+    from p991a6_cpc_campaign_epoch import previous_bytes as campaign_previous
     root = Path(root).resolve()
     if name not in CHANGED:
-        return (root / name).read_bytes()
+        return campaign_previous(root, name)
     if json.loads((root / PATH).read_bytes()) != manifest(root):
         raise ValueError("unbound C_PC runtime successor")
     return original(root, name)

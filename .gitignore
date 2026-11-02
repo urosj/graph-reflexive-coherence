@@ -462,3 +462,8 @@ dist/
 # Expanded evidence; see artifact-storage.json
 /implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Campaign.json
 /implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Execution.json
+
+# C_PC failed-run bulk: exact prefixes are reconstructed from successful evidence.
+/implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-reset-prefix.jsonl.xz
+/implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-checkpoints-prefix.jsonl.xz
+/implementation/phase-9-grcv4/tranche-9/.cpc-resumed-*/

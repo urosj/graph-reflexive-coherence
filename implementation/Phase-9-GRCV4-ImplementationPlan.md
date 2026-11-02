@@ -4712,7 +4712,7 @@ rules. This is an engineering handoff, not another scientific-definition gate.
 | --- | --- | --- | ---: | --- |
 | P9-9.1a.5 — C_OS | 374→376 | 375→377 | 32 | Accepted, committed `1ec198b2` |
 | P9-9.1a.6-C_CI | 374→376 | 375→377 | 32 | Accepted, campaign committed `88a1c6b1` |
-| P9-9.1a.6-C_PC | 374→376 | 375→377 | 32 | Steps 1–4 verified, pending review; .5 unrun |
+| P9-9.1a.6-C_PC | 374→376 | 375→377 | 32 | Steps 1–4 accepted `1210b2b9`; .5 accepted for commit 2026-11-02 |
 | P9-9.1a.6-C_CI_PC | 374→376 | 375→377 | 32 | Not started |
 | P9-9.1a.6-A_OS | 375→377 | 372→374 | 32 | Not started |
 | P9-9.1a.6-A_CI | 375→377 | 372→374 | 32 | Not started |
@@ -5095,14 +5095,38 @@ binds exact FLINT state, Arb256 reads, flux128/carrier192 quantization and both
 rounding terms. No resource-only surrogate is admitted. Bounded public lifecycle
 checks, 256/512 comparison, independent Arb768 audits and 40+40 timing samples
 precede .5. Graph/domain/decay/certificate caches hold immutable facts only.
-The side-tool exposes the recorded estimate and unverified endpoint scope.
-Before .5, measure its actual typed capture, verification and persistence path;
-the early-prefix estimate is provisional. No full trajectory is authorized by
-this steps 1–4 batch; its review and the next campaign remain separate.
+The historical side-tool preflight retains its bounded scope. Steps 1–4 were
+accepted as `1210b2b9`; the user separately authorized .5. Its stronger typed
+capture, independent full-history oracle and persistence path were measured
+before the actual campaign; the earlier forecast remains a provisional record.
 
 The bounded [C_PC pressure supplement](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-PressureReview.md)
 checks the complete old-Z/read/held-source/write/next-read loop, all signed carrier
 spaces, exact fixed-H equations, full joint-domain derivatives, history events
 and atomic publication. All 26 tests and 22 specific mutation cases pass. The
-stronger exact audit is a separate timing input for .5; its uninterrupted
-campaign and actual-boundary checkpoint pressure remain unrun.
+stronger exact audit was measured in the final .5 cost gate (16.4/22.6 minutes).
+The [native campaign](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-Review.md) now
+verifies current 374→376 and reset 375→377 in 41.8 minutes. All 753 target
+steps, actual source/history event, six real pending-window failures and
+zero-gain retries pass. Lossless XZ evidence and the side-tool API/browser/notebook
+publish the scoped result; the user accepted it for commit on 2026-11-02. Native runtime is unchanged,
+no supporting tail is used, and aggregate capability reconciliation remains open.
+
+
+### Native campaign timing policy — user clarification, 2026-11-02
+
+Elapsed-time budgets are profiling and efficiency targets, not automatic stops
+that prevent full results. Measure the same numerical subject before long runs,
+include late publication and cold checkpoint costs, report overruns, and continue
+mathematically admitted execution. Numerical admission and exact-state integrity
+remain mandatory. C_PC demonstrated why this distinction matters: its rolling
+time guard stopped reset at 191 despite all audits passing. The completed current
+trace was preserved; public checkpoint validation and exact prefix replay allowed
+reset continuation through 377. Active execution and investigation-pause wall time
+are reported separately in the campaign review.
+
+C_PC's first recovery also exposed a packaging defect after successful numerical
+execution: cross-filesystem atomic replacement from `/tmp`, followed by temporary
+cleanup. The final continuation uses persistent staging inside the repository,
+with explicit same-device and failed-publication retention checks. The failed
+attempt is counted in profiling totals and its code/log remain available.

@@ -4165,7 +4165,7 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
       The outward-bound comparison correction preserves the certificate budget;
       failed prefix/counterexample retained. [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-Review.md).
     - [x] Review and accept the C_CI campaign separately; committed `88a1c6b1`.
-  - [ ] P9-9.1a.6-C_PC: steps 1–4 verified, pending review; endpoint unrun.
+  - [x] P9-9.1a.6-C_PC: steps 1–4 accepted `1210b2b9`; .5 accepted for commit on 2026-11-02.
     - [x] P9-9.1a.6-C_PC.1: bind PC/earlier-domain contracts, both physical
       histories, actual source/target and all signed carrier directions.
     - [x] P9-9.1a.6-C_PC.2: exact FLINT C/Z, Arb256 old-carrier read and
@@ -4180,10 +4180,17 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     - [x] P9-9.1a.6-C_PC.4: static caches, 40+40 bounded samples, complete
       independent audits, compressed evidence and side-tool API/browser/notebook.
       [Preflight review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-Review.md).
-    - [ ] Review and accept the C_PC steps 1–4 batch.
-    - [ ] P9-9.1a.6-C_PC.5: confirm cost of the typed campaign/audit path,
-      then run actual current/reset endpoints within the declared caps.
-      Expected 374→376/375→377 are not verified native results.
+    - [x] Review and accept the C_PC steps 1–4 batch; committed `1210b2b9`.
+    - [x] P9-9.1a.6-C_PC.5: final typed/full-history cost gate passes;
+      actual current 374→376 and reset 375→377 verified in 41.8 minutes.
+      All 753 target C/Z steps audited; gain one/zero, no supporting tail.
+      Timing stop after reset 191 is recovered by exact public checkpoint
+      replay; completed current and reset prefix remain unchanged. The user
+      makes time limits profiling targets rather than reasons to stop valid work.
+      Six real pending-window failures and once-only retries pass; lossless XZ
+      evidence, side-tool API/browser/notebook, 50 checks and boundary audit agree.
+      [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-Review.md).
+    - [x] Review and accept the C_PC campaign separately; user requested commit on 2026-11-02.
   - [ ] P9-9.1a.6-C_CI_PC.
   - [ ] P9-9.1a.6-A_OS.
   - [ ] P9-9.1a.6-A_CI.
