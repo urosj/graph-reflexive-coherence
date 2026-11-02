@@ -5412,3 +5412,20 @@ PATHS.update({
     )),
     SIDE + "tool/src/grcv4_explorer/spark_native_acipc_pressure.py",
 })
+
+# Authorized A_CI_PC .5: unchanged native composite runtime and compact campaign.
+PATHS.update({
+    *(HERE + name for name in (
+        "p991a6_acipc_campaign.py", "p991a6_acipc_campaign_verify.py",
+        "p991a6_acipc_campaign_cost.py", "p991a6_acipc_campaign_epoch.py",
+        "acipc_native_spark_campaign_cache.py", "test_p991a6_acipc_campaign.py",
+        "test_p991a6_acipc_campaign_replay.py", "test_p991a6_acipc_campaign_surface.py",
+    )),
+    *(PHASE + "tranche-9/P9-9.1a.6-ACIPC.5-" + name for name in (
+        "Plan.md", "Review.md", "Cost.json", "Campaign.json.xz", "SourceEpoch.json",
+        "current.jsonl.xz", "reset.jsonl.xz", "checkpoints.jsonl.xz", "inputs.jsonl.xz",
+        "diagnostics.jsonl.xz",
+    )),
+    SIDE + "tool/phase9-web/spark-native-acipc-campaign.js",
+    SIDE + "tool/src/grcv4_explorer/spark_native_acipc_campaign.py",
+})

@@ -4296,7 +4296,7 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     - [x] Review and accept A_PC .5 separately; user requested commit on
       2026-11-02. Historical execution flags are unchanged; aggregate support
       remains false. All 33 tests and the implementation-boundary audit pass.
-  - [ ] P9-9.1a.6-A_CI_PC: .1–.4 and pressure accepted; .5 authorized.
+  - [x] P9-9.1a.6-A_CI_PC: .1–.5 and pressure accepted.
     - [x] .1: Bind the full composite root, C/W/Z map and event histories.
     - [x] .2: Implement fixed-precision exact transitions and two atomic writers.
     - [x] .3: Verify full implicit derivatives, product proof and lifecycle.
@@ -4315,7 +4315,15 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     - [x] Review and accept .1–.4 and pressure; user requested commit and
       authorized .5 on 2026-11-02. Historical execution flags remain unchanged.
       All 17 publication checks and the implementation-boundary audit pass.
-    - [ ] .5: Actual source-to-completion campaign after fresh profiling.
+    - [x] .5: Fresh profiling/cache gate; actual 375→377 current and
+      372→374 reset, all 751 composite C/logW/Z audits, seven late failures
+      and paired cold replay. 16.18 minutes / 576.6 MiB; 8.57 MiB compact
+      evidence, no physical tail. Runtime and accepted records unchanged.
+      All 36 bounded campaign/replay and retained-publication checks pass.
+      [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC.5-Review.md).
+    - [x] Review and accept A_CI_PC .5 separately; user requested commit on
+      2026-11-02. Historical execution flags remain unchanged; aggregate support
+      remains false. All 36 tests and the implementation-boundary audit pass.
   - [ ] P9-9.1a.6-C_RG2b.
   - [ ] P9-9.1a.6-A_RG2b.
 - [ ] P9-9.1a.7: Reconcile the newly supported exact declarations/capability in a

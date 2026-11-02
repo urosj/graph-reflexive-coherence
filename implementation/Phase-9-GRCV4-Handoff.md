@@ -1,5 +1,27 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: A_CI_PC .5 accepted; C_RG2b next — 2026-11-02
+
+Accepted .1–.4 and pressure are committed as `5e10f233`. The authorized
+[native campaign](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC.5-Review.md) verifies
+**375→377 current / 372→374 reset**, duration 32, exact charge 21.
+All 751 target transitions pass independent composite-root, two-writer and
+full C/logW/Z audits. Current gains once; reset has zero gain. Seven actual
+pending-window failures and once-only retries pass, with both completed journals
+replayed cold (378/375 ordinary steps). No supporting physical tail.
+
+Fresh complete-path profiling and cache checks preceded execution: 21.5/33.0
+minutes forecast; **16.18 minutes actual**, **576.6 MiB** peak.
+A bounded independent-root cache reused 749 comparison solves while rechecking
+all residual and writer witnesses. Production runtime remains unchanged.
+Compact streams total **8.57 MiB**, with ten full diagnostics. Side-tool and
+source continuity publish the separate endpoint; accepted numerical records are
+preserved. All 36 campaign/cache/replay and publication checks and the
+implementation-boundary audit pass. The user accepted .5 and requested commit
+on 2026-11-02. Historical execution flags remain unchanged; aggregate native
+support remains false.
+C_RG2b .1–.4 is the next family, subject to user selection.
+
 ## Current continuation: A_CI_PC .1–.4 accepted; .5 authorized — 2026-11-02
 
 After accepted A_PC .5 (`10277f05`), the composite native C/W/Z implementation

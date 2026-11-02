@@ -5351,3 +5351,24 @@ The user explicitly selected bounded pressure only for that pass, then accepted
 its result and authorized .5 after fresh profiling on 2026-11-02. Historical
 execution flags remain unchanged; all 17 publication checks and the boundary
 audit pass.
+
+### A_CI_PC native campaign — authorized 2026-11-02
+
+Accepted .1–.4 and pressure are committed as `5e10f233`. Proceed under the
+[campaign plan](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC.5-Plan.md): preserve
+native arithmetic, profile the full checker and cold checkpoint path, validate
+all static caches and the bounded independent-root cache, then execute current
+and reset through their actual windows. Publish compact evidence and the separate
+side-tool campaign. Thirty minutes is a profiling target; no supporting physical
+tail is planned. At authorization, completion and user acceptance were unverified.
+
+The A_CI_PC .5 campaign verifies 375→377 current and 372→374 reset,
+with all 751 independent full-state audits, seven actual-window failure controls
+and paired cold replay. Actual execution/recovery took 16.18 minutes at
+576.6 MiB; compact streams total 8.57 MiB. The bounded independent-root
+cache reused 749 comparisons without skipping witness checks or changing
+native arithmetic. Side-tool and source continuity are synchronized. The user
+accepted .5 and requested commit on 2026-11-02. Historical execution flags remain
+unchanged; aggregate native support stays false. All 36 focused tests and the
+implementation-boundary audit pass. C_RG2b .1–.4 is next, subject to user selection.
+[Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC.5-Review.md).
