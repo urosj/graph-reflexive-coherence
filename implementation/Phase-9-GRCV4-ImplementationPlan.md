@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 Implementation Plan
 
-## Current continuation: native C_OS runtime preflight complete — 2026-11-01
+## Current continuation: native C_OS completion verified — 2026-11-01
 
 Branch: `impl/grc9v4-native-spark-completion`, opened from `main` at
 `5227704449a062586df804ca5da0cc2853906425`, the no-ff merge of the accepted
@@ -17,7 +17,13 @@ accepted and committed as `59c35997`.
 [P9-9.1a.4](./phase-9-grcv4/tranche-9/P9-9.1a.4-Review.md) measured 40 changing-state
 steps per role in 81.7 seconds: combined central estimate 13.6 minutes, conservative
 allowance 24.8 minutes, campaign cap 30 minutes. Cache/precision and publication
-checks are retained. Next is P9-9.1a.5; no full native trajectory or completion is claimed. Minimal atomic new-child registration
+checks are retained; .4 was accepted and committed as `699ecf04`.
+[P9-9.1a.5](./phase-9-grcv4/tranche-9/P9-9.1a.5-Review.md) verifies the public
+C_OS current 374→376 and reset 375→377 endpoints in 21.8 minutes, with
+every-step independent checks and real checkpoint pressure. Current earns one
+child, reset zero gain, without a supporting tail. Review is pending; next is
+P9-9.1a.6-C_CI with its own bounded preflight. Aggregate support remains deferred.
+Minimal atomic new-child registration
 belongs to completion; broader hierarchy remains deferred. Historical milestones below retain their original
 scope; the selected native programme does not reopen their accepted results.
 
@@ -4696,7 +4702,7 @@ rules. This is an engineering handoff, not another scientific-definition gate.
 
 | Family leaf | Current entry → completion | Reset entry → window end | Duration | Native status |
 | --- | --- | --- | ---: | --- |
-| P9-9.1a.5 — C_OS | 374→376 | 375→377 | 32 | Not started |
+| P9-9.1a.5 — C_OS | 374→376 | 375→377 | 32 | Executed, verified; pending review |
 | P9-9.1a.6-C_CI | 374→376 | 375→377 | 32 | Not started |
 | P9-9.1a.6-C_PC | 374→376 | 375→377 | 32 | Not started |
 | P9-9.1a.6-C_CI_PC | 374→376 | 375→377 | 32 | Not started |

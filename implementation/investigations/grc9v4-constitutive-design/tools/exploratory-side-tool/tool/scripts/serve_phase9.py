@@ -32,6 +32,7 @@ from grcv4_explorer.spark_publication import spark_publication_source
 from grcv4_explorer.spark_native_cos import native_cos_numerics, native_cos_numerics_source
 from grcv4_explorer.spark_native_lifecycle import native_lifecycle, native_lifecycle_source
 from grcv4_explorer.spark_native_preflight import native_preflight, native_preflight_source
+from grcv4_explorer.spark_native_campaign import native_campaign, native_campaign_source
 from grcv4_explorer.spark_earlier_c import spark_earlier_c_status, spark_earlier_c_source
 from grcv4_explorer.spark_arg2b_research import spark_arg2b_research_status, spark_arg2b_research_source
 from grcv4_explorer.spark_crg2b_research import spark_crg2b_research_status, spark_crg2b_research_source
@@ -153,12 +154,14 @@ class Handler(BaseHTTPRequestHandler):
             return
         if request.path in {"/api/native-spark/c-os/numerical-bridge", "/api/native-spark/c-os/numerical-bridge/source",
                             "/api/native-spark/c-os/lifecycle", "/api/native-spark/c-os/lifecycle/source",
-                            "/api/native-spark/c-os/preflight", "/api/native-spark/c-os/preflight/source"}:
+                            "/api/native-spark/c-os/preflight", "/api/native-spark/c-os/preflight/source",
+                            "/api/native-spark/c-os/campaign", "/api/native-spark/c-os/campaign/source"}:
             try:
                 if request.query:
                     raise ValueError("native numerical evidence has fixed scope")
                 root = repository_root()
-                source, projection = ((native_preflight_source, native_preflight) if "/preflight" in request.path
+                source, projection = ((native_campaign_source, native_campaign) if "/campaign" in request.path
+                                      else (native_preflight_source, native_preflight) if "/preflight" in request.path
                                       else (native_lifecycle_source, native_lifecycle) if "/lifecycle" in request.path
                                       else (native_cos_numerics_source, native_cos_numerics))
                 content = source(root) if request.path.endswith("/source") else json.dumps(projection(root)).encode()
@@ -410,7 +413,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/spark-completion.js", "/spark-applicability.js", "/spark-research.js", "/spark-pc.js", "/spark-cipc.js", "/spark-cipc-research.js", "/spark-aos-research.js", "/spark-aos.js", "/spark-aos-earlier.js", "/spark-aci-research.js", "/spark-apc-research.js", "/spark-acipc-research.js", "/spark-crg2b-research.js", "/spark-native-cos.js", "/spark-native-lifecycle.js", "/spark-native-preflight.js", "/spark-earlier-accepted.js", "/spark-earlier-c.js", "/spark-arg2b-research.js", "/spark-arg2b.js", "/spark-crg2b.js", "/spark-acipc.js", "/spark-apc.js", "/spark-aci.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-examples.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/spark-completion.js", "/spark-applicability.js", "/spark-research.js", "/spark-pc.js", "/spark-cipc.js", "/spark-cipc-research.js", "/spark-aos-research.js", "/spark-aos.js", "/spark-aos-earlier.js", "/spark-aci-research.js", "/spark-apc-research.js", "/spark-acipc-research.js", "/spark-crg2b-research.js", "/spark-native-cos.js", "/spark-native-lifecycle.js", "/spark-native-preflight.js", "/spark-native-campaign.js", "/spark-earlier-accepted.js", "/spark-earlier-c.js", "/spark-arg2b-research.js", "/spark-arg2b.js", "/spark-crg2b.js", "/spark-acipc.js", "/spark-apc.js", "/spark-aci.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-examples.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -446,6 +449,7 @@ class Handler(BaseHTTPRequestHandler):
                     "spark-native-cos.js": "text/javascript",
                     "spark-native-lifecycle.js": "text/javascript",
                     "spark-native-preflight.js": "text/javascript",
+                    "spark-native-campaign.js": "text/javascript",
                     "spark-earlier-accepted.js": "text/javascript",
                     "spark-earlier-c.js": "text/javascript",
                     "spark-arg2b-research.js": "text/javascript",

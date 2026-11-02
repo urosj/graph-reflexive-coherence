@@ -1465,6 +1465,22 @@
       "storage_path": "implementation/phase-9-grcv4/tranche-8/crg2b-native/large-source-reset.json.xz",
       "storage_size": 425688,
       "storage_sha256": "46b9d641a9e2b81ae94a494844ca66748366e4ae6da23f86eeb2b805bf7f9d39"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Campaign.json",
+      "size": 1203971,
+      "sha256": "61ec6dc06388c9403dac52c27b2a2d805a3e3ed222972b721c89b6c2e16ab361",
+      "storage_path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Campaign.json.xz",
+      "storage_size": 181248,
+      "storage_sha256": "84292e50ce6df37f1a64d38776facc78dffaed62afab67777773a69b57489e31"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Execution.json",
+      "size": 1202777,
+      "sha256": "8b4e88b1ddbebef841fafdc34057447c2ad34e4bbb8b99172a723f5bb8c55fb0",
+      "storage_path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Execution.json.xz",
+      "storage_size": 180928,
+      "storage_sha256": "02269691bfdbb61685767557d8f05ec9a4d9e39b3f0a3c00a6ac3b93bfc8301d"
     }
   ],
   "object_stores": [

@@ -65,11 +65,16 @@ def native_predecessor(root, path, expected):
     sys.path.insert(0, str(root / "implementation/phase-9-grcv4/verification"))
     from p991a3_native_spark_epoch import CHANGED, previous_bytes
     from p991a4_native_spark_epoch import CHANGED as PREFLIGHT, previous_bytes as preflight_previous
-    if path not in CHANGED | PREFLIGHT:
+    from p991a5_native_spark_epoch import CHANGED as CAMPAIGN, previous_bytes as campaign_previous
+    if path not in CHANGED | PREFLIGHT | CAMPAIGN:
         return None
     _require(file_sha256(root/path) == hashlib.sha256((root/path).read_bytes()).hexdigest(),
              "inconsistent native source digest")
     try:
+        if path in CAMPAIGN:
+            raw = campaign_previous(root, path)
+            if hashlib.sha256(raw).hexdigest() == expected:
+                return raw
         if path in PREFLIGHT:
             raw = preflight_previous(root, path)
             if hashlib.sha256(raw).hexdigest() == expected:

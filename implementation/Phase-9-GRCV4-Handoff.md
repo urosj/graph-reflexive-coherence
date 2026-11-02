@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: C_OS runtime preflight complete — 2026-11-01
+## Current continuation: native C_OS completion verified — 2026-11-01
 
 The accepted research branch was merged into `main` with `--no-ff` at
 `5227704449a062586df804ca5da0cc2853906425` (research tip `77c71ea4`). The new
@@ -10,7 +10,7 @@ P9-9.1a.2 was accepted for commit as `32376cd4`. P9-9.1a.3 now implements
 the exactly bound certificates and atomic public lifecycle, accepted and committed as
 `59c35997`. Its explicit exact-resource
 and FLINT C_OS numerical kernel passed bounded source/allocation/ordinary-step
-checks. No public completion campaign has been started.
+checks. The first public C_OS completion campaign is now verified, pending review.
 
 The [contract map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md)
 and [retained check](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json)
@@ -24,12 +24,17 @@ The [bounded pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.3-PressureReview
 adds independent equations, both literal chiral events, charge-normal membership,
 and atomic failure controls. It also closes duplicate typed-step delivery: a
 successful operation ID in branch ancestry cannot advance the window twice.
-The [P9-9.1a.4 preflight](./phase-9-grcv4/tranche-9/P9-9.1a.4-Review.md) is
-complete, pending review: 40 changing-state steps per role on the actual 15-node
-target, 81.7 seconds total, combined campaign estimate 13.6 minutes and upper
-allowance 24.8 minutes against a 30-minute cap. Caches, exact charge, selected
-step reuse and side-tool publication are checked. Next is **P9-9.1a.5**, the first
-public source-to-completion campaign; it has not started. Shared occurrence accounting is process-local;
+The [P9-9.1a.4 preflight](./phase-9-grcv4/tranche-9/P9-9.1a.4-Review.md) was
+accepted and committed as `699ecf04`. Its combined estimate was 13.6 minutes,
+with a conservative 24.8-minute allowance and 30-minute cap.
+[P9-9.1a.5](./phase-9-grcv4/tranche-9/P9-9.1a.5-Review.md) now verifies actual
+current **374→376** and reset **375→377** in **21.8 minutes**. All 753 target
+steps passed independent full-stage, charge, classification and membership checks;
+current earns one child, reset zero gain, and no supporting tail is needed.
+Actual checkpoint fault/restore/recount controls pass. Compressed primary evidence
+and side-tool API/browser/notebook views are retained. Review is pending; native
+aggregate support remains false. Next after review is **P9-9.1a.6-C_CI** with a
+same-subject preflight. Shared occurrence accounting is process-local;
 disconnected-process uniqueness and exact-to-legacy conversion are not claimed. See the
 [work programme](./Phase-9-GRCV4-ImplementationPlan.md#p9-91a-native-spark-completion-work-programme)
 and [unchecked execution leaves](./Phase-9-GRCV4-ImplementationChecklist.md#p9-91a-native-spark-completion).
@@ -45,18 +50,19 @@ within its measured short budget. Confirm FLINT and applicable caching, report
 the full-run estimate and re-estimate if costs change. The accepted roughly
 400 completion beats describe a 15-vertex/16-edge target, not graph size or a
 general runtime guarantee. C_OS current 374→376/reset 375→377 at duration 32 are
-scientific regression targets; native membership, numerical charge/error
-requirements and the positive window must actually pass. No supporting tail
-is required; larger graphs are not part of the initial programme.
+now verified native results for this exact subject; other families still need
+actual membership, numerical charge/error and positive-window checks.
+No supporting tail is required; larger graphs are not part of the initial programme.
 
 The [new policy](../specs/grc-v4-spark-native-numerical-policy.md) keeps exact
 rational C and rounds only the final edge flux to a 2^-128 lattice. Exact
 incidence updates preserve charge 21 without repair. The uniform full-step
 error in the accepted certificate norm is at most **4.39102e-31**, below margin
 **0.00457383**; exact fixed-row diagnostics have zero evaluation error. Source
-and event prefix errors are checked separately. Actual native entry must still
-be tested; a local error bound does not establish an accumulated orbit comparison
-or guarantee the old entry beats. Existing binary64 profiles are unchanged.
+and event prefix errors are checked separately. C_OS native entry now passes
+actual execution; a local error bound alone does not establish an accumulated
+orbit comparison or guarantee entry for another subject.
+Existing binary64 profiles are unchanged.
 
 Five bounded native kernel steps took a few seconds; changing-state target
 steps were about 0.1–1 second each. These exclude public lifecycle/certificate

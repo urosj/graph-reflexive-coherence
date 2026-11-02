@@ -5018,3 +5018,25 @@ PATHS = PATHS | frozenset({
     'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_preflight.py',
     'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-native-preflight.js',
 })
+
+# P9-9.1a.5: one native C_OS campaign; endpoint evidence pending review.
+# No runtime extension or aggregate capability promotion.
+PATHS = PATHS | frozenset({
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Campaign.json.xz',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Execution.json.xz',
+    'implementation/phase-9-grcv4/verification/p991a5_native_spark_storage.py',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Execution.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Review.md',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Campaign.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-SourceEpoch.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-current.jsonl.xz',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-reset.jsonl.xz',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-inputs.jsonl.xz',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-checkpoints.jsonl.xz',
+    'implementation/phase-9-grcv4/verification/p991a5_native_spark_campaign.py',
+    'implementation/phase-9-grcv4/verification/p991a5_native_spark_verify.py',
+    'implementation/phase-9-grcv4/verification/p991a5_native_spark_epoch.py',
+    'implementation/phase-9-grcv4/verification/test_p991a5_native_spark_campaign.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_campaign.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-native-campaign.js',
+})

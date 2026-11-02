@@ -4119,20 +4119,28 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     repeated identical-state reads. Repeat preflight for each materially new scope.
   [Review](./phase-9-grcv4/tranche-9/P9-9.1a.4-Review.md) and
   [measurements](./phase-9-grcv4/tranche-9/P9-9.1a.4-Preflight.json): completed,
-  pending review. Forty changing-state steps per role; 81.7-second preflight
+  accepted and committed as `699ecf04`. Forty changing-state steps per role;
+  81.7-second preflight
   within 180-second cap. Combined central/upper estimates 13.6/24.8 minutes
   within a 30-minute campaign cap, including oracle/evidence/checkpoint costs.
   FLINT, actual cache reuse/invalidation and exact charge checked; no runtime
   optimization needed for this budget. Side-tool API/browser/notebook updated.
-- [ ] P9-9.1a.5: Execute and review the public C_OS source → event → completion
+- [x] P9-9.1a.5: Execute and prepare review of the public C_OS source → event → completion
   path after .2–.4, with independent numerical checks and lifecycle fault controls.
-  - [ ] Verify actual entry/window against current 374→376 and reset 375→377,
+  - [x] Verify actual entry/window against current 374→376 and reset 375→377,
     duration 32, on the 15-vertex/16-edge target. These are expected scientific
     endpoints, not a hardcoded native decision or a 400-node graph.
-  - [ ] Diagnose any native endpoint shift; do not claim entry from post-entry
+  - [x] Diagnose any native endpoint shift; do not claim entry from post-entry
     invariance alone. Preserve one current-event gain and zero reset/replay gains.
-  - [ ] Publish scoped evidence through side-tool API/browser/notebook and record
+  - [x] Publish scoped evidence through side-tool API/browser/notebook and record
     review; no additional physical supporting tail is required.
+  [Review](./phase-9-grcv4/tranche-9/P9-9.1a.5-Review.md) and
+  [campaign](./phase-9-grcv4/tranche-9/P9-9.1a.5-Campaign.json): executed and
+  independently verified, pending user review. Actual 374→376/375→377, 753 target
+  steps, one current child and zero reset gain; no tail. 21.8 minutes under the
+  30-minute cap. All-stage/charge/classifier/membership checks and actual checkpoint
+  fault/restore/recount pressure pass. Compressed primary evidence and side-tool
+  API/browser/notebook are synchronized. Aggregate capability remains deferred.
 - [ ] P9-9.1a.6: Extend and review each family independently after C_OS. Each leaf
   includes full-state numerics, same-subject runtime estimation, public lifecycle,
   affected mechanics/compatibility checks and side-tool API/browser/notebook.
