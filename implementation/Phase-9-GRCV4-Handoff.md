@@ -1,5 +1,24 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: A_PC .5 accepted; A_CI_PC next — 2026-11-02
+
+Accepted .1–.4 and pressure are committed as `e37d968f`. The authorized
+[native campaign](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC.5-Review.md) verifies
+**375→377 current / 372→374 reset**, duration 32 and exact charge 21. All
+751 target transitions pass independent two-history/full C/logW/Z checks.
+Current creates one child; reset has zero gain. Seven actual pending-window
+failures and once-only retries pass, with paired cold replay of all 378/375
+ordinary journal steps. No supporting physical tail.
+
+Fresh full-path profiling and cache checks preceded the run: 20.2/30.9
+minutes forecast; **15.03 minutes actual**, **562.0 MiB** peak.
+Compact retained streams total **7.76 MiB**, with ten complete diagnostics.
+Runtime, old evidence/source epochs and original A_OS evidence are unchanged.
+The side-tool publishes the separate scoped campaign. The user accepted .5 and
+requested commit on 2026-11-02. Historical execution flags remain unchanged;
+aggregate support remains false. All 33 campaign/replay/evidence/publication
+checks and the implementation-boundary audit pass. A_CI_PC .1–.4 is next.
+
 ## Current continuation: A_PC .1–.4 and pressure accepted — 2026-11-02
 
 After accepted A_CI .5 (`5b92524c`), A_PC now implements complete exact C/W/Z

@@ -5353,3 +5353,21 @@ PATHS.update({
     )),
     SIDE + "tool/src/grcv4_explorer/spark_native_apc_pressure.py",
 })
+
+
+# Authorized A_PC .5: unchanged native kernel, two-history C/W/Z campaign and compact evidence.
+PATHS = PATHS | frozenset({
+    *(HERE + name for name in (
+        "p991a6_apc_campaign.py", "p991a6_apc_campaign_verify.py",
+        "p991a6_apc_campaign_cost.py", "p991a6_apc_campaign_epoch.py",
+        "test_p991a6_apc_campaign.py", "test_p991a6_apc_campaign_replay.py",
+        "test_p991a6_apc_campaign_surface.py",
+    )),
+    *(PHASE + "tranche-9/P9-9.1a.6-APC.5-" + name for name in (
+        "Plan.md", "Review.md", "Cost.json", "Campaign.json.xz", "SourceEpoch.json",
+        "current.jsonl.xz", "reset.jsonl.xz", "checkpoints.jsonl.xz", "inputs.jsonl.xz",
+        "diagnostics.jsonl.xz",
+    )),
+    SIDE + "tool/phase9-web/spark-native-apc-campaign.js",
+    SIDE + "tool/src/grcv4_explorer/spark_native_apc_campaign.py",
+})

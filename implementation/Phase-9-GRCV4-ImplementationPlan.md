@@ -4714,9 +4714,9 @@ rules. This is an engineering handoff, not another scientific-definition gate.
 | P9-9.1a.6-C_CI | 374→376 | 375→377 | 32 | Accepted, campaign committed `88a1c6b1` |
 | P9-9.1a.6-C_PC | 374→376 | 375→377 | 32 | Steps 1–4 accepted `1210b2b9`; .5 accepted `31d1aba7` |
 | P9-9.1a.6-C_CI_PC | 374→376 | 375→377 | 32 | Accepted; campaign committed `e2cfad85` |
-| P9-9.1a.6-A_OS | 375→377 | 372→374 | 32 | Steps 1–4 verified, pending review; .5 unrun |
-| P9-9.1a.6-A_CI | 375→377 | 372→374 | 32 | Not started |
-| P9-9.1a.6-A_PC | 375→377 | 372→374 | 32 | Not started |
+| P9-9.1a.6-A_OS | 375→377 | 372→374 | 32 | Native .5 accepted; committed `4587185f` |
+| P9-9.1a.6-A_CI | 375→377 | 372→374 | 32 | Native .5 accepted; committed `5b92524c` |
+| P9-9.1a.6-A_PC | 375→377 | 372→374 | 32 | Native .5 accepted 2026-11-02 |
 | P9-9.1a.6-A_CI_PC | 375→377 | 372→374 | 32 | Not started |
 | P9-9.1a.6-C_RG2b | 390→392 | 390→392 | 8 | Not started |
 | P9-9.1a.6-A_RG2b | 300→302 | 300→302 | 16 | Not started |
@@ -5300,5 +5300,22 @@ remains unrun; fresh complete-path profiling is required before that campaign.
 
 A_PC .1–.4 and bounded pressure were accepted for commit on 2026-11-02.
 Original execution records retain their historical pending-review flags; the
-user decision is recorded here and in the handoff/checklist. The .5 campaign
-remains unrun and separate, with fresh complete-path profiling required.
+user decision is recorded here and in the handoff/checklist. At that acceptance,
+.5 remained unrun; its subsequent authorization and execution are recorded below.
+
+
+### A_PC native .5 authorized — 2026-11-02
+
+After accepted `e37d968f`, execute the [campaign plan](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC.5-Plan.md):
+fresh full-path timing and cache checks, current/reset trajectories, seven actual
+late failures, paired cold replay and compact evidence. Runtime stays unchanged.
+
+A_PC .5 now verifies 375→377 current / 372→374 reset. All 751 full C/logW/Z
+audits, seven actual late failures and paired cold replays pass. Fresh cache
+checks and a 20.2/30.9-minute estimate preceded the 15.03-minute campaign
+(562.0 MiB peak). Compact evidence totals 7.76 MiB, with no physical tail.
+Side-tool and source continuity publish the separate endpoint; runtime and old
+evidence remain unchanged. The user accepted .5 and requested commit on
+2026-11-02; aggregate support stays false. Historical execution flags remain
+unchanged. All 33 tests and the implementation-boundary audit pass.
+[Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC.5-Review.md).

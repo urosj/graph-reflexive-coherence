@@ -4273,7 +4273,7 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     - [x] Review and accept A_CI .5 separately; the user requested commit on
       2026-11-02. Historical execution flags are unchanged; aggregate native
       support stays false.
-  - [ ] P9-9.1a.6-A_PC: .1–.4 and pressure accepted after `5b92524c`; .5 open.
+  - [x] P9-9.1a.6-A_PC: .1–.4 accepted as `e37d968f`; .5 accepted 2026-11-02.
     - [x] .1: Bind the full C/W/Z map and separate event history channels.
     - [x] .2: Implement exact state, old-history read and two atomic writers.
     - [x] .3: Verify all 76 directions, event lineage/loss and public lifecycle.
@@ -4288,7 +4288,14 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
       [Pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC-PressureReview.md).
     - [x] Review and accept .1–.4 and bounded pressure; user requested commit
       on 2026-11-02. Original execution flags remain unchanged.
-    - [ ] .5: Actual source-to-completion campaign after fresh profiling.
+    - [x] .5: Fresh full-path profile/cache gate; actual 375→377 current and
+      372→374 reset, all 751 C/logW/Z audits, seven late failures and paired
+      cold replay. 15.03 minutes / 562.0 MiB; 7.76 MiB compact evidence, no tail.
+      Side-tool and source continuity synchronized; runtime/old evidence unchanged.
+      [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC.5-Review.md).
+    - [x] Review and accept A_PC .5 separately; user requested commit on
+      2026-11-02. Historical execution flags are unchanged; aggregate support
+      remains false. All 33 tests and the implementation-boundary audit pass.
   - [ ] P9-9.1a.6-A_CI_PC.
   - [ ] P9-9.1a.6-C_RG2b.
   - [ ] P9-9.1a.6-A_RG2b.
