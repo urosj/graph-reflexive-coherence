@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: C_PC accepted; C_CI_PC next — 2026-11-02
+## Current continuation: C_CI_PC steps 1–4 accepted; .5 authorized — 2026-11-02
 
 The accepted research branch was merged into `main` with `--no-ff` at
 `5227704449a062586df804ca5da0cc2853906425` (research tip `77c71ea4`). The new
@@ -96,10 +96,33 @@ pass (16 new campaign/recovery, 14 historical C_PC, 20 historical C_CI). The imp
 boundary audit passes. Historical execution records and source epoch manifests
 remain byte-identical; the finite publication successor authenticates their Git
 preimages. Endpoint verification is true; the user accepted this campaign for
-commit on 2026-11-02. Historical execution flags remain unchanged. Aggregate
-native support remains false. Next is
-**P9-9.1a.6-C_CI_PC.1–4**, with its own numerical/lifecycle mapping, full-state
-pressure and measured bounded preflight before a separately gated .5 campaign.
+commit `31d1aba7` on 2026-11-02. Historical execution flags remain unchanged.
+Aggregate native support remains false.
+
+C_CI_PC steps 1–4 now implement the full exact C/Z composite map with fresh
+Arb256 joint roots, the same-root exponential writer and a complete 60-dimensional
+certificate. All 28 native/pressure tests pass, including 208 signed source/target
+carrier probes, all 60 finite-segment directions, both chiralities and atomic
+lifecycle. Arb256/512 produce identical sampled C/Z states. The isolated 40+40
+preflight took 79.4 seconds, with 231.8 MiB peak memory.
+The provisional 400+400 estimate is **21.4 minutes centrally / 41.5
+conservatively**, including two extrapolated cold journal restores and the
+four-minute pressure/publication reserve. Thirty minutes remains a profiling
+target. The side-tool API/browser/notebook publishes only bounded verification.
+**P9-9.1a.6-C_CI_PC.5 remains unrun**; the actual 374→376 / 375→377 endpoints
+and aggregate native support remain unverified. The user accepted steps 1–4 and
+the audit supplement on 2026-11-02 and requested commit, followed by .5 with a
+one-hour allowance. Re-estimate complete audit/checkpoint costs before the run.
+
+The [composite pressure supplement](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-PressureReview.md)
+adds 27 passing tests and 31 semantic corruption detectors in 67.21 seconds.
+Exact geometry cancellation, same-source writing, full C/Z uncertainty and mixed
+derivatives pass without changing the native kernel or preflight evidence.
+Fourteen combined publication checks cover the API/browser/notebook and retained
+numerics. Re-estimate the complete campaign audit and late-checkpoint costs before
+.5; the earlier 21.4/41.5-minute forecast describes the original preflight path.
+
+See the [C_CI_PC review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-Review.md).
 
 The [contract map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md)
 and [retained check](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json)

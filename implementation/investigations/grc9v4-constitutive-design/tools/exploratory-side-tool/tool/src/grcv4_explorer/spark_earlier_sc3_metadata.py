@@ -9,7 +9,7 @@ from .errors import SourceAdmissionError
 INV = 'implementation/investigations/grc9v4-constitutive-design/'
 SIDE = INV + 'tools/exploratory-side-tool/'
 SOURCE = INV + 'evidence/spark-completion/applicability/earlier-closure/EarlierSC3Sources.json'
-DIGEST = '7458769c1f6435e66c439de76ff17cde528bd83100f924a534cf4325c97c7654'
+DIGEST = '77812fe1e53c9e52beddca4e99c8f6fa65b79aefdb3ce0912ac87110d1698ebe'
 BASELINE = '4d247e7bbcfd0c8251b5b40b6971ef904e0c2e76'
 HISTORICAL_HELPER = SIDE + 'tool/src/grcv4_explorer/spark_earlier_c_metadata.py'
 PATHS = frozenset({

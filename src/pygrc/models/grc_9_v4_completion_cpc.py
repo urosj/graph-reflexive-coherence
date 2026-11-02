@@ -32,7 +32,8 @@ def verify(data):
     )
     policy = CompletionPolicy.from_payload(b["policy"])
     if (
-        k.profile.FAMILY != "C_PC"
+        k.profile.FAMILY not in ("C_PC", "C_CI_PC")
+        or data["schema_version"] != "grc9v4-native-" + k.profile.FAMILY.replace("_", "").lower() + "-trap-operands-v1"
         or policy.numerical_policy_id != k.profile.NUMERICS
         or b != binding(k, policy, b["role"], b["charge"])
         or policy.step_duration != "32"
@@ -146,6 +147,9 @@ def verify(data):
             "membership_measure": "squared_max_product_norm",
             "all_signed_carrier_directions": True,
         }
+    if k.profile.FAMILY == "C_CI_PC":
+        result["root_derivative_upper"] = _upper(p["root_derivative"])
+        result["same_selected_source_for_geometry_and_writer"] = True
     return FrozenJSONMap(result)
 
 

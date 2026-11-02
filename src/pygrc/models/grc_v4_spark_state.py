@@ -21,6 +21,7 @@ from .grc_v4_exact import ExactBackend, exact_backend, exact_number, integer_rat
 FLUX_BITS = 128
 NUMERICAL_POLICY = "spark_cos_exact_flint_flux128_v1"
 CI_NUMERICAL_POLICY = "spark_cci_arb256_certified_root_flux128_v1"
+CIPC_NUMERICAL_POLICY = "spark_ccipc_arb256_certified_root_flux128_carrier192_v1"
 PC_NUMERICAL_POLICY = "spark_cpc_arb256_flux128_carrier192_v1"
 CHARGE_POLICY = MappingProxyType({
     "schema_version": "grcv4-charge-policy-v2",
@@ -199,6 +200,14 @@ class QuarticCPCProfile(QuarticCOSProfile):
 
     FAMILY: ClassVar[str] = "C_PC"
     NUMERICS: ClassVar[str] = PC_NUMERICAL_POLICY
+
+
+@dataclass(frozen=True, slots=True, eq=False)
+class QuarticCCIPCProfile(QuarticCOSProfile):
+    """Explicit composite joint-root and independently represented carrier law."""
+
+    FAMILY: ClassVar[str] = "C_CI_PC"
+    NUMERICS: ClassVar[str] = CIPC_NUMERICAL_POLICY
 
 
 @dataclass(frozen=True, slots=True)

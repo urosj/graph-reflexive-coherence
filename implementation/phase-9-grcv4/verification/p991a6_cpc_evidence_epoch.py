@@ -50,22 +50,23 @@ def execution(root):
 
 
 def previous_bytes(root, name):
+    from p991a6_ccipc_epoch import previous_bytes as successor
     root = Path(root)
     if name not in CHANGED:
-        return (root / name).read_bytes()
+        return successor(root, name)
     value = json.loads((root / PATH).read_bytes())
     pins = {r["path"]: r["sha256"] for r in execution(root)["source_bindings"]}
     if (
         value != seal(value)
         or set(value["sources"]) != CHANGED
-        or value["checker_sha256"] != sha256((root / SELF).read_bytes()).hexdigest()
+        or value["checker_sha256"] != sha256(successor(root, SELF)).hexdigest()
     ):
         raise ValueError("unbound evidence cleanup successor")
     for path, row in value["sources"].items():
         raw = base64.b64decode(row["before_base64"], validate=True)
         if (
             sha256(raw).hexdigest() != pins[path]
-            or sha256((root / path).read_bytes()).hexdigest() != row["after_sha256"]
+            or sha256(successor(root, path)).hexdigest() != row["after_sha256"]
         ):
             raise ValueError("changed evidence cleanup source")
     return base64.b64decode(value["sources"][name]["before_base64"], validate=True)

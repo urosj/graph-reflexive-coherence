@@ -79,6 +79,9 @@ SPARK_LIFECYCLE_PATHS = frozenset({
     "src/pygrc/models/grc_v4_assets/grc-9-v4-spark-completion-schema.json",
     "tests/models/test_grc_9_v4_spark_completion.py",
 })
+SPARK_CCIPC_LEAF = "P9-9.1a.6-C_CI_PC"
+SPARK_CCIPC_ENTRY = "31d1aba7"
+SPARK_CCIPC_PATHS = frozenset(['src/pygrc/models/grc_9_v4_completion_certificate.py', 'src/pygrc/models/grc_9_v4_completion_codec.py', 'src/pygrc/models/grc_9_v4_completion_cpc.py', 'src/pygrc/models/grc_9_v4_spark_contracts.py', 'src/pygrc/models/grc_9_v4_spark_owner.py', 'src/pygrc/models/grc_v4_spark.py', 'src/pygrc/models/grc_v4_spark_ccipc.py', 'src/pygrc/models/grc_v4_spark_state.py', 'tests/models/test_grc_v4_spark_ccipc.py'])
 SPARK_CPC_LEAF = "P9-9.1a.6-C_PC"
 SPARK_CPC_ENTRY = "88a1c6b1"
 SPARK_CPC_PATHS = frozenset(['src/pygrc/models/grc_9_v4.py', 'src/pygrc/models/grc_9_v4_completion.py', 'src/pygrc/models/grc_9_v4_completion_certificate.py', 'src/pygrc/models/grc_9_v4_completion_codec.py', 'src/pygrc/models/grc_9_v4_spark_contracts.py', 'src/pygrc/models/grc_9_v4_spark_owner.py', 'src/pygrc/models/grc_v4_spark.py', 'src/pygrc/models/grc_v4_spark_state.py', 'src/pygrc/models/grc_v4_spark_carrier.py', 'src/pygrc/models/grc_v4_spark_cpc.py', 'src/pygrc/models/grc_9_v4_completion_cpc.py', 'src/pygrc/models/grc_9_v4_spark_carrier_event.py', 'tests/models/test_grc_v4_spark_cpc.py'])
@@ -3415,6 +3418,10 @@ def leaf_permissions(root):
     ready = sorted(set(ready) | {SPARK_CPC_LEAF})
     for name in SPARK_CPC_PATHS:
         owners[name] = owners.get(name, set()) | {SPARK_CPC_LEAF}
+    git(root, "merge-base", "--is-ancestor", SPARK_CCIPC_ENTRY, "HEAD")
+    ready = sorted(set(ready) | {SPARK_CCIPC_LEAF})
+    for name in SPARK_CCIPC_PATHS:
+        owners[name] = owners.get(name, set()) | {SPARK_CCIPC_LEAF}
     return ready, owners
 
 
@@ -3424,6 +3431,10 @@ def runtime_targets(approval):
     from phase9_specialization_acceptance import ENABLED_LIFECYCLE_PATHS, DISABLED_DELEGATE_PATHS, BRANCH_CROSSING_PATHS
     from phase9_specialization_acceptance import PUBLIC_API_NEW_PATHS, BASIN_NEW_PATHS
     return [*approval["runtime_targets"], *(
+        {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
+         "operation": "v4_owned_add_or_update", "module_owner": "grc_v4_spark_ccipc"}
+        for name in sorted(SPARK_CCIPC_PATHS)
+    ), *(
         {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner": "grc_v4_spark_cpc"}
         for name in sorted(SPARK_CPC_PATHS)
@@ -3669,6 +3680,7 @@ def work_entries(root, approval):
     leaves.add(SPARK_LIFECYCLE_LEAF)
     leaves.add(SPARK_CCI_LEAF)
     leaves.add(SPARK_CPC_LEAF)
+    leaves.add(SPARK_CCIPC_LEAF)
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}
@@ -3713,7 +3725,8 @@ def work_entries(root, approval):
     leaves.add(public_api_authorization(root))
     leaves.add(basin_authorization(root))
     def g3_permitted(name, leaf):
-        return ((leaf == SPARK_CPC_LEAF and name in SPARK_CPC_PATHS)
+        return ((leaf == SPARK_CCIPC_LEAF and name in SPARK_CCIPC_PATHS)
+                or (leaf == SPARK_CPC_LEAF and name in SPARK_CPC_PATHS)
                 or (leaf == SPARK_CCI_LEAF and name in SPARK_CCI_PATHS)
                 or (leaf == SPARK_NATIVE_LEAF and name in SPARK_NATIVE_PATHS)
                 or (leaf == SPARK_LIFECYCLE_LEAF and name in SPARK_LIFECYCLE_PATHS)
@@ -5126,3 +5139,18 @@ PATHS = PATHS | frozenset(['implementation/phase-9-grcv4/verification/p991a6_cpc
 
 # Successful streams suffice; failed-prefix bulk is intentionally untracked.
 PATHS = (PATHS - frozenset(['implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-reset-prefix.jsonl.xz', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-checkpoints-prefix.jsonl.xz'])) | frozenset(['implementation/phase-9-grcv4/verification/p991a6_cpc_evidence_epoch.py', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-EvidenceEpoch.json'])
+
+# Selected native C_CI_PC steps 1–4; no endpoint/campaign authority.
+PATHS = PATHS | frozenset(['implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-native-ccipc.js', 'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_ccipc.py', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-Contract.md', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-Preflight.json', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-Review.md', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-Samples.json.xz', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-SourceEpoch.json', 'implementation/phase-9-grcv4/verification/ccipc_native_spark_oracle.py', 'implementation/phase-9-grcv4/verification/ccipc_native_spark_pressure_oracle.py', 'implementation/phase-9-grcv4/verification/p991a6_ccipc_epoch.py', 'implementation/phase-9-grcv4/verification/p991a6_ccipc_preflight.py', 'implementation/phase-9-grcv4/verification/p991a6_ccipc_subjects.py', 'implementation/phase-9-grcv4/verification/test_p991a6_ccipc_surface.py', 'specs/grc-v4-spark-native-ci-pc-numerical-policy.md'])
+
+# Bounded C_CI_PC composite pressure supplement; endpoint campaign remains separate.
+PATHS = PATHS | frozenset({
+    HERE + "ccipc_native_spark_audit.py",
+    HERE + "test_ccipc_native_spark_pressure.py",
+    HERE + "p991a6_ccipc_pressure.py",
+    HERE + "test_p991a6_ccipc_pressure_surface.py",
+    PHASE + "tranche-9/P9-9.1a.6-CCIPC-Pressure.json",
+    PHASE + "tranche-9/P9-9.1a.6-CCIPC-PressureSamples.json.xz",
+    PHASE + "tranche-9/P9-9.1a.6-CCIPC-PressureReview.md",
+    SIDE + "tool/src/grcv4_explorer/spark_native_ccipc_pressure.py",
+})

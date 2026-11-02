@@ -242,7 +242,7 @@ def progress(owner, before, after, receipt, step):
             objects,
             {
                 "membership_norm": norm,
-                **({"membership_measure": "squared_max_product_norm"} if config.reference.profile.FAMILY == "C_PC" else {}),
+                **({"membership_measure": "squared_max_product_norm"} if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else {}),
                 "actual": target.to_payload(),
                 "arithmetic_error": "0",
             },
@@ -296,8 +296,8 @@ def progress(owner, before, after, receipt, step):
                 objects,
                 {k: v for k, v in cert.operands.to_dict().items() if k in ("S", "U", "carrier_radius", "carrier_pairs", "carrier_center")},
             ),
-            "center": _put(objects, ({"C": list(cert.operands["center"]), "Z_4": cert.operands.to_dict()["carrier_center"]} if config.reference.profile.FAMILY == "C_PC" else list(cert.operands["center"]))),
-            "norm_id": ("full_charge_chart_scaled_carrier_frobenius_v1" if config.reference.profile.FAMILY == "C_PC" else "full_charge_chart_infinity_v1"),
+            "center": _put(objects, ({"C": list(cert.operands["center"]), "Z_4": cert.operands.to_dict()["carrier_center"]} if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else list(cert.operands["center"]))),
+            "norm_id": ("full_charge_chart_scaled_carrier_frobenius_v1" if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else "full_charge_chart_infinity_v1"),
             "q": proof["q"],
             "image_margin": proof["image_margin"],
             "numerical_policy_id": config.reference.profile.NUMERICS,
@@ -578,7 +578,7 @@ def expansion(owner, before, action):
     ):
         raise ValueError("bounded exact accepted allocation required")
     carrier_event = None
-    if config.reference.profile.FAMILY == "C_PC":
+    if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC"):
         from .grc_9_v4_spark_carrier_event import history_policy, capture
         if request.history_policy != history_policy(config):
             raise ValueError("PC event requires exact both-role archive and explicit whole-carrier loss policy")

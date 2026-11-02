@@ -68,6 +68,11 @@ def native_predecessor(root, path, expected):
     from p991a5_native_spark_epoch import CHANGED as CAMPAIGN, previous_bytes as campaign_previous
     from p991a6_cci_epoch import CHANGED as CCI, previous_bytes as cci_previous
     from p991a6_cci_campaign_epoch import CHANGED as CCI_CAMPAIGN, previous_bytes as cci_campaign_previous
+    from p991a6_ccipc_epoch import CHANGED as CCIPC, previous_bytes as ccipc_previous
+    if path in CCIPC:
+        raw = ccipc_previous(root, path)
+        if hashlib.sha256(raw).hexdigest() == expected:
+            return raw
     from p991a6_cpc_campaign_epoch import CHANGED as CPC_CAMPAIGN, previous_bytes as cpc_campaign_previous
 
     if path in CPC_CAMPAIGN:

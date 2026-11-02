@@ -1,0 +1,762 @@
+{
+  "schema": "grc9v4-native-ccipc-pressure-v1",
+  "family": "C_CI_PC",
+  "status": "verified_pending_review",
+  "tests_passed": 27,
+  "test_roster": [
+    "test_actual_C_and_Z_input_uncertainty_in_root_certificate",
+    "test_actual_source_beat_preserves_distinct_reset_history",
+    "test_actual_stages_frozen_inputs_and_complete_joint_error",
+    "test_all_composite_transaction_faults_preserve_whole_publication",
+    "test_archive_and_whole_target_mutations",
+    "test_atomic_failures_at_preparation_window_and_publication",
+    "test_checkpoints_at_each_window_boundary_and_observer_noninterference",
+    "test_composite_norm_boundary_and_offdiagonal_factor",
+    "test_duplicate_delivery_is_noop_in_ancestry_and_failed_request_retries",
+    "test_equal_C_equal_norm_trace_different_patterns_and_roles",
+    "test_event_whole_actual_archive_changed_support_and_regeneration",
+    "test_exact_geometry_cancellation_retains_nonzero_writer",
+    "test_independent_classifier_diamonds_unqualified_ties_singletons_thresholds",
+    "test_inside_domain_without_event_cannot_earn_gain",
+    "test_invalid_carrier_payloads_and_wrong_graph_binding",
+    "test_joint_trap_boundary_all_coordinates_and_relabelled_proofs",
+    "test_mixed_derivatives_and_rehashed_borrowed_certificates",
+    "test_native_step_without_research_import_or_trajectory_read",
+    "test_observer_snapshot_aliasing_zero_duration_and_migration",
+    "test_rehashed_tuple_proposal_domain_and_noncommuting_mutations",
+    "test_same_source_two_uses_and_gain_placement",
+    "test_semantic_reset_target_and_poststate_failures",
+    "test_signed_edge_permutation_covariance_and_untransported_binding",
+    "test_solver_work_variants_failures_and_workspace_isolation",
+    "test_uniform_signed_history_releases_without_resource_motion",
+    "test_writer_primitive_held_source_semigroup_and_cancellation",
+    "test_zero_Z_CI_read_then_history_is_consumed"
+  ],
+  "elapsed_seconds": 67.20911365497159,
+  "native_endpoint_verified": false,
+  "native_completion_support": false,
+  "full_trajectory_runs": 0,
+  "production_precision_bits": 256,
+  "oracle_precision_bits": 768,
+  "runtime_changed": false,
+  "baseline_tests": 28,
+  "prior_60_direction_certificate_checks_retained": true,
+  "sampling_cap_seconds": 300,
+  "fixed_H_oracle_arithmetic": "exact FLINT rational",
+  "preflight_record_digest": "b970ed0e01aee14d3dd914f37c395d3541eec681418300de5d621fffe870acf9",
+  "measurements": {
+    "uncertain_inputs": {
+      "C_and_Z": true,
+      "corners": 4,
+      "whole_box_cover": 16,
+      "root_error": "17954429799456623196260324560136699054971058101378977546885291715626742807143/260740604970814219042361048116400404614587954389239840081425977517360806369707098391474864128",
+      "whole_box_residual": "679946075232423143022138899127059942127683707445735241873730805/29642774844752946028434172162224104410437116074403984394101141506025761187823616"
+    },
+    "actual_source_steps": 1,
+    "actual_target_steps": 4,
+    "PC_faults": {
+      "read": true,
+      "writer": true,
+      "poststate": true,
+      "archive": true,
+      "complete_snapshot_and_root": true,
+      "retry_once": true
+    },
+    "mutations": [
+      {
+        "mutation": "prebeat_current",
+        "assertion": "whole actual source archive"
+      },
+      {
+        "mutation": "role_swap",
+        "assertion": "whole actual source archive"
+      },
+      {
+        "mutation": "diagonal_only",
+        "assertion": "whole actual source archive"
+      },
+      {
+        "mutation": "copy_old_history_or_zero_only_new_rows",
+        "assertion": "whole target carrier zero"
+      },
+      {
+        "mutation": "swap_equal_C_carriers",
+        "assertion": "full root subject binding"
+      },
+      {
+        "mutation": "net_increment_zero",
+        "assertion": "same incoming held source"
+      },
+      {
+        "mutation": "effective_H_minus_I_zero",
+        "assertion": "same incoming held source"
+      },
+      {
+        "mutation": "CI_ignores_history",
+        "assertion": "fresh selected-root containment: H"
+      },
+      {
+        "mutation": "PC_omits_instantaneous",
+        "assertion": "fresh selected-root containment: H"
+      },
+      {
+        "mutation": "reverse_HL_to_LH",
+        "assertion": "fresh selected-root containment: J"
+      },
+      {
+        "mutation": "omit_H_from_potential",
+        "assertion": "fresh selected-root containment: J"
+      },
+      {
+        "mutation": "omit_H_inverse_flat",
+        "assertion": "proposal enclosure identity"
+      },
+      {
+        "mutation": "cycle_current_same_continuity",
+        "assertion": "fresh selected-root containment: J"
+      },
+      {
+        "mutation": "negate_flat_preserve_quadratic_source",
+        "assertion": "proposal enclosure identity"
+      },
+      {
+        "mutation": "corrupt_last_source_coordinate",
+        "assertion": "fresh selected-root containment: S"
+      },
+      {
+        "mutation": "radius_widened_to_PC",
+        "assertion": "complete composite domain binding"
+      },
+      {
+        "mutation": "CI_contraction_borrowed",
+        "assertion": "complete composite domain binding"
+      },
+      {
+        "mutation": "wrong_proposal",
+        "assertion": "independent proposal residual"
+      },
+      {
+        "mutation": "zero_residual",
+        "assertion": "independent proposal residual"
+      },
+      {
+        "mutation": "zero_root_error",
+        "assertion": "residual-to-root error bound"
+      },
+      {
+        "mutation": "midpoint_outside_enclosure",
+        "assertion": "whole current midpoint budget"
+      },
+      {
+        "mutation": "wrong_graph_domain",
+        "assertion": "complete composite domain binding"
+      },
+      {
+        "mutation": "old_root",
+        "assertion": "independent proposal residual"
+      },
+      {
+        "mutation": "new_C_old_Z",
+        "assertion": "independent proposal residual"
+      },
+      {
+        "mutation": "old_C_new_Z",
+        "assertion": "independent proposal residual"
+      },
+      {
+        "mutation": "write_Z_plus_S",
+        "assertion": "same incoming held source"
+      },
+      {
+        "mutation": "write_H_minus_I",
+        "assertion": "same incoming held source"
+      },
+      {
+        "mutation": "reapply_chi",
+        "assertion": "same incoming held source"
+      },
+      {
+        "mutation": "reapply_zeta",
+        "assertion": "same incoming held source"
+      },
+      {
+        "mutation": "average_channels",
+        "assertion": "same incoming held source"
+      },
+      {
+        "mutation": "poststate_source",
+        "assertion": "same incoming held source"
+      }
+    ],
+    "packed_norm": {
+      "radius": "1/128",
+      "offdiagonal_factor_two": true,
+      "no_projection": true
+    },
+    "equal_C_roles": {
+      "equal_C": true,
+      "different_Z": true,
+      "equal_norm": true,
+      "equal_trace": true,
+      "distinct_reads": true
+    },
+    "event_history": {
+      "chiralities": 2,
+      "source_coordinates": 58,
+      "target_coordinates": 46,
+      "changed_support_pairs": 27,
+      "whole_target_reset": true
+    },
+    "geometry_cancellation": {
+      "exact_rational_fixture": true,
+      "carrier": -1,
+      "geometry": "I",
+      "writer_coefficient": "1-2*exp(-1)",
+      "nonzero_writer": true
+    },
+    "joint_membership": {
+      "directions": 46,
+      "both_signs": true,
+      "ordinary_admitted_outside_trap": true,
+      "off_diagonal_factor_two": true
+    },
+    "mixed_derivative": {
+      "all_60_coordinates": true,
+      "nonstationary": true,
+      "borrowed_PC_proof_rejected": true,
+      "root_decay_and_full_map_bounds_distinct": true
+    },
+    "same_source": {
+      "cross_identity": true,
+      "stationary_composition_gain": 2,
+      "synthetic_writer_only": true
+    },
+    "semantic_faults": [
+      "source_reset",
+      "target_current",
+      "target_reset",
+      "nonfinite_current",
+      "nonfinite_source"
+    ],
+    "covariance": {
+      "permutation": [
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "signs": [
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "offdiagonal_history": true,
+      "exact_represented_transport": true
+    },
+    "solver_work": {
+      "ordinary_iterations": 12,
+      "tighter_iterations": 12,
+      "warm_iterations": 10,
+      "same_represented_state": true,
+      "failed_trials": 4,
+      "no_trial_history": true
+    },
+    "uniform_release": {
+      "charge": "12",
+      "steps": 3,
+      "nonzero_signed_history": true,
+      "audits": [
+        {
+          "full_composite_roots": true,
+          "incoming_root": {
+            "root_domain": {
+              "flat_radius": "1/32",
+              "overlap_row_sum": "11/8",
+              "edge_laplacian_norm": "11",
+              "incidence_norm": "9",
+              "reference_inverse_norm": "17084/8601",
+              "hodge_deviation": "139/8192",
+              "hodge_inverse_norm": "8192/8053",
+              "current_inverse_norm": "34988032/11084489",
+              "carrier_hodge_deviation": "1/64",
+              "source_norm_upper": "54081567198223692241/19613422226398467118496",
+              "image_bound": "7354017079/357053559668",
+              "geometry_to_flat_lipschitz": "5873691170603541821440/7967952779474377266889",
+              "contraction": "504770334973741875280/7967952779474377266889"
+            },
+            "residual_upper": "0",
+            "root_error_bound": "0",
+            "equation_residual_upper": {
+              "geometry": "0",
+              "linear_current": "0",
+              "flat": "0",
+              "current": "0"
+            },
+            "whole_root_containment": true,
+            "reference_connected_branch": "uniform contraction in the full declared C/Z domain",
+            "tuple_residuals": {
+              "source": "0",
+              "geometry_source": "0",
+              "linear_current": "0",
+              "flat": "0",
+              "current": "0"
+            }
+          },
+          "returned_root": {
+            "root_domain": {
+              "flat_radius": "1/32",
+              "overlap_row_sum": "11/8",
+              "edge_laplacian_norm": "11",
+              "incidence_norm": "9",
+              "reference_inverse_norm": "17084/8601",
+              "hodge_deviation": "139/8192",
+              "hodge_inverse_norm": "8192/8053",
+              "current_inverse_norm": "34988032/11084489",
+              "carrier_hodge_deviation": "1/64",
+              "source_norm_upper": "54081567198223692241/19613422226398467118496",
+              "image_bound": "7354017079/357053559668",
+              "geometry_to_flat_lipschitz": "5873691170603541821440/7967952779474377266889",
+              "contraction": "504770334973741875280/7967952779474377266889"
+            },
+            "residual_upper": "0",
+            "root_error_bound": "0",
+            "equation_residual_upper": {
+              "geometry": "0",
+              "linear_current": "0",
+              "flat": "0",
+              "current": "0"
+            },
+            "whole_root_containment": true,
+            "reference_connected_branch": "uniform contraction in the full declared C/Z domain",
+            "tuple_residuals": {
+              "source": "0",
+              "geometry_source": "0",
+              "linear_current": "0",
+              "flat": "0",
+              "current": "0"
+            }
+          },
+          "same_source_two_uses": true,
+          "geometry_writer_cross_identity": true,
+          "whole_writer": true,
+          "full_returned_state": true,
+          "carrier_coordinates": 58,
+          "charge": "12",
+          "resource_error_max": "0",
+          "carrier_error_F_upper": "114633467255483423071471842191750445583267985585927541328391809922851649320289540666296339154728204477573001582712488789124952787212872726287829478153006392856600126270677855113426580082187816167238568047941028368537266567119536697/152270531428124985630521599810549817357441044649921992607311038393952323293225407851025235404406410300395389316115760440366549529143798344477781051504885209680176214061819891091731088367032088255512493648112787169901337467584294921027286931491702587700433418798504336673153571718623657984"
+        },
+        {
+          "full_composite_roots": true,
+          "incoming_root": {
+            "root_domain": {
+              "flat_radius": "1/32",
+              "overlap_row_sum": "11/8",
+              "edge_laplacian_norm": "11",
+              "incidence_norm": "9",
+              "reference_inverse_norm": "17084/8601",
+              "hodge_deviation": "139/8192",
+              "hodge_inverse_norm": "8192/8053",
+              "current_inverse_norm": "34988032/11084489",
+              "carrier_hodge_deviation": "1/64",
+              "source_norm_upper": "54081567198223692241/19613422226398467118496",
+              "image_bound": "7354017079/357053559668",
+              "geometry_to_flat_lipschitz": "5873691170603541821440/7967952779474377266889",
+              "contraction": "504770334973741875280/7967952779474377266889"
+            },
+            "residual_upper": "0",
+            "root_error_bound": "0",
+            "equation_residual_upper": {
+              "geometry": "0",
+              "linear_current": "0",
+              "flat": "0",
+              "current": "0"
+            },
+            "whole_root_containment": true,
+            "reference_connected_branch": "uniform contraction in the full declared C/Z domain",
+            "tuple_residuals": {
+              "source": "0",
+              "geometry_source": "0",
+              "linear_current": "0",
+              "flat": "0",
+              "current": "0"
+            }
+          },
+          "returned_root": {
+            "root_domain": {
+              "flat_radius": "1/32",
+              "overlap_row_sum": "11/8",
+              "edge_laplacian_norm": "11",
+              "incidence_norm": "9",
+              "reference_inverse_norm": "17084/8601",
+              "hodge_deviation": "139/8192",
+              "hodge_inverse_norm": "8192/8053",
+              "current_inverse_norm": "34988032/11084489",
+              "carrier_hodge_deviation": "1/64",
+              "source_norm_upper": "54081567198223692241/19613422226398467118496",
+              "image_bound": "7354017079/357053559668",
+              "geometry_to_flat_lipschitz": "5873691170603541821440/7967952779474377266889",
+              "contraction": "504770334973741875280/7967952779474377266889"
+            },
+            "residual_upper": "0",
+            "root_error_bound": "0",
+            "equation_residual_upper": {
+              "geometry": "0",
+              "linear_current": "0",
+              "flat": "0",
+              "current": "0"
+            },
+            "whole_root_containment": true,
+            "reference_connected_branch": "uniform contraction in the full declared C/Z domain",
+            "tuple_residuals": {
+              "source": "0",
+              "geometry_source": "0",
+              "linear_current": "0",
+              "flat": "0",
+              "current": "0"
+            }
+          },
+          "same_source_two_uses": true,
+          "geometry_writer_cross_identity": true,
+          "whole_writer": true,
+          "full_returned_state": true,
+          "carrier_coordinates": 58,
+          "charge": "12",
+          "resource_error_max": "0",
+          "carrier_error_F_upper": "1512035550085351681505919968448755746225603687228335888050915189884564035455685369068067135582751559541540612489322043610711890860537775232426708053385355955392456858324925682370735794115486246238071131021335926857827339753300677401/2436328502849999770088345596968797077719056714398751881716976614303237172691606525616403766470502564806326229057852167045864792466300773511644496824078163354882819424989118257467697413872513412088199898369804594718421399481348718736436590903867241403206934700776069386770457147497978527744"
+        },
+        {
+          "full_composite_roots": true,
+          "incoming_root": {
+            "root_domain": {
+              "flat_radius": "1/32",
+              "overlap_row_sum": "11/8",
+              "edge_laplacian_norm": "11",
+              "incidence_norm": "9",
+              "reference_inverse_norm": "17084/8601",
+              "hodge_deviation": "139/8192",
+              "hodge_inverse_norm": "8192/8053",
+              "current_inverse_norm": "34988032/11084489",
+              "carrier_hodge_deviation": "1/64",
+              "source_norm_upper": "54081567198223692241/19613422226398467118496",
+              "image_bound": "7354017079/357053559668",
+              "geometry_to_flat_lipschitz": "5873691170603541821440/7967952779474377266889",
+              "contraction": "504770334973741875280/7967952779474377266889"
+            },
+            "residual_upper": "0",
+            "root_error_bound": "0",
+            "equation_residual_upper": {
+              "geometry": "0",
+              "linear_current": "0",
+              "flat": "0",
+              "current": "0"
+            },
+            "whole_root_containment": true,
+            "reference_connected_branch": "uniform contraction in the full declared C/Z domain",
+            "tuple_residuals": {
+              "source": "0",
+              "geometry_source": "0",
+              "linear_current": "0",
+              "flat": "0",
+              "current": "0"
+            }
+          },
+          "returned_root": {
+            "root_domain": {
+              "flat_radius": "1/32",
+              "overlap_row_sum": "11/8",
+              "edge_laplacian_norm": "11",
+              "incidence_norm": "9",
+              "reference_inverse_norm": "17084/8601",
+              "hodge_deviation": "139/8192",
+              "hodge_inverse_norm": "8192/8053",
+              "current_inverse_norm": "34988032/11084489",
+              "carrier_hodge_deviation": "1/64",
+              "source_norm_upper": "54081567198223692241/19613422226398467118496",
+              "image_bound": "7354017079/357053559668",
+              "geometry_to_flat_lipschitz": "5873691170603541821440/7967952779474377266889",
+              "contraction": "504770334973741875280/7967952779474377266889"
+            },
+            "residual_upper": "0",
+            "root_error_bound": "0",
+            "equation_residual_upper": {
+              "geometry": "0",
+              "linear_current": "0",
+              "flat": "0",
+              "current": "0"
+            },
+            "whole_root_containment": true,
+            "reference_connected_branch": "uniform contraction in the full declared C/Z domain",
+            "tuple_residuals": {
+              "source": "0",
+              "geometry_source": "0",
+              "linear_current": "0",
+              "flat": "0",
+              "current": "0"
+            }
+          },
+          "same_source_two_uses": true,
+          "geometry_writer_cross_identity": true,
+          "whole_writer": true,
+          "full_returned_state": true,
+          "carrier_coordinates": 58,
+          "charge": "12",
+          "resource_error_max": "0",
+          "carrier_error_F_upper": "344609220495640094397482789307251882230109451647071693874372662286716120459916886933347288129411004732571256567595959367453146503590515347850165552353138231211891422560432312617448007967472096606548821049455583380480081557584177659/1218164251424999885044172798484398538859528357199375940858488307151618586345803262808201883235251282403163114528926083522932396233150386755822248412039081677441409712494559128733848706936256706044099949184902297359210699740674359368218295451933620701603467350388034693385228573748989263872"
+        }
+      ]
+    },
+    "writer_primitive": {
+      "cases": [
+        "zero_source",
+        "stationary_held",
+        "mixed",
+        "cancelling"
+      ],
+      "held_source_two_beat_semigroup": true,
+      "variable_duration_support": false
+    },
+    "formation_consumer": {
+      "first_read_equals_CI": true,
+      "nonzero_target_instantaneous_geometry": true,
+      "next_history_effect_lower": "693080969770381649818390839236716745636587954447609426238800733652526793895674280170108761366385901235196583496388001433407432647747075455921488981070246737441646745226627034387010445246943347401158777531774700910267858077549857183/6668014432879854274079851790721257797144758322315908160396257811764037237817632071521432200871554290742929910593433240445888801654119365080363356052330830046095157579514014558463078285911814024728965016135886601981690748037476461291163877376"
+    }
+  },
+  "scope": "bounded composite root, same-source geometry/writer, signed cancellation, C/Z uncertainty, event and lifecycle pressure; synthetic windows are not source-to-entry executions",
+  "pending_campaign": {
+    "leaf": "P9-9.1a.6-C_CI_PC.5",
+    "current": [
+      374,
+      376
+    ],
+    "reset": [
+      375,
+      377
+    ],
+    "expected_endpoints_verified": false,
+    "required": "actual source-to-entry/window states and checkpoint pressure at those actual boundaries"
+  },
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2SourceBeat.json.xz",
+      "sha256": "faf266f447c0a1893b2ee7730dfdea481914fd15f53460e848d07ebd2c5b0675"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierDomain.json",
+      "sha256": "998cf00702a0a772ff978c1cc13ba444fc8e722bab2284b15487eb1b8feb2abd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierProofs.json",
+      "sha256": "f6866257b8ded80d19454013a075ce013b4b48ab60d58b5d52900f43cc1d6dfd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/review/constructive-candidate/positive_candidate.py",
+      "sha256": "efa6eba9f08ad8cfec73d2e3fcd8b071374631c6ebdfc5e3610c3c0585a5502d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_basins.py",
+      "sha256": "6da2628f6f04bd112dbdd6eedfb9dc38661d7cc8f0a7532d211ba30e21769fd5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci.py",
+      "sha256": "3c403d943bb924fa4d392ea2dafc8b77a190f587c031903c0b9d78d3808bdc71"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci_pc.py",
+      "sha256": "72805d619e2a0c3dfd83128d316ab7fc4cac02c0bd27a91f7a7989339685639c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_continuation.py",
+      "sha256": "b26c6bd0f050ab710b663e025cc3f039ed81c68ac8f834d8c60a2b2bdaad3709"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_os_reference.py",
+      "sha256": "0fab09c6bfcc098c537e39c223380a1d70af2de2eef5156a2d1307fef81069ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_pc.py",
+      "sha256": "af04da3c975ff835f8e01482f166f772f4f98f718346d2f9fd569f8a3b2197d3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_positive.py",
+      "sha256": "15069ffca9b22a666ff67cd0b28ea740f9ed69f40de72154498d3e84eca4c64b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-Contract.md",
+      "sha256": "487a2357b59c82da6c14c4900adccaf59680d1ccd5d6129e1c34be9023ea3c66"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-Preflight.json",
+      "sha256": "43aba1d2b321e336246fd399163334336f89424da804db906c74a111af1c9889"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cci_native_spark_pressure_oracle.py",
+      "sha256": "8077859df0110ba68eb827aaed127625d90a74dd175941d731c7c3a41165bb72"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/ccipc_native_spark_audit.py",
+      "sha256": "767cd370a47e1efd678b497fffa5bba798ffb26099c4cfaa25f23b29aa8e37d2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/ccipc_native_spark_oracle.py",
+      "sha256": "bb04c4be2e8b31a54d704a3d276c593949c368a4b9e47d54d7e87143f2f7bc4e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/ccipc_native_spark_pressure_oracle.py",
+      "sha256": "228a9bf303f45ad43c332e2cc5b36ffe40ed6df5e787260b0285f53d2fd2821d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cos_native_spark_oracle.py",
+      "sha256": "c39701e4ee348210a9df93d3315cb214bf92e57db30413f0a15aa4d734379c07"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cpc_native_spark_pressure_oracle.py",
+      "sha256": "c782646d336d29c16c3de531cb493d2ac3c58909ea19734585726d0ff6590139"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a2_native_spark_numerics.py",
+      "sha256": "5ac8f8e203d4bfa6681dba80fa94c3c8e28c51664ae432a137fdbef3963ecace"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a4_native_spark_preflight.py",
+      "sha256": "eecbbc30bf29b1a6eb3f4633c42a22d46ece5464d7acbbf00ea4ba442ea0b43b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_ccipc_preflight.py",
+      "sha256": "8fe65e57a0e3e15d46b68901e6348d01685bd107254bc2c26b8cf02f31d20cff"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_ccipc_pressure.py",
+      "sha256": "f27a8ca8859694c78347c6e3cab6515de9e11f98c0cc6a74de092c8bbc819750"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_ccipc_subjects.py",
+      "sha256": "e719e49330dfb573fb7fc86685fec9a41cad4e4992320a51924a495254f3af38"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_ccipc_native_spark_pressure.py",
+      "sha256": "15d7694e4913ac4236fbf58359aa862f1f8e0f913488b1d04da21f6ba41dbefb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_cos_native_spark_pressure.py",
+      "sha256": "12ed76d05a6d4cea157c27fc4bebbed3fcd64537fdeb2440e496e1d4a37caf24"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-applicability-source-manifest.json",
+      "sha256": "984ebac4903725484ba7894ed216f49380b78368ba0f65f813245d28044cb825"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-ci-pc.md",
+      "sha256": "6ab7252ad4e070f3866cb38c68d18a53b4469350d4e1928e4126be60ee6ba07a"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-earlier-source-manifest.json",
+      "sha256": "31f7a2900e5eae401d71bb495755d9df7cc2de39e85cb6c84d652414486a9dfb"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-earlier.md",
+      "sha256": "605d43e957bb7f056959d266fb3aaad0ffe2d6110c699e3c66a5cdbef18f6cc0"
+    },
+    {
+      "path": "specs/grc-v4-spark-native-ci-pc-numerical-policy.md",
+      "sha256": "e2fc302d91f9aa982dff864f06f64781afd0f262c0733f49632ab8bf3cc27e32"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_sparks.py",
+      "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion.py",
+      "sha256": "4b4e08b4d03a764318557b336930dae6db8a46c252f3256b94a1e3cabb3ec313"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_certificate.py",
+      "sha256": "0dd646a9f7e8fed8cc875c1240f51c199e6da6185b66457ba050fc23ee2d8212"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_codec.py",
+      "sha256": "08e4ea3d48af0bf4be5f6fccf625bddf7cc8a2e778ea3717613d4b5dcf178b67"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_cpc.py",
+      "sha256": "5d7407fad0fcf7e6b3cfbab9aa8ae21692920d7525865a11366de4768301b255"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_carrier_event.py",
+      "sha256": "b330b2b118b074bc9b13b335a542a2dd08d4420ad8e7b6dc3da81aac87a8fdad"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_contracts.py",
+      "sha256": "b5af64fdf05aa74a117bc0a518c2a5637b5da4e85d522695e46ae0abd7290849"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_owner.py",
+      "sha256": "a6e589815da59439874d1e53dd9cb08f64f02ef8da7889f93e68b2a160352ca6"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark.py",
+      "sha256": "36a7926705cadb8d0932e6e43e7aefbcf0f931b2109351ddeac77ca0ca47f3b4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_carrier.py",
+      "sha256": "ec0ffcfe195237bb045c93e6e8462d5f2a1ce4aaea531dcf3fdb7058261b835f"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cci.py",
+      "sha256": "8e25e09507cfd056bc8a68e3e14715ab40dbb1db6e7514634fea04b0d801c07d"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_ccipc.py",
+      "sha256": "1f61d78988e0a0110c717bfa59f9d65f57f09da7e338b66ce6e094c661f230e1"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cos.py",
+      "sha256": "0ff7642925f324b8041d5f4660ccea1627e4eb0bf15faf26799c5ca2b77901de"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cpc.py",
+      "sha256": "0bd1e8a24fbad058a5fdac406404359e8b396a20c9b227724a6f5bac7f3736bd"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_state.py",
+      "sha256": "db4c66539ab03a6bad9557c95adf056825697df210dc0b88193a9b805aa5a141"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_spark_completion.py",
+      "sha256": "e117527ceae9ef3961f093049d998ac3f98fcfbb364d275fd626c6b2caa18dd4"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_ccipc.py",
+      "sha256": "dcffbfcb23a6bcf252618e88c90e7cca88da37ae82df080aca5ef316fb04aa97"
+    }
+  ],
+  "evidence": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-PressureSamples.json.xz",
+    "sha256": "f4d49611885578a04670017b755439385d7f71e9ce16e3a0d1f557e9b172b3b5"
+  },
+  "record_digest": "4ddef633eb50925789d5a5d7b7bd19620ba3f39f3885d972ce8d4adc8cd178aa"
+}

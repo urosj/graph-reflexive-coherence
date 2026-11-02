@@ -4192,6 +4192,29 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
       [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-Review.md).
     - [x] Review and accept the C_PC campaign separately; user requested commit on 2026-11-02.
   - [ ] P9-9.1a.6-C_CI_PC.
+    - [x] P9-9.1a.6-C_CI_PC.1: Bind the explicit composite law, actual graphs,
+      earlier domain, full C/Z state and numerical/error policies.
+    - [x] P9-9.1a.6-C_CI_PC.2: Implement fresh certified joint roots, exact
+      incidence writes and the same-root full exponential carrier writer.
+    - [x] P9-9.1a.6-C_CI_PC.3: Verify full implicit C/Z certificates, actual
+      event history, atomic lifecycle and independent pressure controls.
+    - [x] P9-9.1a.6-C_CI_PC.4: Check static caches, bounded changing-state
+      timing/precision, source continuity and side-tool API/browser/notebook.
+    - [ ] P9-9.1a.6-C_CI_PC.5: Separately review estimates before the actual
+      source-to-completion campaign; no full trajectory in steps 1–4.
+    - [x] Add the supplied composite audit: 27 pressure tests and 31 semantic
+      detectors; exact cancellation, same-source writer, full C/Z uncertainty,
+      mixed derivatives, both events and atomic lifecycle. Original kernel and
+      preflight evidence unchanged; compressed supplement and side-tool agree.
+      [Pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-PressureReview.md).
+    - [x] Review and accept C_CI_PC steps 1–4 separately; user accepted the
+      implementation and audit for commit on 2026-11-02.
+      All 28 initial native/pressure tests, 56 predecessor regressions, 27
+      supplementary pressure tests and 14 combined publication controls pass;
+      40+40 independently checked preflight samples, 256/512 comparison and
+      compressed evidence. Reprofile complete campaign audit/checkpoint costs
+      before .5; original preflight estimate remains historical planning evidence.
+      [Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-Review.md).
   - [ ] P9-9.1a.6-A_OS.
   - [ ] P9-9.1a.6-A_CI.
   - [ ] P9-9.1a.6-A_PC.

@@ -36,7 +36,7 @@ def binding(kernel, policy, role, charge):
         "charge": charge,
         "duration": policy.step_duration,
         "role": role,
-        "state_channels": ["C", "Z_4"] if kernel.profile.FAMILY == "C_PC" else ["C"],
+        "state_channels": ["C", "Z_4"] if kernel.profile.FAMILY in ("C_PC", "C_CI_PC") else ["C"],
         "policy": policy.to_payload(),
     }
 
@@ -224,7 +224,7 @@ def _analytic(kernel, C):
 @flint_operation
 def _verify(raw):
     data = decode_canonical_json(raw)
-    if data.get("schema_version") == "grc9v4-native-cpc-trap-operands-v1":
+    if data.get("schema_version") in ("grc9v4-native-cpc-trap-operands-v1", "grc9v4-native-ccipc-trap-operands-v1"):
         from .grc_9_v4_completion_cpc import verify
         return verify(data)
     if set(data) != {"schema_version", "binding", "center", "S", "U"} or data[
@@ -313,7 +313,7 @@ class CompletionCertificate:
 
     @classmethod
     def create(cls, kernel, policy, role, center, S, U):
-        if type(center) is not (ExactCarrierState if kernel.profile.FAMILY == "C_PC" else ExactResources) or center.graph != kernel.graph:
+        if type(center) is not (ExactCarrierState if kernel.profile.FAMILY in ("C_PC", "C_CI_PC") else ExactResources) or center.graph != kernel.graph:
             raise ValueError("center must use the actual certificate graph")
         return cls(
             FrozenJSONMap(
@@ -326,7 +326,7 @@ class CompletionCertificate:
                     "S": S,
                     "U": U,
                     **({"carrier_center": [list(r) for r in center.Z_4], "carrier_radius": "1/100000000",
-                        "carrier_pairs": [list(p) for p in carrier_pairs(kernel.graph)]} if kernel.profile.FAMILY == "C_PC" else {}),
+                        "carrier_pairs": [list(p) for p in carrier_pairs(kernel.graph)]} if kernel.profile.FAMILY in ("C_PC", "C_CI_PC") else {}),
                 }
             )
         )
@@ -339,7 +339,7 @@ class CompletionCertificate:
 
     @flint_operation
     def membership(self, state):
-        if self.operands["binding"]["profile"]["identity_payload"]["profile_family_id"] == "C_PC":
+        if self.operands["binding"]["profile"]["identity_payload"]["profile_family_id"] in ("C_PC", "C_CI_PC"):
             from .grc_9_v4_completion_cpc import membership
             return membership(self, state)
         if type(state) is not ExactResources:

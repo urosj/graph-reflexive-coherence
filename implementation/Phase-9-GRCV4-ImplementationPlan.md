@@ -4712,8 +4712,8 @@ rules. This is an engineering handoff, not another scientific-definition gate.
 | --- | --- | --- | ---: | --- |
 | P9-9.1a.5 — C_OS | 374→376 | 375→377 | 32 | Accepted, committed `1ec198b2` |
 | P9-9.1a.6-C_CI | 374→376 | 375→377 | 32 | Accepted, campaign committed `88a1c6b1` |
-| P9-9.1a.6-C_PC | 374→376 | 375→377 | 32 | Steps 1–4 accepted `1210b2b9`; .5 accepted for commit 2026-11-02 |
-| P9-9.1a.6-C_CI_PC | 374→376 | 375→377 | 32 | Not started |
+| P9-9.1a.6-C_PC | 374→376 | 375→377 | 32 | Steps 1–4 accepted `1210b2b9`; .5 accepted `31d1aba7` |
+| P9-9.1a.6-C_CI_PC | 374→376 | 375→377 | 32 | Steps 1–4 accepted; .5 authorized, unrun |
 | P9-9.1a.6-A_OS | 375→377 | 372→374 | 32 | Not started |
 | P9-9.1a.6-A_CI | 375→377 | 372→374 | 32 | Not started |
 | P9-9.1a.6-A_PC | 375→377 | 372→374 | 32 | Not started |
@@ -5130,3 +5130,30 @@ execution: cross-filesystem atomic replacement from `/tmp`, followed by temporar
 cleanup. The final continuation uses persistent staging inside the repository,
 with explicit same-device and failed-publication retention checks. The failed
 attempt is counted in profiling totals and its code/log remain available.
+
+### C_CI_PC native steps 1–4 — 2026-11-02
+
+C_CI_PC steps 1–4 now implement the full exact C/Z composite map with fresh
+Arb256 joint roots, the same-root exponential writer and a complete 60-dimensional
+certificate. All 28 native/pressure tests pass, including 208 signed source/target
+carrier probes, all 60 finite-segment directions, both chiralities and atomic
+lifecycle. Arb256/512 produce identical sampled C/Z states. The isolated 40+40
+preflight took 79.4 seconds, with 231.8 MiB peak memory.
+The provisional 400+400 estimate is **21.4 minutes centrally / 41.5
+conservatively**, including two extrapolated cold journal restores and the
+four-minute pressure/publication reserve. Thirty minutes remains a profiling
+target. The side-tool API/browser/notebook publishes only bounded verification.
+**P9-9.1a.6-C_CI_PC.5 remains unrun**; the actual 374→376 / 375→377 endpoints
+and aggregate native support remain unverified. Steps 1–4 and the audit were
+accepted for commit on 2026-11-02; .5 is authorized with a one-hour allowance.
+Re-estimate complete audit/checkpoint costs before execution.
+
+The [composite pressure supplement](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-PressureReview.md)
+adds 27 passing tests and 31 semantic corruption detectors in 67.21 seconds.
+Exact geometry cancellation, same-source writing, full C/Z uncertainty and mixed
+derivatives pass without changing the native kernel or preflight evidence.
+Fourteen combined publication checks cover the API/browser/notebook and retained
+numerics. Re-estimate the complete campaign audit and late-checkpoint costs before
+.5; the earlier 21.4/41.5-minute forecast describes the original preflight path.
+
+[Review and reproduction](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-Review.md).

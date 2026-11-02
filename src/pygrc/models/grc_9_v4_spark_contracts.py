@@ -77,7 +77,7 @@ class GRC9V4SparkConfiguration:
             raise ValueError("exact nonnegative clock required")
         if (
             any(
-                type(x) is not (ExactCarrierState if self.reference.profile.FAMILY == "C_PC" else ExactResources) or x.graph != self.reference.graph
+                type(x) is not (ExactCarrierState if self.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else ExactResources) or x.graph != self.reference.graph
                 for x in (self.current, self.reset)
             )
             or self.current.charge != self.reset.charge
