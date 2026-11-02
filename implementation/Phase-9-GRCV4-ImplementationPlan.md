@@ -5204,3 +5204,24 @@ now adds 25 passing causal-loop tests and 24 semantic mutation detectors without
 runtime changes. Independent full-map checks, weighted qualification, both
 nonuniform histories and atomic publication agree. Original bounded cost samples
 are preserved; re-estimate the complete campaign audit/checkpoint path before .5.
+
+### A_OS native .5 execution — 2026-11-02
+
+A_OS .5 verifies actual **375→377 current / 372→374 reset**, duration 32,
+exact charge 21. All **751 target transitions** pass the full C/logW audit and
+independent weighted classification. Current gains one child; reset gains zero.
+Both completed journals pass paired cold replay (378/375 ordinary steps), and
+all actual pending-window failures/retries preserve atomic once-only accounting.
+Active execution and checkpoint validation took **22.0 minutes**, with
+539.5 MiB peak memory. Compact evidence totals **5.27 MiB**,
+including ten full diagnostics; no supporting tail or expanded duplicate run.
+The side-tool API/browser/notebook publish the separate campaign. Accepted
+preflight/pressure and predecessor epochs are unchanged. Aggregate native support
+stays false. The user accepted .5 for commit on 2026-11-02 and explicitly
+requested retaining the original 5.27 MiB evidence package.
+All 30 campaign/evidence/publication/continuity checks pass. Use
+`p991a6_aos_evidence.py` for retained verification; the frozen execution
+harness and all original evidence bytes are preserved.
+[Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-Review.md).
+Checkpoint restore's repeated publication hashing is a concrete next profiling
+candidate; the native runtime remained unchanged here.

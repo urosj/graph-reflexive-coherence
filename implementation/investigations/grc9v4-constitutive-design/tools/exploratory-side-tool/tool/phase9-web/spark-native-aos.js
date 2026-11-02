@@ -31,7 +31,7 @@ export function nativeAOSLoader(output, status, fetcher=fetch, create=tag=>docum
       }
       add('p', `Combined estimate ${(value.estimate.central_seconds/60).toFixed(1)} minutes; upper allowance ${(value.estimate.upper_seconds/60).toFixed(1)} minutes against a ${value.estimate.profiling_target_seconds/60}-minute profiling target. This is a planning envelope, not a confidence interval.`);
       add('p', `Measured peak memory ${value.memory.final_peak_mib.toFixed(1)} MiB. Static graph, weighted fixed-row, decay and certificate reuse verified. Each step has two fresh full-state OS reads and one same-read conductance writer at 256 bits.`);
-      add('p', 'This bounded preflight contains no endpoint run. The 400-step count is a planning horizon. Step .5 remains unrun.');
+      add('p', 'This bounded preflight contains no endpoint run. The 400-step count is a planning horizon. See the separate A_OS campaign for endpoint execution.');
       add('p', `${value.tests.count} native tests; full ${value.full_domain_dimension}-dimensional C/logW certificate, with all 58 signed source/target conductance probes.`);
       add('p', 'The earlier timing estimate uses the preflight audit path. Re-estimate the complete campaign checking and checkpoint workload before step .5.');
       add('p', `${value.pressure.tests_passed} bounded W causal-loop pressure tests; ${value.pressure.mutations} explicit semantic mutation detectors. Unequal weighted rows, zero-current writing, next-read feedback, full C/logW derivatives and lossless edge lineage pass.`);
@@ -39,7 +39,7 @@ export function nativeAOSLoader(output, status, fetcher=fetch, create=tag=>docum
       const pressureLink=add('a', 'Retained A_OS pressure'); pressureLink.href=value.pressure.source_url; pressureLink.target='_blank'; pressureLink.rel='noopener';
       for (const condition of value.stop_conditions) add('p', condition);
       const link=add('a', 'Retained native preflight'); link.href=value.source_url; link.target='_blank'; link.rel='noopener';
-      status.textContent='Bounded native preflight verified; endpoint campaign remains pending.';
+      status.textContent='Bounded native preflight verified; campaign published separately.';
     } catch (error) {
       if (ticket !== sequence) return;
       output.replaceChildren(); status.textContent=String(error);

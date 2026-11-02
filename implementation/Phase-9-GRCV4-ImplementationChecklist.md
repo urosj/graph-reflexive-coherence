@@ -4224,7 +4224,7 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
       compressed evidence. Reprofile complete campaign audit/checkpoint costs
       before .5; original preflight estimate remains historical planning evidence.
       [Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-Review.md).
-  - [ ] P9-9.1a.6-A_OS.
+  - [x] P9-9.1a.6-A_OS: steps 1–5 accepted on 2026-11-02.
     - [x] P9-9.1a.6-A_OS.1: Bind the adopted A_OS full-state domain,
       actual source/target, weighted rows, allocation and conductance lineage.
     - [x] P9-9.1a.6-A_OS.2: Implement exact C/W, certified OS reads and
@@ -4242,8 +4242,16 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
       25 native and 8 publication tests, 98 predecessor native and 17
       affected publication regressions; 40+40 compact samples, 256/512 agreement;
       20.1 / 38.4 minute provisional campaign estimate.
-    - [ ] P9-9.1a.6-A_OS.5: Run source-to-completion only after acceptance
-      and a fresh complete-path estimate; expected 375→377 / 372→374.
+    - [x] P9-9.1a.6-A_OS.5: Actual current 375→377 / reset 372→374 after
+      fresh 17.6/26.4-minute cost and cache checks. All 751 full C/logW steps,
+      weighted classification, actual checkpoint failures and paired cold replays
+      pass. Current gains once; reset gains zero. 22.0 minutes, 5.27 MiB
+      compact evidence with ten full diagnostics; no supporting tail. All 30
+      campaign/evidence/publication/continuity checks pass.
+      [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-Review.md).
+    - [x] Review and accept A_OS .5 separately; user requested commit and
+      retention of the original 5.27 MiB evidence on 2026-11-02. Aggregate
+      native support stays false.
   - [ ] P9-9.1a.6-A_CI.
   - [ ] P9-9.1a.6-A_PC.
   - [ ] P9-9.1a.6-A_CI_PC.

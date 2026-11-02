@@ -54,16 +54,18 @@ def seal(value):
 
 
 def manifest(root):
+    from p991a6_aos_campaign_epoch import previous_bytes as successor
+
     root = Path(root).resolve()
     return seal(
         {
             "schema": "p991a6-aos-runtime-epoch-v1",
             "predecessor": REVISION,
-            "checker_sha256": sha((root / SELF).read_bytes()),
+            "checker_sha256": sha(successor(root, SELF)),
             "sources": {
                 name: {
                     "before_sha256": sha(original(root, name)),
-                    "after_sha256": sha((root / name).read_bytes()),
+                    "after_sha256": sha(successor(root, name)),
                 }
                 for name in sorted(CHANGED)
             },
@@ -80,9 +82,11 @@ def previous_bytes(root, name):
     The complete manifest is independently checked at publication; unchanged
     sources pass through for the historical caller's own content check.
     """
+    from p991a6_aos_campaign_epoch import previous_bytes as successor
+
     root = Path(root).resolve()
     if name not in CHANGED:
-        return (root / name).read_bytes()
+        return successor(root, name)
     value = json.loads((root / PATH).read_bytes())
     raw = original(root, name)
     if (
@@ -102,11 +106,11 @@ def previous_bytes(root, name):
         or value["runtime_changed"] is not True
         or value["old_execution_relabelled"] is not False
         or set(value["sources"]) != CHANGED
-        or value["checker_sha256"] != sha((root / SELF).read_bytes())
+        or value["checker_sha256"] != sha(successor(root, SELF))
         or value["sources"][name]
         != {
             "before_sha256": sha(raw),
-            "after_sha256": sha((root / name).read_bytes()),
+            "after_sha256": sha(successor(root, name)),
         }
     ):
         raise ValueError("unbound A_OS runtime successor")

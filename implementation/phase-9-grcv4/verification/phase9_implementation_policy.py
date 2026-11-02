@@ -2462,6 +2462,31 @@ PATHS |= {
 }
 
 
+# A_OS .5: authorized actual campaign and compact evidence publication.
+PATHS |= {
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-native-aos-campaign.js',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_aos_campaign.py',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-Campaign.json.xz',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-Cost.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-Plan.md',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-Review.md',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-SourceEpoch.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-checkpoints.jsonl.xz',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-current.jsonl.xz',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-diagnostics.jsonl.xz',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-inputs.jsonl.xz',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-reset.jsonl.xz',
+    'implementation/phase-9-grcv4/verification/p991a6_aos_campaign.py',
+    'implementation/phase-9-grcv4/verification/p991a6_aos_campaign_cost.py',
+    'implementation/phase-9-grcv4/verification/p991a6_aos_campaign_epoch.py',
+    'implementation/phase-9-grcv4/verification/p991a6_aos_campaign_verify.py',
+    'implementation/phase-9-grcv4/verification/p991a6_aos_evidence.py',
+    'implementation/phase-9-grcv4/verification/test_p991a6_aos_campaign.py',
+    'implementation/phase-9-grcv4/verification/test_p991a6_aos_campaign_replay.py',
+    'implementation/phase-9-grcv4/verification/test_p991a6_aos_campaign_surface.py',
+}
+
+
 def recorded_acceptance(root):
     """Authenticate the user decision against its original historical subjects."""
     prior.ancestor(root, BASELINE)

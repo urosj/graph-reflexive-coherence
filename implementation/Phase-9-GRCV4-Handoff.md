@@ -152,8 +152,8 @@ remains a profiling target. Compact evidence is 0.75 MiB, with all exact sample
 transitions and six complete diagnostics. The side-tool API/browser/notebook
 publish this bounded scope. Eight A_OS publication tests, 98 predecessor native
 tests and 17 affected C_CI_PC publication tests pass. The user accepted steps
-1–4 and the pressure audit for commit on 2026-11-02; .5 is authorized next and
-its expected 375→377 / 372→374 endpoints remain unverified natively.
+1–4 and the pressure audit for commit on 2026-11-02 (`5aea075a`). The subsequent
+.5 campaign now verifies its actual endpoints below.
 See the [review](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Review.md),
 [contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Contract.md) and
 [preflight](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Preflight.json.xz).
@@ -168,6 +168,26 @@ retains five full steps and two events. The side-tool API/browser/notebook
 include the pressure result; all 14 A_OS publication checks pass. Reprofile the
 complete campaign checker before .5;
 original preflight measurements remain unchanged.
+
+A_OS .5 verifies actual **375→377 current / 372→374 reset**, duration 32,
+exact charge 21. All **751 target transitions** pass the full C/logW audit and
+independent weighted classification. Current gains one child; reset gains zero.
+Both completed journals pass paired cold replay (378/375 ordinary steps), and
+all actual pending-window failures/retries preserve atomic once-only accounting.
+Active execution and checkpoint validation took **22.0 minutes**, with
+539.5 MiB peak memory. Compact evidence totals **5.27 MiB**,
+including ten full diagnostics; no supporting tail or expanded duplicate run.
+The side-tool API/browser/notebook publish the separate campaign. Accepted
+preflight/pressure and predecessor epochs are unchanged. Aggregate native support
+stays false. The user accepted .5 for commit on 2026-11-02 and explicitly
+requested retaining the original 5.27 MiB evidence package.
+All 30 campaign/evidence/publication/continuity checks pass. Use
+`p991a6_aos_evidence.py` for retained verification; the frozen execution
+harness and all original evidence bytes are preserved.
+[Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-Review.md).
+Checkpoint restore's repeated publication hashing is a concrete next profiling
+candidate; the native runtime remained unchanged here.
+
 
 
 
