@@ -354,6 +354,7 @@ def run():
 
 
 def check(root=ROOT):
+    from p991a6_cci_campaign_epoch import previous_bytes
     root = Path(root)
     value = json.loads((root / RECORD).read_bytes())
     need(
@@ -368,7 +369,7 @@ def check(root=ROOT):
     )
     for row in [*value["source_bindings"], value["evidence"]]:
         need(
-            sha256((root / row["path"]).read_bytes()).hexdigest() == row["sha256"],
+            sha256(previous_bytes(root, row["path"])).hexdigest() == row["sha256"],
             "changed CI subject: " + row["path"],
         )
     need(

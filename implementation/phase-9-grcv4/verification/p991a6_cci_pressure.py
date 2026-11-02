@@ -134,6 +134,7 @@ def run():
 
 
 def check(root=ROOT, numerical=False):
+    from p991a6_cci_campaign_epoch import previous_bytes
     root = Path(root)
     v = json.loads((root / RECORD).read_bytes())
     need(
@@ -152,7 +153,7 @@ def check(root=ROOT, numerical=False):
     )
     for row in [*v["source_bindings"], v["evidence"]]:
         need(
-            sha256((root / row["path"]).read_bytes()).hexdigest() == row["sha256"],
+            sha256(previous_bytes(root, row["path"])).hexdigest() == row["sha256"],
             "changed pressure subject: " + row["path"],
         )
     if numerical:

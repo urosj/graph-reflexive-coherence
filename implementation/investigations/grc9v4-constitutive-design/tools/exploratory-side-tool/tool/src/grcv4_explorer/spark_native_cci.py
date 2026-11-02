@@ -10,6 +10,9 @@ RECORD_DIGEST='04267e3d233d8abbc22b86e32d691caaa32d516750e47f65ced0ff369af5a46c'
 
 
 def checked_record(root):
+    import sys
+    sys.path.insert(0, str(Path(root)/"implementation/phase-9-grcv4/verification"))
+    from p991a6_cci_campaign_epoch import previous_bytes
     root=Path(root).resolve();value=load_json_object(root/RECORD)
     if (value.get('record_digest')!=RECORD_DIGEST or record_digest(value,'record_digest')!=RECORD_DIGEST
         or value.get('schema')!='grc9v4-native-cci-preflight-v1' or value.get('family')!='C_CI'
@@ -18,7 +21,11 @@ def checked_record(root):
         raise SourceAdmissionError('Unbound C_CI preflight or changed endpoint scope')
     for row in [*value['source_bindings'],value['evidence']]:
         p=root/row['path']
-        if not p.resolve().is_relative_to(root) or hashlib.sha256(p.read_bytes()).hexdigest()!=row['sha256']:
+        try:
+            raw = previous_bytes(root, row["path"])
+        except ValueError as error:
+            raise SourceAdmissionError(str(error)) from error
+        if not p.resolve().is_relative_to(root) or hashlib.sha256(raw).hexdigest()!=row['sha256']:
             raise SourceAdmissionError('Changed current C_CI source: '+row['path'])
     return value
 

@@ -156,15 +156,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "4143d42a518cd3deb5bc6f75f2605947388c93fbc78dfbfcf627304787002625"
+      "sha256": "94c72d4b666ea0d69f67d1e7b0c12e303d8351fefa13d49d7d3c23b36e0e2833"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "34f85cde239b41d0a55c1f6b759b1fafc7e4da2fb100a98c7ac4cc7b5678e126"
+      "sha256": "630582f8e8db12feca6bd16ebf295f7357395ff834982fc990a024a48942ba10"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "bd74437f3d561ee8f0b4936a6feed931b5941c3515f191fb411a7c6c433a4a49"
+      "sha256": "d707d76786f2956a830e95e3786bde12d2e7359834a86646a8984dc170c47342"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -2012,7 +2012,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/EarlierSC3Sources.json",
-      "sha256": "53f048e22b983e89da43b8f3eff2d658350676ff9bfb9ff27062b3df7342003a"
+      "sha256": "1ba463e01569a49e37562f0f772806532dd478df087d69dec0d923c164b7bf93"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/EarlierSC3Validation.json",
@@ -3056,7 +3056,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/notebooks/phase9_verification.ipynb",
-      "sha256": "fd58bbf20c7cb87408127a051d7e41748fedc1c7b1761a50b0e602d76d0d36c8"
+      "sha256": "5e6b4990f4d2ee070a8f7322ec6fd2d11a092e46fa5b5b70c70b3a947693732c"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/acipc.js",
@@ -3104,7 +3104,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/index.html",
-      "sha256": "3e8fe8e4f9e0fd5f37b0aba35e960488785d5fbafe0f0a608497a040012c3ddd"
+      "sha256": "5e4ed88e7285386a8810ba83baab2f4fa9be9435c2548a9e9b9a51cc32c12c9c"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-aci-research.js",
@@ -3187,8 +3187,12 @@
       "sha256": "4a56106380d2856e7f6b54d95295954c90f4f0d67c27c91fc18a4cdb4af14da4"
     },
     {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-native-cci-campaign.js",
+      "sha256": "43765560889d2c1ab1bd03c030179ffe360a76808ffdd850b0b32d022e08be0b"
+    },
+    {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-native-cci.js",
-      "sha256": "e996652ca8798a689bedd0d1eba436ff20852cba678c5a010433eb87e0cb1ad2"
+      "sha256": "85c69e8adfc6f6aec8423ecce4d742ec13c47cf97d8a645d1283babec2262c14"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-native-cos.js",
@@ -3360,7 +3364,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/serve_phase9.py",
-      "sha256": "873290a8c276c4c17668b72219a6bdb4b9d841756d40ab7edbd41d27f50246b5"
+      "sha256": "d47d380906081655c9befcff188bffc3f9864b80dfdf573a07af94f840380679"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_atc_ci_research.py",
@@ -3452,7 +3456,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/basin.py",
-      "sha256": "e0aa6fe59ac7b60a5d73f96970061f2482227d9643fe726f066029aaf126ca02"
+      "sha256": "623340df55e0b5cb8807e1a8e11c990bb0ce643cd4e5963daad0c190e92bddac"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/basin_native.py",
@@ -3624,7 +3628,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_earlier_sc3_metadata.py",
-      "sha256": "a559db54a6ccf1a5f2e11ebbc028cdb31f8e7841fc8d75f5e7488dcf474f72eb"
+      "sha256": "d76f976557226bd8725fed5f666a700fc3f17cfcd160a2216e6f5368b49a8bda"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_campaign.py",
@@ -3632,11 +3636,15 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_cci.py",
-      "sha256": "149dd8c299f4b74faa479c45c3e53576f769d1524c3b8c3b0f74a6d62b9fb3f2"
+      "sha256": "1bc0c6431a28f38dbbe57518aba518d6bd0398ca995f14e4cb346d069b518450"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_cci_campaign.py",
+      "sha256": "007b70112b2de4168836feb76b0da3a7269a55f5ddcb84c75554ddcc738fc8b8"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_cci_pressure.py",
-      "sha256": "242cc4edf1284a17cfb00dc49f3b5603c6e1aa0f0649d0d1b221c2b0039f9b59"
+      "sha256": "87796c1c91fe47f7f87ec65a65b5c5030f8e7f89e29ec82a51564c38e3f2c94f"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_cos.py",
@@ -10360,7 +10368,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI-PressureReview.md",
-      "sha256": "923fe4edea830a327160d9dfcde374a3c2e0881483763c962357fbccf4a25941"
+      "sha256": "43f1ff07e5a723c1c1a9a4ca297c5c78e131ce8180b05ae7457ff2ed2bc1752b"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI-PressureSamples.json.xz",
@@ -10368,7 +10376,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI-Review.md",
-      "sha256": "8bbccf033a3065845f5ee518b21276bd7838b8d04745522e2304b6446f9fff2b"
+      "sha256": "af7b26ce226fa7764d6624b1849597db2732a5f62ab3da1b66d46b5a640993e0"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI-Samples.json.xz",
@@ -10377,6 +10385,46 @@
     {
       "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI-SourceEpoch.json",
       "sha256": "617c7f64f8daf27c7fd928c71ab247205e4d703deee4314f37829181c43c3726"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-Campaign.json.xz",
+      "sha256": "45fc8f7a30f0cc27826e56d94da37c0e5e8496dc9b790edfc02c9d7b8899f8f5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-Cost.json",
+      "sha256": "04c05df92fdabef7b1466fc8c4847567c95775cb089005390be016be2a297dcd"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-FailedAudit.json.xz",
+      "sha256": "ad6acfdfa8a49edcf4df9f94fcfc40e36cc41377cdce365afdd8e93e8593035a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-Plan.md",
+      "sha256": "6e772ce2923394461aad8647e9a894c038a351ee283e543f284697dd7cbbbe5a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-Review.md",
+      "sha256": "90b07da8f91b9e960253607d9743295059048b6ac6fb348922b7bcec01e240c3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-SourceEpoch.json",
+      "sha256": "c6945f133fbff7c106285146cce8f96dd6a14085af8633bfa2bf41c80ab81ff0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-checkpoints.jsonl.xz",
+      "sha256": "9f1cb039d4cf4c9bc4b827e273f37fb7c15249f69383eecd2ad0d19cf7b10e4a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-current.jsonl.xz",
+      "sha256": "339b4e56581932205f172562a4758ffd599db9523018b0d1ebabbf707c762306"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-inputs.jsonl.xz",
+      "sha256": "01b600f282a3313b4fa06dffcdc14827187f37ace200cb6fd83757f4a342099d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-reset.jsonl.xz",
+      "sha256": "0241c18041623ceace649f82237cf436cd4108c53e3b33045027d12d47c6e09c"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1b-ACIPC.json.xz",
@@ -10836,7 +10884,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/cci_native_spark_pressure_oracle.py",
-      "sha256": "4f6e3c2772d80d896905a19bcee1db931b8a91f08e635528fa11ff76d3f67e56"
+      "sha256": "8077859df0110ba68eb827aaed127625d90a74dd175941d731c7c3a41165bb72"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/check_p9492_parent_proposal.py",
@@ -11643,16 +11691,32 @@
       "sha256": "628a8e02c647101905e1b81ad1dc2920c08a0ceef725e5bbdc2cd049b3f7d83d"
     },
     {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_cci_campaign.py",
+      "sha256": "a994a4446f438b3322a7e83417b5c17c0d8a4ee3fd62b81e0c8d25d881879963"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_cci_campaign_cost.py",
+      "sha256": "2acb6a4a6dd2672c47b458690f74d4ca86338723f0db8e1a4ac90024af6b45d5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_cci_campaign_epoch.py",
+      "sha256": "ac2840cd642b591f29947d5ef79084930bed2b25a4249f7752213717eff9cced"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_cci_campaign_verify.py",
+      "sha256": "7806356b341817de548aeffbbc962016ee78cccf76a769b626aafa1cb5df896d"
+    },
+    {
       "path": "implementation/phase-9-grcv4/verification/p991a6_cci_epoch.py",
-      "sha256": "599aa8c840407f8cde2516dd232a48f5fa608bee771b8f5a0b41cb38c836e389"
+      "sha256": "e1674e26be6b249338d41178e07ab7f3500a3b705c89ab675f7ea8e56911b0ec"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/p991a6_cci_preflight.py",
-      "sha256": "4f03f4c3e1fedf871b84ff99fb615ac2657de149869641bad8fa93ab35d009e7"
+      "sha256": "b9e5487516580e158bbac9e16a5700f611bb113097487d99d6c142c20f39c09f"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/p991a6_cci_pressure.py",
-      "sha256": "60ba4148a9446bff4939660fb9aa5abd639a8e4450c77f6cda238d4068073566"
+      "sha256": "5a3e2331035db7cd49cb882d2546e478bfa759167958394accea5793e0ec9a47"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/p991a6_cci_subjects.py",
@@ -12080,7 +12144,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "f0603372bf856dbc8c2f07d7c2cfb20d28172bcc898a37099a2c3946d4438149"
+      "sha256": "3974bc2f433fb3f44cfc5b09b5d5ef3b950fb91d32fd80f1a1ef0fc4fb98b56b"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -13215,12 +13279,20 @@
       "sha256": "73313714975be8c7b77fa56a3db612ed0e44dce3413b87e8ae923b7061e1703c"
     },
     {
+      "path": "implementation/phase-9-grcv4/verification/test_p991a6_cci_campaign.py",
+      "sha256": "1134e4852465e26706163fd053ef910a7c957bbbdc3297be6f29b968012081e2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p991a6_cci_campaign_surface.py",
+      "sha256": "7b2793f9a8cef82b2d2225a2e072049792b0cc39069146996f87df0e2b77d245"
+    },
+    {
       "path": "implementation/phase-9-grcv4/verification/test_p991a6_cci_pressure_surface.py",
       "sha256": "368b917bc848655af16c432428d75120821d9174b7e93d443f95834619e99a0a"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p991a6_cci_surface.py",
-      "sha256": "f04b0991661bf74cb4a0702f2fdb1c0341b0bd0ddfc8fd47c31a9bb46ed93459"
+      "sha256": "221304c3ca14aca9d07bba2d77c225b1204613990654ceabc5d529668166b8be"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p991b_surfaces.py",
@@ -14080,7 +14152,7 @@
     }
   ],
   "baseline_commit": "6e0a507c0fd7e0758392514acce5e79312a2069c",
-  "record_digest": "c10bf6bdfa800845678db81825656df1dcf73c9fa048d02de54a0fd3d11baefe",
+  "record_digest": "0da51b3f09f47d8919ab80df412b9a5c35e57202fe825e62d1d86d46f4e4c9a3",
   "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
   "schema": "phase9_implementation_boundary_v1"
 }

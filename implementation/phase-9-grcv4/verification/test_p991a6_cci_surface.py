@@ -176,8 +176,8 @@ function element(){return {textContent:'',children:[],append(e){this.children.pu
 const output=element(),status=element();let queue=[];
 const load=nativeCCILoader(output,status,()=>new Promise(r=>queue.push(r)),element);
 const old=load(),fresh=load();queue[1]({ok:true,json:async()=>view});await fresh;
-assert.match(status.textContent,/Measured native preflight verified/);
-assert.ok(output.children.some(e=>/Full campaign has not started/.test(e.textContent)));
+assert.match(status.textContent,/Accepted historical native preflight verified/);
+assert.ok(output.children.some(e=>/historical preflight contains no endpoint run/.test(e.textContent)));
 const count=output.children.length;queue[0]({ok:false});await old;assert.equal(output.children.length,count);
 await nativeCCILoader(output,status,async()=>({ok:true,json:async()=>({...view,full_trajectory_runs:1})}),element)();
 assert.equal(output.children.length,0);assert.match(status.textContent,/Unbound/);

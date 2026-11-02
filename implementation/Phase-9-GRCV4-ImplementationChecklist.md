@@ -6,14 +6,16 @@ Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
 [phase opening](./Phase-9-GRCV4-PhaseOpening.json), and
 [phase registry](./ImplementationPhases.md#phase-9-grcv4-substrate-and-grc9v4-specialization).
 
-**Current continuation — 2026-11-01:** planning committed as `77a777ce` on
-`impl/grc9v4-native-spark-completion`, from merged research `52277044`.
-P9-9.1a.1 has its concrete contract map and bounded verification, pending review;
-the remaining [native leaves](#p9-91a-native-spark-completion) are unexecuted.
-Next is the .2 conservative representation and C_OS quartic/numerical bridge.
-No long run without a same-subject runtime estimate. Broader hierarchy stays
-deferred; minimal atomic child registration belongs to completion. Existing
-mandatory Tranches 8–9 and earlier Tranche 10 acceptances retain their scope.
+**Current continuation — 2026-11-02:** branch
+`impl/grc9v4-native-spark-completion`; C_OS native completion was accepted as
+`1ec198b2`, and C_CI steps 1–4 plus pressure as `bcf10782`. The C_CI campaign
+now verifies current 374→376 and reset 375→377 in 14.0 minutes, with one
+current child, zero reset gain, no tail, and compressed evidence/side-tool views.
+Campaign user review is pending. Next is C_PC through its own bounded native
+preflight and campaign; see the [native leaves](#p9-91a-native-spark-completion).
+No long run without a same-subject runtime estimate. Broader hierarchy and
+aggregate support remain deferred; existing mandatory Tranches 8–9 and earlier
+Tranche 10 acceptances retain their scope.
 
 ## Recording rules
 
@@ -4144,7 +4146,7 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
 - [ ] P9-9.1a.6: Extend and review each family independently after C_OS. Each leaf
   includes full-state numerics, same-subject runtime estimation, public lifecycle,
   affected mechanics/compatibility checks and side-tool API/browser/notebook.
-  - [ ] P9-9.1a.6-C_CI: family endpoint and acceptance remain pending.
+  - [ ] P9-9.1a.6-C_CI: native endpoint verified; campaign acceptance pending.
     - [x] P9-9.1a.6-C_CI.1: map the CI/earlier-domain contracts and actual subject.
     - [x] P9-9.1a.6-C_CI.2: exact FLINT state, Arb256 fresh joint roots, bounded
       whole-map error; independent Arb768 and 256/512 controls pass.
@@ -4154,9 +4156,15 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
       root audits; 12 rehashed substitutions and all 14 directions are checked.
     - [x] P9-9.1a.6-C_CI.4: 40+40 bounded steps, static-cache/fresh-root checks,
       compressed evidence and side-tool API/browser/notebook. Estimate 8.9 minutes
-      centrally, 18.7 conservatively, 30-minute cap; implementation pending review.
-    - [ ] P9-9.1a.6-C_CI.5: actual source-to-entry/completion campaign, endpoint
-      pressure and user review. [Steps 1–4 review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCI-Review.md).
+      centrally, 18.7 conservatively, 30-minute cap. Steps 1–4 and pressure were
+      accepted and committed as `bcf10782`.
+    - [x] P9-9.1a.6-C_CI.5: actual current 374→376 and reset 375→377; all 753
+      target steps independently checked, one child and zero reset gain, no tail.
+      14.0 minutes under 30-minute cap. Five actual pending-window faults and
+      retries pass; compressed evidence and side-tool API/browser/notebook agree.
+      The outward-bound comparison correction preserves the certificate budget;
+      failed prefix/counterexample retained. [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-Review.md).
+    - [ ] Review and accept the C_CI campaign separately.
   - [ ] P9-9.1a.6-C_PC.
   - [ ] P9-9.1a.6-C_CI_PC.
   - [ ] P9-9.1a.6-A_OS.

@@ -31,12 +31,12 @@ export function nativeCCILoader(output, status, fetcher=fetch, create=tag=>docum
       }
       add('p', `Combined estimate ${(value.estimate.central_seconds/60).toFixed(1)} minutes; upper allowance ${(value.estimate.upper_seconds/60).toFixed(1)} minutes against a ${value.estimate.campaign_cap_seconds/60}-minute cap. This is a planning envelope, not a confidence interval.`);
       add('p', `Measured peak memory ${value.memory.final_peak_mib.toFixed(1)} MiB. Static graph/root-domain and certificate reuse verified; both joint roots are freshly certified per step at 256 bits.`);
-      add('p', 'Entry/completion 374→376 and reset 375→377 remain unverified. Full campaign has not started.');
+      add('p', 'This accepted historical preflight contains no endpoint run. Use the separate C_CI campaign panel for current endpoint evidence.');
       add('p', `${value.pressure.tests_passed} bounded CI pressure tests; ${value.pressure.root_mutations} rehashed root mutations; all ${value.pressure.finite_segment_directions} charge directions checked.`);
       const pressureLink=add('a', 'Retained C_CI pressure'); pressureLink.href=value.pressure.source_url; pressureLink.target='_blank'; pressureLink.rel='noopener';
       for (const condition of value.stop_conditions) add('p', condition);
       const link=add('a', 'Retained native preflight'); link.href=value.source_url; link.target='_blank'; link.rel='noopener';
-      status.textContent='Measured native preflight verified; review pending.';
+      status.textContent='Accepted historical native preflight verified.';
     } catch (error) {
       if (ticket !== sequence) return;
       output.replaceChildren(); status.textContent=String(error);

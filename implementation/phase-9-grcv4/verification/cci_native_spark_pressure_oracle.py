@@ -331,7 +331,15 @@ def audit_step(config, captured, step, certificate=None, *, role="current"):
             )
             true_after = arb_mat(C) - 32 * arb_mat(B) * fresh["selected"]["current"]
             actual_error = upper(arb_mat(U) * (arb_mat(actual) - true_after))
-            need(actual_error <= bound, "anisotropic full-step error decomposition")
+            # Both calculations enclose the same exact error. Their outward
+            # upper bounds need not be ordered: the direct matrix calculation
+            # introduces its own Arb rounding. Check each against the unchanged
+            # admitted budget; the exact incidence identity above justifies the
+            # triangle bound independently, without a tolerance or slack term.
+            need(
+                actual_error <= Q(certificate.proof["full_step_error"]),
+                "direct anisotropic full-step error exceeds certificate budget",
+            )
             need(
                 bound
                 <= Q(certificate.proof["full_step_error"])

@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: C_CI native steps 1–4 — 2026-11-02
+## Current continuation: C_CI native campaign — 2026-11-02
 
 The accepted research branch was merged into `main` with `--no-ff` at
 `5227704449a062586df804ca5da0cc2853906425` (research tip `77c71ea4`). The new
@@ -23,8 +23,18 @@ substitutions and all 14 finite-segment directions; native runtime is unchanged.
 the 400+400 planning estimate is 8.9 minutes centrally, 18.7 conservatively,
 under a 30-minute cap. Exact charge, whole-map error, complete domain certificates,
 static caches and fresh root admissions are checked. The scoped side-tool API,
-browser and notebook publish these bounded results. No C_CI entry/completion
-trajectory has run; native endpoint/support flags remain false.
+browser and notebook preserve these bounded results, accepted as `bcf10782`.
+The [C_CI campaign](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-Review.md) now verifies
+current **374→376** and reset **375→377** in **14.0 minutes**. All 753 target
+steps pass complete independent joint-root/error/classification/membership checks;
+current creates one child, reset zero gain, with no supporting tail. Five actual
+pending-window faults and their once-only retries pass. Native runtime remains
+unchanged. The first attempt exposed an invalid ordering of two outward error
+bounds; its exact counterexample and stopped prefix are preserved, the verifier
+is corrected without changing the certificate budget, and the final run was
+re-estimated at 13.7/19.6 minutes before starting. Compressed evidence and the
+side-tool API/browser/notebook publish the scoped result. Endpoint verification
+is true; user review and aggregate native support remain pending.
 
 The [contract map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md)
 and [retained check](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json)
@@ -48,12 +58,13 @@ current earns one child, reset zero gain, and no supporting tail is needed.
 Actual checkpoint fault/restore/recount controls pass. Compressed primary evidence
 and side-tool API/browser/notebook views are retained. C_OS was accepted and committed
 as `1ec198b2`; its historical execution flags remain unchanged. Native aggregate
-support remains false. C_CI steps 1–4 now pass, pending review; the next execution
-leaf is **P9-9.1a.6-C_CI.5** after review of its measured estimate. Shared occurrence accounting is process-local;
+support remains false. C_CI steps 1–4 were accepted as `bcf10782`; its campaign
+is verified, pending user review. Next after review is **P9-9.1a.6-C_PC** with
+its own bounded estimate. Shared occurrence accounting is process-local;
 disconnected-process uniqueness and exact-to-legacy conversion are not claimed. See the
 [work programme](./Phase-9-GRCV4-ImplementationPlan.md#p9-91a-native-spark-completion-work-programme)
 and [unchecked execution leaves](./Phase-9-GRCV4-ImplementationChecklist.md#p9-91a-native-spark-completion).
-The subsequent family order is C_CI, C_PC, C_CI_PC, A_OS, A_CI, A_PC,
+The remaining family order is C_PC, C_CI_PC, A_OS, A_CI, A_PC,
 A_CI_PC, C_RG2b, A_RG2b. Each includes side-tool API/browser/notebook work.
 Minimal atomic new-child registration is required by completion; broader
 hierarchy remains deferred. Accepted mandatory Tranches 8–9 are unchanged.
