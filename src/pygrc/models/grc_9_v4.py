@@ -456,7 +456,7 @@ class GRC9V4(GRCV4):
         if spark.enabled(self._operation):
             family = self.configuration.reference.profile.FAMILY
             disposition = ("native_C_OS_spark_lifecycle_pending_P9_9_1a_5" if family == "C_OS"
-                           else "native_C_CI_spark_preflight_pending_campaign")
+                           else f"native_{family}_spark_preflight_pending_campaign")
             return dict(disposition=disposition,
                 execution_families=[family], complete_profile_ids=[self.active_profile_id],
                 model_identities=[self.active_model_identity], compatibility_branch=self.compatibility_branch,

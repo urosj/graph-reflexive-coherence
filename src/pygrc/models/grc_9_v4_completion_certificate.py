@@ -15,6 +15,7 @@ from .grc_v4_exact import _flint_module, exact_number
 from .grc_v4_geometry import GRCV4Graph
 from .grc_v4_spark import quartic_kernel, quartic_profile
 from .grc_v4_spark_cos import _matrix
+from .grc_v4_spark_carrier import ExactCarrierState, carrier_pairs
 from .grc_v4_spark_state import (
     ExactResources,
     flint_operation,
@@ -35,7 +36,7 @@ def binding(kernel, policy, role, charge):
         "charge": charge,
         "duration": policy.step_duration,
         "role": role,
-        "state_channels": ["C"],
+        "state_channels": ["C", "Z_4"] if kernel.profile.FAMILY == "C_PC" else ["C"],
         "policy": policy.to_payload(),
     }
 
@@ -223,6 +224,9 @@ def _analytic(kernel, C):
 @flint_operation
 def _verify(raw):
     data = decode_canonical_json(raw)
+    if data.get("schema_version") == "grc9v4-native-cpc-trap-operands-v1":
+        from .grc_9_v4_completion_cpc import verify
+        return verify(data)
     if set(data) != {"schema_version", "binding", "center", "S", "U"} or data[
         "schema_version"
     ] not in (
@@ -309,7 +313,7 @@ class CompletionCertificate:
 
     @classmethod
     def create(cls, kernel, policy, role, center, S, U):
-        if type(center) is not ExactResources or center.graph != kernel.graph:
+        if type(center) is not (ExactCarrierState if kernel.profile.FAMILY == "C_PC" else ExactResources) or center.graph != kernel.graph:
             raise ValueError("center must use the actual certificate graph")
         return cls(
             FrozenJSONMap(
@@ -321,6 +325,8 @@ class CompletionCertificate:
                     "center": list(center.C),
                     "S": S,
                     "U": U,
+                    **({"carrier_center": [list(r) for r in center.Z_4], "carrier_radius": "1/100000000",
+                        "carrier_pairs": [list(p) for p in carrier_pairs(kernel.graph)]} if kernel.profile.FAMILY == "C_PC" else {}),
                 }
             )
         )
@@ -333,6 +339,11 @@ class CompletionCertificate:
 
     @flint_operation
     def membership(self, state):
+        if self.operands["binding"]["profile"]["identity_payload"]["profile_family_id"] == "C_PC":
+            from .grc_9_v4_completion_cpc import membership
+            return membership(self, state)
+        if type(state) is not ExactResources:
+            raise ValueError("resource-only certificate cannot omit a carrier")
         b = self.operands["binding"]
         if (
             state.graph.to_payload() != b["graph"].to_dict()

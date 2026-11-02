@@ -203,6 +203,7 @@ def run(count=20):
 
 
 def check(root=ROOT):
+    from p991a6_cpc_epoch import previous_bytes
     root = Path(root)
     v = json.loads((root / RECORD).read_bytes())
     need(v == seal(v), "unsealed final cost check")
@@ -214,7 +215,7 @@ def check(root=ROOT):
     )
     for r in v["source_bindings"]:
         need(
-            sha256((root / r["path"]).read_bytes()).hexdigest() == r["sha256"],
+            sha256(previous_bytes(root, r["path"])).hexdigest() == r["sha256"],
             "changed final cost source: " + r["path"],
         )
     return v

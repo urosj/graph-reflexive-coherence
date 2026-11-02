@@ -5,9 +5,9 @@ from dataclasses import dataclass
 from .grc_9_v4_completion_codec import CompletionPolicy, digest, validate
 from .grc_9_v4_identity import model_identity
 from .grc_9_v4_lifecycle import GRC9V4Specialization
-from .grc_v4_codec import canonical_json_bytes
 from .grc_v4_geometry import GRCV4Graph
 from .grc_v4_spark import quartic_kernel, quartic_profile
+from .grc_v4_spark_carrier import ExactCarrierState, exact_state
 from .grc_v4_spark_state import (
     ExactResources,
     QuarticCOSProfile,
@@ -77,7 +77,7 @@ class GRC9V4SparkConfiguration:
             raise ValueError("exact nonnegative clock required")
         if (
             any(
-                type(x) is not ExactResources or x.graph != self.reference.graph
+                type(x) is not (ExactCarrierState if self.reference.profile.FAMILY == "C_PC" else ExactResources) or x.graph != self.reference.graph
                 for x in (self.current, self.reset)
             )
             or self.current.charge != self.reset.charge
@@ -141,8 +141,8 @@ class GRC9V4SparkConfiguration:
             GRC9V4Specialization(
                 FrozenJSONMap(spec["resolved"]), FrozenJSONMap(spec["identity_payload"])
             ),
-            ExactResources.from_canonical_bytes(canonical_json_bytes(value["current"])),
-            ExactResources.from_canonical_bytes(canonical_json_bytes(value["reset"])),
+            exact_state(value["current"]),
+            exact_state(value["reset"]),
             value["step_index"],
             value["time"],
         )

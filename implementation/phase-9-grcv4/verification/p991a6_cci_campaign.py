@@ -518,6 +518,7 @@ def campaign():
 
 
 def check(root=ROOT, numerical=False):
+    from p991a6_cpc_epoch import previous_bytes
     root = Path(root)
     with lzma.open(root / RECORD, "rb") as stream:
         value = json.load(stream)
@@ -527,7 +528,7 @@ def check(root=ROOT, numerical=False):
     )
     for ref in [*value["source_bindings"], *value["streams"]]:
         need(
-            sha256((root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
+            sha256(previous_bytes(root, ref["path"])).hexdigest() == ref["sha256"],
             "changed campaign input: " + ref["path"],
         )
     source = None

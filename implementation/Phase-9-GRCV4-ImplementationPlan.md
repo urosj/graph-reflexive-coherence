@@ -4711,8 +4711,8 @@ rules. This is an engineering handoff, not another scientific-definition gate.
 | Family leaf | Current entry → completion | Reset entry → window end | Duration | Native status |
 | --- | --- | --- | ---: | --- |
 | P9-9.1a.5 — C_OS | 374→376 | 375→377 | 32 | Accepted, committed `1ec198b2` |
-| P9-9.1a.6-C_CI | 374→376 | 375→377 | 32 | Steps 1–4 accepted `bcf10782`; native campaign verified, pending review |
-| P9-9.1a.6-C_PC | 374→376 | 375→377 | 32 | Not started |
+| P9-9.1a.6-C_CI | 374→376 | 375→377 | 32 | Accepted, campaign committed `88a1c6b1` |
+| P9-9.1a.6-C_PC | 374→376 | 375→377 | 32 | Steps 1–4 verified, pending review; .5 unrun |
 | P9-9.1a.6-C_CI_PC | 374→376 | 375→377 | 32 | Not started |
 | P9-9.1a.6-A_OS | 375→377 | 372→374 | 32 | Not started |
 | P9-9.1a.6-A_CI | 375→377 | 372→374 | 32 | Not started |
@@ -5083,3 +5083,26 @@ post-D10 verification failure explicitly alongside the passing release audit.
 [debts]: ./investigations/grc9v4-constitutive-design/decisions/D10DebtClaimTransformationLedger.json
 [routing]: ./investigations/grc9v4-constitutive-design/decisions/D11ClaimDebtAndAuthorityRouting.json
 [guide]: ./investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/AgenticQueryGuide.md
+
+
+### C_PC native steps 1–4 — 2026-11-02
+
+The [C_PC contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-Contract.md) and
+[review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-Review.md) implement the full
+C/Z map, all 46 carrier directions, old-carrier causality and explicit event
+loss. The [numerical policy](../specs/grc-v4-spark-native-pc-numerical-policy.md)
+binds exact FLINT state, Arb256 reads, flux128/carrier192 quantization and both
+rounding terms. No resource-only surrogate is admitted. Bounded public lifecycle
+checks, 256/512 comparison, independent Arb768 audits and 40+40 timing samples
+precede .5. Graph/domain/decay/certificate caches hold immutable facts only.
+The side-tool exposes the recorded estimate and unverified endpoint scope.
+Before .5, measure its actual typed capture, verification and persistence path;
+the early-prefix estimate is provisional. No full trajectory is authorized by
+this steps 1–4 batch; its review and the next campaign remain separate.
+
+The bounded [C_PC pressure supplement](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-PressureReview.md)
+checks the complete old-Z/read/held-source/write/next-read loop, all signed carrier
+spaces, exact fixed-H equations, full joint-domain derivatives, history events
+and atomic publication. All 26 tests and 22 specific mutation cases pass. The
+stronger exact audit is a separate timing input for .5; its uninterrupted
+campaign and actual-boundary checkpoint pressure remain unrun.

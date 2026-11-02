@@ -4146,7 +4146,7 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
 - [ ] P9-9.1a.6: Extend and review each family independently after C_OS. Each leaf
   includes full-state numerics, same-subject runtime estimation, public lifecycle,
   affected mechanics/compatibility checks and side-tool API/browser/notebook.
-  - [ ] P9-9.1a.6-C_CI: native endpoint verified; campaign acceptance pending.
+  - [x] P9-9.1a.6-C_CI: native endpoint verified; accepted and committed `88a1c6b1`.
     - [x] P9-9.1a.6-C_CI.1: map the CI/earlier-domain contracts and actual subject.
     - [x] P9-9.1a.6-C_CI.2: exact FLINT state, Arb256 fresh joint roots, bounded
       whole-map error; independent Arb768 and 256/512 controls pass.
@@ -4164,8 +4164,26 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
       retries pass; compressed evidence and side-tool API/browser/notebook agree.
       The outward-bound comparison correction preserves the certificate budget;
       failed prefix/counterexample retained. [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-Review.md).
-    - [ ] Review and accept the C_CI campaign separately.
-  - [ ] P9-9.1a.6-C_PC.
+    - [x] Review and accept the C_CI campaign separately; committed `88a1c6b1`.
+  - [ ] P9-9.1a.6-C_PC: steps 1–4 verified, pending review; endpoint unrun.
+    - [x] P9-9.1a.6-C_PC.1: bind PC/earlier-domain contracts, both physical
+      histories, actual source/target and all signed carrier directions.
+    - [x] P9-9.1a.6-C_PC.2: exact FLINT C/Z, Arb256 old-carrier read and
+      same-read writer, complete resource/carrier rounding bound; independent
+      Arb768 equations and identical 256/512 represented samples.
+    - [x] P9-9.1a.6-C_PC.3: full 60-dimensional certificate; explicit whole
+      carrier archive/loss/zero event, both chiralities, atomic rollback/retry,
+      checkpoint replay and synthetic positive windows; 22 native tests pass.
+      The [full-history pressure supplement](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-PressureReview.md)
+      adds 26 mandatory passing tests, 22 mutation detectors, all 58/46 carrier
+      coordinates and all 60 derivative directions without runtime changes.
+    - [x] P9-9.1a.6-C_PC.4: static caches, 40+40 bounded samples, complete
+      independent audits, compressed evidence and side-tool API/browser/notebook.
+      [Preflight review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-Review.md).
+    - [ ] Review and accept the C_PC steps 1–4 batch.
+    - [ ] P9-9.1a.6-C_PC.5: confirm cost of the typed campaign/audit path,
+      then run actual current/reset endpoints within the declared caps.
+      Expected 374→376/375→377 are not verified native results.
   - [ ] P9-9.1a.6-C_CI_PC.
   - [ ] P9-9.1a.6-A_OS.
   - [ ] P9-9.1a.6-A_CI.

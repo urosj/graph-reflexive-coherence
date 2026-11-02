@@ -20,12 +20,12 @@ from .grc_9_v4_spark_contracts import (
     SparkReference,
     SparkResult,
 )
-from .grc_v4_codec import canonical_json_bytes, payload_identity
+from .grc_v4_codec import payload_identity
 from .grc_v4_exact import ExactBackend
 from .grc_v4_geometry import GRCV4Graph
 from .grc_v4_spark import quartic_kernel
+from .grc_v4_spark_carrier import exact_state, carrier_pairs
 from .grc_v4_spark_state import (
-    ExactResources,
     flint_operation,
     rational,
 )
@@ -170,7 +170,7 @@ def _put(objects, value):
 
 
 def _capture(payload):
-    return ExactResources.from_canonical_bytes(canonical_json_bytes(payload))
+    return exact_state(payload)
 
 
 def progress(owner, before, after, receipt, step):
@@ -242,6 +242,7 @@ def progress(owner, before, after, receipt, step):
             objects,
             {
                 "membership_norm": norm,
+                **({"membership_measure": "squared_max_product_norm"} if config.reference.profile.FAMILY == "C_PC" else {}),
                 "actual": target.to_payload(),
                 "arithmetic_error": "0",
             },
@@ -289,14 +290,14 @@ def progress(owner, before, after, receipt, step):
         "proof": {
             "certificate": _put(objects, cert.to_payload()),
             "equation_binding": _put(objects, cert.operands["binding"].to_dict()),
-            "state_channels": ["C"],
+            "state_channels": list(cert.operands["binding"]["state_channels"]),
             "constraints": _put(objects, {"charge": config.current.charge}),
             "domain": _put(
                 objects,
-                {"S": cert.operands.to_dict()["S"], "U": cert.operands.to_dict()["U"]},
+                {k: v for k, v in cert.operands.to_dict().items() if k in ("S", "U", "carrier_radius", "carrier_pairs", "carrier_center")},
             ),
-            "center": _put(objects, list(cert.operands["center"])),
-            "norm_id": "full_charge_chart_infinity_v1",
+            "center": _put(objects, ({"C": list(cert.operands["center"]), "Z_4": cert.operands.to_dict()["carrier_center"]} if config.reference.profile.FAMILY == "C_PC" else list(cert.operands["center"]))),
+            "norm_id": ("full_charge_chart_scaled_carrier_frobenius_v1" if config.reference.profile.FAMILY == "C_PC" else "full_charge_chart_infinity_v1"),
             "q": proof["q"],
             "image_margin": proof["image_margin"],
             "numerical_policy_id": config.reference.profile.NUMERICS,
@@ -576,20 +577,27 @@ def expansion(owner, before, action):
         1 / 64,
     ):
         raise ValueError("bounded exact accepted allocation required")
-    for channel in ("candidate", "carrier"):
-        h = request.history_policy[channel]
-        expected = (
-            ("candidate_c_rederive_no_history_v1", "rederived")
-            if channel == "candidate"
-            else ("carrier_not_applicable_v1", "not_applicable")
-        )
-        if (
-            (h["policy_id"], h["disposition"]) != expected
-            or h["source_history_digest"] is not None
-            or h["target_initializer_id"] is not None
-            or h["information_loss"] != "none"
-        ):
-            raise ValueError("quartic C event has no independent history")
+    carrier_event = None
+    if config.reference.profile.FAMILY == "C_PC":
+        from .grc_9_v4_spark_carrier_event import history_policy, capture
+        if request.history_policy != history_policy(config):
+            raise ValueError("PC event requires exact both-role archive and explicit whole-carrier loss policy")
+        carrier_event = capture(config, kernel(config))
+    else:
+        for channel in ("candidate", "carrier"):
+            h = request.history_policy[channel]
+            expected = (
+                ("candidate_c_rederive_no_history_v1", "rederived")
+                if channel == "candidate"
+                else ("carrier_not_applicable_v1", "not_applicable")
+            )
+            if (
+                (h["policy_id"], h["disposition"]) != expected
+                or h["source_history_digest"] is not None
+                or h["target_initializer_id"] is not None
+                or h["information_loss"] != "none"
+            ):
+                raise ValueError("quartic C event has no independent history")
     policy = GRC9ExpansionPolicy.from_payload(
         config.specialization.resolved["expansion"].to_dict()
     )
@@ -626,10 +634,13 @@ def expansion(owner, before, action):
         )
         for x in graph.live_node_ids
     )
-    current, reset = (
-        config.current.transfer(graph, transfer),
-        config.reset.transfer(graph, transfer),
-    )
+    if carrier_event is not None:
+        from .grc_9_v4_spark_carrier_event import target as carrier_target
+        current, reset = (carrier_target(getattr(config, role), graph, transfer) for role in ("current", "reset"))
+        carrier_event.update(target_carrier_pairs=[list(x) for x in carrier_pairs(graph)],
+            target_all_dense_entries_zero=True, target_dense_entries=len(graph.oriented_edges)**2)
+    else:
+        current, reset = config.current.transfer(graph, transfer), config.reset.transfer(graph, transfer)
     old = config.reference.profile
     p, identity = (
         old.baseline.params_resolved.to_payload(),
@@ -675,6 +686,8 @@ def expansion(owner, before, action):
         "source_receipt": before.receipts[-1].to_payload(),
         "target_graph": graph.graph_digest,
     }
+    if carrier_event is not None:
+        event["carrier_history"] = carrier_event
     return target, CompletionPublication(
         event=FrozenJSONMap(event), reason="event committed; certificate required"
     )

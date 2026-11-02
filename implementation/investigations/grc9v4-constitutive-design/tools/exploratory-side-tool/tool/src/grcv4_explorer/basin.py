@@ -68,11 +68,16 @@ def native_predecessor(root, path, expected):
     from p991a5_native_spark_epoch import CHANGED as CAMPAIGN, previous_bytes as campaign_previous
     from p991a6_cci_epoch import CHANGED as CCI, previous_bytes as cci_previous
     from p991a6_cci_campaign_epoch import CHANGED as CCI_CAMPAIGN, previous_bytes as cci_campaign_previous
-    if path not in CHANGED | PREFLIGHT | CAMPAIGN | CCI | CCI_CAMPAIGN:
+    from p991a6_cpc_epoch import CHANGED as CPC, previous_bytes as cpc_previous
+    if path not in CHANGED | PREFLIGHT | CAMPAIGN | CCI | CCI_CAMPAIGN | CPC:
         return None
     _require(file_sha256(root/path) == hashlib.sha256((root/path).read_bytes()).hexdigest(),
              "inconsistent native source digest")
     try:
+        if path in CPC:
+            raw = cpc_previous(root, path)
+            if hashlib.sha256(raw).hexdigest() == expected:
+                return raw
         if path in CCI_CAMPAIGN:
             raw = cci_campaign_previous(root, path)
             if hashlib.sha256(raw).hexdigest() == expected:

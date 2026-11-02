@@ -22,6 +22,9 @@ def load_record(path):
 
 
 def checked_record(root):
+    import sys
+    sys.path.insert(0, str(Path(root)/"implementation/phase-9-grcv4/verification"))
+    from p991a6_cpc_epoch import previous_bytes
     root = Path(root).resolve()
     value = load_record(root / RECORD)
     if (
@@ -39,9 +42,13 @@ def checked_record(root):
         raise SourceAdmissionError("Unbound C_CI campaign or changed endpoint scope")
     for row in [*value["source_bindings"], *value["streams"]]:
         p = root / row["path"]
+        try:
+            raw = previous_bytes(root, row["path"])
+        except ValueError as error:
+            raise SourceAdmissionError(str(error)) from error
         if (
             not p.resolve().is_relative_to(root)
-            or hashlib.sha256(p.read_bytes()).hexdigest() != row["sha256"]
+            or hashlib.sha256(raw).hexdigest() != row["sha256"]
         ):
             raise SourceAdmissionError(
                 "Changed C_CI campaign source/evidence: " + row["path"]

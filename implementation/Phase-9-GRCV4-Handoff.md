@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: C_CI native campaign — 2026-11-02
+## Current continuation: C_PC native steps 1–4 — 2026-11-02
 
 The accepted research branch was merged into `main` with `--no-ff` at
 `5227704449a062586df804ca5da0cc2853906425` (research tip `77c71ea4`). The new
@@ -34,7 +34,37 @@ bounds; its exact counterexample and stopped prefix are preserved, the verifier
 is corrected without changing the certificate budget, and the final run was
 re-estimated at 13.7/19.6 minutes before starting. Compressed evidence and the
 side-tool API/browser/notebook publish the scoped result. Endpoint verification
-is true; user review and aggregate native support remain pending.
+is true; the user accepted the campaign for commit as `88a1c6b1`. Aggregate
+native support remains pending.
+
+C_PC now implements steps 1–4 on the same branch. See the
+[contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-Contract.md),
+[numerical policy](../specs/grc-v4-spark-native-pc-numerical-policy.md),
+[review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-Review.md) and
+[bounded preflight](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-Preflight.json).
+The full exact C/Z state, Arb256 old-carrier read, same-read exponential writer,
+explicit event history loss and complete 60-dimensional domain are native.
+All 22 native tests pass, including independent Arb768 equations and every
+signed carrier direction; the 256/512 experiment yields identical C/Z states.
+The preflight retains 40+40 independently checked changing-state samples in XZ,
+with static graph/domain/decay/certificate reuse and fresh physical reads.
+Sampling took 29.1 seconds; the provisional 400+400 estimate is
+9.2 minutes centrally / 16.4 conservatively, including a four-minute
+pressure/checkpoint reserve.
+A [full-history pressure supplement](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-PressureReview.md)
+adds 26 mandatory passing tests and 22 specific mutation detectors in 39.2 seconds.
+It checks all 58/46 carrier coordinates, all 60 finite-segment directions,
+independent exact fixed-H solves, Arb768 writing, both event archives and atomic
+lifecycle. Runtime and original preflight evidence are unchanged; the stronger
+campaign audit path still needs its own timing gate.
+Side-tool API/browser/notebook expose this bounded scope. Review is pending;
+**P9-9.1a.6-C_PC.5 has not run**, and 374→376/375→377 remain expectations.
+Next: review steps 1–4, then prepare the typed campaign capture/independent audit
+and confirm its same-subject cost before a separate .5 run. Retain the 400-step
+per-role stop, 1800-second combined cap and 1024-MiB memory limit; stop and
+re-estimate on slower observations or failed admission. No large-graph run or
+aggregate support follows. Historical C_OS/C_CI records and source epochs are
+unchanged; the finite C_PC successor authenticates their Git preimages.
 
 The [contract map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md)
 and [retained check](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json)
@@ -59,8 +89,8 @@ Actual checkpoint fault/restore/recount controls pass. Compressed primary eviden
 and side-tool API/browser/notebook views are retained. C_OS was accepted and committed
 as `1ec198b2`; its historical execution flags remain unchanged. Native aggregate
 support remains false. C_CI steps 1–4 were accepted as `bcf10782`; its campaign
-is verified, pending user review. Next after review is **P9-9.1a.6-C_PC** with
-its own bounded estimate. Shared occurrence accounting is process-local;
+was accepted and committed as `88a1c6b1`. C_PC steps 1–4 now await review;
+its separately gated **P9-9.1a.6-C_PC.5** remains unrun. Shared occurrence accounting is process-local;
 disconnected-process uniqueness and exact-to-legacy conversion are not claimed. See the
 [work programme](./Phase-9-GRCV4-ImplementationPlan.md#p9-91a-native-spark-completion-work-programme)
 and [unchecked execution leaves](./Phase-9-GRCV4-ImplementationChecklist.md#p9-91a-native-spark-completion).

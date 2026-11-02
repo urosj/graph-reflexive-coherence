@@ -7,7 +7,7 @@ from hashlib import sha256
 from importlib.resources import files
 
 from .grc_v4_codec import canonical_json_bytes
-from .grc_v4_spark_state import CI_NUMERICAL_POLICY, NUMERICAL_POLICY, rational
+from .grc_v4_spark_state import CI_NUMERICAL_POLICY, PC_NUMERICAL_POLICY, NUMERICAL_POLICY, rational
 from .grc_v4_state import FrozenJSONMap
 
 SCHEMA_SHA256 = "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52"
@@ -57,7 +57,7 @@ class CompletionPolicy:
 
     def __post_init__(self):
         validate(self.to_payload())
-        if self.numerical_policy_id not in (NUMERICAL_POLICY, CI_NUMERICAL_POLICY):
+        if self.numerical_policy_id not in (NUMERICAL_POLICY, CI_NUMERICAL_POLICY, PC_NUMERICAL_POLICY):
             raise ValueError("unsupported native completion numerical policy")
         if type(self.landscape_sign) is not int or type(self.minimum_beats) is not int:
             raise ValueError("integer sign and window required")
