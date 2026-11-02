@@ -25,7 +25,7 @@ def checked_record(root):
     import sys
 
     sys.path.insert(0, str(Path(root) / "implementation/phase-9-grcv4/verification"))
-    previous_bytes = lambda root, name: (root / name).read_bytes()
+    from p991a6_aos_epoch import previous_bytes
 
     root = Path(root).resolve()
     value = load_record(root / RECORD)

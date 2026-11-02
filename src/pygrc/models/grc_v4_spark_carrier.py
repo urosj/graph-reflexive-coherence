@@ -90,6 +90,9 @@ class ExactCarrierState(ExactResources):
 
 
 def exact_state(value):
+    if value.get("schema_version") == "grcv4-exact-conductance-state-v1":
+        from .grc_v4_spark_conductance import ExactConductanceState
+        return ExactConductanceState.from_canonical_bytes(canonical_json_bytes(value))
     cls = (
         ExactCarrierState
         if value.get("schema_version") == "grcv4-exact-carrier-state-v1"

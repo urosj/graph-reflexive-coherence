@@ -4713,8 +4713,8 @@ rules. This is an engineering handoff, not another scientific-definition gate.
 | P9-9.1a.5 — C_OS | 374→376 | 375→377 | 32 | Accepted, committed `1ec198b2` |
 | P9-9.1a.6-C_CI | 374→376 | 375→377 | 32 | Accepted, campaign committed `88a1c6b1` |
 | P9-9.1a.6-C_PC | 374→376 | 375→377 | 32 | Steps 1–4 accepted `1210b2b9`; .5 accepted `31d1aba7` |
-| P9-9.1a.6-C_CI_PC | 374→376 | 375→377 | 32 | Steps 1–4 accepted; .5 verified, pending review |
-| P9-9.1a.6-A_OS | 375→377 | 372→374 | 32 | Not started |
+| P9-9.1a.6-C_CI_PC | 374→376 | 375→377 | 32 | Accepted; campaign committed `e2cfad85` |
+| P9-9.1a.6-A_OS | 375→377 | 372→374 | 32 | Steps 1–4 verified, pending review; .5 unrun |
 | P9-9.1a.6-A_CI | 375→377 | 372→374 | 32 | Not started |
 | P9-9.1a.6-A_PC | 375→377 | 372→374 | 32 | Not started |
 | P9-9.1a.6-A_CI_PC | 375→377 | 372→374 | 32 | Not started |
@@ -5177,4 +5177,30 @@ The completed campaign now retains 4.87 MiB of compact mathematical evidence
 streams (67.4% reduction), independently verified for all 753 transitions.
 The user accepted .5 and its compact evidence for commit on 2026-11-02,
 excluding expanded full-run evidence. Historical execution flags stay unchanged.
-A_OS steps 1–4 are next.
+A_OS steps 1–4 follow below.
+
+### A_OS native steps 1–4 — 2026-11-02
+
+The user selects A_OS after `e2cfad85`, on the existing native branch.
+The [contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Contract.md) covers
+exact C/W, both OS reads, final-C/incoming-W writing, all thirty domain
+directions, weighted classification, explicit edge history, lifecycle pressure,
+bounded runtime estimation and side-tool publication. The .5 campaign stays
+separate; its expected short endpoints are not yet verified natively.
+
+The implemented [review](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Review.md)
+records 25 passing native tests, full thirty-direction certification and
+independent Arb768 sample checks. The 40+40 preflight took 63.2 seconds at
+253.6 MiB; 256/512 agree on represented states. Compact evidence is 0.75 MiB.
+Immutable graph/row/decay/certificate reuse is verified. The complete provisional
+400+400 estimate is 20.1 / 38.4 minutes, including cold replay and audit; remeasure
+late checkpoint costs before .5. API/browser/notebook publish bounded preflight
+scope. The user accepted steps 1–4 and their pressure audit for commit on
+2026-11-02, then authorized .5 after fresh profiling. Aggregate support remains
+ungranted.
+
+The [A_OS pressure supplement](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-PressureReview.md)
+now adds 25 passing causal-loop tests and 24 semantic mutation detectors without
+runtime changes. Independent full-map checks, weighted qualification, both
+nonuniform histories and atomic publication agree. Original bounded cost samples
+are preserved; re-estimate the complete campaign audit/checkpoint path before .5.

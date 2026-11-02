@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: C_CI_PC .5 accepted; A_OS steps 1–4 next — 2026-11-02
+## Current continuation: A_OS steps 1–4 pending review; .5 unrun — 2026-11-02
 
 The accepted research branch was merged into `main` with `--no-ff` at
 `5227704449a062586df804ca5da0cc2853906425` (research tip `77c71ea4`). The new
@@ -136,7 +136,39 @@ All compact transitions passed an independent audit; use
 not contracts or inputs for further simulations.
 The user accepted .5 and its compact evidence for commit on 2026-11-02,
 excluding expanded full-run evidence. Historical execution flags stay unchanged.
-A_OS steps 1–4 are next.
+C_CI_PC .5 was committed as `e2cfad85`.
+
+A_OS steps 1–4 now implement exact full C/W state, Arb256 OS reads and a
+same-read conductance writer with final-resource rounding propagated into the
+full C/logW error. The 30-dimensional invariant certificate passes, with
+q=0.9959341294719857, image margin 0.004065870528014352 and numerical error
+9.071518058718003e-31. All 25 native tests pass, including independent Arb768
+checks, every chart direction, both chiralities and atomic lifecycle; 256/512
+produce identical sampled states. The final 40+40 preflight took 63.2 seconds
+at 253.6 MiB, with graph/row/decay/certificate caching and fresh physical reads.
+The 400+400 estimate is **20.1 / 38.4 minutes** including audit, persistence and
+cold replay. Re-estimate the complete .5 path before starting; thirty minutes
+remains a profiling target. Compact evidence is 0.75 MiB, with all exact sample
+transitions and six complete diagnostics. The side-tool API/browser/notebook
+publish this bounded scope. Eight A_OS publication tests, 98 predecessor native
+tests and 17 affected C_CI_PC publication tests pass. The user accepted steps
+1–4 and the pressure audit for commit on 2026-11-02; .5 is authorized next and
+its expected 375→377 / 372→374 endpoints remain unverified natively.
+See the [review](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Review.md),
+[contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Contract.md) and
+[preflight](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Preflight.json.xz).
+A [bounded A_OS pressure audit](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-PressureReview.md)
+adds **25 passing tests and 24 semantic mutation detectors** in 19.55 seconds.
+It checks the entire retained-W loop, nonstationary mixed derivatives, all
+thirty near-faces, both nonuniform edge histories and complete rollback.
+No runtime change was needed. Generic spectral split semantics and the native
+strict Frobenius sufficient bound remain distinct; active floors and arbitrary
+durations stay outside the selected smooth native policy. A 481 KiB XZ bundle
+retains five full steps and two events. The side-tool API/browser/notebook
+include the pressure result; all 14 A_OS publication checks pass. Reprofile the
+complete campaign checker before .5;
+original preflight measurements remain unchanged.
+
 
 
 See the [C_CI_PC review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-Review.md).

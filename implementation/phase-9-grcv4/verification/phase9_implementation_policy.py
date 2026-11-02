@@ -79,6 +79,23 @@ SPARK_LIFECYCLE_PATHS = frozenset({
     "src/pygrc/models/grc_v4_assets/grc-9-v4-spark-completion-schema.json",
     "tests/models/test_grc_9_v4_spark_completion.py",
 })
+SPARK_AOS_LEAF = "P9-9.1a.6-A_OS"
+SPARK_AOS_ENTRY = "e2cfad85"
+SPARK_AOS_PATHS = frozenset({
+    'src/pygrc/models/grc_9_v4_completion.py',
+    'src/pygrc/models/grc_9_v4_completion_aos.py',
+    'src/pygrc/models/grc_9_v4_completion_certificate.py',
+    'src/pygrc/models/grc_9_v4_completion_codec.py',
+    'src/pygrc/models/grc_9_v4_spark_conductance_event.py',
+    'src/pygrc/models/grc_9_v4_spark_contracts.py',
+    'src/pygrc/models/grc_9_v4_spark_owner.py',
+    'src/pygrc/models/grc_v4_spark.py',
+    'src/pygrc/models/grc_v4_spark_aos.py',
+    'src/pygrc/models/grc_v4_spark_aos_math.py',
+    'src/pygrc/models/grc_v4_spark_carrier.py',
+    'src/pygrc/models/grc_v4_spark_conductance.py',
+    'tests/models/test_grc_v4_spark_aos.py',
+})
 SPARK_CCIPC_LEAF = "P9-9.1a.6-C_CI_PC"
 SPARK_CCIPC_ENTRY = "31d1aba7"
 SPARK_CCIPC_PATHS = frozenset(['src/pygrc/models/grc_9_v4_completion_certificate.py', 'src/pygrc/models/grc_9_v4_completion_codec.py', 'src/pygrc/models/grc_9_v4_completion_cpc.py', 'src/pygrc/models/grc_9_v4_spark_contracts.py', 'src/pygrc/models/grc_9_v4_spark_owner.py', 'src/pygrc/models/grc_v4_spark.py', 'src/pygrc/models/grc_v4_spark_ccipc.py', 'src/pygrc/models/grc_v4_spark_state.py', 'tests/models/test_grc_v4_spark_ccipc.py'])
@@ -2399,6 +2416,52 @@ PATHS |= {
 }
 
 
+# Explicit native A_OS steps 1–4 publication and verification roster.
+PATHS |= {
+    'implementation/Phase-9-GRCV4-Handoff.md',
+    'implementation/Phase-9-GRCV4-ImplementationChecklist.md',
+    'implementation/Phase-9-GRCV4-ImplementationPlan.md',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/notebooks/phase9_verification.ipynb',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/index.html',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-native-aos.js',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/serve_phase9.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/basin.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_aos.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_ccipc.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_ccipc_campaign.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_ccipc_pressure.py',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Contract.md',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Preflight.json.xz',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Review.md',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Samples.json.xz',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-SourceEpoch.json',
+    'implementation/phase-9-grcv4/verification/aos_native_spark_oracle.py',
+    'implementation/phase-9-grcv4/verification/p991a6_aos_epoch.py',
+    'implementation/phase-9-grcv4/verification/p991a6_aos_preflight.py',
+    'implementation/phase-9-grcv4/verification/p991a6_aos_subjects.py',
+    'implementation/phase-9-grcv4/verification/p991a6_ccipc_campaign.py',
+    'implementation/phase-9-grcv4/verification/p991a6_ccipc_campaign_epoch.py',
+    'implementation/phase-9-grcv4/verification/p991a6_ccipc_compact.py',
+    'implementation/phase-9-grcv4/verification/p991a6_ccipc_preflight.py',
+    'implementation/phase-9-grcv4/verification/p991a6_ccipc_pressure.py',
+    'implementation/phase-9-grcv4/verification/test_p991a6_aos_surface.py',
+    'specs/grc-v4-spark-native-a-os-numerical-policy.md',
+}
+
+
+# Bounded A_OS pressure supplement; no campaign authorization.
+PATHS |= {
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_aos_pressure.py',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Pressure.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-PressureReview.md',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-PressureSamples.json.xz',
+    'implementation/phase-9-grcv4/verification/aos_native_spark_audit.py',
+    'implementation/phase-9-grcv4/verification/p991a6_aos_pressure.py',
+    'implementation/phase-9-grcv4/verification/test_aos_native_spark_pressure.py',
+    'implementation/phase-9-grcv4/verification/test_p991a6_aos_pressure_surface.py',
+}
+
+
 def recorded_acceptance(root):
     """Authenticate the user decision against its original historical subjects."""
     prior.ancestor(root, BASELINE)
@@ -3422,6 +3485,10 @@ def leaf_permissions(root):
     ready = sorted(set(ready) | {SPARK_CCIPC_LEAF})
     for name in SPARK_CCIPC_PATHS:
         owners[name] = owners.get(name, set()) | {SPARK_CCIPC_LEAF}
+    git(root, "merge-base", "--is-ancestor", SPARK_AOS_ENTRY, "HEAD")
+    ready = sorted(set(ready) | {SPARK_AOS_LEAF})
+    for name in SPARK_AOS_PATHS:
+        owners[name] = owners.get(name, set()) | {SPARK_AOS_LEAF}
     return ready, owners
 
 
@@ -3431,6 +3498,10 @@ def runtime_targets(approval):
     from phase9_specialization_acceptance import ENABLED_LIFECYCLE_PATHS, DISABLED_DELEGATE_PATHS, BRANCH_CROSSING_PATHS
     from phase9_specialization_acceptance import PUBLIC_API_NEW_PATHS, BASIN_NEW_PATHS
     return [*approval["runtime_targets"], *(
+        {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
+         "operation": "v4_owned_add_or_update", "module_owner": "grc_v4_spark_aos"}
+        for name in sorted(SPARK_AOS_PATHS)
+    ), *(
         {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner": "grc_v4_spark_ccipc"}
         for name in sorted(SPARK_CCIPC_PATHS)
@@ -3681,6 +3752,7 @@ def work_entries(root, approval):
     leaves.add(SPARK_CCI_LEAF)
     leaves.add(SPARK_CPC_LEAF)
     leaves.add(SPARK_CCIPC_LEAF)
+    leaves.add(SPARK_AOS_LEAF)
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}
@@ -3725,7 +3797,8 @@ def work_entries(root, approval):
     leaves.add(public_api_authorization(root))
     leaves.add(basin_authorization(root))
     def g3_permitted(name, leaf):
-        return ((leaf == SPARK_CCIPC_LEAF and name in SPARK_CCIPC_PATHS)
+        return ((leaf == SPARK_AOS_LEAF and name in SPARK_AOS_PATHS)
+                or (leaf == SPARK_CCIPC_LEAF and name in SPARK_CCIPC_PATHS)
                 or (leaf == SPARK_CPC_LEAF and name in SPARK_CPC_PATHS)
                 or (leaf == SPARK_CCI_LEAF and name in SPARK_CCI_PATHS)
                 or (leaf == SPARK_NATIVE_LEAF and name in SPARK_NATIVE_PATHS)

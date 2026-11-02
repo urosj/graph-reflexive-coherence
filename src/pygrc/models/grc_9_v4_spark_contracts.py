@@ -8,6 +8,7 @@ from .grc_9_v4_lifecycle import GRC9V4Specialization
 from .grc_v4_geometry import GRCV4Graph
 from .grc_v4_spark import quartic_kernel, quartic_profile
 from .grc_v4_spark_carrier import ExactCarrierState, exact_state
+from .grc_v4_spark_conductance import ExactConductanceState
 from .grc_v4_spark_state import (
     ExactResources,
     QuarticCOSProfile,
@@ -35,7 +36,7 @@ class SparkReference:
             "context": "constant_zero_context_v1",
             "K_4": "zero",
             "H_ref": "identity",
-            "W": "unit",
+            "W": "unit_reference_only_incoming_W_A_in_state" if self.profile.FAMILY == "A_OS" else "unit",
         }
 
     @classmethod
@@ -77,7 +78,7 @@ class GRC9V4SparkConfiguration:
             raise ValueError("exact nonnegative clock required")
         if (
             any(
-                type(x) is not (ExactCarrierState if self.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else ExactResources) or x.graph != self.reference.graph
+                type(x) is not (ExactConductanceState if self.reference.profile.FAMILY == "A_OS" else ExactCarrierState if self.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else ExactResources) or x.graph != self.reference.graph
                 for x in (self.current, self.reset)
             )
             or self.current.charge != self.reset.charge

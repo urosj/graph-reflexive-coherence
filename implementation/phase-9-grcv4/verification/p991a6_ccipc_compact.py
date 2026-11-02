@@ -41,6 +41,8 @@ def full_samples(role=None, root=ROOT):
 
 
 def check(root=ROOT, numerical=False):
+    from p991a6_aos_epoch import previous_bytes
+
     root = Path(root)
     with lzma.open(root / campaign.RECORD, "rt") as f:
         value = json.load(f)
@@ -52,7 +54,7 @@ def check(root=ROOT, numerical=False):
     )
     for ref in [*value["source_bindings"], *value["streams"]]:
         need(
-            sha256((root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
+            sha256(previous_bytes(root, ref["path"])).hexdigest() == ref["sha256"],
             "changed compact source/evidence: " + ref["path"],
         )
     original = {k: v for k, v in value.items() if k != "storage"}

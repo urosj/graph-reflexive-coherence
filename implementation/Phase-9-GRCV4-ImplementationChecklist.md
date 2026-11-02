@@ -4191,7 +4191,7 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
       evidence, side-tool API/browser/notebook, 50 checks and boundary audit agree.
       [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-Review.md).
     - [x] Review and accept the C_PC campaign separately; user requested commit on 2026-11-02.
-  - [ ] P9-9.1a.6-C_CI_PC.
+  - [x] P9-9.1a.6-C_CI_PC: accepted and committed `e2cfad85`.
     - [x] P9-9.1a.6-C_CI_PC.1: Bind the explicit composite law, actual graphs,
       earlier domain, full C/Z state and numerical/error policies.
     - [x] P9-9.1a.6-C_CI_PC.2: Implement fresh certified joint roots, exact
@@ -4225,6 +4225,25 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
       before .5; original preflight estimate remains historical planning evidence.
       [Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-Review.md).
   - [ ] P9-9.1a.6-A_OS.
+    - [x] P9-9.1a.6-A_OS.1: Bind the adopted A_OS full-state domain,
+      actual source/target, weighted rows, allocation and conductance lineage.
+    - [x] P9-9.1a.6-A_OS.2: Implement exact C/W, certified OS reads and
+      final-C/incoming-W writer, with complete represented-map error bounds.
+    - [x] P9-9.1a.6-A_OS.3: Verify all 30 tangent directions, weighted
+      predicates, both event histories/chiralities and atomic lifecycle.
+    - [x] P9-9.1a.6-A_OS.4: Check caches, bounded changing-state costs,
+      precision comparison, compact evidence and side-tool API/browser/notebook.
+    - [x] Bounded W causal-loop pressure: 25 mandatory tests, 24 semantic
+      mutation detectors; unchanged runtime and original preflight evidence.
+      [Audit](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-PressureReview.md).
+    - [x] Review and accept A_OS steps 1–4 separately; the user accepted the
+      implementation and pressure audit for commit on 2026-11-02.
+      [Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Review.md):
+      25 native and 8 publication tests, 98 predecessor native and 17
+      affected publication regressions; 40+40 compact samples, 256/512 agreement;
+      20.1 / 38.4 minute provisional campaign estimate.
+    - [ ] P9-9.1a.6-A_OS.5: Run source-to-completion only after acceptance
+      and a fresh complete-path estimate; expected 375→377 / 372→374.
   - [ ] P9-9.1a.6-A_CI.
   - [ ] P9-9.1a.6-A_PC.
   - [ ] P9-9.1a.6-A_CI_PC.

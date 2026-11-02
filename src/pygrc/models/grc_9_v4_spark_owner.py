@@ -243,6 +243,7 @@ def progress(owner, before, after, receipt, step):
             {
                 "membership_norm": norm,
                 **({"membership_measure": "squared_max_product_norm"} if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else {}),
+                **({"membership_measure": "outward_C_logW_chart_infinity_upper"} if config.reference.profile.FAMILY == "A_OS" else {}),
                 "actual": target.to_payload(),
                 "arithmetic_error": "0",
             },
@@ -294,10 +295,10 @@ def progress(owner, before, after, receipt, step):
             "constraints": _put(objects, {"charge": config.current.charge}),
             "domain": _put(
                 objects,
-                {k: v for k, v in cert.operands.to_dict().items() if k in ("S", "U", "carrier_radius", "carrier_pairs", "carrier_center")},
+                {k: v for k, v in cert.operands.to_dict().items() if k in ("S", "U", "carrier_radius", "carrier_pairs", "carrier_center", "logW_center")},
             ),
-            "center": _put(objects, ({"C": list(cert.operands["center"]), "Z_4": cert.operands.to_dict()["carrier_center"]} if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else list(cert.operands["center"]))),
-            "norm_id": ("full_charge_chart_scaled_carrier_frobenius_v1" if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else "full_charge_chart_infinity_v1"),
+            "center": _put(objects, ({"C": list(cert.operands["center"]), "logW": list(cert.operands["logW_center"])} if config.reference.profile.FAMILY == "A_OS" else {"C": list(cert.operands["center"]), "Z_4": cert.operands.to_dict()["carrier_center"]} if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else list(cert.operands["center"]))),
+            "norm_id": ("full_C_logW_chart_infinity_v1" if config.reference.profile.FAMILY == "A_OS" else "full_charge_chart_scaled_carrier_frobenius_v1" if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else "full_charge_chart_infinity_v1"),
             "q": proof["q"],
             "image_margin": proof["image_margin"],
             "numerical_policy_id": config.reference.profile.NUMERICS,
@@ -543,6 +544,11 @@ def prepare(owner, before, action):
 
 
 def profile_template(config):
+    if config.reference.profile.FAMILY == "A_OS":
+        return "grcv4-profile-template-sha256:" + digest(dict(
+            schema_version="grc9v4-exact-aos-profile-template-v1",
+            source_profile=config.reference.profile.complete_profile_id,
+            policy="preserve_quartic_A_law_rebuild_exact_fixed_rows_unit_reference_v1"))
     return "grcv4-profile-template-sha256:" + digest(
         {
             "schema_version": "grc9v4-exact-cos-profile-template-v1",
@@ -571,14 +577,17 @@ def expansion(owner, before, action):
         or request.target_specialization_id != config.specialization.specialization_id
     ):
         raise ValueError("target law/specialization mismatch")
-    if request.target_effective_degree != 9 or request.resource_distribution != (
-        1 / 64,
-        31 / 32,
-        1 / 64,
-    ):
+    aos = config.reference.profile.FAMILY == "A_OS"
+    expected_distribution = (1/128,63/64,1/128) if aos else (1/64,31/32,1/64)
+    if request.target_effective_degree != 9 or request.resource_distribution != expected_distribution:
         raise ValueError("bounded exact accepted allocation required")
-    carrier_event = None
-    if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC"):
+    carrier_event, conductance_event = None, None
+    if aos:
+        from .grc_9_v4_spark_conductance_event import history_policy, capture
+        if request.history_policy != history_policy(config):
+            raise ValueError("A_OS event requires both exact histories and old-edge conductance lineage")
+        conductance_event = capture(config, kernel(config))
+    elif config.reference.profile.FAMILY in ("C_PC", "C_CI_PC"):
         from .grc_9_v4_spark_carrier_event import history_policy, capture
         if request.history_policy != history_policy(config):
             raise ValueError("PC event requires exact both-role archive and explicit whole-carrier loss policy")
@@ -626,7 +635,7 @@ def expansion(owner, before, action):
     if len(parent) != 1:
         raise ValueError("source lacks unique qualified parent")
     graph = GRCV4Graph.from_port_graph(plan.target_graph)
-    shares = dict(zip(plan.module_node_ids, ("0", "1/64", "31/32", "1/64")))
+    shares = dict(zip(plan.module_node_ids, ("0", "1/128", "63/64", "1/128") if aos else ("0", "1/64", "31/32", "1/64")))
     transfer = tuple(
         tuple(
             shares.get(x, "0") if old == request.source_node_id else str(int(x == old))
@@ -634,7 +643,12 @@ def expansion(owner, before, action):
         )
         for x in graph.live_node_ids
     )
-    if carrier_event is not None:
+    if conductance_event is not None:
+        from .grc_9_v4_spark_conductance_event import target as conductance_target
+        current, reset = (conductance_target(getattr(config, role), graph, transfer) for role in ("current", "reset"))
+        conductance_event.update(new_edge_ids=sorted(set(graph.live_edge_ids)-set(config.reference.graph.live_edge_ids)),
+                                 target_edge_ids=list(graph.live_edge_ids), new_edge_seed="1")
+    elif carrier_event is not None:
         from .grc_9_v4_spark_carrier_event import target as carrier_target
         current, reset = (carrier_target(getattr(config, role), graph, transfer) for role in ("current", "reset"))
         carrier_event.update(target_carrier_pairs=[list(x) for x in carrier_pairs(graph)],
@@ -647,13 +661,17 @@ def expansion(owner, before, action):
         old.baseline.identity_payload.to_payload(),
     )
     weights, m = {e: 1 for e in graph.live_edge_ids}, len(graph.live_edge_ids)
-    p["candidate"].update(
-        W_C_tr=weights,
-        W_C_tr_content_digest=payload_identity(
-            "wctr_identity_payload",
-            {"schema_version": "grcv4-wctr-identity-v1", "W_C_tr": weights},
-        ),
-    )
+    if aos:
+        from .grc_v4_spark_conductance import descriptor_identity
+        p["candidate"]["descriptor_backend_id"] = descriptor_identity(graph)
+    else:
+        p["candidate"].update(
+            W_C_tr=weights,
+            W_C_tr_content_digest=payload_identity(
+                "wctr_identity_payload",
+                {"schema_version": "grcv4-wctr-identity-v1", "W_C_tr": weights},
+            ),
+        )
     p["geometry"].update(
         K4_base_digest=payload_identity(
             "k4_identity_payload",
@@ -688,6 +706,8 @@ def expansion(owner, before, action):
     }
     if carrier_event is not None:
         event["carrier_history"] = carrier_event
+    if conductance_event is not None:
+        event["conductance_history"] = conductance_event
     return target, CompletionPublication(
         event=FrozenJSONMap(event), reason="event committed; certificate required"
     )
