@@ -11,6 +11,9 @@ RECORD_DIGEST = "53cb1d37a1181ad7d8142ec281ee4e13de25e1574ddafb480e6252fff75945b
 
 
 def checked_record(root):
+    import sys
+
+    sys.path.insert(0, str(Path(root) / "implementation/phase-9-grcv4/verification"))
     root = Path(root).resolve()
     value = load_json_object(root / RECORD)
     if (
@@ -27,7 +30,9 @@ def checked_record(root):
     for row in [*value["source_bindings"], value["evidence"]]:
         p = root / row["path"]
         try:
-            raw = p.read_bytes()
+            from p991a6_aci_epoch import previous_bytes
+
+            raw = previous_bytes(root, row["path"])
         except ValueError as error:
             raise SourceAdmissionError(str(error)) from error
         if (

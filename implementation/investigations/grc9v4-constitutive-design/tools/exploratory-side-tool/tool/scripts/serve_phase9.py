@@ -39,6 +39,8 @@ from grcv4_explorer.spark_native_ccipc_campaign import native_ccipc_campaign, na
 from grcv4_explorer.spark_native_ccipc_pressure import native_ccipc_pressure, native_ccipc_pressure_source
 from grcv4_explorer.spark_native_ccipc import native_ccipc, native_ccipc_source
 from grcv4_explorer.spark_native_aos_campaign import native_aos_campaign, native_aos_campaign_source
+from grcv4_explorer.spark_native_aci_pressure import native_aci_pressure, native_aci_pressure_source
+from grcv4_explorer.spark_native_aci import native_aci, native_aci_source
 from grcv4_explorer.spark_native_aos import native_aos, native_aos_source
 from grcv4_explorer.spark_native_aos_pressure import native_aos_pressure, native_aos_pressure_source
 from grcv4_explorer.spark_native_cpc import native_cpc, native_cpc_source
@@ -164,7 +166,7 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(content)
             return
-        if request.path in {"/api/native-spark/a-os/campaign", "/api/native-spark/a-os/campaign/source", "/api/native-spark/a-os/pressure", "/api/native-spark/a-os/pressure/source", "/api/native-spark/a-os/preflight", "/api/native-spark/a-os/preflight/source", "/api/native-spark/c-ci-pc/campaign", "/api/native-spark/c-ci-pc/campaign/source", "/api/native-spark/c-ci-pc/pressure", "/api/native-spark/c-ci-pc/pressure/source", "/api/native-spark/c-ci-pc/preflight", "/api/native-spark/c-ci-pc/preflight/source", "/api/native-spark/c-pc/campaign", "/api/native-spark/c-pc/campaign/source", "/api/native-spark/c-pc/pressure", "/api/native-spark/c-pc/pressure/source", "/api/native-spark/c-pc/preflight", "/api/native-spark/c-pc/preflight/source", "/api/native-spark/c-ci/campaign", "/api/native-spark/c-ci/campaign/source", "/api/native-spark/c-ci/pressure", "/api/native-spark/c-ci/pressure/source", "/api/native-spark/c-ci/preflight", "/api/native-spark/c-ci/preflight/source", "/api/native-spark/c-os/numerical-bridge", "/api/native-spark/c-os/numerical-bridge/source",
+        if request.path in {"/api/native-spark/a-ci/pressure", "/api/native-spark/a-ci/pressure/source", "/api/native-spark/a-ci/preflight", "/api/native-spark/a-ci/preflight/source", "/api/native-spark/a-os/campaign", "/api/native-spark/a-os/campaign/source", "/api/native-spark/a-os/pressure", "/api/native-spark/a-os/pressure/source", "/api/native-spark/a-os/preflight", "/api/native-spark/a-os/preflight/source", "/api/native-spark/c-ci-pc/campaign", "/api/native-spark/c-ci-pc/campaign/source", "/api/native-spark/c-ci-pc/pressure", "/api/native-spark/c-ci-pc/pressure/source", "/api/native-spark/c-ci-pc/preflight", "/api/native-spark/c-ci-pc/preflight/source", "/api/native-spark/c-pc/campaign", "/api/native-spark/c-pc/campaign/source", "/api/native-spark/c-pc/pressure", "/api/native-spark/c-pc/pressure/source", "/api/native-spark/c-pc/preflight", "/api/native-spark/c-pc/preflight/source", "/api/native-spark/c-ci/campaign", "/api/native-spark/c-ci/campaign/source", "/api/native-spark/c-ci/pressure", "/api/native-spark/c-ci/pressure/source", "/api/native-spark/c-ci/preflight", "/api/native-spark/c-ci/preflight/source", "/api/native-spark/c-os/numerical-bridge", "/api/native-spark/c-os/numerical-bridge/source",
                             "/api/native-spark/c-os/lifecycle", "/api/native-spark/c-os/lifecycle/source",
                             "/api/native-spark/c-os/preflight", "/api/native-spark/c-os/preflight/source",
                             "/api/native-spark/c-os/campaign", "/api/native-spark/c-os/campaign/source"}:
@@ -175,6 +177,8 @@ class Handler(BaseHTTPRequestHandler):
                 source, projection = ((native_aos_campaign_source, native_aos_campaign) if "/a-os/campaign" in request.path
                                       else (native_aos_pressure_source, native_aos_pressure) if "/a-os/pressure" in request.path
                                       else (native_aos_source, native_aos) if "/a-os/" in request.path
+                                      else (native_aci_pressure_source, native_aci_pressure) if "/a-ci/pressure" in request.path
+                                      else (native_aci_source, native_aci) if "/a-ci/" in request.path
                                       else (native_ccipc_pressure_source, native_ccipc_pressure) if "/c-ci-pc/pressure" in request.path
                                       else (native_ccipc_campaign_source, native_ccipc_campaign) if "/c-ci-pc/campaign" in request.path
                                       else (native_ccipc_source, native_ccipc) if "/c-ci-pc/" in request.path
@@ -437,7 +441,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/spark-completion.js", "/spark-applicability.js", "/spark-research.js", "/spark-pc.js", "/spark-cipc.js", "/spark-cipc-research.js", "/spark-aos-research.js", "/spark-aos.js", "/spark-aos-earlier.js", "/spark-aci-research.js", "/spark-apc-research.js", "/spark-acipc-research.js", "/spark-crg2b-research.js", "/spark-native-cos.js", "/spark-native-lifecycle.js", "/spark-native-preflight.js", "/spark-native-cpc.js", "/spark-native-ccipc.js", "/spark-native-aos.js", "/spark-native-aos-campaign.js", "/spark-native-ccipc-campaign.js", "/spark-native-cpc-campaign.js", "/spark-native-cci.js", "/spark-native-cci-campaign.js", "/spark-native-campaign.js", "/spark-earlier-accepted.js", "/spark-earlier-c.js", "/spark-arg2b-research.js", "/spark-arg2b.js", "/spark-crg2b.js", "/spark-acipc.js", "/spark-apc.js", "/spark-aci.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-examples.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/spark-completion.js", "/spark-applicability.js", "/spark-research.js", "/spark-pc.js", "/spark-cipc.js", "/spark-cipc-research.js", "/spark-aos-research.js", "/spark-aos.js", "/spark-aos-earlier.js", "/spark-aci-research.js", "/spark-apc-research.js", "/spark-acipc-research.js", "/spark-crg2b-research.js", "/spark-native-cos.js", "/spark-native-lifecycle.js", "/spark-native-preflight.js", "/spark-native-cpc.js", "/spark-native-ccipc.js", "/spark-native-aos.js", "/spark-native-aci.js", "/spark-native-aos-campaign.js", "/spark-native-ccipc-campaign.js", "/spark-native-cpc-campaign.js", "/spark-native-cci.js", "/spark-native-cci-campaign.js", "/spark-native-campaign.js", "/spark-earlier-accepted.js", "/spark-earlier-c.js", "/spark-arg2b-research.js", "/spark-arg2b.js", "/spark-crg2b.js", "/spark-acipc.js", "/spark-apc.js", "/spark-aci.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-examples.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -475,6 +479,7 @@ class Handler(BaseHTTPRequestHandler):
                     "spark-native-preflight.js": "text/javascript",
                     "spark-native-cpc.js": "text/javascript",
                     "spark-native-ccipc.js": "text/javascript",
+                    "spark-native-aci.js": "text/javascript",
                     "spark-native-aos.js": "text/javascript",
                     "spark-native-aos-campaign.js": "text/javascript",
                     "spark-native-ccipc-campaign.js": "text/javascript",

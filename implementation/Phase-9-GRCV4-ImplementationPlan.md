@@ -5225,3 +5225,30 @@ harness and all original evidence bytes are preserved.
 [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-Review.md).
 Checkpoint restore's repeated publication hashing is a concrete next profiling
 candidate; the native runtime remained unchanged here.
+
+### A_CI native steps 1–4 — 2026-11-02
+
+The user selects A_CI .1–.4 after accepted A_OS .5 (`4587185f`). Follow the
+[contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-Contract.md): fresh joint roots,
+implicit full C/logW proof, same-root final-C writer, exact W lineage, bounded
+pressure/cost and side-tool publication. Include bounded verification of the
+checkpoint digest optimization identified in A_OS. No .5 trajectory starts here.
+
+A_CI .1–.4 is implemented and pending review. Its 28 native tests, eight
+publication checks and 256/512 comparison pass. Forty steps per role take
+48.3 seconds; the complete-path provisional forecast is 16.2/30.5 minutes.
+Static root-domain/graph/row/decay/proof caches and one-hash warm restore are
+verified. The compact bundle is 0.79 MiB; old A_OS evidence remains unchanged.
+See the [review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-Review.md).
+A_CI .5 is unrun; native expected endpoints and aggregate support remain pending.
+
+A_CI pressure supplement: 32 tests and 45 explicit mutation detectors pass in
+47.66 seconds, with 102 independent implicit finite-segment checks and retained
+root/drive/writer operand traces. Runtime and the original preflight are unchanged.
+See the [pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-PressureReview.md).
+The side-tool includes the bounded audit; complete-path .5 profiling stays required.
+
+A_CI .1–.4 and the pressure supplement were accepted for commit on 2026-11-02.
+The user then authorized .5 on the same branch. Profile the complete checking,
+encoding and checkpoint path before execution; use the unchanged accepted native
+kernel and preserve the original bounded records.

@@ -1,6 +1,31 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: A_OS steps 1–4 pending review; .5 unrun — 2026-11-02
+## Current continuation: A_CI steps 1–4 accepted; A_CI .5 authorized — 2026-11-02
+
+A_OS .5 was accepted and committed as 4587185f; its original 5.27 MiB
+evidence remains unchanged. A_CI .1–.4 now implements certified Arb256 joint
+roots, exact FLINT C/W transitions and a full implicit thirty-dimensional
+certificate. All 28 native and eight publication tests pass. The 256/512
+comparison produces identical sampled states; 40+40 independent samples take
+48.3 seconds at 254.7 MiB. Static caches are active. Warm restore now hashes a
+publication once rather than once per admitted candidate; warm/cold accounting
+is unchanged. The provisional 400+400 estimate is 16.2/30.5 minutes, with fresh
+complete-path profiling required before .5. Expected 375→377 current and
+372→374 reset remain unverified. Compact samples are 0.79 MiB. Side-tool
+API/browser/notebook publish the bounded scope; user acceptance and .5 remain
+open in the original execution records; aggregate native support remains false.
+[Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-Review.md),
+[contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-Contract.md),
+[preflight](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-Preflight.json.xz).
+
+A_CI now also has a [bounded pressure audit](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-PressureReview.md):
+**32 tests and 45 mutation detectors** pass in 47.66 seconds, including 102
+implicit finite segments, complete read/writer operand ownership, nonuniform
+lineage/covariance and six provisional rollback phases. Runtime and original
+preflight evidence are unchanged; the 526 KiB XZ supplement and side-tool agree.
+The user accepted .1–.4 and pressure for commit on 2026-11-02 and authorized
+.5 after fresh profiling. Reprofile the complete stronger checker
+before the campaign; original cost estimates are not silently relabelled.
 
 The accepted research branch was merged into `main` with `--no-ff` at
 `5227704449a062586df804ca5da0cc2853906425` (research tip `77c71ea4`). The new
@@ -185,8 +210,8 @@ All 30 campaign/evidence/publication/continuity checks pass. Use
 `p991a6_aos_evidence.py` for retained verification; the frozen execution
 harness and all original evidence bytes are preserved.
 [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-Review.md).
-Checkpoint restore's repeated publication hashing is a concrete next profiling
-candidate; the native runtime remained unchanged here.
+Checkpoint hashing was identified during A_OS .5; the subsequent A_CI .1–.4
+work removes repeated hashing and verifies unchanged restore/accounting semantics.
 
 
 

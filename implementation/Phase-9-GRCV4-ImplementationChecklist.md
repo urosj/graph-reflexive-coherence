@@ -4252,7 +4252,24 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     - [x] Review and accept A_OS .5 separately; user requested commit and
       retention of the original 5.27 MiB evidence on 2026-11-02. Aggregate
       native support stays false.
-  - [ ] P9-9.1a.6-A_CI.
+  - [ ] P9-9.1a.6-A_CI: .1–.4 and pressure accepted; selected on 2026-11-02 after `4587185f`.
+    - [x] .1: Bind the joint-root A law, full C/W domain and actual histories.
+    - [x] .2: Implement selected roots and exact represented continuity/writer.
+    - [x] .3: Verify implicit full-state certificates, events and atomic lifecycle.
+    - [x] .4: Check caching, bounded costs/precision, compact evidence and side-tool.
+    - [x] Bounded CI/W pressure: 32 tests, 45 mutation detectors and 102 implicit
+      finite segments; root/read/writer ownership, lineage/covariance and rollback.
+      [Pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-PressureReview.md).
+      Native runtime and original preflight remain unchanged; side-tool synchronized.
+    - [x] Review and accept .1–.4 and the pressure supplement; user requested
+      commit on 2026-11-02, then authorized the separately profiled .5 campaign.
+    - [ ] .5: Actual source-to-completion campaign after fresh complete-path profiling.
+      28 native and eight publication tests pass. The 40+40 preflight takes
+      48.3 s; estimate 16.2/30.5 min, subject to fresh complete-path profiling.
+      Native expected 375→377 / 372→374 remain unverified. Compact evidence
+      is 0.79 MiB; historical A_OS campaign bytes are unchanged.
+      [Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-Review.md).
+      [Contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-Contract.md).
   - [ ] P9-9.1a.6-A_PC.
   - [ ] P9-9.1a.6-A_CI_PC.
   - [ ] P9-9.1a.6-C_RG2b.

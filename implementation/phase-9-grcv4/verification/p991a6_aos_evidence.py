@@ -30,7 +30,7 @@ SELF = "implementation/phase-9-grcv4/verification/p991a6_aos_evidence.py"
 
 
 def check(root=ROOT, numerical=False):
-    previous_bytes = lambda root, name: (root / name).read_bytes()
+    from p991a6_aci_epoch import previous_bytes
 
     root = Path(root)
     with lzma.open(root / RECORD, "rb") as stream:

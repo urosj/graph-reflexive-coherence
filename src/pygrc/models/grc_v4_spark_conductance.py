@@ -19,6 +19,7 @@ from .grc_v4_spark_state import (
 from .grc_v4_state import FrozenJSONMap
 
 AOS_NUMERICAL_POLICY = "spark_aos_arb256_flux128_conductance192_v1"
+ACI_NUMERICAL_POLICY = "spark_aci_arb256_flux128_conductance192_v1"
 
 
 def descriptor_identity(graph):
@@ -113,6 +114,12 @@ class QuarticAOSProfile(QuarticCOSProfile):
         if canonical_json_bytes(result.to_payload()) != canonical_json_bytes(value):
             raise ValueError("quartic A profile identity or content mismatch")
         return result
+
+
+@dataclass(frozen=True, slots=True, eq=False)
+class QuarticACIProfile(QuarticAOSProfile):
+    FAMILY: ClassVar[str] = "A_CI"
+    NUMERICS: ClassVar[str] = ACI_NUMERICAL_POLICY
 
 
 @lru_cache(maxsize=16)

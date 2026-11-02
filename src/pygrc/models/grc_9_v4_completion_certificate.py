@@ -32,11 +32,11 @@ def binding(kernel, policy, role, charge):
         "graph": kernel.graph.to_payload(),
         "profile": kernel.profile.to_payload(),
         "context": {"evaluator": "constant_zero_context_v1", "parameters": {}},
-        "reference": {"K_4": "zero", "H_ref": "identity", "W": "unit_reference_only_incoming_W_A_in_state" if kernel.profile.FAMILY == "A_OS" else "unit"},
+        "reference": {"K_4": "zero", "H_ref": "identity", "W": "unit_reference_only_incoming_W_A_in_state" if kernel.profile.FAMILY in ("A_OS", "A_CI") else "unit"},
         "charge": charge,
         "duration": policy.step_duration,
         "role": role,
-        "state_channels": ["C", "W_A"] if kernel.profile.FAMILY == "A_OS" else ["C", "Z_4"] if kernel.profile.FAMILY in ("C_PC", "C_CI_PC") else ["C"],
+        "state_channels": ["C", "W_A"] if kernel.profile.FAMILY in ("A_OS", "A_CI") else ["C", "Z_4"] if kernel.profile.FAMILY in ("C_PC", "C_CI_PC") else ["C"],
         "policy": policy.to_payload(),
     }
 
@@ -224,6 +224,9 @@ def _analytic(kernel, C):
 @flint_operation
 def _verify(raw):
     data = decode_canonical_json(raw)
+    if data.get("schema_version") == "grc9v4-native-aci-trap-operands-v1":
+        from .grc_9_v4_completion_aci import verify
+        return verify(data)
     if data.get("schema_version") == "grc9v4-native-aos-trap-operands-v1":
         from .grc_9_v4_completion_aos import verify
         return verify(data)
@@ -323,6 +326,14 @@ class CompletionCertificate:
             logW_center=list(logW_center),S=S,U=U)))
 
     @classmethod
+    def create_aci(cls, kernel, policy, role, center, logW_center, S, U, charge="21"):
+        if kernel.profile.FAMILY != "A_CI":
+            raise ValueError("A_CI full C/logW operands required")
+        return cls(FrozenJSONMap(dict(schema_version="grc9v4-native-aci-trap-operands-v1",
+            binding=binding(kernel,policy,role,charge),center=list(center),
+            logW_center=list(logW_center),S=S,U=U)))
+
+    @classmethod
     def create(cls, kernel, policy, role, center, S, U):
         if type(center) is not (ExactCarrierState if kernel.profile.FAMILY in ("C_PC", "C_CI_PC") else ExactResources) or center.graph != kernel.graph:
             raise ValueError("center must use the actual certificate graph")
@@ -350,6 +361,9 @@ class CompletionCertificate:
 
     @flint_operation
     def membership(self, state):
+        if self.operands["binding"]["profile"]["identity_payload"]["profile_family_id"] == "A_CI":
+            from .grc_9_v4_completion_aci import membership
+            return membership(self,state)
         if self.operands["binding"]["profile"]["identity_payload"]["profile_family_id"] == "A_OS":
             from .grc_9_v4_completion_aos import membership
             return membership(self,state)
