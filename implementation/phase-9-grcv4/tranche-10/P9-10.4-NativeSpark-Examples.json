@@ -1,0 +1,490 @@
+{
+  "schema": "p9104-native-spark-examples-v1",
+  "status": "implemented_pending_acceptance",
+  "entry_commit": "ba4ac86f",
+  "sources": [
+    {
+      "path": "examples/grc9v4/native_spark.md",
+      "sha256": "947a9d033109034db493bd0a14be130b71d08118fe166cc6ae2c07508586a21d"
+    },
+    {
+      "path": "examples/grc9v4/native_spark.py",
+      "sha256": "9e3235506bb99baa3419314bc9df0d14d78486ad002a99284365737a14009d12"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p9104_native_spark_examples.py",
+      "sha256": "ca42ea65f3abe47316f9d99efbe54eead02eaec905db3a4f85f6abf391369083"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.7-Support.json",
+      "sha256": "0e085740a61a9866de9917aad25e9f203b122e151c7e3b180b6fc3e37078951f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.3-NativeSpark-Regressions.json",
+      "sha256": "e4161c408d3a7a372dff43561cda80ff75bf4aa7bab5e2c42cbfea35f903c14e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.3-NativeSpark-Acceptance.json",
+      "sha256": "953c49caa3e80b60515abba7cfff5b26996c85f5fcc623502fad421b9fa65981"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p9104_native_spark_examples.py",
+      "sha256": "3e4cdd1c5e3ca749d2dd8da9ea6c106ff0086f9663b8691fa576f4fbf0c2e2b2"
+    }
+  ],
+  "families": [
+    {
+      "family": "C_OS",
+      "state_channels": [
+        "C"
+      ],
+      "duration": "32",
+      "endpoints": {
+        "current": {
+          "entry": 374,
+          "completion": 376,
+          "target_steps": 376,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 0
+        }
+      },
+      "sources": {
+        "input": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-inputs.jsonl.xz",
+          "sha256": "ad90af7caa7a7006a6243f214faa232eb2a44aafd8fa97f30d953ad7d7057638"
+        },
+        "campaign": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Campaign.json.xz",
+          "sha256": "84292e50ce6df37f1a64d38776facc78dffaed62afab67777773a69b57489e31"
+        },
+        "accepted_review": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Review.md",
+          "sha256": "ef8821b83ef0155087e7e06e24ee123037cb49a8d54f3c2b20fdbf60eafecabc"
+        },
+        "checkpoints": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-checkpoints.jsonl.xz",
+          "sha256": "60b79bf14afd11a69ad4a9abf726e7b05d9567f34c2d04316559b1a03cdf00e5",
+          "compressed_bytes": 276452,
+          "records": 22,
+          "last_record_digest": "b23fa1d3289aabc8c490c4cb8f195cc56a4d12e119e4d320ad47a28d40767761"
+        }
+      },
+      "recorded_campaign_seconds": 1307.018131076009
+    },
+    {
+      "family": "C_CI",
+      "state_channels": [
+        "C"
+      ],
+      "duration": "32",
+      "endpoints": {
+        "current": {
+          "entry": 374,
+          "completion": 376,
+          "target_steps": 376,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 0
+        }
+      },
+      "sources": {
+        "input": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-inputs.jsonl.xz",
+          "sha256": "01b600f282a3313b4fa06dffcdc14827187f37ace200cb6fd83757f4a342099d"
+        },
+        "campaign": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-Campaign.json.xz",
+          "sha256": "45fc8f7a30f0cc27826e56d94da37c0e5e8496dc9b790edfc02c9d7b8899f8f5"
+        },
+        "accepted_review": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-Review.md",
+          "sha256": "90b07da8f91b9e960253607d9743295059048b6ac6fb348922b7bcec01e240c3"
+        },
+        "checkpoints": {
+          "compressed_bytes": 154604,
+          "last_record_digest": "cbaf841a877f8fa9035a238c5f96aa74367bafa4fb11ab0ad87a3ff189cdc588",
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-checkpoints.jsonl.xz",
+          "records": 22,
+          "sha256": "9f1cb039d4cf4c9bc4b827e273f37fb7c15249f69383eecd2ad0d19cf7b10e4a"
+        }
+      },
+      "recorded_campaign_seconds": 838.1355049869744
+    },
+    {
+      "family": "C_PC",
+      "state_channels": [
+        "C",
+        "Z"
+      ],
+      "duration": "32",
+      "endpoints": {
+        "current": {
+          "entry": 374,
+          "completion": 376,
+          "target_steps": 376,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 0
+        }
+      },
+      "sources": {
+        "input": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-inputs.jsonl.xz",
+          "sha256": "0c77cf6baf90d089c804b80cde4c24c2d2ef6e9a8e697f2faa386e1631adbf70"
+        },
+        "campaign": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-Campaign.json.xz",
+          "sha256": "00890de9b5fb1c16ca530a694307717ce56e8f59da5dc9b5254d1201b7ba8ca6"
+        },
+        "accepted_review": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-Review.md",
+          "sha256": "a3561d760368b6e0988b9a91ccccc4eae7bcfd198458edb735d9d52e3e93c1c6"
+        },
+        "checkpoints": {
+          "compressed_bytes": 200300,
+          "last_record_digest": "519286ab3b92c9274ee2920f19d9e05c4d542113310ca48913e85746539822fc",
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-checkpoints.jsonl.xz",
+          "records": 22,
+          "sha256": "27ab802455fdfa01581e6df06d64b7718afce06b3aced702cdb8c9fbf2445783"
+        }
+      },
+      "recorded_campaign_seconds": 2509.821266949002
+    },
+    {
+      "family": "C_CI_PC",
+      "state_channels": [
+        "C",
+        "Z"
+      ],
+      "duration": "32",
+      "endpoints": {
+        "current": {
+          "entry": 374,
+          "completion": 376,
+          "target_steps": 376,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 0
+        }
+      },
+      "sources": {
+        "input": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC.5-inputs.jsonl.xz",
+          "sha256": "40e251c04b8e88d217cfa4178ca0f73e678ad83903c4ec11c41988618b83b521"
+        },
+        "campaign": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC.5-Campaign.json.xz",
+          "sha256": "48e625099afd4a4137a1dd010e83b2bd1cf1104f76835b3c7f332d29d9568676"
+        },
+        "accepted_review": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC.5-Review.md",
+          "sha256": "63c18f5b23eaf7f2201d92faa2ed09155b162344a0de43172cd06bf223dc443f"
+        },
+        "checkpoints": {
+          "compressed_bytes": 206396,
+          "last_record_digest": "bbc6a72cbe62a9d4704f46c87ccbc87bfc135e4aa38294fd08b22dc41089b062",
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC.5-checkpoints.jsonl.xz",
+          "records": 22,
+          "sha256": "65aaa280472fb2e029d97bebec93e189d31efe574a4c82d42c4fae033ba7728c"
+        }
+      },
+      "recorded_campaign_seconds": 2478.8441156979534
+    },
+    {
+      "family": "A_OS",
+      "state_channels": [
+        "C",
+        "W"
+      ],
+      "duration": "32",
+      "endpoints": {
+        "current": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 372,
+          "completion": 374,
+          "target_steps": 374,
+          "local_gain": 0
+        }
+      },
+      "sources": {
+        "input": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-inputs.jsonl.xz",
+          "sha256": "b077a99136a292e2a8d6ae7bf44559d2daafe2170d753e0e51fcbbf3b89b9355"
+        },
+        "campaign": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-Campaign.json.xz",
+          "sha256": "52104272715a612a6880f21d2e01bf607721dc26047699ae8bcd6ec549733c80"
+        },
+        "accepted_review": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-Review.md",
+          "sha256": "e4bfe0a84bbaf9ff46ad487c5784419eae244959773267c911aec636400747e2"
+        },
+        "checkpoints": {
+          "compressed_bytes": 1030560,
+          "last_record_digest": "74939de8d8094f66ebb79683b6ad75e0afc38fd04220e17e7ddcc020410ac461",
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-checkpoints.jsonl.xz",
+          "records": 8,
+          "sha256": "645ca0bec7ab896da5ee4b7a7d78338a7c3afa32716ab7ad3476a87fb88258a1"
+        }
+      },
+      "recorded_campaign_seconds": 1321.1227514219936
+    },
+    {
+      "family": "A_CI",
+      "state_channels": [
+        "C",
+        "W"
+      ],
+      "duration": "32",
+      "endpoints": {
+        "current": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 372,
+          "completion": 374,
+          "target_steps": 374,
+          "local_gain": 0
+        }
+      },
+      "sources": {
+        "input": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACI.5-inputs.jsonl.xz",
+          "sha256": "a8f4b32538662a77be415fc182c806df8ae743bfde3aac0bb22e75d9fcb923b7"
+        },
+        "campaign": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACI.5-Campaign.json.xz",
+          "sha256": "4c879e99606f87652c463a16d598853f3f836771a55be2d915ec399e1de539e3"
+        },
+        "accepted_review": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACI.5-Review.md",
+          "sha256": "204fb6718c19b399833988c43391ba0c6b787c743b1aeb067c476f29598bdc14"
+        },
+        "checkpoints": {
+          "compressed_bytes": 1016624,
+          "last_record_digest": "5e07522d2743113eb550daa41f1ab1075ddec2a74a7a2f5be79180a29f42a5a5",
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACI.5-checkpoints.jsonl.xz",
+          "records": 8,
+          "sha256": "61dde629fe6200b49a2c626b94642b99df94a8c6966a6052ec28d336513452b7"
+        }
+      },
+      "recorded_campaign_seconds": 1386.0097979119746
+    },
+    {
+      "family": "A_PC",
+      "state_channels": [
+        "C",
+        "W",
+        "Z"
+      ],
+      "duration": "32",
+      "endpoints": {
+        "current": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 372,
+          "completion": 374,
+          "target_steps": 374,
+          "local_gain": 0
+        }
+      },
+      "sources": {
+        "input": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-APC.5-inputs.jsonl.xz",
+          "sha256": "d825e37078416ba8f31a671940f7fc3e021edef407989128fd35cddbfab682a0"
+        },
+        "campaign": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-APC.5-Campaign.json.xz",
+          "sha256": "03de8725555b9be65b0b0f0fb6f36912a52c4100cbec3d8d0339f8d741eeaf3b"
+        },
+        "accepted_review": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-APC.5-Review.md",
+          "sha256": "a58069152598ffb1d58a1fde20ef363d77460ce63c81d39c0c9f8801d6910b1f"
+        },
+        "checkpoints": {
+          "compressed_bytes": 1025820,
+          "last_record_digest": "29c7b57d6bb306fd530a9e5c9fbb03b5674154f6ce7964faa353d5dfa85dca7d",
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-APC.5-checkpoints.jsonl.xz",
+          "records": 8,
+          "sha256": "0396b2225311515004b291bb3674dc69dc0ffc0cfa1b641464236a4988338f48"
+        }
+      },
+      "recorded_campaign_seconds": 901.753019921016
+    },
+    {
+      "family": "A_CI_PC",
+      "state_channels": [
+        "C",
+        "W",
+        "Z"
+      ],
+      "duration": "32",
+      "endpoints": {
+        "current": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 372,
+          "completion": 374,
+          "target_steps": 374,
+          "local_gain": 0
+        }
+      },
+      "sources": {
+        "input": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC.5-inputs.jsonl.xz",
+          "sha256": "643b574cd44147e46a92cca6ed70db03937ff5df3e96204dfedfd270eb64b5a7"
+        },
+        "campaign": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC.5-Campaign.json.xz",
+          "sha256": "23e899d1e6e72f0aa61d32ce62f5b098852bdd97094044286640c185674d1903"
+        },
+        "accepted_review": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC.5-Review.md",
+          "sha256": "08ccd1f2285ea7e5302542451dcc5a0f11fc93a510a65c29fcccd7ee526f0104"
+        },
+        "checkpoints": {
+          "compressed_bytes": 1081336,
+          "last_record_digest": "9d21438d39def19abda6b20ee42c2273435e49e7ae04488aa44d9272beef4004",
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC.5-checkpoints.jsonl.xz",
+          "records": 8,
+          "sha256": "c10088c545b9ed147c5c771abb6819b61faed72fbe0c51c6d58ecb3d0d80edec"
+        }
+      },
+      "recorded_campaign_seconds": 970.7922385410056
+    },
+    {
+      "family": "C_RG2b",
+      "state_channels": [
+        "C"
+      ],
+      "duration": "8",
+      "endpoints": {
+        "current": {
+          "entry": 390,
+          "completion": 392,
+          "target_steps": 392,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 390,
+          "completion": 392,
+          "target_steps": 392,
+          "local_gain": 0
+        }
+      },
+      "sources": {
+        "input": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b.5-inputs.jsonl.xz",
+          "sha256": "fe264a91cd67c05a8a0523ea1900a9ba6b9c222e408ed3a854b4fefd7d66a6a0"
+        },
+        "campaign": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b.5-Campaign.json",
+          "sha256": "f84ac243ea09a53986b23c487513c49014c390917e653cafe8ce780b20c23a49"
+        },
+        "accepted_review": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b.5-Review.md",
+          "sha256": "51d423797c10b2900d3a2cc989748950e4155f21f14ab863a8f896006973dab7"
+        },
+        "checkpoints": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b.5-checkpoints.jsonl.xz",
+          "sha256": "4a545255300580e1346c4719bfec9097675a78e0def7bc76be334840b79d9799",
+          "compressed_bytes": 137796,
+          "records": 8,
+          "last_record_digest": "d2a87739e76ab6cb3ecb28bd741d1e809e2e0de45dfff90d7350a64a045e3e70"
+        }
+      },
+      "recorded_campaign_seconds": 2174.060919391999
+    },
+    {
+      "family": "A_RG2b",
+      "state_channels": [
+        "C",
+        "W"
+      ],
+      "duration": "16",
+      "endpoints": {
+        "current": {
+          "entry": 300,
+          "completion": 302,
+          "target_steps": 302,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 300,
+          "completion": 302,
+          "target_steps": 302,
+          "local_gain": 0
+        }
+      },
+      "sources": {
+        "input": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b.5-inputs.jsonl.xz",
+          "sha256": "bda6eb553e477c51dd538f5f8ba2852077165fc5000e1669abc873f20927f0c0"
+        },
+        "campaign": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b.5-Campaign.json",
+          "sha256": "94823f115876c5593318c5a881d8356c4e998630668d9c1938c14d740b341ab3"
+        },
+        "accepted_review": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b.5-Review.md",
+          "sha256": "985b0ab2cd96eb4055f36c662594e3139afd8efd10dc5a1428df6710131b68c0"
+        },
+        "checkpoints": {
+          "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b.5-checkpoints.jsonl.xz",
+          "sha256": "108e75920e077f3516d604cd02da7df10db499c8211dbf1c769327e639fa3e40",
+          "compressed_bytes": 234288,
+          "records": 8,
+          "last_record_digest": "1256e61578c33de8682c51d2c29bf13db4989d4229260121354c21989eb710d0"
+        }
+      },
+      "recorded_campaign_seconds": 4040.5650979700004
+    }
+  ],
+  "user_accepted": false,
+  "G4_accepted": false,
+  "full_GRC9V4_conformance": false,
+  "new_full_trajectory_runs": 0,
+  "validation_scope": "Accepted all-ten source-to-completion and cold-replay campaigns reused; fresh public prefix and short cold replay, bounded controller and publication checks only.",
+  "next_work": "P9-10.5 formal obligation/debt reconciliation, then P9-10.6 release/G4.",
+  "record_digest": "0ecc44a05b39c6e681eee06a946a05eda8f37cd8189b5ebd7c2716b59b7d62d3",
+  "validation": {
+    "tests_passed": 5,
+    "seconds": 62.568,
+    "command": "PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m unittest test_p9104_native_spark_examples -v",
+    "fresh_native_scope": "C_OS source/event/certificate admission, one target step and short cold replay",
+    "complete_campaigns": "reused accepted evidence; no new full trajectory"
+  }
+}

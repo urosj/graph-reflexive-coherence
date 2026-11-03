@@ -5582,3 +5582,17 @@ PATHS = PATHS | frozenset({
     SIDE + "tool/src/grcv4_explorer/spark_native_regressions.py",
     SIDE + "tool/phase9-web/spark-native-regressions.js",
 })
+
+# Native completion tutorial reuses all ten accepted numerical campaigns.
+PATHS = PATHS | frozenset({
+    "examples/grc9v4/native_spark.md", "examples/grc9v4/native_spark.py",
+    HERE + "p9104_native_spark_examples.py", HERE + "p9104_native_spark_epoch.py",
+    HERE + "test_p9104_native_spark_examples.py",
+    PHASE + "tranche-10/P9-10.4-NativeSpark-Examples.json",
+    PHASE + "tranche-10/P9-10.4-NativeSpark-Acceptance.json",
+    PHASE + "tranche-10/P9-10.4-NativeSpark-Review.md",
+    PHASE + "tranche-10/P9-10.4-NativeSpark-SourceEpoch.json",
+    SIDE + "docs/NativeSparkWorkflow.md",
+    SIDE + "tool/src/grcv4_explorer/spark_native_workflow.py",
+    SIDE + "tool/phase9-web/spark-native-workflow.js",
+})

@@ -2987,3 +2987,18 @@ supplement in the P9-9.1a.7 review. No original numerical campaign is repeated.
   Examples, formal debts and G4 remain separate.
 
 See [NativeSparkRegressions](./docs/NativeSparkRegressions.md).
+
+## P9-10.4-NATIVE-SPARK public workflow — 2026-11-03
+
+- [x] Link the coherent public source → expansion → certificate admission →
+  entry → positive window → completed-spark guide and executable example.
+- [x] All-ten retained endpoints with configuration, role/history, proof,
+  local-gain and replay distinctions; no duplicate numerical campaign.
+- [x] Read-only `/api/native-spark/workflow`, indexed guide/code downloads,
+  browser panel and notebook cell. Explicit CLI execution stays separate.
+- [x] Source/digest checks, fixed request scope and stale/failure clearing.
+- [x] User accepted the bounded workflow publication by requesting commit on
+  2026-11-03. Current views expose the separate decision; original publication
+  flags remain historical. P9-10.5/10.6 remain separate.
+
+See [NativeSparkWorkflow](./docs/NativeSparkWorkflow.md).

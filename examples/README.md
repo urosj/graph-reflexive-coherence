@@ -33,6 +33,7 @@ The current example focus has these entry points:
 - [Quickstart](quickstart/README.md)
 - [GRC9V3 Examples](grc9v3/README.md)
 - [GRC V4 configuration catalog and numerical examples](grcv4/README.md#find-and-select-a-graph-configuration)
+- [GRC9V4 native spark completion: configuration, entry, histories, gain and replay](grc9v4/native_spark.md)
 - [LGRC9V3 Examples](lgrc9v3/README.md)
 - [Landscape Examples](landscapes/README.md)
 - [Causal-pathway binding examples](causal_pathway_binding/README.md)

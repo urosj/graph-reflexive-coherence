@@ -1,6 +1,19 @@
 # Phase 9 GRCV4 Implementation Plan
 
-## Current continuation: native spark integration regressions complete — 2026-11-03
+## Current continuation: native spark public workflow — 2026-11-03
+
+P9-10.4-NATIVE-SPARK now assembles the accepted all-ten results in the
+[public guide](../examples/grc9v4/native_spark.md) and executable example.
+Explicit inspection/preparation/run/replay modes distinguish retained evidence,
+new source/event/proof admission and full numerical work. Configuration,
+certificate applicability, both histories, positive windows, local gain,
+lineage, reset and cold replay are explained. API/browser/notebook link this
+workflow to the existing family views. Accepted long campaigns are reused;
+only focused example/publication checks are required. The user accepted this
+bounded publication by requesting commit on 2026-11-03. P9-10.5 and P9-10.6
+remain the next closeout tasks.
+
+## Previous continuation: native spark integration regressions complete — 2026-11-03
 
 [P9-10.3-NATIVE-SPARK](./phase-9-grcv4/tranche-10/P9-10.3-NativeSpark-Review.md)
 now has 28 passing focused tests in four parallel FLINT jobs (31.899 seconds

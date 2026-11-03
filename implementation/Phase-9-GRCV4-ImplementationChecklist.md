@@ -14,7 +14,8 @@ implementation and reconciliation are accepted through the user's commit request
 on 2026-11-03; bounded P9-9.1a is closed. Next are the
 Tranche 10 native-spark supplements, then formal debt/G4 closeout.
 P9-10.3-NATIVE-SPARK has 28 passing focused tests and user acceptance on 2026-11-03;
-P9-10.4-NATIVE-SPARK is the next implementation task. Broader
+P9-10.4-NATIVE-SPARK documentation/examples are accepted on 2026-11-03;
+P9-10.5/10.6 remain the next closeout tasks. Broader
 hierarchy and general ATC remain outside scope; no new trajectories are required
 for this reconciliation.
 
@@ -4923,12 +4924,22 @@ acceptances remain unchanged; each row below records its own bounded evidence.
   current boundary audit passes. Native obligations remain separate from
   completed family research and this maintenance repair.
 
-- [ ] P9-10.4-NATIVE-SPARK: Publish the reviewed native completion support set,
+- [x] P9-10.4-NATIVE-SPARK: Publish the reviewed native completion support set,
   exact example inputs and public source-to-completion workflow. Integrate live
   execution/inspection in side-tool API/browser/notebook alongside each family;
   expose applicability, lineage, entry/window and completion/gain. Distinguish
   accepted research from demonstrated native support and retain flow-region
   diagnostic meaning. Reconcile per-family publication without duplicate runs.
+  - [x] Public guide and executable inspect/prepare/run/replay workflow, with
+    exact accepted inputs, actual completion stopping and explicit failure.
+  - [x] Explain all ten families, current/reset history, certificate binding,
+    entry/window, geometric child gain and occurrence-aware replay limits.
+  - [x] API/browser/notebook access and focused prefix/controller/publication
+    checks; accepted full trajectories and cold replay are reused.
+    [Guide](../examples/grc9v4/native_spark.md),
+    [review](./phase-9-grcv4/tranche-10/P9-10.4-NativeSpark-Review.md).
+  - [x] User accepted the bounded native workflow publication by requesting
+    commit on 2026-11-03; [decision](./phase-9-grcv4/tranche-10/P9-10.4-NativeSpark-Acceptance.json).
 
 #### P9-10.5–10.6: Aggregate reconciliation and closeout
 
