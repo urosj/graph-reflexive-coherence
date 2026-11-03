@@ -1,0 +1,1170 @@
+{
+  "schema": "grc9v4-native-aci-pressure-v1",
+  "family": "A_CI",
+  "status": "verified_pending_review",
+  "tests_passed": 32,
+  "test_roster": [
+    "test_all_provisional_transaction_stages_roll_back_and_retry_once",
+    "test_all_strict_classifier_thresholds_ties_and_unqualified_terminals",
+    "test_certificate_exact_subject_bindings_and_center_defect",
+    "test_cold_checkpoint_without_solver_caches_continues_identically",
+    "test_each_W_role_is_individually_discriminated",
+    "test_equal_C_same_sum_W_and_next_read_consumes_written_history",
+    "test_exact_weighted_rows_ports_empty_parallel_and_log_derivative",
+    "test_fixed_H_W_roles_and_noncommuting_flat",
+    "test_fresh_read_reference_root_and_provisional_history_mutations",
+    "test_frozen_public_CI_trials_drives_and_one_physical_writer",
+    "test_full_chart_near_faces_all_W_coordinates_and_relabelled_proofs",
+    "test_full_implicit_derivative_sweep_and_specific_omission_mutations",
+    "test_log_writer_held_target_composition_and_no_arithmetic_average",
+    "test_matched_total_current_formation_and_geometric_relaxation",
+    "test_more_root_iterations_never_write_more_physical_history",
+    "test_native_execution_without_research_files_or_imports",
+    "test_neutral_signed_and_extreme_contrast_primitives",
+    "test_nonfinite_exhaustion_conditioning_and_root_admission_rollback",
+    "test_nonuniform_event_lineage_both_roles_and_chiralities",
+    "test_observers_aliasing_equal_C_roles_and_unsupported_durations",
+    "test_rehashed_event_allocation_and_history_mutations_reject",
+    "test_reordered_renamed_signed_source_event_and_lineage_rejections",
+    "test_reset_only_event_failure_is_atomic_and_preserves_old_histories",
+    "test_root_domain_proposals_cache_clearing_and_false_authority",
+    "test_signed_edge_reindexing_permutes_W_without_sign",
+    "test_smooth_floor_and_invalid_history_domains_fail_closed",
+    "test_tiny_geometry_is_resolved_against_native_budget",
+    "test_uniform_C_writes_W_without_current_or_resource_motion",
+    "test_weighted_classifier_thresholds_and_committed_history",
+    "test_window_replay_replacement_and_once_only_accounting",
+    "test_writer_stage_alternatives_are_resolved_and_rejected",
+    "test_wrong_production_residuals_do_not_validate_themselves"
+  ],
+  "elapsed_seconds": 47.65940159501042,
+  "native_endpoint_verified": false,
+  "native_completion_support": false,
+  "full_trajectory_runs": 0,
+  "production_precision_bits": 256,
+  "oracle_precision_bits": 768,
+  "runtime_changed": false,
+  "baseline_tests": 28,
+  "prior_30_direction_certificate_checks_retained": true,
+  "sampling_cap_seconds": 300,
+  "fixed_H_oracle_arithmetic": "independent FLINT/Arb768 edge assembly",
+  "preflight_record_digest": "4e34ccc56133f3d13e9bcd6bcc0db566297f1a22f14d61214a2b254c99af0ebd",
+  "measurements": {
+    "mutations": [
+      "C_family_allocation",
+      "baseline_J",
+      "certificate_basis",
+      "certificate_center",
+      "certificate_charge",
+      "certificate_context",
+      "certificate_duration",
+      "certificate_graph_incidence",
+      "certificate_logW_center",
+      "certificate_profile",
+      "certificate_reference",
+      "certificate_row_assignment",
+      "certificate_site_law",
+      "drop_C_from_logW",
+      "drop_logW_from_C",
+      "duplicate_lineage",
+      "false_root_conditioning_upper",
+      "false_root_domain",
+      "false_root_proposal_residual",
+      "false_root_root_error",
+      "freeze_read_drive",
+      "freeze_root",
+      "freeze_trial_read_drive",
+      "future_J",
+      "initial_geometry_baseline",
+      "initial_geometry_current",
+      "missing_old_edge",
+      "new_W",
+      "omit_Ff",
+      "omit_row_denominator",
+      "overwrite_with_drive",
+      "pre_read_G",
+      "predictor_J",
+      "production_frozen_read_reference",
+      "production_total_current_read_reference",
+      "provisional_W_inside_root",
+      "rehash_false_archive",
+      "reset_old_W_to_one",
+      "skip_writer",
+      "stale_C",
+      "total_J_in_read_drive",
+      "wrong_W_contrast",
+      "wrong_W_mobility",
+      "wrong_W_stiffness",
+      "wrong_W_weighted_rows"
+    ],
+    "rollback": [
+      {
+        "phase": "accepted_root",
+        "complete_rollback": true,
+        "retry_gain": 1
+      },
+      {
+        "phase": "continuity",
+        "complete_rollback": true,
+        "retry_gain": 1
+      },
+      {
+        "phase": "refreshed_writer_rows",
+        "complete_rollback": true,
+        "retry_gain": 1
+      },
+      {
+        "phase": "constructed_writer",
+        "complete_rollback": true,
+        "retry_gain": 1
+      },
+      {
+        "phase": "returned_root",
+        "complete_rollback": true,
+        "retry_gain": 1
+      },
+      {
+        "phase": "completion_preparation",
+        "complete_rollback": true,
+        "retry_gain": 1
+      }
+    ],
+    "strict_predicates": {
+      "thresholds": 4,
+      "each_equality_and_both_sides": true,
+      "tie_and_both_sides": true,
+      "empty_row_in_minimum": true,
+      "all_reachable_unqualified_terminals": true
+    },
+    "certificate_subject": {
+      "negative_bindings": [
+        "basis",
+        "center",
+        "charge",
+        "context",
+        "duration",
+        "graph_incidence",
+        "logW_center",
+        "profile",
+        "reference",
+        "row_assignment",
+        "site_law"
+      ],
+      "nonzero_center_defect": true,
+      "full_norm_numeric_margin": true,
+      "resource_only_rejected": true
+    },
+    "cold_continuation": {
+      "cacheless_full_replay": true,
+      "identical_followup_steps": 2
+    },
+    "W_roles": {
+      "stiffness": true,
+      "mobility": true,
+      "weighted_rows": true,
+      "contrast": true,
+      "retained_log_input": "geometric_writer_and_skip_or_overwrite_mutations"
+    },
+    "next_history": {
+      "same_sum_edge_patterns_distinguished": true,
+      "next_current_separation_lower": "1615667592803716733624340931663957364562927668442486151654804629086932716065161871969330292489448493101713362234279554469772098804441980065799261130638406586060931572394437492447012804683927124735410761984406667/2757826131550993649364364103715456897804056554542556176448634698108099443712107910064330000971904293916892446775667965408323532095584366159791555750475533307061324308088589961496711008293655788792731796366049346060288"
+    },
+    "weighted_row": {
+      "correct": "8193/4096",
+      "swapped": "8191/4096",
+      "unweighted": "2",
+      "parallel_edges": true,
+      "all_port_rows": true
+    },
+    "fixed_H": {
+      "offdiagonal_H": true,
+      "W_in_all_five_roles": true,
+      "flat_order_separation_lower": "19969535996631188124153098449018348799341083727966036623448811809989104449961154397400730928698248952316476906304639691600977710394039099947877206680643230113968561468838201714827556725350181970521541931310956005778158152158403303/52093862756873861516248842115009826540193424393093032503095764154406540920450250558761189069309017896429139926511197190983506262922807539690338719158834609735118418589953238737992799108686047068195039188561614077981958969042784853837217792"
+    },
+    "CI_staging": {
+      "actual_target_steps": 4,
+      "root_trial_read_counts": [
+        8,
+        8,
+        8,
+        7,
+        8,
+        8,
+        8,
+        7
+      ],
+      "incoming_C_W_frozen": true,
+      "baseline_read_drive": true,
+      "final_C_incoming_W_selected_J_writer": true,
+      "one_physical_writer": true
+    },
+    "chart": {
+      "all_30_near_faces": true,
+      "charge_separate": true,
+      "omitted_W_rejects": true,
+      "C_family_certificate_rejects": true
+    },
+    "implicit_derivatives": {
+      "physical_axes": 30,
+      "mixed_directions": 4,
+      "step_size_bits": [
+        112,
+        128,
+        144
+      ],
+      "segments": [
+        {
+          "axis": 0,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 1,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 2,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 3,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 4,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 5,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 6,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 7,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 8,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 9,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 10,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 11,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 12,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 13,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 14,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 15,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 16,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 17,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 18,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 19,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 20,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 21,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 22,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 23,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 24,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 25,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 26,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 27,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 28,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 29,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 30,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 31,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 32,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 33,
+          "bits": 112,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 0,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 1,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 2,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 3,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 4,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 5,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 6,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 7,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 8,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 9,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 10,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 11,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 12,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 13,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 14,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 15,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 16,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 17,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 18,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 19,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 20,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 21,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 22,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 23,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 24,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 25,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 26,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 27,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 28,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 29,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 30,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 31,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 32,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 33,
+          "bits": 128,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 0,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 1,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 2,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 3,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 4,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 5,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 6,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 7,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 8,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 9,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 10,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 11,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 12,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 13,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 14,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 15,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 16,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 17,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 18,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 19,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 20,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 21,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 22,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 23,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 24,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 25,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 26,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 27,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 28,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 29,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 30,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 31,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 32,
+          "bits": 144,
+          "independent_secant_consistent": true
+        },
+        {
+          "axis": 33,
+          "bits": 144,
+          "independent_secant_consistent": true
+        }
+      ],
+      "detected": {
+        "omit_Ff": {
+          "axis": 0,
+          "bits": 112,
+          "separation_lower": "37066108650643123566912440866178735430861533220681555507322845922822918514650380480509832967800417973784014733976095289957046514061170510055918005301740773392117/36499524940977561749129372845602330599145828057988479444633540143194201337669419092047302490538971198229138476588755258485509637771003503986021290557777713506015957394882119600662993537972830208"
+        },
+        "freeze_root": {
+          "axis": 0,
+          "bits": 112,
+          "separation_lower": "79590519177780056886016462020868314040653802094374406773210685000833890899731888841109215038812218979264559515561178813765316909699204405132791590990546917073771657446264848651/36499524940977561749129372845602330599145828057988479444633540143194201337669419092047302490538971198229138476588755258485509637771003503986021290557777713506015957394882119600662993537972830208"
+        },
+        "freeze_read_drive": {
+          "axis": 0,
+          "bits": 112,
+          "separation_lower": "86618516646535363620579240726829666861348127513078490327080354773679811997493689793551911705517911266791593070907987569137325226170976531581058728506286899580792338632730930216872708999/18249762470488780874564686422801165299572914028994239722316770071597100668834709546023651245269485599114569238294377629242754818885501751993010645278888856753007978697441059800331496768986415104"
+        },
+        "drop_logW_from_C": {
+          "axis": 0,
+          "bits": 112,
+          "separation_lower": "12872317546062968436818153009678126625055519162181641087200220557173169482181829749077522101532111807726544143729158865283482219673568814978233130192682343726460039237802243486304632373755920849961/612360413832167804618481300175204950565278972827733245154176943827040045789568780701801476101110276210469073715640490142747228062965884323130340172286597179476547016660734615078156785793174374530940928"
+        },
+        "omit_row_denominator": {
+          "axis": 14,
+          "bits": 112,
+          "separation_lower": "139335381630517253279435015990165006424340000099576870152070833199330556487695329932099320817694748167131988592742095344178470685452991790840357970085700819490209229378405433967937059717852602589/76545051729020975577310162521900618820659871603466655644272117978380005723696097587725184512638784526308634214455061267843403507870735540391292521535824647434568377082591826884769598224146796816367616"
+        },
+        "drop_C_from_logW": {
+          "axis": 14,
+          "bits": 112,
+          "separation_lower": "31904916264904237930408638334002502734071192932367623280159887879907809125248589997944349125977991129290156897838538949221889754180763346385887011119672466813103770921100889373478888490228685/36499524940977561749129372845602330599145828057988479444633540143194201337669419092047302490538971198229138476588755258485509637771003503986021290557777713506015957394882119600662993537972830208"
+        }
+      },
+      "all_four_blocks": true
+    },
+    "writer_primitive": {
+      "held_target": "199/200",
+      "initial_W": "201/200",
+      "two_fixed_duration_writes": true,
+      "whole_step_semigroup_claimed": false,
+      "other_durations_native": false
+    },
+    "formation": {
+      "matched_final_C_and_old_W": true,
+      "log_drive_separation_lower": "14995671692682983271706433379851966233196785595426919763242565774045476903058940726412833052981667751029729031947526083609891018160173009343427066185802542122352868211672876610492646857636699239107475426030790766917210227665/1589778526515925949592554996185602616583051281527497329806389286938676175550849931602819490640533993421299436233862218963119697965173569936838950169642169486545361895445350303283471652486756807501069311174365664000914275178307643244544",
+      "sign_flip_not_used": true,
+      "arithmetic_writer_distinguished": true
+    },
+    "iteration_control": {
+      "experimental_thresholds": [
+        224,
+        240
+      ],
+      "iterations": [
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          6
+        ]
+      ],
+      "physical_writes_per_step": 1,
+      "identical_states": true,
+      "native_policy_changed": false
+    },
+    "contrast_primitives": {
+      "neutral_positive_negative": true,
+      "resolved_exponent_range_bits": 64,
+      "complete_profile_admission_claimed": false
+    },
+    "root_failures": {
+      "nonfinite": true,
+      "exhaustion": true,
+      "conditioning": true,
+      "no_fallback": true
+    },
+    "lineage": {
+      "chiralities": 2,
+      "nonuniform_old_edges": 13,
+      "new_unit_edges": 3,
+      "C_shares_reused": false,
+      "persistent_Z": false
+    },
+    "event_covariance": {
+      "node_storage_permutation": true,
+      "edge_renaming_permutation_reversal": true,
+      "exact_first_step_covariance": true,
+      "fresh_target_root": true,
+      "missing_and_duplicate_lineage_rejected": true
+    },
+    "root_authority": {
+      "independent_start_proposals": 3,
+      "same_enclosed_root": true,
+      "OS_proposal_error": "17821621765763143210719122913134541803228589771533141130041521442042418455414970968585328292050217182651936648466832596424509922423140094607302437326274788325302288472136030141145548450003431046739786009946667782283850253675333789211240616548858044737411562761502870045449460545515625/7207212932033689051771269214606096675383844827501051562538812215430602165415585417008378213561850871139297765263472037835023456166302168573791257032006655641964275937719152341209306842231655007143046737565341317401169165669614160921818862493065029706770934564149267633163770803884544796038972517222711296",
+      "OS_proposal_residual": "16883976225760924406540058897291676227308599300829878795248973486158863386277848260655283551208404271611256675590827126282097747491676147444079164968323389848129244498639592294057165664021229880119045308252101794234773033465/6828046779268970776657768233698567984276232522051489956245767999246374131525255241237946573692471593720760228447675638216590132893818229842292076597586769967201441361422350907866192164773697561322460176523147880429251325990375896362151810433024",
+      "native_policy_zero_start_unchanged": true,
+      "caches_not_authoritative": true,
+      "inner_root_rate_not_physical_contraction": true
+    },
+    "covariance": {
+      "permutation": [
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "signs": [
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "scalar_W_only_permuted": true,
+      "exact_represented_result": true
+    },
+    "domain_scope": {
+      "invalid_W_rejected_before_log": true,
+      "floor_active_and_crossing_reject": true,
+      "generic_max_extension_claimed": false,
+      "narrow_W_domain_not_widened": true
+    },
+    "resolved_geometry": {
+      "current_effect_lower": "1943464811367778733609136888564679399585528018424092341825127477104411489866915673903780611305245515970384877959575906940345038923322918302757834520191149460973069861230387946905222077307143888810775918816849667139135/1589778526515925949592554996185602616583051281527497329806389286938676175550849931602819490640533993421299436233862218963119697965173569936838950169642169486545361895445350303283471652486756807501069311174365664000914275178307643244544",
+      "current_midpoint_budget": "1/6277101735386680763835789423207666416102355444464034512896",
+      "geometry_effect_lower": "1665411590240263570268074600619642902450536306226309213262651530832509636993477149984524779185840800778673442158491439283498906932173342451560634763048365912229515637486745086754947864109203558451924029887503807048403/194064761537588616893622436057812819407110752139587076392381504753256369085797110791359801103580809743810966337141384150771447505514351798930535909380147642400556872002606238193783160703949805603157874899214558593861605856727007232",
+      "readback_off_not_history_off": true
+    },
+    "zero_flow_writer": {
+      "charge": "24",
+      "steps": 3,
+      "resources_unchanged": true,
+      "history_changes": true
+    },
+    "classifier": {
+      "same_C_routing_different_weighted_qualification": true,
+      "committed_W_consumed": true
+    },
+    "synthetic_window": {
+      "source_to_entry_claimed": false,
+      "shared_once_only_credit": true,
+      "replay_and_replacement_no_gain": true
+    },
+    "writer_stage_separation_lower": {
+      "stale_C": "102443184376107604507566916448075469725490346989149901882588110871013870834161078987815829002633017469549261855853031936278721152518411317140269010756790194212480168290274377638828593440662935017643554249083329915267553964613215259/3179557053031851899185109992371205233166102563054994659612778573877352351101699863205638981281067986842598872467724437926239395930347139873677900339284338973090723790890700606566943304973513615002138622348731328001828550356615286489088",
+      "baseline_J": "7066968657193911715855704261598208460835322730707075595990438234139401906836739382170811717340201002785260339546198000644085760604202567432656801463684364998340965949333977984045264923448068704247214145616672484013552131/3179557053031851899185109992371205233166102563054994659612778573877352351101699863205638981281067986842598872467724437926239395930347139873677900339284338973090723790890700606566943304973513615002138622348731328001828550356615286489088",
+      "predictor_J": "186526848186762011819554084610841393418390681718895288231078771171372068440239664824037109959259540868156414178759246715681089935530830736526256008316757624167514101707909511905628006714156155913275064119994211/6359114106063703798370219984742410466332205126109989319225557147754704702203399726411277962562135973685197744935448875852478791860694279747355800678568677946181447581781401213133886609947027230004277244697462656003657100713230572978176",
+      "new_W": "6986186481311792491137184621169437993803611124518327429683741533098194824128334207940271743266592504214664191366094407832082873560500207741281006904919970013117579808480218165419669749081032801307379966873776420518921338227937/1589778526515925949592554996185602616583051281527497329806389286938676175550849931602819490640533993421299436233862218963119697965173569936838950169642169486545361895445350303283471652486756807501069311174365664000914275178307643244544",
+      "future_J": "21550348148261546314347821234295363040600737409771218217177454768082416747897205681863532337553299823943688685311466260683257869364746167505187932040876829513464186185847529220179106274467225622835585194021807610939120213263/12718228212127407596740439969484820932664410252219978638451114295509409404406799452822555925124271947370395489870897751704957583721388559494711601357137355892362895163562802426267773219894054460008554489394925312007314201426461145956352",
+      "pre_read_G": "51221592191587286582380414081965586993544277724992612306647593233502154534150240447326284192401914593444731429319146137912459576581248538872235789094723497838082266644307671794081285712354099970545811476665272035930861285757659919/1589778526515925949592554996185602616583051281527497329806389286938676175550849931602819490640533993421299436233862218963119697965173569936838950169642169486545361895445350303283471652486756807501069311174365664000914275178307643244544"
+    }
+  },
+  "operand_trace_retained": true,
+  "mutation_detectors": 45,
+  "scope": "bounded selected joint roots, frozen C/W and fresh derived read drive, implicit derivative sweep and mutations, complete log writer, exact lineage/covariance, strict classifier and atomic lifecycle; no source-to-entry campaign",
+  "pending_campaign": {
+    "leaf": "P9-9.1a.6-A_CI.5",
+    "current": [
+      375,
+      377
+    ],
+    "reset": [
+      372,
+      374
+    ],
+    "expected_endpoints_verified": false,
+    "required": "actual source-to-entry/window states and checkpoint pressure at those actual boundaries"
+  },
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2SourceBeat.json.xz",
+      "sha256": "faf266f447c0a1893b2ee7730dfdea481914fd15f53460e848d07ebd2c5b0675"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOS-current.json.xz",
+      "sha256": "9cfca86819ba9a57ba6a4b753650440de1d54a6fab60130791e2391a40689e5b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSAnisotropicDomain.json",
+      "sha256": "525e9056bdb2e13d6c4302b63e23de194fd3a7e66259c1e8e91bca4a1e58486b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierDomain.json",
+      "sha256": "998cf00702a0a772ff978c1cc13ba444fc8e722bab2284b15487eb1b8feb2abd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierProofs.json",
+      "sha256": "f6866257b8ded80d19454013a075ce013b4b48ab60d58b5d52900f43cc1d6dfd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/review/constructive-candidate/positive_candidate.py",
+      "sha256": "efa6eba9f08ad8cfec73d2e3fcd8b071374631c6ebdfc5e3610c3c0585a5502d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os.py",
+      "sha256": "2b5e8c403909d3acba3c5776c529d38dad433ba2c89e6d76adfc3bc079e2cf25"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os_earlier.py",
+      "sha256": "91f0e1b5c64c6489f4d61686fed62d0f16c64002da84dc1117e6633c0055c7d2"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_basins.py",
+      "sha256": "6da2628f6f04bd112dbdd6eedfb9dc38661d7cc8f0a7532d211ba30e21769fd5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci.py",
+      "sha256": "3c403d943bb924fa4d392ea2dafc8b77a190f587c031903c0b9d78d3808bdc71"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_continuation.py",
+      "sha256": "b26c6bd0f050ab710b663e025cc3f039ed81c68ac8f834d8c60a2b2bdaad3709"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_os_reference.py",
+      "sha256": "0fab09c6bfcc098c537e39c223380a1d70af2de2eef5156a2d1307fef81069ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_pc.py",
+      "sha256": "af04da3c975ff835f8e01482f166f772f4f98f718346d2f9fd569f8a3b2197d3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_positive.py",
+      "sha256": "15069ffca9b22a666ff67cd0b28ea740f9ed69f40de72154498d3e84eca4c64b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-Contract.md",
+      "sha256": "edbe4733be48b4ae8d61b243ed7f094390118ea2dfa4bfe3ee0cad3c6a7db668"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-Preflight.json.xz",
+      "sha256": "76a7d46186f9dd17cd413c9b2130f4476793a8bff7073a1d44066afd1d820c32"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/aci_native_spark_audit.py",
+      "sha256": "2a60422e18a14e0aef81c7023027591c5c97a71252a43dd729adb0a9504f3d53"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/aci_native_spark_oracle.py",
+      "sha256": "b8a5bd703307d618f79222900c4434017f01320b144a1a7c1256e8a71a3f73d5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/aos_native_spark_oracle.py",
+      "sha256": "b57d40390e0afc268168d6d7f3dd54965c75941a493b835b3161b3f48f8c4a18"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cci_native_spark_pressure_oracle.py",
+      "sha256": "8077859df0110ba68eb827aaed127625d90a74dd175941d731c7c3a41165bb72"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cos_native_spark_oracle.py",
+      "sha256": "c39701e4ee348210a9df93d3315cb214bf92e57db30413f0a15aa4d734379c07"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cpc_native_spark_pressure_oracle.py",
+      "sha256": "c782646d336d29c16c3de531cb493d2ac3c58909ea19734585726d0ff6590139"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a2_native_spark_numerics.py",
+      "sha256": "5ac8f8e203d4bfa6681dba80fa94c3c8e28c51664ae432a137fdbef3963ecace"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a4_native_spark_preflight.py",
+      "sha256": "eecbbc30bf29b1a6eb3f4633c42a22d46ece5464d7acbbf00ea4ba442ea0b43b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_aci_preflight.py",
+      "sha256": "4d4d7bf00e5e26daff3280fba75ba90d993042d91f0cce98a464ffbe56d6b27b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_aci_pressure.py",
+      "sha256": "d8f1c515450c46f089d80cbdab98f613321b1bf3f195a1c517888c6d7b54bb69"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_aci_subjects.py",
+      "sha256": "15bac2cde1769a588cf7885f8656d7f68ffeaacfef21bf6daea3add45e87b3dd"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_aci_native_spark_pressure.py",
+      "sha256": "3076169d893516e554bffd68b0ba09c478372daee703e7ffed7b17cbbf43e866"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_cos_native_spark_pressure.py",
+      "sha256": "12ed76d05a6d4cea157c27fc4bebbed3fcd64537fdeb2440e496e1d4a37caf24"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-a-ci-source-manifest.json",
+      "sha256": "6090ea668b75a069f2767425eba9289c3df34b2570bb4640f8be92c38fd34ab2"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-a-os.md",
+      "sha256": "21460f69afcccb11fab55c96eb127c755526bb99e01971ffc42c55613ce8ba34"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-applicability-source-manifest.json",
+      "sha256": "984ebac4903725484ba7894ed216f49380b78368ba0f65f813245d28044cb825"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-earlier-source-manifest.json",
+      "sha256": "31f7a2900e5eae401d71bb495755d9df7cc2de39e85cb6c84d652414486a9dfb"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-earlier.md",
+      "sha256": "605d43e957bb7f056959d266fb3aaad0ffe2d6110c699e3c66a5cdbef18f6cc0"
+    },
+    {
+      "path": "specs/grc-v4-spark-native-a-os-numerical-policy.md",
+      "sha256": "ae6ec5df6a5dd01be1f6abeb1d3e73ef8e0b4d3d34cc1b4192e097f9b7b39961"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_sparks.py",
+      "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4.py",
+      "sha256": "9477132a4ebb5e47a94e77deb2d56a80c577b2b74531da512ba233a5720070d0"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion.py",
+      "sha256": "d839f0d9c9c87af51383514fc6cf88bc7d66e091202b4c93029aaa784039db1c"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_aci.py",
+      "sha256": "bcf5ae0b370b40052bd0b6ae2a6ef2101fba2ca68c583ad359261d17f1961dea"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_aos.py",
+      "sha256": "2612165d21efe0c0e94cfd9b3605895dfb655a76b17e972a277406e730e388e9"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_certificate.py",
+      "sha256": "32e7e7702d20ba81c4d3940c64213016b020c8d50c40bdb4938b9534620910bb"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_codec.py",
+      "sha256": "fde2170cb23af1f5cd05242b36c98143a58573bef21f58957811eadf6f71bf7f"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_cpc.py",
+      "sha256": "5d7407fad0fcf7e6b3cfbab9aa8ae21692920d7525865a11366de4768301b255"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_carrier_event.py",
+      "sha256": "b330b2b118b074bc9b13b335a542a2dd08d4420ad8e7b6dc3da81aac87a8fdad"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_conductance_event.py",
+      "sha256": "63d8f2eaa84d521a84b972a1f9e6373c4cb09719f836f1bf66830fd784c4bf92"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_contracts.py",
+      "sha256": "8b08c57b60ff4781abeb881ce31bc302d41406fa7dacd4f1e5e51a4d446fc5db"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_owner.py",
+      "sha256": "48aaf8066df66f601959bfae818bf16d1e5e2f6912f5efe82bedebf3942565d0"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark.py",
+      "sha256": "154500ad268e461a1555827c9de82c064405fb761079882cc979e6f7c1bbf728"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aci.py",
+      "sha256": "d3a3054b84ce12a9c5669b2c2ff1cf44be82cfcb910d1a0f5eff5fb2bb211a5b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aci_math.py",
+      "sha256": "b92b16e05def4e4b06a7ad871dbcc7221a04d688211e3a4eac9e5e86ef307e56"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aos.py",
+      "sha256": "3e0b4183952e84c9e8460060a722ba69fd7126cf77a25da93760dba638b19be5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aos_math.py",
+      "sha256": "b5e2b24e769b35fa2fa828a91d519634dfcbf6906950f395c5a9ccc5ca830a1d"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_carrier.py",
+      "sha256": "5fd8682ec00f0bafe6cb267c98795837b2c2fede15fdbe6bf7c9d8dbcfdb27f9"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cci.py",
+      "sha256": "8e25e09507cfd056bc8a68e3e14715ab40dbb1db6e7514634fea04b0d801c07d"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_ccipc.py",
+      "sha256": "1f61d78988e0a0110c717bfa59f9d65f57f09da7e338b66ce6e094c661f230e1"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_conductance.py",
+      "sha256": "d367f15f54ab475b62ec65dfdc6ab0c1d95764f32884b094a1b68f700dd5a6ee"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cos.py",
+      "sha256": "0ff7642925f324b8041d5f4660ccea1627e4eb0bf15faf26799c5ca2b77901de"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cpc.py",
+      "sha256": "0bd1e8a24fbad058a5fdac406404359e8b396a20c9b227724a6f5bac7f3736bd"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_state.py",
+      "sha256": "db4c66539ab03a6bad9557c95adf056825697df210dc0b88193a9b805aa5a141"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_spark_completion.py",
+      "sha256": "e117527ceae9ef3961f093049d998ac3f98fcfbb364d275fd626c6b2caa18dd4"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_aci.py",
+      "sha256": "019dbf4b8ad3bf345ddd1859de6c2b7f150145684ea548b5a099f80ddd3d3ae2"
+    }
+  ],
+  "evidence": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-PressureSamples.json.xz",
+    "sha256": "2288b25e8a6698123192a7fa5a9124bb886c8fae5a6784fbb83a926ec6a84882"
+  },
+  "record_digest": "0abbc12c031f4c05085229bdf0c8770cf8eb6558ff22810b16a003bf39039a16"
+}

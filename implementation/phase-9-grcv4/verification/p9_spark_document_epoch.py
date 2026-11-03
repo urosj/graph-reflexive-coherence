@@ -76,7 +76,8 @@ def previous_bytes(root, name):
     path = root / name
     if Path(name).is_absolute() or '..' in Path(name).parts or not path.resolve().is_relative_to(root):
         raise ValueError('spark document path escapes repository')
-    raw = path.read_bytes()
+    from p991a3_native_spark_epoch import previous_bytes as native_previous
+    raw = native_previous(root, name)
     current = sha(raw)
     if name in READERS:
         before = READERS[name]
@@ -98,6 +99,8 @@ def previous_bytes(root, name):
 
 
 def peel_sha(root, name, present):
+    from p991a3_native_spark_epoch import peel_sha as native_peel
+    present = native_peel(root, name, present)
     if name not in DOCUMENTS and name not in READERS:
         return present
     previous = previous_bytes(root, name)

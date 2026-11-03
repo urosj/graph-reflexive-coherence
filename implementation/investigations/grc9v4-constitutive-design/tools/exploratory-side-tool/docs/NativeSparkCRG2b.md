@@ -1,0 +1,11 @@
+# Native C_RG2b bounded preflight
+
+The native C_RG2b `.1–.4` view reports the actual source, receipt-derived event and bounded current/reset prefixes on the 15-vertex, 16-edge target. It exposes measured step/audit/checkpoint costs and a 400-step-per-role planning envelope. Research entry 390 and completion 392 remain unverified native expectations until `.5`.
+
+Use `/api/native-spark/c-rg2b/preflight`, its `/source` download, the “Native C_RG2b steps 1–4” browser panel, or the `spark-native-crg2b` notebook cell. The surface authenticates the sealed record, current numerical sources and compressed samples. Browser failures clear stale output; the notebook clears its previous result before admission.
+
+This family uses **duration 8** and physical state C only. Every beat admits incoming and returned Lipschitz sections separately and performs one exact FLINT incidence update. The proof covers the full continuous 14-dimensional charge-tangent tube without differentiating the section or requiring a later trajectory. An Arb768 checker independently verifies all residuals of the native depth-32 Arb256 chain, propagates their individual contraction weights and includes the entire tail. It checks both physical geometry consumers and represented-step error on every beat. Separate depth-40 solves cross-check the initial/final bounded samples. All exact source and 40 target outputs are compared with the development baseline; only its compact timings/trace and a reversible source patch are retained.
+
+Samples factor only identical adjacent states and section witnesses. They retain the inverse-chain residuals and tail needed to recheck the section. No endpoint campaign or aggregate native support is claimed. Accepted earlier-family records and research claims retain their original execution identities through a finite source epoch.
+
+The bounded pressure supplement adds 15 tests, 93 rejected mutations and 84 exact tube-boundary witnesses. Its 317.9 KiB operands include manufactured inverse chains and a fresh section at the unrounded next-state enclosure. The existing preflight panel and notebook authenticate and display the supplement; `/api/native-spark/c-rg2b/pressure` and `/source` expose it directly. A stale pressure source invalidates the combined view. The pressure pass changes no production code and runs no .5 trajectory.

@@ -1,7 +1,7 @@
 """Finite A_RG2b research successor; older scientific evidence stays immutable."""
 from pathlib import Path
 import hashlib,subprocess
-from .basin import _bound_file
+from .basin import _bound_file, native_predecessor
 from .canonical import load_json_object,record_digest,file_sha256
 from .errors import SourceAdmissionError
 INV='implementation/investigations/grc9v4-constitutive-design/'
@@ -56,13 +56,15 @@ def checked_epoch(root):
     need(validation['record_digest']==record_digest(validation,'record_digest')=='e6e8cf248ec8663a4c283a055e347c476bc25e15ea28c7c629c15b55f60d0a59','accepted C_RG2b validation digest')
     for ref in validation['sources']:
         current=file_sha256(root/ref['path'])
-        if current!=ref['sha256']:
+        if current!=ref['sha256'] and native_predecessor(root, ref['path'], ref['sha256']) is None:
             row=rows.get(ref['path'])
             need(row is not None and row['before_sha256']==ref['sha256'],'unbound acceptance validation successor')
     return v
 
 
 def bound_metadata_files(root,expected):
+    expected = {p: h for p, h in expected.items()
+                if native_predecessor(root, p, h) is None}
     root=Path(root);changed={p:h for p,h in expected.items() if file_sha256(root/p)!=h}
     rows={r['path']:r for r in checked_epoch(root)['sources']} if changed else {}
     for path,sha in expected.items():
@@ -74,6 +76,10 @@ def bound_metadata_files(root,expected):
 
 
 def reviewed_source_bytes(root,path,expected):
+    from .basin import native_predecessor
+    original = native_predecessor(root, path, expected)
+    if original is not None:
+        return original
     root=Path(root)
     if file_sha256(root/path)==expected:return _bound_file(root,path,expected).read_bytes()
     need(path==HISTORICAL_HELPER,'source changed outside the finite A_RG2b helper successor')

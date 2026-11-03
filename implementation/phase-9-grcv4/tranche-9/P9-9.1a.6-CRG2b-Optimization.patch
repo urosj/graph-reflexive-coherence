@@ -1,0 +1,695 @@
+--- a/src/pygrc/models/grc_v4_spark_crg2b.py
++++ b/src/pygrc/models/grc_v4_spark_crg2b.py
+@@ -25,6 +25,7 @@
+     RHO,
+     SectionMath,
+     _algebra_facts,
++    _matrix_facts,
+     ball,
+     exact_bounds,
+     global_domain,
+@@ -229,6 +230,7 @@
+         return {
+             "graph": _reference_facts.cache_info()._asdict(),
+             "algebra": _algebra_facts.cache_info()._asdict(),
++            "exact_matrix_scalars": _matrix_facts.cache_info()._asdict(),
+             "domain": global_domain.cache_info()._asdict(),
+             "section": _section_witness.cache_info()._asdict(),
+         }
+--- a/src/pygrc/models/grc_v4_spark_crg2b_math.py
++++ b/src/pygrc/models/grc_v4_spark_crg2b_math.py
+@@ -35,11 +35,11 @@
+ 
+ 
+ def fraction(x):
+-    return F(str(x))
++    return F(x)
+ 
+ 
+ def ball(x):
+-    return arb(F(str(x)))
++    return arb(F(x))
+ 
+ 
+ def exact_bounds(x):
+@@ -96,16 +96,22 @@
+     )
+ 
+ 
++@lru_cache(maxsize=16)
++def _matrix_facts(encoded):
++    # Immutable exact scalars are cached, never mutable FLINT matrices. This
++    # avoids reparsing thousands of rational strings at every section read.
++    v = _algebra_facts(encoded)
++    return tuple(
++        (k, tuple(tuple(F(x) for x in row) for row in v[k]))
++        for k in ("B", "D", "I", "M", "A", "L", "P")
++    )
++
++
+ def graph_algebra(encoded):
+-    v = _algebra_facts(encoded).to_dict()
+-    return {
+-        k: _matrix(x)
+-        if k in ("B", "D", "I", "M", "A", "L", "P")
+-        else x
+-        if k == "overlap"
+-        else F(x)
+-        for k, x in v.items()
+-    }
++    v = _algebra_facts(encoded)
++    out = {k: fmpq_mat(rows) for k, rows in _matrix_facts(encoded)}
++    out.update({k: v[k] if k == "overlap" else F(v[k]) for k in v if k not in out})
++    return out
+ 
+ 
+ def polynomial_image(algebra, lo, hi):
+@@ -284,6 +290,15 @@
+         self.read_count = 0
+         self.identity_operators = {}
+         self.proposal_sweeps = 0
++        self.resource_identity = arb_mat(
++            [[int(i == j) for j in range(self.n)] for i in range(self.n)]
++        )
++        self.star_pairs = tuple(
++            (i, j)
++            for i in range(self.m)
++            for j in range(i, self.m)
++            if self.overlap[i][j]
++        )
+ 
+     @staticmethod
+     def q(a, b=1):
+@@ -297,22 +312,28 @@
+         return arb_mat([[(x - 2) ** 3 - (x - 2)] for x in C.entries()])
+ 
+     def geometry(self, flat):
+-        return self.I + arb_mat(
+-            [
+-                [
+-                    self.overlap[i][j] * flat[i, 0] * flat[j, 0] / 8
+-                    for j in range(self.m)
+-                ]
+-                for i in range(self.m)
+-            ]
+-        )
++        H = arb_mat(self.I)
++        for i, j in self.star_pairs:
++            value = self.overlap[i][j] * flat[i, 0] * flat[j, 0] / 8
++            if i == j:
++                H[i, j] += value
++            else:
++                H[i, j] = H[j, i] = value
++        return H
+ 
+     def clip(self, C):
+         rows = []
++        lo, hi = self.lo, self.hi
+         for x in C.entries():
+-            lo = max(fmpq(str(self.lo)), min(fmpq(str(self.hi)), x.lower().fmpq()))
+-            hi = max(fmpq(str(self.lo)), min(fmpq(str(self.hi)), x.upper().fmpq()))
+-            rows.append([arb((lo + hi) / 2, (hi - lo) / 2)])
++            if x.rad() == 0:
++                # Finite-chain proposals are exact dyadic points. Avoid two
++                # endpoint conversions and a rebuilt interval at every Newton trial.
++                q = x.fmpq()
++                rows.append([x if lo <= q <= hi else arb(lo if q < lo else hi)])
++            else:
++                left = max(lo, min(hi, x.lower().fmpq()))
++                right = max(lo, min(hi, x.upper().fmpq()))
++                rows.append([arb((left + right) / 2, (right - left) / 2)])
+         return arb_mat(rows)
+ 
+     def operators(self, H):
+@@ -349,9 +370,7 @@
+     def inverse_proposal(self, target, H, start):
+         ops = self.operators(H)
+         X = arb_mat(start)
+-        identity = arb_mat(
+-            [[int(i == j) for j in range(self.n)] for i in range(self.n)]
+-        )
++        identity = self.resource_identity
+         threshold = arb(2) ** (-PROPOSAL_BITS + 32)
+         for iteration in range(NEWTON_LIMIT):
+             c = self.clip(X)
+@@ -361,21 +380,13 @@
+             self.newton_iterations += 1
+             if maxnorm(residual) < threshold:
+                 break
+-            mask = [
+-                int(self.lo < fraction(x.mid().fmpq()) < self.hi) for x in X.entries()
+-            ]
+-            D = ops["L"] / 64 - arb_mat(
+-                [
+-                    [
+-                        (3 * (c[i, 0] - 2) ** 2 - 1) if i == j else 0
+-                        for j in range(self.n)
+-                    ]
+-                    for i in range(self.n)
+-                ]
+-            )
+-            DP = arb_mat(
+-                [[D[i, j] * mask[j] for j in range(self.n)] for i in range(self.n)]
+-            )
++            DP = ops["L"] / 64
++            for i in range(self.n):
++                DP[i, i] -= 3 * (c[i, 0] - 2) ** 2 - 1
++            for j, x in enumerate(X.entries()):
++                if not self.lo < x.mid().fmpq() < self.hi:
++                    for i in range(self.n):
++                        DP[i, j] = 0
+             jac = identity + ball(ETA * DT) * ops["A"] * DP
+             X = midpoint(X - jac.solve(residual))
+         else:
+@@ -413,11 +424,14 @@
+                 change = max(maxnorm(a - b) for a, b in zip(hs, newhs))
+                 hs = newhs
+                 # Proposal-only early stop. Every level is subsequently
+-                # certified afresh at PRECISION, including both residuals.
++                # certified afresh at PRECISION, including both residuals. The
++                # proposal goal is comfortably below current160; chasing the
++                # much smaller depth-32 tail wastes sweeps. Admission remains
++                # governed by the unchanged full-input current160/flux128 checks.
+                 slope = self.bounds["G_H"] + ball(LIP) * self.bounds["A_H"]
+                 if (
+                     slope * change / (1 - self.bounds["graph_transform_contraction"])
+-                    < self.bounds["section_tail"] / 16
++                    < arb(2) ** -180
+                 ):
+                     break
+         need(xs[0] == C and hs[-1] == self.I, "finite section boundaries")
+--- a/implementation/phase-9-grcv4/verification/crg2b_native_spark_oracle.py
++++ b/implementation/phase-9-grcv4/verification/crg2b_native_spark_oracle.py
+@@ -105,7 +105,7 @@
+         )
+ 
+ 
+-def _audit_read_uncached(graph, profile, state, witness, *, fresh=True):
++def _audit_read_uncached(graph, profile, state, witness):
+     """Rebuild every native level using a different physical current solve."""
+     need(
+         witness["graph"].to_dict() == graph
+@@ -128,6 +128,7 @@
+     shift = norm(C - Xprev)
+     need(shift <= arb(fmpq(witness["query_shift"][1])), "whole-input query shift")
+     maxima = [arb(0), arb(0)]
++    level_residuals = []
+     chain = witness["chain"]
+     need(len(chain) == 32, "complete finite-chain depth")
+     for i, row in enumerate(chain):
+@@ -151,6 +152,7 @@
+                 "independent chain residual: " + label,
+             )
+             maxima[idx] = max(maxima[idx], actual)
++        level_residuals.append((rh + L * rx).upper())
+         Xprev, Hprev = X, H
+     need(Hprev == m.I, "identity terminal section boundary")
+     q = fmpq(m.domain["graph_transform_contraction"])
+@@ -213,30 +215,50 @@
+         ),
+         "both physical H consumers",
+     )
+-    if fresh:
+-        exact = selected(
+-            json.dumps(graph, sort_keys=True, separators=(",", ":")), tuple(state.C)
+-        )
+-        for native, key in (("geometry", "H"), ("current", "J"), ("flat", "flat")):
+-            need(
+-                encloses(witness[native], decoded(exact[key])),
+-                "fresh depth40 enclosure: " + native,
+-            )
++    # Independently reconstruct the section enclosure from the verified chain.
++    # The frozen graph-transform theorem bounds the exact infinite section by
++    # these residuals plus q^32 V and the complete input displacement. No new
++    # inverse-chain solve is needed to establish this enclosure.
++    # Backward residual propagation is sharper than repeating the worst
++    # level at every depth: E_(i-1) <= rh_i + L*rx_i + q*E_i, E_N <= V.
++    # It uses the same global inverse/section inequalities and includes the
++    # whole tail; no finite level or physical direction is omitted.
++    weighted = arb(V)
++    for level in reversed(level_residuals):
++        weighted = level + q * weighted
++    independent_error = (weighted + L * shift).upper().fmpq()
++    proved_H = arb_mat(m.m, m.m)
++    for i in range(m.m):
++        for j in range(i, m.m):
++            if m.overlap[i][j]:
++                proved_H[i, j] = proved_H[j, i] = arb(
++                    proposal[i, j].fmpq(), independent_error
++                )
++    need(norm(proved_H - m.I) < arb(rho), "independently proved section domain")
++    proved_J, proved_flat = m.direct_similarity_read(C, proved_H, m.q(1, 1024))
++    need(
++        all(x.rad() < arb(fmpq(1, 2**160)) for x in proved_J.entries()),
++        "independent current enclosure exceeds fixed policy",
++    )
+     return {
+-        "finite_levels": 32,
+-        "all_inverse_and_geometry_residuals": True,
+-        "full_input_shift": True,
+-        "truncation_tail": True,
+-        "literal_similarity": True,
+-        "fresh_depth40": fresh,
+-        "section_C1_claimed": False,
++        "checks": {
++            "finite_levels": 32,
++            "all_inverse_and_geometry_residuals": True,
++            "full_input_shift": True,
++            "truncation_tail": True,
++            "literal_similarity": True,
++            "proof_derived_section": True,
++            "level_weighted_residuals": True,
++            "section_C1_claimed": False,
++        },
++        "H": encoded(proved_H),
++        "J": encoded(proved_J),
++        "flat": encoded(proved_flat),
+     }
+ 
+ 
+ @lru_cache(maxsize=8)
+-def _audited_read(
+-    graph_bytes, profile_bytes, state_bytes, witness_bytes, fresh, precision
+-):
++def _audited_read(graph_bytes, profile_bytes, state_bytes, witness_bytes, precision):
+     from pygrc.models.grc_v4_spark_state import ExactResources
+ 
+     need(precision == 768, "independent audit precision")
+@@ -246,17 +268,12 @@
+             json.loads(profile_bytes),
+             ExactResources.from_canonical_bytes(state_bytes),
+             FrozenJSONMap(json.loads(witness_bytes)),
+-            fresh=fresh,
+-        )
+-    )
+-
+-
+-def audit_read(graph, profile, state, witness, *, fresh=True):
+-    """Reuse only a completed proof of byte-identical full witness and subject.
+-
+-    Changed fields miss this bounded cache and undergo every residual check.
+-    This cache never chooses or alters a native physical output.
+-    """
++        )
++    )
++
++
++def proof_read(graph, profile, state, witness):
++    """Reuse only a proved byte-identical complete witness and exact subject."""
+     from pygrc.models.grc_v4_codec import canonical_json_bytes
+ 
+     with _ARB_CONTEXT_LOCK, ctx.workprec(768):
+@@ -265,24 +282,48 @@
+             canonical_json_bytes(profile),
+             state.to_canonical_bytes(),
+             canonical_json_bytes(witness.to_dict()),
+-            fresh,
+             ctx.prec,
+-        ).to_dict()
+-
+-
+-def verify_step(step):
++        )
++
++
++def audit_read(graph, profile, state, witness, *, fresh=True):
++    with _ARB_CONTEXT_LOCK, ctx.workprec(768):
++        proved = proof_read(graph, profile, state, witness)
++        if fresh:
++            exact = selected(
++                json.dumps(graph, sort_keys=True, separators=(",", ":")), tuple(state.C)
++            )
++            for native, key in (("geometry", "H"), ("current", "J"), ("flat", "flat")):
++                need(
++                    encloses(witness[native], decoded(exact[key])),
++                    "fresh depth40 enclosure: " + native,
++                )
++                need(
++                    all(
++                        x.overlaps(y)
++                        for x, y in zip(
++                            decoded(proved[key]).entries(),
++                            decoded(exact[key]).entries(),
++                            strict=True,
++                        )
++                    ),
++                    "proof-derived section disagrees with fresh depth40 solve",
++                )
++        return dict(proved["checks"].to_dict(), fresh_depth40=fresh)
++
++
++def verify_step(step, *, fresh=True):
+     with _ARB_CONTEXT_LOCK, ctx.workprec(768):
+         graph = step.before.graph.to_payload()
+         profile = step.section["profile"].to_dict()
+         m = model(graph)
+-        first = audit_read(graph, profile, step.before, step.section)
+-        second = audit_read(graph, profile, step.after, step.restart_section)
++        first = audit_read(graph, profile, step.before, step.section, fresh=fresh)
++        second = audit_read(
++            graph, profile, step.after, step.restart_section, fresh=fresh
++        )
+         C = vector(step.before.C)
+         after = vector(step.after.C)
+-        reference_root = selected(
+-            json.dumps(graph, sort_keys=True, separators=(",", ":")),
+-            tuple(step.before.C),
+-        )
++        reference_root = proof_read(graph, profile, step.before, step.section)
+         ideal = C - 8 * m.B * decoded(reference_root["J"])
+         need(
+             step.duration == "8"
+--- a/implementation/phase-9-grcv4/verification/p991a6_crg2b_preflight.py
++++ b/implementation/phase-9-grcv4/verification/p991a6_crg2b_preflight.py
+@@ -5,6 +5,7 @@
+ import json
+ import lzma
+ import platform
++import statistics
+ import sys
+ import time
+ import unittest
+@@ -37,6 +38,8 @@
+ RECORD = BASE + "P9-9.1a.6-CRG2b-Preflight.json.xz"
+ EVIDENCE = BASE + "P9-9.1a.6-CRG2b-Samples.json.xz"
+ SCRIPT = HERE + "p991a6_crg2b_preflight.py"
++REFERENCE = BASE + "P9-9.1a.6-CRG2b-PerformanceReference.json.xz"
++OPTIMIZATION_PATCH = BASE + "P9-9.1a.6-CRG2b-Optimization.patch"
+ SAMPLE_COUNT = 20
+ SAMPLING_CAP = 600
+ 
+@@ -140,7 +143,7 @@
+ def run_tests():
+     suite = unittest.defaultTestLoader.loadTestsFromTestCase(NativeCRG2bTests)
+     names = [t._testMethodName for t in suite]
+-    need(len(names) == 21, "mandatory C_RG2b roster")
++    need(len(names) == 23, "mandatory C_RG2b roster")
+     output = io.StringIO()
+     start = time.perf_counter()
+     result = unittest.TextTestRunner(stream=output, verbosity=2).run(suite)
+@@ -162,6 +165,56 @@
+         tests["seconds"],
+         info["checkpoint_seconds"],
+         info["setup_seconds"]["warm_checkpoint_restore"],
++    )
++    for role, rows in info["samples"].items():
++        costs = {
++            flag: [
++                x
++                for row, x in zip(rows, info["oracle_seconds"][role], strict=True)
++                if row["fresh_depth40"] is flag
++            ]
++            for flag in (False, True)
++        }
++        need(
++            all(costs.values()),
++            "both proof-only and deeper-cross-check timings required",
++        )
++        target = value["roles"][role]
++        old_central, old_upper = target["central_seconds"], target["upper_seconds"]
++        counts = {False: 378, True: 22}
++        central_audit = sum(
++            counts[flag] * statistics.mean(costs[flag]) for flag in counts
++        )
++        upper_audit = sum(counts[flag] * 2 * max(costs[flag]) for flag in counts)
++        target["central_seconds"] = (
++            400
++            * (
++                target["step_seconds"]["mean"]
++                + statistics.mean(info["transition_encoding_seconds"][role])
++            )
++            + central_audit
++        )
++        target["upper_seconds"] = (
++            400
++            * (
++                1.5 * target["step_seconds"]["maximum"]
++                + 2 * max(info["transition_encoding_seconds"][role])
++            )
++            + upper_audit
++        )
++        target["audit_workload"] = {
++            "complete_proof_checks": 400,
++            "additional_depth40_cross_checks": 22,
++            "rule": "initial/final and every 20 beats; all 400 beats retain full independent chain/error checks",
++            "proof_only_mean_seconds": statistics.mean(costs[False]),
++            "deep_comparison_mean_seconds": statistics.mean(costs[True]),
++            "central_seconds": central_audit,
++            "upper_seconds": upper_audit,
++        }
++        value["central_seconds"] += target["central_seconds"] - old_central
++        value["upper_seconds"] += target["upper_seconds"] - old_upper
++    value["method"] += (
++        "; stratified complete proof checks and periodic extra depth40 solves, each charged separately"
+     )
+     cold = 2 * 400 / SAMPLE_COUNT * info["setup_seconds"]["cold_checkpoint_restore"]
+     value["cold_replay_allowance"] = {
+@@ -189,6 +242,7 @@
+         native._section_witness,
+         native._reference_facts,
+         native._algebra_facts,
++        native._matrix_facts,
+         native.global_domain,
+         certificates._verify,
+         selected,
+@@ -297,8 +351,8 @@
+                     "actual execution capture",
+                 )
+                 (audit, observed), oracle = timed(
+-                    lambda step=step, m=m, role=role: (
+-                        verify_step(step),
++                    lambda step=step, m=m, role=role, i=i: (
++                        verify_step(step, fresh=i in (0, SAMPLE_COUNT - 1)),
+                         independent_membership(m, pair[0 if role == "current" else 1]),
+                     )
+                 )
+@@ -319,6 +373,7 @@
+                         "total_seconds": seconds,
+                         "fresh_reads": 2,
+                         "full_state_writes": 1,
++                        "fresh_depth40": i in (0, SAMPLE_COUNT - 1),
+                         "compressed_bytes": len(raw),
+                     }
+                 )
+@@ -425,6 +480,8 @@
+     paths.update(
+         {
+             SCRIPT,
++            REFERENCE,
++            OPTIMIZATION_PATCH,
+             HERE + "p991a6_crg2b_subjects.py",
+             HERE + "crg2b_native_spark_oracle.py",
+             HERE + "p991a2_native_spark_numerics.py",
+@@ -459,14 +516,53 @@
+     ]
+ 
+ 
++def performance_comparison(evidence):
++    baseline = json.loads(lzma.decompress((ROOT / REFERENCE).read_bytes()))
++    need(baseline == seal(baseline), "unsealed development reference")
++    need(
++        {k: evidence["source_transition"][k] for k in ("flux", "after")}
++        == baseline["source"],
++        "source output changed under optimization",
++    )
++    for role, rows in evidence["samples"].items():
++        need(
++            [{k: r["transition"][k] for k in ("flux", "after")} for r in rows]
++            == baseline["traces"][role],
++            "represented target trajectory changed under optimization: " + role,
++        )
++    return {
++        "reference": REFERENCE,
++        "patch": OPTIMIZATION_PATCH,
++        "identical_source_and_40_target_outputs": True,
++        "baseline_elapsed_seconds": baseline["measurements"]["elapsed_seconds"],
++        "baseline_step_mean_seconds": statistics.mean(
++            r["total_seconds"]
++            for rows in baseline["measurements"]["samples"].values()
++            for r in rows
++        ),
++        "baseline_audit_mean_seconds": statistics.mean(
++            x
++            for rows in baseline["measurements"]["oracle_seconds"].values()
++            for x in rows
++        ),
++        "fixed_production_precision_bits": 256,
++        "fixed_current_error_bits": 160,
++        "fixed_flux_bits": 128,
++        "full_chain_residuals_checked_everywhere": True,
++        "periodic_deep_solves_are_additional_checks": True,
++        "baseline_bulk_evidence_retained": False,
++    }
++
++
+ def run():
+     need(
+         not (ROOT / RECORD).exists() and not (ROOT / EVIDENCE).exists(),
+         "do not overwrite retained preflight",
+     )
+     tests = run_tests()
+-    print("21 native C_RG2b tests passed.", flush=True)
++    print("23 native C_RG2b tests passed.", flush=True)
+     info, evidence = benchmark()
++    comparison = performance_comparison(evidence)
+     raw = encoded(evidence)
+     value = seal(
+         dict(
+@@ -496,6 +592,7 @@
+                 "flint_threads": flint.ctx.threads,
+             },
+             tests=tests,
++            optimization=comparison,
+             estimate=estimate(info, tests),
+             sampling_cap_seconds=SAMPLING_CAP,
+             synthetic_window_scope="near-curve fixtures only; no source-to-entry claim",
+@@ -506,6 +603,8 @@
+                 "section_depth": 32,
+                 "adjacent_duplicate_state_and_section_omitted": True,
+                 "future_supporting_steps": 0,
++                "complete_independent_chain_checks": 40,
++                "fresh_depth40_target_transitions": 4,
+             },
+             stop_conditions=[
+                 "Stop on failed section, inverse, enclosure or admission.",
+@@ -557,19 +656,26 @@
+         all(len(rows) == SAMPLE_COUNT for rows in value["samples"].values()),
+         "mandatory sample count",
+     )
+-    need(value["tests"]["count"] == 21 and value["tests"]["passed"], "mandatory tests")
++    need(value["tests"]["count"] == 23 and value["tests"]["passed"], "mandatory tests")
+     need(
+         estimate(value, value["tests"]) == value["estimate"],
+         "measured forecast mismatch",
+     )
+     if numerical:
+         data = json.loads(lzma.decompress((root / EVIDENCE).read_bytes()))
++        need(
++            performance_comparison(data) == value["optimization"],
++            "optimization trace comparison mismatch",
++        )
+         verify_step(decoded(data["source_transition"]))
+         for role, rows in data["samples"].items():
+             prior = None
+             for row in rows:
+                 payload = expand(row["transition"], prior)
+-                verify_step(decoded(payload))
++                verify_step(
++                    decoded(payload),
++                    fresh=row["independent"]["incoming"]["fresh_depth40"],
++                )
+                 prior = payload
+             need(
+                 prior["after"] == data["final_states"][role],
+--- a/tests/models/test_grc_v4_spark_crg2b.py
++++ b/tests/models/test_grc_v4_spark_crg2b.py
+@@ -298,6 +298,9 @@
+         self.assertNotEqual(other["state"], first["state"])
+         self.assertEqual(_section_witness.cache_info().misses, info.misses + 1)
+         self.assertEqual(_section_witness.cache_info().maxsize, 8)
++        private_matrix = k.section_math().algebra["B"]
++        private_matrix[0, 0] = 999
++        self.assertNotEqual(k.section_math().algebra["B"][0, 0], 999)
+         altered = first.to_dict()
+         altered["current"][0][0] = ["9", "9"]
+         self.assertEqual(k.readmission(state), first)
+@@ -339,6 +342,83 @@
+                 self.assertFalse(m.step().committed)
+             self.assertEqual(m.snapshot(), before)
+ 
++    def test_complete_proof_audit_needs_no_second_section_solve(self):
++        import crg2b_native_spark_oracle as oracle
++
++        c = self.event_model.configuration
++        step = owner.kernel(c).step(c.current)
++        oracle._audited_read.cache_clear()
++        with patch.object(
++            oracle, "selected", side_effect=AssertionError("unexpected second solve")
++        ):
++            first = verify_step(step, fresh=False)
++            self.assertTrue(first["incoming"]["proof_derived_section"])
++            self.assertFalse(first["incoming"]["fresh_depth40"])
++            hits = oracle._audited_read.cache_info().hits
++            self.assertEqual(verify_step(step, fresh=False), first)
++            self.assertGreater(oracle._audited_read.cache_info().hits, hits)
++            bad = step.restart_section.to_dict()
++            bad["section_tail"] = ["0", "0"]
++            with self.assertRaises(AssertionError):
++                verify_step(
++                    replace(step, restart_section=FrozenJSONMap(bad)), fresh=False
++                )
++
++    def test_optimized_clipping_and_geometry_preserve_outward_arithmetic(self):
++        from flint import arb_mat
++
++        c = self.event_model.configuration
++        with _ARB_CONTEXT_LOCK, ctx.workprec(256):
++            m = owner.kernel(c).section_math()
++            raw = [
++                arb(m.lo - 1),
++                arb(m.lo),
++                arb(m.lo, fmpq(1, 100)),
++                arb(fmpq(1, 3)),
++                arb(2),
++                arb(m.hi, fmpq(1, 100)),
++                arb(m.hi),
++                arb(m.hi + 1),
++            ]
++            C = arb_mat([[raw[i % len(raw)]] for i in range(m.n)])
++            expected = []
++            for x in C.entries():
++                a = max(m.lo, min(m.hi, x.lower().fmpq()))
++                b = max(m.lo, min(m.hi, x.upper().fmpq()))
++                expected.append(arb((a + b) / 2, (b - a) / 2))
++            for x, y in zip(m.clip(C).entries(), expected, strict=True):
++                self.assertEqual(
++                    (x.lower().fmpq(), x.upper().fmpq()),
++                    (y.lower().fmpq(), y.upper().fmpq()),
++                )
++            f = arb_mat([[arb(fmpq(i - 8, 1000), fmpq(1, 2**200))] for i in range(m.m)])
++            expected_H = m.I + arb_mat(
++                [
++                    [m.overlap[i][j] * f[i, 0] * f[j, 0] / 8 for j in range(m.m)]
++                    for i in range(m.m)
++                ]
++            )
++            result = m.geometry(f)
++            for i in range(m.m):
++                for j in range(m.m):
++                    self.assertTrue(result[i, j].overlaps(expected_H[i, j]))
++                    left = f[i, 0].mid().fmpq() - f[i, 0].rad().fmpq()
++                    right = f[i, 0].mid().fmpq() + f[i, 0].rad().fmpq()
++                    if i == j:
++                        products = [left * left, right * right]
++                        if left <= 0 <= right:
++                            products.append(fmpq(0))
++                    else:
++                        low = f[j, 0].mid().fmpq() - f[j, 0].rad().fmpq()
++                        high = f[j, 0].mid().fmpq() + f[j, 0].rad().fmpq()
++                        products = [a * b for a in (left, right) for b in (low, high)]
++                    corners = [x * m.overlap[i][j] / 8 + int(i == j) for x in products]
++                    with self.subTest(i=i, j=j):
++                        for enclosure in (result[i, j], expected_H[i, j]):
++                            lower = enclosure.mid().fmpq() - enclosure.rad().fmpq()
++                            upper = enclosure.mid().fmpq() + enclosure.rad().fmpq()
++                            self.assertTrue(all(lower <= x <= upper for x in corners))
++
+     def test_inverse_exhaustion_and_domain_escape_fail_closed(self):
+         import pygrc.models.grc_v4_spark_crg2b_math as math
+ 
+--- a/specs/grc-v4-spark-native-c-rg2b-numerical-policy.md
++++ b/specs/grc-v4-spark-native-c-rg2b-numerical-policy.md
+@@ -2,11 +2,11 @@
+ 
+ P9-9.1a.6-C_RG2b uses the accepted quartic C_RG2b argument-retraction completion and duration **8**. Its only physical state is the exact rational resource vector C. The selected symmetric star geometry Γ(C) is a derived Lipschitz section; no differentiability of Γ is assumed and no geometry history is persisted as physical state.
+ 
+-Production arithmetic uses FLINT exact rationals and Arb at **256 bits**. A 224-bit dyadic proposal supplies a depth-32 inverse chain, at most eight forward sweeps and twelve Newton iterations per inverse. Every inverse and geometry residual is rechecked with outward bounds, including the identity terminal boundary, graph-transform tail and the Lipschitz contribution from the complete rational input. Failure to prove the domain, finite conditioning, current error below 2^-160 or a unique 128-bit rounded flux rejects the operation atomically. There is no automatic reduction of precision or reuse of a section at a changed resource state.
++Production arithmetic uses FLINT exact rationals and Arb at **256 bits**. A 224-bit dyadic proposal supplies a depth-32 inverse chain, at most eight forward sweeps and twelve Newton iterations per inverse. The proposal may stop at a 2^-180 section goal; the unchanged current160 and flux128 checks alone govern admission. Every inverse and geometry residual is rechecked with outward bounds, including the identity terminal boundary, graph-transform tail and the Lipschitz contribution from the complete rational input. Failure to prove the domain, finite conditioning, current error below 2^-160 or a unique 128-bit rounded flux rejects the operation atomically. There is no automatic reduction of precision or reuse of a section at a changed resource state.
+ 
+ The physical current uses selected H in both the potential BHBᵀC/64 − ((C−2)^3−(C−2)) and the constitutive solve. The exact update is C+ = C − 8 B Jhat; its uniform error includes both section uncertainty and flux rounding. The returned subject receives a separately certified Γ(C+). Held-H poststate and fixed-identity reference currents are diagnostics, distinct from this fresh read.
+ 
+-Immutable graph algebra and domain proofs are cached by complete declarations and precision. At most eight identical graph/profile/exact-state/precision section witnesses are memoized. Cache reuse cannot alter any physical result, witness or cold replay. The independent audit uses a separate depth-40, 512-bit-proposal research implementation at Arb768 and a literal similarity solve. Its completed audits are cached only by the complete graph, profile, exact state, full witness, audit mode and precision; changes to any witness field force all checks again.
++Immutable graph algebra and domain proofs are cached by complete declarations and precision. At most eight identical graph/profile/exact-state/precision section witnesses are memoized. Cache reuse cannot alter any physical result, witness or cold replay. The independent Arb768 audit recomputes every supplied inverse/geometry residual through a literal similarity solve and propagates the bounds backward as E_(i−1) ≤ rH_i + L rX_i + q E_i, starting at E_32 ≤ V. The resulting section enclosure, including the complete rational-input displacement, independently bounds the represented physical step. This is a full proof check on every beat. Separate depth-40, 512-bit-proposal research solves are additional first/last and periodic cross-checks. Completed proof checks are cached only by the complete graph, profile, exact state, full witness and precision; changes to any witness field force all checks again.
+ 
+ The continuous certificate covers the full 14-dimensional charge-tangent tube around the exact degree-40 Chebyshev curve, with radius 1/4096, parameter decay 999/1000 and 64 Bernstein cells. It bounds the degree-120 residual and both physical partials using the Lipschitz section estimate. Exact rational membership verifies a proposed curve parameter in [0,1] with P=(A+11ᵀ/n)^−1. The bounded grid/Newton search proposes parameters only; unsuccessful search is conservative nonadmission. The represented-step metric error must fit the strict self-map margin. No later trajectory is needed by this certificate.
+ 

@@ -294,6 +294,7 @@ class _Publication:
         default_factory=enabled.events.GRC9V4EventArtifacts
     )
     entry_receipt: object = None
+    completion: object = None
 
     @property
     def archives(self):
@@ -311,6 +312,19 @@ class GRC9V4BranchOperation:
     Changed legacy topology needs a declared new coordinate/reference map; this
     receiver rejects it rather than silently discarding lineage.
     """
+
+    @property
+    def _published(self):
+        scope = getattr(self, "_spark_scope", None)
+        if scope is not None:
+            return dict(scope.published.branches)[self._spark_branch]
+        return self._standalone_publication
+
+    @_published.setter
+    def _published(self, value):
+        if getattr(self, "_spark_scope", None) is not None:
+            raise RuntimeError("native spark publication requires atomic accounting boundary")
+        self._standalone_publication = value
 
     def __init__(self, owner):
         if type(owner) is not enabled.GRC9V4EnabledOperation:
@@ -350,6 +364,9 @@ class GRC9V4BranchOperation:
 
     @staticmethod
     def _endpoints(p):
+        if p.branch == "enabled_spark_v4":
+            from .grc_9_v4_spark_owner import endpoints
+            return endpoints(p)
         if p.branch == "enabled_v4":
             state = p.owner.state
             authority = payload_identity(
@@ -394,6 +411,9 @@ class GRC9V4BranchOperation:
     @property
     def lifecycle_digest(self):
         p = self._published
+        if p.branch == "enabled_spark_v4":
+            from .grc_9_v4_spark_owner import publication_id
+            return "grcv4-lifecycle-sha256:"+publication_id(p)
         return payload_identity(
             "lifecycle_envelope_payload",
             dict(
@@ -576,6 +596,9 @@ class GRC9V4BranchOperation:
         return sum((exact_number(x) for x in values), exact_number())
 
     def _publish(self, before, after, emitted, action):
+        if before.branch == "enabled_spark_v4":
+            from .grc_9_v4_spark_owner import publish
+            return publish(self, before, after, emitted, action)
         if self._published is not before:
             raise RuntimeError("publication changed during transaction")
         if not emitted or len({r.receipt_id for r in before.receipts + emitted}) != len(

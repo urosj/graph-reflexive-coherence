@@ -4,7 +4,7 @@ The explicit nested successor collection preserves the pre-basin/ATC loaders
 and their historical pins. It is inventoried here, never auto-admitted.
 """
 
-from dataclasses import replace
+from dataclasses import dataclass, replace
 from pathlib import Path
 
 from .a_initializer import load_current_forensic_context as load_predecessor
@@ -45,6 +45,107 @@ def _require(condition, message):
         raise SourceAdmissionError(message)
 
 
+@dataclass(frozen=True)
+class _HistoricalSource:
+    """Read-only source bytes; never return live code under an old digest."""
+    raw: bytes
+
+    def read_bytes(self):
+        return self.raw
+
+    def read_text(self, encoding="utf-8"):
+        return self.raw.decode(encoding)
+
+
+def native_predecessor(root, path, expected):
+    """Authenticate finite native successors and their exact Git preimages."""
+    import hashlib
+    import sys
+    root = Path(root).resolve()
+    sys.path.insert(0, str(root / "implementation/phase-9-grcv4/verification"))
+    from p991a3_native_spark_epoch import CHANGED, previous_bytes
+    from p991a4_native_spark_epoch import CHANGED as PREFLIGHT, previous_bytes as preflight_previous
+    from p991a5_native_spark_epoch import CHANGED as CAMPAIGN, previous_bytes as campaign_previous
+    from p991a6_cci_epoch import CHANGED as CCI, previous_bytes as cci_previous
+    from p991a6_cci_campaign_epoch import CHANGED as CCI_CAMPAIGN, previous_bytes as cci_campaign_previous
+    from p991a6_aci_epoch import CHANGED as ACI_NATIVE, previous_bytes as aci_native_previous
+    from p991a6_aos_epoch import CHANGED as AOS_NATIVE, previous_bytes as aos_native_previous
+    from p991a6_apc_epoch import CHANGED as APC_NATIVE, previous_bytes as apc_native_previous
+    from p991a6_acipc_epoch import CHANGED as ACIPC_NATIVE, previous_bytes as acipc_native_previous
+    from p991a6_arg2b_epoch import CHANGED as ARG2B_NATIVE, previous_bytes as arg2b_native_previous
+    if path in ARG2B_NATIVE:
+        raw = arg2b_native_previous(root, path)
+        if hashlib.sha256(raw).hexdigest() == expected:
+            return raw
+    from p991a6_crg2b_epoch import CHANGED as CRG2B_NATIVE, previous_bytes as crg2b_native_previous
+    if path in CRG2B_NATIVE:
+        raw = crg2b_native_previous(root, path)
+        if hashlib.sha256(raw).hexdigest() == expected:
+            return raw
+    if path in ACIPC_NATIVE:
+        raw = acipc_native_previous(root, path)
+        if hashlib.sha256(raw).hexdigest() == expected:
+            return raw
+    if path in APC_NATIVE:
+        raw = apc_native_previous(root, path)
+        if hashlib.sha256(raw).hexdigest() == expected:
+            return raw
+    if path in ACI_NATIVE:
+        raw = aci_native_previous(root, path)
+        if hashlib.sha256(raw).hexdigest() == expected:
+            return raw
+    if path in AOS_NATIVE:
+        raw = aos_native_previous(root, path)
+        if hashlib.sha256(raw).hexdigest() == expected:
+            return raw
+    from p991a6_ccipc_campaign_epoch import CHANGED as CCIPC_CAMPAIGN, previous_bytes as ccipc_campaign_previous
+    if path in CCIPC_CAMPAIGN:
+        raw = ccipc_campaign_previous(root, path)
+        if hashlib.sha256(raw).hexdigest() == expected:
+            return raw
+    from p991a6_ccipc_epoch import CHANGED as CCIPC, previous_bytes as ccipc_previous
+    if path in CCIPC:
+        raw = ccipc_previous(root, path)
+        if hashlib.sha256(raw).hexdigest() == expected:
+            return raw
+    from p991a6_cpc_campaign_epoch import CHANGED as CPC_CAMPAIGN, previous_bytes as cpc_campaign_previous
+
+    if path in CPC_CAMPAIGN:
+        raw = cpc_campaign_previous(root, path)
+        if hashlib.sha256(raw).hexdigest() == expected:
+            return raw
+    from p991a6_cpc_epoch import CHANGED as CPC, previous_bytes as cpc_previous
+    if path not in CHANGED | PREFLIGHT | CAMPAIGN | CCI | CCI_CAMPAIGN | CPC:
+        return None
+    _require(file_sha256(root/path) == hashlib.sha256((root/path).read_bytes()).hexdigest(),
+             "inconsistent native source digest")
+    try:
+        if path in CPC:
+            raw = cpc_previous(root, path)
+            if hashlib.sha256(raw).hexdigest() == expected:
+                return raw
+        if path in CCI_CAMPAIGN:
+            raw = cci_campaign_previous(root, path)
+            if hashlib.sha256(raw).hexdigest() == expected:
+                return raw
+        if path in CCI:
+            raw = cci_previous(root, path)
+            if hashlib.sha256(raw).hexdigest() == expected:
+                return raw
+        if path in CAMPAIGN:
+            raw = campaign_previous(root, path)
+            if hashlib.sha256(raw).hexdigest() == expected:
+                return raw
+        if path in PREFLIGHT:
+            raw = preflight_previous(root, path)
+            if hashlib.sha256(raw).hexdigest() == expected:
+                return raw
+        raw = previous_bytes(root, path)
+    except ValueError as error:
+        raise SourceAdmissionError(str(error)) from error
+    return raw if hashlib.sha256(raw).hexdigest() == expected else None
+
+
 def _bound_file(root, path, sha256):
     target = root / path
     _require(
@@ -53,7 +154,10 @@ def _bound_file(root, path, sha256):
         and target.resolve().is_relative_to(root.resolve()),
         "basin source path escapes repository",
     )
-    _require(file_sha256(target) == sha256, "basin bound source changed: " + path)
+    if file_sha256(target) != sha256:
+        raw = native_predecessor(root, path, sha256)
+        _require(raw is not None, "basin bound source changed: " + path)
+        return _HistoricalSource(raw)
     return target
 
 

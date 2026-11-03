@@ -1,0 +1,18 @@
+{
+  "schema": "p991a6-aos-campaign-epoch-v1",
+  "predecessor": "5aea075a",
+  "checker_sha256": "0c6968647cae16df4ef281a04b4e8894c469be4a322bdfbfcc1a1fe5934402be",
+  "sources": {
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_earlier_sc3_metadata.py": {
+      "before_sha256": "4e9dfe5f4ebca68e2bd98c67cecf16d09d67551fa18b73e781ff4d2e5da70791",
+      "after_sha256": "30170c2bc071d3005f0ee5ce1537f9666ea63ec56aa5265a075bf711afa2524f"
+    },
+    "implementation/phase-9-grcv4/verification/p991a6_aos_epoch.py": {
+      "before_sha256": "e8de67ab466d32c2bc5c1c8feeff5de8e313fc018ee1823a6d7e7c2950ed775d",
+      "after_sha256": "87dc7f8e2f43bd4d088005c422963a508fffa9cdac790c36291343dc0a056ac8"
+    }
+  },
+  "runtime_changed": false,
+  "old_execution_relabelled": false,
+  "record_digest": "f22c004c8efaf794ced2edda6b36c410d423b0526f9c6b1d53ebf1c00397fa21"
+}

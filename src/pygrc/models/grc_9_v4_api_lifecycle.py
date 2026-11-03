@@ -35,6 +35,8 @@ from .grc_9_v4_contracts import (
 from .grc_v4_state import GRCV4ResetBaseline
 from . import grc_9_v4_basin as basin
 from .grc_9_v4_identity import has_basin
+from . import grc_9_v4_spark_owner as spark
+from .grc_9_v4_spark_contracts import GRC9V4SparkConfiguration, SparkStateView, SparkResult
 
 # Public execution selection is independent of available native implementations.
 # Contract recognition and conformance acceptance are separate again.
@@ -129,6 +131,8 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
 
     @classmethod
     def from_configuration(cls, configuration):
+        if type(configuration) is GRC9V4SparkConfiguration:
+            return spark.initialize(cls.__new__(cls), configuration)
         if type(configuration) is not GRC9V4Configuration:
             raise TypeError("typed public configuration required")
         family = configuration.family.profile_family_id
@@ -178,10 +182,16 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
 
     @property
     def numerical_policy(self):
+        if spark.enabled(self):
+            return self._published.reference.profile.NUMERICS
         return self._policy
 
     def parameters(self):
         p = self._published
+        if spark.enabled(self):
+            return dict(profile=p.reference.profile.params_resolved.to_dict(),
+                specialization=p.specialization.resolved.to_dict(), compatibility_branch=p.branch,
+                exact_backend="flint", numerical_policy=p.reference.profile.NUMERICS, legacy_parameters=None)
         return dict(
             profile=p.reference.profile.params_resolved.to_payload(),
             specialization=p.specialization.resolved.to_dict(),
@@ -195,6 +205,10 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
 
     def configuration(self, targets=()):
         p = self._published
+        if spark.enabled(self):
+            if targets:
+                raise ValueError("exact C_OS target construction is event-owned")
+            return p.owner
         if p.branch != "enabled_v4":
             raise ValueError(
                 "disabled branch has an exact legacy configuration; use get_params() or snapshot()"
@@ -214,6 +228,8 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
 
     def scientific_state(self):
         p = self._published
+        if spark.enabled(self):
+            return SparkStateView(p.owner, FrozenJSONMap(spark.observation(self)), self.lifecycle_digest, p.receipts)
         endpoints = self._endpoints(p)
         clock = self._clock(p)
         if p.branch == "disabled_grc9v3":
@@ -276,6 +292,8 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
             return self.profile_migrate(request, target)
 
     def migrate(self, request):
+        if spark.enabled(self):
+            return SparkResult(False, reason="exact spark resources require an explicit lossless branch successor")
         if type(request) is not GRC9V4BranchRequest:
             raise TypeError("typed crossing request required")
         if request.direction == "enable":
@@ -323,15 +341,29 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
             return result
 
     def step_enabled(self, request):
+        if spark.enabled(self):
+            data = request.to_payload()
+            if data.get("context_value") or data.get("boundary_input") is not None or data.get("external_source") is not None:
+                return SparkResult(False, reason="constant-zero context and closed unforced boundary required")
+            dt = data.get("dt")
+            if dt != 32:
+                return SparkResult(False, reason="selected exact duration 32 required")
+            return spark.transact(self, dict(kind="step", duration="32", operation_id=request.operation_id))
         return self._enabled_action("step", request)
 
     def expand(self, request):
+        if spark.enabled(self):
+            return spark.transact(self, dict(kind="expand", request=request.to_payload()))
         return self._enabled_action("expand", request)
 
     def reset_enabled(self):
+        if spark.enabled(self):
+            return spark.transact(self, dict(kind="reset"))
         return self._enabled_action("reset")
 
     def rebase_enabled(self):
+        if spark.enabled(self):
+            return spark.transact(self, dict(kind="rebase"))
         return self._enabled_action("rebase")
 
     def rebase_legacy(self, operation_id):
@@ -562,6 +594,10 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
             )
 
     def observables(self, p=None, *, postbeat=False, captured=None):
+        if spark.enabled(self):
+            return dict(active_model_identity=self.active_model_identity, compatibility_branch=self.branch,
+                exact_resources=list(self._published.owner.current.C), completion=spark.observation(self),
+                support_status="native_spark_lifecycle_pending_source_to_completion_acceptance")
         p = self._published if p is None else p
         if p.branch == "disabled_grc9v3":
             return p.owner.compute_observables()
@@ -671,6 +707,10 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
             return self._snapshot(replay_mode=replay_mode)
 
     def _snapshot(self, *, replay_mode):
+        if spark.enabled(self):
+            if replay_mode != "exact_observation":
+                raise ValueError("native completion checkpoint requires complete exact evidence")
+            return branch._bytes(spark.snapshot(self))
         if replay_mode not in ("state_only", "exact_observation"):
             raise ValueError("explicit basin replay mode required")
         if not has_basin(self.specialization) and replay_mode != "exact_observation":
@@ -687,6 +727,8 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
     @classmethod
     def from_state(cls, raw):
         data = _decode(raw)
+        if data.get("descriptor_version") == "grc9v4-native-spark-owner-v3":
+            return spark.restore(cls, data)
         self_family = data["initial"]["family"]
         cls.require_execution(self_family)
         if data.get("descriptor_version") not in (

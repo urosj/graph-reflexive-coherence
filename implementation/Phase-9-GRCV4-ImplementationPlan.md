@@ -1,5 +1,48 @@
 # Phase 9 GRCV4 Implementation Plan
 
+## Current continuation: C_CI native campaign — 2026-11-02
+
+Branch: `impl/grc9v4-native-spark-completion`, opened from `main` at
+`5227704449a062586df804ca5da0cc2853906425`, the no-ff merge of the accepted
+spark research. Planning was committed as `77a777ce`; P9-9.1a.1 now has a
+[concrete implementation map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md)
+and [retained bounded checks](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json),
+committed as `f2d776d7`. All ten family chains and thirty native obligations are mapped.
+P9-9.1a.2 implements the explicit exact-resource/FLINT C_OS numerical bridge,
+accepted for commit as `32376cd4`;
+its [review](./phase-9-grcv4/tranche-9/P9-9.1a.2-Review.md) and
+[bounded checks](./phase-9-grcv4/tranche-9/P9-9.1a.2-Verification.json) retain that scope.
+P9-9.1a.3 has [certificate/lifecycle implementation and controls](./phase-9-grcv4/tranche-9/P9-9.1a.3-Review.md),
+accepted and committed as `59c35997`.
+[P9-9.1a.4](./phase-9-grcv4/tranche-9/P9-9.1a.4-Review.md) measured 40 changing-state
+steps per role in 81.7 seconds: combined central estimate 13.6 minutes, conservative
+allowance 24.8 minutes, campaign cap 30 minutes. Cache/precision and publication
+checks are retained; .4 was accepted and committed as `699ecf04`.
+[P9-9.1a.5](./phase-9-grcv4/tranche-9/P9-9.1a.5-Review.md) verifies the public
+C_OS current 374→376 and reset 375→377 endpoints in 21.8 minutes, with
+every-step independent checks and real checkpoint pressure. Current earns one
+child, reset zero gain, without a supporting tail. Accepted and committed as
+`1ec198b2`. C_CI steps 1–4 and pressure were accepted as `bcf10782`.
+The [C_CI campaign](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-Review.md) now verifies
+current 374→376 and reset 375→377 in 14.0 minutes, all 753 target steps
+independently checked, one current child, zero reset gain and no tail. Actual
+checkpoint pressure and compressed side-tool publication are included. Native
+runtime is unchanged; a separately documented verifier correction checks both
+outward error bounds against the unchanged certificate budget. The failed prefix
+and exact counterexample are retained. User review is pending; next is C_PC with
+its own bounded estimate. Aggregate support remains deferred.
+Minimal atomic new-child registration
+belongs to completion; broader hierarchy remains deferred. Historical milestones below retain their original
+scope; the selected native programme does not reopen their accepted results.
+
+The accepted [proposal](./investigations/grc9v4-constitutive-design/drafts/spark-completion/Proposal.md),
+[full manuscript §15/Appendix H](./investigations/grc9v4-constitutive-design/drafts/2026-11-GRC-V4.md)
+and [authority/obligation map](./investigations/grc9v4-constitutive-design/drafts/spark-completion/Traceability.md)
+provide the scientific basis. Use the adopted shorter endpoints as primary
+references; longer initial runs remain provenance or specific-check resources.
+No new witness-discovery campaign is selected. **No long numerical run without
+a prior estimate from the same native graph/profile/role and active policy.**
+
 ## Tranches 8 and 9 — all ten declared family scopes accepted and closed (2026-10-30)
 
 The [all-ten closeout](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json)
@@ -20,8 +63,10 @@ A_RG2b acceptance `7083b989`; no numerical campaign is repeated.
 | C_RG2b | [Acceptance](./phase-9-grcv4/tranche-9/P9-CRG2b-Acceptance.json) |
 | A_RG2b | [Acceptance](./phase-9-grcv4/tranche-9/P9-ARG2b-Acceptance.json) |
 
-Optional P9-9.1a completion/hierarchy is explicitly deferred and unselected;
-it was never a mandatory closure prerequisite. Earlier execution and family
+At this 2026-10-30 closeout, optional P9-9.1a completion/hierarchy was deferred
+and unselected; it was never a mandatory closure prerequisite. The 2026-11-01
+programme below selects completion planning while hierarchy stays deferred.
+Earlier execution and family
 acceptance records retain their historical `aggregate_closed=false`; this
 successor records the aggregate decision without rewriting them.
 
@@ -96,7 +141,7 @@ both-role migration/return observations once and reusing receipts/charges for
 Fixed-H and joint-section error bounds remain separate, with no C1 upgrade.
 All ten individual scoped decisions, their bounded P9-10.3 input
 reconciliation/regressions and P9-10.4 publication are now accepted.
-## Current continuation: C_CI scientific applicability closed — 2026-10-31
+## Historical continuation: C_CI scientific applicability closed — 2026-10-31
 
 The [C_CI SC-3 adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCISC3Authority.md)
 accepts the bounded joint-root/full-map/source-to-completion construction and
@@ -4547,10 +4592,147 @@ owners, not a new execution gate or permission to broaden an accepted scope.
 
 **Closed for all ten declared family scopes, 2026-10-30.** All forty source
 compatibility cells, mandatory lifecycle, crossings, public API, conflict
-rejection and support reconciliation are accepted. Optional P9-9.1a remains
-unselected/deferred and does not block closure. The
+rejection and support reconciliation are accepted. Optional P9-9.1a was
+unselected at that closeout; its new completion programme follows below and
+does not invalidate the accepted mandatory scope. The
 [aggregate acceptance](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json)
 binds the original first-group milestones below and all six later decisions.
+
+#### P9-9.1a native spark-completion work programme
+
+**C_OS native completion accepted as `1ec198b2`; C_CI steps 1–4 verified, pending review.** Completion and hierarchy
+have distinct dispositions: this programme implements bounded native geometric
+child stabilization and `completed_spark`; hierarchy remains deferred. Reuse the
+accepted ten-family dynamics, P9-9.1b transaction owner and P9-9.4 public API.
+The optional quartic law needs a native constitutive binding; a detector alone
+cannot supply the accepted dynamics. Existing zero-site identities and semantics
+remain intact. Each new exact profile/capability needs its own admission and
+evidence; old G2/G3 or family acceptance does not automatically cover it.
+
+| Work owner | Planned change and completion evidence |
+| --- | --- |
+| Tranche 8 | Accepted dependency. Add only affected event-transfer, target-admission, role, history and numerical checks for the new binding; record the exact coverage in the P9-9.1a family review. Do not reopen all mechanics or rerun the old large campaigns. |
+| Tranche 9 | P9-9.1a owns native completion, using the existing lifecycle/API. A scoped P9-9.6 supplement reviews the newly selected exact profiles and capability. |
+| Tranche 10 | P9-10.3-NATIVE-SPARK and P9-10.4-NATIVE-SPARK own affected regressions and publication. P9-10.5/10.6 retain debt reconciliation, reviewed support, handoff and G4; no automatic aggregate closure. |
+
+Each leaf below receives its own contract/module map, changed paths, bounded
+commands, retained evidence and review disposition under the existing recording
+rules. This is an engineering handoff, not another scientific-definition gate.
+
+1. **P9-9.1a.1 — exact implementation contract.** Map the accepted family specs,
+   scientific/native obligations and certificate operands to the optional quartic
+   evaluator, realization staging, configuration/profile identity, numerical
+   policy, geometric-child classifier, certificate format and lifecycle owner.
+   Declare the exact source/target, current/reset and supported-domain scope.
+   Reuse existing contracts and identify only the necessary explicit successors;
+   do not rebind frozen zero-site configurations or historical evidence.
+   Mapping and bounded checks are complete, pending review; see the
+   [contract map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md).
+   The native continuity probe admits zero diagnostic residual with exact drift
+   -2^-53; binary64 conversion of the actual current prestate has drift 2^-50.
+   Exact certificate-coordinate algebra gives a sufficient charge-tangent
+   componentwise error threshold about 1.52791e-9, not an actual native error
+   bound. The .2 representation decision and full-step certification remain open.
+   This is the historical .1 finding; the explicit .2 successor below resolves
+   the representation and numerical bound, retaining actual entry as a runtime check.
+2. **P9-9.1a.2 — C_OS dynamics and numerical bridge.** Implement the selected
+   quartic through the actual source/event/ordinary native maps. Prefer the
+   existing FLINT/Arb machinery with an explicit policy. Establish a uniform
+   full-step error bound on the certificate domain, in its own norm, strictly
+   below its image margin; account for geometry, current/continuity and all
+   representation conversions. Preserve the same exact-charge space and certify
+   diagnostic agreement. A small solve residual or binary64 charge-tolerance
+   check is insufficient. Resolve representation/policy gaps explicitly; do not
+   silently repair charge, widen tolerances or assume either binary64 adequacy
+   or an 8192-bit production requirement. Native source-to-entry error control
+   is separate from the invariant-domain argument after entry.
+   **Implemented, review pending:** exact-rational resource/charge successors,
+   explicit FLINT policy with final edge-flux rounding only, source and event
+   transfer, full OS stages and fresh final reads. Uniform certificate-norm error
+   <=4.39102e-31 is below margin 0.00457383; exact diagnostics add zero error.
+   Five bounded native kernel steps and independent exact/Arb comparisons pass.
+   Source/event errors are checked separately; actual native membership is the
+   entry contract, not an assumed accumulated shadow bound or imported state.
+   The side-tool has a separate native numerical evidence surface. Public
+   completion/lifecycle and full source-to-entry execution remain .3/.5.
+3. **P9-9.1a.3 — certificates, geometric children and atomic lifecycle.** Consume
+   immutable prevalidated certificates bound to the exact graph, profile,
+   parameters, context/reference, charge, duration, full C/W/Z domain and role.
+   Check actual membership and complete spatial predicates. Keep this classifier
+   separate from represented-current `basin_identity`. Outside certificate scope
+   means not certified by that certificate, not impossible. Do not steer the
+   dynamics, replace history or import a research state to earn entry. Bind the
+   actual parent/event/lineage; only committed positive ordinary steps advance
+   the window. Inspection, zero-duration calls, failures and replay add no time
+   or gain. Invalidate on reset/rebase and relevant graph/profile/context/reference
+   or branch changes unless an explicit successor re-admits the candidate.
+   Publish completion and at-most-once occurrence gain atomically through the
+   public owner, including the required canonical new-child registration. This
+   minimal occurrence record is included; broader hierarchy evolution stays
+   deferred. Pressure wrong/stale bindings, omitted coordinates, interrupted
+   windows, late failure, reset, save/load/duplicate, replay and certificate succession.
+4. **P9-9.1a.4 — C_OS measured runtime preflight.** Start with bounded setup,
+   source/event and single changing-state step measurements. Extend to a short
+   20–40-step sample only when the measured cost fits the declared short wall
+   budget; the preflight must not itself become an unestimated long run. Confirm
+   active FLINT, selected precision/policy and actual applicable cache hits and
+   invalidation on changed operands. Separate initialization, event, ordinary
+   evolution/readmission, completion checks and evidence/publication costs;
+   record memory, cold/warm conditions and thread settings. Estimate the full
+   current and reset trajectories from these same-subject measurements, with
+   variability and non-step overhead, and report the estimate before execution.
+   If projected cost exceeds the declared budget, optimize or revise the bounded
+   campaign first. Stop/re-estimate if later root/section or step cost invalidates
+   the projection. Repeat this preflight for materially different families,
+   graphs or policies; cached identical-state reads alone are not a step benchmark.
+5. **P9-9.1a.5 — first public C_OS source-to-completion acceptance.** After the
+   numerical/lifecycle checks and runtime estimate, execute the actual native
+   source beat, lawful event, target evolution, admitted entry and positive
+   two-beat window. Use an independent numerical oracle and lifecycle fault
+   controls. Target the accepted current 374→376 and reset 375→377 at duration
+   32, verifying actual membership rather than a hardcoded beat count. Diagnose
+   any endpoint shift; neither post-entry invariance nor a timeout proves timely
+   entry. Current earns one child for the event; reset/replay/certificate
+   replacement earns no additional gain. No later supporting trajectory is
+   required by these certificates. Record scoped native support only after review.
+6. **P9-9.1a.6 — family extensions.** Apply the same numerical, runtime-preflight,
+   public-lifecycle and review requirements independently in the order below.
+   A retains every W direction; PC/CI+PC retain every Z direction and correct
+   writers; CI uses the joint root and RG2b its full section obligations. Each
+   family publishes its side-tool API/browser/notebook view alongside its result,
+   distinguishing research acceptance from native execution/support. Reuse exact
+   retained evidence where sufficient; no family inherits another's conformance.
+7. **P9-9.1a.7 — scoped support reconciliation.** Reconcile all selected family
+   results, unexecuted/excluded scopes and affected Tranche 8/9 integration under
+   P9-9.6. Supply P9-10.3/10.4 supplements and P9-10.5/10.6 with exact evidence
+   and native-obligation dispositions. Completion can be accepted per family;
+   hierarchy and unresolved scientific claims keep separate dispositions.
+
+| Family leaf | Current entry → completion | Reset entry → window end | Duration | Native status |
+| --- | --- | --- | ---: | --- |
+| P9-9.1a.5 — C_OS | 374→376 | 375→377 | 32 | Accepted, committed `1ec198b2` |
+| P9-9.1a.6-C_CI | 374→376 | 375→377 | 32 | Accepted, campaign committed `88a1c6b1` |
+| P9-9.1a.6-C_PC | 374→376 | 375→377 | 32 | Steps 1–4 accepted `1210b2b9`; .5 accepted `31d1aba7` |
+| P9-9.1a.6-C_CI_PC | 374→376 | 375→377 | 32 | Accepted; campaign committed `e2cfad85` |
+| P9-9.1a.6-A_OS | 375→377 | 372→374 | 32 | Native .5 accepted; committed `4587185f` |
+| P9-9.1a.6-A_CI | 375→377 | 372→374 | 32 | Native .5 accepted; committed `5b92524c` |
+| P9-9.1a.6-A_PC | 375→377 | 372→374 | 32 | Native .5 accepted 2026-11-02 |
+| P9-9.1a.6-A_CI_PC | 375→377 | 372→374 | 32 | .1–.4 verified, review pending; .5 unrun |
+| P9-9.1a.6-C_RG2b | 390→392 | 390→392 | 8 | .1–.4 and pressure accepted; .5 deferred |
+| P9-9.1a.6-A_RG2b | 300→302 | 300→302 | 16 | .1–.4 and pressure accepted; both RG2b .5 campaigns deferred |
+
+These are accepted scientific regression targets for a 12-vertex/13-edge source
+and 15-vertex/16-edge target, not native results or universal stopping bounds.
+Beat count, beat duration, graph size and wall-clock cost are distinct. The
+roughly 400 beats are not 400 nodes; timings from older large fixtures must not
+be used to estimate this witness. Larger graphs require their own applicability,
+prioritized obligations and measurements. General certificate discovery and
+larger-graph campaigns are outside the initial programme. Retain compressed
+selected evidence, generators and useful run history; avoid redundant tails.
+
+The dependency order is .1 → .2 → .3 → .4 → .5 → .6 → .7, with short numerical
+and lifecycle controls during development. Planning does not execute any leaf.
+The dated implementation milestones below describe the earlier mandatory scope.
 
 **P9-9.1b is bounded-accepted** (2026-10-27): one enabled specialization lifecycle owner for ordinary
 step, expansion, reset/rebase and mixed-journal snapshot replay. Preserve the
@@ -4694,6 +4876,20 @@ but different complete identities and no corresponding disabled-cell execution.
 The API/browser/notebook expose these three limits alongside the passing evidence.
 
 ### Tranche 10. Conformance, evidence, and handoff
+
+**Native completion follow-through (planned 2026-11-01).** Existing accepted
+10.1–10.4 records retain their scope. P9-10.3-NATIVE-SPARK adds only regressions
+affected by the P9-9.1a binding, numerical representation, lifecycle and public
+API; reuse unaffected evidence and preserve old zero-site/release identities.
+P9-10.4-NATIVE-SPARK publishes exact native support and source-to-completion
+examples, including side-tool execution/inspection, lineage, certificate
+applicability, entry/window and once-only gain. Update the side-tool alongside
+each family and reconcile those publications here without duplicate numerical
+runs. Keep research acceptance and native support distinguishable. P9-10.5
+reconciles the per-family native numerics/lifecycle and adopted earlier-endpoint
+obligations; P9-10.6 records reviewed support, residual debts, hierarchy deferral
+and any separately justified G4 decision. Neither family completion nor this
+planning checkpoint automatically closes the aggregate rows.
 
 **P9-10.3 bounded-accepted (2026-10-31).** User acceptance of implementation
 `93920eab` is recorded in the separate
@@ -4887,3 +5083,313 @@ post-D10 verification failure explicitly alongside the passing release audit.
 [debts]: ./investigations/grc9v4-constitutive-design/decisions/D10DebtClaimTransformationLedger.json
 [routing]: ./investigations/grc9v4-constitutive-design/decisions/D11ClaimDebtAndAuthorityRouting.json
 [guide]: ./investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/AgenticQueryGuide.md
+
+
+### C_PC native steps 1–4 — 2026-11-02
+
+The [C_PC contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-Contract.md) and
+[review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-Review.md) implement the full
+C/Z map, all 46 carrier directions, old-carrier causality and explicit event
+loss. The [numerical policy](../specs/grc-v4-spark-native-pc-numerical-policy.md)
+binds exact FLINT state, Arb256 reads, flux128/carrier192 quantization and both
+rounding terms. No resource-only surrogate is admitted. Bounded public lifecycle
+checks, 256/512 comparison, independent Arb768 audits and 40+40 timing samples
+precede .5. Graph/domain/decay/certificate caches hold immutable facts only.
+The historical side-tool preflight retains its bounded scope. Steps 1–4 were
+accepted as `1210b2b9`; the user separately authorized .5. Its stronger typed
+capture, independent full-history oracle and persistence path were measured
+before the actual campaign; the earlier forecast remains a provisional record.
+
+The bounded [C_PC pressure supplement](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-PressureReview.md)
+checks the complete old-Z/read/held-source/write/next-read loop, all signed carrier
+spaces, exact fixed-H equations, full joint-domain derivatives, history events
+and atomic publication. All 26 tests and 22 specific mutation cases pass. The
+stronger exact audit was measured in the final .5 cost gate (16.4/22.6 minutes).
+The [native campaign](./phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-Review.md) now
+verifies current 374→376 and reset 375→377 in 41.8 minutes. All 753 target
+steps, actual source/history event, six real pending-window failures and
+zero-gain retries pass. Lossless XZ evidence and the side-tool API/browser/notebook
+publish the scoped result; the user accepted it for commit on 2026-11-02. Native runtime is unchanged,
+no supporting tail is used, and aggregate capability reconciliation remains open.
+
+
+### Native campaign timing policy — user clarification, 2026-11-02
+
+Elapsed-time budgets are profiling and efficiency targets, not automatic stops
+that prevent full results. Measure the same numerical subject before long runs,
+include late publication and cold checkpoint costs, report overruns, and continue
+mathematically admitted execution. Numerical admission and exact-state integrity
+remain mandatory. C_PC demonstrated why this distinction matters: its rolling
+time guard stopped reset at 191 despite all audits passing. The completed current
+trace was preserved; public checkpoint validation and exact prefix replay allowed
+reset continuation through 377. Active execution and investigation-pause wall time
+are reported separately in the campaign review.
+
+C_PC's first recovery also exposed a packaging defect after successful numerical
+execution: cross-filesystem atomic replacement from `/tmp`, followed by temporary
+cleanup. The final continuation uses persistent staging inside the repository,
+with explicit same-device and failed-publication retention checks. The failed
+attempt is counted in profiling totals and its code/log remain available.
+
+### C_CI_PC native steps 1–4 — 2026-11-02
+
+C_CI_PC steps 1–4 now implement the full exact C/Z composite map with fresh
+Arb256 joint roots, the same-root exponential writer and a complete 60-dimensional
+certificate. All 28 native/pressure tests pass, including 208 signed source/target
+carrier probes, all 60 finite-segment directions, both chiralities and atomic
+lifecycle. Arb256/512 produce identical sampled C/Z states. The isolated 40+40
+preflight took 79.4 seconds, with 231.8 MiB peak memory.
+The provisional 400+400 estimate is **21.4 minutes centrally / 41.5
+conservatively**, including two extrapolated cold journal restores and the
+four-minute pressure/publication reserve. Thirty minutes remains a profiling
+target. The side-tool API/browser/notebook publishes only bounded verification.
+**At the accepted steps 1–4 checkpoint, P9-9.1a.6-C_CI_PC.5 was unrun**; the actual 374→376 / 375→377 endpoints
+and aggregate native support remain unverified. Steps 1–4 and the audit were
+accepted for commit on 2026-11-02; .5 is authorized with a one-hour allowance.
+Re-estimate complete audit/checkpoint costs before execution.
+
+The [composite pressure supplement](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-PressureReview.md)
+adds 27 passing tests and 31 semantic corruption detectors in 67.21 seconds.
+Exact geometry cancellation, same-source writing, full C/Z uncertainty and mixed
+derivatives pass without changing the native kernel or preflight evidence.
+Fourteen combined publication checks cover the API/browser/notebook and retained
+numerics. Re-estimate the complete campaign audit and late-checkpoint costs before
+.5; the earlier 21.4/41.5-minute forecast describes the original preflight path.
+
+[Review and reproduction](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC-Review.md).
+
+### C_CI_PC native .5 execution — 2026-11-02
+
+Proceed after accepted `4061a53a` under the [one-hour campaign plan](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC.5-Plan.md).
+The fresh complete-path estimate is 30.1/46.8 minutes; static caches pass.
+Execution and actual endpoint checks are complete.
+
+C_CI_PC .5 now verifies actual current **374→376** and reset **375→377**,
+duration 32, exact charge 21. All 753 target transitions pass the complete
+composite audit. Current creates one child; reset has no live event and zero gain.
+Both completed journals pass paired cold replay (377/378 ordinary steps).
+Execution and checkpoint validation took **41.3 minutes**
+against the one-hour profiling allowance, including the corrected shared-accounting
+restore sequence. Primary traces are unchanged; compressed evidence and the
+side-tool API/browser/notebook agree. Aggregate native support remains false.
+[Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC.5-Review.md).
+The completed campaign now retains 4.87 MiB of compact mathematical evidence
+streams (67.4% reduction), independently verified for all 753 transitions.
+The user accepted .5 and its compact evidence for commit on 2026-11-02,
+excluding expanded full-run evidence. Historical execution flags stay unchanged.
+A_OS steps 1–4 follow below.
+
+### A_OS native steps 1–4 — 2026-11-02
+
+The user selects A_OS after `e2cfad85`, on the existing native branch.
+The [contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Contract.md) covers
+exact C/W, both OS reads, final-C/incoming-W writing, all thirty domain
+directions, weighted classification, explicit edge history, lifecycle pressure,
+bounded runtime estimation and side-tool publication. The .5 campaign stays
+separate; its expected short endpoints are not yet verified natively.
+
+The implemented [review](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-Review.md)
+records 25 passing native tests, full thirty-direction certification and
+independent Arb768 sample checks. The 40+40 preflight took 63.2 seconds at
+253.6 MiB; 256/512 agree on represented states. Compact evidence is 0.75 MiB.
+Immutable graph/row/decay/certificate reuse is verified. The complete provisional
+400+400 estimate is 20.1 / 38.4 minutes, including cold replay and audit; remeasure
+late checkpoint costs before .5. API/browser/notebook publish bounded preflight
+scope. The user accepted steps 1–4 and their pressure audit for commit on
+2026-11-02, then authorized .5 after fresh profiling. Aggregate support remains
+ungranted.
+
+The [A_OS pressure supplement](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS-PressureReview.md)
+now adds 25 passing causal-loop tests and 24 semantic mutation detectors without
+runtime changes. Independent full-map checks, weighted qualification, both
+nonuniform histories and atomic publication agree. Original bounded cost samples
+are preserved; re-estimate the complete campaign audit/checkpoint path before .5.
+
+### A_OS native .5 execution — 2026-11-02
+
+A_OS .5 verifies actual **375→377 current / 372→374 reset**, duration 32,
+exact charge 21. All **751 target transitions** pass the full C/logW audit and
+independent weighted classification. Current gains one child; reset gains zero.
+Both completed journals pass paired cold replay (378/375 ordinary steps), and
+all actual pending-window failures/retries preserve atomic once-only accounting.
+Active execution and checkpoint validation took **22.0 minutes**, with
+539.5 MiB peak memory. Compact evidence totals **5.27 MiB**,
+including ten full diagnostics; no supporting tail or expanded duplicate run.
+The side-tool API/browser/notebook publish the separate campaign. Accepted
+preflight/pressure and predecessor epochs are unchanged. Aggregate native support
+stays false. The user accepted .5 for commit on 2026-11-02 and explicitly
+requested retaining the original 5.27 MiB evidence package.
+All 30 campaign/evidence/publication/continuity checks pass. Use
+`p991a6_aos_evidence.py` for retained verification; the frozen execution
+harness and all original evidence bytes are preserved.
+[Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-Review.md).
+Checkpoint restore's repeated publication hashing is a concrete next profiling
+candidate; the native runtime remained unchanged here.
+
+### A_CI native steps 1–4 — 2026-11-02
+
+The user selects A_CI .1–.4 after accepted A_OS .5 (`4587185f`). Follow the
+[contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-Contract.md): fresh joint roots,
+implicit full C/logW proof, same-root final-C writer, exact W lineage, bounded
+pressure/cost and side-tool publication. Include bounded verification of the
+checkpoint digest optimization identified in A_OS. No .5 trajectory starts here.
+
+A_CI .1–.4 is implemented and pending review. Its 28 native tests, eight
+publication checks and 256/512 comparison pass. Forty steps per role take
+48.3 seconds; the complete-path provisional forecast is 16.2/30.5 minutes.
+Static root-domain/graph/row/decay/proof caches and one-hash warm restore are
+verified. The compact bundle is 0.79 MiB; old A_OS evidence remains unchanged.
+See the [review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-Review.md).
+A_CI .5 is unrun; native expected endpoints and aggregate support remain pending.
+
+A_CI pressure supplement: 32 tests and 45 explicit mutation detectors pass in
+47.66 seconds, with 102 independent implicit finite-segment checks and retained
+root/drive/writer operand traces. Runtime and the original preflight are unchanged.
+See the [pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI-PressureReview.md).
+The side-tool includes the bounded audit; complete-path .5 profiling stays required.
+
+A_CI .1–.4 and the pressure supplement were accepted for commit on 2026-11-02.
+The user then authorized .5 on the same branch. Profile the complete checking,
+encoding and checkpoint path before execution; use the unchanged accepted native
+kernel and preserve the original bounded records.
+
+
+### A_CI native .5 executed — 2026-11-02
+
+After accepted .1–.4/pressure commit `0d38edc4`, fresh full-path cache and cost
+checks forecast 24.7/38.9 minutes. The unchanged native kernel now verifies
+**375→377 current / 372→374 reset**, with all 751 full joint-root/C/logW audits,
+actual-window lifecycle controls and paired cold replays passing. Execution
+and checkpoint validation took **23.1 minutes**, **536.3 MiB** peak memory.
+Compact evidence totals **5.91 MiB**, with identical adjacent root witnesses
+referenced once and ten complete diagnostics retained. No supporting tail.
+The side-tool and continuity metadata expose the separate scoped campaign;
+old numerical records and original A_OS evidence remain unchanged.
+[Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACI.5-Review.md).
+The user accepted .5 and requested commit on 2026-11-02. A_PC .1–.4 is next;
+aggregate support remains false. Original execution records stay unchanged.
+
+
+### A_PC native steps 1–4 — 2026-11-02
+
+The user selected A_PC after accepted A_CI .5 (`5b92524c`). Implement the
+[contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC-Contract.md) on this branch,
+with exact C/W/Z state, both writers, all 76 physical directions, separate
+event history dispositions, bounded independent checks and side-tool publication.
+Use fixed precision and active static caches; profile before .5. No full run here.
+
+A_PC .1–.4 is now implemented and accepted: complete C/W/Z transitions,
+two same-read writers, explicit event histories and the full 76-dimensional
+product proof. All 29 native tests pass, including independent center and
+nonstationary finite segments in every direction. Production Arb256 agrees
+with the 512-bit comparison. Cached 40+40 samples take 63.7 seconds at 262.8 MiB;
+compact evidence totals 1.39 MiB. The provisional 400+400 forecast is
+21.1/39.8 minutes; reprofile the complete checker before .5. Side-tool and
+finite source continuity are synchronized; original A_CI/A_OS evidence stays
+unchanged. No native endpoint or aggregate-support claim is added.
+[Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC-Review.md).
+
+A_PC bounded pressure now passes 22 tests and 44 mutation detectors in 82.61
+seconds, including 240 coupled finite segments, both algebraic history probes,
+frozen-source writers, signed event semantics and complete rollback. The new
+pressure oracle uses explicit multiplication for zero-crossing polynomial
+intervals; runtime and original preflight remain unchanged. The side-tool
+publishes the 482 KiB supplement. Per the user's explicit clarification, .5
+remains unrun; fresh complete-path profiling is required before that campaign.
+[Pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC-PressureReview.md).
+
+A_PC .1–.4 and bounded pressure were accepted for commit on 2026-11-02.
+Original execution records retain their historical pending-review flags; the
+user decision is recorded here and in the handoff/checklist. At that acceptance,
+.5 remained unrun; its subsequent authorization and execution are recorded below.
+
+
+### A_PC native .5 authorized — 2026-11-02
+
+After accepted `e37d968f`, execute the [campaign plan](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC.5-Plan.md):
+fresh full-path timing and cache checks, current/reset trajectories, seven actual
+late failures, paired cold replay and compact evidence. Runtime stays unchanged.
+
+A_PC .5 now verifies 375→377 current / 372→374 reset. All 751 full C/logW/Z
+audits, seven actual late failures and paired cold replays pass. Fresh cache
+checks and a 20.2/30.9-minute estimate preceded the 15.03-minute campaign
+(562.0 MiB peak). Compact evidence totals 7.76 MiB, with no physical tail.
+Side-tool and source continuity publish the separate endpoint; runtime and old
+evidence remain unchanged. The user accepted .5 and requested commit on
+2026-11-02; aggregate support stays false. Historical execution flags remain
+unchanged. All 33 tests and the implementation-boundary audit pass.
+[Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-APC.5-Review.md).
+
+
+### A_CI_PC native steps 1–4 — 2026-11-02
+
+Following accepted A_PC .5 (`10277f05`), execute the [bounded contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC-Contract.md).
+Recompute the selected composite root and full implicit C/logW/Z derivative,
+both history writers and event dispositions. Verify exact arithmetic, all
+physical/root directions, bounded lifecycle, cache reuse and precision before
+profiling. Publish compact evidence and side-tool support. No .5 campaign here.
+
+A_CI_PC .1–.4 now passes 33 native and eight publication checks. Its complete
+implicit product proof closes at Arb256; all 76 physical directions at two states
+and 16 flat-root directions are checked independently. The 256/512 represented
+comparison agrees. Static caches are active; 40+40 samples/checkpoints take
+70.34 seconds at 274.3 MiB, with 1.52 MiB compressed evidence. The provisional
+.5 forecast is 22.3/45.8 minutes; reprofile the complete path before any campaign.
+Side-tool/source continuity is synchronized. The user accepted .1–.4 and pressure
+for commit on 2026-11-02. The separately authorized .5 is unrun; aggregate
+native support is false.
+[Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC-Review.md).
+
+The A_CI_PC bounded pressure supplement now passes 26 tests, 51 mutation
+controls and 240 independent finite segments (50.95 seconds). Manufactured
+reference-cancellation/equal-current roots, frozen-reference counterfeits, complete
+trial chains and two-history event/rollback checks are retained in 679.5 KiB.
+Common interval boxes reduce implicit derivative evaluations from 240 to three
+while covering every segment. Production and original preflight are unchanged.
+See [pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC-PressureReview.md).
+The user explicitly selected bounded pressure only for that pass, then accepted
+its result and authorized .5 after fresh profiling on 2026-11-02. Historical
+execution flags remain unchanged; all 17 publication checks and the boundary
+audit pass.
+
+### A_CI_PC native campaign — authorized 2026-11-02
+
+Accepted .1–.4 and pressure are committed as `5e10f233`. Proceed under the
+[campaign plan](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC.5-Plan.md): preserve
+native arithmetic, profile the full checker and cold checkpoint path, validate
+all static caches and the bounded independent-root cache, then execute current
+and reset through their actual windows. Publish compact evidence and the separate
+side-tool campaign. Thirty minutes is a profiling target; no supporting physical
+tail is planned. At authorization, completion and user acceptance were unverified.
+
+The A_CI_PC .5 campaign verifies 375→377 current and 372→374 reset,
+with all 751 independent full-state audits, seven actual-window failure controls
+and paired cold replay. Actual execution/recovery took 16.18 minutes at
+576.6 MiB; compact streams total 8.57 MiB. The bounded independent-root
+cache reused 749 comparisons without skipping witness checks or changing
+native arithmetic. Side-tool and source continuity are synchronized. The user
+accepted .5 and requested commit on 2026-11-02. Historical execution flags remain
+unchanged; aggregate native support stays false. All 36 focused tests and the
+implementation-boundary audit pass. C_RG2b .1–.4 is next, subject to user selection.
+[Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC.5-Review.md).
+
+### C_RG2b native steps 1–4 — selected 2026-11-03
+
+After accepted A_CI_PC .5 (`7252dd6d`), follow the
+[bounded contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Contract.md).
+Preserve duration 8, the exact source/allocation, frozen argument completion and
+unique Lipschitz section. Recompute the continuous polynomial-domain proof and
+full represented-step error without a section derivative or later trajectory.
+Native expectation 390→392 remains unverified; duration 32 is uncertified.
+Complete bounded lifecycle/numerical/cache checks, profiling and side-tool before
+review. A full .5 run and aggregate native support remain separate.
+
+C_RG2b bounded results: see [native verification](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Verification.md). 20+20 actual target samples took 145.6s; complete-path 400+400 forecast 56.9/112.0 minutes. The full campaign requires fresh late-state/checkpoint profiling and an optimization review. Duration 8 and the direct continuous domain remain fixed; no endpoint or duration-32 claim follows.
+
+C_RG2b bounded pressure (2026-11-03) is complete: 15 tests, 93 rejected mutations and 84 exact boundary witnesses. The [pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-PressureReview.md) adds exact finite chains, unrounded time-shift checks, external subject bindings, cache independence and continuous-domain/lifecycle pressure. Production code and accepted numerical evidence remain unchanged. The user accepted .1–.4 and pressure for commit on 2026-11-03. The user explicitly excluded .5; the separately profiled campaign remains unrun and awaits authorization.
+
+A_RG2b .1–.4 selected on 2026-11-03 after C_RG2b commit `86a68d3d`. Preserve the joint C/64 log W argument completion, full fresh-resource writer inside every inverse level, full 30-dimensional curved domain and duration 16. Profile a short prefix before extending bounded measurements. Implement the side-tool and finite source successor. The user explicitly defers both RG2b .5 campaigns until later.
+
+The A_RG2b bounded implementation is verified: 21 native, 20 combined publication/continuity and 236 predecessor tests, 12+12 independently audited target beats, full joint continuous-domain proof and source-bound side-tool. Sampling/certification/recovery took 342.35s; compressed evidence is 1.31 MiB. Mean public native beats were 3.65/3.55s current/reset. The measured 302+302 forecast is 101.9 minutes including cold replay and independent-check reserves, with a 221.1-minute conservative allowance; forward prefix work alone extrapolates to about 38 minutes. These are planning estimates, not endpoints. Before a later .5 campaign, reprofile late-state and journal-recovery costs and plan compact retained evidence. The user accepted A_RG2b .1–.4 and pressure for commit on 2026-11-03. Sealed execution records retain their original statuses; both RG2b .5 campaigns remain deferred.
+
+The A_RG2b .1–.4 pressure supplement passes 18 tests with 398 detected faults/mutations and 180 joint tube-boundary checks. It independently owns every inverse-history residual and the full writer, separates direct W and section-mediated feedback, checks shared-parameter membership and continuous Taylor operands, and injects late atomic faults. Runtime/preflight and scientific inputs remain unchanged; 234.95s / 271.0 KiB retained operands. Both .5 campaigns remain deferred.

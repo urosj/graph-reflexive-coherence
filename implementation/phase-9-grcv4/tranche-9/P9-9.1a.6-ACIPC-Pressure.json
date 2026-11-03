@@ -1,0 +1,630 @@
+{
+  "schema": "grc9v4-native-acipc-pressure-v1",
+  "family": "A_CI_PC",
+  "status": "verified_pending_review",
+  "tests_passed": 26,
+  "test_roster": [
+    "test_all_76_directions_mixed_segments_and_nine_jacobian_blocks",
+    "test_complete_root_tuple_sign_and_cross_writer_identity",
+    "test_detached_writer_order_and_conditional_independences",
+    "test_every_native_trial_refreshes_A_chain_on_frozen_inputs",
+    "test_floor_and_carrier_boundaries_are_independent",
+    "test_four_cross_history_inputs_and_four_returned_consumers",
+    "test_frozen_public_two_writer_stages_and_complete_map",
+    "test_frozen_reference_counterfeit_converges_and_is_rejected",
+    "test_full_state_admission_and_last_off_diagonal_frobenius_weight",
+    "test_late_three_coordinate_failures_roll_back_and_retry_once",
+    "test_manufactured_reference_H_and_equal_current_twin",
+    "test_nonuniform_event_lineage_and_complete_carrier_loss_both_chiralities",
+    "test_observers_and_archives_do_not_alias_or_advance_either_history",
+    "test_proposals_stagnation_and_trial_work_do_not_acquire_authority",
+    "test_rehashed_event_history_and_allocation_mutations",
+    "test_reset_only_and_event_archive_failures_are_atomic",
+    "test_signed_carrier_cancellation_encloses_without_projection",
+    "test_signed_reindexing_permutes_W_and_conjugates_Z",
+    "test_source_Z_effect_survives_event_in_transferred_C_W",
+    "test_tiny_authoritative_Z_is_not_recovered_from_H",
+    "test_tiny_contrast_does_not_hide_conductance_writer_activity",
+    "test_trial_chain_derivative_reference_and_residual_purity",
+    "test_unequal_time_constants_only_at_configurable_primitives",
+    "test_uniform_resource_simultaneous_history_relaxation",
+    "test_wrong_writer_time_stages_reject_after_rehash",
+    "test_zero_carrier_target_requires_composite_readmission"
+  ],
+  "elapsed_seconds": 50.946269050007686,
+  "native_endpoint_verified": false,
+  "native_completion_support": false,
+  "full_trajectory_runs": 0,
+  "production_precision_bits": 256,
+  "oracle_precision_bits": 768,
+  "runtime_changed": false,
+  "baseline_tests": 33,
+  "prior_76_direction_certificate_checks_retained": true,
+  "sampling_cap_seconds": 300,
+  "fixed_H_oracle_arithmetic": "independent FLINT/Arb768 edge assembly; explicit polynomial multiplication on zero-crossing intervals",
+  "preflight_record_digest": "ff3d254bde200cf6e5b3635fa1007f2d6e581e787f29af840daadd870499f03d",
+  "measurements": {
+    "mutations": [
+      "W_baseline",
+      "W_new_W",
+      "W_old_C",
+      "arithmetic_W_interpolation",
+      "carrier_outside_ball",
+      "clip_signed_Z_after_cancellation",
+      "complete_root_baseline",
+      "complete_root_drive",
+      "complete_root_potential",
+      "complete_root_q",
+      "converged_frozen_G_wrong_equation",
+      "drop_jacobian_C_from_C",
+      "drop_jacobian_C_from_Z",
+      "drop_jacobian_C_from_logW",
+      "drop_jacobian_Z_from_C",
+      "drop_jacobian_Z_from_Z",
+      "drop_jacobian_Z_from_logW",
+      "drop_jacobian_logW_from_C",
+      "drop_jacobian_logW_from_Z",
+      "drop_jacobian_logW_from_logW",
+      "equal_J_C_W_root_role_swap_after_rehash",
+      "event_C_family_allocation",
+      "event_permute_W",
+      "event_reset_W",
+      "event_retain_Z",
+      "flat_sign_invisible_to_source_geometry",
+      "geometry_factor_twice",
+      "hidden_carrier_loss",
+      "named_profile_changed_tau_A",
+      "named_profile_changed_tau_PC",
+      "negative_W",
+      "net_Z_plus_S",
+      "new_Z_in_consumed_geometry",
+      "omit_geometry_to_read_reference_derivative",
+      "omit_inverse_H_derivative",
+      "positive_W_outside_native_box",
+      "production_frozen_G_self_consistent_residual",
+      "recover_Z_from_rounded_H",
+      "rehashed_false_carrier_archive",
+      "rehashed_false_conductance_archive",
+      "represented_stagnation_zero_residual_claim",
+      "returned_both_old",
+      "returned_old_W",
+      "returned_old_Z",
+      "sign_W_like_carrier",
+      "skip_histories_on_zero_flow",
+      "smooth_floor_crossing",
+      "source_final_C",
+      "source_final_C_new_W",
+      "source_new_W",
+      "zero_carrier_target_reference_H_shortcut"
+    ],
+    "caches_before_pressure": {
+      "graph": {
+        "hits": 28,
+        "misses": 2,
+        "maxsize": 16,
+        "currsize": 2
+      },
+      "rows": {
+        "hits": 17,
+        "misses": 2,
+        "maxsize": 16,
+        "currsize": 2
+      },
+      "decay": {
+        "hits": 17,
+        "misses": 1,
+        "maxsize": 4,
+        "currsize": 1
+      },
+      "domain": {
+        "hits": 26,
+        "misses": 2,
+        "maxsize": 16,
+        "currsize": 2
+      }
+    },
+    "derivatives": {
+      "independent_axes": 76,
+      "mixed_directions": 4,
+      "step_bits": [
+        36,
+        52,
+        80
+      ],
+      "segments": 240,
+      "full_implicit_box_evaluations": 3,
+      "shared_boxes_cover_all_segments": true,
+      "all_nine_blocks_resolved": true,
+      "inverse_H_term_discriminated": true,
+      "center_checks_retained": true
+    },
+    "composition": {
+      "stationary_gain": 2,
+      "source_sign_requires_flat_equation": true,
+      "cross_writer_identity": true
+    },
+    "writer_independence": {
+      "detached_orders_equal": true,
+      "held_S_unchanged": true,
+      "new_Z_irrelevant_to_held_W": true,
+      "new_C_W_irrelevant_to_held_Z": true
+    },
+    "root_trial_ownership": {
+      "root_calls": 2,
+      "trial_reads": 14,
+      "all_geometry_dependent_A_fields_fresh": true,
+      "entry_C_W_Z_immutable": true,
+      "last_read_full_input": true
+    },
+    "cross_history": {
+      "W_to_S": "8270038221714533980538631766778429099626907803094963227158036825460805559343/260740604970814219042361048116400404614587954389239840081425977517360806369707098391474864128",
+      "Z_to_J": "102788683594786932277033011211389625454499846984772252174947664714988401197055/3978585891278293137243057985174566720803649206378781739523711815145275976100267004264448",
+      "Z_to_W": "156244647579027948047955396264936328168432073/1569275433846670190958947355801916604025588861116008628224",
+      "W_to_Z": "62925682562462276936942593850870183665283/3138550867693340381917894711603833208051177722232017256448",
+      "next_read_controls": 4
+    },
+    "two_writer_staging": {
+      "actual_target_steps": 4,
+      "fresh_reads": 2,
+      "physical_writers": 2,
+      "atomic_writes": 1,
+      "frozen_source": true
+    },
+    "frozen_reference": {
+      "wrong_residual": "89379959767998143016473281453694085223/27312187117075883106631072934794271937104930088205959824983071996985496526101020964951786294769886374883040913790702552866360531575272919369168306390347079868805765445689403631464768659094790245289840706092591521717005303961503585448607241732096",
+      "true_residual": "161980676486841783606781123951356123772087639053084663247565573598560066263181035248811425519909147316474691906999694694916517661351096695866643679703302030172323646002745920904629860918693492019523669605135126622102794515/54624374234151766213262145869588543874209860176411919649966143993970993052202041929903572589539772749766081827581405105732721063150545838738336612780694159737611530891378807262929537318189580490579681412185183043434010607923007170897214483464192",
+      "budget": "1/6277101735386680763835789423207666416102355444464034512896",
+      "production_counterfeit_completed": true
+    },
+    "membership": {
+      "last_off_diagonal": [
+        11,
+        14
+      ],
+      "inside_squared": "49/50",
+      "outside_squared": "9/8",
+      "same_roster": true,
+      "Z_required": true
+    },
+    "rollback": {
+      "ordinary_phases": 7,
+      "full_snapshot_equal": true,
+      "publication_identity_equal": true,
+      "retry_once_only": true
+    },
+    "manufactured": {
+      "incident_edges": [
+        5,
+        15
+      ],
+      "same_represented_C_W": true,
+      "distinct_Z": true,
+      "flat_gap": "1094509068305492477665923585219798674395231555716489035720342587443576372753409254908096338964342518262400687819360299755659302176651898651453689414726408498826723725876002215206819576074315976259757428721987995894206788028104750641/106688230926077668385277628651540124754316133157054530566340124988224595805082113144342915213944868651886878569494931847134220826465909841285813696837293280737522521272224232935409252574589024395663440258174185631707051968599623380658622038016",
+      "source_gap": "1177745997722613735740384295736480821920049614633071397389914641434297192339439348643626146081847608030805484647443258764875190232262788774279564117195097612807812046085951192266113154279444362789963833227871565238185794330843899097/447482873726171268819043498963669351417527174565166445772522651598610375083639127489770066653509818366083742331546870626162450949329271510944453531899446556570513661062175189097918769710609043378828750128621019491811414900105274743989981048538660864",
+      "conversion_bits": 600,
+      "reference_H_nonzero_histories": true,
+      "cross_writer_identity": true
+    },
+    "event_history": {
+      "chiralities": 2,
+      "old_edges": 13,
+      "unit_seeded_edges": 3,
+      "whole_Z_reset": true,
+      "complete_actual_both_role_archives": true
+    },
+    "proposals": {
+      "cold_PC_warm_starts": 3,
+      "under_relaxed_work_only": true,
+      "PC_proposal_may_be_admitted": true,
+      "PC_residual": "427280362598334210994625380035921629418265343894526197640464784244128156332249178958472463878600147618212154483163995310446921929417750983266190498294053167274631814621737540279033810570566401435241576574483709139346698515/54624374234151766213262145869588543874209860176411919649966143993970993052202041929903572589539772749766081827581405105732721063150545838738336612780694159737611530891378807262929537318189580490579681412185183043434010607923007170897214483464192",
+      "PC_radius": "426305541802501804718053838678038772082324747992366993780944175511423102187180874745181582544345653188191534751096415401419189464145663075388343128232551504494218489870250888659529049484384762331881896484621955456391908041895977252002786002147744395945765369944031795102923701741067328125/54499618242194161197667191673993537829018307564483785347254908538944469838158920916718487311232824436093988720447199427777204634102225042111117340864671892766993474230962859061615789530167334912745920534940202758692727260281707502010111044596730780172871854183862035430881125353010126496087461844073749053177856",
+      "detached_trial_aliasing": true
+    },
+    "event_rollback": {
+      "phases": 3,
+      "whole_publication_unchanged": true,
+      "retries": 3
+    },
+    "cancellation": {
+      "edge": 0,
+      "positive_and_negative_results": true,
+      "clipping_rejected": true
+    },
+    "covariance": {
+      "permutation": [
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "signs": [
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "W_unsigned_permutation": true,
+      "Z_signed_conjugation": true,
+      "exact_outputs": true
+    },
+    "event_intervention": {
+      "explicit_target_Z_zero": true,
+      "earlier_Z_effects_survive_in_C_W": true
+    },
+    "tiny_Z": {
+      "exact_old_Z": "1/2037035976334486086268445688409378161051468393665936250636140449354381299763336706183397376",
+      "H_interval_contains_reference": true,
+      "writer_ideal_nonzero": true,
+      "represented_zero_allowed_by_192_bit_policy": true
+    },
+    "tiny_contrast": {
+      "current_lower": "1052195331623785875178153439441596162009914454611721722026255044471654384867922395146776636447629818150605382853004775640953085526733993921286922693051625179974647296901437727641764935385721300603886850399744550059594661165609708423/25436456424254815193480879938969641865328820504439957276902228591018818808813598905645111850248543894740790979741795503409915167442777118989423202714274711784725790327125604852535546439788108920017108978789850624014628402852922291912704",
+      "source_upper": "201065186895020879539201157948277013016781083754534198791607011690789593382010536462200650405294152971531288414366241479549302159677182014516625286544196295746324993159805021430859999867397387192885124672095308201735847130513633681/2945340432158418383223693624588738123559693482299075088767878449688292160397327779966295692450325070170031945807812908771881611572255401942922812303597144053805349165872996110766935565946816006053119311086960734516644260779498911850068592403100913453684334767056261910363295677456051671938422478104563288264146944",
+      "W_writer_active": true
+    },
+    "trial_chain": {
+      "all_geometry_dependent_fields_resolved": true,
+      "dG_dtheta_identities": true,
+      "native_Ff_Jf_directions": 16,
+      "omitted_reference_derivative_detected": true,
+      "residual_path_independent": true,
+      "fixed_input_weighted_rows_reusable": true
+    },
+    "unequal_tau": {
+      "scope": "existing configurable binary64 primitives with exact input interpretation; native binding unchanged",
+      "tau_A": 16,
+      "tau_PC": 64,
+      "held_target_composition": true,
+      "whole_map_semigroup_claimed": false
+    },
+    "relaxation": {
+      "beats": 3,
+      "exact_charge": "21",
+      "uniform_C": "7/5",
+      "flow_zero": true,
+      "both_histories_change": true
+    },
+    "event_composite": {
+      "zero_Z_nonreference_H": true,
+      "matches_A_CI_read_at_transferred_C_W": true,
+      "first_beat_writes_Z": true,
+      "second_beat_consumes_W_Z": true,
+      "event_read_writes_neither": true
+    }
+  },
+  "operand_trace_retained": true,
+  "mutation_detectors": 51,
+  "scope": "bounded composite root and dual-history pressure, manufactured equal-current roots, frozen-reference counterfeit, 240 finite segments, event readmission and full-state rollback; no source-to-entry campaign",
+  "pending_campaign": {
+    "leaf": "P9-9.1a.6-A_CI_PC.5",
+    "current": [
+      375,
+      377
+    ],
+    "reset": [
+      372,
+      374
+    ],
+    "expected_endpoints_verified": false,
+    "required": "actual source-to-entry/window states and checkpoint pressure at those actual boundaries"
+  },
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2SourceBeat.json.xz",
+      "sha256": "faf266f447c0a1893b2ee7730dfdea481914fd15f53460e848d07ebd2c5b0675"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOS-current.json.xz",
+      "sha256": "9cfca86819ba9a57ba6a4b753650440de1d54a6fab60130791e2391a40689e5b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/AOSAnisotropicDomain.json",
+      "sha256": "525e9056bdb2e13d6c4302b63e23de194fd3a7e66259c1e8e91bca4a1e58486b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierDomain.json",
+      "sha256": "998cf00702a0a772ff978c1cc13ba444fc8e722bab2284b15487eb1b8feb2abd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierProofs.json",
+      "sha256": "f6866257b8ded80d19454013a075ce013b4b48ab60d58b5d52900f43cc1d6dfd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/review/constructive-candidate/positive_candidate.py",
+      "sha256": "efa6eba9f08ad8cfec73d2e3fcd8b071374631c6ebdfc5e3610c3c0585a5502d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os.py",
+      "sha256": "2b5e8c403909d3acba3c5776c529d38dad433ba2c89e6d76adfc3bc079e2cf25"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os_earlier.py",
+      "sha256": "91f0e1b5c64c6489f4d61686fed62d0f16c64002da84dc1117e6633c0055c7d2"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_basins.py",
+      "sha256": "6da2628f6f04bd112dbdd6eedfb9dc38661d7cc8f0a7532d211ba30e21769fd5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci.py",
+      "sha256": "3c403d943bb924fa4d392ea2dafc8b77a190f587c031903c0b9d78d3808bdc71"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_continuation.py",
+      "sha256": "b26c6bd0f050ab710b663e025cc3f039ed81c68ac8f834d8c60a2b2bdaad3709"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_os_reference.py",
+      "sha256": "0fab09c6bfcc098c537e39c223380a1d70af2de2eef5156a2d1307fef81069ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_pc.py",
+      "sha256": "af04da3c975ff835f8e01482f166f772f4f98f718346d2f9fd569f8a3b2197d3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_positive.py",
+      "sha256": "15069ffca9b22a666ff67cd0b28ea740f9ed69f40de72154498d3e84eca4c64b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC-Contract.md",
+      "sha256": "d86fddd5909f8ba07727c36642621c5fee0d27e360df6c3b3467bc298be63f1d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC-Preflight.json.xz",
+      "sha256": "78c1fcffbaca36696f6fd40f6c4ac96ed088a0c425efd663c055700d0e970203"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/aci_native_spark_oracle.py",
+      "sha256": "b8a5bd703307d618f79222900c4434017f01320b144a1a7c1256e8a71a3f73d5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/acipc_native_spark_audit.py",
+      "sha256": "7e191e7b993b8a0e2c8f456c6e01709153b5ca8059a1e8300c7aaf974d7d0464"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/acipc_native_spark_oracle.py",
+      "sha256": "4441615e5c019749f878e54705a898a180684716f2f296d66c2438d1d6d2b6f5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/acipc_native_spark_pressure_oracle.py",
+      "sha256": "e057b82591dd56668695ea8fe041bce891e8b219664029e8a92e337922950569"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/aos_native_spark_oracle.py",
+      "sha256": "b57d40390e0afc268168d6d7f3dd54965c75941a493b835b3161b3f48f8c4a18"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cci_native_spark_pressure_oracle.py",
+      "sha256": "8077859df0110ba68eb827aaed127625d90a74dd175941d731c7c3a41165bb72"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cos_native_spark_oracle.py",
+      "sha256": "c39701e4ee348210a9df93d3315cb214bf92e57db30413f0a15aa4d734379c07"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cpc_native_spark_pressure_oracle.py",
+      "sha256": "c782646d336d29c16c3de531cb493d2ac3c58909ea19734585726d0ff6590139"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a2_native_spark_numerics.py",
+      "sha256": "5ac8f8e203d4bfa6681dba80fa94c3c8e28c51664ae432a137fdbef3963ecace"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a4_native_spark_preflight.py",
+      "sha256": "eecbbc30bf29b1a6eb3f4633c42a22d46ece5464d7acbbf00ea4ba442ea0b43b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_acipc_preflight.py",
+      "sha256": "a30338bc3e368d83142e80427a0d535b3964cbbbd6ab783436a125bcc36fbbeb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_acipc_pressure.py",
+      "sha256": "1d7d9d14bb81aa3ae1f82da05c86c9a6ebba220b143434bf289416f0ad1ce45c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_acipc_subjects.py",
+      "sha256": "ec4d4413703b2fb3d0e30fe01d3aa5e0425f9a2c767ea89f1b9909461de9d17f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_acipc_native_spark_pressure.py",
+      "sha256": "42194578185f59078fffb3662161ca74346511cfdb41e199a1d0ad893cfcacb9"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-a-ci-pc-source-manifest.json",
+      "sha256": "8373b943745d02b3534ba08d6534a0bc519ea6d43d37bbd7a78c450d8c668bab"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-a-ci-pc.md",
+      "sha256": "f4b1c7eeff1d453bcafc799877b1407691b19d78bd9a08656f60695f69242daa"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-applicability-source-manifest.json",
+      "sha256": "984ebac4903725484ba7894ed216f49380b78368ba0f65f813245d28044cb825"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-earlier-source-manifest.json",
+      "sha256": "31f7a2900e5eae401d71bb495755d9df7cc2de39e85cb6c84d652414486a9dfb"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-earlier.md",
+      "sha256": "605d43e957bb7f056959d266fb3aaad0ffe2d6110c699e3c66a5cdbef18f6cc0"
+    },
+    {
+      "path": "specs/grc-v4-spark-native-a-ci-pc-numerical-policy.md",
+      "sha256": "0df0e6d20a9e0191741ff61b4405b3575d35a17e2865962f16b7d037d4d8e2d2"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_sparks.py",
+      "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4.py",
+      "sha256": "9477132a4ebb5e47a94e77deb2d56a80c577b2b74531da512ba233a5720070d0"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion.py",
+      "sha256": "43856bbf9f56ff7dcda8a15be29f7d64e5c504678b17fb81116c9b726b1a4205"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_aci.py",
+      "sha256": "bcf5ae0b370b40052bd0b6ae2a6ef2101fba2ca68c583ad359261d17f1961dea"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_acipc.py",
+      "sha256": "f0e0dfbb3e15cac82c70f371f57743ce765155c8e09a002ed94942c888d9a934"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_aos.py",
+      "sha256": "2612165d21efe0c0e94cfd9b3605895dfb655a76b17e972a277406e730e388e9"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_apc.py",
+      "sha256": "89e80a7770032898273b69803b4f78f90cc757cf62695d78c84de49816d1c564"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_certificate.py",
+      "sha256": "74be07ac43fbc83bb04bec493722af2718f969e0665b794b5f225c3b21ee6c30"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_codec.py",
+      "sha256": "9cca27435d8b8e0d71bbd69f89afa0bbb46b826ed8c9e3a0100f3082a52326de"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_cpc.py",
+      "sha256": "5d7407fad0fcf7e6b3cfbab9aa8ae21692920d7525865a11366de4768301b255"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_apc_event.py",
+      "sha256": "4835e58fd99baf2708c65eb36ccca91e2d451ea0c6070b6b1a4fe073a87eb376"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_carrier_event.py",
+      "sha256": "b330b2b118b074bc9b13b335a542a2dd08d4420ad8e7b6dc3da81aac87a8fdad"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_conductance_event.py",
+      "sha256": "63d8f2eaa84d521a84b972a1f9e6373c4cb09719f836f1bf66830fd784c4bf92"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_contracts.py",
+      "sha256": "47bd6e677f5bb57e744cdca9894e32596c03bed5c67a113bfbb61a1604102fc8"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_owner.py",
+      "sha256": "4a0b889045350816d0a7b78e7181f2b1ca555ca8a73ebf7ae323e60a1719b0ca"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "00b92688cb4bc82cf54ac462e6a8f5eb6f09e4386d4db1b2a6ac373758b98f19"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_pc.py",
+      "sha256": "c72cb21a7293bdefac925938d7b22506fdf51551b7f1ca3661240dc2c2938b89"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark.py",
+      "sha256": "c67a0650f4f9f923505a6f7b07848f70a76d3f0cb6fc465a04c09c3f0252c1d5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aci.py",
+      "sha256": "d3a3054b84ce12a9c5669b2c2ff1cf44be82cfcb910d1a0f5eff5fb2bb211a5b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aci_math.py",
+      "sha256": "b92b16e05def4e4b06a7ad871dbcc7221a04d688211e3a4eac9e5e86ef307e56"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_acipc.py",
+      "sha256": "5ac8f712742185a117fa7c672cca9cd3cbc65456996b33965771594ced9db2db"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_acipc_math.py",
+      "sha256": "523bb72597f57ab7452cfa51e89f11ccda9471b030a2bb060eabd8d3ad529914"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_adaptive_carrier.py",
+      "sha256": "5fc5839ddc6c0434d535b92fac3ec664f582439a9153887ba27aa9509d448e82"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aos.py",
+      "sha256": "3e0b4183952e84c9e8460060a722ba69fd7126cf77a25da93760dba638b19be5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aos_math.py",
+      "sha256": "b5e2b24e769b35fa2fa828a91d519634dfcbf6906950f395c5a9ccc5ca830a1d"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_apc.py",
+      "sha256": "b20170f21509a03ac87dcc3b8de93c6dc6a0fd4c5a3b57eaeb336cf9932d01dd"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_apc_math.py",
+      "sha256": "e2b7c4ca88c7594ac72efe711af6c6a04ec91f52cf8ba014fdb52dc9ae9716dc"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_carrier.py",
+      "sha256": "62726f519d59cea703f373cfdfa41b0c6b5ddd02bc1a31c47955ead7e444ff7c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cci.py",
+      "sha256": "8e25e09507cfd056bc8a68e3e14715ab40dbb1db6e7514634fea04b0d801c07d"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_ccipc.py",
+      "sha256": "1f61d78988e0a0110c717bfa59f9d65f57f09da7e338b66ce6e094c661f230e1"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_conductance.py",
+      "sha256": "d367f15f54ab475b62ec65dfdc6ab0c1d95764f32884b094a1b68f700dd5a6ee"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cos.py",
+      "sha256": "0ff7642925f324b8041d5f4660ccea1627e4eb0bf15faf26799c5ca2b77901de"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cpc.py",
+      "sha256": "0bd1e8a24fbad058a5fdac406404359e8b396a20c9b227724a6f5bac7f3736bd"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_state.py",
+      "sha256": "db4c66539ab03a6bad9557c95adf056825697df210dc0b88193a9b805aa5a141"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_spark_completion.py",
+      "sha256": "e117527ceae9ef3961f093049d998ac3f98fcfbb364d275fd626c6b2caa18dd4"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_acipc.py",
+      "sha256": "05fcf2e0fe962e902bc41b5487519519d888aa49be3555a750462931c58986be"
+    }
+  ],
+  "evidence": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC-PressureSamples.json.xz",
+    "sha256": "1766658e8c0e0dcdcb838362f5bc3b34f127c0694dd1a14088027b15c35c3a3a"
+  },
+  "record_digest": "0cbe3e220cb28be2493efcb54b96f20221494e32f0809892956833d61aeee346"
+}

@@ -1265,13 +1265,13 @@
     },
     {
       "path": "src/pygrc/models/grc_9_v4.py",
-      "sha256": "b82f13df6bcc57fdcb4e97e402db968f040b54ac7d7e880ded4eda68f815b71d",
-      "iteration_id": "P9-10.1a"
+      "sha256": "aefbd17e96e4331b35dd6a47826547b36eddf4b6f495741e375b77a2153d2dea",
+      "iteration_id": "P9-9.1a.6-A_RG2b"
     },
     {
       "path": "src/pygrc/models/grc_9_v4_api_lifecycle.py",
-      "sha256": "63b86ddd600e6d49986a0e17acc53278aafe3fb6836dd868e1a6586aa67c3de1",
-      "iteration_id": "P9-9.4b"
+      "sha256": "d17240d2d4dfef5a8901e6cc8372501251a2c0f859d9b2c3388131bde7cf64d5",
+      "iteration_id": "P9-9.1a.6-C_CI"
     },
     {
       "path": "src/pygrc/models/grc_9_v4_arg2b.py",
@@ -1289,9 +1289,59 @@
       "iteration_id": "P9-10.1a"
     },
     {
+      "path": "src/pygrc/models/grc_9_v4_completion.py",
+      "sha256": "43856bbf9f56ff7dcda8a15be29f7d64e5c504678b17fb81116c9b726b1a4205",
+      "iteration_id": "P9-9.1a.6-A_PC"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_aci.py",
+      "sha256": "bcf5ae0b370b40052bd0b6ae2a6ef2101fba2ca68c583ad359261d17f1961dea",
+      "iteration_id": "P9-9.1a.6-A_CI"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_acipc.py",
+      "sha256": "f0e0dfbb3e15cac82c70f371f57743ce765155c8e09a002ed94942c888d9a934",
+      "iteration_id": "P9-9.1a.6-A_CI_PC"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_aos.py",
+      "sha256": "2612165d21efe0c0e94cfd9b3605895dfb655a76b17e972a277406e730e388e9",
+      "iteration_id": "P9-9.1a.6-A_OS"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_apc.py",
+      "sha256": "89e80a7770032898273b69803b4f78f90cc757cf62695d78c84de49816d1c564",
+      "iteration_id": "P9-9.1a.6-A_PC"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_arg2b.py",
+      "sha256": "522c1a01bb6846e2ea393e09cf413e0cc3d2cb1e68ac0b4f39bf9ed551034926",
+      "iteration_id": "P9-9.1a.6-A_RG2b"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_certificate.py",
+      "sha256": "5726571b20ede73bb48fbd3402a3092eb5cc823336b63d9a91cc98b85d2f2bbf",
+      "iteration_id": "P9-9.1a.6-A_RG2b"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_codec.py",
+      "sha256": "41dcc5ed8dc1e5744d8f9d1de763ad3ba3904f9cd7e29e5adf705f35f0502785",
+      "iteration_id": "P9-9.1a.6-A_RG2b"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_cpc.py",
+      "sha256": "5d7407fad0fcf7e6b3cfbab9aa8ae21692920d7525865a11366de4768301b255",
+      "iteration_id": "P9-9.1a.6-C_CI_PC"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_crg2b.py",
+      "sha256": "e228e3b9ad45c188547ce58099aa89e8ff0d028b0acd5324096cd291d5ad73d8",
+      "iteration_id": "P9-9.1a.6-C_RG2b"
+    },
+    {
       "path": "src/pygrc/models/grc_9_v4_contracts.py",
-      "sha256": "7c14b32c41b2210927dc68980ec1dcbae735256baee58b7af10d7504e875fb72",
-      "iteration_id": "P9-10.1a"
+      "sha256": "a40ce45dc0cbab8312912899aa4ac5acc2b206ca6534a0ecb497ec687699fe3b",
+      "iteration_id": "P9-9.1a.3"
     },
     {
       "path": "src/pygrc/models/grc_9_v4_crg2b_connected.py",
@@ -1300,8 +1350,8 @@
     },
     {
       "path": "src/pygrc/models/grc_9_v4_crossing.py",
-      "iteration_id": "P9-9.4b",
-      "sha256": "f6f0ee5a91b3f916c5e7e0a23abdca031d46db53d393fcf1f0a3eabc3c725cd7"
+      "sha256": "260f4a1ef9fcf3cc6997c7f14275e8253cbc456a8426357659dab05a4bc2151b",
+      "iteration_id": "P9-9.1a.3"
     },
     {
       "path": "src/pygrc/models/grc_9_v4_expansion.py",
@@ -1310,8 +1360,8 @@
     },
     {
       "path": "src/pygrc/models/grc_9_v4_identity.py",
-      "sha256": "becacbbd7822a16ce246730155ccd016667a1af4ffac20af5286d28e07997370",
-      "iteration_id": "P9-10.1a"
+      "sha256": "c84853e05ed53bc6ab73e30d2a2d83e358760ef85cdb52b38215649ae4bcf317",
+      "iteration_id": "P9-9.1a.3"
     },
     {
       "path": "src/pygrc/models/grc_9_v4_legacy.py",
@@ -1320,8 +1370,8 @@
     },
     {
       "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
-      "sha256": "40ba2683facd22286bb360da64664c80fe62d88763d2eab7feb7469132b1c328",
-      "iteration_id": "P9-10.1a"
+      "sha256": "028f29fa01687cbf9f2524886c3872fa02999ed375d4d5394ab0dbd569607602",
+      "iteration_id": "P9-9.1a.3"
     },
     {
       "path": "src/pygrc/models/grc_9_v4_owner.py",
@@ -1332,6 +1382,31 @@
       "path": "src/pygrc/models/grc_9_v4_rg2b.py",
       "sha256": "22026ccf6f949247690ce4d35494468161e0a77525b1cb90eb228d5d9bf0a3ae",
       "iteration_id": "P9-8.3C-RG2b"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_apc_event.py",
+      "sha256": "4835e58fd99baf2708c65eb36ccca91e2d451ea0c6070b6b1a4fe073a87eb376",
+      "iteration_id": "P9-9.1a.6-A_PC"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_carrier_event.py",
+      "sha256": "b330b2b118b074bc9b13b335a542a2dd08d4420ad8e7b6dc3da81aac87a8fdad",
+      "iteration_id": "P9-9.1a.6-C_PC"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_conductance_event.py",
+      "sha256": "63d8f2eaa84d521a84b972a1f9e6373c4cb09719f836f1bf66830fd784c4bf92",
+      "iteration_id": "P9-9.1a.6-A_OS"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_contracts.py",
+      "sha256": "565fed67131d04f4e6c8e24d19c60c9a327329ca3015009956262ea9a3e67836",
+      "iteration_id": "P9-9.1a.6-A_RG2b"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_owner.py",
+      "sha256": "9f31bcc43321aef3f22c088e2035ef639ed70158d84f4515610dbef2c9a87aed",
+      "iteration_id": "P9-9.1a.6-A_RG2b"
     },
     {
       "path": "src/pygrc/models/grc_9_v4_topology.py",
@@ -1357,6 +1432,11 @@
       "path": "src/pygrc/models/grc_v4_assets/grc-9-v4-basin-interface-schema.json",
       "sha256": "24ec17bdbaa289d4e3b7a83621f641026481da7e39d1d2fc0f798a78a940d591",
       "iteration_id": "P9-10.1a"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-9-v4-spark-completion-schema.json",
+      "sha256": "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52",
+      "iteration_id": "P9-9.1a.3"
     },
     {
       "path": "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-release.json",
@@ -1477,6 +1557,111 @@
       "path": "src/pygrc/models/grc_v4_rg2b_graph.py",
       "sha256": "a86a80068dc71eea43fd9fcc56cfdcb4e676fa316fe76bfe009a1c296441a058",
       "iteration_id": "P9-6.4c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark.py",
+      "sha256": "ff413a2f826d645b11c53a4588fd1da3a0325d4e6c43363a752bc91c6bb2087e",
+      "iteration_id": "P9-9.1a.6-A_RG2b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aci.py",
+      "sha256": "d3a3054b84ce12a9c5669b2c2ff1cf44be82cfcb910d1a0f5eff5fb2bb211a5b",
+      "iteration_id": "P9-9.1a.6-A_CI"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aci_math.py",
+      "sha256": "b92b16e05def4e4b06a7ad871dbcc7221a04d688211e3a4eac9e5e86ef307e56",
+      "iteration_id": "P9-9.1a.6-A_CI"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_acipc.py",
+      "sha256": "5ac8f712742185a117fa7c672cca9cd3cbc65456996b33965771594ced9db2db",
+      "iteration_id": "P9-9.1a.6-A_CI_PC"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_acipc_math.py",
+      "sha256": "523bb72597f57ab7452cfa51e89f11ccda9471b030a2bb060eabd8d3ad529914",
+      "iteration_id": "P9-9.1a.6-A_CI_PC"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_adaptive_carrier.py",
+      "sha256": "5fc5839ddc6c0434d535b92fac3ec664f582439a9153887ba27aa9509d448e82",
+      "iteration_id": "P9-9.1a.6-A_CI_PC"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aos.py",
+      "sha256": "3e0b4183952e84c9e8460060a722ba69fd7126cf77a25da93760dba638b19be5",
+      "iteration_id": "P9-9.1a.6-A_OS"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aos_math.py",
+      "sha256": "b5e2b24e769b35fa2fa828a91d519634dfcbf6906950f395c5a9ccc5ca830a1d",
+      "iteration_id": "P9-9.1a.6-A_OS"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_apc.py",
+      "sha256": "b20170f21509a03ac87dcc3b8de93c6dc6a0fd4c5a3b57eaeb336cf9932d01dd",
+      "iteration_id": "P9-9.1a.6-A_PC"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_apc_math.py",
+      "sha256": "e2b7c4ca88c7594ac72efe711af6c6a04ec91f52cf8ba014fdb52dc9ae9716dc",
+      "iteration_id": "P9-9.1a.6-A_PC"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_arg2b.py",
+      "sha256": "dc76e0dc1814d6a3bc306be1ee16a9f46fb0365b04c3c8849a244463eb0da6b4",
+      "iteration_id": "P9-9.1a.6-A_RG2b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_arg2b_math.py",
+      "sha256": "a49d94da04f74d5c3975d282bb653c29ccd3ab5906fb7a5173b3716516a635a6",
+      "iteration_id": "P9-9.1a.6-A_RG2b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_carrier.py",
+      "sha256": "62726f519d59cea703f373cfdfa41b0c6b5ddd02bc1a31c47955ead7e444ff7c",
+      "iteration_id": "P9-9.1a.6-A_PC"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cci.py",
+      "sha256": "8e25e09507cfd056bc8a68e3e14715ab40dbb1db6e7514634fea04b0d801c07d",
+      "iteration_id": "P9-9.1a.6-C_CI"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_ccipc.py",
+      "sha256": "1f61d78988e0a0110c717bfa59f9d65f57f09da7e338b66ce6e094c661f230e1",
+      "iteration_id": "P9-9.1a.6-C_CI_PC"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_conductance.py",
+      "sha256": "45ee5770cad5f14ff376ff5c7fed28db811cdb6ae7c192cf44b8028eaeb4f606",
+      "iteration_id": "P9-9.1a.6-A_RG2b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cos.py",
+      "sha256": "0ff7642925f324b8041d5f4660ccea1627e4eb0bf15faf26799c5ca2b77901de",
+      "iteration_id": "P9-9.1a.3"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cpc.py",
+      "sha256": "0bd1e8a24fbad058a5fdac406404359e8b396a20c9b227724a6f5bac7f3736bd",
+      "iteration_id": "P9-9.1a.6-C_PC"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_crg2b.py",
+      "sha256": "3850083b7a20487ec147529a57dc6369074acaf9867f812e3ab90f08402b468f",
+      "iteration_id": "P9-9.1a.6-C_RG2b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_crg2b_math.py",
+      "sha256": "04f98d84ab6ba9cb1e2966d4908e15e4cdaa7290c6d5b73f385f7f46e1fb91e3",
+      "iteration_id": "P9-9.1a.6-C_RG2b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_state.py",
+      "sha256": "6b36c78b1b66370bab4fdd2edea88ac45cd9d459f1772488556f2a3b5302611f",
+      "iteration_id": "P9-9.1a.6-C_RG2b"
     },
     {
       "path": "src/pygrc/models/grc_v4_state.py",
@@ -1617,6 +1802,11 @@
       "path": "tests/models/test_grc_9_v4_owner.py",
       "sha256": "56f2311cdfc9509e429565e1dad8a14af204354ac21c9cd8cfbfca2779b4cdac",
       "iteration_id": "P9-9.1b"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_spark_completion.py",
+      "sha256": "e117527ceae9ef3961f093049d998ac3f98fcfbb364d275fd626c6b2caa18dd4",
+      "iteration_id": "P9-9.1a.3"
     },
     {
       "path": "tests/models/test_grc_9_v4_topology.py",
@@ -1779,6 +1969,56 @@
       "sha256": "0b65f6f920093cf2e958e46453830219c5d6e7cc6c2096fd11e07ddd98ef6954"
     },
     {
+      "path": "tests/models/test_grc_v4_spark_aci.py",
+      "sha256": "019dbf4b8ad3bf345ddd1859de6c2b7f150145684ea548b5a099f80ddd3d3ae2",
+      "iteration_id": "P9-9.1a.6-A_CI"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_acipc.py",
+      "sha256": "05fcf2e0fe962e902bc41b5487519519d888aa49be3555a750462931c58986be",
+      "iteration_id": "P9-9.1a.6-A_CI_PC"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_aos.py",
+      "sha256": "0e2bfb5678816363d89be1aa06b3d50ebd98792070d3e36e01303ad544adfb1f",
+      "iteration_id": "P9-9.1a.6-A_OS"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_apc.py",
+      "sha256": "5e32ca6310a276da7ac4ee8bd9bf9ac6eec7e96d40b5ded7e5b0476388bf8906",
+      "iteration_id": "P9-9.1a.6-A_PC"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_arg2b.py",
+      "sha256": "540b747a39c7928bb65f31cdafda5c923ddd049904d777b9cc686444bc8d1b50",
+      "iteration_id": "P9-9.1a.6-A_RG2b"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_cci.py",
+      "sha256": "91600a914283de757db2fd7e8ba2f188d4fe2b8bf305128b6a98dc84f5a9ee44",
+      "iteration_id": "P9-9.1a.6-C_CI"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_ccipc.py",
+      "sha256": "dcffbfcb23a6bcf252618e88c90e7cca88da37ae82df080aca5ef316fb04aa97",
+      "iteration_id": "P9-9.1a.6-C_CI_PC"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_cpc.py",
+      "sha256": "7e25d14bf1ac924e3bbbb893046c1f527af411309afc7fed5ce8be8a018def5a",
+      "iteration_id": "P9-9.1a.6-C_PC"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_crg2b.py",
+      "sha256": "2173650721649f4627fc3f0b75f976b9f770c1c353ca896d2cb504c51e59d9d2",
+      "iteration_id": "P9-9.1a.6-C_RG2b"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_numerics.py",
+      "sha256": "72adf797f212571d7bc697b1d09e81e0939b265db164969a3d53719bbeb613ad",
+      "iteration_id": "P9-9.1a.2"
+    },
+    {
       "path": "tests/models/test_grc_v4_state.py",
       "sha256": "d7ce02acc2d663fd3f4513158193dd473a78c1f42bc985edfa2d2eff0943fb54",
       "iteration_id": "P9-2.4"
@@ -1820,6 +2060,6 @@
       "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
     ]
   ],
-  "claim_ceiling": "Work entries grant no conformance. The pinned exact-profile G2 registry validates ten separate user-accepted generic declarations. The pinned P9-7.8 G3 decision admits only that exact consumed set and historical P9-8.1a entry. The 2026-10-02 user-requested successors open P9-8.1b row differential/weight bridge on the two topology paths, P9-8.1c baseline candidate detection on the two reviewed lifecycle paths, and P9-8.1d column coarse/Split on the topology paths after accepted .c at e9dfad7. No later native leaf, broader profile or specialization runtime conformance follows. The user-requested P9-8.1e successor after accepted .d at a2d3d36 corrects shared exact-backend use and extends its source/parity guard on exactly the recorded five existing paths; it opens no other runtime implementation or conformance. The 2026-10-03 user-requested P9-8.2 successor after merged parent acceptance at 184919b opens only the reviewed allocator source/test pair. Its pure mechanical plan does not confer native target admission, lifecycle publication, P9-8.3 acceptance or broader specialization conformance. The 2026-10-03 user-requested P9-8.3C-OS successor after accepted allocator merge 79e0e8f opens exactly six reviewed geometry/expansion/lifecycle source/test paths for bounded port-owned C_OS event integration. Its separately identified native numerical fixture, current/reset admission, atomic publication and event replay do not advertise a new G2/native profile or open other P9-8.3 profiles, P9-8.4\u20138.6, or the Tranche 9 public model lifecycle. The 2026-10-03 user-requested P9-8.3C-PC successor after accepted C_OS commit eeb82e9 opens exactly the four existing expansion/lifecycle source/test paths. Its whole-current/reset carrier archive, explicit zero-reset/loss policy, full PC readmission, atomic publication and bounded numerical continuation remain internal native integration; no new G2 advertisement, other native profile, public facade or user acceptance follows. The 2026-10-03 user-requested P9-8.3C-CI successor after accepted A_OS commit ba5cf5c opens exactly the existing expansion/lifecycle owners and new native C_CI test file. It consumes the accepted exact C_CI G2 in G3 and preserves the accepted CI research expectations. Both-role joint-root/domain admission, reference-current replay and atomic publication remain bounded internal integration; no new profile registration, other-profile acceptance or public model lifecycle is claimed. The 2026-10-03 user-requested A_PC P9-8.3A.2 successor after explicit oracle/fixture acceptance at 3493fcd opens exactly the four recorded existing runtime owners and the native A_PC test. It consumes exact A_PC G2 from G3 and preserves all four committed oracle subjects. Fixed-row whole-chart proof, exact W lineage, whole Z archive/reset, both-role readmission and atomic replay remain bounded internal integration; no fixed-row CI+PC, public support, global positivity or runtime user acceptance follows. The 2026-10-03 user-requested P9-8.3C-CI-PC successor after accepted A_PC commit 5966746 opens exactly the two existing expansion/lifecycle owners and native C_CI+PC test. It consumes exact C_CI_PC G2 from G3 and preserves four committed research subjects. Composite-domain both-role roots, whole carrier archive/reset, same-root writing and atomic replay remain bounded internal integration; no new profile, public facade, tighter whole-chart accuracy, global positivity or user acceptance follows. The 2026-10-03 user-requested A_CI+PC P9-8.3A.2 continuation accepts the reviewed A.1 scope committed at 1711923 and pins all four unchanged oracle subjects. It opens exactly five existing runtime owners, the native A_PC regression test and the new native A_CI+PC test. It consumes exact A_CI_PC G2 from G3. Fixed-row composite envelope/root proof, same-root two-writer timing, exact W lineage, whole Z archive/reset and atomic replay remain bounded internal integration; no public support, arbitrary-graph coverage, global positivity or separate runtime user acceptance follows. The user separately accepted the bounded A_CI+PC P9-8.3A.2 runtime and closure review on 2026-10-03 (\"accept and commit\"). Its declared composite chart, both-role W/Z event channels, numerical/edge-case evidence and finite continuation are accepted; no other native profile, arbitrary-graph coverage or public support is added.",
-  "record_digest": "aa57e4e10d447d3e3f82af7dc7c6c6807815d2c8c78d00939b3b6b443a64243f"
+  "claim_ceiling": "Work entries grant no conformance. The pinned exact-profile G2 registry validates ten separate user-accepted generic declarations. The pinned P9-7.8 G3 decision admits only that exact consumed set and historical P9-8.1a entry. The 2026-10-02 user-requested successors open P9-8.1b row differential/weight bridge on the two topology paths, P9-8.1c baseline candidate detection on the two reviewed lifecycle paths, and P9-8.1d column coarse/Split on the topology paths after accepted .c at e9dfad7. No later native leaf, broader profile or specialization runtime conformance follows. The user-requested P9-8.1e successor after accepted .d at a2d3d36 corrects shared exact-backend use and extends its source/parity guard on exactly the recorded five existing paths; it opens no other runtime implementation or conformance. The 2026-10-03 user-requested P9-8.2 successor after merged parent acceptance at 184919b opens only the reviewed allocator source/test pair. Its pure mechanical plan does not confer native target admission, lifecycle publication, P9-8.3 acceptance or broader specialization conformance. The 2026-10-03 user-requested P9-8.3C-OS successor after accepted allocator merge 79e0e8f opens exactly six reviewed geometry/expansion/lifecycle source/test paths for bounded port-owned C_OS event integration. Its separately identified native numerical fixture, current/reset admission, atomic publication and event replay do not advertise a new G2/native profile or open other P9-8.3 profiles, P9-8.4\u20138.6, or the Tranche 9 public model lifecycle. The 2026-10-03 user-requested P9-8.3C-PC successor after accepted C_OS commit eeb82e9 opens exactly the four existing expansion/lifecycle source/test paths. Its whole-current/reset carrier archive, explicit zero-reset/loss policy, full PC readmission, atomic publication and bounded numerical continuation remain internal native integration; no new G2 advertisement, other native profile, public facade or user acceptance follows. The 2026-10-03 user-requested P9-8.3C-CI successor after accepted A_OS commit ba5cf5c opens exactly the existing expansion/lifecycle owners and new native C_CI test file. It consumes the accepted exact C_CI G2 in G3 and preserves the accepted CI research expectations. Both-role joint-root/domain admission, reference-current replay and atomic publication remain bounded internal integration; no new profile registration, other-profile acceptance or public model lifecycle is claimed. The 2026-10-03 user-requested A_PC P9-8.3A.2 successor after explicit oracle/fixture acceptance at 3493fcd opens exactly the four recorded existing runtime owners and the native A_PC test. It consumes exact A_PC G2 from G3 and preserves all four committed oracle subjects. Fixed-row whole-chart proof, exact W lineage, whole Z archive/reset, both-role readmission and atomic replay remain bounded internal integration; no fixed-row CI+PC, public support, global positivity or runtime user acceptance follows. The 2026-10-03 user-requested P9-8.3C-CI-PC successor after accepted A_PC commit 5966746 opens exactly the two existing expansion/lifecycle owners and native C_CI+PC test. It consumes exact C_CI_PC G2 from G3 and preserves four committed research subjects. Composite-domain both-role roots, whole carrier archive/reset, same-root writing and atomic replay remain bounded internal integration; no new profile, public facade, tighter whole-chart accuracy, global positivity or user acceptance follows. The 2026-10-03 user-requested A_CI+PC P9-8.3A.2 continuation accepts the reviewed A.1 scope committed at 1711923 and pins all four unchanged oracle subjects. It opens exactly five existing runtime owners, the native A_PC regression test and the new native A_CI+PC test. It consumes exact A_CI_PC G2 from G3. Fixed-row composite envelope/root proof, same-root two-writer timing, exact W lineage, whole Z archive/reset and atomic replay remain bounded internal integration; no public support, arbitrary-graph coverage, global positivity or separate runtime user acceptance follows. The user separately accepted the bounded A_CI+PC P9-8.3A.2 runtime and closure review on 2026-10-03 (\"accept and commit\"). Its declared composite chart, both-role W/Z event channels, numerical/edge-case evidence and finite continuation are accepted; no other native profile, arbitrary-graph coverage or public support is added. The user-requested P9-9.1a.2 successor after contract mapping f2d776d7 opens exactly grc_v4_spark_state.py, grc_v4_spark_cos.py and test_grc_v4_spark_numerics.py for an explicit exact-resource/FLINT C_OS numerical bridge. Bounded source, allocation and ordinary-step checks do not grant public completion, endpoint verification, lifecycle acceptance or new release support. The user-requested P9-9.1a.3 successor after numerical bridge commit 32376cd4 opens the finite native certificate, public lifecycle, exact v3 codec and regression paths. Synthetic window controls do not confer source-to-completion acceptance, global cross-process accounting, exact-to-legacy conversion or new release support.",
+  "record_digest": "b8a9d2d0daf0897ee69cd8fff30c51e3cbde72b66e52e64a3fea96031b65b558"
 }

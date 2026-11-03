@@ -1,0 +1,900 @@
+{
+  "schema": "grc9v4-native-cpc-pressure-v1",
+  "family": "C_PC",
+  "status": "verified_pending_review",
+  "tests_passed": 26,
+  "test_roster": [
+    "test_actual_source_beat_preserves_distinct_reset_history",
+    "test_actual_stages_frozen_inputs_and_complete_joint_error",
+    "test_all_PC_transaction_faults_preserve_whole_publication",
+    "test_archive_and_whole_target_mutations",
+    "test_atomic_failures_at_preparation_window_and_publication",
+    "test_checkpoints_at_each_window_boundary_and_observer_noninterference",
+    "test_duplicate_delivery_is_noop_in_ancestry_and_failed_request_retries",
+    "test_equal_C_equal_norm_trace_different_patterns_and_roles",
+    "test_event_whole_actual_archive_changed_support_and_regeneration",
+    "test_every_source_target_signed_direction_and_simultaneous_history",
+    "test_exact_norm_boundaries_and_packed_offdiagonal_discriminator",
+    "test_full_60_direction_finite_segments_and_cross_couplings",
+    "test_held_source_and_writer_mutations",
+    "test_independent_classifier_diamonds_unqualified_ties_singletons_thresholds",
+    "test_inside_domain_without_event_cannot_earn_gain",
+    "test_invalid_carrier_payloads_and_wrong_graph_binding",
+    "test_joint_trap_boundary_all_coordinates_and_relabelled_proofs",
+    "test_native_step_without_research_import_or_trajectory_read",
+    "test_nonfinite_or_unresolved_reads_and_writers_fail_closed",
+    "test_observer_snapshot_aliasing_zero_duration_and_migration",
+    "test_read_mutations_have_specific_constitutive_discriminators",
+    "test_reset_only_and_target_admission_faults",
+    "test_signed_edge_permutation_covariance_and_untransported_binding",
+    "test_uniform_signed_history_releases_without_resource_motion",
+    "test_writer_primitive_held_source_semigroup_and_cancellation",
+    "test_zero_formation_next_consumption_and_signed_source"
+  ],
+  "elapsed_seconds": 39.186027945019305,
+  "native_endpoint_verified": false,
+  "native_completion_support": false,
+  "full_trajectory_runs": 0,
+  "production_precision_bits": 256,
+  "oracle_precision_bits": 768,
+  "runtime_changed": false,
+  "sampling_cap_seconds": 180,
+  "fixed_H_oracle_arithmetic": "exact FLINT rational",
+  "preflight_record_digest": "56177c5b39cf1bc6626057c0d45aa98e5a2d3d01149ea48a76a08b56d4023ad0",
+  "measurements": {
+    "actual_source_steps": 1,
+    "actual_target_steps": 4,
+    "PC_faults": {
+      "read": true,
+      "writer": true,
+      "poststate": true,
+      "archive": true,
+      "complete_snapshot_and_root": true,
+      "retry_once": true
+    },
+    "mutations": [
+      {
+        "mutation": "prebeat_current",
+        "assertion": "whole actual source archive"
+      },
+      {
+        "mutation": "role_swap",
+        "assertion": "whole actual source archive"
+      },
+      {
+        "mutation": "diagonal_only",
+        "assertion": "whole actual source archive"
+      },
+      {
+        "mutation": "copy_old_history_or_zero_only_new_rows",
+        "assertion": "whole target carrier zero"
+      },
+      {
+        "mutation": "swap_equal_C_carriers",
+        "assertion": "whole C/Z read identity"
+      },
+      {
+        "mutation": "post_C_old_Z",
+        "assertion": "same incoming held source"
+      },
+      {
+        "mutation": "post_C_new_Z",
+        "assertion": "same incoming held source"
+      },
+      {
+        "mutation": "freeze",
+        "assertion": "complete exponential writer"
+      },
+      {
+        "mutation": "clear",
+        "assertion": "complete exponential writer"
+      },
+      {
+        "mutation": "additive",
+        "assertion": "complete exponential writer"
+      },
+      {
+        "mutation": "double_write",
+        "assertion": "complete exponential writer"
+      },
+      {
+        "mutation": "tau_C_instead_of_PC",
+        "assertion": "complete exponential writer"
+      },
+      {
+        "mutation": "clip_signed_history",
+        "assertion": "complete exponential writer"
+      },
+      {
+        "mutation": "wrong_decay",
+        "assertion": "tau_PC exponential coefficient"
+      },
+      {
+        "mutation": "ignore_old_Z",
+        "assertion": "exact old-carrier read: H"
+      },
+      {
+        "mutation": "same_step_source_in_H",
+        "assertion": "exact old-carrier read: H"
+      },
+      {
+        "mutation": "cycle_current",
+        "assertion": "exact old-carrier read: J"
+      },
+      {
+        "mutation": "negate_flat",
+        "assertion": "exact old-carrier read: flat"
+      },
+      {
+        "mutation": "clip_negative_source",
+        "assertion": "exact old-carrier read: S"
+      },
+      {
+        "mutation": "unbounded_current_midpoint",
+        "assertion": "whole current midpoint budget"
+      },
+      {
+        "mutation": "understated_conditioning",
+        "assertion": "independent conditioning bound"
+      },
+      {
+        "mutation": "omit_carrier_error",
+        "assertion": "carrier numerical budget"
+      }
+    ],
+    "equal_C_roles": {
+      "equal_C": true,
+      "different_Z": true,
+      "equal_norm": true,
+      "equal_trace": true,
+      "distinct_reads": true
+    },
+    "event_history": {
+      "chiralities": 2,
+      "source_coordinates": 58,
+      "target_coordinates": 46,
+      "changed_support_pairs": 27,
+      "whole_target_reset": true
+    },
+    "carrier_spaces": {
+      "source": {
+        "edges": 13,
+        "off_diagonal": 45,
+        "coordinates": 58,
+        "signed_probes": 116,
+        "simultaneous_signed": true
+      },
+      "target": {
+        "edges": 16,
+        "off_diagonal": 30,
+        "coordinates": 46,
+        "signed_probes": 92,
+        "simultaneous_signed": true
+      }
+    },
+    "packed_norm": {
+      "upper_triangle_only_squared": "9/65536",
+      "full_squared": "9/32768",
+      "radius_squared": "1/4096",
+      "rejected": true
+    },
+    "finite_segments": [
+      {
+        "axis": 0,
+        "kind": "charge",
+        "contains_secant": true
+      },
+      {
+        "axis": 1,
+        "kind": "charge",
+        "contains_secant": true
+      },
+      {
+        "axis": 2,
+        "kind": "charge",
+        "contains_secant": true
+      },
+      {
+        "axis": 3,
+        "kind": "charge",
+        "contains_secant": true
+      },
+      {
+        "axis": 4,
+        "kind": "charge",
+        "contains_secant": true
+      },
+      {
+        "axis": 5,
+        "kind": "charge",
+        "contains_secant": true
+      },
+      {
+        "axis": 6,
+        "kind": "charge",
+        "contains_secant": true
+      },
+      {
+        "axis": 7,
+        "kind": "charge",
+        "contains_secant": true
+      },
+      {
+        "axis": 8,
+        "kind": "charge",
+        "contains_secant": true
+      },
+      {
+        "axis": 9,
+        "kind": "charge",
+        "contains_secant": true
+      },
+      {
+        "axis": 10,
+        "kind": "charge",
+        "contains_secant": true
+      },
+      {
+        "axis": 11,
+        "kind": "charge",
+        "contains_secant": true
+      },
+      {
+        "axis": 12,
+        "kind": "charge",
+        "contains_secant": true
+      },
+      {
+        "axis": 13,
+        "kind": "charge",
+        "contains_secant": true
+      },
+      {
+        "axis": 14,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 15,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 16,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 17,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 18,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 19,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 20,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 21,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 22,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 23,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 24,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 25,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 26,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 27,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 28,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 29,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 30,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 31,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 32,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 33,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 34,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 35,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 36,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 37,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 38,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 39,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 40,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 41,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 42,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 43,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 44,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 45,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 46,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 47,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 48,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 49,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 50,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 51,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 52,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 53,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 54,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 55,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 56,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 57,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 58,
+        "kind": "carrier",
+        "contains_secant": true
+      },
+      {
+        "axis": 59,
+        "kind": "carrier",
+        "contains_secant": true
+      }
+    ],
+    "joint_membership": {
+      "directions": 46,
+      "both_signs": true,
+      "ordinary_admitted_outside_trap": true,
+      "off_diagonal_factor_two": true
+    },
+    "covariance": {
+      "permutation": [
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "signs": [
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "off_diagonal_history": true,
+      "exact_represented_transport": true
+    },
+    "uniform_release": {
+      "charge": "12",
+      "steps": 4,
+      "nonzero_history": true,
+      "audits": [
+        {
+          "exact_fixed_H_equations": true,
+          "whole_writer": true,
+          "full_returned_state": true,
+          "carrier_coordinates": 58,
+          "charge": "12",
+          "resource_error_max": "0",
+          "carrier_error_F_upper": "114633467255483423071471842191750445583267985585927541328391809922851649320289540666296339154728204477573001582712488789124952787212872726287829478153006392856600126270677855113426580082187816167238568047941028368537266567119536697/152270531428124985630521599810549817357441044649921992607311038393952323293225407851025235404406410300395389316115760440366549529143798344477781051504885209680176214061819891091731088367032088255512493648112787169901337467584294921027286931491702587700433418798504336673153571718623657984"
+        },
+        {
+          "exact_fixed_H_equations": true,
+          "whole_writer": true,
+          "full_returned_state": true,
+          "carrier_coordinates": 58,
+          "charge": "12",
+          "resource_error_max": "0",
+          "carrier_error_F_upper": "1512035550085351681505919968448755746225603687228335888050915189884564035455685369068067135582751559541540612489322043610711890860537775232426708053385355955392456858324925682370735794115486246238071131021335926857827339753300677401/2436328502849999770088345596968797077719056714398751881716976614303237172691606525616403766470502564806326229057852167045864792466300773511644496824078163354882819424989118257467697413872513412088199898369804594718421399481348718736436590903867241403206934700776069386770457147497978527744"
+        },
+        {
+          "exact_fixed_H_equations": true,
+          "whole_writer": true,
+          "full_returned_state": true,
+          "carrier_coordinates": 58,
+          "charge": "12",
+          "resource_error_max": "0",
+          "carrier_error_F_upper": "344609220495640094397482789307251882230109451647071693874372662286716120459916886933347288129411004732571256567595959367453146503590515347850165552353138231211891422560432312617448007967472096606548821049455583380480081557584177659/1218164251424999885044172798484398538859528357199375940858488307151618586345803262808201883235251282403163114528926083522932396233150386755822248412039081677441409712494559128733848706936256706044099949184902297359210699740674359368218295451933620701603467350388034693385228573748989263872"
+        },
+        {
+          "exact_fixed_H_equations": true,
+          "whole_writer": true,
+          "full_returned_state": true,
+          "carrier_coordinates": 58,
+          "charge": "12",
+          "resource_error_max": "0",
+          "carrier_error_F_upper": "1351373236282706662079830191327024520071644704448983254519893159751777829780427622865069161648126859445751403840667802576693421638346410053573471634310915983388774641408138868962708381672646421299078852704045214033369732084236182379/4872657005699999540176691193937594155438113428797503763433953228606474345383213051232807532941005129612652458115704334091729584932601547023288993648156326709765638849978236514935394827745026824176399796739609189436842798962697437472873181807734482806413869401552138773540914294995957055488"
+        }
+      ]
+    },
+    "writer_primitive": {
+      "cases": [
+        "zero_source",
+        "stationary_held",
+        "mixed",
+        "cancelling"
+      ],
+      "held_source_two_beat_semigroup": true,
+      "variable_duration_support": false
+    },
+    "formation_consumer": {
+      "next_current_difference": "43062928269911821094046989425488076946129822613572709756631404185634787627944246005315572489292999220845111316709121843356629420036948416400167542290790643520478783410298488363978271440349871197442203109648051382412807065263165808703511374414650061398384019485164190017396573309798977959562573903580804649256824407083103806785897280899899510340223538393623209098512502440467826456446646521176084430125437012496373165070074892804106062556259212832457424531326012154919199286736840898669901409304590619424885262020928414395514080779042414648358723919604226305678187828766940366513617454569845919943031386415456750290520948419304572919741355996602938838365792116042529663644146207612905465954572925237399389734830899712887682009199816648738575576479694722433881106687197145718139355040833925271868098917713057522394834718255451497736348415353022613513422212764834799648877768447/414300370424011306047405956742960739566057483963091927185259801002057523507104445847260946184906195665942792854368195800633717208133372167070372285979025763795973374458145984096353740029164114787793334106067529381230123863560510439476569910740081074270232633308462183060901423405334244083900535960354739350196824183943837583896104733057366301090906649678367079260060426654189248510312264242984366337488304289905516225796922387946258032005011348598402077720921552219339027851783212208142136422391023531916789104096144995976902418065282357763401767627301831385818029685735688494525729149645668188474023418336965825756812613227961992587017147550984878873093135335424259875027413762179180462172764788087882360845737195406991220801320027435750295680530551777410981961193098883820805749950706066218381702399274470615764526985096003020697460416139536906621842905185526755443331262482655215616",
+      "negative_source_entries": 6
+    }
+  },
+  "scope": "bounded full-history/read/writer/domain/event/certificate/lifecycle pressure; synthetic windows are not source-to-entry executions",
+  "pending_campaign": {
+    "leaf": "P9-9.1a.6-C_PC.5",
+    "current": [
+      374,
+      376
+    ],
+    "reset": [
+      375,
+      377
+    ],
+    "expected_endpoints_verified": false,
+    "required": "actual source-to-entry/window states and checkpoint pressure at those actual boundaries"
+  },
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2SourceBeat.json.xz",
+      "sha256": "faf266f447c0a1893b2ee7730dfdea481914fd15f53460e848d07ebd2c5b0675"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierDomain.json",
+      "sha256": "998cf00702a0a772ff978c1cc13ba444fc8e722bab2284b15487eb1b8feb2abd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierProofs.json",
+      "sha256": "f6866257b8ded80d19454013a075ce013b4b48ab60d58b5d52900f43cc1d6dfd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/review/constructive-candidate/positive_candidate.py",
+      "sha256": "efa6eba9f08ad8cfec73d2e3fcd8b071374631c6ebdfc5e3610c3c0585a5502d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_basins.py",
+      "sha256": "6da2628f6f04bd112dbdd6eedfb9dc38661d7cc8f0a7532d211ba30e21769fd5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci.py",
+      "sha256": "3c403d943bb924fa4d392ea2dafc8b77a190f587c031903c0b9d78d3808bdc71"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_continuation.py",
+      "sha256": "b26c6bd0f050ab710b663e025cc3f039ed81c68ac8f834d8c60a2b2bdaad3709"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_os_reference.py",
+      "sha256": "0fab09c6bfcc098c537e39c223380a1d70af2de2eef5156a2d1307fef81069ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_pc.py",
+      "sha256": "af04da3c975ff835f8e01482f166f772f4f98f718346d2f9fd569f8a3b2197d3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_positive.py",
+      "sha256": "15069ffca9b22a666ff67cd0b28ea740f9ed69f40de72154498d3e84eca4c64b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.3-Verification.json",
+      "sha256": "1c26c187eecbadb8389b6ae51eef8947d713f0bddcadf0c11d0443d52ba1d4c0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI-Contract.md",
+      "sha256": "ecb85039a275c9d161070c630b1d2938de02bf71d5bc64c7dd949041bc956bfe"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-Contract.md",
+      "sha256": "94fdab6c0cdfea860d3c58bd00150d6656a6516e959fce6c3e2a06b71e340fc7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-Preflight.json",
+      "sha256": "d4525d48b26381121f73e4a37b0298b248a8bb17cac770d86161f010fdac95b4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cci_native_spark_oracle.py",
+      "sha256": "08ae8d7af3d50868be92ceddfd21d8f71837a3728136bda0bdc06c682f2233de"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cos_native_spark_oracle.py",
+      "sha256": "c39701e4ee348210a9df93d3315cb214bf92e57db30413f0a15aa4d734379c07"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cpc_native_spark_oracle.py",
+      "sha256": "d0fc90dac4902d0a704c4a8d1a1363c7fed405d438636ca527682ad0d6ca782d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/cpc_native_spark_pressure_oracle.py",
+      "sha256": "c782646d336d29c16c3de531cb493d2ac3c58909ea19734585726d0ff6590139"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a2_native_spark_numerics.py",
+      "sha256": "5ac8f8e203d4bfa6681dba80fa94c3c8e28c51664ae432a137fdbef3963ecace"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a4_native_spark_preflight.py",
+      "sha256": "eecbbc30bf29b1a6eb3f4633c42a22d46ece5464d7acbbf00ea4ba442ea0b43b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_cci_epoch.py",
+      "sha256": "e1674e26be6b249338d41178e07ab7f3500a3b705c89ab675f7ea8e56911b0ec"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_cci_preflight.py",
+      "sha256": "b9e5487516580e158bbac9e16a5700f611bb113097487d99d6c142c20f39c09f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_cci_subjects.py",
+      "sha256": "f92fa73c1a470440d4ccade395311f2f9022769c2889f14b61f9e2b25775e432"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_cpc_epoch.py",
+      "sha256": "2e7b0849622f1fddd191f39a9f2dd897affacc5c0a68aaea6fefce1fcc517f57"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_cpc_preflight.py",
+      "sha256": "0fbd8acf0a058e808e769cd60698e97e72226f78f5d596f58da9e8e04f161bb6"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_cpc_pressure.py",
+      "sha256": "6ca361d238b645f6335e334923b32532357e291318b6f7c8f3c84aefbebd00c7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_cpc_subjects.py",
+      "sha256": "8b2c3d5e564c402216ca14547fccb35d248564d0bf57ee8abf9ab54e6047e36d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_cos_native_spark_pressure.py",
+      "sha256": "12ed76d05a6d4cea157c27fc4bebbed3fcd64537fdeb2440e496e1d4a37caf24"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_cpc_native_spark_pressure.py",
+      "sha256": "5698ac2415cf2876034707d4fddf25c1f488999285140f14daca5099bda843b1"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-applicability-source-manifest.json",
+      "sha256": "984ebac4903725484ba7894ed216f49380b78368ba0f65f813245d28044cb825"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-ci.md",
+      "sha256": "9a9b249c9ecfc25eebd10f3edfe67a9f449334f4a6913ebe65372d9a5a2bcd56"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-earlier-source-manifest.json",
+      "sha256": "31f7a2900e5eae401d71bb495755d9df7cc2de39e85cb6c84d652414486a9dfb"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-earlier.md",
+      "sha256": "605d43e957bb7f056959d266fb3aaad0ffe2d6110c699e3c66a5cdbef18f6cc0"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-pc.md",
+      "sha256": "fb981ca7c803526a4b2d818488c2fce10f556d1cffcf9d04d0c2547e301bb5ad"
+    },
+    {
+      "path": "specs/grc-v4-conformance-vectors.json",
+      "sha256": "9d9917511816f8d6ca97feca14de3ffca6b720504041f879bb1fa3e8e57b4e22"
+    },
+    {
+      "path": "specs/grc-v4-spark-native-ci-numerical-policy.md",
+      "sha256": "d7b5bf6125dbbb6706c058e3a56a97876e4b36247f84d28559502deaf6ac35fe"
+    },
+    {
+      "path": "specs/grc-v4-spark-native-numerical-policy.md",
+      "sha256": "d264908b3d51003ac75788462d104d90db178805cfe7d401d24006f236cb2950"
+    },
+    {
+      "path": "specs/grc-v4-spark-native-pc-numerical-policy.md",
+      "sha256": "34482bcf0f3e3aa9f1c41a1a6b90dbe0ab8bc1ae65a27dbbce64de7dbf6ac079"
+    },
+    {
+      "path": "src/pygrc/models/_grc_v4_matrix.py",
+      "sha256": "b80df50ebc14392016ab2eccde933f5c32e4a643fe6dc5cf957fe3f46552071c"
+    },
+    {
+      "path": "src/pygrc/models/_grc_v4_matrix_flint.py",
+      "sha256": "7ff0e9ca6d7f42ad150b06c8d604f5b3b79de1943b1e8e6f5621386262af7121"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4.py",
+      "sha256": "9477132a4ebb5e47a94e77deb2d56a80c577b2b74531da512ba233a5720070d0"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_api_lifecycle.py",
+      "sha256": "d17240d2d4dfef5a8901e6cc8372501251a2c0f859d9b2c3388131bde7cf64d5"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion.py",
+      "sha256": "4b4e08b4d03a764318557b336930dae6db8a46c252f3256b94a1e3cabb3ec313"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_certificate.py",
+      "sha256": "3d805e711f86f9c810f8d13f6de9db03ffa5c1a56cc908ee1cef554c046f6621"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_codec.py",
+      "sha256": "3fce879b3b61021f83690cc52c7170d3291dd74ff90a398efacfe8f876350a71"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_cpc.py",
+      "sha256": "a6e4de516147e524a1ace74c9641f9ddf8b89f13f45089be8f5f33680eaf3161"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_contracts.py",
+      "sha256": "a40ce45dc0cbab8312912899aa4ac5acc2b206ca6534a0ecb497ec687699fe3b"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_crossing.py",
+      "sha256": "260f4a1ef9fcf3cc6997c7f14275e8253cbc456a8426357659dab05a4bc2151b"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_expansion.py",
+      "sha256": "05d754313f1d529a8829f255d1101acfbb7267f465e55974d061fa6713fb5767"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_identity.py",
+      "sha256": "c84853e05ed53bc6ab73e30d2a2d83e358760ef85cdb52b38215649ae4bcf317"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
+      "sha256": "028f29fa01687cbf9f2524886c3872fa02999ed375d4d5394ab0dbd569607602"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_carrier_event.py",
+      "sha256": "b330b2b118b074bc9b13b335a542a2dd08d4420ad8e7b6dc3da81aac87a8fdad"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_contracts.py",
+      "sha256": "4f2b2dafaf0ee38b8ff36f21a94dbc9acc7c22136b6e0c4a0efeb78948edc9a2"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_owner.py",
+      "sha256": "b1e33092c34da10cd46b865c77ea637ba698e512541e80ffbfad464ebe7e810c"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "6dd6a8637c8d03f164b993fa801e5b65ee5c8f05425a33498b14fd92c0dd3a4c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-9-v4-spark-completion-schema.json",
+      "sha256": "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "46785802cfd7482b10204b228df6aab62da4be8f8e4f5705eda7284ba132c4a4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_exact.py",
+      "sha256": "d336c356d31d3ed0f1b160ff5a9be683b9aa56229b94a96053b95f70df202204"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "fbacf20af4fe754634bf88d22898028e8f1223c7e3189e925abf790a26ec8ed3"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_numerics.py",
+      "sha256": "55dc6e7e32361cbf507e6998c9b4e02c82f3507d3245a8a4517aa3aba30242f7"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "bdb8cca4e49a531d45b5f033609886c91024fcc469c52d7f7e8d9ae148a9c546"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark.py",
+      "sha256": "a81659b79a6efdf0bcaba0c8a638738c23af5f2d4203fdb8790cd5301d5ba02a"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_carrier.py",
+      "sha256": "ec0ffcfe195237bb045c93e6e8462d5f2a1ce4aaea531dcf3fdb7058261b835f"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cci.py",
+      "sha256": "8e25e09507cfd056bc8a68e3e14715ab40dbb1db6e7514634fea04b0d801c07d"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cos.py",
+      "sha256": "0ff7642925f324b8041d5f4660ccea1627e4eb0bf15faf26799c5ca2b77901de"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cpc.py",
+      "sha256": "0bd1e8a24fbad058a5fdac406404359e8b396a20c9b227724a6f5bac7f3736bd"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_state.py",
+      "sha256": "f54e3239464660f6e7a3a167262f8cb36b5b3d7733ce379172846cd19fbb8b6b"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_spark_completion.py",
+      "sha256": "e117527ceae9ef3961f093049d998ac3f98fcfbb364d275fd626c6b2caa18dd4"
+    },
+    {
+      "path": "tests/models/test_grc_v4_candidate_c.py",
+      "sha256": "fd5e680e1947ce1ebfb76301780f38ceee1414586ba92009e3d407bfd30d6317"
+    },
+    {
+      "path": "tests/models/test_grc_v4_realizations.py",
+      "sha256": "2f204a264325796405adae4556fff5606d932748021c9464e4f8285d6d33285a"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_cci.py",
+      "sha256": "91600a914283de757db2fd7e8ba2f188d4fe2b8bf305128b6a98dc84f5a9ee44"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_cpc.py",
+      "sha256": "7e25d14bf1ac924e3bbbb893046c1f527af411309afc7fed5ce8be8a018def5a"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_numerics.py",
+      "sha256": "72adf797f212571d7bc697b1d09e81e0939b265db164969a3d53719bbeb613ad"
+    }
+  ],
+  "evidence": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC-PressureSamples.json.xz",
+    "sha256": "3ad4867e5ab8477085006d590e02a729938cc8a6b303893509fc66b0b7a5a682"
+  },
+  "record_digest": "cf303cd59315454564bbac4a534d7e4fd5e3e0e86eb476c5f690610e6b9eafdc"
+}
