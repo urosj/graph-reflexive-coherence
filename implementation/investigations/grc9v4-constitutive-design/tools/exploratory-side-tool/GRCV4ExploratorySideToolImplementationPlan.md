@@ -3592,3 +3592,17 @@ preserved-source checks pass. The user accepted both bounded campaigns by
 requesting commit on 2026-11-03. Acceptance is recorded separately in their
 reviews, plan, checklist and handoff; sealed execution/projection flags are
 unchanged. P9-9.1a.7 aggregate support remains separate.
+
+## P9-9.1a.7 current native completion support — 2026-11-03
+
+- [x] Reconcile ten accepted family campaigns, twenty exact declarations and
+  thirty native-obligation evidence links; preserve sealed historical flags.
+- [x] Expose `/api/native-spark/support`, `/source`, the current-support browser
+  panel and notebook cell `native-spark-support`; fail closed on stale data.
+- [x] Separate exact declaration capability, accepted endpoint evidence and
+  current-occurrence completion. No hierarchy/general ATC/full conformance/G4.
+- [x] User accepted reconciliation by requesting commit on 2026-11-03.
+  Tranche 10 supplements and formal obligation/debt adjudication remain separate.
+
+See [NativeSparkSupport](./docs/NativeSparkSupport.md) and the scoped P9-9.6
+supplement in the P9-9.1a.7 review. No original numerical campaign is repeated.

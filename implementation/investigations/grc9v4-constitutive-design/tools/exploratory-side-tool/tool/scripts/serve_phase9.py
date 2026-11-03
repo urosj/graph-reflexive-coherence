@@ -46,6 +46,7 @@ from grcv4_explorer.spark_native_aci import native_aci, native_aci_source
 from grcv4_explorer.spark_native_apc import native_apc, native_apc_source
 from grcv4_explorer.spark_native_arg2b_pressure import native_arg2b_pressure, native_arg2b_pressure_source
 from grcv4_explorer.spark_native_arg2b import native_arg2b, native_arg2b_source
+from grcv4_explorer.spark_native_support import native_spark_support, native_spark_support_source
 from grcv4_explorer.spark_native_rg2b_campaign import native_rg2b_campaign, native_rg2b_campaign_source
 from grcv4_explorer.spark_native_crg2b import native_crg2b, native_crg2b_source
 from grcv4_explorer.spark_native_acipc import native_acipc, native_acipc_source
@@ -188,6 +189,23 @@ class Handler(BaseHTTPRequestHandler):
             except (ValueError, OSError) as exc:
                 self.send_response(503)
                 content = json.dumps({"error": str(exc)}).encode()
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+            return
+        if request.path in {"/api/native-spark/support", "/api/native-spark/support/source"}:
+            try:
+                if request.query:
+                    raise ValueError("fixed exact native support scope")
+                root = repository_root()
+                content = (native_spark_support_source(root) if request.path.endswith("/source")
+                           else json.dumps(native_spark_support(root)).encode())
+                self.send_response(200)
+            except Exception as error:
+                self.send_response(503)
+                content = json.dumps({"error": str(error)}).encode()
             self.send_header("Content-Type", "application/json")
             self.send_header("Cache-Control", "no-store")
             self.send_header("Content-Length", str(len(content)))
@@ -498,7 +516,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/spark-completion.js", "/spark-applicability.js", "/spark-research.js", "/spark-pc.js", "/spark-cipc.js", "/spark-cipc-research.js", "/spark-aos-research.js", "/spark-aos.js", "/spark-aos-earlier.js", "/spark-aci-research.js", "/spark-apc-research.js", "/spark-acipc-research.js", "/spark-crg2b-research.js", "/spark-native-cos.js", "/spark-native-lifecycle.js", "/spark-native-preflight.js", "/spark-native-cpc.js", "/spark-native-ccipc.js", "/spark-native-aos.js", "/spark-native-acipc.js", "/spark-native-crg2b.js", "/spark-native-arg2b.js", "/spark-native-apc.js", "/spark-native-aci.js", "/spark-native-apc-campaign.js", "/spark-native-acipc-campaign.js", "/spark-native-rg2b-campaign.js", "/spark-native-aci-campaign.js", "/spark-native-aos-campaign.js", "/spark-native-ccipc-campaign.js", "/spark-native-cpc-campaign.js", "/spark-native-cci.js", "/spark-native-cci-campaign.js", "/spark-native-campaign.js", "/spark-earlier-accepted.js", "/spark-earlier-c.js", "/spark-arg2b-research.js", "/spark-arg2b.js", "/spark-crg2b.js", "/spark-acipc.js", "/spark-apc.js", "/spark-aci.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-examples.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/spark-completion.js", "/spark-applicability.js", "/spark-research.js", "/spark-pc.js", "/spark-cipc.js", "/spark-cipc-research.js", "/spark-aos-research.js", "/spark-aos.js", "/spark-aos-earlier.js", "/spark-aci-research.js", "/spark-apc-research.js", "/spark-acipc-research.js", "/spark-crg2b-research.js", "/spark-native-cos.js", "/spark-native-lifecycle.js", "/spark-native-preflight.js", "/spark-native-cpc.js", "/spark-native-ccipc.js", "/spark-native-aos.js", "/spark-native-acipc.js", "/spark-native-crg2b.js", "/spark-native-arg2b.js", "/spark-native-apc.js", "/spark-native-aci.js", "/spark-native-apc-campaign.js", "/spark-native-acipc-campaign.js", "/spark-native-rg2b-campaign.js", "/spark-native-support.js", "/spark-native-aci-campaign.js", "/spark-native-aos-campaign.js", "/spark-native-ccipc-campaign.js", "/spark-native-cpc-campaign.js", "/spark-native-cci.js", "/spark-native-cci-campaign.js", "/spark-native-campaign.js", "/spark-earlier-accepted.js", "/spark-earlier-c.js", "/spark-arg2b-research.js", "/spark-arg2b.js", "/spark-crg2b.js", "/spark-acipc.js", "/spark-apc.js", "/spark-aci.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-examples.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -545,6 +563,7 @@ class Handler(BaseHTTPRequestHandler):
                     "spark-native-apc-campaign.js": "text/javascript",
                     "spark-native-acipc-campaign.js": "text/javascript",
                     "spark-native-rg2b-campaign.js": "text/javascript",
+                    "spark-native-support.js": "text/javascript",
                     "spark-native-aci-campaign.js": "text/javascript",
                     "spark-native-aos-campaign.js": "text/javascript",
                     "spark-native-ccipc-campaign.js": "text/javascript",

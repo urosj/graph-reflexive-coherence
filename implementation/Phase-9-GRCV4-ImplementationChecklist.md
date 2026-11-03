@@ -6,16 +6,15 @@ Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
 [phase opening](./Phase-9-GRCV4-PhaseOpening.json), and
 [phase registry](./ImplementationPhases.md#phase-9-grcv4-substrate-and-grc9v4-specialization).
 
-**Current continuation — 2026-11-02:** branch
-`impl/grc9v4-native-spark-completion`; C_OS native completion was accepted as
-`1ec198b2`, and C_CI steps 1–4 plus pressure as `bcf10782`. The C_CI campaign
-now verifies current 374→376 and reset 375→377 in 14.0 minutes, with one
-current child, zero reset gain, no tail, and compressed evidence/side-tool views.
-Campaign user review is pending. Next is C_PC through its own bounded native
-preflight and campaign; see the [native leaves](#p9-91a-native-spark-completion).
-No long run without a same-subject runtime estimate. Broader hierarchy and
-aggregate support remain deferred; existing mandatory Tranches 8–9 and earlier
-Tranche 10 acceptances retain their scope.
+**Current continuation — 2026-11-03:** all ten bounded native completion
+campaigns are accepted. [P9-9.1a.7](./phase-9-grcv4/tranche-9/P9-9.1a.7-Review.md)
+reconciles twenty exact source/target declarations, correct public support and
+realization reporting, and thirty native-obligation evidence links. Its
+implementation and reconciliation are accepted through the user's commit request
+on 2026-11-03; bounded P9-9.1a is closed. Next are the
+Tranche 10 native-spark supplements, then formal debt/G4 closeout. Broader
+hierarchy and general ATC remain outside scope; no new trajectories are required
+for this reconciliation.
 
 ## Recording rules
 
@@ -4143,7 +4142,7 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
   30-minute cap. All-stage/charge/classifier/membership checks and actual checkpoint
   fault/restore/recount pressure pass. Compressed primary evidence and side-tool
   API/browser/notebook are synchronized. Aggregate capability remains deferred.
-- [ ] P9-9.1a.6: Extend and review each family independently after C_OS. Each leaf
+- [x] P9-9.1a.6: Extend and review each family independently after C_OS. Each leaf
   includes full-state numerics, same-subject runtime estimation, public lifecycle,
   affected mechanics/compatibility checks and side-tool API/browser/notebook.
   - [x] P9-9.1a.6-C_CI: native endpoint verified; accepted and committed `88a1c6b1`.
@@ -4372,10 +4371,18 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
       67.34 minutes, 2.15 MiB compressed. [Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b.5-Review.md).
     - [x] Review and accept A_RG2b .5; user requested commit on 2026-11-03.
       Sealed execution flags remain unchanged; aggregate support remains separate.
-- [ ] P9-9.1a.7: Reconcile the newly supported exact declarations/capability in a
+- [x] P9-9.1a.7: Reconcile the newly supported exact declarations/capability in a
   scoped P9-9.6 supplement. Link affected Tranche 8/9 checks and Tranche 10
   follow-through without reopening accepted baseline campaigns. Preserve
   unexecuted/excluded profiles and separate hierarchy/G4 dispositions.
+  - [x] All ten accepted campaigns and twenty exact source/target declarations;
+    current public candidate/realization, support and occurrence semantics.
+  - [x] Retained evidence/acceptance/source binding, all-ten discovery and
+    exclusion checks; consolidated API/browser/notebook view.
+  - [x] Map thirty native obligations to evidence for P9-10.5 adjudication;
+    identify P9-10.3/10.4 supplements without replaying old campaigns.
+  - [x] User accepted the reconciliation by requesting commit on 2026-11-03;
+    bounded P9-9.1a is closed, with family acceptance and claim limits preserved.
 
 All family leaves retain full W/Z/root/section obligations. Prefer adopted short
 witnesses, compressed selected evidence and reproducible generators. Larger

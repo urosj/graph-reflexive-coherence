@@ -1,6 +1,32 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work: both RG2b native campaigns accepted — 2026-11-03
+## Current work: P9-9.1a.7 support reconciliation — 2026-11-03
+
+Same branch `impl/grc9v4-rg2b-spark-completion-campaigns`, after accepted
+campaign commit `528736b9`. All ten bounded family campaigns are accepted.
+[P9-9.1a.7 review](./phase-9-grcv4/tranche-9/P9-9.1a.7-Review.md) reconciles
+twenty source/target declarations and thirty native obligations. Exact packaged
+runtime support replaces stale pending/OS-only reporting. Capability and accepted
+campaign evidence remain distinct from current-occurrence completion and gain.
+No numerical law, certificate predicate, event/writer or trajectory changed.
+
+The user accepted the implementation and scope reconciliation by requesting
+commit on 2026-11-03, closing bounded P9-9.1a. The original sealed campaigns/projections and earlier
+acceptances remain unchanged. The new current-support API/browser/notebook view
+makes the successor explicit. The Tranche 10 native-spark regression/publication
+supplements and formal debt/G4 reconciliation remain open. Do not rerun accepted
+campaigns for bookkeeping or infer broader hierarchy/general ATC/conformance.
+
+Validation: all 17 focused checks pass: five public-support tests (including
+twenty exact declarations), six affected preflight assertions and six side-tool
+tests covering retained integrity, source lookup/drift, HTTP, browser and notebook.
+The surface suite completed in 17.52 seconds. Ruff and whitespace checks pass.
+No new native trajectory or full historical campaign-reader sweep was run.
+The required final current-tree audit is
+`PYTHONPATH=src .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only`;
+its local receipt is the side-tool's ignored `generated/phase9-verification/boundary-v3.json`.
+
+## Previous work: both RG2b native campaigns accepted — 2026-11-03
 
 Branch: `impl/grc9v4-rg2b-spark-completion-campaigns`, from `main` at
 `7152812a`. Both authorized `.5` campaigns completed. They ran in independent
@@ -9157,8 +9183,7 @@ never overwrite published execution evidence.
 Suggested first message in the new conversation:
 
 > Read `implementation/Phase-9-GRCV4-Handoff.md` and inspect the current checkout.
-> Both P9-9.1a.6-C_RG2b.5 and P9-9.1a.6-A_RG2b.5 native campaigns are accepted
-> on `impl/grc9v4-rg2b-spark-completion-campaigns`. Read their reviews and inspect
-> the current checkout. Retained checks are separate from numerical reconstruction.
-> Do not repeat completed trajectories for bookkeeping. P9-9.1a.7 aggregate support
-> reconciliation is the next separate task; it is not already granted.
+> All ten native completion campaigns are accepted. P9-9.1a.7 reconciles their
+> exact declarations and corrects public reporting; bounded P9-9.1a is accepted.
+> Next are P9-10.3-NATIVE-SPARK and P9-10.4-NATIVE-SPARK, followed by P9-10.5/10.6.
+> Reuse retained evidence; do not rerun completed campaigns for bookkeeping.

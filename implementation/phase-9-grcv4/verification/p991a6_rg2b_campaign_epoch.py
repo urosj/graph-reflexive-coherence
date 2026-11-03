@@ -45,16 +45,18 @@ def original(root, name):
 
 
 def manifest(root):
+    from p991a7_support_epoch import previous_bytes as successor
+
     root = Path(root).resolve()
     return seal(
         {
             "schema": "p991a6-rg2b-campaign-runtime-epoch-v1",
             "predecessor": REVISION,
-            "checker_sha256": sha((root / SELF).read_bytes()),
+            "checker_sha256": sha(successor(root, SELF)),
             "sources": {
                 p: {
                     "before_sha256": sha(original(root, p)),
-                    "after_sha256": sha((root / p).read_bytes()),
+                    "after_sha256": sha(successor(root, p)),
                 }
                 for p in sorted(CHANGED)
             },
@@ -65,9 +67,11 @@ def manifest(root):
 
 
 def previous_bytes(root, name):
+    from p991a7_support_epoch import previous_bytes as successor
+
     root = Path(root).resolve()
     if name not in CHANGED:
-        return (root / name).read_bytes()
+        return successor(root, name)
     value = json.loads((root / PATH).read_bytes())
     raw = original(root, name)
     if (
@@ -75,11 +79,11 @@ def previous_bytes(root, name):
         or value["schema"] != "p991a6-rg2b-campaign-runtime-epoch-v1"
         or value["predecessor"] != REVISION
         or set(value["sources"]) != CHANGED
-        or value["checker_sha256"] != sha((root / SELF).read_bytes())
+        or value["checker_sha256"] != sha(successor(root, SELF))
         or value["runtime_changed"] is not True
         or value["old_execution_relabelled"] is not False
         or value["sources"][name]
-        != {"before_sha256": sha(raw), "after_sha256": sha((root / name).read_bytes())}
+        != {"before_sha256": sha(raw), "after_sha256": sha(successor(root, name))}
     ):
         raise ValueError("unbound RG2b campaign successor")
     return raw

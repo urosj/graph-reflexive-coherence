@@ -63,12 +63,15 @@ def native_predecessor(root, path, expected):
     import sys
     root = Path(root).resolve()
     sys.path.insert(0, str(root / "implementation/phase-9-grcv4/verification"))
-    from p991a5_native_spark_compact_epoch import reviewed_bytes
+    from p991a5_native_spark_compact_epoch import reviewed_bytes, validated_history
     try:
         audited = reviewed_bytes(root, path, expected)
     except ValueError as error:
         raise SourceAdmissionError(str(error)) from error
-    if audited is not None:
+    # The complete finite native chain has already checked every version of a
+    # known path. A miss belongs to the caller's older scientific-source
+    # validator; repeating the native chain recursively cannot find it.
+    if audited is not None or path in validated_history(root):
         return audited
     from p991a3_native_spark_epoch import CHANGED, previous_bytes
     from p991a4_native_spark_epoch import CHANGED as PREFLIGHT, previous_bytes as preflight_previous

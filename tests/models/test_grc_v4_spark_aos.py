@@ -430,4 +430,5 @@ class NativeAOSTests(shared.NativeSparkCompletionTests):
         self.assertEqual(
             self.event_model.support_status()["execution_families"], ["A_OS"]
         )
-        self.assertFalse(self.event_model.support_status()["native_endpoint_verified"])
+        self.assertFalse(self.event_model.support_status()["current_occurrence_completed"])
+        self.assertFalse(self.event_model.support_status()["universal_entry_guarantee"])

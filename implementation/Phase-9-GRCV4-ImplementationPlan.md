@@ -1,39 +1,21 @@
 # Phase 9 GRCV4 Implementation Plan
 
-## Current continuation: C_CI native campaign — 2026-11-02
+## Current continuation: P9-9.1a reconciled; Tranche 10 supplements next — 2026-11-03
 
-Branch: `impl/grc9v4-native-spark-completion`, opened from `main` at
-`5227704449a062586df804ca5da0cc2853906425`, the no-ff merge of the accepted
-spark research. Planning was committed as `77a777ce`; P9-9.1a.1 now has a
-[concrete implementation map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md)
-and [retained bounded checks](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json),
-committed as `f2d776d7`. All ten family chains and thirty native obligations are mapped.
-P9-9.1a.2 implements the explicit exact-resource/FLINT C_OS numerical bridge,
-accepted for commit as `32376cd4`;
-its [review](./phase-9-grcv4/tranche-9/P9-9.1a.2-Review.md) and
-[bounded checks](./phase-9-grcv4/tranche-9/P9-9.1a.2-Verification.json) retain that scope.
-P9-9.1a.3 has [certificate/lifecycle implementation and controls](./phase-9-grcv4/tranche-9/P9-9.1a.3-Review.md),
-accepted and committed as `59c35997`.
-[P9-9.1a.4](./phase-9-grcv4/tranche-9/P9-9.1a.4-Review.md) measured 40 changing-state
-steps per role in 81.7 seconds: combined central estimate 13.6 minutes, conservative
-allowance 24.8 minutes, campaign cap 30 minutes. Cache/precision and publication
-checks are retained; .4 was accepted and committed as `699ecf04`.
-[P9-9.1a.5](./phase-9-grcv4/tranche-9/P9-9.1a.5-Review.md) verifies the public
-C_OS current 374→376 and reset 375→377 endpoints in 21.8 minutes, with
-every-step independent checks and real checkpoint pressure. Current earns one
-child, reset zero gain, without a supporting tail. Accepted and committed as
-`1ec198b2`. C_CI steps 1–4 and pressure were accepted as `bcf10782`.
-The [C_CI campaign](./phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-Review.md) now verifies
-current 374→376 and reset 375→377 in 14.0 minutes, all 753 target steps
-independently checked, one current child, zero reset gain and no tail. Actual
-checkpoint pressure and compressed side-tool publication are included. Native
-runtime is unchanged; a separately documented verifier correction checks both
-outward error bounds against the unchanged certificate budget. The failed prefix
-and exact counterexample are retained. User review is pending; next is C_PC with
-its own bounded estimate. Aggregate support remains deferred.
-Minimal atomic new-child registration
-belongs to completion; broader hierarchy remains deferred. Historical milestones below retain their original
-scope; the selected native programme does not reopen their accepted results.
+On `impl/grc9v4-rg2b-spark-completion-campaigns`, the last two family campaigns
+are accepted as `528736b9`. All ten bounded native completion families are now
+reconciled in [P9-9.1a.7](./phase-9-grcv4/tranche-9/P9-9.1a.7-Review.md).
+The public API reports the actual candidate/realization and exact supported
+declaration; accepted endpoint evidence is separate from current-occurrence
+completion. Twenty source/target declarations and thirty native obligations are
+linked to their accepted evidence without rerunning trajectories. The new
+consolidated side-tool view preserves historical campaign flags.
+
+P9-9.1a implementation/reconciliation is accepted and closed at this bounded
+scope through the user's commit request on 2026-11-03. P9-10.3-NATIVE-SPARK, P9-10.4-NATIVE-SPARK,
+P9-10.5 and P9-10.6 remain separate follow-through. No hierarchy, general ATC,
+universal entry, full conformance or G4 is inferred. Earlier milestones below
+retain their original scope.
 
 The accepted [proposal](./investigations/grc9v4-constitutive-design/drafts/spark-completion/Proposal.md),
 [full manuscript §15/Appendix H](./investigations/grc9v4-constitutive-design/drafts/2026-11-GRC-V4.md)
@@ -4600,7 +4582,7 @@ binds the original first-group milestones below and all six later decisions.
 
 #### P9-9.1a native spark-completion work programme
 
-**C_OS native completion accepted as `1ec198b2`; C_CI steps 1–4 verified, pending review.** Completion and hierarchy
+**All ten native family campaigns and P9-9.1a.7 reconciliation are accepted; bounded P9-9.1a is closed (2026-11-03).** Completion and hierarchy
 have distinct dispositions: this programme implements bounded native geometric
 child stabilization and `completed_spark`; hierarchy remains deferred. Reuse the
 accepted ten-family dynamics, P9-9.1b transaction owner and P9-9.4 public API.
@@ -4721,8 +4703,9 @@ rules. This is an engineering handoff, not another scientific-definition gate.
 | P9-9.1a.6-C_RG2b | 390→392 | 390→392 | 8 | .1–.5 accepted 2026-11-03 |
 | P9-9.1a.6-A_RG2b | 300→302 | 300→302 | 16 | .1–.5 accepted 2026-11-03 |
 
-These are accepted scientific regression targets for a 12-vertex/13-edge source
-and 15-vertex/16-edge target, not native results or universal stopping bounds.
+These endpoints were first scientific regression targets and are now verified
+by the accepted native campaigns for a 12-vertex/13-edge source and
+15-vertex/16-edge target. They are not universal stopping bounds.
 Beat count, beat duration, graph size and wall-clock cost are distinct. The
 roughly 400 beats are not 400 nodes; timings from older large fixtures must not
 be used to estimate this witness. Larger graphs require their own applicability,
@@ -5418,3 +5401,8 @@ The typed public-duration regression covers all ten families. Retained checks,
 selected numerical rechecks, diagnostic reconstruction and actual side-tool
 API/browser/notebook views preserve the distinction between evidence integrity,
 new numerical execution, user acceptance and aggregate support.
+
+P9-9.1a.7 now supplies the scoped P9-9.6 completion supplement and exact native
+obligation evidence handoff. All ten family campaigns remain immutable; current
+capability discovery is separated from occurrence completion. Tranche 10
+supplements and ledger/G4 closeout are still open.

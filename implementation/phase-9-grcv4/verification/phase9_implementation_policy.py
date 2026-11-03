@@ -79,6 +79,20 @@ SPARK_LIFECYCLE_PATHS = frozenset({
     "src/pygrc/models/grc_v4_assets/grc-9-v4-spark-completion-schema.json",
     "tests/models/test_grc_9_v4_spark_completion.py",
 })
+SPARK_SUPPORT_LEAF = "P9-9.1a.7"
+SPARK_SUPPORT_ENTRY = "528736b9"
+SPARK_SUPPORT_PATHS = frozenset({
+    "src/pygrc/models/grc_9_v4.py",
+    "src/pygrc/models/grc_9_v4_spark_support.py",
+    "src/pygrc/models/grc_v4_assets/grc-9-v4-native-spark-support.json",
+    "tests/models/test_grc_9_v4_spark_support.py",
+    "tests/models/test_grc_v4_spark_aos.py",
+    "tests/models/test_grc_v4_spark_aci.py",
+    "tests/models/test_grc_v4_spark_acipc.py",
+    "tests/models/test_grc_v4_spark_cci.py",
+    "tests/models/test_grc_v4_spark_cpc.py",
+    "tests/models/test_grc_v4_spark_apc.py",
+})
 SPARK_ARG2B_LEAF = "P9-9.1a.6-A_RG2b"
 SPARK_ARG2B_ENTRY = "86a68d3d"
 SPARK_ARG2B_PATHS = frozenset(['src/pygrc/models/grc_v4_spark_arg2b.py', 'src/pygrc/models/grc_v4_spark_arg2b_math.py', 'src/pygrc/models/grc_9_v4_completion_arg2b.py', 'tests/models/test_grc_v4_spark_arg2b.py', 'src/pygrc/models/grc_9_v4.py', 'src/pygrc/models/grc_9_v4_completion_certificate.py', 'src/pygrc/models/grc_9_v4_completion_codec.py', 'src/pygrc/models/grc_9_v4_spark_contracts.py', 'src/pygrc/models/grc_9_v4_spark_owner.py', 'src/pygrc/models/grc_v4_spark.py', 'src/pygrc/models/grc_v4_spark_conductance.py'])
@@ -3549,6 +3563,10 @@ def leaf_permissions(root):
     ready = sorted(set(ready) | {SPARK_ARG2B_LEAF})
     for name in SPARK_ARG2B_PATHS:
         owners[name] = owners.get(name,set()) | {SPARK_ARG2B_LEAF}
+    git(root, "merge-base", "--is-ancestor", SPARK_SUPPORT_ENTRY, "HEAD")
+    ready = sorted(set(ready) | {SPARK_SUPPORT_LEAF})
+    for name in SPARK_SUPPORT_PATHS:
+        owners[name] = owners.get(name, set()) | {SPARK_SUPPORT_LEAF}
     return ready, owners
 
 
@@ -3558,6 +3576,10 @@ def runtime_targets(approval):
     from phase9_specialization_acceptance import ENABLED_LIFECYCLE_PATHS, DISABLED_DELEGATE_PATHS, BRANCH_CROSSING_PATHS
     from phase9_specialization_acceptance import PUBLIC_API_NEW_PATHS, BASIN_NEW_PATHS
     return [*approval["runtime_targets"], *(
+        {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
+         "operation": "v4_owned_add_or_update", "module_owner": "grc_9_v4_spark_support"}
+        for name in sorted(SPARK_SUPPORT_PATHS)
+    ), *(
         {"path":name,"requires_gate":"P9-G3","before_sha256":None,"operation":"v4_owned_add_or_update","module_owner":"grc_v4_spark_arg2b"}
         for name in sorted(SPARK_ARG2B_PATHS)
     ), *(
@@ -3833,6 +3855,7 @@ def work_entries(root, approval):
     leaves.add(SPARK_CCIPC_LEAF)
     leaves.add(SPARK_ACI_LEAF)
     leaves.add(SPARK_ARG2B_LEAF)
+    leaves.add(SPARK_SUPPORT_LEAF)
     leaves.add(SPARK_CRG2B_LEAF)
     leaves.add(SPARK_ACIPC_LEAF)
     leaves.add(SPARK_APC_LEAF)
@@ -3881,7 +3904,8 @@ def work_entries(root, approval):
     leaves.add(public_api_authorization(root))
     leaves.add(basin_authorization(root))
     def g3_permitted(name, leaf):
-        return ((leaf == SPARK_ARG2B_LEAF and name in SPARK_ARG2B_PATHS)
+        return ((leaf == SPARK_SUPPORT_LEAF and name in SPARK_SUPPORT_PATHS)
+                or (leaf == SPARK_ARG2B_LEAF and name in SPARK_ARG2B_PATHS)
                 or (leaf == SPARK_CRG2B_LEAF and name in SPARK_CRG2B_PATHS)
                 or (leaf == SPARK_ACIPC_LEAF and name in SPARK_ACIPC_PATHS)
                 or (leaf == SPARK_APC_LEAF and name in SPARK_APC_PATHS)
@@ -5532,4 +5556,16 @@ PATHS = PATHS | frozenset({
     SIDE + "docs/NativeSparkRG2bCampaigns.md",
     SIDE + "tool/phase9-web/spark-native-rg2b-campaign.js",
     SIDE + "tool/src/grcv4_explorer/spark_native_rg2b_campaign.py",
+})
+
+# Exact completion support reconciled from ten accepted native campaigns.
+PATHS = PATHS | frozenset({
+    HERE + "p991a7_support.py", HERE + "p991a7_support_epoch.py",
+    HERE + "test_p991a7_support_surfaces.py",
+    PHASE + "tranche-9/P9-9.1a.7-Support.json",
+    PHASE + "tranche-9/P9-9.1a.7-SourceEpoch.json",
+    PHASE + "tranche-9/P9-9.1a.7-Review.md",
+    SIDE + "docs/NativeSparkSupport.md",
+    SIDE + "tool/src/grcv4_explorer/spark_native_support.py",
+    SIDE + "tool/phase9-web/spark-native-support.js",
 })

@@ -430,7 +430,8 @@ class NativeACITests(shared.NativeSparkCompletionTests):
         self.assertEqual(
             self.event_model.support_status()["execution_families"], ["A_CI"]
         )
-        self.assertFalse(self.event_model.support_status()["native_endpoint_verified"])
+        self.assertFalse(self.event_model.support_status()["current_occurrence_completed"])
+        self.assertFalse(self.event_model.support_status()["universal_entry_guarantee"])
 
     def test_nonstationary_full_map_and_root_coordinate_derivatives(self):
         """Every physical and flat axis at a heterogeneous, nonstationary state."""

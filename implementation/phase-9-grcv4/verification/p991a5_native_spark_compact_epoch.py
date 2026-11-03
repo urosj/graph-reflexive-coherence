@@ -2,6 +2,8 @@
 
 import json
 import subprocess
+from contextlib import contextmanager
+from contextvars import ContextVar
 from functools import lru_cache
 from hashlib import sha256
 from pathlib import Path
@@ -142,9 +144,13 @@ def git_blob(root, revision, name):
     return subprocess.check_output(["git", "show", revision + ":" + name], cwd=root)
 
 
-def validated_history(root):
+def _validated_history(root):
     """Authenticate a fresh live snapshot against every frozen before/after edge."""
     root = Path(root).resolve()
+    import p991a7_support_epoch as support
+    support_value = json.loads((root / support.PATH).read_bytes())
+    if support_value != support.manifest(root):
+        raise ValueError("unbound native support successor")
     import p991a6_rg2b_campaign_epoch as latest
     successor = json.loads((root / latest.PATH).read_bytes())
     if successor != latest.manifest(root):
@@ -152,7 +158,7 @@ def validated_history(root):
     current = json.loads((root / PATH).read_bytes())
     if current != manifest(root):
         raise ValueError("unbound C_OS storage successor")
-    epochs = [(latest.SELF, successor), (SELF, current)]
+    epochs = [(support.SELF, support_value), (latest.SELF, successor), (SELF, current)]
     for checker, filename in HISTORY:
         name = "implementation/phase-9-grcv4/tranche-9/" + filename
         raw = (root / name).read_bytes()
@@ -184,13 +190,39 @@ def validated_history(root):
     return versions
 
 
+_SNAPSHOT = ContextVar("native_source_history_snapshot", default=None)
+
+
+def validated_history(root):
+    root = Path(root).resolve()
+    snapshot = _SNAPSHOT.get()
+    if snapshot is not None and snapshot[0] == root:
+        return snapshot[1]
+    return _validated_history(root)
+
+
+@contextmanager
+def history_snapshot(root):
+    """Reuse one authenticated read batch; reject any source drift at its end."""
+    root = Path(root).resolve()
+    versions = _validated_history(root)
+    token = _SNAPSHOT.set((root, versions))
+    try:
+        yield versions
+    finally:
+        _SNAPSHOT.reset(token)
+        if _validated_history(root) != versions:
+            raise ValueError("native source history changed during inspection")
+
+
 def reviewed_bytes(root, name, expected):
     history = validated_history(root)
     if name not in history:
         return None
-    if expected not in history[name]:
-        raise ValueError("unbound historical source identity: " + name)
-    return history[name][expected]
+    # An older scientific version may precede this finite native chain. Its
+    # caller must authenticate it through its own explicit source successor;
+    # returning no match is not returning current bytes under an older identity.
+    return history[name].get(expected)
 
 
 def check_sources(root, references):

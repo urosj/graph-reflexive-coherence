@@ -426,9 +426,21 @@ class GRC9V4(GRCV4):
 
     def list_capabilities(self):
         if spark.enabled(self._operation):
-            return {"profile_explicit_v4", "single_resource_ledger", "exact_rational_resources",
-                    "port_graph", "mechanical_refinement", "v4_realization_os",
-                    "native_spark_certificate_validation", "native_spark_atomic_lifecycle"}
+            from .grc_9_v4_spark_support import match
+            with self._operation._lock:
+                config = self._operation._published.owner
+                identity = config.reference.profile.identity_payload
+                capabilities = {
+                    "profile_explicit_v4", "single_resource_ledger", "exact_rational_resources",
+                    "port_graph", "mechanical_refinement",
+                    "v4_realization_" + identity.realization.lower().replace("+", "_"),
+                    "v4_candidate_a_retained_history" if identity.candidate == "A"
+                    else "v4_candidate_c_derived_sector",
+                    "native_spark_certificate_validation", "native_spark_atomic_lifecycle",
+                }
+                if match(config) is not None:
+                    capabilities.add("completed_spark")
+                return capabilities
         if self.compatibility_branch == "disabled_grc9v3":
             return self._operation.legacy_capabilities()
         identity = self._operation.reference.profile.identity_payload
@@ -455,15 +467,10 @@ class GRC9V4(GRCV4):
 
     def support_status(self):
         if spark.enabled(self._operation):
-            family = self.configuration.reference.profile.FAMILY
-            disposition = ("native_C_OS_spark_lifecycle_pending_P9_9_1a_5" if family == "C_OS"
-                           else f"native_{family}_spark_preflight_pending_campaign")
-            return dict(disposition=disposition,
-                execution_families=[family], complete_profile_ids=[self.active_profile_id],
-                model_identities=[self.active_model_identity], compatibility_branch=self.compatibility_branch,
-                full_GRC9V4_conformance=False, optional_completion=False,
-                native_endpoint_verified=False, accounting_scope="process_shared_publication_v1",
-                cross_process_global_uniqueness=False, branch_crossing_available=False)
+            from .grc_9_v4_spark_support import status
+            with self._operation._lock:
+                publication = self._operation._published
+                return status(publication.owner, publication.completion)
         return dict(
             disposition="bounded_local_api_pending_P9_9_6",
             declared_families=[f.profile_family_id for f in describe_families()],

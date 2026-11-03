@@ -347,8 +347,9 @@ def check_bindings(rows, root=ROOT):
             and path.resolve().is_relative_to(root.resolve()),
             "portable binding",
         )
+        from p991a7_support_epoch import previous_bytes
         need(
-            sha256(path.read_bytes()).hexdigest() == row["sha256"],
+            sha256(previous_bytes(root, row["path"])).hexdigest() == row["sha256"],
             "changed source/evidence: " + row["path"],
         )
 
