@@ -23,6 +23,7 @@ NUMERICAL_POLICY = "spark_cos_exact_flint_flux128_v1"
 CI_NUMERICAL_POLICY = "spark_cci_arb256_certified_root_flux128_v1"
 CIPC_NUMERICAL_POLICY = "spark_ccipc_arb256_certified_root_flux128_carrier192_v1"
 PC_NUMERICAL_POLICY = "spark_cpc_arb256_flux128_carrier192_v1"
+CRG2B_NUMERICAL_POLICY = "spark_crg2b_arb256_section32_current160_flux128_v1"
 CHARGE_POLICY = MappingProxyType({
     "schema_version": "grcv4-charge-policy-v2",
     "policy_id": "exact_rational_incidence_charge_v1",
@@ -208,6 +209,14 @@ class QuarticCCIPCProfile(QuarticCOSProfile):
 
     FAMILY: ClassVar[str] = "C_CI_PC"
     NUMERICS: ClassVar[str] = CIPC_NUMERICAL_POLICY
+
+
+@dataclass(frozen=True, slots=True, eq=False)
+class QuarticCRG2bProfile(QuarticCOSProfile):
+    """Resource-only law with an explicitly bound Lipschitz invariant section."""
+
+    FAMILY: ClassVar[str] = "C_RG2b"
+    NUMERICS: ClassVar[str] = CRG2B_NUMERICAL_POLICY
 
 
 @dataclass(frozen=True, slots=True)

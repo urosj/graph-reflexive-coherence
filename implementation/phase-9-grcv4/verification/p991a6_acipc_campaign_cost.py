@@ -7,6 +7,7 @@ import tempfile
 import time
 from hashlib import sha256
 from pathlib import Path
+from p991a6_crg2b_epoch import previous_bytes
 
 import acipc_native_spark_campaign_cache as root_cache
 import p991a6_acipc_preflight as preflight
@@ -280,7 +281,7 @@ def check(root=ROOT):
     )
     for r in v["source_bindings"]:
         need(
-            sha256((root / r["path"]).read_bytes()).hexdigest() == r["sha256"],
+            sha256(previous_bytes(root, r["path"])).hexdigest() == r["sha256"],
             "changed final cost source: " + r["path"],
         )
     return v

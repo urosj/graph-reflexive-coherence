@@ -173,6 +173,13 @@ def _capture(payload):
     return exact_state(payload)
 
 
+def _curve_membership(certificate,state):
+    from .grc_9_v4_completion_crg2b import membership_details
+    value=membership_details(certificate,state)
+    return {'membership_measure':'squared_curve_P_distance_over_radius_squared',
+        'curve_parameter':value['parameter'],'parameter_selection':value['method']}
+
+
 def progress(owner, before, after, receipt, step):
     cp, config = after.completion, after.owner
     if cp.event is None or config.policy is None or cp.evidence is not None:
@@ -242,6 +249,7 @@ def progress(owner, before, after, receipt, step):
             objects,
             {
                 "membership_norm": norm,
+                **(_curve_membership(cert,config.current) if config.reference.profile.FAMILY == "C_RG2b" else {}),
                 **({"membership_measure": "squared_max_C_logW_carrier_product_upper"} if config.reference.profile.FAMILY in ("A_PC", "A_CI_PC") else {}),
                 **({"membership_measure": "squared_max_product_norm"} if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else {}),
                 **({"membership_measure": "outward_C_logW_chart_infinity_upper"} if config.reference.profile.FAMILY in ("A_OS", "A_CI") else {}),
@@ -296,10 +304,10 @@ def progress(owner, before, after, receipt, step):
             "constraints": _put(objects, {"charge": config.current.charge}),
             "domain": _put(
                 objects,
-                {k: v for k, v in cert.operands.to_dict().items() if k in ("S", "U", "carrier_radius", "carrier_pairs", "carrier_center", "logW_center")},
+                {k: v for k, v in cert.operands.to_dict().items() if k in ("S", "U", "carrier_radius", "carrier_pairs", "carrier_center", "logW_center", "curve", "radius", "parameter_decay", "subdivision_depth")},
             ),
             "center": _put(objects, ({"C": list(cert.operands["center"]), "logW": list(cert.operands["logW_center"]), "Z_4": [list(r) for r in cert.operands["carrier_center"]]} if config.reference.profile.FAMILY in ("A_PC", "A_CI_PC") else {"C": list(cert.operands["center"]), "logW": list(cert.operands["logW_center"])} if config.reference.profile.FAMILY in ("A_OS", "A_CI") else {"C": list(cert.operands["center"]), "Z_4": cert.operands.to_dict()["carrier_center"]} if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else list(cert.operands["center"]))),
-            "norm_id": ("full_C_logW_chart_scaled_carrier_frobenius_v1" if config.reference.profile.FAMILY in ("A_PC", "A_CI_PC") else "full_C_logW_chart_infinity_v1" if config.reference.profile.FAMILY in ("A_OS", "A_CI") else "full_charge_chart_scaled_carrier_frobenius_v1" if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else "full_charge_chart_infinity_v1"),
+            "norm_id": ("full_charge_tangent_curve_P_metric_v1" if config.reference.profile.FAMILY == "C_RG2b" else "full_C_logW_chart_scaled_carrier_frobenius_v1" if config.reference.profile.FAMILY in ("A_PC", "A_CI_PC") else "full_C_logW_chart_infinity_v1" if config.reference.profile.FAMILY in ("A_OS", "A_CI") else "full_charge_chart_scaled_carrier_frobenius_v1" if config.reference.profile.FAMILY in ("C_PC", "C_CI_PC") else "full_charge_chart_infinity_v1"),
             "q": proof["q"],
             "image_margin": proof["image_margin"],
             "numerical_policy_id": config.reference.profile.NUMERICS,
@@ -580,7 +588,7 @@ def expansion(owner, before, action):
         raise ValueError("target law/specialization mismatch")
     aos = config.reference.profile.FAMILY in ("A_OS", "A_CI", "A_PC", "A_CI_PC")
     apc = config.reference.profile.FAMILY in ("A_PC", "A_CI_PC")
-    expected_distribution = (1/128,63/64,1/128) if aos else (1/64,31/32,1/64)
+    expected_distribution = (5/2048,1021/1024,1/2048) if config.reference.profile.FAMILY == "C_RG2b" else (1/128,63/64,1/128) if aos else (1/64,31/32,1/64)
     if request.target_effective_degree != 9 or request.resource_distribution != expected_distribution:
         raise ValueError("bounded exact accepted allocation required")
     carrier_event, conductance_event = None, None
@@ -642,7 +650,7 @@ def expansion(owner, before, action):
     if len(parent) != 1:
         raise ValueError("source lacks unique qualified parent")
     graph = GRCV4Graph.from_port_graph(plan.target_graph)
-    shares = dict(zip(plan.module_node_ids, ("0", "1/128", "63/64", "1/128") if aos else ("0", "1/64", "31/32", "1/64")))
+    shares = dict(zip(plan.module_node_ids, ("0", "5/2048", "1021/1024", "1/2048") if config.reference.profile.FAMILY == "C_RG2b" else ("0", "1/128", "63/64", "1/128") if aos else ("0", "1/64", "31/32", "1/64")))
     transfer = tuple(
         tuple(
             shares.get(x, "0") if old == request.source_node_id else str(int(x == old))

@@ -4718,7 +4718,7 @@ rules. This is an engineering handoff, not another scientific-definition gate.
 | P9-9.1a.6-A_CI | 375→377 | 372→374 | 32 | Native .5 accepted; committed `5b92524c` |
 | P9-9.1a.6-A_PC | 375→377 | 372→374 | 32 | Native .5 accepted 2026-11-02 |
 | P9-9.1a.6-A_CI_PC | 375→377 | 372→374 | 32 | .1–.4 verified, review pending; .5 unrun |
-| P9-9.1a.6-C_RG2b | 390→392 | 390→392 | 8 | Not started |
+| P9-9.1a.6-C_RG2b | 390→392 | 390→392 | 8 | .1–.4 and pressure accepted; .5 not run |
 | P9-9.1a.6-A_RG2b | 300→302 | 300→302 | 16 | Not started |
 
 These are accepted scientific regression targets for a 12-vertex/13-edge source
@@ -5372,3 +5372,18 @@ accepted .5 and requested commit on 2026-11-02. Historical execution flags remai
 unchanged; aggregate native support stays false. All 36 focused tests and the
 implementation-boundary audit pass. C_RG2b .1–.4 is next, subject to user selection.
 [Campaign review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC.5-Review.md).
+
+### C_RG2b native steps 1–4 — selected 2026-11-03
+
+After accepted A_CI_PC .5 (`7252dd6d`), follow the
+[bounded contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Contract.md).
+Preserve duration 8, the exact source/allocation, frozen argument completion and
+unique Lipschitz section. Recompute the continuous polynomial-domain proof and
+full represented-step error without a section derivative or later trajectory.
+Native expectation 390→392 remains unverified; duration 32 is uncertified.
+Complete bounded lifecycle/numerical/cache checks, profiling and side-tool before
+review. A full .5 run and aggregate native support remain separate.
+
+C_RG2b bounded results: see [native verification](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Verification.md). 20+20 actual target samples took 145.6s; complete-path 400+400 forecast 56.9/112.0 minutes. The full campaign requires fresh late-state/checkpoint profiling and an optimization review. Duration 8 and the direct continuous domain remain fixed; no endpoint or duration-32 claim follows.
+
+C_RG2b bounded pressure (2026-11-03) is complete: 15 tests, 93 rejected mutations and 84 exact boundary witnesses. The [pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-PressureReview.md) adds exact finite chains, unrounded time-shift checks, external subject bindings, cache independence and continuous-domain/lifecycle pressure. Production code and accepted numerical evidence remain unchanged. The user accepted .1–.4 and pressure for commit on 2026-11-03. The user explicitly excluded .5; the separately profiled campaign remains unrun and awaits authorization.

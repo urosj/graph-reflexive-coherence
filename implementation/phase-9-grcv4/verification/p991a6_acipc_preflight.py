@@ -654,7 +654,7 @@ def run():
 
 
 def check(root=ROOT):
-    previous_bytes = lambda root, name: (root / name).read_bytes()
+    from p991a6_crg2b_epoch import previous_bytes
 
     root = Path(root)
     value = json.loads(lzma.decompress((root / RECORD).read_bytes()))

@@ -4324,7 +4324,25 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     - [x] Review and accept A_CI_PC .5 separately; user requested commit on
       2026-11-02. Historical execution flags remain unchanged; aggregate support
       remains false. All 36 tests and the implementation-boundary audit pass.
-  - [ ] P9-9.1a.6-C_RG2b.
+  - [ ] P9-9.1a.6-C_RG2b: .1–.4 and pressure accepted; .5 pending (2026-11-03).
+    - [x] .1: Bind quartic C, duration 8 and the frozen Lipschitz section/completion.
+    - [x] .2: Implement exact incidence and certified finite-chain section reads.
+    - [x] .3: Verify the direct continuous domain, full-map error and lifecycle.
+    - [x] .4: Check independent numerics, caches, bounded costs and side-tool.
+      23 native, eight publication and 213 predecessor tests; 20+20 audited
+      target beats; 145.6s / 227.4 MiB. Normal audited stepping is 3.9x faster
+      with exactly unchanged states/fluxes and unchanged numerical limits.
+      No full campaign or tail. [Verification](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Verification.md).
+      [Contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Contract.md).
+    - [x] Bounded pressure only: 15 tests, 93 rejected mutations and 84 exact
+      tube-boundary checks; 54.27s / 317.9 KiB. Manufactured finite chains,
+      unrounded time-shift identity, complete bindings, cache independence,
+      continuous domain and atomic failures/retries pass. Runtime unchanged.
+      All 12 combined publication checks and independent operand replay pass.
+      [Pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-PressureReview.md).
+    - [x] Review and accept .1–.4 and pressure; user requested commit on
+      2026-11-03. Sealed execution records retain their original statuses.
+    - [ ] .5: Actual source-to-completion campaign after fresh profiling.
   - [ ] P9-9.1a.6-A_RG2b.
 - [ ] P9-9.1a.7: Reconcile the newly supported exact declarations/capability in a
   scoped P9-9.6 supplement. Link affected Tranche 8/9 checks and Tranche 10

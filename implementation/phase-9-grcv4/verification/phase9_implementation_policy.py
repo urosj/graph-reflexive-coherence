@@ -79,6 +79,9 @@ SPARK_LIFECYCLE_PATHS = frozenset({
     "src/pygrc/models/grc_v4_assets/grc-9-v4-spark-completion-schema.json",
     "tests/models/test_grc_9_v4_spark_completion.py",
 })
+SPARK_CRG2B_LEAF = "P9-9.1a.6-C_RG2b"
+SPARK_CRG2B_ENTRY = "7252dd6d"
+SPARK_CRG2B_PATHS = frozenset(['src/pygrc/models/grc_9_v4.py', 'src/pygrc/models/grc_9_v4_completion_certificate.py', 'src/pygrc/models/grc_9_v4_completion_codec.py', 'src/pygrc/models/grc_9_v4_completion_crg2b.py', 'src/pygrc/models/grc_9_v4_spark_owner.py', 'src/pygrc/models/grc_v4_spark.py', 'src/pygrc/models/grc_v4_spark_crg2b.py', 'src/pygrc/models/grc_v4_spark_crg2b_math.py', 'src/pygrc/models/grc_v4_spark_state.py', 'tests/models/test_grc_v4_spark_crg2b.py'])
 SPARK_ACIPC_LEAF = "P9-9.1a.6-A_CI_PC"
 SPARK_ACIPC_ENTRY = "10277f05"
 SPARK_ACIPC_PATHS = frozenset(['src/pygrc/models/grc_9_v4_completion_acipc.py', 'src/pygrc/models/grc_9_v4_completion_certificate.py', 'src/pygrc/models/grc_9_v4_completion_codec.py', 'src/pygrc/models/grc_9_v4_spark_contracts.py', 'src/pygrc/models/grc_9_v4_spark_owner.py', 'src/pygrc/models/grc_v4_spark.py', 'src/pygrc/models/grc_v4_spark_adaptive_carrier.py', 'src/pygrc/models/grc_v4_spark_acipc.py', 'src/pygrc/models/grc_v4_spark_acipc_math.py', 'tests/models/test_grc_v4_spark_acipc.py'])
@@ -3535,6 +3538,10 @@ def leaf_permissions(root):
     ready = sorted(set(ready) | {SPARK_ACIPC_LEAF})
     for name in SPARK_ACIPC_PATHS:
         owners[name] = owners.get(name, set()) | {SPARK_ACIPC_LEAF}
+    git(root, "merge-base", "--is-ancestor", SPARK_CRG2B_ENTRY, "HEAD")
+    ready = sorted(set(ready) | {SPARK_CRG2B_LEAF})
+    for name in SPARK_CRG2B_PATHS:
+        owners[name] = owners.get(name, set()) | {SPARK_CRG2B_LEAF}
     return ready, owners
 
 
@@ -3544,6 +3551,10 @@ def runtime_targets(approval):
     from phase9_specialization_acceptance import ENABLED_LIFECYCLE_PATHS, DISABLED_DELEGATE_PATHS, BRANCH_CROSSING_PATHS
     from phase9_specialization_acceptance import PUBLIC_API_NEW_PATHS, BASIN_NEW_PATHS
     return [*approval["runtime_targets"], *(
+        {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
+         "operation": "v4_owned_add_or_update", "module_owner": "grc_v4_spark_crg2b"}
+        for name in sorted(SPARK_CRG2B_PATHS)
+    ), *(
         {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner": "grc_v4_spark_acipc"}
         for name in sorted(SPARK_ACIPC_PATHS)
@@ -3811,6 +3822,7 @@ def work_entries(root, approval):
     leaves.add(SPARK_CPC_LEAF)
     leaves.add(SPARK_CCIPC_LEAF)
     leaves.add(SPARK_ACI_LEAF)
+    leaves.add(SPARK_CRG2B_LEAF)
     leaves.add(SPARK_ACIPC_LEAF)
     leaves.add(SPARK_APC_LEAF)
     leaves.add(SPARK_AOS_LEAF)
@@ -3858,7 +3870,8 @@ def work_entries(root, approval):
     leaves.add(public_api_authorization(root))
     leaves.add(basin_authorization(root))
     def g3_permitted(name, leaf):
-        return ((leaf == SPARK_ACIPC_LEAF and name in SPARK_ACIPC_PATHS)
+        return ((leaf == SPARK_CRG2B_LEAF and name in SPARK_CRG2B_PATHS)
+                or (leaf == SPARK_ACIPC_LEAF and name in SPARK_ACIPC_PATHS)
                 or (leaf == SPARK_APC_LEAF and name in SPARK_APC_PATHS)
                 or (leaf == SPARK_ACI_LEAF and name in SPARK_ACI_PATHS)
                 or (leaf == SPARK_AOS_LEAF and name in SPARK_AOS_PATHS)
@@ -5429,3 +5442,14 @@ PATHS.update({
     SIDE + "tool/phase9-web/spark-native-acipc-campaign.js",
     SIDE + "tool/src/grcv4_explorer/spark_native_acipc_campaign.py",
 })
+
+# Native C_RG2b bounded .1–.4 successor publication.
+PATHS = PATHS | frozenset(['implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/NativeSparkCRG2b.md', 'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-native-crg2b.js', 'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_crg2b.py', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Contract.md', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Preflight.json.xz', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Samples.json.xz', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-SourceEpoch.json', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Verification.md', 'implementation/phase-9-grcv4/verification/crg2b_native_spark_oracle.py', 'implementation/phase-9-grcv4/verification/p991a6_crg2b_epoch.py', 'implementation/phase-9-grcv4/verification/p991a6_crg2b_preflight.py', 'implementation/phase-9-grcv4/verification/p991a6_crg2b_subjects.py', 'implementation/phase-9-grcv4/verification/test_p991a6_crg2b_surface.py', 'specs/grc-v4-spark-native-c-rg2b-numerical-policy.md'])
+
+PATHS = PATHS | frozenset({
+    "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-PerformanceReference.json.xz",
+    "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Optimization.patch",
+})
+
+# Bounded C_RG2b pressure; no .5 execution authority.
+PATHS = PATHS | frozenset(['implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Pressure.json', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-PressureSamples.json.xz', 'implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-PressureReview.md', 'implementation/phase-9-grcv4/verification/p991a6_crg2b_pressure.py', 'implementation/phase-9-grcv4/verification/crg2b_native_spark_pressure_oracle.py', 'implementation/phase-9-grcv4/verification/test_crg2b_native_spark_pressure.py', 'implementation/phase-9-grcv4/verification/test_p991a6_crg2b_pressure_surface.py', 'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_crg2b_pressure.py'])

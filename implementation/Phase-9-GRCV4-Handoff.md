@@ -1,5 +1,25 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current work: C_RG2b native .1–.4 and pressure accepted — 2026-11-03
+
+The [bounded verification](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Verification.md)
+implements exact C, duration 8, certified depth-32 Arb256 Lipschitz sections and
+the full direct continuous 14-dimensional charge domain. No supporting tail.
+All 23 native, eight publication and 213 predecessor tests pass;
+20 current + 20 reset beats are independently audited.
+The preflight took 145.6s / 227.4 MiB; compressed evidence 2.87 MiB.
+Complete-subject runtime and independent witness caches are verified.
+Normal native-plus-audit time is 1.65s versus 6.45s before optimization;
+all source and 40 target states/fluxes are exactly preserved. The
+400+400 planning envelope is 56.9/112.0 minutes, requiring fresh
+late-state/checkpoint profiling and optimization review before `.5`.
+Side-tool API/browser/notebook, finite source continuity and runtime ownership
+are updated. Native 390→392 expectations remain unverified; duration 32 remains
+uncertified. The user accepted the bounded work for commit on 2026-11-03.
+The separately profiled `.5` campaign remains unrun and awaits authorization.
+
+The requested [bounded pressure audit](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-PressureReview.md) also passes: **15 tests, 93 rejected mutations, 84 exact tube-boundary checks**, 54.27s and 317.9 KiB compressed operands. It checks manufactured inverse chains, the unrounded time-shift law, full chain/binding errors, cache independence, the continuous curve and atomic failures/retries. Runtime and original evidence remain unchanged; the side-tool includes the source-bound supplement. All 12 combined publication checks and independent operand replay pass. The user explicitly excluded `.5` from this pressure pass.
+
 ## Current continuation: A_CI_PC .5 accepted; C_RG2b next — 2026-11-02
 
 Accepted .1–.4 and pressure are committed as `5e10f233`. The authorized

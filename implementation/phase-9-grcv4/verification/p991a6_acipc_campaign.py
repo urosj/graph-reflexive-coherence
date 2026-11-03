@@ -11,6 +11,7 @@ import time
 from datetime import UTC, datetime
 from hashlib import sha256
 from pathlib import Path
+from p991a6_crg2b_epoch import previous_bytes
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -671,7 +672,7 @@ def check(root=ROOT, numerical=False):
     )
     for ref in [*value["source_bindings"], *value["streams"]]:
         need(
-            sha256((root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
+            sha256(previous_bytes(root, ref["path"])).hexdigest() == ref["sha256"],
             "changed campaign input: " + ref["path"],
         )
     source = None

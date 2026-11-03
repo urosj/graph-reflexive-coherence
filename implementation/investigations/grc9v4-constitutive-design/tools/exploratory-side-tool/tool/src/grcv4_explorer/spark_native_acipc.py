@@ -44,7 +44,8 @@ def checked_record(root):
     for row in [*value["source_bindings"], value["evidence"]]:
         p = root / row["path"]
         try:
-            raw = p.read_bytes()
+            from .basin import _bound_file
+            raw = _bound_file(root, row["path"], row["sha256"]).read_bytes()
         except ValueError as error:
             raise SourceAdmissionError(str(error)) from error
         if (

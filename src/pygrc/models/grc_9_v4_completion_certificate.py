@@ -224,6 +224,9 @@ def _analytic(kernel, C):
 @flint_operation
 def _verify(raw):
     data = decode_canonical_json(raw)
+    if data.get("schema_version") == "grc9v4-native-crg2b-curve-operands-v1":
+        from .grc_9_v4_completion_crg2b import verify
+        return verify(data)
     if data.get("schema_version") == "grc9v4-native-acipc-trap-operands-v1":
         from .grc_9_v4_completion_acipc import verify
         return verify(data)
@@ -324,6 +327,14 @@ class CompletionCertificate:
         object.__setattr__(self, "proof", proof)
 
     @classmethod
+    def create_crg2b(cls,kernel,policy,role,center,curve,charge='21'):
+        if kernel.profile.FAMILY != 'C_RG2b':
+            raise ValueError('C_RG2b continuous curve operands required')
+        return cls(FrozenJSONMap(dict(schema_version='grc9v4-native-crg2b-curve-operands-v1',
+            binding=binding(kernel,policy,role,charge),center=list(center),curve=curve,
+            radius='1/4096',parameter_decay='999/1000',subdivision_depth=6)))
+
+    @classmethod
     def create_acipc(cls, kernel, policy, role, center, logW_center, S, U, charge="21"):
         if kernel.profile.FAMILY != "A_CI_PC":
             raise ValueError("A_CI_PC full C/logW/Z operands required")
@@ -387,6 +398,9 @@ class CompletionCertificate:
 
     @flint_operation
     def membership(self, state):
+        if self.operands["binding"]["profile"]["identity_payload"]["profile_family_id"] == "C_RG2b":
+            from .grc_9_v4_completion_crg2b import membership
+            return membership(self,state)
         if self.operands["binding"]["profile"]["identity_payload"]["profile_family_id"] == "A_CI_PC":
             from .grc_9_v4_completion_acipc import membership
             return membership(self, state)
