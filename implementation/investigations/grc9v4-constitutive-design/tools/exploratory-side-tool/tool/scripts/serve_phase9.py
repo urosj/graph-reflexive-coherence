@@ -11,6 +11,7 @@ from urllib.parse import urlsplit, parse_qs
 TOOL = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(TOOL / "src"))
 from grcv4_explorer.paths import repository_root  # noqa: E402
+from grcv4_explorer.spark_native_regressions import native_spark_regressions, native_spark_regressions_source
 from grcv4_explorer.phase9_verification import verification_status  # noqa: E402
 from grcv4_explorer.phase9_verification import pressure_projection  # noqa: E402
 from grcv4_explorer.receipt_parents import parent_authority  # noqa: E402
@@ -191,6 +192,31 @@ class Handler(BaseHTTPRequestHandler):
                 content = json.dumps({"error": str(exc)}).encode()
             self.send_header("Content-Type", "application/json")
             self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+            return
+        if request.path in {"/api/native-spark/regressions", "/api/native-spark/regressions/source"}:
+            try:
+                if request.query:
+                    raise ValueError("fixed native regression scope")
+                root = repository_root()
+                content = (native_spark_regressions_source(root) if request.path.endswith("/source")
+                           else json.dumps(native_spark_regressions(root)).encode())
+                self.send_response(200)
+            except Exception as error:
+                self.send_response(503)
+                content = json.dumps({"error": str(error)}).encode()
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+            return
+        if request.path == "/spark-native-regressions.js" and not request.query:
+            content = (TOOL / "phase9-web/spark-native-regressions.js").read_bytes()
+            self.send_response(200)
+            self.send_header("Content-Type", "text/javascript")
             self.send_header("Content-Length", str(len(content)))
             self.end_headers()
             self.wfile.write(content)

@@ -1,6 +1,15 @@
 # Phase 9 GRCV4 Implementation Plan
 
-## Current continuation: P9-9.1a reconciled; Tranche 10 supplements next — 2026-11-03
+## Current continuation: native spark integration regressions complete — 2026-11-03
+
+[P9-10.3-NATIVE-SPARK](./phase-9-grcv4/tranche-10/P9-10.3-NativeSpark-Review.md)
+now has 28 passing focused tests in four parallel FLINT jobs (31.899 seconds
+maximum). All-ten public identities/persistence, short shared completion
+lifecycle checks and ordinary V4/V3 boundaries pass. Accepted full family
+campaigns are reused; no production/specification correction was needed.
+The side-tool API/browser/notebook publishes retained results without running
+tests. The user accepted this bounded supplement by requesting commit on
+2026-11-03; P9-10.4-NATIVE-SPARK examples are next.
 
 On `impl/grc9v4-rg2b-spark-completion-campaigns`, the last two family campaigns
 are accepted as `528736b9`. All ten bounded native completion families are now
@@ -4860,7 +4869,12 @@ The API/browser/notebook expose these three limits alongside the passing evidenc
 
 ### Tranche 10. Conformance, evidence, and handoff
 
-**Native completion follow-through (planned 2026-11-01).** Existing accepted
+**Native completion follow-through (updated 2026-11-03).** The focused
+[integration supplement](./phase-9-grcv4/tranche-10/P9-10.3-NativeSpark-Review.md)
+has 28 passing tests and user acceptance on 2026-11-03. Its new all-ten empty-journal
+persistence checks forbid numerical steps; complete-event cold replay remains
+accepted family evidence. Short C_OS windows test the shared transaction owner.
+Existing accepted
 10.1–10.4 records retain their scope. P9-10.3-NATIVE-SPARK adds only regressions
 affected by the P9-9.1a binding, numerical representation, lifecycle and public
 API; reuse unaffected evidence and preserve old zero-site/release identities.

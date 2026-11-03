@@ -5569,3 +5569,16 @@ PATHS = PATHS | frozenset({
     SIDE + "tool/src/grcv4_explorer/spark_native_support.py",
     SIDE + "tool/phase9-web/spark-native-support.js",
 })
+
+# Focused completion integration reuses accepted numerical campaigns.
+PATHS = PATHS | frozenset({
+    HERE + "p9103_native_spark.py", HERE + "p9103_native_spark_epoch.py",
+    HERE + "test_p9103_native_spark_integration.py", HERE + "test_p9103_native_spark_surfaces.py",
+    PHASE + "tranche-10/P9-10.3-NativeSpark-Regressions.json",
+    PHASE + "tranche-10/P9-10.3-NativeSpark-Acceptance.json",
+    PHASE + "tranche-10/P9-10.3-NativeSpark-SourceEpoch.json",
+    PHASE + "tranche-10/P9-10.3-NativeSpark-Review.md",
+    SIDE + "docs/NativeSparkRegressions.md",
+    SIDE + "tool/src/grcv4_explorer/spark_native_regressions.py",
+    SIDE + "tool/phase9-web/spark-native-regressions.js",
+})

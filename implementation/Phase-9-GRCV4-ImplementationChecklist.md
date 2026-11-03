@@ -12,7 +12,9 @@ reconciles twenty exact source/target declarations, correct public support and
 realization reporting, and thirty native-obligation evidence links. Its
 implementation and reconciliation are accepted through the user's commit request
 on 2026-11-03; bounded P9-9.1a is closed. Next are the
-Tranche 10 native-spark supplements, then formal debt/G4 closeout. Broader
+Tranche 10 native-spark supplements, then formal debt/G4 closeout.
+P9-10.3-NATIVE-SPARK has 28 passing focused tests and user acceptance on 2026-11-03;
+P9-10.4-NATIVE-SPARK is the next implementation task. Broader
 hierarchy and general ATC remain outside scope; no new trajectories are required
 for this reconciliation.
 
@@ -4812,10 +4814,19 @@ acceptances remain unchanged; each row below records its own bounded evidence.
     [decision](./phase-9-grcv4/tranche-10/P9-10.3-Acceptance.json). Capability
     publication, debt reconciliation and G4 remain P9-10.4–10.6.
 
-- [ ] P9-10.3-NATIVE-SPARK: After scoped P9-9.1a results, check affected shared
+- [x] P9-10.3-NATIVE-SPARK: After scoped P9-9.1a results, check affected shared
   dynamics, event/role handling, public API, lifecycle, persistence and disabled
   compatibility; preserve old zero-site/release identities. Reuse unaffected
   accepted evidence and run only justified regressions, not old large campaigns.
+  - [x] Run four independent FLINT groups: 11 discovery/identity, 3 all-ten
+    persistence/branch-guard, 8 short shared lifecycle and 6 ordinary V4/V3
+    boundary tests; all 28 pass, longest job 31.899 seconds.
+  - [x] Preserve runtime/specification and original test bytes; bind accepted
+    P9-9.1a.7 evidence without rerunning complete family trajectories.
+  - [x] Publish retained API/browser/notebook results with exact source/test
+    identities and explicit limits. [Review](./phase-9-grcv4/tranche-10/P9-10.3-NativeSpark-Review.md).
+  - [x] User accepted the bounded integration supplement by requesting commit
+    on 2026-11-03; [decision](./phase-9-grcv4/tranche-10/P9-10.3-NativeSpark-Acceptance.json).
 
 #### P9-10.4: Capability publication and spark completion
 

@@ -1,6 +1,28 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work: P9-9.1a.7 support reconciliation — 2026-11-03
+## Current work: P9-10.3-NATIVE-SPARK integration regressions — 2026-11-03
+
+Same branch `impl/grc9v4-rg2b-spark-completion-campaigns`, following accepted
+bounded P9-9.1a closure at `f41346da`. All 28 focused regressions passed in four
+parallel FLINT processes; the longest group took 31.899 seconds. See the
+[review](./phase-9-grcv4/tranche-10/P9-10.3-NativeSpark-Review.md) and its bound
+execution record. The user accepted this bounded supplement by requesting commit
+on 2026-11-03; the separate acceptance record preserves the execution identity.
+Production, specifications and existing tests are unchanged. No full completion
+trajectory was rerun. All-ten declaration/persistence guards, short shared C_OS
+accounting/rollback windows and ordinary V4/V3 boundaries have distinct scopes.
+Accepted per-family numerical and complete cold-replay evidence remains reused.
+All three publication/integrity checks pass (60.828 seconds); the execution
+record is 109,937 bytes and duplicates no numerical campaign payload.
+
+Inspect via `p9103_native_spark.py --check` in `phase-9-grcv4/verification`, the
+side-tool `/api/native-spark/regressions`, browser or notebook. Inspection never
+executes the tests. The current publication/source successor preserves old
+records. Continue to P9-10.4-NATIVE-SPARK examples; P9-10.5
+formal debts and P9-10.6 release/G4 remain separate. No support widening follows
+from these regressions.
+
+## Previous work: P9-9.1a.7 support reconciliation — 2026-11-03
 
 Same branch `impl/grc9v4-rg2b-spark-completion-campaigns`, after accepted
 campaign commit `528736b9`. All ten bounded family campaigns are accepted.
@@ -9185,5 +9207,6 @@ Suggested first message in the new conversation:
 > Read `implementation/Phase-9-GRCV4-Handoff.md` and inspect the current checkout.
 > All ten native completion campaigns are accepted. P9-9.1a.7 reconciles their
 > exact declarations and corrects public reporting; bounded P9-9.1a is accepted.
-> Next are P9-10.3-NATIVE-SPARK and P9-10.4-NATIVE-SPARK, followed by P9-10.5/10.6.
+> P9-10.3-NATIVE-SPARK has 28 passing focused regressions and is accepted.
+> Next is P9-10.4-NATIVE-SPARK, followed by P9-10.5/10.6.
 > Reuse retained evidence; do not rerun completed campaigns for bookkeeping.

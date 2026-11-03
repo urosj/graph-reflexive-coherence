@@ -3606,3 +3606,17 @@ unchanged. P9-9.1a.7 aggregate support remains separate.
 
 See [NativeSparkSupport](./docs/NativeSparkSupport.md) and the scoped P9-9.6
 supplement in the P9-9.1a.7 review. No original numerical campaign is repeated.
+
+## P9-10.3-NATIVE-SPARK integration regressions — 2026-11-03
+
+- [x] Publish the 28 passing focused tests and ten-family retained evidence
+  through `/api/native-spark/regressions`, `/source`, the browser and notebook.
+- [x] Distinguish all-ten identities/persistence, short shared C_OS windows and
+  ordinary V4/V3 boundaries from the reused complete numerical campaigns.
+- [x] Pin execution/source identities; reject changed coverage/scope and clear
+  stale browser/notebook output. Inspection executes no tests.
+- [x] User accepted the bounded supplement by requesting commit on 2026-11-03.
+  Current views link that decision while preserving the execution-time flags.
+  Examples, formal debts and G4 remain separate.
+
+See [NativeSparkRegressions](./docs/NativeSparkRegressions.md).
