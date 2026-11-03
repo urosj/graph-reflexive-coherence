@@ -4718,8 +4718,8 @@ rules. This is an engineering handoff, not another scientific-definition gate.
 | P9-9.1a.6-A_CI | 375→377 | 372→374 | 32 | Native .5 accepted; committed `5b92524c` |
 | P9-9.1a.6-A_PC | 375→377 | 372→374 | 32 | Native .5 accepted 2026-11-02 |
 | P9-9.1a.6-A_CI_PC | 375→377 | 372→374 | 32 | .1–.4 verified, review pending; .5 unrun |
-| P9-9.1a.6-C_RG2b | 390→392 | 390→392 | 8 | .1–.4 and pressure accepted; .5 not run |
-| P9-9.1a.6-A_RG2b | 300→302 | 300→302 | 16 | Not started |
+| P9-9.1a.6-C_RG2b | 390→392 | 390→392 | 8 | .1–.4 and pressure accepted; .5 deferred |
+| P9-9.1a.6-A_RG2b | 300→302 | 300→302 | 16 | .1–.4 and pressure accepted; both RG2b .5 campaigns deferred |
 
 These are accepted scientific regression targets for a 12-vertex/13-edge source
 and 15-vertex/16-edge target, not native results or universal stopping bounds.
@@ -5387,3 +5387,9 @@ review. A full .5 run and aggregate native support remain separate.
 C_RG2b bounded results: see [native verification](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Verification.md). 20+20 actual target samples took 145.6s; complete-path 400+400 forecast 56.9/112.0 minutes. The full campaign requires fresh late-state/checkpoint profiling and an optimization review. Duration 8 and the direct continuous domain remain fixed; no endpoint or duration-32 claim follows.
 
 C_RG2b bounded pressure (2026-11-03) is complete: 15 tests, 93 rejected mutations and 84 exact boundary witnesses. The [pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-PressureReview.md) adds exact finite chains, unrounded time-shift checks, external subject bindings, cache independence and continuous-domain/lifecycle pressure. Production code and accepted numerical evidence remain unchanged. The user accepted .1–.4 and pressure for commit on 2026-11-03. The user explicitly excluded .5; the separately profiled campaign remains unrun and awaits authorization.
+
+A_RG2b .1–.4 selected on 2026-11-03 after C_RG2b commit `86a68d3d`. Preserve the joint C/64 log W argument completion, full fresh-resource writer inside every inverse level, full 30-dimensional curved domain and duration 16. Profile a short prefix before extending bounded measurements. Implement the side-tool and finite source successor. The user explicitly defers both RG2b .5 campaigns until later.
+
+The A_RG2b bounded implementation is verified: 21 native, 20 combined publication/continuity and 236 predecessor tests, 12+12 independently audited target beats, full joint continuous-domain proof and source-bound side-tool. Sampling/certification/recovery took 342.35s; compressed evidence is 1.31 MiB. Mean public native beats were 3.65/3.55s current/reset. The measured 302+302 forecast is 101.9 minutes including cold replay and independent-check reserves, with a 221.1-minute conservative allowance; forward prefix work alone extrapolates to about 38 minutes. These are planning estimates, not endpoints. Before a later .5 campaign, reprofile late-state and journal-recovery costs and plan compact retained evidence. The user accepted A_RG2b .1–.4 and pressure for commit on 2026-11-03. Sealed execution records retain their original statuses; both RG2b .5 campaigns remain deferred.
+
+The A_RG2b .1–.4 pressure supplement passes 18 tests with 398 detected faults/mutations and 180 joint tube-boundary checks. It independently owns every inverse-history residual and the full writer, separates direct W and section-mediated feedback, checks shared-parameter membership and continuous Taylor operands, and injects late atomic faults. Runtime/preflight and scientific inputs remain unchanged; 234.95s / 271.0 KiB retained operands. Both .5 campaigns remain deferred.

@@ -72,6 +72,11 @@ def native_predecessor(root, path, expected):
     from p991a6_aos_epoch import CHANGED as AOS_NATIVE, previous_bytes as aos_native_previous
     from p991a6_apc_epoch import CHANGED as APC_NATIVE, previous_bytes as apc_native_previous
     from p991a6_acipc_epoch import CHANGED as ACIPC_NATIVE, previous_bytes as acipc_native_previous
+    from p991a6_arg2b_epoch import CHANGED as ARG2B_NATIVE, previous_bytes as arg2b_native_previous
+    if path in ARG2B_NATIVE:
+        raw = arg2b_native_previous(root, path)
+        if hashlib.sha256(raw).hexdigest() == expected:
+            return raw
     from p991a6_crg2b_epoch import CHANGED as CRG2B_NATIVE, previous_bytes as crg2b_native_previous
     if path in CRG2B_NATIVE:
         raw = crg2b_native_previous(root, path)

@@ -20,6 +20,7 @@ from .grc_v4_state import FrozenJSONMap
 
 AOS_NUMERICAL_POLICY = "spark_aos_arb256_flux128_conductance192_v1"
 ACI_NUMERICAL_POLICY = "spark_aci_arb256_flux128_conductance192_v1"
+ARG2B_NUMERICAL_POLICY = "spark_arg2b_arb256_section16_current192_flux128_conductance192_v1"
 
 
 def descriptor_identity(graph):
@@ -120,6 +121,12 @@ class QuarticAOSProfile(QuarticCOSProfile):
 class QuarticACIProfile(QuarticAOSProfile):
     FAMILY: ClassVar[str] = "A_CI"
     NUMERICS: ClassVar[str] = ACI_NUMERICAL_POLICY
+
+
+@dataclass(frozen=True, slots=True, eq=False)
+class QuarticARG2bProfile(QuarticAOSProfile):
+    FAMILY: ClassVar[str] = "A_RG2b"
+    NUMERICS: ClassVar[str] = ARG2B_NUMERICAL_POLICY
 
 
 @lru_cache(maxsize=16)

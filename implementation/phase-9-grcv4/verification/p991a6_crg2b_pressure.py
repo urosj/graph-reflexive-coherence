@@ -125,6 +125,7 @@ def run():
 
 
 def check(root=ROOT, numerical=False):
+    from p991a6_arg2b_epoch import previous_bytes
     root = Path(root)
     value = json.loads((root / RECORD).read_bytes())
     need(
@@ -151,7 +152,7 @@ def check(root=ROOT, numerical=False):
         p = root / row["path"]
         need(
             p.resolve().is_relative_to(root.resolve())
-            and sha256(p.read_bytes()).hexdigest() == row["sha256"],
+            and sha256(previous_bytes(root,row["path"])).hexdigest() == row["sha256"],
             "changed pressure source: " + row["path"],
         )
     if numerical:

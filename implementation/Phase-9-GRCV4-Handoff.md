@@ -1,6 +1,35 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work: C_RG2b native .1–.4 and pressure accepted — 2026-11-03
+## Current work: A_RG2b native .1–.4 and pressure accepted — 2026-11-03
+
+Continue on `impl/grc9v4-native-spark-completion` after accepted C_RG2b
+`86a68d3d`. The [A_RG2b verification](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-Verification.md)
+implements exact C/W, the joint C/64 log W Lipschitz section, duration 16,
+full fresh-resource writer and a 30-dimensional continuous domain. No supporting
+physical tail. The section uses Arb256 depth-16 chains; all 30 physical
+perturbation directions and independent fixed-H derivative columns pass.
+
+All 21 native, 20 combined publication/continuity and 236 predecessor tests pass.
+The preflight independently audits 12 current + 12 reset beats, verifies cache
+reuse and cold journal recovery, and takes 342.35s / 287.7 MiB. Compressed
+sample evidence is 1.31 MiB. Mean public native steps are 3.65s current / 3.55s
+reset; the optimized kernel pilot was 2.61–2.84s versus 6.24s initially.
+The combined future 302+302 full-path forecast is 101.9 minutes, with a
+221.1-minute conservative allowance, including full cold replay and independent
+check reserves. Forward prefix work alone extrapolates to about 38 minutes.
+Reprofile late states and journal recovery and budget compact evidence before .5.
+
+Side-tool API/browser/notebook, plan/checklist and finite source continuity are
+updated. Accepted C_RG2b and earlier numerical records remain byte-identical.
+The user accepted A_RG2b .1–.4 and pressure for commit on 2026-11-03.
+Sealed execution records retain their original statuses. **Both C_RG2b and
+A_RG2b .5 campaigns remain explicitly deferred by the user.** Research 300→302 for A_RG2b
+and 390→392 for C_RG2b remain unverified native expectations; aggregate native
+support remains false.
+
+The requested [A_RG2b bounded pressure supplement](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-PressureReview.md) passes **18 tests, 398 distinct fault/mutation controls and 180 joint tube-boundary checks** in 234.95s. It retains 271.0 KiB of compressed operands. The independent checker owns every inverse C/Y residual and both writer stages; history-only counterfeits, every production history coordinate, shared-s membership, time shift, W-mediated geometry and late rollback are covered. Runtime, original preflight and research curve are unchanged. The side-tool includes the supplement. All 12 publication checks, independent numerical replay and the implementation-boundary audit pass. Both .5 campaigns remain deferred.
+
+## Previous work: C_RG2b native .1–.4 and pressure accepted — 2026-11-03
 
 The [bounded verification](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Verification.md)
 implements exact C, duration 8, certified depth-32 Arb256 Lipschitz sections and

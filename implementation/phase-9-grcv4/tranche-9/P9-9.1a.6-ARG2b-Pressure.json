@@ -1,0 +1,1969 @@
+{
+  "schema": "grc9v4-native-arg2b-pressure-v1",
+  "family": "A_RG2b",
+  "status": "verified_pending_review",
+  "tests_passed": 18,
+  "test_roster": [
+    "test_Taylor_factorials_cell_scaling_and_full_writer_series",
+    "test_actual_event_lineage_and_committed_W_classifier",
+    "test_all_thirty_tube_directions_and_history_scale",
+    "test_bounded_completion_window_no_source_endpoint_claim",
+    "test_cache_full_history_displacement_state_only_and_detached_values",
+    "test_continuous_certificate_rehashed_corruptions_and_common_hull",
+    "test_deep_history_auxiliary_writer_and_postwriter_failures_atomic",
+    "test_every_inverse_history_coordinate_and_separate_tail",
+    "test_final_C_writer_is_not_retracted_again",
+    "test_fixed_H_map_duration_decay_and_writer_stage_discriminators",
+    "test_full_physical_error_independent_writer_and_charge",
+    "test_manufactured_joint_chains_and_history_only_counterfeit",
+    "test_reset_only_event_failure_equal_C_different_W_and_observation_purity",
+    "test_scaled_history_clipping_and_exterior_base_identity",
+    "test_scaled_logW_derivatives_and_unfrozen_weighted_rows",
+    "test_shared_parameter_membership_not_separate_projections",
+    "test_unrounded_time_shift_and_two_W_routes",
+    "test_vertex_chart_transport_and_wrong_source_chart"
+  ],
+  "elapsed_seconds": 234.94752655702177,
+  "sampling_cap_seconds": 600,
+  "runtime_changed": false,
+  "native_endpoint_verified": false,
+  "native_completion_support": false,
+  "full_trajectory_runs": 0,
+  "production_precision_bits": 256,
+  "oracle_precision_bits": 768,
+  "duration": "16",
+  "state_channels": [
+    "C",
+    "W_A"
+  ],
+  "baseline_tests": 21,
+  "preflight_record_digest": "85f807a619ffc6581af8ad8aea4c8ea98ddd2aec16483713387e93874b8adfcd",
+  "measurements": {
+    "mutations": [
+      {
+        "label": "C_only_cache_history_perturbation_0",
+        "detected_by": "external full C/W binding"
+      },
+      {
+        "label": "C_only_cache_history_perturbation_1",
+        "detected_by": "external full C/W binding"
+      },
+      {
+        "label": "C_only_cache_history_perturbation_2",
+        "detected_by": "external full C/W binding"
+      },
+      {
+        "label": "baseline_in_post_writer",
+        "detected_by": "resolved independent fixed-H map/geometry difference"
+      },
+      {
+        "label": "claim_section_C1",
+        "detected_by": "certificate proof differs from recomputed mathematics"
+      },
+      {
+        "label": "coverage_gap_same_count",
+        "detected_by": "certificate proof differs from recomputed mathematics"
+      },
+      {
+        "label": "current_zero_log_error",
+        "detected_by": "whole log-W error"
+      },
+      {
+        "label": "deep_history_residual",
+        "detected_by": "section current exceeds fixed error policy"
+      },
+      {
+        "label": "deepest_resource",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "duration32_base",
+        "detected_by": "resolved independent fixed-H map/geometry difference"
+      },
+      {
+        "label": "equal_C_different_role_W",
+        "detected_by": "external full C/W binding"
+      },
+      {
+        "label": "freeze_all_inverse_history",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "future_tail",
+        "detected_by": "certificate proof differs from recomputed mathematics"
+      },
+      {
+        "label": "inherited_exp_minus_one",
+        "detected_by": "resolved independent fixed-H map/geometry difference"
+      },
+      {
+        "label": "inverse_final_C_writer",
+        "detected_by": "injected auxiliary final-C writer"
+      },
+      {
+        "label": "inverse_frozen_history",
+        "detected_by": "resolved independent fixed-H map/geometry difference"
+      },
+      {
+        "label": "inverse_history_0_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_0_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_0_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_0_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_0_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_0_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_0_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_0_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_0_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_0_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_0_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_0_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_0_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_0_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_0_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_0_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_10_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_11_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_12_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_13_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_14_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_15_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_1_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_2_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_3_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_4_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_5_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_6_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_7_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_8_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_0",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_1",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_10",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_11",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_12",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_13",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_14",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_15",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_2",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_3",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_4",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_5",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_6",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_7",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_8",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "inverse_history_9_9",
+        "detected_by": "independent C/Y inverse residual"
+      },
+      {
+        "label": "manufactured_depth1_history_only_rehashed",
+        "detected_by": "manufactured history residual"
+      },
+      {
+        "label": "manufactured_depth2_history_only_rehashed",
+        "detected_by": "manufactured history residual"
+      },
+      {
+        "label": "missing_level",
+        "detected_by": "sixteen joint inverse levels"
+      },
+      {
+        "label": "missing_narrow_cell",
+        "detected_by": "certificate proof differs from recomputed mathematics"
+      },
+      {
+        "label": "old_edge_W_permutation",
+        "detected_by": "external full C/W binding"
+      },
+      {
+        "label": "omit_H_lowering",
+        "detected_by": "resolved independent fixed-H map/geometry difference"
+      },
+      {
+        "label": "omit_H_potential",
+        "detected_by": "resolved independent fixed-H map/geometry difference"
+      },
+      {
+        "label": "omit_geometry_value",
+        "detected_by": "certificate proof differs from recomputed mathematics"
+      },
+      {
+        "label": "omit_history_dimension",
+        "detected_by": "certificate proof differs from recomputed mathematics"
+      },
+      {
+        "label": "omit_section_correction",
+        "detected_by": "certificate proof differs from recomputed mathematics"
+      },
+      {
+        "label": "ordinary_duration_32",
+        "detected_by": "A_RG2b requires duration 16"
+      },
+      {
+        "label": "ordinary_duration_8",
+        "detected_by": "A_RG2b requires duration 16"
+      },
+      {
+        "label": "out_of_range_s_-1/1000",
+        "detected_by": "shared parameter range"
+      },
+      {
+        "label": "out_of_range_s_1001/1000",
+        "detected_by": "shared parameter range"
+      },
+      {
+        "label": "outside_shared_witness_0_0",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_1",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_10",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_11",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_12",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_13",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_14",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_15",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_16",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_17",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_18",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_19",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_2",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_20",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_21",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_22",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_23",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_24",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_25",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_26",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_27",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_28",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_29",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_3",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_4",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_5",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_6",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_7",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_8",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_0_9",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_0",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_1",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_10",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_11",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_12",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_13",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_14",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_15",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_16",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_17",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_18",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_19",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_2",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_20",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_21",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_22",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_23",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_24",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_25",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_26",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_27",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_28",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_29",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_3",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_4",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_5",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_6",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_7",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_8",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1/7_9",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_0",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_1",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_10",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_11",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_12",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_13",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_14",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_15",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_16",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_17",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_18",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_19",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_2",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_20",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_21",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_22",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_23",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_24",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_25",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_26",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_27",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_28",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_29",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_3",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_4",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_5",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_6",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_7",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_8",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "outside_shared_witness_1_9",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "per_ball_not_pairwise",
+        "detected_by": "certificate proof differs from recomputed mathematics"
+      },
+      {
+        "label": "positional_chart_after_reordering",
+        "detected_by": "frozen joint domain: resource_agreement"
+      },
+      {
+        "label": "positive_W_outside_scaled_chart",
+        "detected_by": "full exact C/logW subject outside agreement"
+      },
+      {
+        "label": "postwriter_returned_section",
+        "detected_by": "injected prospective C+/W+ section"
+      },
+      {
+        "label": "prewriter_W_at_target",
+        "detected_by": "external full C/W binding"
+      },
+      {
+        "label": "reset_zero_log_error",
+        "detected_by": "whole log-W error"
+      },
+      {
+        "label": "sampled_remainder",
+        "detected_by": "certificate proof differs from recomputed mathematics"
+      },
+      {
+        "label": "scaled512",
+        "detected_by": "frozen joint domain: logW_scale"
+      },
+      {
+        "label": "source_chart_at_target",
+        "detected_by": "frozen joint domain: resource_agreement"
+      },
+      {
+        "label": "tau16_changes_section",
+        "detected_by": "unsupported A_RG2b coefficients"
+      },
+      {
+        "label": "terminal_nonidentity",
+        "detected_by": "independent geometry residual"
+      },
+      {
+        "label": "transported_source_H_as_target_authority",
+        "detected_by": "query star support"
+      },
+      {
+        "label": "unit_W_section_relabelled_as_transported_W",
+        "detected_by": "whole C/logW input displacement"
+      },
+      {
+        "label": "unscaled_logW_would_accept",
+        "detected_by": "shared-parameter full product norm"
+      },
+      {
+        "label": "writer_not_in_inverse",
+        "detected_by": "joint policy and complete physical state"
+      },
+      {
+        "label": "wrong_coordinate_W",
+        "detected_by": "certificate proof differs from recomputed mathematics"
+      },
+      {
+        "label": "wrong_depth_tail",
+        "detected_by": "native completion tail"
+      },
+      {
+        "label": "wrong_output_H",
+        "detected_by": "independent geometry residual"
+      },
+      {
+        "label": "zero_joint_maximum",
+        "detected_by": "reported full maximum state_residual"
+      },
+      {
+        "label": "zero_log_query_displacement",
+        "detected_by": "whole C/logW input displacement"
+      },
+      {
+        "label": "zero_residual",
+        "detected_by": "joint residual/tail/full shift error"
+      },
+      {
+        "label": "zero_tail",
+        "detected_by": "joint residual/tail/full shift error"
+      }
+    ],
+    "full_trajectory_runs": 0,
+    "continuous_residual_cells": 67,
+    "actual_event_old_W_lineage_and_seed": true,
+    "tube_boundary_witness_checks": 180,
+    "history_only_cold_warm_state_only_cases": 3,
+    "forward_geometry_reuse_used": false,
+    "joint_inverse": {
+      "resource_residual_upper": "6872017428750061275670225830601475398390630591434231868303570216898758351866750618210430569935706455838154368495296700422583269758358179487097368919977673348836705532144161228891/3255866422304616344765552632188114158762089024568314531443485259650408807528140659922574316831813618526821245406949824436469141432675471230646169947427163108444901161872077421124549944292877941762189949285100879873872435565174053364826112",
+      "history_residual_upper": "52328090004706639077429743508590651885667980445659697573708797595690680175797645355878716580171197667850455973397947321534549840514438619161816856959335745713325395573479749937603/3334007216439927137039925895360628898572379161157954080198128905882018618908816035760716100435777145371464955296716620222944400827059682540181678026165415023047578789757007279231539142955907012364482508067943300990845374018738230645581938688",
+      "geometry_residual_upper": "1086323314198304185547105294613620869834568255372107678316602667048487950740187904343421427679575458377429063854972741564098951714812432324982666124992240413959149313436001744285466359879/14663118806259180136662417374041517307249530456151374095074022247583264770740686929584785544102209728219832068720127856678091192707621568870627853333281064765702591645685356596360602245877237133437460484214653566707676443446649642811063698998514839191552",
+      "history_coordinates_checked": 256
+    },
+    "full_step_error": {
+      "current": {
+        "C_metric_error_upper": "20484339169795364415405365154159767/441711766194596082395824375185729628956870974218904739530401550323154944",
+        "scaled_logW_l2_error_upper": "42671360887406499145739809661020373/56539106072908298546665520023773392506479484700019806659891398441363832832"
+      },
+      "reset": {
+        "C_metric_error_upper": "5022113682401571580060269934017691945/113078212145816597093331040047546785012958969400039613319782796882727665664",
+        "scaled_logW_l2_error_upper": "5712303572274295076602450295795765195/14474011154664524427946373126085988481658748083205070504932198000989141204992"
+      }
+    },
+    "manufactured_exact_solution_claimed": false,
+    "unbounded_auxiliary_exponentiation_avoided": true,
+    "independent_history_derivative_columns": 16,
+    "shared_parameter_synthetic_separate_projections_rejected": true,
+    "W_direct_current_difference_upper": "50890702439673726306978284063625478642041666593130639360538555600047/113078212145816597093331040047546785012958969400039613319782796882727665664",
+    "W_section_current_difference_upper": "784674612473553679500904045112622150509548516975349543967/56539106072908298546665520023773392506479484700019806659891398441363832832"
+  },
+  "scope": "bounded joint inverse C/scaled-logW residuals and full writer, finite manufactured chains, unrounded time shift, history cache isolation, shared-parameter continuous domain and atomic lifecycle; both .5 campaigns deferred",
+  "deferred_campaigns": [
+    "C_RG2b.5",
+    "A_RG2b.5"
+  ],
+  "pending_campaign": {
+    "leaf": "P9-9.1a.6-A_RG2b.5",
+    "current": [
+      300,
+      302
+    ],
+    "reset": [
+      300,
+      302
+    ],
+    "expected_endpoints_verified": false
+  },
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2SourceBeat.json.xz",
+      "sha256": "faf266f447c0a1893b2ee7730dfdea481914fd15f53460e848d07ebd2c5b0675"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ARG2bDeclaration.json",
+      "sha256": "7f522590829eb3fe79e82be09cf34ede1b89b8cd7689be5808308759760cdc9a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ARG2bDirectDomain.json",
+      "sha256": "1e715a50fa56a0965876babc2e80f4b78317db4058efbe1cb5caad5c04a7c156"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bDirectDeclaration.json",
+      "sha256": "8b150f4d0fd1d1112146cdfc5a7ef7ba25ba9a86c91d02af465037180cba4330"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bDirectDomain.json",
+      "sha256": "4ae8eca4cdd5a2bde814f4cdcea2b5b775cdf84762d5bafb1d5422c54b2c73f9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierDomain.json",
+      "sha256": "998cf00702a0a772ff978c1cc13ba444fc8e722bab2284b15487eb1b8feb2abd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierProofs.json",
+      "sha256": "f6866257b8ded80d19454013a075ce013b4b48ab60d58b5d52900f43cc1d6dfd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/review/constructive-candidate/positive_candidate.py",
+      "sha256": "efa6eba9f08ad8cfec73d2e3fcd8b071374631c6ebdfc5e3610c3c0585a5502d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os.py",
+      "sha256": "2b5e8c403909d3acba3c5776c529d38dad433ba2c89e6d76adfc3bc079e2cf25"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_rg2b.py",
+      "sha256": "84c1ac0d62ca908304c3ab86ee2523ca7fa91c56c51af238eb26c13938ad584a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_basins.py",
+      "sha256": "6da2628f6f04bd112dbdd6eedfb9dc38661d7cc8f0a7532d211ba30e21769fd5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_c_rg2b.py",
+      "sha256": "0d99b77e0b3b23b711270195aebffedc4212fe639236e719bf8bc9fa08d5b283"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci.py",
+      "sha256": "3c403d943bb924fa4d392ea2dafc8b77a190f587c031903c0b9d78d3808bdc71"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci_campaign.py",
+      "sha256": "732c5968a4a0f9a7e4350a9144b9c16740785cf197b34e84fc8eeb38e78987b4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_continuation.py",
+      "sha256": "b26c6bd0f050ab710b663e025cc3f039ed81c68ac8f834d8c60a2b2bdaad3709"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_os_reference.py",
+      "sha256": "0fab09c6bfcc098c537e39c223380a1d70af2de2eef5156a2d1307fef81069ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_pc.py",
+      "sha256": "af04da3c975ff835f8e01482f166f772f4f98f718346d2f9fd569f8a3b2197d3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_positive.py",
+      "sha256": "15069ffca9b22a666ff67cd0b28ea740f9ed69f40de72154498d3e84eca4c64b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-Contract.md",
+      "sha256": "830d3ad1d2f0a0c5f23650e2c2cad6a32152afc271fce21c3486da2b890bcbfa"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-Preflight.json.xz",
+      "sha256": "d61cfc5985cd19eacf8ea51c482d4af6c954410f8b1e35c38881efbf78e45b1a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/arg2b_native_spark_oracle.py",
+      "sha256": "94c90c8e638bf6298a249c5236833cd636383d5f6c59d7168431cb5c20ba25d5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/arg2b_native_spark_pressure_oracle.py",
+      "sha256": "3d58469a4919fdec66ff5695df701fa27ae90a0a8d587a365cbd37168387a016"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/crg2b_native_spark_oracle.py",
+      "sha256": "d62f496e2a3e2556e9fd0f90a423a57cdd8a950a08ec3c9d1362abee7b15371f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a2_native_spark_numerics.py",
+      "sha256": "5ac8f8e203d4bfa6681dba80fa94c3c8e28c51664ae432a137fdbef3963ecace"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a4_native_spark_preflight.py",
+      "sha256": "eecbbc30bf29b1a6eb3f4633c42a22d46ece5464d7acbbf00ea4ba442ea0b43b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_arg2b_preflight.py",
+      "sha256": "c96baceee9e965e44e2fcdbbecdf72142c75c80d8ba236211e177857d1e509e0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_arg2b_pressure.py",
+      "sha256": "740665fc7f230574458ff7133decba2f0c3600be5a786805ca07750298379f9a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_arg2b_subjects.py",
+      "sha256": "4ab901a2ad71effa7581f42d817a4439d341f682ff7d85a922f97b1a0f07c03a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_arg2b_native_spark_pressure.py",
+      "sha256": "258e00f75f87c5a9fa83c9566314f5fb468180ae40296918a562b96ed5d665c7"
+    },
+    {
+      "path": "specs/grc-v4-spark-native-a-rg2b-numerical-policy.md",
+      "sha256": "a9ddc0d12576bc337211585c7257fd892ef587dc06e8ab00cbfd1624b3afe274"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_sparks.py",
+      "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4.py",
+      "sha256": "aefbd17e96e4331b35dd6a47826547b36eddf4b6f495741e375b77a2153d2dea"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion.py",
+      "sha256": "43856bbf9f56ff7dcda8a15be29f7d64e5c504678b17fb81116c9b726b1a4205"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_aci.py",
+      "sha256": "bcf5ae0b370b40052bd0b6ae2a6ef2101fba2ca68c583ad359261d17f1961dea"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_acipc.py",
+      "sha256": "f0e0dfbb3e15cac82c70f371f57743ce765155c8e09a002ed94942c888d9a934"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_aos.py",
+      "sha256": "2612165d21efe0c0e94cfd9b3605895dfb655a76b17e972a277406e730e388e9"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_apc.py",
+      "sha256": "89e80a7770032898273b69803b4f78f90cc757cf62695d78c84de49816d1c564"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_arg2b.py",
+      "sha256": "522c1a01bb6846e2ea393e09cf413e0cc3d2cb1e68ac0b4f39bf9ed551034926"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_certificate.py",
+      "sha256": "5726571b20ede73bb48fbd3402a3092eb5cc823336b63d9a91cc98b85d2f2bbf"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_codec.py",
+      "sha256": "41dcc5ed8dc1e5744d8f9d1de763ad3ba3904f9cd7e29e5adf705f35f0502785"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_cpc.py",
+      "sha256": "5d7407fad0fcf7e6b3cfbab9aa8ae21692920d7525865a11366de4768301b255"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_crg2b.py",
+      "sha256": "e228e3b9ad45c188547ce58099aa89e8ff0d028b0acd5324096cd291d5ad73d8"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_apc_event.py",
+      "sha256": "4835e58fd99baf2708c65eb36ccca91e2d451ea0c6070b6b1a4fe073a87eb376"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_carrier_event.py",
+      "sha256": "b330b2b118b074bc9b13b335a542a2dd08d4420ad8e7b6dc3da81aac87a8fdad"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_conductance_event.py",
+      "sha256": "63d8f2eaa84d521a84b972a1f9e6373c4cb09719f836f1bf66830fd784c4bf92"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_contracts.py",
+      "sha256": "565fed67131d04f4e6c8e24d19c60c9a327329ca3015009956262ea9a3e67836"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_owner.py",
+      "sha256": "9f31bcc43321aef3f22c088e2035ef639ed70158d84f4515610dbef2c9a87aed"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark.py",
+      "sha256": "ff413a2f826d645b11c53a4588fd1da3a0325d4e6c43363a752bc91c6bb2087e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aci.py",
+      "sha256": "d3a3054b84ce12a9c5669b2c2ff1cf44be82cfcb910d1a0f5eff5fb2bb211a5b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aci_math.py",
+      "sha256": "b92b16e05def4e4b06a7ad871dbcc7221a04d688211e3a4eac9e5e86ef307e56"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_acipc.py",
+      "sha256": "5ac8f712742185a117fa7c672cca9cd3cbc65456996b33965771594ced9db2db"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_acipc_math.py",
+      "sha256": "523bb72597f57ab7452cfa51e89f11ccda9471b030a2bb060eabd8d3ad529914"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_adaptive_carrier.py",
+      "sha256": "5fc5839ddc6c0434d535b92fac3ec664f582439a9153887ba27aa9509d448e82"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aos.py",
+      "sha256": "3e0b4183952e84c9e8460060a722ba69fd7126cf77a25da93760dba638b19be5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aos_math.py",
+      "sha256": "b5e2b24e769b35fa2fa828a91d519634dfcbf6906950f395c5a9ccc5ca830a1d"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_apc.py",
+      "sha256": "b20170f21509a03ac87dcc3b8de93c6dc6a0fd4c5a3b57eaeb336cf9932d01dd"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_apc_math.py",
+      "sha256": "e2b7c4ca88c7594ac72efe711af6c6a04ec91f52cf8ba014fdb52dc9ae9716dc"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_arg2b.py",
+      "sha256": "dc76e0dc1814d6a3bc306be1ee16a9f46fb0365b04c3c8849a244463eb0da6b4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_arg2b_math.py",
+      "sha256": "a49d94da04f74d5c3975d282bb653c29ccd3ab5906fb7a5173b3716516a635a6"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_carrier.py",
+      "sha256": "62726f519d59cea703f373cfdfa41b0c6b5ddd02bc1a31c47955ead7e444ff7c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cci.py",
+      "sha256": "8e25e09507cfd056bc8a68e3e14715ab40dbb1db6e7514634fea04b0d801c07d"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_ccipc.py",
+      "sha256": "1f61d78988e0a0110c717bfa59f9d65f57f09da7e338b66ce6e094c661f230e1"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_conductance.py",
+      "sha256": "45ee5770cad5f14ff376ff5c7fed28db811cdb6ae7c192cf44b8028eaeb4f606"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cos.py",
+      "sha256": "0ff7642925f324b8041d5f4660ccea1627e4eb0bf15faf26799c5ca2b77901de"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cpc.py",
+      "sha256": "0bd1e8a24fbad058a5fdac406404359e8b396a20c9b227724a6f5bac7f3736bd"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_crg2b.py",
+      "sha256": "3850083b7a20487ec147529a57dc6369074acaf9867f812e3ab90f08402b468f"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_crg2b_math.py",
+      "sha256": "04f98d84ab6ba9cb1e2966d4908e15e4cdaa7290c6d5b73f385f7f46e1fb91e3"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_state.py",
+      "sha256": "6b36c78b1b66370bab4fdd2edea88ac45cd9d459f1772488556f2a3b5302611f"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_spark_completion.py",
+      "sha256": "e117527ceae9ef3961f093049d998ac3f98fcfbb364d275fd626c6b2caa18dd4"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_arg2b.py",
+      "sha256": "540b747a39c7928bb65f31cdafda5c923ddd049904d777b9cc686444bc8d1b50"
+    }
+  ],
+  "evidence": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-PressureSamples.json.xz",
+    "sha256": "2229501d6cb0c624159abf4a6d192f1e3f44df13cff59478582865be3e42ca68"
+  },
+  "record_digest": "bb6e26bd433968357ded4cc5904db860c37e5ff5c11464750175ae09bac434aa"
+}

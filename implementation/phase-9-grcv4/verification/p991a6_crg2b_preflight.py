@@ -634,6 +634,7 @@ def run():
 
 
 def check(root=ROOT, *, numerical=False):
+    from p991a6_arg2b_epoch import previous_bytes
     root = Path(root)
     value = json.loads(lzma.decompress((root / RECORD).read_bytes()))
     need(
@@ -649,7 +650,7 @@ def check(root=ROOT, *, numerical=False):
     )
     for row in [*value["source_bindings"], value["evidence"]]:
         need(
-            sha256((root / row["path"]).read_bytes()).hexdigest() == row["sha256"],
+            sha256(previous_bytes(root, row["path"])).hexdigest() == row["sha256"],
             "changed C_RG2b input: " + row["path"],
         )
     need(

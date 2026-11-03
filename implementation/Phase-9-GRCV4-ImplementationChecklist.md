@@ -4324,7 +4324,7 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     - [x] Review and accept A_CI_PC .5 separately; user requested commit on
       2026-11-02. Historical execution flags remain unchanged; aggregate support
       remains false. All 36 tests and the implementation-boundary audit pass.
-  - [ ] P9-9.1a.6-C_RG2b: .1–.4 and pressure accepted; .5 pending (2026-11-03).
+  - [ ] P9-9.1a.6-C_RG2b: .1–.4 and pressure accepted; .5 deferred (2026-11-03).
     - [x] .1: Bind quartic C, duration 8 and the frozen Lipschitz section/completion.
     - [x] .2: Implement exact incidence and certified finite-chain section reads.
     - [x] .3: Verify the direct continuous domain, full-map error and lifecycle.
@@ -4342,8 +4342,26 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
       [Pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-PressureReview.md).
     - [x] Review and accept .1–.4 and pressure; user requested commit on
       2026-11-03. Sealed execution records retain their original statuses.
-    - [ ] .5: Actual source-to-completion campaign after fresh profiling.
-  - [ ] P9-9.1a.6-A_RG2b.
+    - [ ] .5: Deferred together with A_RG2b .5; fresh profiling required before execution.
+  - [ ] P9-9.1a.6-A_RG2b: .1–.4 and pressure accepted; .5 deferred (2026-11-03).
+    - [x] .1: Bind the joint C/64 log W completion, duration 16 and declared source.
+    - [x] .2: Implement full inverse-section reads, exact continuity and atomic W writer.
+    - [x] .3: Verify the continuous 30-dimensional domain, full-step error and lifecycle.
+    - [x] .4: Independently audit 12+12 bounded samples, verify caches/cold replay,
+      profile complete costs and update the side-tool. All 21 native, 20 combined
+      publication/continuity and 236 predecessor tests pass. Preflight 342.35s /
+      287.7 MiB; 1.31 MiB compressed sample evidence. No source-to-completion run.
+      [Verification](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-Verification.md).
+      [Contract](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-Contract.md).
+    - [x] Bounded pressure: 18 tests, 398 detected faults/mutations and 180 joint
+      tube-boundary checks; 234.95s / 271.0 KiB. Independent joint C/Y inverse,
+      complete writer, manufactured finite chains, shared-s membership,
+      time-shift/W-feedback and atomic failures; runtime/preflight unchanged.
+      [Pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-PressureReview.md).
+    - [x] Review and accept .1–.4 and pressure; user requested commit on
+      2026-11-03. Sealed execution records retain their original statuses.
+      All 12 publication checks, independent replay and the boundary audit pass.
+    - [ ] .5: Deferred together with C_RG2b .5 at the user's request.
 - [ ] P9-9.1a.7: Reconcile the newly supported exact declarations/capability in a
   scoped P9-9.6 supplement. Link affected Tranche 8/9 checks and Tranche 10
   follow-through without reopening accepted baseline campaigns. Preserve
