@@ -1,9 +1,40 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work: A_RG2b native .1–.4 and pressure accepted — 2026-11-03
+## Next work: complete C_RG2b .5, then A_RG2b .5 — 2026-11-03
 
-Continue on `impl/grc9v4-native-spark-completion` after accepted C_RG2b
-`86a68d3d`. The [A_RG2b verification](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-Verification.md)
+The native implementation branch was merged into `main` with `--no-ff` at
+`79fe3df1`; its accepted tip is `bd1b0db6`. All ten families have accepted
+bounded native implementation; **the two RG2b .5 campaigns remain unrun**.
+Resume from the merged baseline with these two steps, in order:
+
+1. **P9-9.1a.6-C_RG2b.5:** complete the public native source → event →
+   continuation → completion path for current and reset. Research entry/window
+   end is 390→392 at duration 8; these are expectations to verify, not stopping
+   conditions. Start with the accepted [C_RG2b verification](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Verification.md)
+   and [pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-PressureReview.md).
+2. **P9-9.1a.6-A_RG2b.5:** complete the same full public path with joint C/W
+   history, full inverse writer and joint continuous-domain admission. Research
+   entry/window end is 300→302 for both roles at duration 16, also unverified
+   natively. Start with the accepted [A_RG2b verification](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-Verification.md)
+   and [pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-PressureReview.md).
+
+**Before either long run**, freshly profile early and late states, confirm cache
+and optimization effectiveness, and report an estimate that includes independent
+checks, cold recovery and evidence production. Retain the exact-rational/FLINT
+policies and existing tolerances. The prior cost estimates below are planning
+inputs, not permission to skip fresh profiling. A one-hour profiling target is
+not an artificial correctness cutoff.
+
+For each campaign, retain compact useful evidence and reproducible generators,
+verify actual completion and rollback/replay behavior, and update the side-tool
+API/browser/notebook, plan, checklist and handoff. Review each .5 result separately.
+P9-9.1a.7 aggregate support reconciliation follows these campaigns and remains a
+separate step. This handoff update starts neither long run.
+
+## Previous work: A_RG2b native .1–.4 and pressure accepted — 2026-11-03
+
+Implemented on `impl/grc9v4-native-spark-completion` after accepted C_RG2b
+`86a68d3d`; accepted as `bd1b0db6` and merged into `main` at `79fe3df1`. The [A_RG2b verification](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-Verification.md)
 implements exact C/W, the joint C/64 log W Lipschitz section, duration 16,
 full fresh-resource writer and a 30-dimensional continuous domain. No supporting
 physical tail. The section uses Arb256 depth-16 chains; all 30 physical
@@ -9096,9 +9127,10 @@ never overwrite published execution evidence.
 Suggested first message in the new conversation:
 
 > Read `implementation/Phase-9-GRCV4-Handoff.md` and inspect the current checkout.
-> Resume from the first-group 8.5 work at the top of this file. Check acceptance and
-> checkout state before proceeding to C_CI, then A_CI and A_PC; scoped 8.6 follows.
-> Do not silently close all-ten parents or rerun completed numerical campaigns.
-> Do not rerun completed numerical evidence for documentation or acceptance.
-> C_OS, C_CI and A_CI are accepted predecessors. The six second-group families
-> and aggregate `.h` remain separate; do not infer acceptance, commit or merge.
+> Resume with P9-9.1a.6-C_RG2b.5, then P9-9.1a.6-A_RG2b.5, from the merged
+> native baseline. Their .1–.4 implementations and pressure audits are accepted.
+> Freshly profile and report full-path costs before either long run; verify caching
+> and preserve exact-rational/FLINT policies. Research endpoints are expectations,
+> not hardcoded stopping conditions. Keep useful compressed evidence and update
+> the side-tool and handoff. Do not rerun accepted campaigns or infer aggregate
+> native support; P9-9.1a.7 reconciliation remains separate.

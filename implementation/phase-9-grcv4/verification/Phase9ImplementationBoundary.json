@@ -156,7 +156,7 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "935a0b1f5399ecca21fef6983b029f8b1f68f5f846db1cef80d38f4d966046de"
+      "sha256": "7fa94d4100679d8f0296759f19e5feb62823376f34fe125621239f18483efc8a"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
@@ -2012,7 +2012,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/EarlierSC3Sources.json",
-      "sha256": "e9e3bdfc10155a6207dbdb9d89cb76b693e17aa5d5f2df69da7a529b604d48b5"
+      "sha256": "1ad2e47d3a9fe61e5222834f244d21bf0adbe39797d869ebd509db39b9dfc58d"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/EarlierSC3Validation.json",
@@ -3704,7 +3704,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_earlier_sc3_metadata.py",
-      "sha256": "a711d05a5ab7b0b10162f2af251453e46803e9fd582f9a0c8b23ed6d06d8958f"
+      "sha256": "1b58c5cc75de9aa7f1298860e8260323a4d3946c8e5aa9c887c81120f8c35973"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_aci.py",
@@ -10832,7 +10832,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-SourceEpoch.json",
-      "sha256": "ce221ec05a4e7301fd42a96edde56eba9830955048f56c2fb62928d47b12e618"
+      "sha256": "b40e925d560c89aee519ec6b92cc5a12b1c748e830dcbbaec8cb6b30b4c8fc69"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-Verification.md",
@@ -15380,7 +15380,7 @@
     }
   ],
   "baseline_commit": "6e0a507c0fd7e0758392514acce5e79312a2069c",
-  "record_digest": "e98c0553d7b825de07d1e7288343ced254ee2862559a7490bfe768a80ed6399d",
+  "record_digest": "8a68ccace53f1a14eed21e93e491458658e11e0c1b5442dc36e9875bb57ced66",
   "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
   "schema": "phase9_implementation_boundary_v1"
 }
