@@ -3572,3 +3572,23 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
 - [x] Pressure rehashed scope/claim/debt changes, source and propagation drift,
   multiple-obligation errors and API/notebook/browser behavior. Native completion
   and G4 remain pending; C_PC is the next research family.
+
+## Native RG2b completion campaigns — 2026-11-03
+
+The C_RG2b.5 and A_RG2b.5 source-to-completion results now have separate pinned
+API views, a shared browser renderer and the `spark-native-rg2b-campaigns`
+notebook cell. The views expose actual entry/window counts, current/reset gain,
+complete cold replay, compact-evidence scope and original execution flags. Historical
+preflight/pressure views retain their original evidence and source identities.
+
+C_RG2b passes 390→392 and A_RG2b passes 300→302 for both roles, with gains
+one/zero and exact cold publication recovery. Every state, flux, represented
+error, proof summary and complete diagnostic hash remains inspectable; full
+omitted-chain reproduction is an explicit numerical operation. Reading a view
+checks retained evidence and does not rerun its trajectory.
+
+All six focused API/browser/notebook, binding-mutation, stale-result and
+preserved-source checks pass. The user accepted both bounded campaigns by
+requesting commit on 2026-11-03. Acceptance is recorded separately in their
+reviews, plan, checklist and handoff; sealed execution/projection flags are
+unchanged. P9-9.1a.7 aggregate support remains separate.

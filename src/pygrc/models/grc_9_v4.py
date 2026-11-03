@@ -285,7 +285,7 @@ class GRC9V4(GRCV4):
     def step(self):
         with self._lock:
             if spark.enabled(self._operation):
-                duration = {"C_RG2b": "8", "A_RG2b": "16"}.get(self.configuration.reference.profile.FAMILY, "32")
+                duration = self.configuration.policy.step_duration
                 return spark.transact(self._operation, dict(kind="step", duration=duration))
             if self.compatibility_branch == "disabled_grc9v3":
                 return self._operation.legacy_operation(

@@ -4717,9 +4717,9 @@ rules. This is an engineering handoff, not another scientific-definition gate.
 | P9-9.1a.6-A_OS | 375→377 | 372→374 | 32 | Native .5 accepted; committed `4587185f` |
 | P9-9.1a.6-A_CI | 375→377 | 372→374 | 32 | Native .5 accepted; committed `5b92524c` |
 | P9-9.1a.6-A_PC | 375→377 | 372→374 | 32 | Native .5 accepted 2026-11-02 |
-| P9-9.1a.6-A_CI_PC | 375→377 | 372→374 | 32 | .1–.4 verified, review pending; .5 unrun |
-| P9-9.1a.6-C_RG2b | 390→392 | 390→392 | 8 | .1–.4 and pressure accepted; .5 deferred |
-| P9-9.1a.6-A_RG2b | 300→302 | 300→302 | 16 | .1–.4 and pressure accepted; both RG2b .5 campaigns deferred |
+| P9-9.1a.6-A_CI_PC | 375→377 | 372→374 | 32 | .1–.5 accepted; campaign committed `7252dd6d` |
+| P9-9.1a.6-C_RG2b | 390→392 | 390→392 | 8 | .1–.5 accepted 2026-11-03 |
+| P9-9.1a.6-A_RG2b | 300→302 | 300→302 | 16 | .1–.5 accepted 2026-11-03 |
 
 These are accepted scientific regression targets for a 12-vertex/13-edge source
 and 15-vertex/16-edge target, not native results or universal stopping bounds.
@@ -5393,3 +5393,28 @@ A_RG2b .1–.4 selected on 2026-11-03 after C_RG2b commit `86a68d3d`. Preserve t
 The A_RG2b bounded implementation is verified: 21 native, 20 combined publication/continuity and 236 predecessor tests, 12+12 independently audited target beats, full joint continuous-domain proof and source-bound side-tool. Sampling/certification/recovery took 342.35s; compressed evidence is 1.31 MiB. Mean public native beats were 3.65/3.55s current/reset. The measured 302+302 forecast is 101.9 minutes including cold replay and independent-check reserves, with a 221.1-minute conservative allowance; forward prefix work alone extrapolates to about 38 minutes. These are planning estimates, not endpoints. Before a later .5 campaign, reprofile late-state and journal-recovery costs and plan compact retained evidence. The user accepted A_RG2b .1–.4 and pressure for commit on 2026-11-03. Sealed execution records retain their original statuses; both RG2b .5 campaigns remain deferred.
 
 The A_RG2b .1–.4 pressure supplement passes 18 tests with 398 detected faults/mutations and 180 joint tube-boundary checks. It independently owns every inverse-history residual and the full writer, separates direct W and section-mediated feedback, checks shared-parameter membership and continuous Taylor operands, and injects late atomic faults. Runtime/preflight and scientific inputs remain unchanged; 234.95s / 271.0 KiB retained operands. Both .5 campaigns remain deferred.
+
+### RG2b full campaigns — accepted 2026-11-03
+
+The user authorized C_RG2b.5 and A_RG2b.5 together after their accepted .1–.4
+work. Execute the [C plan](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b.5-Plan.md)
+and [A plan](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b.5-Plan.md) in separate
+FLINT processes, with measured complete-path profiles and compact evidence.
+The typed public step now uses the admitted policy duration, matching ordinary
+`step()`; wrong durations reject atomically. All finite-chain and physical-map
+checks remain. A separately selected held-current diagnostic comparison handles
+non-nested valid interval expressions explicitly; it does not replace physical
+current admission or recertify the stored diagnostic box.
+
+C_RG2b's complete campaign passes: current/reset 390→392, gains one/zero,
+784 target steps, 393+393 cold journal steps, 36.23 minutes and 2.30 MiB of
+compressed evidence. A_RG2b also passes: current/reset 300→302, gains one/zero,
+604 target steps, 303+303 cold journal steps, 67.34 minutes and 2.15 MiB compressed.
+Its checker preserves the C part of the joint metric exactly, avoiding a spurious
+interval comparison failure. The user accepted both bounded campaigns by requesting
+commit on 2026-11-03. Sealed execution flags remain unchanged; P9-9.1a.7
+aggregate support reconciliation remains a separate next task.
+The typed public-duration regression covers all ten families. Retained checks,
+selected numerical rechecks, diagnostic reconstruction and actual side-tool
+API/browser/notebook views preserve the distinction between evidence integrity,
+new numerical execution, user acceptance and aggregate support.

@@ -4324,7 +4324,7 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     - [x] Review and accept A_CI_PC .5 separately; user requested commit on
       2026-11-02. Historical execution flags remain unchanged; aggregate support
       remains false. All 36 tests and the implementation-boundary audit pass.
-  - [ ] P9-9.1a.6-C_RG2b: .1–.4 and pressure accepted; .5 deferred (2026-11-03).
+  - [x] P9-9.1a.6-C_RG2b: .1–.5 and pressure accepted (2026-11-03).
     - [x] .1: Bind quartic C, duration 8 and the frozen Lipschitz section/completion.
     - [x] .2: Implement exact incidence and certified finite-chain section reads.
     - [x] .3: Verify the direct continuous domain, full-map error and lifecycle.
@@ -4342,8 +4342,13 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
       [Pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-PressureReview.md).
     - [x] Review and accept .1–.4 and pressure; user requested commit on
       2026-11-03. Sealed execution records retain their original statuses.
-    - [ ] .5: Deferred together with A_RG2b .5; fresh profiling required before execution.
-  - [ ] P9-9.1a.6-A_RG2b: .1–.4 and pressure accepted; .5 deferred (2026-11-03).
+    - [x] .5 execution: both histories 390→392, current gain one/reset gain zero;
+      784 target steps independently audited, 393+393 cold-replayed journal steps,
+      live-window rollback/retry and exact publication recovery. 36.23 minutes,
+      2.30 MiB compressed. [Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b.5-Review.md).
+    - [x] Review and accept C_RG2b .5; user requested commit on 2026-11-03.
+      Sealed execution flags remain unchanged; aggregate support remains separate.
+  - [x] P9-9.1a.6-A_RG2b: .1–.5 and pressure accepted (2026-11-03).
     - [x] .1: Bind the joint C/64 log W completion, duration 16 and declared source.
     - [x] .2: Implement full inverse-section reads, exact continuity and atomic W writer.
     - [x] .3: Verify the continuous 30-dimensional domain, full-step error and lifecycle.
@@ -4361,7 +4366,12 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     - [x] Review and accept .1–.4 and pressure; user requested commit on
       2026-11-03. Sealed execution records retain their original statuses.
       All 12 publication checks, independent replay and the boundary audit pass.
-    - [ ] .5: Deferred together with C_RG2b .5 at the user's request.
+    - [x] .5 execution: both histories 300→302, current gain one/reset gain zero;
+      604 target steps independently audited, 303+303 cold-replayed journal steps,
+      full C/W metric, both section reads/writer and live-window rollback/retry.
+      67.34 minutes, 2.15 MiB compressed. [Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b.5-Review.md).
+    - [x] Review and accept A_RG2b .5; user requested commit on 2026-11-03.
+      Sealed execution flags remain unchanged; aggregate support remains separate.
 - [ ] P9-9.1a.7: Reconcile the newly supported exact declarations/capability in a
   scoped P9-9.6 supplement. Link affected Tranche 8/9 checks and Tranche 10
   follow-through without reopening accepted baseline campaigns. Preserve

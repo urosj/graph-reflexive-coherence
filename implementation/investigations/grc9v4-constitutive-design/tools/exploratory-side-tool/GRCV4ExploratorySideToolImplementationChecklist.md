@@ -2943,3 +2943,19 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
 - [x] Pressure rehashed scope/claim/debt changes, source and propagation drift,
   multiple-obligation errors and API/notebook/browser behavior. Native completion
   and G4 remain pending; C_PC is the next research family.
+
+## Native RG2b completion campaigns — 2026-11-03
+
+- [x] Publish C_RG2b.5 and A_RG2b.5 separately through pinned campaign APIs,
+  the shared browser renderer and the `spark-native-rg2b-campaigns` notebook cell.
+- [x] Preserve historical preflight/pressure views and source identities;
+  expose actual entry, positive window, role gain and complete cold replay.
+- [x] Distinguish retained integrity from explicit numerical reconstruction
+  of omitted finite chains; retain exact states, proof summaries and selected diagnostics.
+- [x] Verify changed bindings/scope rejection, browser stale-result cleanup,
+  HTTP downloads and notebook clearing. Aggregate support remains P9-9.1a.7.
+
+All six focused publication/continuity checks pass. Both endpoint records are
+verified. The user accepted both bounded campaigns through the commit request
+on 2026-11-03. Sealed execution/projection flags remain historical;
+P9-9.1a.7 aggregate support remains separate.

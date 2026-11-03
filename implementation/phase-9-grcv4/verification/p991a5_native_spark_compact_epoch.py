@@ -48,7 +48,7 @@ def seal(value):
 
 
 def manifest(root):
-    successor = lambda root, name: (root / name).read_bytes()
+    from p991a6_rg2b_campaign_epoch import previous_bytes as successor
 
     root = Path(root).resolve()
     return seal(
@@ -76,7 +76,7 @@ def previous_bytes(root, name):
     The complete manifest is independently checked at publication; unchanged
     sources pass through for the historical caller's own content check.
     """
-    successor = lambda root, name: (root / name).read_bytes()
+    from p991a6_rg2b_campaign_epoch import previous_bytes as successor
 
     root = Path(root).resolve()
     if name not in CHANGED:
@@ -145,10 +145,14 @@ def git_blob(root, revision, name):
 def validated_history(root):
     """Authenticate a fresh live snapshot against every frozen before/after edge."""
     root = Path(root).resolve()
+    import p991a6_rg2b_campaign_epoch as latest
+    successor = json.loads((root / latest.PATH).read_bytes())
+    if successor != latest.manifest(root):
+        raise ValueError("unbound RG2b campaign successor")
     current = json.loads((root / PATH).read_bytes())
     if current != manifest(root):
         raise ValueError("unbound C_OS storage successor")
-    epochs = [(SELF, current)]
+    epochs = [(latest.SELF, successor), (SELF, current)]
     for checker, filename in HISTORY:
         name = "implementation/phase-9-grcv4/tranche-9/" + filename
         raw = (root / name).read_bytes()

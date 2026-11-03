@@ -1,35 +1,50 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Next work: complete C_RG2b .5, then A_RG2b .5 — 2026-11-03
+## Current work: both RG2b native campaigns accepted — 2026-11-03
 
-The native implementation branch was merged into `main` with `--no-ff` at
-`79fe3df1`; its accepted tip is `bd1b0db6`. All ten families have accepted
-bounded native implementation; **the two RG2b .5 campaigns remain unrun**.
-Resume from the merged baseline with these two steps, in order:
+Branch: `impl/grc9v4-rg2b-spark-completion-campaigns`, from `main` at
+`7152812a`. Both authorized `.5` campaigns completed. They ran in independent
+single-threaded FLINT processes, concurrently where possible. Current/reset were
+sequential within each family for paired accounting and cold-replay controls.
 
-1. **P9-9.1a.6-C_RG2b.5:** complete the public native source → event →
-   continuation → completion path for current and reset. Research entry/window
-   end is 390→392 at duration 8; these are expectations to verify, not stopping
-   conditions. Start with the accepted [C_RG2b verification](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-Verification.md)
-   and [pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-PressureReview.md).
-2. **P9-9.1a.6-A_RG2b.5:** complete the same full public path with joint C/W
-   history, full inverse writer and joint continuous-domain admission. Research
-   entry/window end is 300→302 for both roles at duration 16, also unverified
-   natively. Start with the accepted [A_RG2b verification](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-Verification.md)
-   and [pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-PressureReview.md).
+| Family | Current entry → completion | Reset entry → window end | Cold journal steps per role | Campaign time | Compressed streams |
+| --- | --- | --- | ---: | ---: | ---: |
+| C_RG2b | 390 → 392, gain 1 | 390 → 392, gain 0 | 393 | 36.23 min | 2.30 MiB |
+| A_RG2b | 300 → 302, gain 1 | 300 → 302, gain 0 | 303 | 67.34 min | 2.15 MiB |
 
-**Before either long run**, freshly profile early and late states, confirm cache
-and optimization effectiveness, and report an estimate that includes independent
-checks, cold recovery and evidence production. Retain the exact-rational/FLINT
-policies and existing tolerances. The prior cost estimates below are planning
-inputs, not permission to skip fresh profiling. A one-hour profiling target is
-not an artificial correctness cutoff.
+Each cold replay reproduces the complete saved publication exactly. Every target
+transition receives independent section/physical-map checks, exact incidence,
+charge/positivity and full-state membership/classification checks. The actual
+pending-window failure and once-only recovery controls pass. Research endpoints
+were expectations, not stopping/admission counters. No physical supporting tail,
+precision change, relaxed threshold or larger-graph claim was introduced.
 
-For each campaign, retain compact useful evidence and reproducible generators,
-verify actual completion and rollback/replay behavior, and update the side-tool
-API/browser/notebook, plan, checklist and handoff. Review each .5 result separately.
-P9-9.1a.7 aggregate support reconciliation follows these campaigns and remains a
-separate step. This handoff update starts neither long run.
+Read the [C review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b.5-Review.md) and
+[A review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b.5-Review.md). The user accepted both bounded results by requesting commit on 2026-11-03.
+Sealed execution records and their projected historical flags remain unchanged;
+this acceptance is recorded in the reviews, plan and checklist. P9-9.1a.7
+aggregate support reconciliation is the next separate task; it has not started.
+
+The reviews explain the public duration fix and bounded checker/harness
+corrections. The typed public API now reads the selected policy duration instead
+of hardcoding 32. Pre-step checkpoints no longer depend on a distance heuristic.
+The A metric checker keeps the C quadratic form exactly rational, avoiding an
+artificial interval excess. Failed development bulk was removed; the informative
+beat-205 metric state remains as a small regression. Native physical kernels,
+accepted earlier evidence and scientific authorities are unchanged.
+
+Actual API/browser/notebook campaign views and commands are documented in
+[NativeSparkRG2bCampaigns](./investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/NativeSparkRG2bCampaigns.md).
+All exact physical states/fluxes, error/proof summaries and full diagnostic hashes
+are retained. Ten full diagnostic samples and eight boundary checkpoints are
+kept per family. Omitted inverse-chain operands require explicit numerical
+reconstruction with exact hash equality; inspecting retained evidence does not
+silently rerun them. No artifact exceeds the 10 MB retention-review threshold.
+
+Use the common runner for retained checks/reconstruction. A's authorized new-run
+entry is `p991a6_arg2b_campaign.py --profile` / `--run`; C uses the common runner's
+`C_RG2b --profile` / `--run`. Primary records refuse overwrite. Do not rerun the
+completed campaigns merely to accept or commit them.
 
 ## Storage maintenance: compact C_OS campaign evidence — 2026-11-03
 
@@ -9142,10 +9157,8 @@ never overwrite published execution evidence.
 Suggested first message in the new conversation:
 
 > Read `implementation/Phase-9-GRCV4-Handoff.md` and inspect the current checkout.
-> Resume with P9-9.1a.6-C_RG2b.5, then P9-9.1a.6-A_RG2b.5, from the merged
-> native baseline. Their .1–.4 implementations and pressure audits are accepted.
-> Freshly profile and report full-path costs before either long run; verify caching
-> and preserve exact-rational/FLINT policies. Research endpoints are expectations,
-> not hardcoded stopping conditions. Keep useful compressed evidence and update
-> the side-tool and handoff. Do not rerun accepted campaigns or infer aggregate
-> native support; P9-9.1a.7 reconciliation remains separate.
+> Both P9-9.1a.6-C_RG2b.5 and P9-9.1a.6-A_RG2b.5 native campaigns are accepted
+> on `impl/grc9v4-rg2b-spark-completion-campaigns`. Read their reviews and inspect
+> the current checkout. Retained checks are separate from numerical reconstruction.
+> Do not repeat completed trajectories for bookkeeping. P9-9.1a.7 aggregate support
+> reconciliation is the next separate task; it is not already granted.

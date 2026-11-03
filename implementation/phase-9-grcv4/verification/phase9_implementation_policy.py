@@ -5511,3 +5511,25 @@ PATHS = (PATHS - frozenset({
     PHASE + 'tranche-9/P9-9.1a.5-DiagnosticSamples.jsonl.xz',
     PHASE + 'tranche-9/P9-9.1a.5-CompactReview.md',
 })
+
+# Parallel native RG2b .5 campaigns; acceptance and aggregate support are separate.
+PATHS = PATHS | frozenset({
+    *(HERE + name for name in (
+        "p991a6_rg2b_campaign.py", "p991a6_rg2b_campaign_epoch.py",
+        "test_p991a6_rg2b_campaign.py", "test_p991a6_rg2b_campaign_surface.py",
+        "test_p991a6_rg2b_duration.py",
+        "p991a6_arg2b_campaign.py", "test_p991a6_arg2b_campaign_metric.py",
+    )),
+    *(PHASE + "tranche-9/P9-9.1a.6-" + family + ".5-" + name
+      for family in ("CRG2b", "ARG2b")
+      for name in (
+          "Plan.md", "Review.md", "Cost.json", "Campaign.json",
+          "current.jsonl.xz", "reset.jsonl.xz", "checkpoints.jsonl.xz",
+          "inputs.jsonl.xz", "diagnostics.jsonl.xz",
+      )),
+    PHASE + "tranche-9/P9-9.1a.6-RG2b.5-SourceEpoch.json",
+    PHASE + "tranche-9/P9-9.1a.6-ARG2b.5-MetricRegression.json.xz",
+    SIDE + "docs/NativeSparkRG2bCampaigns.md",
+    SIDE + "tool/phase9-web/spark-native-rg2b-campaign.js",
+    SIDE + "tool/src/grcv4_explorer/spark_native_rg2b_campaign.py",
+})

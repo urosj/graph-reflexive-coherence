@@ -1,0 +1,459 @@
+{
+  "schema": "native-rg2b-campaign-cost-v1",
+  "family": "A_RG2b",
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2SourceBeat.json.xz",
+      "sha256": "faf266f447c0a1893b2ee7730dfdea481914fd15f53460e848d07ebd2c5b0675"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ARG2bDeclaration.json",
+      "sha256": "7f522590829eb3fe79e82be09cf34ede1b89b8cd7689be5808308759760cdc9a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ARG2bDirectDomain.json",
+      "sha256": "1e715a50fa56a0965876babc2e80f4b78317db4058efbe1cb5caad5c04a7c156"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bDirectDeclaration.json",
+      "sha256": "8b150f4d0fd1d1112146cdfc5a7ef7ba25ba9a86c91d02af465037180cba4330"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bDirectDomain.json",
+      "sha256": "4ae8eca4cdd5a2bde814f4cdcea2b5b775cdf84762d5bafb1d5422c54b2c73f9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierDomain.json",
+      "sha256": "998cf00702a0a772ff978c1cc13ba444fc8e722bab2284b15487eb1b8feb2abd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/earlier-closure/CEarlierProofs.json",
+      "sha256": "f6866257b8ded80d19454013a075ce013b4b48ab60d58b5d52900f43cc1d6dfd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/review/constructive-candidate/positive_candidate.py",
+      "sha256": "efa6eba9f08ad8cfec73d2e3fcd8b071374631c6ebdfc5e3610c3c0585a5502d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os.py",
+      "sha256": "2b5e8c403909d3acba3c5776c529d38dad433ba2c89e6d76adfc3bc079e2cf25"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_rg2b.py",
+      "sha256": "84c1ac0d62ca908304c3ab86ee2523ca7fa91c56c51af238eb26c13938ad584a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_basins.py",
+      "sha256": "6da2628f6f04bd112dbdd6eedfb9dc38661d7cc8f0a7532d211ba30e21769fd5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_c_rg2b.py",
+      "sha256": "0d99b77e0b3b23b711270195aebffedc4212fe639236e719bf8bc9fa08d5b283"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci.py",
+      "sha256": "3c403d943bb924fa4d392ea2dafc8b77a190f587c031903c0b9d78d3808bdc71"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci_campaign.py",
+      "sha256": "732c5968a4a0f9a7e4350a9144b9c16740785cf197b34e84fc8eeb38e78987b4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_continuation.py",
+      "sha256": "b26c6bd0f050ab710b663e025cc3f039ed81c68ac8f834d8c60a2b2bdaad3709"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_os_reference.py",
+      "sha256": "0fab09c6bfcc098c537e39c223380a1d70af2de2eef5156a2d1307fef81069ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_pc.py",
+      "sha256": "af04da3c975ff835f8e01482f166f772f4f98f718346d2f9fd569f8a3b2197d3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_positive.py",
+      "sha256": "15069ffca9b22a666ff67cd0b28ea740f9ed69f40de72154498d3e84eca4c64b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-Contract.md",
+      "sha256": "830d3ad1d2f0a0c5f23650e2c2cad6a32152afc271fce21c3486da2b890bcbfa"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b-Preflight.json.xz",
+      "sha256": "d61cfc5985cd19eacf8ea51c482d4af6c954410f8b1e35c38881efbf78e45b1a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b.5-MetricRegression.json.xz",
+      "sha256": "18a051609c09e52a51abc4d35af99196f3990fc15b28fa476ab18da9fcf7f43a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b.5-Plan.md",
+      "sha256": "b398adda0318291b27b0aed7079e93530a57fc8bca296cceef57014dca768f2e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/aos_native_spark_oracle.py",
+      "sha256": "b57d40390e0afc268168d6d7f3dd54965c75941a493b835b3161b3f48f8c4a18"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/arg2b_native_spark_oracle.py",
+      "sha256": "94c90c8e638bf6298a249c5236833cd636383d5f6c59d7168431cb5c20ba25d5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/arg2b_native_spark_pressure_oracle.py",
+      "sha256": "3d58469a4919fdec66ff5695df701fa27ae90a0a8d587a365cbd37168387a016"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/crg2b_native_spark_oracle.py",
+      "sha256": "55911e2dc76e0f31a8d3e2baa0573cd02b5873146c8531ed69c37b32bfa1c2bf"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a2_native_spark_numerics.py",
+      "sha256": "5ac8f8e203d4bfa6681dba80fa94c3c8e28c51664ae432a137fdbef3963ecace"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a4_native_spark_preflight.py",
+      "sha256": "eecbbc30bf29b1a6eb3f4633c42a22d46ece5464d7acbbf00ea4ba442ea0b43b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a5_native_spark_campaign.py",
+      "sha256": "6cbf0a428dcac2045707a23419f4aa8cfa4a2e3ec4af92f7799a2b3a0348887e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_arg2b_campaign.py",
+      "sha256": "806ede4d108c192b6dcd834cfeb4293e10fec280881fe40ce70c6e788d63467b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_arg2b_preflight.py",
+      "sha256": "c96baceee9e965e44e2fcdbbecdf72142c75c80d8ba236211e177857d1e509e0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_arg2b_subjects.py",
+      "sha256": "4ab901a2ad71effa7581f42d817a4439d341f682ff7d85a922f97b1a0f07c03a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a6_rg2b_campaign.py",
+      "sha256": "9407783c4fe8c19de8cfff35286fa50e4992b4f61dd400b84350e528b1189272"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p991a6_arg2b_campaign_metric.py",
+      "sha256": "8e70710ad83386413e454d128c49903eb682bc333ee9aa5733efd48d7618bb30"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p991a6_rg2b_campaign.py",
+      "sha256": "ef1785f7cd3ab6bf31c52054dc041f75c32d0685be336bd582bb35eac33b6806"
+    },
+    {
+      "path": "specs/grc-v4-spark-native-a-rg2b-numerical-policy.md",
+      "sha256": "a9ddc0d12576bc337211585c7257fd892ef587dc06e8ab00cbfd1624b3afe274"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_sparks.py",
+      "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4.py",
+      "sha256": "88d36a98a043e271a800f5fe4b8b9e14609359c9a1a06908d850a1c77f80558e"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_api_lifecycle.py",
+      "sha256": "87df78f109a35cf4181cd5022473a3f49d94f637bcd4030047fa9e18927636fd"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion.py",
+      "sha256": "43856bbf9f56ff7dcda8a15be29f7d64e5c504678b17fb81116c9b726b1a4205"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_aci.py",
+      "sha256": "bcf5ae0b370b40052bd0b6ae2a6ef2101fba2ca68c583ad359261d17f1961dea"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_acipc.py",
+      "sha256": "f0e0dfbb3e15cac82c70f371f57743ce765155c8e09a002ed94942c888d9a934"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_aos.py",
+      "sha256": "2612165d21efe0c0e94cfd9b3605895dfb655a76b17e972a277406e730e388e9"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_apc.py",
+      "sha256": "89e80a7770032898273b69803b4f78f90cc757cf62695d78c84de49816d1c564"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_arg2b.py",
+      "sha256": "522c1a01bb6846e2ea393e09cf413e0cc3d2cb1e68ac0b4f39bf9ed551034926"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_certificate.py",
+      "sha256": "5726571b20ede73bb48fbd3402a3092eb5cc823336b63d9a91cc98b85d2f2bbf"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_codec.py",
+      "sha256": "41dcc5ed8dc1e5744d8f9d1de763ad3ba3904f9cd7e29e5adf705f35f0502785"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_cpc.py",
+      "sha256": "5d7407fad0fcf7e6b3cfbab9aa8ae21692920d7525865a11366de4768301b255"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_completion_crg2b.py",
+      "sha256": "e228e3b9ad45c188547ce58099aa89e8ff0d028b0acd5324096cd291d5ad73d8"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_apc_event.py",
+      "sha256": "4835e58fd99baf2708c65eb36ccca91e2d451ea0c6070b6b1a4fe073a87eb376"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_carrier_event.py",
+      "sha256": "b330b2b118b074bc9b13b335a542a2dd08d4420ad8e7b6dc3da81aac87a8fdad"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_conductance_event.py",
+      "sha256": "63d8f2eaa84d521a84b972a1f9e6373c4cb09719f836f1bf66830fd784c4bf92"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_contracts.py",
+      "sha256": "565fed67131d04f4e6c8e24d19c60c9a327329ca3015009956262ea9a3e67836"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_owner.py",
+      "sha256": "9f31bcc43321aef3f22c088e2035ef639ed70158d84f4515610dbef2c9a87aed"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark.py",
+      "sha256": "ff413a2f826d645b11c53a4588fd1da3a0325d4e6c43363a752bc91c6bb2087e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aci.py",
+      "sha256": "d3a3054b84ce12a9c5669b2c2ff1cf44be82cfcb910d1a0f5eff5fb2bb211a5b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aci_math.py",
+      "sha256": "b92b16e05def4e4b06a7ad871dbcc7221a04d688211e3a4eac9e5e86ef307e56"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_acipc.py",
+      "sha256": "5ac8f712742185a117fa7c672cca9cd3cbc65456996b33965771594ced9db2db"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_acipc_math.py",
+      "sha256": "523bb72597f57ab7452cfa51e89f11ccda9471b030a2bb060eabd8d3ad529914"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_adaptive_carrier.py",
+      "sha256": "5fc5839ddc6c0434d535b92fac3ec664f582439a9153887ba27aa9509d448e82"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aos.py",
+      "sha256": "3e0b4183952e84c9e8460060a722ba69fd7126cf77a25da93760dba638b19be5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_aos_math.py",
+      "sha256": "b5e2b24e769b35fa2fa828a91d519634dfcbf6906950f395c5a9ccc5ca830a1d"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_apc.py",
+      "sha256": "b20170f21509a03ac87dcc3b8de93c6dc6a0fd4c5a3b57eaeb336cf9932d01dd"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_apc_math.py",
+      "sha256": "e2b7c4ca88c7594ac72efe711af6c6a04ec91f52cf8ba014fdb52dc9ae9716dc"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_arg2b.py",
+      "sha256": "dc76e0dc1814d6a3bc306be1ee16a9f46fb0365b04c3c8849a244463eb0da6b4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_arg2b_math.py",
+      "sha256": "a49d94da04f74d5c3975d282bb653c29ccd3ab5906fb7a5173b3716516a635a6"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_carrier.py",
+      "sha256": "62726f519d59cea703f373cfdfa41b0c6b5ddd02bc1a31c47955ead7e444ff7c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cci.py",
+      "sha256": "8e25e09507cfd056bc8a68e3e14715ab40dbb1db6e7514634fea04b0d801c07d"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_ccipc.py",
+      "sha256": "1f61d78988e0a0110c717bfa59f9d65f57f09da7e338b66ce6e094c661f230e1"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_conductance.py",
+      "sha256": "45ee5770cad5f14ff376ff5c7fed28db811cdb6ae7c192cf44b8028eaeb4f606"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cos.py",
+      "sha256": "0ff7642925f324b8041d5f4660ccea1627e4eb0bf15faf26799c5ca2b77901de"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_cpc.py",
+      "sha256": "0bd1e8a24fbad058a5fdac406404359e8b396a20c9b227724a6f5bac7f3736bd"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_crg2b.py",
+      "sha256": "3850083b7a20487ec147529a57dc6369074acaf9867f812e3ab90f08402b468f"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_crg2b_math.py",
+      "sha256": "04f98d84ab6ba9cb1e2966d4908e15e4cdaa7290c6d5b73f385f7f46e1fb91e3"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_spark_state.py",
+      "sha256": "6b36c78b1b66370bab4fdd2edea88ac45cd9d459f1772488556f2a3b5302611f"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_spark_completion.py",
+      "sha256": "e117527ceae9ef3961f093049d998ac3f98fcfbb364d275fd626c6b2caa18dd4"
+    },
+    {
+      "path": "tests/models/test_grc_v4_spark_arg2b.py",
+      "sha256": "540b747a39c7928bb65f31cdafda5c923ddd049904d777b9cc686444bc8d1b50"
+    }
+  ],
+  "prefix": {
+    "current": [
+      {
+        "seconds": 33.01585979199808,
+        "native_seconds": 3.1560969540005317,
+        "deep": true,
+        "full_diagnostic_bytes": 103492,
+        "compact_bytes": 3072
+      },
+      {
+        "seconds": 3.3384586880019924,
+        "native_seconds": 3.1124340850001317,
+        "deep": false,
+        "full_diagnostic_bytes": 103872,
+        "compact_bytes": 3036
+      },
+      {
+        "seconds": 3.2223564320011064,
+        "native_seconds": 2.9976393030010513,
+        "deep": false,
+        "full_diagnostic_bytes": 103796,
+        "compact_bytes": 3032
+      },
+      {
+        "seconds": 3.193532076998963,
+        "native_seconds": 2.968737257997418,
+        "deep": false,
+        "full_diagnostic_bytes": 104348,
+        "compact_bytes": 3032
+      }
+    ],
+    "reset": [
+      {
+        "seconds": 33.31475621999925,
+        "native_seconds": 3.057633958000224,
+        "deep": true,
+        "full_diagnostic_bytes": 103708,
+        "compact_bytes": 3080
+      },
+      {
+        "seconds": 3.497716048001166,
+        "native_seconds": 3.2355573780005216,
+        "deep": false,
+        "full_diagnostic_bytes": 104684,
+        "compact_bytes": 3012
+      },
+      {
+        "seconds": 3.282827113998792,
+        "native_seconds": 3.022546729000169,
+        "deep": false,
+        "full_diagnostic_bytes": 105328,
+        "compact_bytes": 2996
+      },
+      {
+        "seconds": 3.3711347129974456,
+        "native_seconds": 3.029773832997307,
+        "deep": false,
+        "full_diagnostic_bytes": 105476,
+        "compact_bytes": 3012
+      }
+    ]
+  },
+  "late_domain_probe": [
+    {
+      "seconds": 8.393610294999235,
+      "native_seconds": 0.9669543849995534,
+      "deep": true
+    },
+    {
+      "seconds": 1.0271535060019232,
+      "native_seconds": 0.8678224900031637,
+      "deep": false
+    }
+  ],
+  "late_probe_scope": "synthetic near-domain timings only; not source-to-entry evidence",
+  "cache_cold": {
+    "graph": {
+      "hits": 37,
+      "misses": 2,
+      "maxsize": 16,
+      "currsize": 2
+    },
+    "rows": {
+      "hits": 23,
+      "misses": 2,
+      "maxsize": 16,
+      "currsize": 2
+    },
+    "domain": {
+      "hits": 19,
+      "misses": 2,
+      "maxsize": 8,
+      "currsize": 2
+    },
+    "section": {
+      "hits": 5,
+      "misses": 5,
+      "maxsize": 8,
+      "currsize": 5
+    }
+  },
+  "cache_warm": {
+    "graph": {
+      "hits": 39,
+      "misses": 2,
+      "maxsize": 16,
+      "currsize": 2
+    },
+    "rows": {
+      "hits": 24,
+      "misses": 2,
+      "maxsize": 16,
+      "currsize": 2
+    },
+    "domain": {
+      "hits": 20,
+      "misses": 2,
+      "maxsize": 8,
+      "currsize": 2
+    },
+    "section": {
+      "hits": 7,
+      "misses": 5,
+      "maxsize": 8,
+      "currsize": 5
+    }
+  },
+  "cold_replay": {
+    "seconds": 23.96198289399763,
+    "ordinary_journal_steps": 5,
+    "replayed_steps": 5,
+    "whole_publication_equal": true
+  },
+  "setup_seconds": 51.434929646002274,
+  "elapsed_seconds": 172.97686133800016,
+  "estimate": {
+    "central_seconds": 8123.453269742888,
+    "conservative_seconds": 13882.266524326606,
+    "maximum_target_steps_per_role": 400,
+    "maximum_sample_native_seconds": 3.2355573780005216,
+    "time_limit_policy": "profile_and_report; no correctness cutoff or automatic precision change"
+  },
+  "peak_rss_mib": 252.52734375,
+  "flint_threads": 1,
+  "record_digest": "1bf4d072d1231fe328712fc00c66108ea6749ad42b80763872d6beee06d65a55"
+}
