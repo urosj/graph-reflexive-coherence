@@ -51,7 +51,7 @@ def seal(value):
 
 
 def manifest(root):
-    successor = lambda root, name: (root / name).read_bytes()
+    from p991a5_native_spark_compact_epoch import previous_bytes as successor
 
     root = Path(root).resolve()
     return seal(
@@ -79,7 +79,7 @@ def previous_bytes(root, name):
     The complete manifest is independently checked at publication; unchanged
     sources pass through for the historical caller's own content check.
     """
-    successor = lambda root, name: (root / name).read_bytes()
+    from p991a5_native_spark_compact_epoch import previous_bytes as successor
 
     root = Path(root).resolve()
     if name not in CHANGED:

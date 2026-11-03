@@ -468,7 +468,7 @@ PATHS = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCResults.json.xz",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json.xz",
     ".gitignore",
-    "artifact-storage.json", "scripts/evidence_storage.py",
+    "artifact-storage.json", "artifact-size-reviews.json", "scripts/evidence_storage.py",
     "tests/test_evidence_storage.py", "docs/reference/EvidenceStorage.md",
     "scripts/evidence_dedup.py", "tests/test_evidence_dedup.py",
     SIDE + "README.md",
@@ -5494,4 +5494,20 @@ PATHS = PATHS | frozenset({
     HERE + 'test_arg2b_native_spark_pressure.py',
     HERE + 'test_p991a6_arg2b_pressure_surface.py',
     INV + 'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_arg2b_pressure.py',
+})
+
+# C_OS storage-only successor: preserve original records, compact derived diagnostics.
+PATHS = (PATHS - frozenset({
+    PHASE + 'tranche-9/P9-9.1a.5-current.jsonl.xz',
+    PHASE + 'tranche-9/P9-9.1a.5-reset.jsonl.xz',
+})) | frozenset({
+    HERE + 'p991a5_native_spark_compact.py',
+    HERE + 'p991a5_native_spark_compact_epoch.py',
+    HERE + 'test_p991a5_native_spark_compact.py',
+    PHASE + 'tranche-9/P9-9.1a.5-Compact.json',
+    PHASE + 'tranche-9/P9-9.1a.5-CompactSourceEpoch.json',
+    PHASE + 'tranche-9/P9-9.1a.5-Compact-current.jsonl.xz',
+    PHASE + 'tranche-9/P9-9.1a.5-Compact-reset.jsonl.xz',
+    PHASE + 'tranche-9/P9-9.1a.5-DiagnosticSamples.jsonl.xz',
+    PHASE + 'tranche-9/P9-9.1a.5-CompactReview.md',
 })

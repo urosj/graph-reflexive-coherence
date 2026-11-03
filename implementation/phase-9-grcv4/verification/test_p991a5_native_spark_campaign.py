@@ -21,6 +21,7 @@ sys.path.insert(0, str(TOOL / "src"))
 import lzma
 
 import p991a5_native_spark_campaign as campaign
+import p991a5_native_spark_compact as compact
 import p991a5_native_spark_epoch as epoch
 from cos_native_spark_oracle import classify, infinity, matrix, vector
 from grcv4_explorer import spark_native_campaign as native
@@ -63,45 +64,43 @@ class NativeSparkCampaignTests(unittest.TestCase):
                 vector(cert["operands"]["center"]),
             )
             inside, gains, last = [], [], None
-            with lzma.open(ROOT / campaign.FILES[role], "rt") as stream:
-                for line in stream:
-                    row = json.loads(line)
-                    C = row["stage"]["after"]
-                    norm = infinity(U * (vector(C) - center))
-                    self.assertEqual(row["membership"]["norm"], str(norm))
-                    self.assertEqual(row["membership"]["inside"], norm <= 1)
-                    basins, terminals, rows = classify(
-                        config["reference"]["graph"],
-                        C,
-                        config["specialization"]["resolved"]["completion_policy"],
-                    )
-                    actual = row["membership"]["classification"]
-                    self.assertEqual(
-                        tuple(
-                            (
-                                r["anchor"]["value"],
-                                tuple(n["value"] for n in r["members"]),
-                            )
-                            for r in actual["basins"]
-                        ),
-                        basins,
-                    )
-                    self.assertEqual(
-                        tuple(
-                            (
-                                r["node"]["value"],
-                                tuple(n["value"] for n in r["terminals"]),
-                            )
-                            for r in actual["terminals"]
-                        ),
-                        terminals,
-                    )
-                    self.assertEqual(actual["rows"], rows)
-                    if norm <= 1:
-                        inside.append(row["beat"])
-                    if row["local_gain"]:
-                        gains.append((row["beat"], row["local_gain"]))
-                    last = row
+            for row in compact.compact_rows(role, ROOT):
+                C = row["stage"]["after"]
+                norm = infinity(U * (vector(C) - center))
+                self.assertEqual(row["membership"]["norm"], str(norm))
+                self.assertEqual(row["membership"]["inside"], norm <= 1)
+                basins, terminals, rows = classify(
+                    config["reference"]["graph"],
+                    C,
+                    config["specialization"]["resolved"]["completion_policy"],
+                )
+                actual = row["membership"]["classification"]
+                self.assertEqual(
+                    tuple(
+                        (
+                            r["anchor"]["value"],
+                            tuple(n["value"] for n in r["members"]),
+                        )
+                        for r in actual["basins"]
+                    ),
+                    basins,
+                )
+                self.assertEqual(
+                    tuple(
+                        (
+                            r["node"]["value"],
+                            tuple(n["value"] for n in r["terminals"]),
+                        )
+                        for r in actual["terminals"]
+                    ),
+                    terminals,
+                )
+                self.assertEqual(actual["rows"], rows)
+                if norm <= 1:
+                    inside.append(row["beat"])
+                if row["local_gain"]:
+                    gains.append((row["beat"], row["local_gain"]))
+                last = row
             self.assertEqual(inside, value["roles"][role]["window"])
             self.assertEqual(gains, [(376, 1)] if role == "current" else [])
             self.assertEqual(
@@ -111,8 +110,7 @@ class NativeSparkCampaignTests(unittest.TestCase):
     def test_independent_stage_oracle_rejects_same_state_wrong_diagnostics(self):
         with lzma.open(ROOT / campaign.FILES["inputs"], "rt") as stream:
             inputs = json.loads(next(stream))
-        with lzma.open(ROOT / campaign.FILES["current"], "rt") as stream:
-            row = json.loads(next(stream))
+        row = next(compact.full_samples("current", ROOT))
         cert = inputs["certificates"][0]
         graph = inputs["target_configuration"]["reference"]["graph"]
         U, bound = matrix(cert["operands"]["U"]), cert["proof"]["full_step_error"]
@@ -208,16 +206,10 @@ class NativeSparkCampaignTests(unittest.TestCase):
                 native.native_campaign(ROOT)
 
     def test_finite_metadata_epoch_keeps_committed_lifecycle_record(self):
-        import p991a4_native_spark_epoch as previous
         from grcv4_explorer.basin import _bound_file
         from grcv4_explorer.spark_native_preflight import native_preflight
-
-        self.assertEqual(
-            epoch.manifest(ROOT), json.loads((ROOT / epoch.PATH).read_bytes())
-        )
-        self.assertEqual(
-            previous.manifest(ROOT), json.loads((ROOT / previous.PATH).read_bytes())
-        )
+        from p991a5_native_spark_compact_epoch import validated_history
+        validated_history(ROOT)
         for name in epoch.CHANGED:
             raw = epoch.original(ROOT, name)
             self.assertEqual(_bound_file(ROOT, name, epoch.sha(raw)).read_bytes(), raw)
@@ -238,7 +230,7 @@ class NativeSparkCampaignTests(unittest.TestCase):
             ),
             self.assertRaises(ValueError),
         ):
-            epoch.previous_bytes(ROOT, name)
+            validated_history(ROOT)
 
     def test_http_download_script_and_fixed_scope(self):
         spec = importlib.util.spec_from_file_location(
@@ -255,13 +247,16 @@ class NativeSparkCampaignTests(unittest.TestCase):
         for route in (
             "/api/native-spark/c-os/campaign",
             "/api/native-spark/c-os/campaign/source",
+            "/api/native-spark/c-os/campaign/compact/source",
             "/spark-native-campaign.js",
         ):
             handler.path = route
             handler.wfile = BytesIO()
             handler.do_GET()
             self.assertEqual(codes[-1], 200)
-            if route.endswith("/source"):
+            if route.endswith("/compact/source"):
+                self.assertEqual(handler.wfile.getvalue(), (ROOT / compact.MANIFEST).read_bytes())
+            elif route.endswith("/source"):
                 self.assertEqual(
                     handler.wfile.getvalue(), (ROOT / native.RECORD).read_bytes()
                 )

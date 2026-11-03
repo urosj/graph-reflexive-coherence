@@ -626,6 +626,15 @@ def campaign():
 
 
 def check(root=ROOT, numerical=False):
+    from p991a5_native_spark_compact import MANIFEST
+    from p991a5_native_spark_compact import check as compact_check
+    if (Path(root) / MANIFEST).exists():
+        import sys
+        sys.path.insert(0, str(Path(root) / "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src"))
+        from grcv4_explorer.spark_native_campaign import checked_record
+        value = checked_record(root)
+        compact_check(root, numerical=numerical)
+        return value
     from p991a6_cci_epoch import previous_bytes
     root = Path(root)
     value = json.loads((root / RECORD).read_bytes())

@@ -63,6 +63,13 @@ def native_predecessor(root, path, expected):
     import sys
     root = Path(root).resolve()
     sys.path.insert(0, str(root / "implementation/phase-9-grcv4/verification"))
+    from p991a5_native_spark_compact_epoch import reviewed_bytes
+    try:
+        audited = reviewed_bytes(root, path, expected)
+    except ValueError as error:
+        raise SourceAdmissionError(str(error)) from error
+    if audited is not None:
+        return audited
     from p991a3_native_spark_epoch import CHANGED, previous_bytes
     from p991a4_native_spark_epoch import CHANGED as PREFLIGHT, previous_bytes as preflight_previous
     from p991a5_native_spark_epoch import CHANGED as CAMPAIGN, previous_bytes as campaign_previous
@@ -72,6 +79,11 @@ def native_predecessor(root, path, expected):
     from p991a6_aos_epoch import CHANGED as AOS_NATIVE, previous_bytes as aos_native_previous
     from p991a6_apc_epoch import CHANGED as APC_NATIVE, previous_bytes as apc_native_previous
     from p991a6_acipc_epoch import CHANGED as ACIPC_NATIVE, previous_bytes as acipc_native_previous
+    from p991a5_native_spark_compact_epoch import CHANGED as COS_STORAGE, previous_bytes as cos_storage_previous
+    if path in COS_STORAGE:
+        raw = cos_storage_previous(root, path)
+        if hashlib.sha256(raw).hexdigest() == expected:
+            return raw
     from p991a6_arg2b_epoch import CHANGED as ARG2B_NATIVE, previous_bytes as arg2b_native_previous
     if path in ARG2B_NATIVE:
         raw = arg2b_native_previous(root, path)

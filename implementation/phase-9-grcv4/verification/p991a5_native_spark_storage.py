@@ -27,6 +27,15 @@ def expanded_digest(path):
 
 
 def check(root=ROOT):
+    from p991a5_native_spark_compact import MANIFEST
+    from p991a5_native_spark_compact import check as compact_check
+    if (Path(root) / MANIFEST).exists():
+        value = compact_check(root)
+        original = json.loads((Path(root) / RECORD).read_bytes())
+        reset = next(r for r in value["streams"] if r["original_stream"]["path"] == FILES["reset"])
+        need({"bytes": reset["expanded_bytes"], "sha256": reset["expanded_sha256"]}
+             == original["storage_repack"]["expanded"], "original reset repack provenance")
+        return original
     root = Path(root)
     value = json.loads((root / RECORD).read_bytes())
     original_raw = (root / EXECUTION).read_bytes()

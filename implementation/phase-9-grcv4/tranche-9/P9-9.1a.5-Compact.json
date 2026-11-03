@@ -1,0 +1,80 @@
+{
+  "schema": "native-cos-exact-reconstructible-evidence-v1",
+  "status": "verified_pending_review",
+  "family": "C_OS",
+  "original_campaign_digest": "4972df8504845ba2a21e07a3fbe4326f2b4e1e70a55b5063076f534b3b592cfb",
+  "original_campaign_sha256": "61ec6dc06388c9403dac52c27b2a2d805a3e3ed222972b721c89b6c2e16ab361",
+  "streams": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Compact-current.jsonl.xz",
+      "sha256": "33000dac795659dbceb29491dad560af798ef17e11d973e5a8e0432a8de418ab",
+      "compressed_bytes": 699072,
+      "records": 376,
+      "last_record_digest": "8ead2d879c2acb28776510212f8d3ad673febb28d950204fd8fd9873786ebad9",
+      "original_stream": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-current.jsonl.xz",
+        "sha256": "23afc8f98d59df2db1ca61ee475ac6ee1156a61597cb0f20effa502c670815a9",
+        "compressed_bytes": 103441908,
+        "records": 376,
+        "last_record_digest": "5fe1205db88eeae7aea06aaa734b040b165a3000cff7b5e00e70eba06a68799d"
+      },
+      "expanded_sha256": "6fdca31b486ae65fcb0c6499a062dc6504849cfbfa4832f3b30e79aee187fd7e",
+      "expanded_bytes": 291517111
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Compact-reset.jsonl.xz",
+      "sha256": "7c25cba96a4d2d079e9880411c1f5920b2541991e235336d9c74bc9dffda72fb",
+      "compressed_bytes": 714104,
+      "records": 377,
+      "last_record_digest": "9533e39e7e34910f4ac258db80c976c83f1f658615924eaaefc4c90b9897ad1f",
+      "original_stream": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-reset.jsonl.xz",
+        "sha256": "90e4709db759621e2456a3f4ed7f984f08a44e494d3cb246cad214f814779920",
+        "compressed_bytes": 101826172,
+        "records": 377,
+        "last_record_digest": "2d27e5c9f755ec6822545e06b8670d880a3676c1801dfd9cf6b9dd6bb8282829"
+      },
+      "expanded_sha256": "d589c6e1f8855903212b33ee0308b201cabb4bf66298207f438f0bdd4af31cd2",
+      "expanded_bytes": 292554579
+    }
+  ],
+  "diagnostic_samples": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-DiagnosticSamples.jsonl.xz",
+    "sha256": "2f8f252711dcf3cdd1842d4932a6e863690fb4671b7b6f3a61d1c46af711f1f3",
+    "compressed_bytes": 2434512,
+    "records": 10,
+    "last_record_digest": "5eff599667e38f0cfad2bfe518a13abdcc0a4351df0394b760f1a7f1efb5c163"
+  },
+  "exact_reconstructed_transitions": 753,
+  "complete_diagnostic_samples": 10,
+  "original_expanded_rows_reconstructed": true,
+  "numerical_steps_executed": 0,
+  "runtime_changed": false,
+  "history_rewritten": false,
+  "elapsed_seconds": 600.6510205999948,
+  "source_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/verification/cos_native_spark_oracle.py",
+      "sha256": "c39701e4ee348210a9df93d3315cb214bf92e57db30413f0a15aa4d734379c07"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a5_native_spark_compact.py",
+      "sha256": "af1fa9d91f65056af6079e53dfdc9603356851f0b36f907e5f2806b18da970cf"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991a5_native_spark_verify.py",
+      "sha256": "628a8e02c647101905e1b81ad1dc2920c08a0ceef725e5bbdc2cd049b3f7d83d"
+    }
+  ],
+  "endpoints": {
+    "current": [
+      374,
+      376
+    ],
+    "reset": [
+      375,
+      377
+    ]
+  },
+  "record_digest": "4fe5c4af743e8eb66d485d68bbff9aa60304d9935cfb9dbc018bbc583a05f1a0"
+}

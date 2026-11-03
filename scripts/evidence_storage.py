@@ -21,6 +21,8 @@ from functools import lru_cache
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = "artifact-storage.json"
 LIMIT = 1_000_000  # Compress new/changed raw files above decimal 1 MB.
+LARGE_BLOB_REVIEW_BYTES = 10_000_000  # Decimal 10 MB, including compressed files.
+SIZE_REVIEWS = "artifact-size-reviews.json"
 
 
 def sha(data: bytes) -> str:
@@ -244,11 +246,40 @@ def verify(root: Path = ROOT, *, prefix: str = "") -> dict:
             "stored_bytes": stored, "byte_exact": True}
 
 
+def staged_size_reviews(root: Path, index: dict[str, str]) -> dict[str, dict]:
+    """Read retention decisions from the index, never an unstaged justification."""
+    if SIZE_REVIEWS not in index:
+        return {}
+    raw = subprocess.check_output(
+        ["git", "cat-file", "blob", index[SIZE_REVIEWS]], cwd=root)
+    value = json.loads(raw)
+    require(type(value) is dict and set(value) == {"schema", "reviews"}
+            and value["schema"] == "evidence-size-reviews-v1"
+            and type(value["reviews"]) is list, "invalid large-file review manifest")
+    result = {}
+    for row in value["reviews"]:
+        require(type(row) is dict and set(row) == {
+            "path", "size", "sha256", "required_for", "why_not_smaller", "retention_reason",
+        }, "incomplete large-file retention review")
+        safe_path(root, row["path"])
+        require(row["path"] not in result, "duplicate large-file retention review")
+        require(type(row["size"]) is int and row["size"] > LARGE_BLOB_REVIEW_BYTES
+                and type(row["sha256"]) is str
+                and re.fullmatch(r"[0-9a-f]{64}", row["sha256"]),
+                "invalid reviewed blob identity")
+        require(all(type(row[key]) is str and row[key].strip()
+                    for key in ("required_for", "why_not_smaller", "retention_reason")),
+                "large-file review needs its purpose, smaller alternatives and retention reason")
+        result[row["path"]] = row
+    return result
+
+
 def git_size_check(root: Path = ROOT) -> dict:
     """Check new/changed staged blobs; unchanged HEAD subjects are grandfathered.
 
-Compressed files may exceed LIMIT. Validate the staged bytes, not just a suffix
-or a smaller working copy. No historical Git objects are rewritten.
+Compressed files above LARGE_BLOB_REVIEW_BYTES require an exact-blob retention
+review. Validate staged bytes and staged reviews, not a suffix or smaller working
+copy. No historical Git objects are rewritten.
 """
     root = Path(root)
     head = subprocess.run(["git", "rev-parse", "--verify", "HEAD"], cwd=root, capture_output=True)
@@ -263,27 +294,43 @@ or a smaller working copy. No historical Git objects are rewritten.
     result = subprocess.run(["git", "ls-files", "--stage", "-z"], cwd=root,
                             check=True, capture_output=True)
     blobs: dict[str, list[str]] = {}
+    index: dict[str, str] = {}
     for entry in filter(None, result.stdout.split(b"\0")):
         metadata, name = entry.split(b"\t", 1)
         mode, oid, stage = metadata.decode().split()
         require(stage == "0", "unmerged index entry: " + name.decode())
         if mode != "160000":  # Submodules refer to commits, not file blobs.
+            index[name.decode()] = oid
             if previous.get(name.decode()) != oid:
                 blobs.setdefault(oid, []).append(name.decode())
     result = subprocess.run(["git", "cat-file", "--batch-check=%(objectname) %(objectsize)"],
                             input="\n".join(blobs) + ("\n" if blobs else ""), cwd=root,
                             check=True, capture_output=True, text=True)
-    oversized = []
+    reviews = staged_size_reviews(root, index)
+    oversized, reviewed = [], []
     for line in result.stdout.splitlines():
         oid, size = line.split()
         if int(size) > LIMIT:
             data = subprocess.run(['git', 'cat-file', 'blob', oid], cwd=root, check=True, capture_output=True).stdout
+            content_sha = sha(data)
             for name in blobs[oid]:
                 if not valid_compressed(name, data):
-                    oversized.append(f"{name} ({size} bytes)")
-    require(not oversized, "New/changed raw Git files exceed compression threshold:\n" + "\n".join(oversized))
+                    oversized.append(f"{name} ({size} bytes; compress raw evidence first)")
+                if int(size) > LARGE_BLOB_REVIEW_BYTES:
+                    review = reviews.get(name)
+                    if review is None:
+                        oversized.append(
+                            f"{name} ({size} bytes): exceeds {LARGE_BLOB_REVIEW_BYTES}-byte review trigger; "
+                            f"document why this complete file is necessary and why smaller evidence "
+                            f"does not suffice in staged {SIZE_REVIEWS}")
+                    elif review["size"] != int(size) or review["sha256"] != content_sha:
+                        oversized.append(f"{name}: retention review does not match the staged blob")
+                    else:
+                        reviewed.append(name)
+    require(not oversized, "New/changed Git files exceed storage policy:\n" + "\n".join(oversized))
     return {"changed_git_files": sum(map(len, blobs.values())), "compression_threshold_bytes": LIMIT,
-            "compressed_size_limited": False}
+            "large_blob_review_threshold_bytes": LARGE_BLOB_REVIEW_BYTES,
+            "reviewed_large_files": sorted(reviewed)}
 
 
 def valid_compressed(name: str, data: bytes) -> bool:

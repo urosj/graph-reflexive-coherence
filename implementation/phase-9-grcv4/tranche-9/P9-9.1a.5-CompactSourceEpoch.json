@@ -1,0 +1,54 @@
+{
+  "schema": "p991a5-cos-compact-metadata-epoch-v1",
+  "predecessor": "90e54da1",
+  "checker_sha256": "9f90aebbaf2e33e1c62e38c341a17e9dc7da58805c314cb70e27872279e59158",
+  "sources": {
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-native-campaign.js": {
+      "before_sha256": "4a56106380d2856e7f6b54d95295954c90f4f0d67c27c91fc18a4cdb4af14da4",
+      "after_sha256": "cb6c5cf0a8980bcaa7e49bb63b5716b9c33b29f6a5c9dd139441adfae4a5eeaa"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/serve_phase9.py": {
+      "before_sha256": "2dcf20a6430966e04a62925ab43b08470c6ccf989e0fc6d9a831fcdf1099f110",
+      "after_sha256": "43d4d0836b5a8064a647e6bfd9ae85900bbe768f94fc99b21a55b5729e72155d"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/basin.py": {
+      "before_sha256": "16f081394c7ae1901ab23280089a68f5c60039bfdae46e66e16dc95248a30f1a",
+      "after_sha256": "b789c349fc7baca424ba28115d2f6417b0b72ab96f58db725aed926e71ad405f"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_earlier_sc3_metadata.py": {
+      "before_sha256": "1b58c5cc75de9aa7f1298860e8260323a4d3946c8e5aa9c887c81120f8c35973",
+      "after_sha256": "aac86ea09ed6ed062c6bb5ce828cf518cc71b7e803d6c20dbe87a5fec2f29b15"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_campaign.py": {
+      "before_sha256": "6b3973720416e521cd715799913387a2867990aac6adc8780df32199ca726b4b",
+      "after_sha256": "bcc51a25ae31b5d43c4bf604c2f4191aae9cd1f1664994a7ee7651e9c364e872"
+    },
+    "implementation/phase-9-grcv4/verification/p991a5_native_spark_campaign.py": {
+      "before_sha256": "5784613458d34a9c874a03bc63cda899a5866cc8684260047f2d403c6ce34b25",
+      "after_sha256": "6cbf0a428dcac2045707a23419f4aa8cfa4a2e3ec4af92f7799a2b3a0348887e"
+    },
+    "implementation/phase-9-grcv4/verification/p991a5_native_spark_storage.py": {
+      "before_sha256": "1baeb0b79d5909700322f2568b84d4c5d58a328f9948137641d691b38c6f87ea",
+      "after_sha256": "0c2dc64785d5899fe616577344dbf5a59f85b1d77b11d7694a36f0df39349530"
+    },
+    "implementation/phase-9-grcv4/verification/p991a6_arg2b_epoch.py": {
+      "before_sha256": "a12bd7909d1a6418e902effaaca6b7c3d243cf4d1a654caf55915e5d5a47a712",
+      "after_sha256": "8c4c4256ed2de02f59cb1ddcbdc480659af9e31d4622135a35d3addcbfd6a95f"
+    },
+    "implementation/phase-9-grcv4/verification/test_p991a5_native_spark_campaign.py": {
+      "before_sha256": "73313714975be8c7b77fa56a3db612ed0e44dce3413b87e8ae923b7061e1703c",
+      "after_sha256": "e85500dcab07a2af1cf97758bc988220077c103df63f99d85369d9142e30790d"
+    },
+    "scripts/evidence_storage.py": {
+      "before_sha256": "72d7dfcfa99c0bb527295ab23bada2d2e1d4093fd2fe5a03672966e27e3f6b42",
+      "after_sha256": "6fdb572de5ac9d9e226ecad84b792c1a138c0f848d9029a11a047d1ec96a9217"
+    },
+    "tests/test_evidence_storage.py": {
+      "before_sha256": "d5ae02c94a9ff0a3ff68976a36549e963688a793c3862dfdc5016c6df9d6cedf",
+      "after_sha256": "b0f107c5e78896903c66dfe959517157b7d4cae1b4174033c7d7c365bdb432b5"
+    }
+  },
+  "runtime_changed": false,
+  "old_execution_relabelled": false,
+  "record_digest": "018e30a59e06a811e72b4b7a70cd73d186ffe5b8aeeb93a14422ec85cc7c4937"
+}

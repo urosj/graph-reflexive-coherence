@@ -31,6 +31,21 @@ API/browser/notebook, plan, checklist and handoff. Review each .5 result separat
 P9-9.1a.7 aggregate support reconciliation follows these campaigns and remains a
 separate step. This handoff update starts neither long run.
 
+## Storage maintenance: compact C_OS campaign evidence — 2026-11-03
+
+The [C_OS storage successor](./phase-9-grcv4/tranche-9/P9-9.1a.5-CompactReview.md)
+replaces 195.76 MiB of expanded diagnostic archives with 3.67 MiB of
+compact exact trajectories and ten full samples (98.13% smaller).
+All 753 original records reconstruct exactly; no native steps were rerun.
+The side-tool and verification use compact evidence. Original campaign/execution
+summaries, accepted source epochs and published Git history remain intact.
+New/changed Git blobs over 10,000,000 bytes, including compressed archives,
+now trigger a documented retention review bound to the exact path, size and
+SHA256 in `artifact-size-reviews.json`; explain necessity and why smaller
+evidence is insufficient before retaining one. The registry starts empty.
+All 18 compact/publication, 20 storage and two successor-continuity checks pass.
+Review is pending; the next implementation steps remain the two .5 campaigns above.
+
 ## Previous work: A_RG2b native .1–.4 and pressure accepted — 2026-11-03
 
 Implemented on `impl/grc9v4-native-spark-completion` after accepted C_RG2b

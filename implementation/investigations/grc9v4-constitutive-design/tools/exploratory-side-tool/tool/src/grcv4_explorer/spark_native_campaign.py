@@ -11,6 +11,7 @@ RECORD = "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Campaign.json"
 RECORD_DIGEST = "4972df8504845ba2a21e07a3fbe4326f2b4e1e70a55b5063076f534b3b592cfb"
 # Execution uses RFC 8785; this surface separately pins its canonical JSON body.
 CONTENT_DIGEST = "4972df8504845ba2a21e07a3fbe4326f2b4e1e70a55b5063076f534b3b592cfb"
+COMPACT_DIGEST = "4fe5c4af743e8eb66d485d68bbff9aa60304d9935cfb9dbc018bbc583a05f1a0"
 
 
 def restore_evidence(root):
@@ -40,13 +41,31 @@ def checked_record(root):
         raise SourceAdmissionError(
             "Unbound native campaign or changed acceptance scope"
         )
-    for row in [*value["source_bindings"], *value["streams"]]:
-        _bound_file(root, row["path"], row["sha256"])
+    import sys
+    sys.path.insert(0, str(root / "implementation/phase-9-grcv4/verification"))
+    from p991a5_native_spark_compact import FILES, checked_manifest
+    try:
+        storage = checked_manifest(root)
+        if storage["record_digest"] != COMPACT_DIGEST:
+            raise ValueError("unbound C_OS compact evidence")
+    except (ValueError, OSError) as exc:
+        raise SourceAdmissionError(str(exc)) from exc
+    removed = {FILES["current"], FILES["reset"]}
+    from p991a5_native_spark_compact_epoch import check_sources
+    try:
+        check_sources(root, value["source_bindings"])
+    except (ValueError, OSError) as exc:
+        raise SourceAdmissionError(str(exc)) from exc
+    for row in value["streams"]:
+        if row["path"] not in removed:
+            _bound_file(root, row["path"], row["sha256"])
     return value
 
 
 def native_campaign(root):
     value = checked_record(root)
+    from p991a5_native_spark_compact import checked_manifest
+    storage = checked_manifest(root)
     body = {
         "schema": "grc9v4_native_spark_campaign_surface_v1",
         "record_digest": value["record_digest"],
@@ -72,6 +91,15 @@ def native_campaign(root):
         "global_cross_process_uniqueness": False,
         "next_leaf": value["next_leaf"],
         "source_url": "/api/native-spark/c-os/campaign/source",
+        "evidence_storage": {
+            "format": storage["schema"],
+            "record_digest": storage["record_digest"],
+            "exact_reconstructed_transitions": storage["exact_reconstructed_transitions"],
+            "complete_diagnostic_samples": storage["complete_diagnostic_samples"],
+            "compressed_bytes": sum(r["compressed_bytes"] for r in storage["streams"])
+                + storage["diagnostic_samples"]["compressed_bytes"],
+            "source_url": "/api/native-spark/c-os/campaign/compact/source",
+        },
     }
     return dict(body, projection_digest=digest(body))
 
@@ -79,3 +107,9 @@ def native_campaign(root):
 def native_campaign_source(root):
     checked_record(root)
     return (Path(root) / RECORD).read_bytes()
+
+
+def native_campaign_compact_source(root):
+    checked_record(root)
+    from p991a5_native_spark_compact import MANIFEST
+    return (Path(root) / MANIFEST).read_bytes()

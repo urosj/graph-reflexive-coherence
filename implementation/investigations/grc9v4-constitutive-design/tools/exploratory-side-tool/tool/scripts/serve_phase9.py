@@ -177,6 +177,22 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(content)
             return
+        if request.path == "/api/native-spark/c-os/campaign/compact/source":
+            try:
+                if request.query:
+                    raise ValueError("compact evidence has fixed scope")
+                from grcv4_explorer.spark_native_campaign import native_campaign_compact_source
+                content = native_campaign_compact_source(repository_root())
+                self.send_response(200)
+            except (ValueError, OSError) as exc:
+                self.send_response(503)
+                content = json.dumps({"error": str(exc)}).encode()
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+            return
         if request.path in {"/api/native-spark/a-rg2b/pressure", "/api/native-spark/a-rg2b/pressure/source", "/api/native-spark/a-rg2b/preflight", "/api/native-spark/a-rg2b/preflight/source", "/api/native-spark/c-rg2b/pressure", "/api/native-spark/c-rg2b/pressure/source", "/api/native-spark/c-rg2b/preflight", "/api/native-spark/c-rg2b/preflight/source", "/api/native-spark/a-ci-pc/campaign", "/api/native-spark/a-ci-pc/campaign/source", "/api/native-spark/a-ci-pc/pressure", "/api/native-spark/a-ci-pc/pressure/source", "/api/native-spark/a-ci-pc/preflight", "/api/native-spark/a-ci-pc/preflight/source", "/api/native-spark/a-pc/campaign", "/api/native-spark/a-pc/campaign/source", "/api/native-spark/a-pc/pressure", "/api/native-spark/a-pc/pressure/source", "/api/native-spark/a-pc/preflight", "/api/native-spark/a-pc/preflight/source", "/api/native-spark/a-ci/campaign", "/api/native-spark/a-ci/campaign/source", "/api/native-spark/a-ci/pressure", "/api/native-spark/a-ci/pressure/source", "/api/native-spark/a-ci/preflight", "/api/native-spark/a-ci/preflight/source", "/api/native-spark/a-os/campaign", "/api/native-spark/a-os/campaign/source", "/api/native-spark/a-os/pressure", "/api/native-spark/a-os/pressure/source", "/api/native-spark/a-os/preflight", "/api/native-spark/a-os/preflight/source", "/api/native-spark/c-ci-pc/campaign", "/api/native-spark/c-ci-pc/campaign/source", "/api/native-spark/c-ci-pc/pressure", "/api/native-spark/c-ci-pc/pressure/source", "/api/native-spark/c-ci-pc/preflight", "/api/native-spark/c-ci-pc/preflight/source", "/api/native-spark/c-pc/campaign", "/api/native-spark/c-pc/campaign/source", "/api/native-spark/c-pc/pressure", "/api/native-spark/c-pc/pressure/source", "/api/native-spark/c-pc/preflight", "/api/native-spark/c-pc/preflight/source", "/api/native-spark/c-ci/campaign", "/api/native-spark/c-ci/campaign/source", "/api/native-spark/c-ci/pressure", "/api/native-spark/c-ci/pressure/source", "/api/native-spark/c-ci/preflight", "/api/native-spark/c-ci/preflight/source", "/api/native-spark/c-os/numerical-bridge", "/api/native-spark/c-os/numerical-bridge/source",
                             "/api/native-spark/c-os/lifecycle", "/api/native-spark/c-os/lifecycle/source",
                             "/api/native-spark/c-os/preflight", "/api/native-spark/c-os/preflight/source",

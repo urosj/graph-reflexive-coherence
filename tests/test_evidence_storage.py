@@ -128,7 +128,7 @@ class StorageTests(unittest.TestCase):
         path.write_bytes(self.raw)
         git("add", "large.json")
         path.write_bytes(b"{}")
-        with self.assertRaisesRegex(ValueError, "raw Git files exceed compression threshold"):
+        with self.assertRaisesRegex(ValueError, "Git files exceed storage policy"):
             storage.git_size_check(self.root)
         git("add", "large.json")
         (self.root / "ignored-local.json").write_bytes(self.raw)
@@ -181,7 +181,10 @@ class StorageTests(unittest.TestCase):
         archive=self.root/'new.xz'
         archive.write_bytes(lzma.compress(os.urandom(1024)))
         git('add','new.xz')
-        self.assertFalse(storage.git_size_check(self.root)['compressed_size_limited'])
+        self.assertEqual(storage.git_size_check(self.root)['large_blob_review_threshold_bytes'], 10_000_000)
+        with patch.object(storage, 'LARGE_BLOB_REVIEW_BYTES', 1000):
+            with self.assertRaisesRegex(ValueError, 'review trigger'):
+                storage.git_size_check(self.root)
         archive.write_bytes(os.urandom(1024))
         git('add','new.xz')
         archive.write_bytes(lzma.compress(self.raw))
@@ -192,6 +195,102 @@ class StorageTests(unittest.TestCase):
         git('add','historical.json')
         with self.assertRaisesRegex(ValueError,'historical.json'):
             storage.git_size_check(self.root)
+
+    def review_fixture(self):
+        compression = patch.object(storage, "LIMIT", 1600)
+        compression.start()
+        self.addCleanup(compression.stop)
+        def git(*args):
+            subprocess.run(["git", *args], cwd=self.root, check=True, capture_output=True)
+        git("init", "--quiet")
+        name = "large.xz"
+        data = lzma.compress(os.urandom(2048))
+        (self.root / name).write_bytes(data)
+        git("add", name)
+        return git, name, data
+
+    def review_row(self, name, data):
+        return {
+            "path": name, "size": len(data), "sha256": storage.sha(data),
+            "required_for": "Independent replay of every retained certificate witness.",
+            "why_not_smaller": "Compared selected samples and shared operands; both omit the per-step witness needed by this review.",
+            "retention_reason": "Keep the complete bounded witness for this verification, with its exact identity recorded.",
+        }
+
+    def write_reviews(self, rows):
+        (self.root / storage.SIZE_REVIEWS).write_text(json.dumps({
+            "schema": "evidence-size-reviews-v1", "reviews": rows,
+        }))
+
+    def test_large_review_trigger_is_strictly_over_threshold(self):
+        git, name, data = self.review_fixture()
+        with patch.object(storage, "LARGE_BLOB_REVIEW_BYTES", len(data)):
+            self.assertEqual(storage.git_size_check(self.root)["reviewed_large_files"], [])
+        with patch.object(storage, "LARGE_BLOB_REVIEW_BYTES", len(data) - 1):
+            with self.assertRaisesRegex(ValueError, "review trigger"):
+                storage.git_size_check(self.root)
+            self.write_reviews([self.review_row(name, data)])
+            git("add", storage.SIZE_REVIEWS)
+            self.assertEqual(storage.git_size_check(self.root)["reviewed_large_files"], [name])
+
+    def test_large_review_requires_staged_decision_for_exact_staged_bytes(self):
+        git, name, data = self.review_fixture()
+        with patch.object(storage, "LARGE_BLOB_REVIEW_BYTES", 1800):
+            self.write_reviews([self.review_row(name, data)])
+            with self.assertRaisesRegex(ValueError, "review trigger"):
+                storage.git_size_check(self.root)  # Unstaged reason is not a decision.
+            git("add", storage.SIZE_REVIEWS)
+            self.assertEqual(storage.git_size_check(self.root)["reviewed_large_files"], [name])
+            changed = lzma.compress(os.urandom(2048))
+            (self.root / name).write_bytes(changed)
+            git("add", name)
+            (self.root / name).write_bytes(b"small unstaged copy")
+            with self.assertRaisesRegex(ValueError, "does not match the staged blob"):
+                storage.git_size_check(self.root)
+            self.write_reviews([self.review_row(name, changed)])
+            with self.assertRaisesRegex(ValueError, "does not match the staged blob"):
+                storage.git_size_check(self.root)
+            git("add", storage.SIZE_REVIEWS)
+            self.assertEqual(storage.git_size_check(self.root)["reviewed_large_files"], [name])
+
+    def test_large_reviews_require_complete_unique_specific_reasons(self):
+        git, name, data = self.review_fixture()
+        valid = self.review_row(name, data)
+        invalid = []
+        for key in ("required_for", "why_not_smaller", "retention_reason"):
+            invalid.append([{**valid, key: "   "}])
+        invalid.extend([
+            [{k: v for k, v in valid.items() if k != "why_not_smaller"}],
+            [{**valid, "size": True}], [{**valid, "sha256": "bad"}],
+            [valid, valid],
+        ])
+        with patch.object(storage, "LARGE_BLOB_REVIEW_BYTES", 1800):
+            for rows in invalid:
+                self.write_reviews(rows)
+                git("add", storage.SIZE_REVIEWS)
+                with self.subTest(rows=rows), self.assertRaises(ValueError):
+                    storage.git_size_check(self.root)
+
+    def test_review_cannot_cover_another_path_or_bypass_compression(self):
+        git, name, data = self.review_fixture()
+        other = "other.xz"
+        (self.root / other).write_bytes(data)
+        git("add", other)
+        with patch.object(storage, "LARGE_BLOB_REVIEW_BYTES", 1800):
+            reviews = [self.review_row(name, data)]
+            self.write_reviews(reviews)
+            git("add", storage.SIZE_REVIEWS)
+            with self.assertRaisesRegex(ValueError, "other.xz"):
+                storage.git_size_check(self.root)
+            reviews.append(self.review_row(other, data))
+            raw = b"uncompressed" * 180
+            (self.root / "raw.bin").write_bytes(raw)
+            git("add", "raw.bin")
+            reviews.append(self.review_row("raw.bin", raw))
+            self.write_reviews(reviews)
+            git("add", storage.SIZE_REVIEWS)
+            with self.assertRaisesRegex(ValueError, "compress raw evidence first"):
+                storage.git_size_check(self.root)
 
     def test_recognized_archives_are_validated_not_just_named(self):
         buffer=io.BytesIO()

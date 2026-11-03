@@ -467,3 +467,7 @@ dist/
 /implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-reset-prefix.jsonl.xz
 /implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-checkpoints-prefix.jsonl.xz
 /implementation/phase-9-grcv4/tranche-9/.cpc-resumed-*/
+
+# Superseded expanded C_OS diagnostics; compact evidence is tracked instead.
+/implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-current.jsonl.xz
+/implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-reset.jsonl.xz

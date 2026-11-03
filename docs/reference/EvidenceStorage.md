@@ -33,9 +33,29 @@ Suspended/incomplete run dumps and their tracking records are not retained.
 From 2026-10-12, **compress every new or changed uncompressed file larger
 than 1,000,000 bytes (decimal 1 MB)**, including the current C_CI run.
 Compressed files may exceed 1 MB, even if compression does not reduce their
-size. This replaces the former 10 MB Git-file cap; it is a compression
-threshold, not an archive-size ceiling. Unchanged historical files are not
-retroactively migrated, and Git history is not rewritten.
+size. From 2026-11-03, **every new or changed staged Git blob over
+10,000,000 bytes (decimal 10 MB), including compressed archives, triggers a
+retention review**. The check stops until a justified decision for that exact
+file is staged in [artifact-size-reviews.json](../../artifact-size-reviews.json).
+Unchanged historical files are not retroactively migrated, and Git history is
+not rewritten.
+
+Each review binds the repository path, exact byte count and SHA256, and records:
+
+- `required_for`: the verification or claim that needs the complete file.
+- `why_not_smaller`: the compact representations, deduplication or selected
+  evidence considered, and why they cannot preserve the needed verification.
+- `retention_reason`: the substantive conclusion explaining why the full file
+  deserves to remain in Git.
+
+The registry uses schema `evidence-size-reviews-v1` and a `reviews` array. Each
+entry has exactly `path`, `size`, `sha256` and the three explanation fields above.
+It starts empty; no large-file exceptions are preapproved. Merely saying
+“evidence” or “already compressed” is not an adequate reason. Review the substance
+before adding a decision; the checker enforces its presence and exact file
+identity, not the scientific merit of the explanation. Changed bytes or a new
+path need a matching review. An unstaged decision cannot authorize a staged
+blob, and a review does not waive the raw-file compression requirement.
 
 The packer accepts any file type and produces byte-exact `.xz` storage.
 The staged-file gate also recognizes valid XZ, gzip, bzip2 and ZIP containers;
@@ -170,8 +190,8 @@ path. Refresh current phase/storage bindings when the storage roster changes.
 `check` verifies the archives and checks **new/changed staged Git blobs against
 HEAD**, so replacing a large work file with a small one cannot hide an
 uncompressed oversized staged blob. Unchanged historical blobs are exempt. The
-local checks below are required before committing or publishing. This is a
-storage limit, not a substitute for deciding whether the data deserves retention.
+local checks below are required before committing or publishing. The recorded
+justification must explain why the data deserves retention.
 
 ## Local checks for Tranche 8 and later work
 
@@ -193,8 +213,9 @@ Use the repository's `.venv/bin/python` where available. The first command
 checks storage behavior, including corruption rejection and the staged-blob
 limit. The second verifies registered archives and their exact restored bytes,
 then enforces the 1,000,000-byte compression threshold for new/changed staged
-raw blobs, allowing valid compressed files to be larger. Run it
-again after changing the staged contents. Scientific checks remain those
+raw blobs, and triggers a documented retention review above 10,000,000 bytes,
+including compressed blobs. The review is read from the index and bound to the
+staged bytes. Run the check again after changing staged contents. Scientific checks remain those
 required by the affected realization and claim; storage checks do not replace
 them. Verify restoration from a fresh directory when introducing a new archive.
 
