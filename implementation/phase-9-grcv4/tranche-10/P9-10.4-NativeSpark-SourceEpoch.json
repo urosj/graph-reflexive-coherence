@@ -1,0 +1,26 @@
+{
+  "schema": "p9104-native-spark-publication-epoch-v1",
+  "predecessor": "ba4ac86f",
+  "checker_sha256": "cdf35364995c88f78f24e72676550adea0118492d678d037345077c3fd4d0cbf",
+  "runtime_changed": false,
+  "old_execution_relabelled": false,
+  "sources": {
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/serve_phase9.py": {
+      "before_sha256": "7ada3ad475e865f6a3babecd6eee195b5e656ab4942171084e309b23b0a2a31e",
+      "after_sha256": "796e4e9a44df3a34acdc2da7de80b856776d7083674b6a35eba10817cdd16b6b"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_earlier_sc3_metadata.py": {
+      "before_sha256": "183b01b54136c98e2261d32496cf35bb15c39616fe1196b1b06d2fa0459c5beb",
+      "after_sha256": "b66a436de8ad1e6f84241dd3b6e862edf7bdbeeb16cb51e1df9772e9fb2ace16"
+    },
+    "implementation/phase-9-grcv4/verification/p9103_native_spark_epoch.py": {
+      "before_sha256": "9fd9645374960d9ba5752511fcee9128b41ce45ccd3fbebece4dbf568293012e",
+      "after_sha256": "169c6ea4634d11b05fc67a0bb25631da7345fd9ef483c3577be6e6fe147271de"
+    },
+    "implementation/phase-9-grcv4/verification/p991a5_native_spark_compact_epoch.py": {
+      "before_sha256": "25ea8b92603792e062598c2961c427f6e9d403b75dbc50f5e2e251c6e76ebf81",
+      "after_sha256": "a5b5b9420c3042cccc71db95606017ff09883d8c9db6eb92b7065573cc532c96"
+    }
+  },
+  "record_digest": "b582886da2bdf16614d76cfc2af71e10b5155aebf854da85c9bf13af3a4c7a00"
+}

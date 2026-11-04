@@ -1,0 +1,31 @@
+{
+  "schema": "p9103-native-spark-acceptance-v1",
+  "date": "2026-11-03",
+  "basis": "User requested commit after completed integration regression review.",
+  "status": "accepted_bounded_regressions",
+  "user_accepted": true,
+  "P9_10_3_NATIVE_SPARK_closed": true,
+  "execution_path": "implementation/phase-9-grcv4/tranche-10/P9-10.3-NativeSpark-Regressions.json",
+  "execution_record_digest": "fe7bfcc6f5e6774bc5217cce85b06b017666d94269220ef9f39d8b0bdf8ceea5",
+  "execution_sha256": "e4161c408d3a7a372dff43561cda80ff75bf4aa7bab5e2c42cbfea35f903c14e",
+  "families": [
+    "C_OS",
+    "C_CI",
+    "C_PC",
+    "C_CI_PC",
+    "A_OS",
+    "A_CI",
+    "A_PC",
+    "A_CI_PC",
+    "C_RG2b",
+    "A_RG2b"
+  ],
+  "tests_run": 28,
+  "source_to_completion_campaigns_rerun": 0,
+  "new_support": [],
+  "hierarchy_tracking": false,
+  "full_GRC9V4_conformance": false,
+  "G4_accepted": false,
+  "next_work": "P9-10.4-NATIVE-SPARK",
+  "record_digest": "d54a2e2baa35139c1faaca1d28b2d277fc348be522e503c637ac1744da5f8343"
+}

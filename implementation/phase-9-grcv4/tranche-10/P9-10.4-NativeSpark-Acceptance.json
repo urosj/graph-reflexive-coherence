@@ -1,0 +1,30 @@
+{
+  "schema": "p9104-native-spark-acceptance-v1",
+  "date": "2026-11-03",
+  "basis": "User requested commit after completed native workflow publication.",
+  "status": "accepted_bounded_examples",
+  "user_accepted": true,
+  "P9_10_4_NATIVE_SPARK_closed": true,
+  "publication_path": "implementation/phase-9-grcv4/tranche-10/P9-10.4-NativeSpark-Examples.json",
+  "publication_record_digest": "0ecc44a05b39c6e681eee06a946a05eda8f37cd8189b5ebd7c2716b59b7d62d3",
+  "publication_sha256": "72c896dd98ab03ffb6f8cf22cb93c03064318658e0db7fcac014382cccd3b814",
+  "families": [
+    "C_OS",
+    "C_CI",
+    "C_PC",
+    "C_CI_PC",
+    "A_OS",
+    "A_CI",
+    "A_PC",
+    "A_CI_PC",
+    "C_RG2b",
+    "A_RG2b"
+  ],
+  "new_full_trajectory_runs": 0,
+  "new_support": [],
+  "hierarchy_tracking": false,
+  "full_GRC9V4_conformance": false,
+  "G4_accepted": false,
+  "next_work": "P9-10.5 formal obligation/debt reconciliation, then P9-10.6 release/G4.",
+  "record_digest": "63faee50ad908a96b8b4ee2ecb2369a4d1ce06f7b4cc811dde2fe3e292edce30"
+}

@@ -266,7 +266,8 @@ class NativeCPCTests(shared.NativeSparkCompletionTests):
         before = model.snapshot()
         self.assertFalse(model.migrate_spark_configuration(changed).committed)
         self.assertEqual(model.snapshot(), before)
-        self.assertFalse(model.support_status()["native_endpoint_verified"])
+        self.assertFalse(model.support_status()["current_occurrence_completed"])
+        self.assertFalse(model.support_status()["universal_entry_guarantee"])
         self.assertEqual(model.support_status()["execution_families"], ["C_PC"])
 
     def test_graph_and_decay_cache_reuse_never_reuses_changing_reads(self):

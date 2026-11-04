@@ -1,11 +1,30 @@
 # Agentic Query Guide
 
+Current final support: use `/api/phase9/release` in the Phase 9 server or
+`p9106_release.checked(repo_root)` from the Phase 9 verification directory.
+This authenticates accepted identities and disposition only; it runs no
+trajectories. P9-10.6 is recorded; P9-G4 remains pending. The existing research
+and native-debt queries preserve their own authority boundaries.
+
 This guide describes how an automated research agent can query the accepted
 GRCv4 exploratory side-tool API. The primary API is a local Python interface;
 the Phase 9 web service exposes read-only projections of selected results.
 The API reconstructs accepted evidence and evaluates a closed set of
 structural counterfactuals; it does not create scientific evidence or predict a
 gate that has not been rerun.
+
+## Current native spark claim/debt disposition — P9-10.5
+
+Use [NativeSparkDebts.md](./NativeSparkDebts.md) for the explicit native
+successor to the SC-3 ledgers. `spark_native_debts.native_spark_debts(root)`
+authenticates scientific-to-native links; `query(view, "debt_lifecycle", id)`
+and the `verification_obligation` / `scientific_claim` queries preserve source,
+status and scope. Historical research contexts below intentionally retain their
+research-time pending obligations. Native evidence does not promote their claim
+classes. Thirty native portions are discharged, four hierarchy splits retained;
+the reconciliation is bounded accepted on 2026-11-04 through a separate
+source-bound decision. The original ledger flags remain historical. No numerical
+rerun or G4 grant.
 
 ## ATC bounded research successor
 

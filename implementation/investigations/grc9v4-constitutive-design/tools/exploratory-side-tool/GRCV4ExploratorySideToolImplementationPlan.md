@@ -3572,3 +3572,88 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
 - [x] Pressure rehashed scope/claim/debt changes, source and propagation drift,
   multiple-obligation errors and API/notebook/browser behavior. Native completion
   and G4 remain pending; C_PC is the next research family.
+
+## Native RG2b completion campaigns — 2026-11-03
+
+The C_RG2b.5 and A_RG2b.5 source-to-completion results now have separate pinned
+API views, a shared browser renderer and the `spark-native-rg2b-campaigns`
+notebook cell. The views expose actual entry/window counts, current/reset gain,
+complete cold replay, compact-evidence scope and original execution flags. Historical
+preflight/pressure views retain their original evidence and source identities.
+
+C_RG2b passes 390→392 and A_RG2b passes 300→302 for both roles, with gains
+one/zero and exact cold publication recovery. Every state, flux, represented
+error, proof summary and complete diagnostic hash remains inspectable; full
+omitted-chain reproduction is an explicit numerical operation. Reading a view
+checks retained evidence and does not rerun its trajectory.
+
+All six focused API/browser/notebook, binding-mutation, stale-result and
+preserved-source checks pass. The user accepted both bounded campaigns by
+requesting commit on 2026-11-03. Acceptance is recorded separately in their
+reviews, plan, checklist and handoff; sealed execution/projection flags are
+unchanged. P9-9.1a.7 aggregate support remains separate.
+
+## P9-9.1a.7 current native completion support — 2026-11-03
+
+- [x] Reconcile ten accepted family campaigns, twenty exact declarations and
+  thirty native-obligation evidence links; preserve sealed historical flags.
+- [x] Expose `/api/native-spark/support`, `/source`, the current-support browser
+  panel and notebook cell `native-spark-support`; fail closed on stale data.
+- [x] Separate exact declaration capability, accepted endpoint evidence and
+  current-occurrence completion. No hierarchy/general ATC/full conformance/G4.
+- [x] User accepted reconciliation by requesting commit on 2026-11-03.
+  Tranche 10 supplements and formal obligation/debt adjudication remain separate.
+
+See [NativeSparkSupport](./docs/NativeSparkSupport.md) and the scoped P9-9.6
+supplement in the P9-9.1a.7 review. No original numerical campaign is repeated.
+
+## P9-10.3-NATIVE-SPARK integration regressions — 2026-11-03
+
+- [x] Publish the 28 passing focused tests and ten-family retained evidence
+  through `/api/native-spark/regressions`, `/source`, the browser and notebook.
+- [x] Distinguish all-ten identities/persistence, short shared C_OS windows and
+  ordinary V4/V3 boundaries from the reused complete numerical campaigns.
+- [x] Pin execution/source identities; reject changed coverage/scope and clear
+  stale browser/notebook output. Inspection executes no tests.
+- [x] User accepted the bounded supplement by requesting commit on 2026-11-03.
+  Current views link that decision while preserving the execution-time flags.
+  Examples, formal debts and G4 remain separate.
+
+See [NativeSparkRegressions](./docs/NativeSparkRegressions.md).
+
+## P9-10.4-NATIVE-SPARK public workflow — 2026-11-03
+
+- [x] Link the coherent public source → expansion → certificate admission →
+  entry → positive window → completed-spark guide and executable example.
+- [x] All-ten retained endpoints with configuration, role/history, proof,
+  local-gain and replay distinctions; no duplicate numerical campaign.
+- [x] Read-only `/api/native-spark/workflow`, indexed guide/code downloads,
+  browser panel and notebook cell. Explicit CLI execution stays separate.
+- [x] Source/digest checks, fixed request scope and stale/failure clearing.
+- [x] User accepted the bounded workflow publication by requesting commit on
+  2026-11-03. Current views expose the separate decision; original publication
+  flags remain historical. P9-10.5/10.6 remain separate.
+
+See [NativeSparkWorkflow](./docs/NativeSparkWorkflow.md).
+
+## P9-10.5 native claim/debt reconciliation — 2026-11-04
+
+The [native-debt guide](./docs/NativeSparkDebts.md) describes the current
+successor queries. Thirty bounded native portions are discharged, four hierarchy
+splits retained. Historical scientific forensic contexts remain unchanged;
+new native evidence is never backward scientific proof. The read-only API,
+browser and notebook expose the same ledger. Focused mutation/source/surface
+checks reuse accepted numerics. User acceptance of P9-10.5 is recorded on
+2026-11-04; current views expose that separate decision. The original ledger
+remains unchanged. P9-10.6/G4 remains separate.
+
+## P9-10.6 final bounded support — 2026-11-04
+
+- [x] Expose the authenticated final disposition through `/api/phase9/release`,
+  the browser's top support link and the notebook's `p9106-release` cell.
+- [x] Keep generic, specialization, basin/compatibility and optional native-spark
+  exact support sets separate; link accepted decisions and native debt routing.
+- [x] Record P9-10.6 completion without granting G4, hierarchy or full conformance.
+  Historical projection flags remain unchanged. No numerical campaign rerun.
+
+See [release disposition](../../../../phase-9-grcv4/tranche-10/P9-10.6-ReleaseDisposition.md).

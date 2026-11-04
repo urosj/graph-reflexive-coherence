@@ -24,6 +24,8 @@ def load_json_object(path):
 
 
 def checked_record(root):
+    from .basin import _bound_file
+
     root = Path(root).resolve()
     value = load_json_object(root / RECORD)
     if (
@@ -41,8 +43,8 @@ def checked_record(root):
     for row in [*value["source_bindings"], value["evidence"]]:
         p = root / row["path"]
         try:
-            raw = p.read_bytes()
-        except OSError as error:
+            raw = _bound_file(root, row["path"], row["sha256"]).read_bytes()
+        except (OSError, ValueError) as error:
             raise SourceAdmissionError(str(error)) from error
         if (
             not p.resolve().is_relative_to(root)

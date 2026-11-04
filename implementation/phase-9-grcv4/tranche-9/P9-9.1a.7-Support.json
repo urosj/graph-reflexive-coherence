@@ -1,0 +1,821 @@
+{
+  "schema": "phase9-native-spark-support-reconciliation-v1",
+  "leaf": "P9-9.1a.7",
+  "status": "bounded_native_support_reconciled",
+  "family_campaigns_accepted": true,
+  "reconciliation_user_accepted": true,
+  "native_completion_support": true,
+  "completion_support_scope": "exact_declarations_and_certificate_domains",
+  "hierarchy_tracking": false,
+  "general_ATC": false,
+  "full_GRC9V4_conformance": false,
+  "G4_accepted": false,
+  "new_numerical_trajectories": 0,
+  "historical_execution_flags_preserved": true,
+  "evidence": [
+    {
+      "family": "C_OS",
+      "campaign": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Campaign.json.xz",
+        "sha256": "84292e50ce6df37f1a64d38776facc78dffaed62afab67777773a69b57489e31"
+      },
+      "accepted_commit": "1ec198b2",
+      "accepted_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Review.md",
+        "sha256": "ef8821b83ef0155087e7e06e24ee123037cb49a8d54f3c2b20fdbf60eafecabc"
+      },
+      "current_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-Review.md",
+        "sha256": "884953733a31f6883579d51e0f3e34ee8a8a954f316467990a0c5b04e83e19fb"
+      },
+      "input": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.5-inputs.jsonl.xz",
+        "sha256": "ad90af7caa7a7006a6243f214faa232eb2a44aafd8fa97f30d953ad7d7057638"
+      },
+      "source_manifest": "specs/grc-9-v4-spark-completion-source-manifest.json",
+      "contract_ids": [
+        "SC-EC-GEOMETRIC-IDENTITY",
+        "SC-EC-PARENT-GAIN",
+        "SC-EC-FULL-STATE-RETURN",
+        "SC-EC-QUARTIC-SITE",
+        "SC-EC-REPRESENTED-COMPLETION",
+        "SC-EC-WINDOW-LIFECYCLE",
+        "SC-EC-COMPLETION-SCHEMA",
+        "SC-EC-SCIENTIFIC-CEILING"
+      ],
+      "state_channels": [
+        "C"
+      ],
+      "native_obligations": [
+        "SC-VO-NATIVE-LIFECYCLE",
+        "SC-VO-NATIVE-NUMERICS",
+        "SC-EARLY-COS-VO-NATIVE-LIFECYCLE",
+        "SC-EARLY-COS-VO-NATIVE-NUMERICS"
+      ],
+      "obligation_disposition": "native_evidence_complete_for_P9_10_5_adjudication"
+    },
+    {
+      "family": "C_CI",
+      "campaign": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-Campaign.json.xz",
+        "sha256": "45fc8f7a30f0cc27826e56d94da37c0e5e8496dc9b790edfc02c9d7b8899f8f5"
+      },
+      "accepted_commit": "88a1c6b1",
+      "accepted_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-Review.md",
+        "sha256": "90b07da8f91b9e960253607d9743295059048b6ac6fb348922b7bcec01e240c3"
+      },
+      "current_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-Review.md",
+        "sha256": "90b07da8f91b9e960253607d9743295059048b6ac6fb348922b7bcec01e240c3"
+      },
+      "input": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCI.5-inputs.jsonl.xz",
+        "sha256": "01b600f282a3313b4fa06dffcdc14827187f37ace200cb6fd83757f4a342099d"
+      },
+      "source_manifest": "specs/grc-9-v4-spark-completion-applicability-source-manifest.json",
+      "contract_ids": [
+        "SC-CCI-EC-JOINT-ROOT",
+        "SC-CCI-EC-FULL-STATE-RETURN",
+        "SC-CCI-EC-COMPLETION"
+      ],
+      "state_channels": [
+        "C"
+      ],
+      "native_obligations": [
+        "SC-CCI-VO-NATIVE-LIFECYCLE",
+        "SC-CCI-VO-NATIVE-NUMERICS",
+        "SC-EARLY-CCI-VO-NATIVE-LIFECYCLE",
+        "SC-EARLY-CCI-VO-NATIVE-NUMERICS"
+      ],
+      "obligation_disposition": "native_evidence_complete_for_P9_10_5_adjudication"
+    },
+    {
+      "family": "C_PC",
+      "campaign": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-Campaign.json.xz",
+        "sha256": "00890de9b5fb1c16ca530a694307717ce56e8f59da5dc9b5254d1201b7ba8ca6"
+      },
+      "accepted_commit": "31d1aba7",
+      "accepted_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-Review.md",
+        "sha256": "a3561d760368b6e0988b9a91ccccc4eae7bcfd198458edb735d9d52e3e93c1c6"
+      },
+      "current_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-Review.md",
+        "sha256": "a3561d760368b6e0988b9a91ccccc4eae7bcfd198458edb735d9d52e3e93c1c6"
+      },
+      "input": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CPC.5-inputs.jsonl.xz",
+        "sha256": "0c77cf6baf90d089c804b80cde4c24c2d2ef6e9a8e697f2faa386e1631adbf70"
+      },
+      "source_manifest": "specs/grc-9-v4-spark-completion-pc-source-manifest.json",
+      "contract_ids": [
+        "SC-CPC-EC-DOMAIN",
+        "SC-CPC-EC-FULL-STATE-RETURN",
+        "SC-CPC-EC-COMPLETION"
+      ],
+      "state_channels": [
+        "C",
+        "Z"
+      ],
+      "native_obligations": [
+        "SC-CPC-VO-NATIVE-LIFECYCLE",
+        "SC-CPC-VO-NATIVE-NUMERICS",
+        "SC-EARLY-CPC-VO-NATIVE-LIFECYCLE",
+        "SC-EARLY-CPC-VO-NATIVE-NUMERICS"
+      ],
+      "obligation_disposition": "native_evidence_complete_for_P9_10_5_adjudication"
+    },
+    {
+      "family": "C_CI_PC",
+      "campaign": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC.5-Campaign.json.xz",
+        "sha256": "48e625099afd4a4137a1dd010e83b2bd1cf1104f76835b3c7f332d29d9568676"
+      },
+      "accepted_commit": "e2cfad85",
+      "accepted_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC.5-Review.md",
+        "sha256": "63c18f5b23eaf7f2201d92faa2ed09155b162344a0de43172cd06bf223dc443f"
+      },
+      "current_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC.5-Review.md",
+        "sha256": "63c18f5b23eaf7f2201d92faa2ed09155b162344a0de43172cd06bf223dc443f"
+      },
+      "input": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CCIPC.5-inputs.jsonl.xz",
+        "sha256": "40e251c04b8e88d217cfa4178ca0f73e678ad83903c4ec11c41988618b83b521"
+      },
+      "source_manifest": "specs/grc-9-v4-spark-completion-ci-pc-source-manifest.json",
+      "contract_ids": [
+        "SC-CCIPC-EC-DOMAIN",
+        "SC-CCIPC-EC-FULL-STATE-RETURN",
+        "SC-CCIPC-EC-COMPLETION"
+      ],
+      "state_channels": [
+        "C",
+        "Z"
+      ],
+      "native_obligations": [
+        "SC-CCIPC-VO-NATIVE-LIFECYCLE",
+        "SC-CCIPC-VO-NATIVE-NUMERICS",
+        "SC-EARLY-CCIPC-VO-NATIVE-LIFECYCLE",
+        "SC-EARLY-CCIPC-VO-NATIVE-NUMERICS"
+      ],
+      "obligation_disposition": "native_evidence_complete_for_P9_10_5_adjudication"
+    },
+    {
+      "family": "A_OS",
+      "campaign": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-Campaign.json.xz",
+        "sha256": "52104272715a612a6880f21d2e01bf607721dc26047699ae8bcd6ec549733c80"
+      },
+      "accepted_commit": "4587185f",
+      "accepted_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-Review.md",
+        "sha256": "e4bfe0a84bbaf9ff46ad487c5784419eae244959773267c911aec636400747e2"
+      },
+      "current_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-Review.md",
+        "sha256": "e4bfe0a84bbaf9ff46ad487c5784419eae244959773267c911aec636400747e2"
+      },
+      "input": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-AOS.5-inputs.jsonl.xz",
+        "sha256": "b077a99136a292e2a8d6ae7bf44559d2daafe2170d753e0e51fcbbf3b89b9355"
+      },
+      "source_manifest": "specs/grc-9-v4-spark-completion-a-os-source-manifest.json",
+      "contract_ids": [
+        "SC-AOS-EC-DOMAIN",
+        "SC-AOS-EC-FULL-STATE-RETURN",
+        "SC-AOS-EC-COMPLETION"
+      ],
+      "state_channels": [
+        "C",
+        "W"
+      ],
+      "native_obligations": [
+        "SC-AOS-VO-NATIVE-LIFECYCLE",
+        "SC-AOS-VO-NATIVE-NUMERICS",
+        "SC-EARLY-AOS-VO-NATIVE-LIFECYCLE",
+        "SC-EARLY-AOS-VO-NATIVE-NUMERICS"
+      ],
+      "obligation_disposition": "native_evidence_complete_for_P9_10_5_adjudication"
+    },
+    {
+      "family": "A_CI",
+      "campaign": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACI.5-Campaign.json.xz",
+        "sha256": "4c879e99606f87652c463a16d598853f3f836771a55be2d915ec399e1de539e3"
+      },
+      "accepted_commit": "5b92524c",
+      "accepted_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACI.5-Review.md",
+        "sha256": "204fb6718c19b399833988c43391ba0c6b787c743b1aeb067c476f29598bdc14"
+      },
+      "current_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACI.5-Review.md",
+        "sha256": "204fb6718c19b399833988c43391ba0c6b787c743b1aeb067c476f29598bdc14"
+      },
+      "input": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACI.5-inputs.jsonl.xz",
+        "sha256": "a8f4b32538662a77be415fc182c806df8ae743bfde3aac0bb22e75d9fcb923b7"
+      },
+      "source_manifest": "specs/grc-9-v4-spark-completion-a-ci-source-manifest.json",
+      "contract_ids": [
+        "SC-ACI-EC-DOMAIN",
+        "SC-ACI-EC-FULL-STATE-RETURN",
+        "SC-ACI-EC-COMPLETION"
+      ],
+      "state_channels": [
+        "C",
+        "W"
+      ],
+      "native_obligations": [
+        "SC-ACI-VO-NATIVE-LIFECYCLE",
+        "SC-ACI-VO-NATIVE-NUMERICS"
+      ],
+      "obligation_disposition": "native_evidence_complete_for_P9_10_5_adjudication"
+    },
+    {
+      "family": "A_PC",
+      "campaign": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-APC.5-Campaign.json.xz",
+        "sha256": "03de8725555b9be65b0b0f0fb6f36912a52c4100cbec3d8d0339f8d741eeaf3b"
+      },
+      "accepted_commit": "10277f05",
+      "accepted_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-APC.5-Review.md",
+        "sha256": "a58069152598ffb1d58a1fde20ef363d77460ce63c81d39c0c9f8801d6910b1f"
+      },
+      "current_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-APC.5-Review.md",
+        "sha256": "a58069152598ffb1d58a1fde20ef363d77460ce63c81d39c0c9f8801d6910b1f"
+      },
+      "input": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-APC.5-inputs.jsonl.xz",
+        "sha256": "d825e37078416ba8f31a671940f7fc3e021edef407989128fd35cddbfab682a0"
+      },
+      "source_manifest": "specs/grc-9-v4-spark-completion-a-pc-source-manifest.json",
+      "contract_ids": [
+        "SC-APC-EC-DOMAIN",
+        "SC-APC-EC-FULL-STATE-RETURN",
+        "SC-APC-EC-COMPLETION"
+      ],
+      "state_channels": [
+        "C",
+        "W",
+        "Z"
+      ],
+      "native_obligations": [
+        "SC-APC-VO-NATIVE-LIFECYCLE",
+        "SC-APC-VO-NATIVE-NUMERICS"
+      ],
+      "obligation_disposition": "native_evidence_complete_for_P9_10_5_adjudication"
+    },
+    {
+      "family": "A_CI_PC",
+      "campaign": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC.5-Campaign.json.xz",
+        "sha256": "23e899d1e6e72f0aa61d32ce62f5b098852bdd97094044286640c185674d1903"
+      },
+      "accepted_commit": "7252dd6d",
+      "accepted_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC.5-Review.md",
+        "sha256": "08ccd1f2285ea7e5302542451dcc5a0f11fc93a510a65c29fcccd7ee526f0104"
+      },
+      "current_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC.5-Review.md",
+        "sha256": "08ccd1f2285ea7e5302542451dcc5a0f11fc93a510a65c29fcccd7ee526f0104"
+      },
+      "input": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ACIPC.5-inputs.jsonl.xz",
+        "sha256": "643b574cd44147e46a92cca6ed70db03937ff5df3e96204dfedfd270eb64b5a7"
+      },
+      "source_manifest": "specs/grc-9-v4-spark-completion-a-ci-pc-source-manifest.json",
+      "contract_ids": [
+        "SC-ACIPC-EC-DOMAIN",
+        "SC-ACIPC-EC-FULL-STATE-RETURN",
+        "SC-ACIPC-EC-COMPLETION"
+      ],
+      "state_channels": [
+        "C",
+        "W",
+        "Z"
+      ],
+      "native_obligations": [
+        "SC-ACIPC-VO-NATIVE-LIFECYCLE",
+        "SC-ACIPC-VO-NATIVE-NUMERICS"
+      ],
+      "obligation_disposition": "native_evidence_complete_for_P9_10_5_adjudication"
+    },
+    {
+      "family": "C_RG2b",
+      "campaign": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b.5-Campaign.json",
+        "sha256": "f84ac243ea09a53986b23c487513c49014c390917e653cafe8ce780b20c23a49"
+      },
+      "accepted_commit": "528736b9",
+      "accepted_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b.5-Review.md",
+        "sha256": "51d423797c10b2900d3a2cc989748950e4155f21f14ab863a8f896006973dab7"
+      },
+      "current_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b.5-Review.md",
+        "sha256": "51d423797c10b2900d3a2cc989748950e4155f21f14ab863a8f896006973dab7"
+      },
+      "input": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b.5-inputs.jsonl.xz",
+        "sha256": "fe264a91cd67c05a8a0523ea1900a9ba6b9c222e408ed3a854b4fefd7d66a6a0"
+      },
+      "source_manifest": "specs/grc-9-v4-spark-completion-c-rg2b-source-manifest.json",
+      "contract_ids": [
+        "SC-CRG2B-EC-DOMAIN",
+        "SC-CRG2B-EC-FULL-STATE-RETURN",
+        "SC-CRG2B-EC-COMPLETION"
+      ],
+      "state_channels": [
+        "C"
+      ],
+      "native_obligations": [
+        "SC-CRG2B-VO-NATIVE-LIFECYCLE",
+        "SC-CRG2B-VO-NATIVE-NUMERICS"
+      ],
+      "obligation_disposition": "native_evidence_complete_for_P9_10_5_adjudication"
+    },
+    {
+      "family": "A_RG2b",
+      "campaign": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b.5-Campaign.json",
+        "sha256": "94823f115876c5593318c5a881d8356c4e998630668d9c1938c14d740b341ab3"
+      },
+      "accepted_commit": "528736b9",
+      "accepted_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b.5-Review.md",
+        "sha256": "985b0ab2cd96eb4055f36c662594e3139afd8efd10dc5a1428df6710131b68c0"
+      },
+      "current_review": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b.5-Review.md",
+        "sha256": "985b0ab2cd96eb4055f36c662594e3139afd8efd10dc5a1428df6710131b68c0"
+      },
+      "input": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b.5-inputs.jsonl.xz",
+        "sha256": "bda6eb553e477c51dd538f5f8ba2852077165fc5000e1669abc873f20927f0c0"
+      },
+      "source_manifest": "specs/grc-9-v4-spark-completion-a-rg2b-source-manifest.json",
+      "contract_ids": [
+        "SC-ARG2B-EC-DOMAIN",
+        "SC-ARG2B-EC-FULL-STATE-RETURN",
+        "SC-ARG2B-EC-COMPLETION"
+      ],
+      "state_channels": [
+        "C",
+        "W"
+      ],
+      "native_obligations": [
+        "SC-ARG2B-VO-NATIVE-LIFECYCLE",
+        "SC-ARG2B-VO-NATIVE-NUMERICS"
+      ],
+      "obligation_disposition": "native_evidence_complete_for_P9_10_5_adjudication"
+    }
+  ],
+  "families": [
+    {
+      "family": "C_OS",
+      "campaign_record_digest": "4972df8504845ba2a21e07a3fbe4326f2b4e1e70a55b5063076f534b3b592cfb",
+      "numerical_policy": "spark_cos_exact_flint_flux128_v1",
+      "duration": "32",
+      "subjects": [
+        {
+          "role": "source",
+          "declaration_digest": "7a4a3f7e4826e4951cdb3bd367cbbef0a2e555b2e340b8067883a5c3f536f0ee",
+          "model_identity": "grc9v4-model-sha256:bb756dece69c5b7be1c60334be615ff1d885b9e69b9131a03789534f9feb58b3",
+          "complete_profile_id": "grcv4-profile-sha256:c513a95a338d1d13d100be7d605eae15305d6b43a500ecd3e7fad6bc17336ac3",
+          "graph_digest": "grc-graph-sha256:c772c9fcaeb91f4e84ae3c9ed44d653aede36a4f4f2be039cef5808abdc6fc06",
+          "charge": "21"
+        },
+        {
+          "role": "target",
+          "declaration_digest": "aa5b92d45d98b31af3bd471a9244d262cdc7f89bcb5773cf325a9f3cf73d4ca4",
+          "model_identity": "grc9v4-model-sha256:43a1da014e38e87ff104fa8d0962a222cae89c2f974ea8efd837914ccab3eefb",
+          "complete_profile_id": "grcv4-profile-sha256:2b4fba0bac8efe8b70a13f8fad9dde4f5afd5cc28c378df88a36136c021c991b",
+          "graph_digest": "grc-graph-sha256:7dfb1bbd1eb072d8f7c8fa9ae6e7b84dfaa75214caa7933fba5b34249bc58e75",
+          "charge": "21"
+        }
+      ],
+      "certificate_ids": [
+        "d8901ec0400f0c78f47cc81f5aeb8fd6e551bf112371c9f205b2b84e2eb5525d",
+        "a3f5418e0184f090603aeb2cc6e41e80255c5ecd00bb0a2223374e36b1256ff8"
+      ],
+      "roles": {
+        "current": {
+          "entry": 374,
+          "completion": 376,
+          "target_steps": 376,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 0
+        }
+      }
+    },
+    {
+      "family": "C_CI",
+      "campaign_record_digest": "d030ba7f5673fd6eae6c78881c683bac153f1377632b8218f7f626e600949483",
+      "numerical_policy": "spark_cci_arb256_certified_root_flux128_v1",
+      "duration": "32",
+      "subjects": [
+        {
+          "role": "source",
+          "declaration_digest": "4279a8e35bac188f80e4b8e043c9cb067e5854691a6a2cd6b709817a6a008350",
+          "model_identity": "grc9v4-model-sha256:ec379b79972b5b3a52a2b925089bef7de1326b6ec00e00fe436be23eba3bb683",
+          "complete_profile_id": "grcv4-profile-sha256:84283bab29d84ed104a86e90eb126b9726f3f1ab99bf5f8a16f6b24b838dbd17",
+          "graph_digest": "grc-graph-sha256:c772c9fcaeb91f4e84ae3c9ed44d653aede36a4f4f2be039cef5808abdc6fc06",
+          "charge": "21"
+        },
+        {
+          "role": "target",
+          "declaration_digest": "9777e84fd26c1dc3c56d2d89ddbfb9a3ec05dd4cf65370473365fbfa5c92354f",
+          "model_identity": "grc9v4-model-sha256:a62f6ecb55ba1c00ef87b0cb24778fd00536694f8943c46bc64785c4411596e7",
+          "complete_profile_id": "grcv4-profile-sha256:17f6e06c0cc5423459b57b447fc4e10c73206420794bd8e465023f5f3faf46d9",
+          "graph_digest": "grc-graph-sha256:ef693fce035b17d6186b57db7787df839691aa0c46e8564744ef74a5e8d36b1a",
+          "charge": "21"
+        }
+      ],
+      "certificate_ids": [
+        "7ce96f94fe03a37a4d23ff13ee458607fd8835954a85b1f78149a6de5406cd45",
+        "3a30384c0b016457a018d707e653a406080ee20f6556ef6f660726a8b37f32a0"
+      ],
+      "roles": {
+        "current": {
+          "entry": 374,
+          "completion": 376,
+          "target_steps": 376,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 0
+        }
+      }
+    },
+    {
+      "family": "C_PC",
+      "campaign_record_digest": "0f835ad60e0e3d7dcff2aeff731ad2449494d434c4f62ca8c23a5e8c39cc7b0d",
+      "numerical_policy": "spark_cpc_arb256_flux128_carrier192_v1",
+      "duration": "32",
+      "subjects": [
+        {
+          "role": "source",
+          "declaration_digest": "40b9fadc52c674d31db2796110c0f4fcafcfc2ebf586fbd2ee8136624602e2f3",
+          "model_identity": "grc9v4-model-sha256:a153368e18a9ff05042689560abdb59958df27d409ec4bf1b5b3efa505deb43b",
+          "complete_profile_id": "grcv4-profile-sha256:569e61afc57f34a6ad163c571cdd6d6542f7effef2aa3b8c76be5f8faa9cc85d",
+          "graph_digest": "grc-graph-sha256:c772c9fcaeb91f4e84ae3c9ed44d653aede36a4f4f2be039cef5808abdc6fc06",
+          "charge": "21"
+        },
+        {
+          "role": "target",
+          "declaration_digest": "b0631959664456ddc14d34aba2876b2b39fe330f5980405a899fd489b48132a7",
+          "model_identity": "grc9v4-model-sha256:9846488df2c83beba849773df189cc576acefab367257b8d08c1cda3b4e883e2",
+          "complete_profile_id": "grcv4-profile-sha256:ad82ffa70afb53e5cb77af9f9b7afe3de02629ca3caced40134fcc0654e19ea2",
+          "graph_digest": "grc-graph-sha256:12866cf4b57ed21fda97bd691fe8708350652c61cf0f7674a73aae84d049f342",
+          "charge": "21"
+        }
+      ],
+      "certificate_ids": [
+        "5b9b787348a8aa5c3c58e313d047532516df7411ef40675212f05076329f4b3f",
+        "073a38550f74ca7fb6324c939567a6a66765ff159d4a5db34f3b4949d90cc788"
+      ],
+      "roles": {
+        "current": {
+          "entry": 374,
+          "completion": 376,
+          "target_steps": 376,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 0
+        }
+      }
+    },
+    {
+      "family": "C_CI_PC",
+      "campaign_record_digest": "9abc6d126444cb5f69a12e4d7c78cdd20b6de7278277f413d5826f2a527856f1",
+      "numerical_policy": "spark_ccipc_arb256_certified_root_flux128_carrier192_v1",
+      "duration": "32",
+      "subjects": [
+        {
+          "role": "source",
+          "declaration_digest": "a84c03d9aa53210a1360770f86e1bbada3e3351baf7b2ea939eb60218f0d31f4",
+          "model_identity": "grc9v4-model-sha256:7a278df6732f0abab49b8e0c263128a50b4b097c43f58745f04c4118bcb49de9",
+          "complete_profile_id": "grcv4-profile-sha256:9b8d6220dbdb1f17001779986a27b44a4ef21f34ed794956336c85a854b01caf",
+          "graph_digest": "grc-graph-sha256:c772c9fcaeb91f4e84ae3c9ed44d653aede36a4f4f2be039cef5808abdc6fc06",
+          "charge": "21"
+        },
+        {
+          "role": "target",
+          "declaration_digest": "d3c07c01ee150c3fb59219d60d3407d150753572480e4e6547b51d35f7b9e925",
+          "model_identity": "grc9v4-model-sha256:2de97de715e106edd10b41549243ec7ca8b0f34cc2c7d97b1da295938f7619ab",
+          "complete_profile_id": "grcv4-profile-sha256:289d43ac2b797c640b56168706009ff9e9d57d21a66ac418de3305e847f48eb0",
+          "graph_digest": "grc-graph-sha256:f13d3869dc4100f3d2bd6f0cda1b3433947a9952f719f19d56a468717384c6b8",
+          "charge": "21"
+        }
+      ],
+      "certificate_ids": [
+        "3275e4da097e7e88e0ef5dddd9639f9b9bf1d642c87b0b2e7231b6e528e68d3f",
+        "6cf6e582f0e77daa66a66d6248887c52e8d5ea43391d45fe5648585e90bcd9ab"
+      ],
+      "roles": {
+        "current": {
+          "entry": 374,
+          "completion": 376,
+          "target_steps": 376,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 0
+        }
+      }
+    },
+    {
+      "family": "A_OS",
+      "campaign_record_digest": "38357b6c99ed9d3e013bdf9b9e77e39496b318a3e020fd1ba3b0e733b77b18e5",
+      "numerical_policy": "spark_aos_arb256_flux128_conductance192_v1",
+      "duration": "32",
+      "subjects": [
+        {
+          "role": "source",
+          "declaration_digest": "e8ea21493970d843b80d6e0301ca1896193773143b45e3bfb52bd969217cca06",
+          "model_identity": "grc9v4-model-sha256:f0c30894ea8a7e4fce1cb54fa59c439af275286fbde2737dcd4c1fa34420a1c4",
+          "complete_profile_id": "grcv4-profile-sha256:277f08f970a570dc669f9a35e9d1a532cd6307be14472850e28370bffffb7d68",
+          "graph_digest": "grc-graph-sha256:c772c9fcaeb91f4e84ae3c9ed44d653aede36a4f4f2be039cef5808abdc6fc06",
+          "charge": "21"
+        },
+        {
+          "role": "target",
+          "declaration_digest": "694ccfa1bddb401fd0deca5a0d101752fa2e8cd72d9b8044b83de8df94e8fd7c",
+          "model_identity": "grc9v4-model-sha256:2f035220ddb4f288c10e5200ed29394d8a5fbe1cb99b4a39657153ea2324b6ab",
+          "complete_profile_id": "grcv4-profile-sha256:d1fc79fc6120332f55fc834189aa057d9b8e2b403907128afbd31c099cdc4123",
+          "graph_digest": "grc-graph-sha256:e45067b48e4f0c121b362df0328f7b11dba8ac1b027c133232f8f9bd11a926e5",
+          "charge": "21"
+        }
+      ],
+      "certificate_ids": [
+        "be2f3107550286d44ea044117088e1e7ba7ca6a5c14f83aa31affc6b29f35ad1",
+        "671e2b908c24a52b3a46fe10b165c21a8b8003afdc528581e1fd3bb57389e31b"
+      ],
+      "roles": {
+        "current": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 372,
+          "completion": 374,
+          "target_steps": 374,
+          "local_gain": 0
+        }
+      }
+    },
+    {
+      "family": "A_CI",
+      "campaign_record_digest": "2bd7d036518bf663fc896549f183e7409c487583cbcaf7ab63ace8fec5b372fa",
+      "numerical_policy": "spark_aci_arb256_flux128_conductance192_v1",
+      "duration": "32",
+      "subjects": [
+        {
+          "role": "source",
+          "declaration_digest": "a9d229b5f90f7f396a21c9953fef17e8c82a0015ac95167d2bee83e4cca4effc",
+          "model_identity": "grc9v4-model-sha256:e7cd411f49e8ffb1b25f2d09a337a8a5896961139b9783ed8a99344bb32a3cf5",
+          "complete_profile_id": "grcv4-profile-sha256:a2807d4ddaf8289d171e1aa22dfcfd4ed09793259538d0a6685ace33e0eada4d",
+          "graph_digest": "grc-graph-sha256:c772c9fcaeb91f4e84ae3c9ed44d653aede36a4f4f2be039cef5808abdc6fc06",
+          "charge": "21"
+        },
+        {
+          "role": "target",
+          "declaration_digest": "283d17b56d57eccf90cbafb1f89aad012cb19f4edd574527409ed9fba979787a",
+          "model_identity": "grc9v4-model-sha256:187272dcc35b48eae8f18d220a58bb1f58c149669a173973df8a18680150f422",
+          "complete_profile_id": "grcv4-profile-sha256:654d72043115f5f7f491280eb27193bf52ec2c6eb2162e1693d83ba76114b9e3",
+          "graph_digest": "grc-graph-sha256:4553c628e7173b8746e709412bfbf4661ab47807a03058b6ff98acc6adb805c9",
+          "charge": "21"
+        }
+      ],
+      "certificate_ids": [
+        "be644f7a9739687521293b25a2dc1e7aaa639521edce64e205db104f534e3c87",
+        "8ed0cf1e0b7f826501383b9edbb008af2be5cf527e20b845334a02ad152f8e51"
+      ],
+      "roles": {
+        "current": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 372,
+          "completion": 374,
+          "target_steps": 374,
+          "local_gain": 0
+        }
+      }
+    },
+    {
+      "family": "A_PC",
+      "campaign_record_digest": "596f6be82cdb1ec3a100bc5343f5fde87f1f78c7ce52f68e2c0562e0926f3c35",
+      "numerical_policy": "spark_apc_arb256_flux128_conductance192_carrier192_v1",
+      "duration": "32",
+      "subjects": [
+        {
+          "role": "source",
+          "declaration_digest": "d8d6f3130f1d28311cf999be51eb99e1ca3bd44c1e7707e6e933bb4f4c70d3af",
+          "model_identity": "grc9v4-model-sha256:1191b4cf046140df45f89384e112187f8b68c620ee6cb108a41d6c151d47cf40",
+          "complete_profile_id": "grcv4-profile-sha256:1f8f263a0d856c2a65a5a5cf44ee0edb586043cf3708564258e53c4e48ea92a6",
+          "graph_digest": "grc-graph-sha256:c772c9fcaeb91f4e84ae3c9ed44d653aede36a4f4f2be039cef5808abdc6fc06",
+          "charge": "21"
+        },
+        {
+          "role": "target",
+          "declaration_digest": "bb328cebae43f739cf242c8640c246d337a8ced965d23715c8263716b8b80b65",
+          "model_identity": "grc9v4-model-sha256:fedd9cd913a6dae701825c0c9912f5a44f04c6187e8898ae3308e5af18b2bc9d",
+          "complete_profile_id": "grcv4-profile-sha256:b665580032826ed8e54acc0f8a921efaeaaf38fac0d8867c7f32165b421f3fc8",
+          "graph_digest": "grc-graph-sha256:1cb2c9a7552f0b03230a2d96a073238f131e3eae4848295b8fff7dcb0b04529f",
+          "charge": "21"
+        }
+      ],
+      "certificate_ids": [
+        "b365f1a0f7c37952999b4f7bc1fe4ab81d51d57a59eddb33eb66a81a00be0c02",
+        "f380b716954cec09fe50236b46bb4631f6a907e468281a7a28403ef9fd2164ee"
+      ],
+      "roles": {
+        "current": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 372,
+          "completion": 374,
+          "target_steps": 374,
+          "local_gain": 0
+        }
+      }
+    },
+    {
+      "family": "A_CI_PC",
+      "campaign_record_digest": "2ec9f4c91c612ad8799ff0beefcd3c282f9441ca0267d19b1be6601c6565730a",
+      "numerical_policy": "spark_acipc_arb256_flux128_conductance192_carrier192_v1",
+      "duration": "32",
+      "subjects": [
+        {
+          "role": "source",
+          "declaration_digest": "4f1309af52b82886d7b0ba59d3554a8bb96959ee07d5fbc6c139c5532f80c6c8",
+          "model_identity": "grc9v4-model-sha256:28c248b2b53b84b57e3fba4f0774491d7c3532c45b6d7f341586b05a37691c51",
+          "complete_profile_id": "grcv4-profile-sha256:358b9f5f0e24219e51bd8f520227ddbba1d2e97bd5c83afdbcaa88da9c520da1",
+          "graph_digest": "grc-graph-sha256:c772c9fcaeb91f4e84ae3c9ed44d653aede36a4f4f2be039cef5808abdc6fc06",
+          "charge": "21"
+        },
+        {
+          "role": "target",
+          "declaration_digest": "0cbe13be563605c9a4d7ccff79cce7cc6574b67be5399dd647293cb39d458766",
+          "model_identity": "grc9v4-model-sha256:825db921eb8c8d0147421ec14c452e24458d2e39b89e1466d4b4b19257c663a6",
+          "complete_profile_id": "grcv4-profile-sha256:a926b7aad8a7a3ec828b9f63b9917d94c717b33bba64ccf2305117f7a890aaea",
+          "graph_digest": "grc-graph-sha256:2253b493a403f789ba3a706db9ad1b6ca899d6f23023af20ceac53861023df92",
+          "charge": "21"
+        }
+      ],
+      "certificate_ids": [
+        "fcd0f74f05f0d32cc77de65c5308e8ef618004abd7e40d38309cd460d7278aea",
+        "6223b6744e086978316facfa5a1474442da93b6127408794962aae9f8cf4cca1"
+      ],
+      "roles": {
+        "current": {
+          "entry": 375,
+          "completion": 377,
+          "target_steps": 377,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 372,
+          "completion": 374,
+          "target_steps": 374,
+          "local_gain": 0
+        }
+      }
+    },
+    {
+      "family": "C_RG2b",
+      "campaign_record_digest": "1813537dae10cab165036b1778a1f18e0df9e2e58fc7831d67be9b4f9a50b976",
+      "numerical_policy": "spark_crg2b_arb256_section32_current160_flux128_v1",
+      "duration": "8",
+      "subjects": [
+        {
+          "role": "source",
+          "declaration_digest": "834a18a28c8f78c1a75f47f403cfb714c083fc647f14a1434fdb843986de1954",
+          "model_identity": "grc9v4-model-sha256:36cc06bee63d777c0a7f66800011b32d4aa0ae5d283cf57decd302589e78df67",
+          "complete_profile_id": "grcv4-profile-sha256:8969ee4abbfe029535b3a9ca29e7047b06c3472b2c3d913608cc9be9f1b96d03",
+          "graph_digest": "grc-graph-sha256:c772c9fcaeb91f4e84ae3c9ed44d653aede36a4f4f2be039cef5808abdc6fc06",
+          "charge": "21"
+        },
+        {
+          "role": "target",
+          "declaration_digest": "119dc6bad27336351349d1d291feb5bbf1c9915b8d8ee8159368463acdd0c4b8",
+          "model_identity": "grc9v4-model-sha256:7f83548f9ce8b67a5d7b7c2bd6bfffa841c05cbfe9dc64e3cdc66d39bb9058fe",
+          "complete_profile_id": "grcv4-profile-sha256:a15155e70c9a6bd1c14b04dfa2347a50fde85edb39677ac52168c1f64198264e",
+          "graph_digest": "grc-graph-sha256:5d9a705cec4a48e0979733f7acf58c5a1ba1ade310d16fe4dfa11213de14919d",
+          "charge": "21"
+        }
+      ],
+      "certificate_ids": [
+        "fa3c428a032bb6023333e08d5c03b560ae8826526d93093a6824bfc5b2853e7b",
+        "6a0f54fe7a7cdbbce61e353ec78e3b8273429418c170ddd76a44cefe55362706"
+      ],
+      "roles": {
+        "current": {
+          "entry": 390,
+          "completion": 392,
+          "target_steps": 392,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 390,
+          "completion": 392,
+          "target_steps": 392,
+          "local_gain": 0
+        }
+      }
+    },
+    {
+      "family": "A_RG2b",
+      "campaign_record_digest": "15d130251454cc98337127d5a5d8f60eea213dbc2f0ee75d5885d1b177b5b833",
+      "numerical_policy": "spark_arg2b_arb256_section16_current192_flux128_conductance192_v1",
+      "duration": "16",
+      "subjects": [
+        {
+          "role": "source",
+          "declaration_digest": "87fe5cedf2704cf605dd2549cdc063b23a46402f6266b292ab72ad474dad3ac0",
+          "model_identity": "grc9v4-model-sha256:3d016eff15692549f0ac191d1896a500f000e4e7ba0619f147b9b3e9b86dccb9",
+          "complete_profile_id": "grcv4-profile-sha256:785d3464f88ccbb80ef3ba1cda1669c10af47043ec758c8551e75a446bca2f33",
+          "graph_digest": "grc-graph-sha256:c772c9fcaeb91f4e84ae3c9ed44d653aede36a4f4f2be039cef5808abdc6fc06",
+          "charge": "21"
+        },
+        {
+          "role": "target",
+          "declaration_digest": "60e3f131d6611feed05f9a5c6d62a97252c923e2bdefe2821b0e90bf1ff4b61c",
+          "model_identity": "grc9v4-model-sha256:94ab88ac32ae54f8aadd11f93a075c71d49eb874dc4e987f24361b158d31e923",
+          "complete_profile_id": "grcv4-profile-sha256:a693115c477566eda7b8bb4b65186f8f5392e9786a2af98a87b22eb348ebc5f7",
+          "graph_digest": "grc-graph-sha256:ff2c741ac24ee3743b05e90c28a593e86b5d40efdd0edbb923c9e59a35904ac3",
+          "charge": "21"
+        }
+      ],
+      "certificate_ids": [
+        "fafcd582c2d2962102870005aca9d4e03493339fd96256f5b5da2222e404b118",
+        "11c902dbbd177fe818d74878567b8e6519b7898808993958ae0c7509e6caaf15"
+      ],
+      "roles": {
+        "current": {
+          "entry": 300,
+          "completion": 302,
+          "target_steps": 302,
+          "local_gain": 1
+        },
+        "reset": {
+          "entry": 300,
+          "completion": 302,
+          "target_steps": 302,
+          "local_gain": 0
+        }
+      }
+    }
+  ],
+  "runtime_bindings": [
+    {
+      "path": "src/pygrc/models/grc_9_v4.py",
+      "sha256": "ea859a3aff4f31ed966b8b9cdbb7c6883eada18ded48747a3b0ba2dd4391d182"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_spark_support.py",
+      "sha256": "c6631cb74d3bfb7c20c36a327a1675c9b1817230f74184b19bc3c539cd646bb0"
+    }
+  ],
+  "native_obligation_count": 30,
+  "next_tasks": [
+    "P9-10.3-NATIVE-SPARK",
+    "P9-10.4-NATIVE-SPARK",
+    "P9-10.5",
+    "P9-10.6"
+  ],
+  "record_digest": "16cac027d0534bd9c2b429cd639bee4f1690d268d8437d0ee73bf8ae270dac8e"
+}

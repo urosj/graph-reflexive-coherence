@@ -346,9 +346,10 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
             if data.get("context_value") or data.get("boundary_input") is not None or data.get("external_source") is not None:
                 return SparkResult(False, reason="constant-zero context and closed unforced boundary required")
             dt = data.get("dt")
-            if dt != 32:
-                return SparkResult(False, reason="selected exact duration 32 required")
-            return spark.transact(self, dict(kind="step", duration="32", operation_id=request.operation_id))
+            duration = self.configuration().policy.step_duration
+            if dt != int(duration):
+                return SparkResult(False, reason=f"selected exact duration {duration} required")
+            return spark.transact(self, dict(kind="step", duration=duration, operation_id=request.operation_id))
         return self._enabled_action("step", request)
 
     def expand(self, request):

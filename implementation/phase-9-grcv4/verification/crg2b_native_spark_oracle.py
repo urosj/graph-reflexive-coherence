@@ -312,7 +312,7 @@ def audit_read(graph, profile, state, witness, *, fresh=True):
         return dict(proved["checks"].to_dict(), fresh_depth40=fresh)
 
 
-def verify_step(step, *, fresh=True):
+def verify_step(step, *, fresh=True, diagnostic_overlap=False):
     with _ARB_CONTEXT_LOCK, ctx.workprec(768):
         graph = step.before.graph.to_payload()
         profile = step.section["profile"].to_dict()
@@ -358,10 +358,24 @@ def verify_step(step, *, fresh=True):
         held, _ = m.direct_similarity_read(
             after, decoded(reference_root["H"]), m.q(1, 1024)
         )
-        need(
-            encloses([[x] for x in step.final_current], held),
-            "held section poststate diagnostic",
-        )
+        if diagnostic_overlap:
+            # Independent interval expressions can enclose the same current
+            # without nesting (notably at an almost stationary center). This
+            # is a diagnostic comparison, not certification of the stored box.
+            # Keep the existing current160 bound as an additional discriminator.
+            actual = decoded([[x] for x in step.final_current])
+            need(
+                all(
+                    a.overlaps(b) and abs(a - b) < arb(fmpq(1, 2**160))
+                    for a, b in zip(actual.entries(), held.entries(), strict=True)
+                ),
+                "held diagnostic overlap/current160 consistency",
+            )
+        else:
+            need(
+                encloses([[x] for x in step.final_current], held),
+                "held section poststate diagnostic",
+            )
         ref, _ = m.direct_similarity_read(after, m.I, m.q(1, 1024))
         need(
             all(
@@ -370,7 +384,7 @@ def verify_step(step, *, fresh=True):
             ),
             "fixed reference poststate diagnostic",
         )
-        return {
+        result = {
             "independent_precision_bits": 768,
             "incoming": first,
             "returned": second,
@@ -380,3 +394,8 @@ def verify_step(step, *, fresh=True):
             "poststate_diagnostics": True,
             "physical_state": ["C"],
         }
+        if diagnostic_overlap:
+            result["held_diagnostic_check"] = (
+                "independent_overlap_and_current160_difference; not stored-box recertification"
+            )
+        return result

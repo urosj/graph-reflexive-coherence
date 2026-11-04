@@ -116,7 +116,8 @@ class NativeCCITests(shared.NativeSparkCompletionTests):
         self.assertEqual(
             self.source_model.support_status()["execution_families"], ["C_CI"]
         )
-        self.assertFalse(self.source_model.support_status()["native_endpoint_verified"])
+        self.assertFalse(self.source_model.support_status()["current_occurrence_completed"])
+        self.assertFalse(self.source_model.support_status()["universal_entry_guarantee"])
         with self.assertRaises(ValueError):
             replace(self.config, specialization=shared.configuration().specialization)
         with self.assertRaises(ValueError):

@@ -6,16 +6,13 @@ Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
 [phase opening](./Phase-9-GRCV4-PhaseOpening.json), and
 [phase registry](./ImplementationPhases.md#phase-9-grcv4-substrate-and-grc9v4-specialization).
 
-**Current continuation — 2026-11-02:** branch
-`impl/grc9v4-native-spark-completion`; C_OS native completion was accepted as
-`1ec198b2`, and C_CI steps 1–4 plus pressure as `bcf10782`. The C_CI campaign
-now verifies current 374→376 and reset 375→377 in 14.0 minutes, with one
-current child, zero reset gain, no tail, and compressed evidence/side-tool views.
-Campaign user review is pending. Next is C_PC through its own bounded native
-preflight and campaign; see the [native leaves](#p9-91a-native-spark-completion).
-No long run without a same-subject runtime estimate. Broader hierarchy and
-aggregate support remain deferred; existing mandatory Tranches 8–9 and earlier
-Tranche 10 acceptances retain their scope.
+**Current disposition — 2026-11-04:** all ten bounded family scopes and native
+completion campaigns are accepted. P9-9.1a.6 and P9-9.1a.7 are closed, as are
+P9-10.1–10.5 and the P9-10.6 support/handoff record. The
+[release disposition](./phase-9-grcv4/tranche-10/P9-10.6-ReleaseDisposition.md)
+indexes exact support sets and residual obligations. **P9-G4 remains a separate
+pending decision.** No broader hierarchy, general ATC or full-conformance grant.
+Dated progress notes below retain historical scope; they are not a new task queue.
 
 ## Recording rules
 
@@ -3897,28 +3894,26 @@ A_RG2b acceptance `7083b989`; no numerical campaign is repeated.
 | A_RG2b | [Acceptance](./phase-9-grcv4/tranche-9/P9-ARG2b-Acceptance.json) |
 
 At this 2026-10-30 closeout, optional P9-9.1a completion/hierarchy was deferred
-and unselected; it was never a mandatory closure prerequisite. Completion is
-now selected for planning below; hierarchy stays deferred. Earlier execution and family
+and unselected; it was never a mandatory closure prerequisite. Completion has since been bounded-accepted under P9-9.1a.7; hierarchy stays deferred. Earlier execution and family
 acceptance records retain their historical `aggregate_closed=false`; this
 successor records the aggregate decision without rewriting them.
 
 Retain exact subject/horizon limits, original exclusions, unresolved C1
 regularity, pointwise CI/carrier margins and the previously agreed deferred
 large diagnostics. Tranche closure grants neither arbitrary-graph numerical
-conformance, a uniform trajectory enclosure, general ATC nor P9-G4. Next is
-remaining Tranche 10 work; its accepted four-family 10.1 results remain intact
-and do not transfer automatically to the other six families.
+conformance, a uniform trajectory enclosure, general ATC nor P9-G4. The accepted four-family 10.1 results remain intact; the six later family
+decisions supply their own coverage. P9-10.6 indexes the completed population.
 
 Current scope: **all ten families**. The [aggregate closeout](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json)
 binds every required lifecycle, compatibility, public-API and support child.
 Dated four-family entries below are original milestones; six subsequent family
-decisions complete their population. The new P9-9.1a completion programme has
-its own unchecked leaves; it grants no additional native support yet.
+decisions complete their population. The separate P9-9.1a completion programme is now accepted for its exact
+optional declarations; the P9-10.6 release record preserves that distinction.
 
 - [x] P9-9.1: Reconcile the two child dispositions below as an aggregate,
   not a universal execution/crossing prerequisite. Unselected optional scope
   remains planned/deferred, not marked executed.
-- **P9-9.1a — completion planning selected, execution pending:** the
+- [x] **P9-9.1a — bounded completion accepted:** the
   [native programme](#p9-91a-native-spark-completion) owns stabilization and
   completed-spark evidence for newly selected exact profiles. Hierarchy remains
   deferred. Earlier mandatory acceptance grants no completion execution credit.
@@ -4038,8 +4033,9 @@ its own unchecked leaves; it grants no additional native support yet.
   - [x] Reconcile accepted P9-9.1b/9.2/9.3/9.4a/9.4b/9.5 and Tranche 8
     evidence for C_OS/C_CI/A_CI/A_PC by exact source/target model identities;
     [bounded review](./phase-9-grcv4/tranche-9/P9-9.6-Review.md).
-  - [x] Retain sixteen accepted source-model disabled cells, twenty-four
-    unselected cells, numerical exclusions and original authority statuses.
+  - [x] Retain the historical sixteen-cell review and its original exclusions.
+    The all-ten successor now accepts forty source-model cells; it does not
+    rewrite the original twenty-four unselected statuses.
     Expanded target identities do not inherit source-cell acceptance.
   - [x] Identify the mandatory public `basin_attributes` / `basin_identity`
     gap separately from optional completion/hierarchy; retain the frozen
@@ -4048,7 +4044,8 @@ its own unchecked leaves; it grants no additional native support yet.
     browser and notebook; pressure identity/scope changes without new trajectories.
   - [x] User acceptance of the bounded review on 2026-10-28;
     [decision](./phase-9-grcv4/tranche-9/P9-9.6-Acceptance.json). Full conformance
-    and P9-G4 remain held; P9-10.1a/b/c below own the follow-through.
+    and P9-G4 remain held; accepted P9-10.1a/b/c and six family successors
+    now supply the exact-target/basin follow-through.
 
 ### P9-9.1a native spark completion
 
@@ -4069,7 +4066,8 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
   current/reset and domain scope; preserve frozen zero-site identities/evidence.
   [Contract map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md) and
   [verification](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json) bind eleven
-  specification chains and thirty pending native obligations. The small native
+  specification chains and the thirty then-pending native obligations, now
+  discharged/split by the accepted P9-10.5 successor. The small native
   continuity counterexample and exact certificate-coordinate budget are retained;
   no owner step, event or trajectory ran. Mapping is committed as `f2d776d7`;
   this does not select a completed numerical policy or grant native support.
@@ -4142,8 +4140,14 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
   steps, one current child and zero reset gain; no tail. 21.8 minutes under the
   30-minute cap. All-stage/charge/classifier/membership checks and actual checkpoint
   fault/restore/recount pressure pass. Compressed primary evidence and side-tool
-  API/browser/notebook are synchronized. Aggregate capability remains deferred.
-- [ ] P9-9.1a.6: Extend and review each family independently after C_OS. Each leaf
+  API/browser/notebook are synchronized. The later P9-9.1a.7 successor
+  records aggregate bounded support.
+
+All nine family extensions after C_OS are accepted, including both RG2b
+campaigns at `528736b9`; P9-9.1a.7 reconciles their exact subjects. The parent
+below was already checked; its closure is reaffirmed by the P9-10.6 index.
+
+- [x] P9-9.1a.6: Extend and review each family independently after C_OS. Each leaf
   includes full-state numerics, same-subject runtime estimation, public lifecycle,
   affected mechanics/compatibility checks and side-tool API/browser/notebook.
   - [x] P9-9.1a.6-C_CI: native endpoint verified; accepted and committed `88a1c6b1`.
@@ -4324,7 +4328,7 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     - [x] Review and accept A_CI_PC .5 separately; user requested commit on
       2026-11-02. Historical execution flags remain unchanged; aggregate support
       remains false. All 36 tests and the implementation-boundary audit pass.
-  - [ ] P9-9.1a.6-C_RG2b: .1–.4 and pressure accepted; .5 deferred (2026-11-03).
+  - [x] P9-9.1a.6-C_RG2b: .1–.5 and pressure accepted (2026-11-03).
     - [x] .1: Bind quartic C, duration 8 and the frozen Lipschitz section/completion.
     - [x] .2: Implement exact incidence and certified finite-chain section reads.
     - [x] .3: Verify the direct continuous domain, full-map error and lifecycle.
@@ -4342,8 +4346,13 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
       [Pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b-PressureReview.md).
     - [x] Review and accept .1–.4 and pressure; user requested commit on
       2026-11-03. Sealed execution records retain their original statuses.
-    - [ ] .5: Deferred together with A_RG2b .5; fresh profiling required before execution.
-  - [ ] P9-9.1a.6-A_RG2b: .1–.4 and pressure accepted; .5 deferred (2026-11-03).
+    - [x] .5 execution: both histories 390→392, current gain one/reset gain zero;
+      784 target steps independently audited, 393+393 cold-replayed journal steps,
+      live-window rollback/retry and exact publication recovery. 36.23 minutes,
+      2.30 MiB compressed. [Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-CRG2b.5-Review.md).
+    - [x] Review and accept C_RG2b .5; user requested commit on 2026-11-03.
+      Sealed execution flags remain unchanged; aggregate support remains separate.
+  - [x] P9-9.1a.6-A_RG2b: .1–.5 and pressure accepted (2026-11-03).
     - [x] .1: Bind the joint C/64 log W completion, duration 16 and declared source.
     - [x] .2: Implement full inverse-section reads, exact continuity and atomic W writer.
     - [x] .3: Verify the continuous 30-dimensional domain, full-step error and lifecycle.
@@ -4361,11 +4370,24 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     - [x] Review and accept .1–.4 and pressure; user requested commit on
       2026-11-03. Sealed execution records retain their original statuses.
       All 12 publication checks, independent replay and the boundary audit pass.
-    - [ ] .5: Deferred together with C_RG2b .5 at the user's request.
-- [ ] P9-9.1a.7: Reconcile the newly supported exact declarations/capability in a
+    - [x] .5 execution: both histories 300→302, current gain one/reset gain zero;
+      604 target steps independently audited, 303+303 cold-replayed journal steps,
+      full C/W metric, both section reads/writer and live-window rollback/retry.
+      67.34 minutes, 2.15 MiB compressed. [Review](./phase-9-grcv4/tranche-9/P9-9.1a.6-ARG2b.5-Review.md).
+    - [x] Review and accept A_RG2b .5; user requested commit on 2026-11-03.
+      Sealed execution flags remain unchanged; aggregate support remains separate.
+- [x] P9-9.1a.7: Reconcile the newly supported exact declarations/capability in a
   scoped P9-9.6 supplement. Link affected Tranche 8/9 checks and Tranche 10
   follow-through without reopening accepted baseline campaigns. Preserve
   unexecuted/excluded profiles and separate hierarchy/G4 dispositions.
+  - [x] All ten accepted campaigns and twenty exact source/target declarations;
+    current public candidate/realization, support and occurrence semantics.
+  - [x] Retained evidence/acceptance/source binding, all-ten discovery and
+    exclusion checks; consolidated API/browser/notebook view.
+  - [x] Map thirty native obligations to evidence, adjudicated under P9-10.5;
+    identify P9-10.3/10.4 supplements without replaying old campaigns.
+  - [x] User accepted the reconciliation by requesting commit on 2026-11-03;
+    bounded P9-9.1a is closed, with family acceptance and claim limits preserved.
 
 All family leaves retain full W/Z/root/section obligations. Prefer adopted short
 witnesses, compressed selected evidence and reproducible generators. Larger
@@ -4454,9 +4476,10 @@ and [validation](./phase-9-grcv4/tranche-9/P9-ACIPC-Validation.json).
 The user accepted the bounded implementation on 2026-10-30. The separate
 [decision](./phase-9-grcv4/tranche-9/P9-ACIPC-Acceptance.json) binds reviewed
 implementation `e3e7f91a`. Original execution and earlier seven-family acceptance
-records remain unchanged. Compatibility now has 32 bounded accepted cells
-and eight unselected RG2b cells. New RG2b native execution, optional completion, general conformance and
-A_CI_PC Tranche 10/basin support remain unselected; C_RG2b research is now open.
+records remain unchanged. That milestone had 32 bounded accepted compatibility
+cells and eight unselected RG2b cells. Subsequent RG2b decisions complete all
+forty source cells; A_CI_PC basin support and native completion have their own
+accepted bounded successors indexed by P9-10.6. No full conformance is inferred.
 
 ### C_RG2b ninth realization — bounded Tranches 8–9 accepted (2026-10-30)
 
@@ -4795,10 +4818,19 @@ acceptances remain unchanged; each row below records its own bounded evidence.
     [decision](./phase-9-grcv4/tranche-10/P9-10.3-Acceptance.json). Capability
     publication, debt reconciliation and G4 remain P9-10.4–10.6.
 
-- [ ] P9-10.3-NATIVE-SPARK: After scoped P9-9.1a results, check affected shared
+- [x] P9-10.3-NATIVE-SPARK: After scoped P9-9.1a results, check affected shared
   dynamics, event/role handling, public API, lifecycle, persistence and disabled
   compatibility; preserve old zero-site/release identities. Reuse unaffected
   accepted evidence and run only justified regressions, not old large campaigns.
+  - [x] Run four independent FLINT groups: 11 discovery/identity, 3 all-ten
+    persistence/branch-guard, 8 short shared lifecycle and 6 ordinary V4/V3
+    boundary tests; all 28 pass, longest job 31.899 seconds.
+  - [x] Preserve runtime/specification and original test bytes; bind accepted
+    P9-9.1a.7 evidence without rerunning complete family trajectories.
+  - [x] Publish retained API/browser/notebook results with exact source/test
+    identities and explicit limits. [Review](./phase-9-grcv4/tranche-10/P9-10.3-NativeSpark-Review.md).
+  - [x] User accepted the bounded integration supplement by requesting commit
+    on 2026-11-03; [decision](./phase-9-grcv4/tranche-10/P9-10.3-NativeSpark-Acceptance.json).
 
 #### P9-10.4: Capability publication and spark completion
 
@@ -4888,45 +4920,76 @@ acceptances remain unchanged; each row below records its own bounded evidence.
       and the user's 2026-11-01 acceptance/commit request. This editorial
       adoption grants no new scientific or native scope.
 
-  Native numerics/lifecycle remain unexecuted under the new P9-9.1a programme;
-  hierarchy stays separately deferred. Aggregate debt reconciliation and G4 remain with P9-10.5/10.6
-  below. The A_OS below-100 investigation stays paused. The specs/README.md
+  Native numerics/lifecycle have since been accepted under P9-9.1a.7;
+  hierarchy stays separately deferred. P9-10.5 reconciles the native obligations
+  and P9-10.6 records bounded support. G4 remains its own pending decision.
+  The A_OS below-100 investigation stays paused. The specs/README.md
   provenance mismatch is repaired through exact document succession; the
   current boundary audit passes. Native obligations remain separate from
   completed family research and this maintenance repair.
 
-- [ ] P9-10.4-NATIVE-SPARK: Publish the reviewed native completion support set,
+- [x] P9-10.4-NATIVE-SPARK: Publish the reviewed native completion support set,
   exact example inputs and public source-to-completion workflow. Integrate live
   execution/inspection in side-tool API/browser/notebook alongside each family;
   expose applicability, lineage, entry/window and completion/gain. Distinguish
   accepted research from demonstrated native support and retain flow-region
   diagnostic meaning. Reconcile per-family publication without duplicate runs.
+  - [x] Public guide and executable inspect/prepare/run/replay workflow, with
+    exact accepted inputs, actual completion stopping and explicit failure.
+  - [x] Explain all ten families, current/reset history, certificate binding,
+    entry/window, geometric child gain and occurrence-aware replay limits.
+  - [x] API/browser/notebook access and focused prefix/controller/publication
+    checks; accepted full trajectories and cold replay are reused.
+    [Guide](../examples/grc9v4/native_spark.md),
+    [review](./phase-9-grcv4/tranche-10/P9-10.4-NativeSpark-Review.md).
+  - [x] User accepted the bounded native workflow publication by requesting
+    commit on 2026-11-03; [decision](./phase-9-grcv4/tranche-10/P9-10.4-NativeSpark-Acceptance.json).
 
 #### P9-10.5–10.6: Aggregate reconciliation and closeout
 
-- [ ] P9-10.5: Reconcile inherited scientific debts without upgrading source
+- [x] P9-10.5: Reconcile inherited scientific debts without upgrading source
   claims from test coverage alone, including the four named completion debts.
-  - [ ] Reconcile new P9-9.1a native numerics/lifecycle and earlier-endpoint
-    obligations per accepted exact family scope; retain all broader residual
-    scientific and hierarchy debts unless separately resolved by evidence.
+  - [x] Reconcile new P9-9.1a native numerics/lifecycle and earlier-endpoint
+    obligations per accepted exact family scope in the
+    [native successor ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/native/ClaimDebtLedger.json):
+    thirty native portions discharged, with four hierarchy splits retained.
+  - [x] Link original scientific claim classes/acceptances and propagated
+    contracts to exact accepted native source/target/certificate identities;
+    reconcile fourteen spark debt entries without rewriting historical ledgers.
+  - [x] Preserve all 29 inherited D10 transformations and their claim links;
+    no RG2b C1, numeric abundance, general ATC or hierarchy promotion.
+  - [x] Expose current ledger through typed API, browser and notebook;
+    pressure resealed scope/identity/claim changes without numerical reruns.
+  - [x] User accepted the bounded P9-10.5 reconciliation by requesting commit
+    on 2026-11-04; [acceptance](./phase-9-grcv4/tranche-10/P9-10.5-NativeSpark-Acceptance.json). See
+    [decision](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionNativeDebtReconciliation.md).
   - [x] Reconcile the bounded scientific/design results for all ten families
     and the five adopted earlier endpoints in the
     [current research successor](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkEarlierReconciliation.json);
-    native P9-9.1a obligations remain attached. Other inherited debt review is separate.
-- [ ] P9-10.6: Record reviewed support, pending profiles, residual debt,
-  closeout, handoff, explicit completion support/defer scope and P9-G4 acceptance.
-  - [ ] Record the native completion programme's reviewed support and remaining
-    exclusions after its integration/publication supplements; hierarchy remains
-    separately deferred. Do not infer G4 from ten research or native family passes.
-  - [x] Record accepted bounded scientific completion for all ten families
-    with the adopted shorter endpoints; native completion, hierarchy and G4
-    remain separate. Research reconciliation does not close this aggregate row.
+    original native pending fields remain historical; the native successor above
+    supplies their current dispositions. Other inherited claims are preserved.
+- [x] P9-10.6: Record final reviewed support and acceptance, pending scope,
+  residual debt, release disposition and handoff; G4 is a separate decision.
+  - [x] Bind all-ten ordinary and optional native-completion support to their
+    distinct accepted exact declarations and evidence; no pending families
+    within those bounded scopes, no blanket-domain inference.
+  - [x] Record thirty native portions discharged, four hierarchy splits,
+    inherited debt preservation, numerical limits and deferred hierarchy.
+  - [x] Publish the checked release record in side-tool API/browser/notebook;
+    clean obsolete current-next instructions and reconcile P9-9.1a.6.
+  - [x] Record user-requested P9-10.6 acceptance on 2026-11-04 without granting
+    G4 or relabelling original research/execution evidence.
+    [Disposition](./phase-9-grcv4/tranche-10/P9-10.6-ReleaseDisposition.md).
+- [ ] P9-G4: Separate explicit release/handoff review and acceptance of the
+  advertised bounded support, applicable evidence, legacy boundaries and
+  residual-debt routing. No automatic acceptance from P9-10.6 or family passes.
 
-## Planning review disposition
+## Historical phase-opening planning review disposition (2026-09-05)
 
 The attached execution-structure review is bound by SHA-256 in the phase
-opening. Its recommendations change planning and scheduling; P9-G1 and all
-runtime/profile acceptance gates remain pending.
+opening. The following describes the opening-time state, superseded by the
+accepted G1/G2/G3 records and current support disposition above; only G4 remains
+pending as a release decision.
 
 | Review item | Planning disposition |
 | --- | --- |

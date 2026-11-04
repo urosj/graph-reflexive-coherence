@@ -11,6 +11,8 @@ RECORD_DIGEST = "bb6e26bd433968357ded4cc5904db860c37e5ff5c11464750175ae09bac434a
 
 
 def checked_record(root):
+    from .basin import _bound_file
+
     root = Path(root).resolve()
     value = load_json_object(root / RECORD)
     if (
@@ -29,7 +31,7 @@ def checked_record(root):
         p = root / row["path"]
         if (
             not p.resolve().is_relative_to(root)
-            or sha256(p.read_bytes()).hexdigest() != row["sha256"]
+            or sha256(_bound_file(root, row["path"], row["sha256"]).read_bytes()).hexdigest() != row["sha256"]
         ):
             raise SourceAdmissionError("Changed A_RG2b pressure source: " + row["path"])
     return value
