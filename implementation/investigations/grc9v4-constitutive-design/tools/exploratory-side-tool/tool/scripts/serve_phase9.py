@@ -198,6 +198,24 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(content)
             return
+        if request.path == "/api/phase9/release":
+            try:
+                if request.query:
+                    raise ValueError("fixed read-only release scope")
+                root = repository_root()
+                sys.path.insert(0, str(root / "implementation/phase-9-grcv4/verification"))
+                from p9106_release import checked
+                content = json.dumps(checked(root)).encode()
+                self.send_response(200)
+            except Exception as error:
+                self.send_response(503)
+                content = json.dumps({"error": str(error)}).encode()
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+            return
         if request.path in {"/api/native-spark/debts", "/api/native-spark/debts/source"}:
             source = request.path.endswith("/source")
             try:

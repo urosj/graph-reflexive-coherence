@@ -1,0 +1,205 @@
+{
+  "schema": "p9106-bounded-release-disposition-v1",
+  "date": "2026-11-04",
+  "status": "bounded_support_and_acceptance_recorded_G4_pending",
+  "acceptance_basis": "User requested final support and acceptance under P9-10.6; explicitly reserved G4 as its own decision.",
+  "user_accepted": true,
+  "P9_10_6_closed": true,
+  "tranche10_work_complete_at_declared_scope": true,
+  "Phase9_closed": false,
+  "G4_accepted": false,
+  "G4_disposition": "pending_separate_explicit_review_and_decision",
+  "full_GRC9V4_conformance": false,
+  "families": [
+    "A_CI",
+    "A_CI_PC",
+    "A_OS",
+    "A_PC",
+    "A_RG2b",
+    "C_CI",
+    "C_CI_PC",
+    "C_OS",
+    "C_PC",
+    "C_RG2b"
+  ],
+  "pending_families_within_declared_scopes": [],
+  "support_sets": {
+    "generic": {
+      "source": "implementation/phase-9-grcv4/tranche-7/ProfileG2Registry.json",
+      "scope": "registry exact accepted G2 declarations; G3 admits their specialization"
+    },
+    "specialization_and_lifecycle": {
+      "source": "implementation/phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json",
+      "scope": "all ten individually accepted Tranche 8-9 source/target identities and finite domains"
+    },
+    "disabled_compatibility": {
+      "source": "implementation/phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json",
+      "accepted_source_cells": 40,
+      "scope": "source-model cells only; exact expanded-target compatibility uses separate P9-10.1b/c subjects"
+    },
+    "basins_and_conservation": {
+      "sources": [
+        "implementation/phase-9-grcv4/tranche-10/P9-10.1a-NativeAcceptance.json",
+        "implementation/phase-9-grcv4/tranche-10/P9-10.1b-Acceptance.json",
+        "implementation/phase-9-grcv4/tranche-10/P9-10.1c-Acceptance.json",
+        "implementation/phase-9-grcv4/tranche-10/P9-10.2-Acceptance.json",
+        "implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Acceptance.json",
+        "implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Acceptance.json",
+        "implementation/phase-9-grcv4/tranche-10/P9-10-CCIPC-Acceptance.json",
+        "implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Acceptance.json",
+        "implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Acceptance.json",
+        "implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Acceptance.json"
+      ],
+      "scope": "exact first-four v2 targets and six later family targets; independent rows/classification and saved replay/charge evidence"
+    },
+    "native_spark_completion": {
+      "source": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.7-Support.json",
+      "exact_declarations": 20,
+      "scope": "ten explicit optional source/target policies, both-role certificates, actual entry, two-positive-step windows and cold replay; not arbitrary members of a family"
+    }
+  },
+  "acceptance_chain": {
+    "ordinary_regressions": "implementation/phase-9-grcv4/tranche-10/P9-10.3-Acceptance.json",
+    "ordinary_examples": "implementation/phase-9-grcv4/tranche-10/P9-10.4-Acceptance.json",
+    "native_regressions": "implementation/phase-9-grcv4/tranche-10/P9-10.3-NativeSpark-Acceptance.json",
+    "native_examples": "implementation/phase-9-grcv4/tranche-10/P9-10.4-NativeSpark-Acceptance.json",
+    "native_debt_reconciliation": "implementation/phase-9-grcv4/tranche-10/P9-10.5-NativeSpark-Acceptance.json"
+  },
+  "residuals": {
+    "native_obligations": 30,
+    "native_portions_discharged": 30,
+    "fully_scoped_native_resolutions": 26,
+    "split_with_hierarchy_residual": 4,
+    "hierarchy_obligation": "SC-VO-HIERARCHY-EVOLUTION",
+    "hierarchy_disposition": "deferred_separately_authorized_future_work",
+    "spark_debt_transformations": 14,
+    "inherited_D10_transformations_preserved": 29,
+    "ledger": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/native/ClaimDebtLedger.json"
+  },
+  "retained_limits": [
+    "Exact declarations, graphs, contexts, histories, horizons and certificate domains only; support sets are distinct and not interchangeable.",
+    "Historical pending fields remain unchanged; the cited later decisions supply current acceptance and debt dispositions.",
+    "CI fixed-geometry current bounds are not exact joint-root claims or uniform trajectory enclosures; retain certificate and resolution limits.",
+    "Carrier-effect margins remain pointwise; nonzero stored Z alone does not prove an effect above numerical error.",
+    "RG2b uses accepted Lipschitz sections; C1 regularity and classical section spectra remain unresolved.",
+    "Canonical mechanical expansion is supported; general autonomous topology selection and arbitrary-graph fission are not granted.",
+    "Completed spark is the selected geometric organization convention, not a new independent subsystem or multiple full-state attractors.",
+    "Atomic new-child insertion and local occurrence accounting are supported; broader hierarchy evolution and distributed exactly-once are not.",
+    "No numeric abundance, universal formation claim, or silent legacy fallback for optional exact spark policies.",
+    "Original excluded cases and deferred large diagnostics remain exclusions and unexecuted diagnostics, not passing evidence."
+  ],
+  "new_support": [],
+  "new_scientific_authority": [],
+  "new_numerical_trajectories": 0,
+  "original_evidence_relabelled": false,
+  "verification_mode": "accepted_record_identity_and_scope_only_no_numerical_rerun",
+  "next_action": "Separate P9-G4 release review/decision against these bounded support sets; no new implementation or campaign authorized.",
+  "source_refs": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-7/ProfileG2Registry.json",
+      "sha256": "f4cd48ce898c4f5b865fcfa7df51f8487c4747e00a0fb87631df094125536536",
+      "record_digest": "effea1737fcb453929ef290abc6b4af2d22b058f69385804a770fc80757352cb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-AggregateAcceptance.json",
+      "sha256": "e9685fb373b6e6afab71e90160507d1d109b7b9b7f56792fe3b5cf44d2c22143",
+      "record_digest": "d3a220a82a8c6c15a77f064d6ae45b9bf4978f5bd247e32d871c2220acae91e1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-7/P9-7.8-G3Acceptance.json",
+      "sha256": "573458dd245bfc8f55c2fc51e99034813a90a72cbc0e225dd3a430341d21da61",
+      "record_digest": "5175491685e067a8653f561d497c88f587f90ba2c27926f64d598ce502a57c16"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json",
+      "sha256": "de9039bfd14296dc6fe8dd559a3aa8f2c5c2dceddf70f445dd7fd696fc5df880",
+      "record_digest": "3c198c83641fac16dc7de41086582c0b7824070e4144d3af11301ae5f0d8f8bc"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.1a.7-Support.json",
+      "sha256": "0e085740a61a9866de9917aad25e9f203b122e151c7e3b180b6fc3e37078951f",
+      "record_digest": "16cac027d0534bd9c2b429cd639bee4f1690d268d8437d0ee73bf8ae270dac8e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-NativeAcceptance.json",
+      "sha256": "49184d62d7cd744c08162224b3578a9cc96258f65c0e1ae8f7b04c7a2e4a83aa",
+      "record_digest": "07ab5fae7e2cb15fe72ec8dd48842633666bf032c5cd70ca03b086a151e8dd01"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1b-Acceptance.json",
+      "sha256": "cd6223f2fcbaf451c14900d1dab2483ccce354f6b21dd9190a50a4940e8400cd",
+      "record_digest": "4904615dedd468be3ddafde5d23030709c66fc05d9c481848f6a4cf56ce9c770"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1c-Acceptance.json",
+      "sha256": "f814b12a2ef948017de801250ce25d98394f91047e88e91e0f2b6904c5d4c216",
+      "record_digest": "437506ebaa92a32a2af4579f3af43ba713a2be1fa72fb714e8ce37f3c76b6191"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.2-Acceptance.json",
+      "sha256": "b0ab53bcc548f289d062678ed04cc44be80e9a7601a8dd368f26a64e7c62caaf",
+      "record_digest": "5b0b22bb7effe9428dd238c98c8b10083683b524e0350f6e9141ea3edad596d3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Acceptance.json",
+      "sha256": "d6220529f4815770b5fa4280d1c9a3501ee6a5877a5faa238df1e05ce2b3cc4d",
+      "record_digest": "6ea2d269b653c50dc4a5b046ec6088ca1cd88637fc91818b715e3bb62047c9a4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Acceptance.json",
+      "sha256": "cc95b5a0f59ffd0f30a2e5a7fd6becd3733f7ec878dfc53caaefd171db6a74dd",
+      "record_digest": "28517601d0e71be406ac8d3a54c3de5888210e9ab9e2322106d196d51f20ff6d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-CCIPC-Acceptance.json",
+      "sha256": "bbdb98e6d93731cd8ca69222a41ef946807a1c711e55c259b84e90571ceaa4a3",
+      "record_digest": "2023cfb84100a383851cc76cd19f1738042d536ea4008a4c5916daf8a89615f4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Acceptance.json",
+      "sha256": "40f1b7f2e69bc907cc002b194c1f4992ab7f99856afd86ad609df62b20a5fcf4",
+      "record_digest": "0f590b46e43f84fdac4995483418d50e0c5537ef56221d845a51a5a75c18aaf7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Acceptance.json",
+      "sha256": "b54085818c5b31730287121fffb612f209974bf029325abba8d9ba9a317d0709",
+      "record_digest": "ceaa967a90c13ef566ec719f693593619fa474cae726b57e2746561e1057b37f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Acceptance.json",
+      "sha256": "93cb2613ffca5f46ab85fb99ef2034f6f4a1f971174ee1e775c5726c47de0f1d",
+      "record_digest": "33ec5d2090ea958dce57e2581c1f0e6267f90ece5244c22dd82edc816ef6f5ac"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.3-Acceptance.json",
+      "sha256": "2d13a364c9fec46beb2b0d9892e1b0a94499bafd0dadd2b65c236ce79e7f44f4",
+      "record_digest": "3a658c91960e2f4c8b8fcf8c87191e95ba688359514879d6ceef0786113b1806"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.4-Acceptance.json",
+      "sha256": "b400e0c3fbf604ec27c354e28fef909bc728bbfcd97d4cf84d5ddb56f42260bc",
+      "record_digest": "8508480598a8f672d3f1142634107137ff77118fa039def2ffcac9bff46b972b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.3-NativeSpark-Acceptance.json",
+      "sha256": "953c49caa3e80b60515abba7cfff5b26996c85f5fcc623502fad421b9fa65981",
+      "record_digest": "d54a2e2baa35139c1faaca1d28b2d277fc348be522e503c637ac1744da5f8343"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.4-NativeSpark-Acceptance.json",
+      "sha256": "d924d6d6a47661eca6ce28eb6bd7182017c156abe3333330eb140bda175fbdce",
+      "record_digest": "63faee50ad908a96b8b4ee2ecb2369a4d1ce06f7b4cc811dde2fe3e292edce30"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.5-NativeSpark-Acceptance.json",
+      "sha256": "4dc4ced7dbdf8b71e6eb72e6196160a50b95bca3d94bfd65148973c139e52c2c",
+      "record_digest": "200d76d49e14b380f2316c7c78ee7b699fc2c4a888a46215aa0b1474120ae4ca"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/native/ClaimDebtLedger.json",
+      "sha256": "f320d94c6a39d9a0cb04af19da7b697c24c3d449ee3654833ebb72b432ee9e73",
+      "record_digest": "898de5b74437de073d901bbca798cf52bc3ca065603c528c462ac1e9b31601d4"
+    }
+  ],
+  "record_digest": "5dda7ac6aa879b7e2d761901996d2b48cbf187d497d067ec7da2136ab05db1ca"
+}

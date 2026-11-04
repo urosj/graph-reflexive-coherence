@@ -5612,3 +5612,12 @@ PATHS = PATHS | frozenset({
 
 # Separate bounded user acceptance of the unchanged P9-10.5 reconciliation.
 PATHS = PATHS | frozenset({PHASE + "tranche-10/P9-10.5-NativeSpark-Acceptance.json"})
+
+# P9-10.6 bounded support recording; G4 remains a separate decision.
+PATHS = PATHS | frozenset({
+    HERE + "p9106_release.py", HERE + "p9106_release_epoch.py",
+    HERE + "test_p9106_release.py",
+    PHASE + "tranche-10/P9-10.6-ReleaseDisposition.json",
+    PHASE + "tranche-10/P9-10.6-ReleaseDisposition.md",
+    PHASE + "tranche-10/P9-10.6-ReleaseSourceEpoch.json",
+})

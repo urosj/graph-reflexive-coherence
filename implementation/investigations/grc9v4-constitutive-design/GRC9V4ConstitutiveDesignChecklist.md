@@ -3993,7 +3993,16 @@ native campaigns and P9-9.1a.7 are now separately accepted. The
 [current native ledger](./evidence/spark-completion/native/ClaimDebtLedger.json)
 discharges their numerical/lifecycle portions and explicitly retains broader
 hierarchy obligations. P9-10.5 reconciliation is accepted on 2026-11-04;
-P9-10.6/G4 remain separate. The research ledgers above retain their historical pending
+P9-10.6 now records final bounded support/handoff; G4 remains a separate
+pending decision. The research ledgers above retain their historical pending
 fields and source identities. A_OS below 100 stays paused. Historical audit
 findings keep their original subjects; current-tree source integrity is checked
 by the Phase 9 boundary audit, without relabeling the old records.
+
+### P9-10.6 bounded native support disposition — 2026-11-04
+
+- [x] Link accepted research and native reconciliation to the
+  [final support record](../../phase-9-grcv4/tranche-10/P9-10.6-ReleaseDisposition.md).
+  All ten declared family scopes are covered; no scientific authority is widened.
+- [x] Preserve `SC-VO-HIERARCHY-EVOLUTION`, inherited debt dispositions and
+  exact numerical/subject limits. G4 remains a separate pending decision.

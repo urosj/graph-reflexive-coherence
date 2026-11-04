@@ -3646,3 +3646,14 @@ browser and notebook expose the same ledger. Focused mutation/source/surface
 checks reuse accepted numerics. User acceptance of P9-10.5 is recorded on
 2026-11-04; current views expose that separate decision. The original ledger
 remains unchanged. P9-10.6/G4 remains separate.
+
+## P9-10.6 final bounded support — 2026-11-04
+
+- [x] Expose the authenticated final disposition through `/api/phase9/release`,
+  the browser's top support link and the notebook's `p9106-release` cell.
+- [x] Keep generic, specialization, basin/compatibility and optional native-spark
+  exact support sets separate; link accepted decisions and native debt routing.
+- [x] Record P9-10.6 completion without granting G4, hierarchy or full conformance.
+  Historical projection flags remain unchanged. No numerical campaign rerun.
+
+See [release disposition](../../../../phase-9-grcv4/tranche-10/P9-10.6-ReleaseDisposition.md).

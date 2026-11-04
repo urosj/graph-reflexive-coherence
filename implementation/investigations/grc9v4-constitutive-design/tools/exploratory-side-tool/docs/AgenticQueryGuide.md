@@ -1,5 +1,11 @@
 # Agentic Query Guide
 
+Current final support: use `/api/phase9/release` in the Phase 9 server or
+`p9106_release.checked(repo_root)` from the Phase 9 verification directory.
+This authenticates accepted identities and disposition only; it runs no
+trajectories. P9-10.6 is recorded; P9-G4 remains pending. The existing research
+and native-debt queries preserve their own authority boundaries.
+
 This guide describes how an automated research agent can query the accepted
 GRCv4 exploratory side-tool API. The primary API is a local Python interface;
 the Phase 9 web service exposes read-only projections of selected results.

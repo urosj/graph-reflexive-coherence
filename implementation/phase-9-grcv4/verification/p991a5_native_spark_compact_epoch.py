@@ -147,6 +147,10 @@ def git_blob(root, revision, name):
 def _validated_history(root):
     """Authenticate a fresh live snapshot against every frozen before/after edge."""
     root = Path(root).resolve()
+    import p9106_release_epoch as release
+    release_value = json.loads((root / release.PATH).read_bytes())
+    if release_value != release.manifest(root):
+        raise ValueError("unbound final support publication")
     import p9105_native_spark_epoch as reconciliation
     reconciliation_value = json.loads((root / reconciliation.PATH).read_bytes())
     if reconciliation_value != reconciliation.manifest(root):
@@ -170,7 +174,7 @@ def _validated_history(root):
     current = json.loads((root / PATH).read_bytes())
     if current != manifest(root):
         raise ValueError("unbound C_OS storage successor")
-    epochs = [(reconciliation.SELF, reconciliation_value), (tutorial.SELF, tutorial_value), (regression.SELF, regression_value), (support.SELF, support_value),
+    epochs = [(release.SELF, release_value), (reconciliation.SELF, reconciliation_value), (tutorial.SELF, tutorial_value), (regression.SELF, regression_value), (support.SELF, support_value),
               (latest.SELF, successor), (SELF, current)]
     for checker, filename in HISTORY:
         name = "implementation/phase-9-grcv4/tranche-9/" + filename
