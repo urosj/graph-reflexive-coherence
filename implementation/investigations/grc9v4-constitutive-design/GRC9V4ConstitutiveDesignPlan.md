@@ -1,23 +1,24 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
-**Date:** 2026-08-23  
-**Status:** D0-D10.2 accepted bounded; GRCv4/GRC9v4 specification writing authorized; implementation remains unauthorized
+**Opened:** 2026-08-23; live tracking updated 2026-11-04
+**Status:** D0-D10.2 bounded authority preserved; accepted Phase 9 bounded implementation/support; G4 pending
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
 **Initialization:** [`GRC9V4ConstitutiveDesignInitialization.json`](./GRC9V4ConstitutiveDesignInitialization.json)
 
-**Current continuation — 2026-10-31:** [C_CI SC-3 is complete](./decisions/SparkCompletionCCISC3Authority.md)
-for bounded scientific applicability. Three conditional claims and the research
-debt are adjudicated; authority → proposal → paper → specification and the
-side-tool successor are bound. The original C_OS authority remains intact.
-The [current ledger](./evidence/spark-completion/applicability/ClaimDebtLedger.json)
-now has accepted bounded C_OS/C_CI constructions and eight open family debts.
-The independent review's limits and saved-root overlap-consistency caveat remain
-explicit. Native numerical/lifecycle obligations are routed to P9-9.1a.
-**Next is C_PC**, including the complete C/Z state, carrier writes and actual
-transfer. Then C_CI_PC → A_OS → A_CI → A_PC → A_CI_PC → C_RG2b → A_RG2b.
-No all-ten completion or native/G4 grant follows from these two constructions.
+**Current implementation disposition — 2026-11-04:** the
+[accepted P9-G1 authority](../../phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json)
+authorized bounded V4 implementation. All ten declared generic and nine-port
+family scopes, basin/lifecycle work and optional native spark completion are
+now accepted; the [P9-10.6 support index](../../phase-9-grcv4/tranche-10/P9-10.6-ReleaseDisposition.md)
+binds the exact evidence and limits. The
+[accepted native debt reconciliation](../../phase-9-grcv4/tranche-10/P9-10.5-NativeSpark-Acceptance.json)
+connects scientific authority to native evidence without rewriting original ledgers.
+**G4 remains pending and is waiting at the user's request.** Topology-change
+research remains separate; this tracking cleanup selects no ATC work or outcome.
+Dated historical states below describe their original gates, not current runtime
+authorization or an instruction to repeat completed work.
 
 **Accepted predecessor — SC-1–SC-3 scientific spark completion.**
 
@@ -26,7 +27,7 @@ SC-1–SC-3 are closed at bounded scientific/design scope. The user accepted the
 at `4076a440`: actual source beat, fresh parent/event capture, D11 transfer,
 positive target entry into a full-map trap and one new stable child at step 902.
 The [SC-3 authority](./decisions/SparkCompletionSC3Authority.md) and
-[current claim/debt ledger](./decisions/spark-completion/Authority.json) admit the
+[original C_OS claim/debt ledger](./decisions/spark-completion/Authority.json) admit the
 optional geometric criterion and homogeneous quartic binding, preserve conditional
 claim classes, and route native numerical/lifecycle obligations forward.
 
@@ -34,9 +35,10 @@ Authority → [proposal](./drafts/GRC9V4-spark-completion-proposal.md) →
 [paper](./drafts/2026-10-GRC9V4-Spark-Completion.md) →
 [specification/schema](../../../specs/grc-9-v4-spark-completion.md) is complete.
 The [research reconciliation](../../phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkResearchReconciliation.md)
-records the contribution to P9-10.5/10.6. Native P9-9.1a follows separately;
-native completion, hierarchy and G4 remain pending. No all-ten completion,
-general topology-selection or arbitrary-parameter claim is added.
+records the original contribution to P9-10.5/10.6. Native completion has since
+been accepted for all ten exact family scopes and reconciled by P9-10.5.
+Broader hierarchy remains deferred and G4 pending. The original C_OS decision
+itself grants no all-ten, general topology-selection or arbitrary-domain claim.
 
 Historical ledgers, original paper/spec bytes, zero-site exclusions and negative
 controls are preserved. Existing accepted ten-family native support is unchanged.
@@ -53,9 +55,10 @@ retain the original pre-acceptance finding. Corrected design accepted on
 admits the bounded normative claim and six contracts, resolves the design debt
 and retains native conformance as a forward obligation. Proposal/paper A.5.1
 and the V4 spec/schema successor are propagated. Ten conditional checks and six
-authority/schema/propagation/surface tests pass. Next is native interface and
-lifecycle conformance; ATC, child completion, other families and legacy changes
-are outside this bounded result.
+authority/schema/propagation/surface tests pass. The subsequent
+[P9-10.1a native acceptance](../../phase-9-grcv4/tranche-10/P9-10.1a-NativeAcceptance.json)
+closes the four-family forward obligation. Later family and spark decisions
+retain separate identities; ATC and hierarchy are not granted by this result.
 
 **Current research continuation — 2026-09-21:** the opening and ATC-1's
 bounded causal research envelope are [user-accepted](./decisions/ATC1Acceptance.md).
@@ -3862,8 +3865,9 @@ and its
 Status: D11-C and D11-G9 are accepted bounded; proposal, paper, specification
 propagation, engineering correction, and final narrow acceptance are complete.
 The exact V4 release is frozen as the normative preimplementation contract by
-`GRCV4SpecificationReleaseAcceptanceGate.json`. Implementation review is
-ready but not active, and implementation remains unauthorized.
+`GRCV4SpecificationReleaseAcceptanceGate.json`. That historical gate did not
+itself authorize implementation. Later P9-G1 and the accepted Phase 9 support
+records above supply runtime authority and bounded execution evidence.
 
 The September 2026 specification-stack audit established that two executable
 maps required by the extracted V4 specifications have no accepted source

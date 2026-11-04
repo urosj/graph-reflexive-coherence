@@ -11,7 +11,8 @@ completion campaigns are accepted. P9-9.1a.6 and P9-9.1a.7 are closed, as are
 P9-10.1–10.5 and the P9-10.6 support/handoff record. The
 [release disposition](./phase-9-grcv4/tranche-10/P9-10.6-ReleaseDisposition.md)
 indexes exact support sets and residual obligations. **P9-G4 remains a separate
-pending decision.** No broader hierarchy, general ATC or full-conformance grant.
+pending decision, waiting at the user's request.** No broader hierarchy,
+general ATC or full-conformance grant.
 Dated progress notes below retain historical scope; they are not a new task queue.
 
 ## Recording rules
@@ -4980,7 +4981,8 @@ acceptances remain unchanged; each row below records its own bounded evidence.
   - [x] Record user-requested P9-10.6 acceptance on 2026-11-04 without granting
     G4 or relabelling original research/execution evidence.
     [Disposition](./phase-9-grcv4/tranche-10/P9-10.6-ReleaseDisposition.md).
-- [ ] P9-G4: Separate explicit release/handoff review and acceptance of the
+- [ ] P9-G4: Waiting at the user's request. Separate explicit release/handoff
+  review and acceptance of the
   advertised bounded support, applicable evidence, legacy boundaries and
   residual-debt routing. No automatic acceptance from P9-10.6 or family passes.
 

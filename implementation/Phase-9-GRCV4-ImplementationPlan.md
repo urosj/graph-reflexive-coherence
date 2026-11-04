@@ -17,7 +17,8 @@ trajectories or authority. Thirty bounded native portions are discharged;
 four hierarchy splits and all inherited scientific limitations remain explicit.
 Broader hierarchy evolution is separately deferred.
 
-Next is a separately requested P9-G4 review/decision. The
+G4 waits at the user's request while they work on topology change; no G4
+review or ATC work is selected by this cleanup. The
 [current handoff](./Phase-9-GRCV4-Handoff.md) provides exact evidence, limits and
 inspection commands. There is no remaining family campaign selected by this
 plan. Dated milestone narratives below explain the execution history; they do

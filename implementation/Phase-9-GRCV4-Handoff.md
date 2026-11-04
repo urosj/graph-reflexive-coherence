@@ -1,8 +1,8 @@
 # Phase 9 GRCV4 handoff — bounded support recorded, G4 pending
 
-Updated 2026-11-04 on `impl/grc9v4-rg2b-spark-completion-campaigns`.
-Accepted predecessor: `33eecf24` (P9-10.5 native claim/debt reconciliation).
-The current P9-10.6 changes record final bounded support at the user's request;
+Updated 2026-11-04 on `main`, after no-ff merge `e65dd3c3`.
+P9-10.5 acceptance is `33eecf24`; P9-10.6 recording is committed as `80f267aa`.
+The accepted P9-10.6 disposition records final bounded support;
 **G4 remains a separate decision and Phase 9 is not declared closed.**
 
 ## Current state
@@ -29,8 +29,11 @@ supplies the current decision. The same rule applies to older source snapshots.
 
 ## Next decision and limits
 
-Next is a **separately requested P9-G4 review/decision** against the advertised
-bounded support, accepted evidence, legacy boundaries and residual routing.
+**G4 is pending and waiting at the user's request while they work on topology
+change.** It is not the active task. A future, separately requested G4 review
+would assess the advertised bounded support, accepted evidence, legacy
+boundaries and residual routing. This tracking cleanup changes no ATC result,
+claim/debt status or implementation authorization.
 Do not automatically commit, merge, launch campaigns, develop hierarchy or
 expand the supported population from this handoff.
 

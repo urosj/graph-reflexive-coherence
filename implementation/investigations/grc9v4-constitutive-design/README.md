@@ -1,19 +1,20 @@
 # GRC9V4 Constitutive Design Investigation
 
-**Disposition:** D10.2 accepted bounded; GRCv4/GRC9v4 specification writing authorized; implementation remains unauthorized
+**Disposition:** D10.2 bounded authority preserved; accepted Phase 9 bounded implementation/support; G4 pending
 **Exploration surface:** ET-C9 accepted as a bounded read-only exploratory tool
 
-**Current continuation — 2026-10-31:** [C_CI SC-3 is complete](./decisions/SparkCompletionCCISC3Authority.md)
-for bounded scientific applicability. Three conditional claims and the research
-debt are adjudicated; authority → proposal → paper → specification and the
-side-tool successor are bound. The original C_OS authority remains intact.
-The [current ledger](./evidence/spark-completion/applicability/ClaimDebtLedger.json)
-now has accepted bounded C_OS/C_CI constructions and eight open family debts.
-The independent review's limits and saved-root overlap-consistency caveat remain
-explicit. Native numerical/lifecycle obligations are routed to P9-9.1a.
-**Next is C_PC**, including the complete C/Z state, carrier writes and actual
-transfer. Then C_CI_PC → A_OS → A_CI → A_PC → A_CI_PC → C_RG2b → A_RG2b.
-No all-ten completion or native/G4 grant follows from these two constructions.
+**Current implementation disposition — 2026-11-04:** the
+[accepted P9-G1 authority](../../phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json)
+authorized bounded V4 implementation. All ten declared generic and nine-port
+family scopes, basin/lifecycle work and optional native spark completion are
+now accepted; the [P9-10.6 support index](../../phase-9-grcv4/tranche-10/P9-10.6-ReleaseDisposition.md)
+binds the exact evidence and limits. The
+[accepted native debt reconciliation](../../phase-9-grcv4/tranche-10/P9-10.5-NativeSpark-Acceptance.json)
+connects scientific authority to native evidence without rewriting original ledgers.
+**G4 remains pending and is waiting at the user's request.** Topology-change
+research remains separate; this tracking cleanup selects no ATC work or outcome.
+Dated historical states below describe their original gates, not current runtime
+authorization or an instruction to repeat completed work.
 
 ## Accepted predecessor — C_OS spark completion, 2026-10-31
 
@@ -22,7 +23,7 @@ SC-1–SC-3 are closed at bounded scientific/design scope. The user accepted the
 at `4076a440`: actual source beat, fresh parent/event capture, D11 transfer,
 positive target entry into a full-map trap and one new stable child at step 902.
 The [SC-3 authority](./decisions/SparkCompletionSC3Authority.md) and
-[current claim/debt ledger](./decisions/spark-completion/Authority.json) admit the
+[original C_OS claim/debt ledger](./decisions/spark-completion/Authority.json) admit the
 optional geometric criterion and homogeneous quartic binding, preserve conditional
 claim classes, and route native numerical/lifecycle obligations forward.
 
@@ -30,9 +31,10 @@ Authority → [proposal](./drafts/GRC9V4-spark-completion-proposal.md) →
 [paper](./drafts/2026-10-GRC9V4-Spark-Completion.md) →
 [specification/schema](../../../specs/grc-9-v4-spark-completion.md) is complete.
 The [research reconciliation](../../phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkResearchReconciliation.md)
-records the contribution to P9-10.5/10.6. Native P9-9.1a follows separately;
-native completion, hierarchy and G4 remain pending. No all-ten completion,
-general topology-selection or arbitrary-parameter claim is added.
+records the original contribution to P9-10.5/10.6. Native completion has since
+been accepted for all ten exact family scopes and reconciled by P9-10.5.
+Broader hierarchy remains deferred and G4 pending. The original C_OS decision
+itself grants no all-ten, general topology-selection or arbitrary-domain claim.
 
 Historical ledgers, original paper/spec bytes, zero-site exclusions and negative
 controls are preserved. Existing accepted ten-family native support is unchanged.
@@ -501,7 +503,7 @@ Start with:
 - [D10.2 scientific interpretation](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md);
 - [exploratory side-tool package](./tools/exploratory-side-tool/README.md), including its implementation plan and checklist.
 
-Current gate status:
+Historical D10.2 gate status (preserved source disposition):
 
 ```text
 D0 = accepted
@@ -1089,7 +1091,7 @@ chronological predecessor, not merely the older gate being superseded. Zero
 survivors map to `rejected_all_candidates`/current-candidate-set exhaustion;
 one common theory blocker may instead map to `blocked_missing_theory`.
 
-Current boundary:
+Historical D10.2 authorization boundary (later P9-G1 is linked above):
 
 ```text
 D0-D10.2 accepted bounded design and provenance closeout
@@ -1141,7 +1143,8 @@ Its [append-only provenance supplement](./decisions/D11G9AxisPreservingExpansion
 adds one GRC9V4-only successor claim, ten specialization objects, and twenty
 contracts without rewriting D10.2, D11-C, GRC9, or GRC9V3. Paper-first
 propagation, specification extraction, and engineering correction are now
-complete. Implementation remains unauthorized.
+complete. D11 did not itself authorize implementation; the later P9-G1
+acceptance separately authorized the bounded Phase 9 work.
 
 ## Accepted GRCV4/GRC9V4 Specification Release
 
@@ -1152,7 +1155,7 @@ as the frozen normative preimplementation contract. The append-only
 binds the exact release, detached checksum, final audit SHA, and acceptance
 commit without altering the accepted release bytes. The
 [`post-acceptance boundary`](./specification/PostGRCV4SpecificationAcceptanceBoundary.json)
-closes specification correction and records the current state:
+closes specification correction and records its historical preimplementation state:
 
 ```text
 specification_release_state = accepted_frozen
@@ -1164,6 +1167,6 @@ implementation_authorized = false
 runtime_conformance_established = false
 ```
 
-The next eligible gate is `GRCV4_GRC9V4_implementation_review`. It is not
-opened by specification acceptance; runtime and `src/`/`tests/` work still
-requires separate explicit authority.
+The then-next gate was `GRCV4_GRC9V4_implementation_review`. It was later
+accepted under P9-G1; current support is indexed above. Original gate fields
+remain unchanged and do not revoke subsequent authorized implementation.

@@ -1,8 +1,13 @@
 # GRCv4 Exploratory Side Tool Implementation Plan
 
 **Date:** 2026-08-28; successor update 2026-09-04
-**Status:** Iterations 0-10 accepted; Iteration 11 UX candidate implemented;
+**Original tool milestone (2026-09-04):** Iterations 0-10 accepted; Iteration 11 UX candidate implemented;
 downstream D11 specification propagation verified
+**Current publication (2026-11-04):** accepted all-ten bounded Phase 9 support,
+native spark completion and debt reconciliation are exposed through the
+[P9-10.6 record](../../../../phase-9-grcv4/tranche-10/P9-10.6-ReleaseDisposition.md).
+G4 remains pending, waiting at the user's request. Historical iteration records
+and topology-change research retain their own dispositions.
 **Companion checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 

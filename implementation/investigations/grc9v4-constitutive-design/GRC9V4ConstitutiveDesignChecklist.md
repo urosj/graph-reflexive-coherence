@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
-**Date:** 2026-08-23  
-**Status:** D0-D10.2 accepted bounded; GRCv4/GRC9v4 specification writing authorized; implementation remains unauthorized
+**Opened:** 2026-08-23; live tracking updated 2026-11-04
+**Status:** D0-D10.2 bounded authority preserved; accepted Phase 9 bounded implementation/support; G4 pending
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -9,7 +9,20 @@
 
 ## Global Boundaries
 
-Current implementation-originated successor: **P9-10.1a basin interface**,
+**Current implementation disposition — 2026-11-04:** the
+[accepted P9-G1 authority](../../phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json)
+authorized bounded V4 implementation. All ten declared generic and nine-port
+family scopes, basin/lifecycle work and optional native spark completion are
+now accepted; the [P9-10.6 support index](../../phase-9-grcv4/tranche-10/P9-10.6-ReleaseDisposition.md)
+binds the exact evidence and limits. The
+[accepted native debt reconciliation](../../phase-9-grcv4/tranche-10/P9-10.5-NativeSpark-Acceptance.json)
+connects scientific authority to native evidence without rewriting original ledgers.
+**G4 remains pending and is waiting at the user's request.** Topology-change
+research remains separate; this tracking cleanup selects no ATC work or outcome.
+Dated historical states below describe their original gates, not current runtime
+authorization or an instruction to repeat completed work.
+
+Completed implementation-originated successor: **P9-10.1a basin interface**,
 2026-10-28; [proposal](./decisions/P9BasinInterfaceAuthorityProposal.md).
 
 - [x] Trace exact accepted row/seed/lifecycle/legacy constraints through the
@@ -23,13 +36,16 @@ Current implementation-originated successor: **P9-10.1a basin interface**,
 - [x] Obtain user acceptance of the corrected baseline contract on 2026-10-28;
   authority admission and scoped debt adjudication follow.
 - [x] Admit `P9-10.1a-CL-N-BASIN-001` and its six contracts; resolve the design
-  debt and retain `P9-10.1a-VO-BASIN-NATIVE` as pending forward. Expose the same
+  debt and, at that scientific stage, retain `P9-10.1a-VO-BASIN-NATIVE` as
+  pending forward. Its native acceptance is linked below. Expose the same
   authority through the forensic API, browser and notebook.
 - [x] Propagate accepted authority → proposal/paper A.5.1 → explicit V4 spec/schema
   successor, preserving historical/executable release identities; six focused
   authority/schema/propagation/surface tests pass.
-- [ ] Return to P9-10.1a for four-family public/lifecycle implementation and
-  native conformance; keep completed sparks and hierarchy separate.
+- [x] Complete the four-family P9-10.1a public/lifecycle implementation and
+  native conformance under its [separate acceptance](../../phase-9-grcv4/tranche-10/P9-10.1a-NativeAcceptance.json).
+  Six later family decisions and distinct optional spark support are indexed
+  by P9-10.6; broader hierarchy remains separate.
 
 The historical global boundaries below retain their original gate scopes.
 
@@ -3017,18 +3033,26 @@ and its
       narrow-audit bytes, accepted release commit, gate, and successor boundary.
 - [x] Close the specification-correction gate and set the live successor state
       to `specification_release_accepted`.
-- [x] Mark the specification branch ready, but not yet completed, for its
-      explicit no-fast-forward closure procedure.
-- [x] Mark implementation review ready but inactive; preserve
-      `implementation_authorized = false` and the complete runtime holds.
-- [ ] Supply per-profile step vectors, Candidate A numeric vectors, RG2b
+- [x] Record specification-branch readiness at the original release gate;
+      the later no-ff merge and Phase 9 opening are bound in the
+      [phase-opening record](../../Phase-9-GRCV4-PhaseOpening.json).
+- [x] Preserve the original preimplementation gate's inactive review and
+      `implementation_authorized = false` fields as historical evidence;
+      later P9-G1 supplies the separately accepted runtime authority.
+- [x] Supply per-profile step vectors, Candidate A numeric vectors, RG2b
       evaluator/certificate vectors, child-stabilization vectors, 40 exact
       disabled-delegate vectors, lifecycle/migration runtime vectors, generic
       mapped-event runtime execution, charge-edge vectors, deep-immutability
       tests, Candidate A GRC9V4 target vectors, and runtime receipts before
-      advertising those capabilities as conformant.
-- [ ] Open implementation only under a later hash-bound implementation
-  authority.
+      advertising those capabilities as conformant. Bounded completion is
+      supported by [generic acceptance](../../phase-9-grcv4/tranche-7/P9-7.7-AggregateAcceptance.json),
+      [all-ten specialization/lifecycle acceptance](../../phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json)
+      and [native completion support](../../phase-9-grcv4/tranche-9/P9-9.1a.7-Support.json).
+      This closes the declared forward task at those exact scopes, not universal
+      conformance; numerical/domain exclusions and G4 remain explicit.
+- [x] Open implementation under the later hash-bound
+  [P9-G1 acceptance](../../phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json),
+  preserving the original specification gate's historical hold.
 
 ## ATC successor research opening — 2026-09-20
 

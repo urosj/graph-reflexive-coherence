@@ -423,7 +423,7 @@ The exact filenames may vary, but the phase plan assumes a similar separation.
 | 6 | `GRC9` Mechanical Substrate | nine-slot runtime plus telemetry, visuals, and GRCL-9 lowering |
 | 7 | `GRC9V3` Hybrid | combined mechanical + semantic model |
 | 8 | `LGRC-9` Causal-History Substrate | Lorentzian/event-driven nine-port planning and first runtime levels |
-| 9 | `GRCV4` Substrate and `GRC9V4` Specialization | accepted V4 contract implementation; planning opened, review pending |
+| 9 | `GRCV4` Substrate and `GRC9V4` Specialization | all-ten bounded implementation/support accepted; G4 pending, waiting at user request |
 
 ## Applications / IDE Track Overview
 
@@ -442,14 +442,14 @@ core Phase 8 without renumbering host/IDE work.
 
 ## Current Family Completion Read
 
-Phase 9 is opened for `GRCV4` planning after the accepted V4 specification
-release and its explicit no-fast-forward merge into `main`. Its
-[plan](./Phase-9-GRCV4-ImplementationPlan.md),
-[checklist](./Phase-9-GRCV4-ImplementationChecklist.md), and
-[opening record](./Phase-9-GRCV4-PhaseOpening.json) own the current phase
-state. Each generic support scope precedes its gated `GRC9V4` specialization.
-The later [P9-G1 acceptance](./phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json)
-authorizes bounded V4 implementation. No V4 runtime conformance is claimed.
+Phase 9 has accepted bounded generic and nine-port support for all ten
+families, including the separately selected native completed-spark programme.
+The [current support disposition](./phase-9-grcv4/tranche-10/P9-10.6-ReleaseDisposition.md),
+[plan](./Phase-9-GRCV4-ImplementationPlan.md) and
+[checklist](./Phase-9-GRCV4-ImplementationChecklist.md) bind exact evidence and
+limitations. P9-G1/G2/G3 and the declared implementation checkpoints are accepted.
+**P9-G4 remains pending and waits at the user's request.** No unrestricted
+conformance, general ATC or broader hierarchy claim follows.
 
 The core phase numbers are now reserved for model/runtime foundations, while
 host, IDE, driver, verification, and packaging work lives in the separate
@@ -1197,25 +1197,20 @@ and accepted investigation claims for mathematical meaning and claim authority.
 
 ### Current state and scope
 
-Planning opened on 2026-09-05 from the accepted specification merge
-`e00a8844c045ac4338fa52afb6ab096420fb6161`, on `impl/phase-9-grcv4`.
-P9-G1 implementation review is accepted; the next work is the reviewed
-foundation starting at P9-2.1. The unchanged historical opening carries the accepted
-D10/D10.2 and D11 populations, their debt and claim boundaries, and the
-frozen release. Existing family behavior remains the regression baseline.
+Planning opened on 2026-09-05 from specification merge
+`e00a8844c045ac4338fa52afb6ab096420fb6161`. P9-G1 separately authorized
+implementation; all ten exact generic G2 declarations and their G3 consumed
+set are accepted. Tranches 8–9 and P9-10.1–10.6 now have accepted bounded
+successors, including basin interfaces, compatibility, native spark completion,
+regressions, examples and claim/debt reconciliation. Spark closeout was merged
+into `main` with no-ff at `e65dd3c3`.
 
-Current continuation: Tranche 3 is accepted within its recorded scopes.
-Tranche 4 starts on `impl/phase-9-grcv4-tranche-4` with
-[P9-4.1 reference transport](./phase-9-grcv4/tranche-4/P9-4.1-Review.md)
-implemented, verified and accepted by the user's commit instruction after audit
-follow-up. P9-4.2 entry will bind the accepted commit separately; runtime support
-remains empty.
-
-The proposed first path closes generic `C_OS` dynamics and its applicable
-lifecycle/fixture product before `P9-G2[C_OS]`. The next reviewed route may
-be `A_OS` or C-only GRC9V4 pressure after `P9-G3[C_OS]`. Other realizations
-advance independently through profile-indexed G2 gates; RG2b or Candidate A
-expansion holds do not block an otherwise accepted C_OS path.
+The [P9-10.6 index](./phase-9-grcv4/tranche-10/P9-10.6-ReleaseDisposition.md)
+keeps generic, specialization, basin/compatibility and optional spark subjects
+distinct. No family remains pending within these scopes. Broader hierarchy,
+general autonomous topology change and stronger numerical claims remain
+separate. G4 and Phase 9 release closure are not granted; G4 waits while the
+user works on topology change, with no new research or execution selected here.
 
 Top-level tranches organize the work; each `P9-N.M` leaf is an independently
 executed and reviewed iteration. Candidate, lifecycle, and compatibility
@@ -1241,12 +1236,15 @@ specification evidence for each exact profile and specialization scope.
 
 - [x] Create the phase branch, plan, checklist, and opening record.
 - [x] Bind the accepted release and completed no-ff specification merge.
-- [ ] Accept the implementation review and successor verification policy.
-- [ ] Implement and verify each declared generic profile/lifecycle under
-  its own `P9-G2[p]` gate, starting with the early C_OS path.
-- [ ] Admit exact consumed sets through `P9-G3[S]` and verify their dependent
-  GRC9V4 specialization, including separately reviewed compatibility cells.
-- [ ] Review runtime conformance, legacy regressions, and residual debt.
+- [x] Accept implementation review and successor verification under
+  [P9-G1](./phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json).
+- [x] Implement and verify all ten declared generic profile/lifecycle scopes;
+  [aggregate G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-AggregateAcceptance.json).
+- [x] Admit the exact consumed set through G3 and accept its dependent
+  [all-ten specialization/lifecycle/compatibility scope](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json).
+- [x] Complete scoped runtime reviews, regressions, examples, residual-debt
+  reconciliation and [P9-10.6 support/handoff recording](./phase-9-grcv4/tranche-10/P9-10.6-ReleaseDisposition.md).
+- [ ] P9-G4: explicit final release acceptance; pending and waiting at user request.
 
 ### Exit criteria
 

@@ -5621,3 +5621,8 @@ PATHS = PATHS | frozenset({
     PHASE + "tranche-10/P9-10.6-ReleaseDisposition.md",
     PHASE + "tranche-10/P9-10.6-ReleaseSourceEpoch.json",
 })
+
+# Current status cleanup only; no new runtime, scientific or G4 authority.
+PATHS = PATHS | frozenset({
+    HERE + "p9_live_tracking_epoch.py", HERE + "Phase9LiveTrackingSourceEpoch.json",
+})
