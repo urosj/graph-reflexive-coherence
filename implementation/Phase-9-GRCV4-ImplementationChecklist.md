@@ -6,7 +6,7 @@ Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
 [phase opening](./Phase-9-GRCV4-PhaseOpening.json), and
 [phase registry](./ImplementationPhases.md#phase-9-grcv4-substrate-and-grc9v4-specialization).
 
-**Current continuation — 2026-11-03:** all ten bounded native completion
+**Current continuation — 2026-11-04:** all ten bounded native completion
 campaigns are accepted. [P9-9.1a.7](./phase-9-grcv4/tranche-9/P9-9.1a.7-Review.md)
 reconciles twenty exact source/target declarations, correct public support and
 realization reporting, and thirty native-obligation evidence links. Its
@@ -15,7 +15,10 @@ on 2026-11-03; bounded P9-9.1a is closed. Next are the
 Tranche 10 native-spark supplements, then formal debt/G4 closeout.
 P9-10.3-NATIVE-SPARK has 28 passing focused tests and user acceptance on 2026-11-03;
 P9-10.4-NATIVE-SPARK documentation/examples are accepted on 2026-11-03;
-P9-10.5/10.6 remain the next closeout tasks. Broader
+P9-10.5 now reconciles thirty native portions (26 bounded resolutions and four
+explicit hierarchy splits), fourteen spark debts and 29 unchanged inherited
+D10 transformations. User acceptance is recorded on 2026-11-04; P9-10.5
+is closed at bounded scope. P9-10.6 follows. Broader
 hierarchy and general ATC remain outside scope; no new trajectories are required
 for this reconciliation.
 
@@ -4943,15 +4946,27 @@ acceptances remain unchanged; each row below records its own bounded evidence.
 
 #### P9-10.5–10.6: Aggregate reconciliation and closeout
 
-- [ ] P9-10.5: Reconcile inherited scientific debts without upgrading source
+- [x] P9-10.5: Reconcile inherited scientific debts without upgrading source
   claims from test coverage alone, including the four named completion debts.
-  - [ ] Reconcile new P9-9.1a native numerics/lifecycle and earlier-endpoint
-    obligations per accepted exact family scope; retain all broader residual
-    scientific and hierarchy debts unless separately resolved by evidence.
+  - [x] Reconcile new P9-9.1a native numerics/lifecycle and earlier-endpoint
+    obligations per accepted exact family scope in the
+    [native successor ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/native/ClaimDebtLedger.json):
+    thirty native portions discharged, with four hierarchy splits retained.
+  - [x] Link original scientific claim classes/acceptances and propagated
+    contracts to exact accepted native source/target/certificate identities;
+    reconcile fourteen spark debt entries without rewriting historical ledgers.
+  - [x] Preserve all 29 inherited D10 transformations and their claim links;
+    no RG2b C1, numeric abundance, general ATC or hierarchy promotion.
+  - [x] Expose current ledger through typed API, browser and notebook;
+    pressure resealed scope/identity/claim changes without numerical reruns.
+  - [x] User accepted the bounded P9-10.5 reconciliation by requesting commit
+    on 2026-11-04; [acceptance](./phase-9-grcv4/tranche-10/P9-10.5-NativeSpark-Acceptance.json). See
+    [decision](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionNativeDebtReconciliation.md).
   - [x] Reconcile the bounded scientific/design results for all ten families
     and the five adopted earlier endpoints in the
     [current research successor](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkEarlierReconciliation.json);
-    native P9-9.1a obligations remain attached. Other inherited debt review is separate.
+    original native pending fields remain historical; the native successor above
+    supplies their current dispositions. Other inherited claims are preserved.
 - [ ] P9-10.6: Record reviewed support, pending profiles, residual debt,
   closeout, handoff, explicit completion support/defer scope and P9-G4 acceptance.
   - [ ] Record the native completion programme's reviewed support and remaining

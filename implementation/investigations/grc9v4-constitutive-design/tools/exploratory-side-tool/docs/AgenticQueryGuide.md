@@ -7,6 +7,19 @@ The API reconstructs accepted evidence and evaluates a closed set of
 structural counterfactuals; it does not create scientific evidence or predict a
 gate that has not been rerun.
 
+## Current native spark claim/debt disposition — P9-10.5
+
+Use [NativeSparkDebts.md](./NativeSparkDebts.md) for the explicit native
+successor to the SC-3 ledgers. `spark_native_debts.native_spark_debts(root)`
+authenticates scientific-to-native links; `query(view, "debt_lifecycle", id)`
+and the `verification_obligation` / `scientific_claim` queries preserve source,
+status and scope. Historical research contexts below intentionally retain their
+research-time pending obligations. Native evidence does not promote their claim
+classes. Thirty native portions are discharged, four hierarchy splits retained;
+the reconciliation is bounded accepted on 2026-11-04 through a separate
+source-bound decision. The original ledger flags remain historical. No numerical
+rerun or G4 grant.
+
 ## ATC bounded research successor
 
 For the current admitted five-realization Candidate-A research context use

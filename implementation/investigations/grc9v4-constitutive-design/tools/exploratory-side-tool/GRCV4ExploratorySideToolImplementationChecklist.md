@@ -3002,3 +3002,13 @@ See [NativeSparkRegressions](./docs/NativeSparkRegressions.md).
   flags remain historical. P9-10.5/10.6 remain separate.
 
 See [NativeSparkWorkflow](./docs/NativeSparkWorkflow.md).
+
+## P9-10.5 native claim/debt reconciliation — 2026-11-04
+
+- [x] Add explicit native successor queries and source-bound ledger linking
+  accepted research to all ten accepted campaigns; preserve historical traces.
+- [x] Expose typed debt/obligation/claim views through API, browser and notebook.
+- [x] Preserve hierarchy splits and inherited scientific limits; reject altered
+  exact subjects, scientific classifications, acceptance or G4 fields.
+- [x] User accepted bounded P9-10.5 by requesting commit on 2026-11-04;
+  expose the separate acceptance in current views and preserve original ledger flags.

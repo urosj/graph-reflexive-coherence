@@ -1,0 +1,43 @@
+{
+  "schema": "p9105-native-spark-acceptance-v1",
+  "date": "2026-11-04",
+  "basis": "User requested commit after completed bounded claim/debt reconciliation.",
+  "status": "accepted_bounded_native_reconciliation",
+  "user_accepted": true,
+  "P9_10_5_closed": true,
+  "ledger_path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/native/ClaimDebtLedger.json",
+  "ledger_record_digest": "898de5b74437de073d901bbca798cf52bc3ca065603c528c462ac1e9b31601d4",
+  "ledger_sha256": "f320d94c6a39d9a0cb04af19da7b697c24c3d449ee3654833ebb72b432ee9e73",
+  "families": [
+    "C_OS",
+    "C_CI",
+    "C_PC",
+    "C_CI_PC",
+    "A_OS",
+    "A_CI",
+    "A_PC",
+    "A_CI_PC",
+    "C_RG2b",
+    "A_RG2b"
+  ],
+  "counts": {
+    "families": 10,
+    "original_native_obligations": 30,
+    "native_portions_discharged": 30,
+    "fully_scoped_native_resolutions": 26,
+    "split_with_hierarchy_residual": 4,
+    "spark_debt_transformations": 14,
+    "inherited_debts_preserved": 29
+  },
+  "residual_obligation_ids": [
+    "SC-VO-HIERARCHY-EVOLUTION"
+  ],
+  "original_reconciliation_preserved": true,
+  "new_numerical_trajectories": 0,
+  "new_support": [],
+  "hierarchy_tracking": false,
+  "full_GRC9V4_conformance": false,
+  "G4_accepted": false,
+  "next_work": "P9-10.6 reviewed support, residual limitations, handoff and explicit G4 decision.",
+  "record_digest": "200d76d49e14b380f2316c7c78ee7b699fc2c4a888a46215aa0b1474120ae4ca"
+}

@@ -3635,3 +3635,14 @@ See [NativeSparkRegressions](./docs/NativeSparkRegressions.md).
   flags remain historical. P9-10.5/10.6 remain separate.
 
 See [NativeSparkWorkflow](./docs/NativeSparkWorkflow.md).
+
+## P9-10.5 native claim/debt reconciliation — 2026-11-04
+
+The [native-debt guide](./docs/NativeSparkDebts.md) describes the current
+successor queries. Thirty bounded native portions are discharged, four hierarchy
+splits retained. Historical scientific forensic contexts remain unchanged;
+new native evidence is never backward scientific proof. The read-only API,
+browser and notebook expose the same ledger. Focused mutation/source/surface
+checks reuse accepted numerics. User acceptance of P9-10.5 is recorded on
+2026-11-04; current views expose that separate decision. The original ledger
+remains unchanged. P9-10.6/G4 remains separate.

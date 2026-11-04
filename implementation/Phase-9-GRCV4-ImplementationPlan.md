@@ -1,5 +1,21 @@
 # Phase 9 GRCV4 Implementation Plan
 
+## Current continuation — P9-10.5 native debt reconciliation, 2026-11-04
+
+The [native successor ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/native/ClaimDebtLedger.json)
+connects scientific acceptance to the exact accepted native campaigns. Thirty
+native portions are discharged: 26 bounded resolutions and four explicit
+hierarchy splits. Fourteen spark debt transformations preserve the original
+claims; all 29 inherited D10 transformations remain unchanged by this evidence.
+The [decision](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionNativeDebtReconciliation.md)
+records those limits and the evidence reasoning. The user accepted this bounded
+reconciliation by requesting commit on 2026-11-04; the separate
+[acceptance](./phase-9-grcv4/tranche-10/P9-10.5-NativeSpark-Acceptance.json) preserves the original ledger.
+P9-10.6 next handles reviewed support/residuals/handoff and G4.
+No native trajectory rerun, new scientific law or hierarchy support is needed
+or inferred. Earlier status paragraphs below retain their historical sequence.
+
+
 ## Current continuation: native spark public workflow — 2026-11-03
 
 P9-10.4-NATIVE-SPARK now assembles the accepted all-ten results in the

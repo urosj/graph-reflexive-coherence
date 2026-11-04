@@ -1,6 +1,39 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work: P9-10.4-NATIVE-SPARK public workflow — 2026-11-03
+## Current work: P9-10.5 native claim/debt reconciliation — 2026-11-04
+
+Same branch, following accepted publication `215509f4`. The
+[actual successor ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/native/ClaimDebtLedger.json)
+now connects all ten research acceptances to their exact accepted native
+campaigns, declarations, certificate pairs and integration regressions.
+Thirty native portions are discharged; four original lifecycle IDs retain an
+explicit hierarchy split. Fourteen spark-debt rows are reconciled, while the
+29 inherited D10 transformations retain their original claim links/dispositions.
+Original research and execution files are unchanged.
+
+[Decision](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionNativeDebtReconciliation.md)
+explains the evidence and remaining scope. Typed native-debt queries, browser
+and notebook expose this successor without turning native results into new
+scientific authority. The user accepted P9-10.5 by requesting commit on
+2026-11-04; [acceptance](./phase-9-grcv4/tranche-10/P9-10.5-NativeSpark-Acceptance.json)
+binds the original ledger and preserves its review-time pending flag.
+Next is P9-10.6's
+support/residual/handoff and explicit G4 decision. Do not start new trajectories
+merely to perform closeout. No hierarchy, general ATC or G4 is granted here.
+
+Verification: five focused ledger/source/HTTP/browser/notebook tests pass,
+including 13 resealed scope/claim/identity mutations. Use the repository-managed
+Node through the existing tooling helper. The historical forensic API confirms
+the original organization and A_RG2b forward obligations, represented-completion
+contract and unchanged RG2b C1 limitation. No numerical campaign was rerun.
+
+```bash
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m unittest test_p9105_native_spark_debts -v
+PYTHONPATH=src .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+```
+
+
+## Previous work: P9-10.4-NATIVE-SPARK public workflow — 2026-11-03
 
 Same branch `impl/grc9v4-rg2b-spark-completion-campaigns`, following accepted
 integration commit `ba4ac86f`. The [public guide](../examples/grc9v4/native_spark.md)

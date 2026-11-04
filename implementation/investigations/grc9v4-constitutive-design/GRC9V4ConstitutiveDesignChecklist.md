@@ -3988,9 +3988,12 @@ and obsolete “next family” reminders have been removed from this checklist.
 [Endpoint adoption](./decisions/SparkCompletionEarlierSC3Authority.md) ·
 [Consolidated reading entry point](./drafts/README.md).
 
-The scientific work is complete for these bounded subjects. Native completion
-numerics/lifecycle and hierarchy execution remain with the deferred P9-9.1a
-scope; aggregate reconciliation and G4 remain P9-10.5/10.6. Those obligations
-are not duplicated here or marked complete. A_OS below 100 stays paused.
-The existing specs/README.md audit debt is unwaived. Historical derivations,
-accepted authorities, original run counts and retained evidence remain intact.
+The scientific work is complete for these bounded subjects. All ten bounded
+native campaigns and P9-9.1a.7 are now separately accepted. The
+[current native ledger](./evidence/spark-completion/native/ClaimDebtLedger.json)
+discharges their numerical/lifecycle portions and explicitly retains broader
+hierarchy obligations. P9-10.5 reconciliation is accepted on 2026-11-04;
+P9-10.6/G4 remain separate. The research ledgers above retain their historical pending
+fields and source identities. A_OS below 100 stays paused. Historical audit
+findings keep their original subjects; current-tree source integrity is checked
+by the Phase 9 boundary audit, without relabeling the old records.

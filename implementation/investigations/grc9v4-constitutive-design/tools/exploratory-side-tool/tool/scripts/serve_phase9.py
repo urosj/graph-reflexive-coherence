@@ -11,6 +11,7 @@ from urllib.parse import urlsplit, parse_qs
 TOOL = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(TOOL / "src"))
 from grcv4_explorer.paths import repository_root  # noqa: E402
+from grcv4_explorer.spark_native_debts import native_spark_debts, native_spark_debt_source
 from grcv4_explorer.spark_native_workflow import native_spark_workflow, native_spark_workflow_source
 from grcv4_explorer.spark_native_regressions import native_spark_regressions, native_spark_regressions_source
 from grcv4_explorer.phase9_verification import verification_status  # noqa: E402
@@ -193,6 +194,36 @@ class Handler(BaseHTTPRequestHandler):
                 content = json.dumps({"error": str(exc)}).encode()
             self.send_header("Content-Type", "application/json")
             self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+            return
+        if request.path in {"/api/native-spark/debts", "/api/native-spark/debts/source"}:
+            source = request.path.endswith("/source")
+            try:
+                query = parse_qs(request.query, strict_parsing=True, keep_blank_values=True)
+                if source:
+                    if set(query) != {"name"} or len(query["name"]) != 1:
+                        raise ValueError("one indexed debt source required")
+                    content = native_spark_debt_source(repository_root(), query["name"][0])
+                else:
+                    if query:
+                        raise ValueError("fixed read-only debt scope")
+                    content = json.dumps(native_spark_debts(repository_root())).encode()
+                self.send_response(200)
+            except Exception as error:
+                self.send_response(503)
+                content = json.dumps({"error": str(error)}).encode()
+            self.send_header("Content-Type", "text/plain; charset=utf-8" if source else "application/json")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+            return
+        if request.path == "/spark-native-debts.js" and not request.query:
+            content = (TOOL / "phase9-web/spark-native-debts.js").read_bytes()
+            self.send_response(200)
+            self.send_header("Content-Type", "text/javascript")
             self.send_header("Content-Length", str(len(content)))
             self.end_headers()
             self.wfile.write(content)

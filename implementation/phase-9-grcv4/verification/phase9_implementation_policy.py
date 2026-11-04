@@ -5596,3 +5596,19 @@ PATHS = PATHS | frozenset({
     SIDE + "tool/src/grcv4_explorer/spark_native_workflow.py",
     SIDE + "tool/phase9-web/spark-native-workflow.js",
 })
+
+# P9-10.5 native claim/debt successor; original scientific and run records unchanged.
+PATHS = PATHS | frozenset({
+    INV + "evidence/spark-completion/native/ClaimDebtLedger.json",
+    INV + "decisions/SparkCompletionNativeDebtReconciliation.md",
+    PHASE + "verification/p9105_native_spark_debts.py",
+    PHASE + "verification/p9105_native_spark_epoch.py",
+    PHASE + "verification/test_p9105_native_spark_debts.py",
+    PHASE + "tranche-10/P9-10.5-NativeSpark-SourceEpoch.json",
+    SIDE + "docs/NativeSparkDebts.md",
+    SIDE + "tool/src/grcv4_explorer/spark_native_debts.py",
+    SIDE + "tool/phase9-web/spark-native-debts.js",
+})
+
+# Separate bounded user acceptance of the unchanged P9-10.5 reconciliation.
+PATHS = PATHS | frozenset({PHASE + "tranche-10/P9-10.5-NativeSpark-Acceptance.json"})
